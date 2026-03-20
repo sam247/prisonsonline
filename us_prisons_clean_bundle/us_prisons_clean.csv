@@ -1,0 +1,144 @@
+slug,name,country,state,city,address,postcode,phone,fax,facilityType,dataProvenance
+alderson-fpc,Alderson Fpc,us,WV,ALDERSON,GLEN RAY RD. BOX A,24910,304-445-3300,304-445-3320,fpc,bop_import
+aliceville-fci,Aliceville Fci,us,AL,ALICEVILLE,11070 HIGHWAY 14,35442,205-373-5000,205-373-5020,fci,bop_import
+allenwood-low-fci,Allenwood Low Fci,us,PA,ALLENWOOD,RT 15 2 MILES N OF ALLENWOOD,17810,570-547-1990,570-547-0343,fci,bop_import
+allenwood-med-fci,Allenwood Med Fci,us,PA,WHITE DEER,RT 15 2 MI N OF ALLENWOOD,17810,570-547-7950,570-547-7751,fci,bop_import
+allenwood-usp,Allenwood Usp,us,PA,ALLENWOOD,RT 15 2 MILES N OF ALLENWOOD,17810,570-547-0963,570-547-9201,usp,bop_import
+ashland-fci,Ashland Fci,us,KY,ASHLAND,ST. ROUTE 716,41105,606-928-6414,606-929-4395,fci,bop_import
+atlanta-ccm,Atlanta Ccm,us,GA,ATLANTA,719 MCDONOUGH BLVD S.E.,30315,470-832-5841,404-635-5390,other,bop_import
+atlanta-fci,Atlanta Fci,us,GA,ATLANTA,601 MCDONOUGH BLVD SE,30315,404-635-5100,404-331-2403,fci,bop_import
+atwater-usp,Atwater Usp,us,CA,ATWATER,1 FEDERAL WAY,95301,209-386-0257,209-386-4635,usp,bop_import
+baltimore-ccm,Baltimore Ccm,us,DC,WASHINGTON,400 FIRST STREET NW 5TH FLOOR,20534,202-428-6161,,other,bop_import
+bastrop-fci,Bastrop Fci,us,TX,BASTROP,1341 HIGHWAY 95 NORTH,78602,512-321-3903,512-304-0117,fci,bop_import
+beaumont-low-fci,Beaumont Low Fci,us,TX,BEAUMONT,5560 KNAUTH ROAD,77705,409-727-8172,409-626-3500,fci,bop_import
+beaumont-med-fci,Beaumont Med Fci,us,TX,BEAUMONT,5830 KNAUTH ROAD,77705,409-727-0101,409-720-5000,fci,bop_import
+beaumont-usp,Beaumont Usp,us,TX,BEAUMONT,6200 KNAUTH ROAD,77705,409-727-8188,409-626-3700,usp,bop_import
+beckley-fci,Beckley Fci,us,WV,BEAVER,1600 INDUSTRIAL ROAD,25813,304-252-9758,304-256-4956,fci,bop_import
+bennettsville-fci,Bennettsville Fci,us,SC,BENNETTSVILLE,696 MUCKERMAN ROAD,29512,843-454-8200,843-454-8219,fci,bop_import
+berlin-fci,Berlin Fci,us,NH,BERLIN,1 SUCCESS LOOP ROAD,03570,603-342-4000,603-342-4250,fci,bop_import
+big-sandy-usp,Big Sandy Usp,us,KY,INEZ,1197 AIRPORT ROAD,41224,606-433-2400,606-433-2577,usp,bop_import
+big-spring-fci,Big Spring Fci,us,TX,BIG SPRING,1900 SIMLER AVE,79720,432-466-2300,432-466-2576,fci,bop_import
+brooklyn-mdc,Brooklyn Mdc,us,NY,BROOKLYN,80 29TH STREET,11232,718-840-4200,718-840-5005,mdc,bop_import
+bryan-fpc,Bryan Fpc,us,TX,BRYAN,1100 URSULINE AVENUE,77803,979-823-1879,979-821-3316,fpc,bop_import
+butner-fmc,Butner Fmc,us,NC,BUTNER,OLD N. CAROLINA HWY 75,27509,919-575-3900,919-575-4801,fmc,bop_import
+butner-low-fci,Butner Low Fci,us,NC,BUTNER,OLD NC HWY 75,27509,919-575-5000,919-575-5023,fci,bop_import
+butner-med-i-fci,Butner Med I Fci,us,NC,BUTNER,OLD NC HWY 75,27509,919-575-4541,919-575-2091,fci,bop_import
+butner-med-ii-fci,Butner Med Ii Fci,us,NC,BUTNER,OLD NC HWY 75,27509,919-575-8000,919-575-8020,fci,bop_import
+canaan-usp,Canaan Usp,us,PA,WAYMART,3057 ERIC J. WILLIAMS MEMORIAL DRIVE,18472,570-488-8000,570-488-8130,usp,bop_import
+carswell-fmc,Carswell Fmc,us,TX,FORT WORTH,NAVAL AIR STATION 1200 MEANDERING ROAD,76114,817-782-4000,817-782-4875,fmc,bop_import
+chicago-ccm,Chicago Ccm,us,IL,DOWNERS GROVE,1901 BUTTERFIELD ROAD SUITE 130,60515,331-903-4043,630-271-8676,other,bop_import
+chicago-mcc,Chicago Mcc,us,IL,CHICAGO,71 WEST VAN BUREN STREET,60605,312-322-0567,312-347-4012,mcc,bop_import
+cincinnati-ccm,Cincinnati Ccm,us,OH,CINCINNATI,36 E. 7TH ST. SUITE 2107-A,45202,513-826-9364,513-684-2590,other,bop_import
+coleman-i-usp,Coleman I Usp,us,FL,SUMTERVILLE,846 NE 54TH TERRACE,33521,352-689-6000,352-689-6012,usp,bop_import
+coleman-ii-usp,Coleman Ii Usp,us,FL,SUMTERVILLE,846 NE 54TH TERRACE,33521,352-689-7000,352-689-7012,usp,bop_import
+coleman-low-fci,Coleman Low Fci,us,FL,SUMTERVILLE,846 NE 54TH TERRACE,33521,352-689-4000,352-689-4008,fci,bop_import
+coleman-med-fci,Coleman Med Fci,us,FL,SUMTERVILLE,846 NE 54TH TERRACE,33521,352-689-5000,352-689-5027,fci,bop_import
+cumberland-fci,Cumberland Fci,us,MD,CUMBERLAND,14601 BURBRIDGE RD SE,21502,301-784-1000,301-784-1008,fci,bop_import
+dallas-ccm,Dallas Ccm,us,TX,GRAND PRAIRIE,US ARMED FORCES RESERVE CMPL 344 MARINE FORCES DR,75051,469-928-2182,972-730-8838,other,bop_import
+danbury-fci,Danbury Fci,us,CT,DANBURY,33 1/2 PEMBROKE STATION ROUTE 37,06811,203-743-6471,203-312-5110,fci,bop_import
+detroit-ccm,Detroit Ccm,us,MI,MILAN,4026 E. ARKONA RD.,48160,734-508-9048,734-439-7671,other,bop_import
+devens-fmc,Devens Fmc,us,MA,AYER,42 PATTON ROAD,01432,978-796-1000,978-796-1118,fmc,bop_import
+dublin-fci,Dublin Fci,us,CA,DUBLIN,5701 8TH ST - CAMP PARKS,94568,925-833-7500,925-833-7599,fci,bop_import
+duluth-fpc,Duluth Fpc,us,MN,DULUTH,4464 RALSTON DRIVE,55811,218-722-8634,218-733-4701,fpc,bop_import
+edgefield-fci,Edgefield Fci,us,SC,EDGEFIELD,501 GARY HILL ROAD,29824,803-637-1500,803-637-9840,fci,bop_import
+el-reno-fci,El Reno Fci,us,OK,EL RENO,4205 HIGHWAY 66 WEST,73036,405-262-4875,405-319-7626,fci,bop_import
+elkton-fci,Elkton Fci,us,OH,LISBON,8730 SCROGGS ROAD,44432,330-420-6200,330-420-6436,fci,bop_import
+englewood-fci,Englewood Fci,us,CO,LITTLETON,9595 WEST QUINCY AVENUE,80123,303-763-4300,303-763-2553,fci,bop_import
+estill-fci,Estill Fci,us,SC,ESTILL,100 PRISON ROAD,29918,803-625-4607,803-625-5635,fci,bop_import
+fairton-fci,Fairton Fci,us,NJ,FAIRTON,655 FAIRTON-MILLVILLE ROAD,08320,856-453-1177,856-453-4015,fci,bop_import
+florence-admax-usp,Florence Admax Usp,us,CO,FLORENCE,5880 HWY 67 SOUTH,81226,719-784-9464,719-784-5290,usp,bop_import
+florence-fci,Florence Fci,us,CO,FLORENCE,5880 HWY 67 SOUTH,81226,719-784-9100,719-784-9504,fci,bop_import
+florence-high-usp,Florence High Usp,us,CO,FLORENCE,5880 HWY 67 S,81226,719-784-9454,719-784-5157,usp,bop_import
+forrest-city-fci,Forrest City Fci,us,AR,FORREST CITY,1400 DALE BUMPERS ROAD,72335,870-630-6000,870-494-4496,fci,bop_import
+forrest-city-med-fci,Forrest City Med Fci,us,AR,FORREST CITY,1400 DALE BUMPERS ROAD,72335,870-494-4200,870-494-4496,fci,bop_import
+fort-dix-fci,Fort Dix Fci,us,NJ,JOINT BASE MDL,5756 HARTFORD & POINTVILLE RD,08640,609-723-1100,609-724-7557,fci,bop_import
+fort-worth-administrative-fmc,Fort Worth Administrative Fmc,us,TX,FORT WORTH,3150 HORTON ROAD,76119,817-534-8400,817-413-3350,fmc,bop_import
+gilmer-fci,Gilmer Fci,us,WV,GLENVILLE,201 FCI LANE,26351,304-626-2500,304-626-2693,fci,bop_import
+greenville-fci,Greenville Fci,us,IL,GREENVILLE,100 U.S. HWY 40,62246,618-664-6200,618-664-6372,fci,bop_import
+guaynabo-mdc,Guaynabo Mdc,us,RQ,GUAYNABO,652 CARRETERA 28,00965,787-749-4480,787-775-7824,mdc,bop_import
+hazelton-fci,Hazelton Fci,us,WV,BRUCETON MILLS,1640 SKY VIEW DRIVE,26525,304-379-1500,304-379-1531,fci,bop_import
+hazelton-usp,Hazelton Usp,us,WV,BRUCETON MILLS,1640 SKY VIEW DRIVE,26525,304-379-5000,304-379-5039,usp,bop_import
+herlong-fci,Herlong Fci,us,CA,HERLONG,741-925 ACCESS ROAD A-25,96113,530-827-8000,530-827-8024,fci,bop_import
+honolulu-fdc,Honolulu Fdc,us,HI,HONOLULU,351 ELLIOTT ST,96819,808-838-4200,808-838-4507,fdc,bop_import
+houston-fdc,Houston Fdc,us,TX,HOUSTON,1200 TEXAS AVENUE,77002,713-221-5400,713-229-4200,fdc,bop_import
+jesup-fci,Jesup Fci,us,GA,JESUP,2600 HIGHWAY 301 SOUTH,31599,912-427-0870,912-427-1125,fci,bop_import
+kansas-city-ccm,Kansas City Ccm,us,KS,KANSAS CITY,400 STATE AVE. RM 131,66101,620-307-7531,913-551-1120,other,bop_import
+la-tuna-fci,La Tuna Fci,us,TX,ANTHONY,LA TUNA FCI/SCP 8500 DONIPHAN ROAD,79821,915-791-9000,915-791-9858,fci,bop_import
+leavenworth-fci,Leavenworth Fci,us,KS,LEAVENWORTH,1300 METROPOLITAN,66048,913-682-8700,913-578-1010,fci,bop_import
+lee-usp,Lee Usp,us,VA,PENNINGTON GAP,LEE COUNTY INDUSTRIAL PARK HICKORY FLATS ROAD,24277,276-546-0150,276-546-9115,usp,bop_import
+lewisburg-fci,Lewisburg Fci,us,PA,LEWISBURG,2400 ROBERT F. MILLER DRIVE,17837,570-523-1251,570-522-7745,fci,bop_import
+lexington-fmc,Lexington Fmc,us,KY,LEXINGTON,3301 LEESTOWN ROAD,40511,859-255-6812,859-253-8821,fmc,bop_import
+lompoc-fci,Lompoc Fci,us,CA,LOMPOC,3600 GUARD ROAD,93436,805-736-4154,805-736-1292,fci,bop_import
+lompoc-ii-fci,Lompoc Ii Fci,us,CA,LOMPOC,3901 KLEIN BLVD,93436,805-735-2771,805-736-1292,fci,bop_import
+long-beach-ccm,Long Beach Ccm,us,CA,SAN PEDRO,1299 SEASIDE AVENUE,90731,424-450-2866,310-732-5291,other,bop_import
+loretto-fci,Loretto Fci,us,PA,LORETTO,772 SAINT JOSEPH ST.,15940,814-472-4140,814-471-1507,fci,bop_import
+los-angeles-mdc,Los Angeles Mdc,us,CA,LOS ANGELES,535 N ALAMEDA STREET,90012,213-485-0439,213-253-9510,mdc,bop_import
+manchester-fci,Manchester Fci,us,KY,MANCHESTER,805 FOX HOLLOW ROAD,40962,606-598-1900,606-599-4115,fci,bop_import
+marianna-fci,Marianna Fci,us,FL,MARIANNA,3625 FCI ROAD,32446,850-526-2313,850-718-2014,fci,bop_import
+marion-fci,Marion Fci,us,IL,MARION,4500 PRISON ROAD,62959,618-964-1441,618-964-2058,fci,bop_import
+mccreary-usp,Mccreary Usp,us,KY,PINE KNOT,330 FEDERAL WAY,42635,606-354-7000,606-354-7190,usp,bop_import
+mcdowell-fci,Mcdowell Fci,us,WV,WELCH,101 FEDERAL DRIVE,24801,304-436-7300,304-436-7318,fci,bop_import
+mckean-fci,Mckean Fci,us,PA,LEWIS RUN,6975 ROUTE 59,16738,814-362-8900,814-363-6821,fci,bop_import
+memphis-fci,Memphis Fci,us,TN,MEMPHIS,1101 JOHN A DENIE ROAD,38134,901-372-2269,901-384-5462,fci,bop_import
+mendota-fci,Mendota Fci,us,CA,MENDOTA,33500 WEST CALIFORNIA AVENUE,93640,559-274-4000,559-274-4223,fci,bop_import
+miami-ccm,Miami Ccm,us,FL,MIAMI,401 N MIAMI AVENUE,33128,786-584-4730,305-536-4024,other,bop_import
+miami-fci,Miami Fci,us,FL,MIAMI,15801 S.W. 137TH AVENUE,33177,305-259-2100,305-259-2160,fci,bop_import
+miami-fdc,Miami Fdc,us,FL,MIAMI,33 NE 4TH STREET,33132,305-577-0010,305-536-7368,fdc,bop_import
+milan-fci,Milan Fci,us,MI,MILAN,4004 EAST ARKONA ROAD,48160,734-439-1511,734-439-5534,fci,bop_import
+minneapolis-ccm,Minneapolis Ccm,us,MN,MINNEAPOLIS,300 SOUTH 4TH ST SUITE 1210,55415,612-332-5026,612-332-5029,other,bop_import
+montgomery-ccm,Montgomery Ccm,us,AL,MONTGOMERY,MAXWELL AFB BLDG 1209 820 WILLOW STREET,36112,334-922-6684,334-293-2357,other,bop_import
+montgomery-fpc,Montgomery Fpc,us,AL,MONTGOMERY,MAXWELL AIR FORCE BASE,36112,334-293-2100,334-293-2329,fpc,bop_import
+morgantown-fpc,Morgantown Fpc,us,WV,MORGANTOWN,446 GREENBAG ROAD ROUTE 857,26501,304-296-4416,304-284-3600,fpc,bop_import
+nashville-ccm,Nashville Ccm,us,TN,NASHVILLE,701 BROADWAY ST SUITE 124,37203,629-266-6380,615-736-5147,other,bop_import
+new-york-mcc,New York Mcc,us,NY,NEW YORK,150 PARK ROW,10007,646-836-6300,646-836-7751,mcc,bop_import
+oakdale-i-fci,Oakdale I Fci,us,LA,OAKDALE,1507 EAST WHATLEY ROAD,71463,318-335-4070,318-215-2688,fci,bop_import
+oakdale-ii-fci,Oakdale Ii Fci,us,LA,OAKDALE,2105 EAST WHATLEY ROAD,71463,318-335-4466,318-215-2185,fci,bop_import
+oklahoma-city-ftc,Oklahoma City Ftc,us,OK,OKLAHOMA CITY,7410 S. MACARTHUR BLVD,73169,405-682-4075,405-680-4043,other,bop_import
+orlando-ccm,Orlando Ccm,us,FL,WILDWOOD,6303 COUNTY ROAD 500,34785,352-254-6140,352-689-7396,other,bop_import
+otisville-fci,Otisville Fci,us,NY,OTISVILLE,TWO MILE DRIVE,10963,845-386-6700,845-386-6727,fci,bop_import
+oxford-fci,Oxford Fci,us,WI,OXFORD,COUNTY ROAD G & ELK AVENUE,53952,608-584-5511,608-584-6314,fci,bop_import
+pekin-fci,Pekin Fci,us,IL,PEKIN,2600 S. SECOND ST.,61554,309-346-8588,309-477-4670,fci,bop_import
+pensacola-fpc,Pensacola Fpc,us,FL,PENSACOLA,110 RABY AVE,32509,850-457-1911,850-458-7291,fpc,bop_import
+petersburg-fci,Petersburg Fci,us,VA,HOPEWELL,1100 RIVER ROAD,23860,804-733-7881,804-863-1510,fci,bop_import
+petersburg-med-fci,Petersburg Med Fci,us,VA,HOPEWELL,1060 RIVER ROAD,23860,804-504-7200,804-504-7204,fci,bop_import
+philadelphia-ccm,Philadelphia Ccm,us,PA,PHILADELPHIA,2ND & CHESTNUT ST - 7TH FL,19106,445-201-8783,215-521-7486,other,bop_import
+philadelphia-fdc,Philadelphia Fdc,us,PA,PHILADELPHIA,700 ARCH STREET,19106,215-521-4000,215-521-7220,fdc,bop_import
+phoenix-ccm,Phoenix Ccm,us,AZ,PHOENIX,230 N FIRST AVE SUITE 405,85003,602-333-0537,602-514-7076,other,bop_import
+phoenix-fci,Phoenix Fci,us,AZ,PHOENIX,37900 N 45TH AVE,85086,623-465-9757,623-465-5199,fci,bop_import
+pittsburgh-ccm,Pittsburgh Ccm,us,PA,PITTSBURGH,1000 LIBERTY AVENUE STE 1315,15222,412-395-7930,412-434-1301,other,bop_import
+pollock-med-fci,Pollock Med Fci,us,LA,POLLOCK,1000 AIRBASE ROAD,71467,318-765-4400,318-765-4476,fci,bop_import
+pollock-usp,Pollock Usp,us,LA,POLLOCK,1000 AIRBASE ROAD,71467,318-561-5300,318-561-5391,usp,bop_import
+raleigh-ccm,Raleigh Ccm,us,NC,BUTNER,OLD NC 75 HIGHWAY,27509,919-964-6150,919-575-2073,other,bop_import
+ray-brook-fci,Ray Brook Fci,us,NY,RAY BROOK,128 RAY BROOK ROAD,12977,518-897-4000,518-897-4216,fci,bop_import
+rochester-fmc,Rochester Fmc,us,MN,ROCHESTER,2110 EAST CENTER STREET,55904,507-287-0674,507-424-7600,fmc,bop_import
+sacramento-ccm,Sacramento Ccm,us,CA,SACRAMENTO,501 I STREET SUITE 9-400,95814,916-288-4266,916-930-2008,other,bop_import
+safford-fci,Safford Fci,us,AZ,SAFFORD,1529 WEST HIGHWAY 366,85546,928-428-6600,928-348-1331,fci,bop_import
+san-antonio-ccm,San Antonio Ccm,us,TX,SAN ANTONIO,727 EAST CESAR E. CHAVEZ BLV SUITE B-138,78206,726-224-5472,210-472-6224,other,bop_import
+san-diego-mcc,San Diego Mcc,us,CA,SAN DIEGO,808 UNION STREET,92101,619-232-4311,619-595-0390,mcc,bop_import
+sandstone-fci,Sandstone Fci,us,MN,SANDSTONE,2300 COUNTY RD 29,55072,320-245-2262,320-245-0385,fci,bop_import
+schuylkill-fci,Schuylkill Fci,us,PA,MINERSVILLE,INTERSTATE 81 & 901 W,17954,570-544-7100,570-544-7224,fci,bop_import
+seagoville-fci,Seagoville Fci,us,TX,SEAGOVILLE,2113 NORTH HWY 175,75159,972-287-2911,972-287-5466,fci,bop_import
+seatac-fdc,Seatac Fdc,us,WA,SEATTLE,2425 SOUTH 200TH STREET,98198,206-870-5700,206-870-5717,fdc,bop_import
+seattle-ccm,Seattle Ccm,us,WA,SEATTLE,2425 SOUTH 200 ST (AT FDC),98198,253-765-2769,206-870-1012,other,bop_import
+sheridan-fci,Sheridan Fci,us,OR,SHERIDAN,27072 BALLSTON ROAD,97378,503-843-4442,503-843-6645,fci,bop_import
+springfield-usmcfp,Springfield Usmcfp,us,MO,SPRINGFIELD,1900 W. SUNSHINE ST,65807,417-862-7041,417-837-1717,other,bop_import
+st-louis-ccm,St Louis Ccm,us,MO,ST LOUIS,1222 SPRUCE ST SUITE 6.101,63103,314-410-6818,314-539-2465,other,bop_import
+talladega-fci,Talladega Fci,us,AL,TALLADEGA,565 EAST RENFROE ROAD,35160,256-315-4100,256-315-4495,fci,bop_import
+tallahassee-fci,Tallahassee Fci,us,FL,TALLAHASSEE,501 CAPITAL CIRCLE NE,32301,850-878-2173,850-671-6105,fci,bop_import
+terminal-island-fci,Terminal Island Fci,us,CA,SAN PEDRO,1299 SEASIDE AVENUE,90731,310-831-8961,310-732-5325,fci,bop_import
+terre-haute-fci,Terre Haute Fci,us,IN,TERRE HAUTE,4200 BUREAU ROAD NORTH,47808,812-238-1531,812-238-3301,fci,bop_import
+terre-haute-usp,Terre Haute Usp,us,IN,TERRE HAUTE,4700 BUREAU ROAD SOUTH,47802,812-244-4400,812-244-4791,usp,bop_import
+texarkana-fci,Texarkana Fci,us,TX,TEXARKANA,4001 LEOPARD DRIVE,75501,903-838-4587,903-223-4424,fci,bop_import
+thomson-fci,Thomson Fci,us,IL,THOMSON,1100 ONE MILE ROAD,61285,815-259-1000,815-259-0186,fci,bop_import
+three-rivers-fci,Three Rivers Fci,us,TX,THREE RIVERS,US HIGHWAY 72 WEST,78071,361-786-3576,361-786-5051,fci,bop_import
+tucson-fci,Tucson Fci,us,AZ,TUCSON,8901 S. WILMOT ROAD,85756,520-574-7100,520-663-4406,fci,bop_import
+tucson-usp,Tucson Usp,us,AZ,TUCSON,9300 SOUTH WILMOT ROAD,85756,520-663-5000,520-663-5024,usp,bop_import
+victorville-med-i-fci,Victorville Med I Fci,us,CA,VICTORVILLE,13777 AIR EXPRESSWAY BLVD,92394,760-246-2400,760-246-2461,fci,bop_import
+victorville-med-ii-fci,Victorville Med Ii Fci,us,CA,VICTORVILLE,13777 AIR EXPRESSWAY BLVD,92394,760-530-5700,760-530-5706,fci,bop_import
+victorville-usp,Victorville Usp,us,CA,VICTORVILLE,13777 AIR EXPRESSWAY BLVD,92394,760-530-5000,760-530-5103,usp,bop_import
+waseca-fci,Waseca Fci,us,MN,WASECA,1000 UNIVERSITY DR SW,56093,507-835-8972,507-837-4547,fci,bop_import
+williamsburg-fci,Williamsburg Fci,us,SC,SALTERS,8301 HIGHWAY 521,29590,843-387-9400,843-387-6961,fci,bop_import
+yankton-fpc,Yankton Fpc,us,SD,YANKTON,1016 DOUGLAS AVENUE,57078,605-665-3262,605-668-1113,fpc,bop_import
+yazoo-city-low-fci,Yazoo City Low Fci,us,MS,YAZOO CITY,2225 HALEY BARBOUR PARKWAY,39194,662-751-4800,662-751-4958,fci,bop_import
+yazoo-city-low-ii-fci,Yazoo City Low Ii Fci,us,MS,YAZOO CITY,2225 HALEY BARBOUR PARKWAY,39194,662-716-1020,662-716-1036,fci,bop_import
+yazoo-city-med-fci,Yazoo City Med Fci,us,MS,YAZOO CITY,2225 HALEY BARBOUR PKWY,39194,662-716-1241,662-716-1255,fci,bop_import
