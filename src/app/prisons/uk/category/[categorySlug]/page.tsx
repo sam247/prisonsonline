@@ -8,6 +8,7 @@ import {
 } from "@/lib/programmatic/ukPrisonHubs";
 import { readMoreArticleForUkSecurityHub } from "@/lib/programmatic/articles/readMoreArticle";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getUkHubEditorialImage } from "@/lib/media/resolvers";
 
 type Props = { params: { categorySlug: string } };
 
@@ -58,6 +59,7 @@ export default function UkSecurityCategoryHubPage({ params }: Props) {
         { label: "Category", value: level },
       ]}
       readMoreLink={readMore ?? undefined}
+      heroImage={getUkHubEditorialImage("category", params.categorySlug)}
     />
   );
 }

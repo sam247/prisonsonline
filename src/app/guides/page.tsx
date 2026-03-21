@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { guides } from "@/data/guides";
 import { Card, CardContent } from "@/components/ui/card";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
+import { getGuideCoverImage } from "@/lib/media/resolvers";
 import { BookOpen, Users, Building2, Scale, Clock, Shield, FileText } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -31,19 +33,30 @@ export default function GuidesIndexPage() {
       </section>
       <div className="container py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {guides.map((guide) => (
-            <Link key={guide.slug} href={`/guides/${guide.slug}`}>
-              <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60">
-                <CardContent className="p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent mb-4">
-                    {iconMap[guide.icon] || <BookOpen className="h-6 w-6" />}
-                  </div>
-                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-2">{guide.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+          {guides.map((guide) => {
+            const cover = getGuideCoverImage(guide.slug);
+            return (
+              <Link key={guide.slug} href={`/guides/${guide.slug}`}>
+                <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 overflow-hidden">
+                  {cover && (
+                    <EditorialImageBlock
+                      image={cover}
+                      aspectClassName="aspect-[2.2/1]"
+                      sizes="(max-width: 640px) 100vw, 380px"
+                      className="rounded-t-lg rounded-b-none border-x-0 border-t-0 border-b border-border/50"
+                    />
+                  )}
+                  <CardContent className="p-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent mb-4">
+                      {iconMap[guide.icon] || <BookOpen className="h-6 w-6" />}
+                    </div>
+                    <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-2">{guide.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

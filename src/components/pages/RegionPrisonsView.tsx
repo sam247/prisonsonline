@@ -1,6 +1,7 @@
 import { PrisonListingTemplate } from "@/components/programmatic/PrisonListingTemplate";
 import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
 import { getBaseUrl } from "@/lib/site";
+import { getRegionBrowseEditorialImage } from "@/lib/media/resolvers";
 import type { Prison } from "@/types/prison";
 import type { PrisonListingCrumb } from "@/components/programmatic/PrisonListingTemplate";
 
@@ -32,6 +33,7 @@ export function RegionPrisonsView({
 
   const base = getBaseUrl();
   const regionPath = `/prisons/${countrySlug}/${regionSlug}`;
+  const heroImage = getRegionBrowseEditorialImage(countrySlug, regionSlug);
   const jsonLd = breadcrumbJsonLd(
     [
       { name: "Prisons", path: "/prisons" },
@@ -57,6 +59,7 @@ export function RegionPrisonsView({
       prisons={regionPrisons}
       stats={[{ label: "Establishments", value: regionPrisons.length }]}
       readMoreLink={readMoreLink}
+      heroImage={heroImage}
     />
     </>
   );

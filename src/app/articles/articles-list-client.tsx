@@ -7,6 +7,8 @@ import { isGeneratedArticle } from "@/types/siteArticle";
 import type { SiteArticle } from "@/types/siteArticle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
+import { getArticleCoverImage } from "@/lib/media/resolvers";
 
 function listExcerpt(article: SiteArticle): string {
   return isGeneratedArticle(article) ? article.description : article.excerpt;
@@ -93,10 +95,22 @@ export function ArticlesListClient() {
         </div>
 
         <div className="space-y-4">
-          {filtered.map((article) => (
+          {filtered.map((article) => {
+            const cover = getArticleCoverImage(article);
+            return (
             <Link key={article.slug} href={`/articles/${article.slug}`}>
-              <Card className="border-border/60 hover:shadow-md transition-all duration-200">
-                <CardContent className="p-6">
+              <Card className="border-border/60 hover:shadow-md transition-all duration-200 overflow-hidden sm:flex sm:flex-row">
+                {cover && (
+                  <div className="w-full sm:w-44 md:w-52 shrink-0 border-b sm:border-b-0 sm:border-r border-border/50 bg-muted">
+                    <EditorialImageBlock
+                      image={cover}
+                      aspectClassName="aspect-video"
+                      sizes="(max-width: 640px) 100vw, 208px"
+                      className="rounded-none border-0 sm:border-y-0 sm:border-l-0 sm:border-r border-border/50"
+                    />
+                  </div>
+                )}
+                <CardContent className="p-6 flex-1">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -123,7 +137,8 @@ export function ArticlesListClient() {
                 </CardContent>
               </Card>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

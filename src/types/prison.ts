@@ -1,3 +1,5 @@
+import type { RealFacilityImage } from "@/types/media";
+
 /**
  * App-facing prison model. UK rows are generated from HMPPS JSON; non-UK rows are legacy manual content.
  */
@@ -39,7 +41,8 @@ export interface Prison {
   history: string;
   prisonLife: string;
   visitingInfo: string;
-  image?: string;
+  /** Verified real facility photo only; omit on import rows unless sourced. */
+  facilityImage?: RealFacilityImage;
   notableInmates?: string;
   inspectionNotes?: string;
 

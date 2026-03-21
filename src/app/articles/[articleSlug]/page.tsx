@@ -15,6 +15,8 @@ import { articleJsonLd } from "@/lib/seo/articleJsonLd";
 import { getBaseUrl } from "@/lib/site";
 import { pickMoreArticles } from "@/lib/articles/pickRelatedArticles";
 import { isGeneratedArticle } from "@/types/siteArticle";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
+import { getArticleCoverImage } from "@/lib/media/resolvers";
 
 const RELATED_PRISON_CARD_CAP = 24;
 
@@ -64,6 +66,7 @@ export default function ArticleDetailPage({ params }: Props) {
   const moreArticles = pickMoreArticles(article, allArticles);
 
   const generated = isGeneratedArticle(article) ? article : null;
+  const cover = getArticleCoverImage(article);
   const relatedArticleLinks = generated
     ? generated.relatedArticleSlugs
         .map((slug) => getSiteArticle(slug))
@@ -118,6 +121,17 @@ export default function ArticleDetailPage({ params }: Props) {
           </p>
         </div>
       </section>
+
+      {cover && (
+        <div className="border-b bg-muted/30">
+          <div className="container py-8 max-w-3xl">
+            <p className="text-xs text-muted-foreground mb-3">
+              Thematic graphic — not a photograph of a named facility.
+            </p>
+            <EditorialImageBlock image={cover} aspectClassName="aspect-video" sizes="(max-width: 768px) 100vw, 42rem" />
+          </div>
+        </div>
+      )}
 
       <div className="container py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

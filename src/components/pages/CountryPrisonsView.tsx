@@ -6,6 +6,8 @@ import { PrisonCard } from "@/components/PrisonCard";
 import { StatsPanel } from "@/components/StatsPanel";
 import { ChevronRight, BookOpen } from "lucide-react";
 import { guides } from "@/data/guides";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
+import { getCountryEditorialImage } from "@/lib/media/resolvers";
 
 export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
   const countryPrisons = getPrisonsByCountry(countrySlug);
@@ -27,6 +29,7 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
   }
 
   const capacitySum = countryPrisons.reduce((sum, p) => sum + p.capacity, 0);
+  const countryBanner = countryData?.coverImage ?? getCountryEditorialImage(countrySlug);
   const stats = [
     { label: "Prisons Listed", value: countryPrisons.length || countryData?.prisonCount || 0 },
     { label: "Prison Population", value: countryData?.prisonPopulation ?? "—" },
@@ -50,6 +53,15 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
 
       <section className="bg-primary text-primary-foreground">
         <div className="container py-12">
+          {countryBanner && (
+            <div className="mb-6 max-w-3xl rounded-lg overflow-hidden border border-primary-foreground/15">
+              <EditorialImageBlock
+                image={countryBanner}
+                aspectClassName="aspect-[21/9] max-h-32 sm:max-h-40"
+                sizes="(max-width: 768px) 100vw, 48rem"
+              />
+            </div>
+          )}
           <h1 className="text-3xl font-bold mb-2">Prisons in {countryName}</h1>
           <p className="text-primary-foreground/70">
             {countryPrisons.length} facilities across {regions.length} regions

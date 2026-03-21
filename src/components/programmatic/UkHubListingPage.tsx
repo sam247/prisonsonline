@@ -3,6 +3,7 @@ import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
 import { UK_HUB_EYEBROW, UK_HUB_FOOTNOTE } from "@/lib/programmatic/hubCopy";
 import { getBaseUrl } from "@/lib/site";
 import type { Prison } from "@/types/prison";
+import type { EditorialImage } from "@/types/media";
 import type { PrisonListingCrumb } from "@/components/programmatic/PrisonListingTemplate";
 
 const defaultListingCountry = { name: "United Kingdom", path: "/prisons/uk" };
@@ -20,6 +21,7 @@ export function UkHubListingPage({
   stats,
   readMoreLink,
   listingCountryForJsonLd = defaultListingCountry,
+  heroImage,
 }: {
   canonicalPath: string;
   breadcrumbs: PrisonListingCrumb[];
@@ -35,6 +37,7 @@ export function UkHubListingPage({
   readMoreLink?: { href: string; label: string };
   /** Override middle breadcrumb segment for JSON-LD (default: UK). */
   listingCountryForJsonLd?: { name: string; path: string };
+  heroImage?: EditorialImage;
 }) {
   const base = getBaseUrl();
   const trail = [
@@ -60,6 +63,7 @@ export function UkHubListingPage({
         prisons={prisonList}
         stats={stats}
         readMoreLink={readMoreLink}
+        heroImage={heroImage}
       />
     </>
   );

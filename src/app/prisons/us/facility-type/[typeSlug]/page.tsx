@@ -7,6 +7,7 @@ import {
 import { US_FEDERAL_HUB_EYEBROW, US_FEDERAL_HUB_FOOTNOTE } from "@/lib/programmatic/hubCopy";
 import { readMoreArticleForUsFacilityTypeHub } from "@/lib/programmatic/articles/readMoreArticle";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getUsFacilityTypeHubImage } from "@/lib/media/resolvers";
 
 type Props = { params: { typeSlug: string } };
 
@@ -57,6 +58,7 @@ export default function UsFacilityTypeHubPage({ params }: Props) {
         { label: "Facility type", value: r.typeLabel },
       ]}
       readMoreLink={readMore ?? undefined}
+      heroImage={getUsFacilityTypeHubImage(params.typeSlug)}
     />
   );
 }

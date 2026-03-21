@@ -8,6 +8,7 @@ import {
 } from "@/lib/programmatic/collections";
 import { readMoreArticleForUkCollectionHub } from "@/lib/programmatic/articles/readMoreArticle";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getUkHubEditorialImage } from "@/lib/media/resolvers";
 
 type Props = { params: { collectionSlug: string } };
 
@@ -58,6 +59,7 @@ export default function UkCollectionPage({ params }: Props) {
       prisons={prisonList}
       stats={stats}
       readMoreLink={readMore ?? undefined}
+      heroImage={getUkHubEditorialImage("collection", collectionSlug)}
     />
   );
 }

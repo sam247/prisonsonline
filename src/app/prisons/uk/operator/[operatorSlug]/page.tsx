@@ -6,6 +6,7 @@ import {
 } from "@/lib/programmatic/ukPrisonHubs";
 import { readMoreArticleForUkOperatorHub } from "@/lib/programmatic/articles/readMoreArticle";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getUkHubEditorialImage } from "@/lib/media/resolvers";
 
 type Props = { params: { operatorSlug: string } };
 
@@ -54,6 +55,7 @@ export default function UkOperatorHubPage({ params }: Props) {
         { label: "Operator", value: r.operatorLabel },
       ]}
       readMoreLink={readMore ?? undefined}
+      heroImage={getUkHubEditorialImage("operator", params.operatorSlug)}
     />
   );
 }

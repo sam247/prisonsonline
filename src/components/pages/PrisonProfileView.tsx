@@ -16,6 +16,8 @@ import { usFacilityTypeHubHref, facilityTypeSlugForPrison } from "@/lib/programm
 import { slugUsFacilityTypeExplainer, slugUsStateArticle } from "@/lib/programmatic/articles/slugRules";
 import { getSiteArticle } from "@/data/articles.merge";
 import { prisonProfileWebPageJsonLd } from "@/lib/seo/prisonJsonLd";
+import { ContentImage } from "@/components/media/ContentImage";
+import { FacilityImageFallback } from "@/components/media/FacilityImageFallback";
 import { PrisonCard } from "@/components/PrisonCard";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -149,6 +151,17 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       <div className="container py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
           <div className="lg:col-span-2 space-y-10">
+            <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
+              <h2 id="facility-visual-heading" className="sr-only">
+                Establishment image
+              </h2>
+              {prison.facilityImage?.type === "real" ? (
+                <ContentImage image={prison.facilityImage} />
+              ) : (
+                <FacilityImageFallback prison={prison} />
+              )}
+            </section>
+
             <section aria-labelledby="at-a-glance-heading">
               <h2 id="at-a-glance-heading" className="text-xl font-bold mb-4">
                 At a glance

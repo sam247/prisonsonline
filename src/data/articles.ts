@@ -1,3 +1,5 @@
+import type { EditorialImage } from "@/types/media";
+
 export interface Article {
   title: string;
   slug: string;
@@ -7,6 +9,8 @@ export interface Article {
   content: string;
   relatedPrisons: string[];
   relatedGuides: string[];
+  /** Optional cover (editorial only). */
+  coverImage?: EditorialImage;
 }
 
 export const articles: Article[] = [
@@ -18,6 +22,11 @@ export const articles: Article[] = [
     date: "2025-03-10",
     relatedPrisons: ["adx-florence", "rikers-island", "angola"],
     relatedGuides: ["prison-categories-explained", "life-inside-prison"],
+    coverImage: {
+      type: "editorial",
+      src: "/images/articles/most-dangerous-prisons-world.svg",
+      alt: "Editorial graphic for an article about notable prisons — not a photograph of a specific named site.",
+    },
     content: `Some prisons around the world are known not just for housing dangerous criminals but for being dangerous places in themselves. Conditions ranging from extreme overcrowding to rampant violence make certain facilities among the most feared on earth.
 
 ## ADX Florence, United States
@@ -78,6 +87,11 @@ However, reform is often slow and politically challenging. Prison conditions rar
     date: "2025-02-28",
     relatedPrisons: ["alcatraz", "hmp-wandsworth"],
     relatedGuides: ["prison-categories-explained"],
+    coverImage: {
+      type: "editorial",
+      src: "/images/articles/famous-prison-escapes.svg",
+      alt: "Editorial graphic for historical prison escapes — not a photograph of a facility.",
+    },
     content: `Throughout history, prison escapes have captured public imagination like few other events. Some escapes involved years of meticulous planning, while others relied on audacity, luck, or a combination of both. These stories not only make for compelling reading but have also fundamentally shaped how prisons approach security.
 
 ## The Escape from Alcatraz (1962)
@@ -236,6 +250,11 @@ The evidence is clear that rehabilitation programmes, when properly designed and
     date: "2024-12-20",
     relatedPrisons: ["adx-florence", "alcatraz"],
     relatedGuides: ["prison-categories-explained"],
+    coverImage: {
+      type: "editorial",
+      src: "/images/articles/history-supermax-prisons.svg",
+      alt: "Editorial graphic for supermax history — not a photograph of a facility.",
+    },
     content: `The supermax prison represents the extreme end of the correctional spectrum — facilities designed to house the most dangerous, disruptive, or escape-prone inmates under conditions of almost total isolation. The history of these facilities reflects broader debates about security, punishment, and the limits of what society considers acceptable treatment of prisoners.
 
 ## Origins: Alcatraz and the Concept of the Escape-Proof Prison

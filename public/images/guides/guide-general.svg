@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none" aria-hidden="true">
+  <rect width="640" height="400" fill="#334155"/>
+  <g opacity="0.4" stroke="#94a3b8" stroke-width="2">
+    <rect x="100" y="80" width="440" height="240" rx="8" fill="none"/>
+    <line x1="140" y1="140" x2="500" y2="140"/>
+    <line x1="140" y1="200" x2="420" y2="200"/>
+    <line x1="140" y1="260" x2="460" y2="260"/>
+  </g>
+</svg>

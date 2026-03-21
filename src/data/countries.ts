@@ -1,3 +1,5 @@
+import type { EditorialImage } from "@/types/media";
+
 export interface Country {
   name: string;
   slug: string;
@@ -6,6 +8,8 @@ export interface Country {
   prisonPopulation: number;
   description: string;
   securitySystemDescription: string;
+  /** Optional editorial banner for country hub / cards. */
+  coverImage?: EditorialImage;
 }
 
 export const countriesData: Country[] = [

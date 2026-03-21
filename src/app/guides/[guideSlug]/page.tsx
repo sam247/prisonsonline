@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, guides } from "@/data/guides";
 import { FaqSection } from "@/components/FaqSection";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
+import { getGuideCoverImage } from "@/lib/media/resolvers";
 import { ChevronRight } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -26,6 +28,7 @@ export function generateMetadata({ params }: Props) {
 export default function GuideDetailPage({ params }: Props) {
   const guide = getGuide(params.guideSlug);
   if (!guide) notFound();
+  const cover = getGuideCoverImage(guide.slug);
 
   return (
     <div className="min-h-screen">
@@ -45,6 +48,14 @@ export default function GuideDetailPage({ params }: Props) {
           <h1 className="text-3xl font-bold">{guide.title}</h1>
         </div>
       </section>
+      {cover && (
+        <div className="border-b bg-muted/30">
+          <div className="container py-8 max-w-3xl">
+            <p className="text-xs text-muted-foreground mb-3">Thematic illustration — not a photograph of a named prison.</p>
+            <EditorialImageBlock image={cover} aspectClassName="aspect-video" sizes="(max-width: 768px) 100vw, 42rem" />
+          </div>
+        </div>
+      )}
       <div className="container py-10">
         <div className="max-w-3xl mx-auto">
           {guide.content.split("\n\n").map((para, i) => {

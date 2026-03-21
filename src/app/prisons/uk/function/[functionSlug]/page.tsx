@@ -5,6 +5,7 @@ import {
   resolveUkFunctionHub,
 } from "@/lib/programmatic/ukPrisonHubs";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getUkHubEditorialImage } from "@/lib/media/resolvers";
 
 type Props = { params: { functionSlug: string } };
 
@@ -51,6 +52,7 @@ export default function UkFunctionHubPage({ params }: Props) {
         { label: "Establishments", value: r.prisons.length },
         { label: "Function", value: r.functionLabel },
       ]}
+      heroImage={getUkHubEditorialImage("function", params.functionSlug)}
     />
   );
 }

@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { PrisonCard } from "@/components/PrisonCard";
 import { StatsPanel } from "@/components/StatsPanel";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { ChevronRight } from "lucide-react";
 import type { Prison } from "@/types/prison";
+import type { EditorialImage } from "@/types/media";
 
 export interface PrisonListingCrumb {
   label: string;
@@ -24,6 +26,7 @@ export function PrisonListingTemplate({
   prisons: prisonList,
   stats,
   readMoreLink,
+  heroImage,
 }: {
   breadcrumbs: PrisonListingCrumb[];
   title: string;
@@ -35,6 +38,8 @@ export function PrisonListingTemplate({
   stats?: { label: string; value: string | number }[];
   /** Optional link to a companion directory article (e.g. programmatic article). */
   readMoreLink?: { href: string; label: string };
+  /** Optional narrow editorial banner above the title block. */
+  heroImage?: EditorialImage;
 }) {
   const n = establishmentCountFromStats(stats);
   const countFactualLine =
@@ -65,6 +70,15 @@ export function PrisonListingTemplate({
 
       <section className="bg-primary text-primary-foreground">
         <div className="container py-12">
+          {heroImage && (
+            <div className="mb-6 max-w-3xl rounded-lg overflow-hidden border border-primary-foreground/15">
+              <EditorialImageBlock
+                image={heroImage}
+                aspectClassName="aspect-[21/9] max-h-36 sm:max-h-44"
+                sizes="(max-width: 768px) 100vw, 48rem"
+              />
+            </div>
+          )}
           {eyebrow && (
             <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60 mb-2">
               {eyebrow}

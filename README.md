@@ -63,7 +63,12 @@ prisons.legacy-international.ts (US manual)  →  src/data/prisons.ts merges UK 
 - **`getPrison(slug)`** — slug-only, **first match** (used by articles / `relatedPrisons` arrays). Works because UK and US slugs do not collide in practice.
 - **`getPrisonByCountryAndSlug(countrySlug, slug)`** — canonical for **`/prisons/[country]/[slug]`**.
 
-### 3.4 Inferred vs missing fields (UK import)
+### 3.4 Controlled imagery
+
+- **`facilityImage`** on `Prison` (`RealFacilityImage` in `src/types/media.ts`): use only for **sourced, named-facility** photography. Omit on import rows unless rights are explicit. Profiles otherwise show a factual **fallback** (no generic “fake” facility photo).
+- **Editorial** thumbnails and hub banners use `EditorialImage` plus **`src/lib/media/resolvers.ts`** (and optional `coverImage` on guides, articles, countries). **`PrisonCard`** shows an image only when `facilityImage.type === "real"`.
+
+### 3.5 Inferred vs missing fields (UK import)
 
 - **`securityLevel`** is **inferred** from HMPPS text (predominant function, cohort, operator) — not a direct MOJ category field. See mapping table in [docs/data-pipeline.md](./docs/data-pipeline.md).
 - **Capacity / opened year / coordinates** are usually **absent** in source; UI uses **0** or “Not listed” and honest copy where needed.

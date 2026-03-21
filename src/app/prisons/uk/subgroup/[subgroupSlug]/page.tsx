@@ -5,6 +5,7 @@ import {
   resolveUkSubgroupHub,
 } from "@/lib/programmatic/ukPrisonHubs";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getUkHubEditorialImage } from "@/lib/media/resolvers";
 
 type Props = { params: { subgroupSlug: string } };
 
@@ -51,6 +52,7 @@ export default function UkSubgroupHubPage({ params }: Props) {
         { label: "Establishments", value: r.prisons.length },
         { label: "Sub-group", value: r.subgroupLabel },
       ]}
+      heroImage={getUkHubEditorialImage("subgroup", params.subgroupSlug)}
     />
   );
 }

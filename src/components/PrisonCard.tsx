@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,10 +21,23 @@ function cardMetaLine(prison: Prison): string | null {
 export function PrisonCard({ prison, variant = "default" }: PrisonCardProps) {
   const meta = cardMetaLine(prison);
   const pad = variant === "compact" ? "p-4" : "p-5";
+  const real = prison.facilityImage?.type === "real" ? prison.facilityImage : undefined;
 
   return (
     <Link href={`/prisons/${prison.countrySlug}/${prison.slug}`}>
-      <Card className="group h-full transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60">
+      <Card className="group h-full transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 overflow-hidden">
+        {real && (
+          <div className="relative aspect-video w-full bg-muted border-b border-border/50">
+            <Image
+              src={real.src}
+              alt={real.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 320px"
+              unoptimized={real.src.endsWith(".svg")}
+            />
+          </div>
+        )}
         <CardContent className={pad}>
           <div className="flex items-start justify-between gap-3 mb-2">
             <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">

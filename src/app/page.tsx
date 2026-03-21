@@ -12,6 +12,8 @@ import { guides } from "@/data/guides";
 import { allArticles } from "@/data/articles.merge";
 import { isGeneratedArticle } from "@/types/siteArticle";
 import { countriesData } from "@/data/countries";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
+import { getArticleCoverImage, getGuideCoverImage, getHomeHeroEditorialImage } from "@/lib/media/resolvers";
 import {
   MapPin,
   BookOpen,
@@ -65,38 +67,49 @@ export default function HomePage() {
     <div className="min-h-screen">
       <section className="relative bg-primary text-primary-foreground">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-navy-dark opacity-90" />
-        <div className="container relative py-20 md:py-28">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Find Prison Information Worldwide</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/75 mb-8 leading-relaxed">
-              Search prisons, learn about prison systems, and understand how prisons operate around the world.
-            </p>
-            <SearchBar size="large" className="max-w-2xl mx-auto mb-3" />
-            <p className="text-sm text-primary-foreground/50 mb-8">
-              Search by prison name, country or city — <span className="italic">Try: HMP Wandsworth, Rikers Island, London</span>
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <Link href="/prisons">
-                <Button className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
-                  <MapPin className="h-4 w-4" /> Search All Prisons
-                </Button>
-              </Link>
-              <Link href="/prisons/uk">
-                <Button
-                  variant="outline"
-                  className="gap-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
-                >
-                  <Globe className="h-4 w-4" /> Browse UK Prisons
-                </Button>
-              </Link>
-              <Link href="/prisons/united-states">
-                <Button
-                  variant="outline"
-                  className="gap-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
-                >
-                  <Globe className="h-4 w-4" /> Browse US Prisons
-                </Button>
-              </Link>
+        <div className="container relative py-16 md:py-24">
+          <div className="grid gap-10 lg:gap-14 lg:grid-cols-[1fr_minmax(0,420px)] items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Find Prison Information Worldwide</h1>
+              <p className="text-lg md:text-xl text-primary-foreground/75 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Search prisons, learn about prison systems, and understand how prisons operate around the world.
+              </p>
+              <SearchBar size="large" className="max-w-2xl mx-auto lg:mx-0 mb-3" />
+              <p className="text-sm text-primary-foreground/50 mb-8 max-w-2xl mx-auto lg:mx-0">
+                Search by prison name, country or city —{" "}
+                <span className="italic">Try: HMP Wandsworth, Rikers Island, London</span>
+              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                <Link href="/prisons">
+                  <Button className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
+                    <MapPin className="h-4 w-4" /> Search All Prisons
+                  </Button>
+                </Link>
+                <Link href="/prisons/uk">
+                  <Button
+                    variant="outline"
+                    className="gap-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
+                  >
+                    <Globe className="h-4 w-4" /> Browse UK Prisons
+                  </Button>
+                </Link>
+                <Link href="/prisons/united-states">
+                  <Button
+                    variant="outline"
+                    className="gap-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
+                  >
+                    <Globe className="h-4 w-4" /> Browse US Prisons
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="max-w-md mx-auto lg:max-w-none rounded-xl overflow-hidden border border-primary-foreground/15 shadow-lg">
+              <EditorialImageBlock
+                image={getHomeHeroEditorialImage()}
+                priority
+                aspectClassName="aspect-[4/3]"
+                sizes="(max-width: 1024px) 100vw, 420px"
+              />
             </div>
           </div>
         </div>
@@ -133,21 +146,34 @@ export default function HomePage() {
           <p className="text-muted-foreground mt-1">Quick help for the most common prison-related questions</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {commonSituationGuides.map((guide) => (
-            <Link key={guide.slug} href={`/guides/${guide.slug}`}>
-              <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60">
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent shrink-0">
-                      {iconMap[guide.icon] || <BookOpen className="h-5 w-5" />}
+          {commonSituationGuides.map((guide) => {
+            const cover = getGuideCoverImage(guide.slug);
+            return (
+              <Link key={guide.slug} href={`/guides/${guide.slug}`}>
+                <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 overflow-hidden">
+                  {cover && (
+                    <EditorialImageBlock
+                      image={cover}
+                      aspectClassName="aspect-[2.4/1]"
+                      sizes="(max-width: 640px) 100vw, 360px"
+                      className="rounded-t-lg rounded-b-none border-x-0 border-t-0 border-b border-border/50"
+                    />
+                  )}
+                  <CardContent className="p-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent shrink-0">
+                        {iconMap[guide.icon] || <BookOpen className="h-5 w-5" />}
+                      </div>
+                      <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
+                        {guide.title}
+                      </h3>
                     </div>
-                    <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">{guide.title}</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+                    <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -241,21 +267,34 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {guides.slice(0, 6).map((guide) => (
-              <Link key={guide.slug} href={`/guides/${guide.slug}`}>
-                <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60">
-                  <CardContent className="p-5">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent shrink-0">
-                        {iconMap[guide.icon] || <BookOpen className="h-5 w-5" />}
+            {guides.slice(0, 6).map((guide) => {
+              const cover = getGuideCoverImage(guide.slug);
+              return (
+                <Link key={guide.slug} href={`/guides/${guide.slug}`}>
+                  <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 overflow-hidden">
+                    {cover && (
+                      <EditorialImageBlock
+                        image={cover}
+                        aspectClassName="aspect-[2.2/1]"
+                        sizes="(max-width: 640px) 100vw, 360px"
+                        className="rounded-t-lg rounded-b-none border-x-0 border-t-0 border-b border-border/50"
+                      />
+                    )}
+                    <CardContent className="p-5">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent shrink-0">
+                          {iconMap[guide.icon] || <BookOpen className="h-5 w-5" />}
+                        </div>
+                        <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
+                          {guide.title}
+                        </h3>
                       </div>
-                      <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">{guide.title}</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                      <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -271,26 +310,37 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {allArticles.slice(0, 4).map((article) => (
-            <Link key={article.slug} href={`/articles/${article.slug}`}>
-              <Card className="border-border/60 h-full hover:shadow-md transition-all duration-200">
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="secondary" className="text-xs">
-                      {article.category}
-                    </Badge>
-                    <Badge variant="outline" className="text-xs text-muted-foreground">
-                      Updated recently
-                    </Badge>
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2 leading-tight">{article.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {isGeneratedArticle(article) ? article.description : article.excerpt}
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+          {allArticles.slice(0, 4).map((article) => {
+            const cover = getArticleCoverImage(article);
+            return (
+              <Link key={article.slug} href={`/articles/${article.slug}`}>
+                <Card className="border-border/60 h-full hover:shadow-md transition-all duration-200 overflow-hidden">
+                  {cover && (
+                    <EditorialImageBlock
+                      image={cover}
+                      aspectClassName="aspect-video"
+                      sizes="(max-width: 768px) 100vw, 280px"
+                      className="rounded-t-lg rounded-b-none border-x-0 border-t-0 border-b border-border/50"
+                    />
+                  )}
+                  <CardContent className="p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Badge variant="secondary" className="text-xs">
+                        {article.category}
+                      </Badge>
+                      <Badge variant="outline" className="text-xs text-muted-foreground">
+                        Updated recently
+                      </Badge>
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2 leading-tight">{article.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {isGeneratedArticle(article) ? article.description : article.excerpt}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
