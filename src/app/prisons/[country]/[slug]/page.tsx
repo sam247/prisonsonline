@@ -5,6 +5,7 @@ import { resolveCountrySecondSegment, allCountrySecondSegmentParams } from "@/li
 import { readMoreArticleForUsStateRegion } from "@/lib/programmatic/articles/readMoreArticle";
 import { US_FEDERAL_HUB_EYEBROW, US_FEDERAL_HUB_FOOTNOTE } from "@/lib/programmatic/hubCopy";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { buildPrisonPageTitle } from "@/lib/seo/prisonTitle";
 
 type Props = { params: { country: string; slug: string } };
 
@@ -21,7 +22,7 @@ export function generateMetadata({ params }: Props) {
   if (resolved.kind === "prison") {
     const p = resolved.prison;
     return buildPageMetadata({
-      title: p.name,
+      title: buildPrisonPageTitle(p.name, p.slug),
       description: formatPrisonMetaDescription(p),
       path: `/prisons/${country}/${slug}`,
     });

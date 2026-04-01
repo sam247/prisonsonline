@@ -6,8 +6,9 @@
     "dev": "next dev",
     "data:build": "node scripts/build-institutional-data.mjs",
     "data:build:us": "node scripts/build-us-prisons.mjs",
+    "data:build:images": "node scripts/build-prison-images.mjs",
     "data:build:strict": "node scripts/build-institutional-data.mjs --strict",
-    "prebuild": "npm run data:build && npm run data:build:us",
+    "prebuild": "npm run data:build && npm run data:build:us && npm run data:build:images",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

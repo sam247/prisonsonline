@@ -8,6 +8,8 @@ export interface RealFacilityImage {
   type: "real";
   caption?: string;
   credit?: string;
+  /** Licence string (e.g. CC BY-SA 4.0) when sourced from Commons or similar. */
+  licence?: string;
 }
 
 /** Generic thematic imagery for browse/editorial surfaces only. */

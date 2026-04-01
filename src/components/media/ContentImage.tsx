@@ -50,11 +50,13 @@ export function ContentImage({
           />
         )}
       </div>
-      {(image.caption || image.credit) && (
-        <figcaption className="mt-2 text-xs text-muted-foreground leading-relaxed">
-          {image.caption && <span>{image.caption}</span>}
-          {image.caption && image.credit && <span> </span>}
-          {image.credit && <span className="text-muted-foreground/80">Credit: {image.credit}</span>}
+      {(image.caption || image.credit || image.licence) && (
+        <figcaption className="mt-2 text-xs text-muted-foreground leading-relaxed space-y-1">
+          {image.caption && <span className="block">{image.caption}</span>}
+          {image.credit && (
+            <span className="block text-muted-foreground/80">Credit: {image.credit}</span>
+          )}
+          {image.licence && <span className="block">Licence: {image.licence}</span>}
         </figcaption>
       )}
     </figure>

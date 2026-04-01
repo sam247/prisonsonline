@@ -32,6 +32,58 @@ export const guides: Guide[] = [
     ],
   },
   {
+    title: "What to Wear to a Prison Visit",
+    slug: "what-to-wear-to-a-prison-visit",
+    excerpt:
+      "Practical guidance on dress codes, footwear, and accessories so you are not turned away at the gate before a visit.",
+    icon: "Shirt",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for visitor guidance — not a photograph of a facility.",
+    },
+    content:
+      "What you wear to a prison visit can decide whether you are admitted or turned away at the gate. Although wording differs between countries and individual sites, most visitor codes share the same goals: safety, dignity, and making it harder to conceal banned items. Plain, modest clothing, closed-toe shoes, and minimal jewellery are usually the safest baseline. Avoid slogans, colours, or accessories that staff in your region have flagged as problematic, and skip anything that could hide objects in linings or deep pockets. Some sites offer lockers; others simply refuse entry if your outfit breaches the rules. Always read the establishment’s published visitor pack or booking confirmation before you travel—this article is general orientation only, not a substitute for official instructions. If you need the right phone number or region first, start from our directory and work outward to the operator’s own pages.\n\n## Common expectations\n\nHats, hoods that obscure the face, and beach-style or overly revealing outfits are widely restricted. Staff may ask you to remove outer layers for search procedures, so plan layers you can manage discreetly.\n\n## Before you travel\n\nCheck footwear, belts, and metal fixtures if you know screening is strict. Leave unnecessary valuables at home.\n\nHTML:<a href=\"/prisons\">Prison Finder</a> lists facilities so you can reach official visitor guidance for the site you plan to attend.",
+    faqs: [
+      {
+        question: "Are jeans acceptable for a prison visit?",
+        answer:
+          "Often yes, but cuts, rips, and very light colours can be refused at some sites. Choose plain, neat jeans without offensive prints and confirm the specific prison’s dress code.",
+      },
+      {
+        question: "Can I wear jewellery?",
+        answer:
+          "Small wedding rings are often allowed; large chains, hoop earrings, and watches may need to be removed or left behind. Check the visitor rules for the facility you are attending.",
+      },
+    ],
+  },
+  {
+    title: "What Can You Bring to a Prison Visit",
+    slug: "what-can-you-bring-to-prison",
+    excerpt:
+      "What typically belongs in your pocket for ID and screening, what stays in the car, and how property rules differ from visits-hall vending.",
+    icon: "Package",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for visitor belongings — not a photograph of a facility.",
+    },
+    content:
+      "Prison visits are tightly controlled, and what you can carry through the gate is narrower than everyday life. In most systems you will need valid photo identification and sometimes a second form of ID; everything else is judged against a prohibited-items list that can include phones, cameras, cash beyond small change for vending, and any item that could be passed to a prisoner without staff seeing it. Some halls sell drinks and snacks during the visit; others expect you to arrive with nothing but keys and ID in a clear bag. Never assume that because another prison allowed an item, the next one will too. Read the booking email, the visitors’ leaflet, and the official website for the establishment you are attending. If you are mapping which site you are visiting first, use our prison directory to jump from a name to the correct operator source rather than relying on outdated forum posts.\n\n## Usually allowed\n\nGovernment-issued photo ID, booking reference if you were given one, and any medication in original packaging with documentation when the prison has pre-approved it.\n\n## Usually refused\n\nMobile phones, recording devices, large bags, sharp tools, and gifts intended for the prisoner without going through property channels.\n\nHTML:Browse all establishments from the <a href=\"/prisons\">Prison Finder</a> to confirm contact numbers and visitor pages before you pack.",
+    faqs: [
+      {
+        question: "Can I bring a bag into the visits hall?",
+        answer:
+          "Many sites restrict bags to small clear pouches or ban them entirely except for essential medical items. Expect to leave larger bags in a locker or your vehicle.",
+      },
+      {
+        question: "Is cash allowed?",
+        answer:
+          "Some visits halls use coins or cards for vending; others restrict cash. Follow the facility’s instructions—bringing large amounts can cause delays or refusal.",
+      },
+    ],
+  },
+  {
     title: "What Happens When Someone Goes to Prison",
     slug: "what-happens-going-to-prison",
     excerpt: "Understanding the reception process, from court to cell allocation and the first days inside.",

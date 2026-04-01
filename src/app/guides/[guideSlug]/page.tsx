@@ -82,6 +82,15 @@ export default function GuideDetailPage({ params }: Props) {
                 </ul>
               );
             }
+            if (para.startsWith("HTML:")) {
+              return (
+                <p
+                  key={i}
+                  className="text-muted-foreground leading-relaxed mb-4 [&_a]:text-accent [&_a]:underline"
+                  dangerouslySetInnerHTML={{ __html: para.slice(5).trim() }}
+                />
+              );
+            }
             return (
               <p key={i} className="text-muted-foreground leading-relaxed mb-4">
                 {para}

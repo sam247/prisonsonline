@@ -1,0 +1,38 @@
+{
+  "hmp-ashfield": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/HMP_Ashfield%2C_Pucklechurch_-_geograph.org.uk_-_5067559.jpg",
+    "credit": "Jaggery",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Ashfield prison"
+  },
+  "hmp-bedford": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/BedfordGaol.JPG",
+    "credit": "Simonxag",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Bedford prison in Luton"
+  },
+  "hmp-belmarsh": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/HMP_Belmarsh%2C_from_carpark.jpg",
+    "credit": "Neil Clifton",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Belmarsh"
+  },
+  "hmp-wakfield": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/The_Main_Entrance_Gate%2C_Wakefield_Prison_-_geograph.org.uk_-_3545534.jpg",
+    "credit": "Bill Henderson",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Wakefield"
+  },
+  "hmp-wormwood-scrubs": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/HM_Prison_Wormwood_Scrubs_in_spring_2013_%281%29.JPG",
+    "credit": "Chmee2",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Wormwood Scrubs"
+  },
+  "hmp-yoi-bronzefield": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Entrance_to_Bronzefield_Prison.jpg",
+    "credit": "DanielMichaelPerry",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Bronzefield"
+  }
+}

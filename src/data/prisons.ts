@@ -1,4 +1,5 @@
 import type { Prison } from "@/types/prison";
+import { getPrisonImage } from "@/lib/media/prisonImages";
 import { ukPrisonsGenerated } from "./generated/ukPrisons.generated";
 import { usPrisonsGenerated } from "./generated/usPrisons.generated";
 import { legacyInternationalPrisons } from "./prisons.legacy-international";
@@ -6,7 +7,13 @@ import { legacyInternationalPrisons } from "./prisons.legacy-international";
 export type { Prison } from "@/types/prison";
 
 /** UK HMPPS import, US federal BOP import, then legacy manual international profiles. */
-export const prisons: Prison[] = [...ukPrisonsGenerated, ...usPrisonsGenerated, ...legacyInternationalPrisons];
+const basePrisons: Prison[] = [...ukPrisonsGenerated, ...usPrisonsGenerated, ...legacyInternationalPrisons];
+
+/** Merges `src/data/prisonImages.json` (from `data/prison-images.csv` + build script) when no explicit `facilityImage` on the row. */
+export const prisons: Prison[] = basePrisons.map((p) => ({
+  ...p,
+  facilityImage: p.facilityImage ?? getPrisonImage(p.slug),
+}));
 
 export const countries = Array.from(new Set(prisons.map((p) => p.country))).sort();
 

@@ -15,13 +15,24 @@ import {
 import { usFacilityTypeHubHref, facilityTypeSlugForPrison } from "@/lib/programmatic/usFederalHubs";
 import { slugUsFacilityTypeExplainer, slugUsStateArticle } from "@/lib/programmatic/articles/slugRules";
 import { getSiteArticle } from "@/data/articles.merge";
-import { prisonProfileWebPageJsonLd } from "@/lib/seo/prisonJsonLd";
+import { prisonProfileJsonLdGraph } from "@/lib/seo/prisonJsonLd";
+import {
+  buildContactBody,
+  buildContactHeading,
+  buildHowToVisitBody,
+  buildHowToVisitHeading,
+  buildLocationBody,
+  buildLocationHeading,
+  buildPrisonTypeBody,
+  buildPrisonTypeHeading,
+} from "@/lib/seo/prisonProfileCopy";
+import { getVisitingGuidesForPrison } from "@/lib/seo/prisonVisitingGuides";
 import { ContentImage } from "@/components/media/ContentImage";
 import { FacilityImageFallback } from "@/components/media/FacilityImageFallback";
 import { PrisonCard } from "@/components/PrisonCard";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, ChevronRight, BookOpen, Phone, FileText } from "lucide-react";
+import { MapPin, ChevronRight, BookOpen, FileText } from "lucide-react";
 import type { Prison } from "@/types/prison";
 
 function leadSummaryText(p: Prison): string {
@@ -65,7 +76,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
   const guidesAreGeneral = relatedGuides.length === 0;
 
   const hasCoords = prison.latitude !== 0 || prison.longitude !== 0;
-  const hasAddressBlock = Boolean(prison.phone || prison.address || prison.postcode);
+  const visitingGuides = getVisitingGuidesForPrison();
+  const prisonTypeBody = buildPrisonTypeBody(prison);
   const thematicHubs = listMatchingCollectionHubsForPrison(prison);
   const operatorHub = ukOperatorHubHref(prison);
   const securityHub = ukSecurityHubHref(prison);
@@ -81,10 +93,10 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
 
   const profilePath = `/prisons/${prison.countrySlug}/${prison.slug}`;
   const metaDesc = formatPrisonMetaDescription(prison);
-  const webPageLd = prisonProfileWebPageJsonLd({
-    name: prison.name,
-    description: metaDesc,
+  const profileJsonLd = prisonProfileJsonLdGraph({
+    prison,
     path: profilePath,
+    description: metaDesc,
   });
 
   const showHmppsCapacityNote =
@@ -96,7 +108,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
     <div className="min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
       />
 
       <div className="border-b bg-card">
@@ -151,6 +163,18 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       <div className="container py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
           <div className="lg:col-span-2 space-y-10">
+            <nav aria-label="Prison directory" className="flex flex-col gap-2 text-sm">
+              <Link
+                href={`/prisons/${prison.countrySlug}/${prison.regionSlug}`}
+                className="text-accent hover:underline w-fit"
+              >
+                Other prisons in {prison.stateOrRegion}
+              </Link>
+              <Link href={`/prisons/${prison.countrySlug}`} className="text-accent hover:underline w-fit">
+                All prisons in {prison.country}
+              </Link>
+            </nav>
+
             <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
               <h2 id="facility-visual-heading" className="sr-only">
                 Establishment image
@@ -204,6 +228,15 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </Card>
             </section>
 
+            {prisonTypeBody ? (
+              <section aria-labelledby="prison-type-heading">
+                <h2 id="prison-type-heading" className="text-xl font-bold mb-4">
+                  {buildPrisonTypeHeading(prison.name)}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">{prisonTypeBody}</p>
+              </section>
+            ) : null}
+
             <section aria-labelledby="overview-heading">
               <h2 id="overview-heading" className="text-xl font-bold mb-4">
                 Overview
@@ -236,9 +269,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
 
             <section aria-labelledby="visiting-heading">
               <h2 id="visiting-heading" className="text-xl font-bold mb-4">
-                Visiting Information
+                {buildHowToVisitHeading(prison.name)}
               </h2>
-              <p className="text-muted-foreground leading-relaxed">{prison.visitingInfo}</p>
+              <p className="text-muted-foreground leading-relaxed">{buildHowToVisitBody(prison)}</p>
             </section>
 
             {prison.inspectionNotes && (
@@ -250,53 +283,54 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             )}
 
+            <section aria-labelledby="contact-heading">
+              <h2 id="contact-heading" className="text-xl font-bold mb-4">
+                {buildContactHeading(prison.name)}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">{buildContactBody(prison)}</p>
+            </section>
+
             <section aria-labelledby="location-heading">
               <h2 id="location-heading" className="text-xl font-bold mb-4">
-                Address, contact and location
+                {buildLocationHeading(prison.name)}
               </h2>
               <div className="space-y-6">
-                {hasAddressBlock && (
-                  <div className="rounded-lg border border-border/60 bg-card p-5 text-sm">
-                    <ul className="space-y-2 text-muted-foreground">
-                      {prison.address && <li className="text-foreground">{prison.address}</li>}
-                      {prison.postcode && <li>{prison.postcode}</li>}
-                      {prison.phone && (
-                        <li className="flex items-center gap-2">
-                          <Phone className="h-3.5 w-3.5 shrink-0" aria-hidden />
-                          <span className="text-foreground">{prison.phone}</span>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                )}
-                {!hasAddressBlock && prison.dataProvenance === "hmpps_import" && (
-                  <p className="text-sm text-muted-foreground">
-                    Address and phone were not parsed for this record in the current import. Check the official prison
-                    finder or establishment page.
-                  </p>
-                )}
+                <p className="text-muted-foreground leading-relaxed">{buildLocationBody(prison)}</p>
                 {hasCoords ? (
                   <div>
                     <div className="bg-secondary/50 rounded-lg h-48 flex items-center justify-center text-muted-foreground text-sm">
                       <MapPin className="h-5 w-5 mr-2 shrink-0" aria-hidden />
                       Map preview — {prison.latitude.toFixed(4)}, {prison.longitude.toFixed(4)}
                     </div>
-                    <p className="text-sm text-muted-foreground mt-3">
-                      {prison.city}, {prison.stateOrRegion}, {prison.country}
-                    </p>
                   </div>
                 ) : (
                   <div className="bg-secondary/50 rounded-lg p-6 text-muted-foreground text-sm space-y-2">
                     <p>Coordinates are not available for this establishment in the current dataset.</p>
-                    {(prison.address || prison.postcode) && (
-                      <p className="text-foreground">
-                        {[prison.address, prison.postcode].filter(Boolean).join(", ")}
-                      </p>
-                    )}
                   </div>
                 )}
               </div>
             </section>
+
+            {visitingGuides.length > 0 ? (
+              <section aria-labelledby="visiting-guides-heading">
+                <h2 id="visiting-guides-heading" className="text-xl font-bold mb-4">
+                  Prison visiting guides
+                </h2>
+                <ul className="space-y-2">
+                  {visitingGuides.map((g) => (
+                    <li key={g.slug}>
+                      <Link
+                        href={`/guides/${g.slug}`}
+                        className="text-accent hover:underline inline-flex items-center gap-2 text-sm"
+                      >
+                        <BookOpen className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                        {g.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
 
             <section aria-labelledby="articles-heading">
               <h2 id="articles-heading" className="text-xl font-bold mb-4">
