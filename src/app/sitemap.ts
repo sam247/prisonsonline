@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getBaseUrl } from "@/lib/site";
-import { prisons } from "@/data/prisons";
+import { getPrisonByCountryAndSlug, prisons } from "@/data/prisons";
+import { getPrisonLastModifiedDate } from "@/lib/seo/prisonLastModified";
 import { countriesData } from "@/data/countries";
 import { guides } from "@/data/guides";
 import { allArticles } from "@/data/articles.merge";
@@ -47,9 +48,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const { country, slug } of allCountrySecondSegmentParams()) {
+    const prison = getPrisonByCountryAndSlug(country, slug);
     entries.push({
       url: `${base}/prisons/${country}/${slug}`,
-      lastModified: now,
+      lastModified: prison ? getPrisonLastModifiedDate(prison, now) : now,
       changeFrequency: "weekly",
       priority: 0.65,
     });

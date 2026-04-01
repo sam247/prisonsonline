@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Search, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { sendGtagEvent } from "@/lib/analytics/gtag";
 
 const navItems = [
   { label: "Prison Finder", href: "/prisons" },
@@ -35,6 +36,9 @@ export function Header() {
                   ? "bg-secondary text-foreground"
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
               }`}
+              onClick={() =>
+                sendGtagEvent("select_content", { content_type: "nav", item_id: item.href })
+              }
             >
               {item.label}
             </Link>
@@ -42,7 +46,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/prisons">
+          <Link
+            href="/prisons"
+            onClick={() =>
+              sendGtagEvent("select_content", { content_type: "nav", item_id: "/prisons_header_search" })
+            }
+          >
             <Button variant="ghost" size="icon" className="text-muted-foreground">
               <Search className="h-5 w-5" />
             </Button>
@@ -66,6 +75,9 @@ export function Header() {
                         ? "bg-secondary text-foreground"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                     }`}
+                    onClick={() =>
+                      sendGtagEvent("select_content", { content_type: "nav", item_id: item.href })
+                    }
                   >
                     {item.label}
                   </Link>

@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { PrisonCard } from "@/components/PrisonCard";
+import { TrackedPrisonCard } from "@/components/analytics/TrackedPrisonCard";
 import { SearchBar } from "@/components/SearchBar";
 import { prisons, countries, securityLevels, getCountrySlug, getRegionsByCountry } from "@/data/prisons";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -158,7 +158,7 @@ export function PrisonFinderClient() {
         {paginated.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {paginated.map((p) => (
-              <PrisonCard key={p.slug} prison={p} />
+              <TrackedPrisonCard key={p.slug} prison={p} listName="finder_results" />
             ))}
           </div>
         ) : (

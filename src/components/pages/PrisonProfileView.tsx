@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getPrisonsByRegion } from "@/data/prisons";
 import {
   getRelatedArticlesForPrison,
   getRelatedGuidesForPrison,
@@ -21,6 +22,8 @@ import {
   buildContactHeading,
   buildHowToVisitBody,
   buildHowToVisitHeading,
+  buildPlanningVisitBody,
+  buildPlanningVisitHeading,
   buildLocationBody,
   buildLocationHeading,
   buildPrisonTypeBody,
@@ -92,6 +95,16 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       : undefined;
 
   const profilePath = `/prisons/${prison.countrySlug}/${prison.slug}`;
+  const relatedSlugs = new Set(related.map((r) => r.slug));
+  const sameRegionAll = getPrisonsByRegion(prison.countrySlug, prison.regionSlug)
+    .filter((p) => p.slug !== prison.slug)
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const preferredPeers = sameRegionAll.filter((p) => !relatedSlugs.has(p.slug));
+  let regionLinkPrisons = preferredPeers.slice(0, 6);
+  if (regionLinkPrisons.length < 3) {
+    regionLinkPrisons = sameRegionAll.slice(0, 6);
+  }
+
   const metaDesc = formatPrisonMetaDescription(prison);
   const profileJsonLd = prisonProfileJsonLdGraph({
     prison,
@@ -272,6 +285,13 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 {buildHowToVisitHeading(prison.name)}
               </h2>
               <p className="text-muted-foreground leading-relaxed">{buildHowToVisitBody(prison)}</p>
+            </section>
+
+            <section aria-labelledby="planning-visit-heading">
+              <h2 id="planning-visit-heading" className="text-xl font-bold mb-4">
+                {buildPlanningVisitHeading(prison.name, prison.slug)}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">{buildPlanningVisitBody(prison)}</p>
             </section>
 
             {prison.inspectionNotes && (
@@ -504,6 +524,36 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             </Card>
           </aside>
         </div>
+
+        {regionLinkPrisons.length > 0 && (
+          <section
+            className="mt-16 border-t border-border/60 pt-12"
+            aria-labelledby="other-prisons-region-heading"
+          >
+            <h2 id="other-prisons-region-heading" className="text-xl font-bold mb-4">
+              Other prisons in {prison.stateOrRegion}
+            </h2>
+            <ul className="space-y-3 text-sm max-w-2xl">
+              {regionLinkPrisons.map((p) => {
+                const href = `/prisons/${p.countrySlug}/${p.slug}`;
+                return (
+                  <li key={p.slug} className="space-y-1 text-muted-foreground">
+                    <div>
+                      <Link href={href} className="text-accent hover:underline">
+                        {p.name} prison details
+                      </Link>
+                    </div>
+                    <div>
+                      <Link href={href} className="text-accent hover:underline">
+                        {p.name} visiting information
+                      </Link>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
 
         {related.length > 0 && (
           <section className="mt-16 border-t border-border/60 pt-12" aria-labelledby="related-prisons-heading">

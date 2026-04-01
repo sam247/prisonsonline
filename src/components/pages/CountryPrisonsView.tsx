@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { getPrisonsByCountry, getRegionsByCountry } from "@/data/prisons";
+import { getRecentlyUpdatedPrisons } from "@/lib/seo/prisonLastModified";
 import { getCountry } from "@/data/countries";
 import { listUsFacilityTypeHubSlugs } from "@/lib/programmatic/usFederalHubs";
-import { PrisonCard } from "@/components/PrisonCard";
+import { TrackedPrisonCard } from "@/components/analytics/TrackedPrisonCard";
 import { StatsPanel } from "@/components/StatsPanel";
 import { ChevronRight, BookOpen } from "lucide-react";
 import { guides } from "@/data/guides";
@@ -11,6 +12,7 @@ import { getCountryEditorialImage } from "@/lib/media/resolvers";
 
 export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
   const countryPrisons = getPrisonsByCountry(countrySlug);
+  const recentlyUpdated = getRecentlyUpdatedPrisons(countryPrisons, 8);
   const regions = getRegionsByCountry(countrySlug);
   const countryData = getCountry(countrySlug);
   const countryName = countryPrisons[0]?.country || countryData?.name || countrySlug;
@@ -119,10 +121,21 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
           </div>
         )}
 
+        {recentlyUpdated.length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-xl font-bold mb-4">Recently updated prisons</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {recentlyUpdated.map((p) => (
+                <TrackedPrisonCard key={p.slug} prison={p} listName="country_recent" />
+              ))}
+            </div>
+          </section>
+        )}
+
         {countryPrisons.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {countryPrisons.map((p) => (
-              <PrisonCard key={p.slug} prison={p} />
+              <TrackedPrisonCard key={p.slug} prison={p} listName="country_all" />
             ))}
           </div>
         ) : (

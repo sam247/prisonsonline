@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { sendGtagEvent } from "@/lib/analytics/gtag";
 
 interface SearchBarProps {
   placeholder?: string;
@@ -23,10 +24,15 @@ export function SearchBar({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const trimmed = query.trim();
+    if (!trimmed) return;
+
+    sendGtagEvent("search", { search_term: trimmed });
+
     if (onSearch) {
-      onSearch(query);
-    } else if (query.trim()) {
-      router.push(`/prisons?q=${encodeURIComponent(query.trim())}`);
+      onSearch(trimmed);
+    } else {
+      router.push(`/prisons?q=${encodeURIComponent(trimmed)}`);
     }
   };
 

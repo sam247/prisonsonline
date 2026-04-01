@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import { TrackedInlineLink } from "@/components/analytics/TrackedInlineLink";
 
 const footerLinks = [
   {
@@ -50,12 +50,13 @@ export function Footer() {
               <ul className="space-y-2">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <Link
+                    <TrackedInlineLink
                       href={link.href}
+                      itemId={link.href}
                       className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
-                    </Link>
+                    </TrackedInlineLink>
                   </li>
                 ))}
               </ul>

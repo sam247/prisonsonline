@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
+import { TrackedContentLink } from "@/components/analytics/TrackedContentLink";
+import { TrackedCtaLink } from "@/components/analytics/TrackedCtaLink";
+import { TrackedInlineLink } from "@/components/analytics/TrackedInlineLink";
+import { TrackedPrisonCard } from "@/components/analytics/TrackedPrisonCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/SearchBar";
-import { PrisonCard } from "@/components/PrisonCard";
 import { CountryCard } from "@/components/CountryCard";
 import { StatsPanel } from "@/components/StatsPanel";
 import { prisons, getPrisonsByCountry } from "@/data/prisons";
@@ -14,6 +16,7 @@ import { isGeneratedArticle } from "@/types/siteArticle";
 import { countriesData } from "@/data/countries";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { getArticleCoverImage, getGuideCoverImage, getHomeHeroEditorialImage } from "@/lib/media/resolvers";
+import { getRecentlyUpdatedPrisons } from "@/lib/seo/prisonLastModified";
 import {
   MapPin,
   BookOpen,
@@ -35,6 +38,7 @@ import {
 const featuredSlugs = ["hmp-bullingdon", "san-quentin", "adx-florence", "rikers-island"];
 const featuredPrisons = prisons.filter((p) => featuredSlugs.includes(p.slug));
 const ukPrisons = prisons.filter((p) => p.countrySlug === "uk").slice(0, 5);
+const recentlyUpdatedHome = getRecentlyUpdatedPrisons(prisons, 10);
 
 const iconMap: Record<string, ReactNode> = {
   Users: <Users className="h-6 w-6" />,
@@ -80,27 +84,27 @@ export default function HomePage() {
                 <span className="italic">Try: HMP Wandsworth, Rikers Island, London</span>
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                <Link href="/prisons">
+                <TrackedCtaLink href="/prisons" promotionName="home_hero_search_all" className="inline-flex">
                   <Button className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
                     <MapPin className="h-4 w-4" /> Search All Prisons
                   </Button>
-                </Link>
-                <Link href="/prisons/uk">
+                </TrackedCtaLink>
+                <TrackedCtaLink href="/prisons/uk" promotionName="home_hero_browse_uk" className="inline-flex">
                   <Button
                     variant="outline"
                     className="gap-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
                   >
                     <Globe className="h-4 w-4" /> Browse UK Prisons
                   </Button>
-                </Link>
-                <Link href="/prisons/united-states">
+                </TrackedCtaLink>
+                <TrackedCtaLink href="/prisons/united-states" promotionName="home_hero_browse_us" className="inline-flex">
                   <Button
                     variant="outline"
                     className="gap-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
                   >
                     <Globe className="h-4 w-4" /> Browse US Prisons
                   </Button>
-                </Link>
+                </TrackedCtaLink>
               </div>
             </div>
             <div className="max-w-md mx-auto lg:max-w-none rounded-xl overflow-hidden border border-primary-foreground/15 shadow-lg">
@@ -149,7 +153,13 @@ export default function HomePage() {
           {commonSituationGuides.map((guide) => {
             const cover = getGuideCoverImage(guide.slug);
             return (
-              <Link key={guide.slug} href={`/guides/${guide.slug}`}>
+              <TrackedContentLink
+                key={guide.slug}
+                href={`/guides/${guide.slug}`}
+                contentType="guide"
+                itemId={guide.slug}
+                className="block"
+              >
                 <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 overflow-hidden">
                   {cover && (
                     <EditorialImageBlock
@@ -171,7 +181,7 @@ export default function HomePage() {
                     <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
                   </CardContent>
                 </Card>
-              </Link>
+              </TrackedContentLink>
             );
           })}
         </div>
@@ -184,13 +194,17 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-foreground">Featured Prisons</h2>
               <p className="text-muted-foreground mt-1">Notable prisons from around the world</p>
             </div>
-            <Link href="/prisons" className="text-sm font-medium text-accent hover:underline flex items-center gap-1">
+            <TrackedInlineLink
+              href="/prisons"
+              itemId="/prisons_view_all_featured"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+            >
               View all <ArrowRight className="h-4 w-4" />
-            </Link>
+            </TrackedInlineLink>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {featuredPrisons.map((prison) => (
-              <PrisonCard key={prison.slug} prison={prison} />
+              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_featured" />
             ))}
           </div>
         </div>
@@ -202,14 +216,41 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-foreground">Popular UK Prisons</h2>
             <p className="text-muted-foreground mt-1">Frequently searched prisons in the United Kingdom</p>
           </div>
-          <Link href="/prisons/uk" className="text-sm font-medium text-accent hover:underline flex items-center gap-1">
+          <TrackedInlineLink
+            href="/prisons/uk"
+            itemId="/prisons/uk_all"
+            className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+          >
             All UK prisons <ArrowRight className="h-4 w-4" />
-          </Link>
+          </TrackedInlineLink>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {ukPrisons.map((prison) => (
-            <PrisonCard key={prison.slug} prison={prison} />
+            <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_uk_popular" />
           ))}
+        </div>
+      </section>
+
+      <section className="bg-secondary/30">
+        <div className="container py-16">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">Recently updated prisons</h2>
+              <p className="text-muted-foreground mt-1">Profiles with the freshest source metadata in this build</p>
+            </div>
+            <TrackedInlineLink
+              href="/prisons"
+              itemId="/prisons_recent_footer"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+            >
+              Browse all <ArrowRight className="h-4 w-4" />
+            </TrackedInlineLink>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {recentlyUpdatedHome.map((prison) => (
+              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_recently_updated" />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -220,9 +261,13 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-foreground">Browse by Country</h2>
               <p className="text-muted-foreground mt-1">Explore prison systems around the world</p>
             </div>
-            <Link href="/countries" className="text-sm font-medium text-accent hover:underline flex items-center gap-1">
+            <TrackedInlineLink
+              href="/countries"
+              itemId="/countries_all"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+            >
               All countries <ArrowRight className="h-4 w-4" />
-            </Link>
+            </TrackedInlineLink>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {countriesData.slice(0, 4).map((country) => (
@@ -247,11 +292,11 @@ export default function HomePage() {
           <p className="text-muted-foreground mb-6">
             Explore prisons geographically using our interactive map. Search by location to find facilities near any address in the UK or US.
           </p>
-          <Link href="/prison-map">
+          <TrackedCtaLink href="/prison-map" promotionName="home_prison_map" className="inline-flex">
             <Button className="gap-2">
               <MapPin className="h-4 w-4" /> Open Prison Map
             </Button>
-          </Link>
+          </TrackedCtaLink>
         </div>
       </section>
 
@@ -262,15 +307,25 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-foreground">Prison Information Guides</h2>
               <p className="text-muted-foreground mt-1">Helpful resources for understanding the prison system</p>
             </div>
-            <Link href="/guides" className="text-sm font-medium text-accent hover:underline flex items-center gap-1">
+            <TrackedInlineLink
+              href="/guides"
+              itemId="/guides_index"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+            >
               All guides <ArrowRight className="h-4 w-4" />
-            </Link>
+            </TrackedInlineLink>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {guides.slice(0, 6).map((guide) => {
               const cover = getGuideCoverImage(guide.slug);
               return (
-                <Link key={guide.slug} href={`/guides/${guide.slug}`}>
+                <TrackedContentLink
+                  key={guide.slug}
+                  href={`/guides/${guide.slug}`}
+                  contentType="guide"
+                  itemId={guide.slug}
+                  className="block"
+                >
                   <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 overflow-hidden">
                     {cover && (
                       <EditorialImageBlock
@@ -292,7 +347,7 @@ export default function HomePage() {
                       <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
                     </CardContent>
                   </Card>
-                </Link>
+                </TrackedContentLink>
               );
             })}
           </div>
@@ -305,15 +360,25 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-foreground">Latest updates and insights</h2>
             <p className="text-muted-foreground mt-1">Analysis and insights on prison systems</p>
           </div>
-          <Link href="/articles" className="text-sm font-medium text-accent hover:underline flex items-center gap-1">
+          <TrackedInlineLink
+            href="/articles"
+            itemId="/articles_index"
+            className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+          >
             All articles <ArrowRight className="h-4 w-4" />
-          </Link>
+          </TrackedInlineLink>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {allArticles.slice(0, 4).map((article) => {
             const cover = getArticleCoverImage(article);
             return (
-              <Link key={article.slug} href={`/articles/${article.slug}`}>
+              <TrackedContentLink
+                key={article.slug}
+                href={`/articles/${article.slug}`}
+                contentType="article"
+                itemId={article.slug}
+                className="block"
+              >
                 <Card className="border-border/60 h-full hover:shadow-md transition-all duration-200 overflow-hidden">
                   {cover && (
                     <EditorialImageBlock
@@ -338,7 +403,7 @@ export default function HomePage() {
                     </p>
                   </CardContent>
                 </Card>
-              </Link>
+              </TrackedContentLink>
             );
           })}
         </div>
@@ -351,7 +416,7 @@ export default function HomePage() {
             <p className="text-muted-foreground mt-1">Resources to help you prepare</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            <Link href="/visit-planning/hotels">
+            <TrackedCtaLink href="/visit-planning/hotels" promotionName="home_visit_hotels" className="block">
               <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 text-center">
                 <CardContent className="p-5">
                   <div className="flex justify-center mb-3">
@@ -363,8 +428,8 @@ export default function HomePage() {
                   <p className="text-sm text-muted-foreground">Accommodation close to the prison you&apos;re visiting</p>
                 </CardContent>
               </Card>
-            </Link>
-            <Link href="/visit-planning/journey">
+            </TrackedCtaLink>
+            <TrackedCtaLink href="/visit-planning/journey" promotionName="home_visit_journey" className="block">
               <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 text-center">
                 <CardContent className="p-5">
                   <div className="flex justify-center mb-3">
@@ -376,8 +441,12 @@ export default function HomePage() {
                   <p className="text-sm text-muted-foreground">Directions and transport options for your visit</p>
                 </CardContent>
               </Card>
-            </Link>
-            <Link href="/guides/how-prison-visits-work">
+            </TrackedCtaLink>
+            <TrackedCtaLink
+              href="/guides/how-prison-visits-work"
+              promotionName="home_visit_visits_guide"
+              className="block"
+            >
               <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 text-center">
                 <CardContent className="p-5">
                   <div className="flex justify-center mb-3">
@@ -389,7 +458,7 @@ export default function HomePage() {
                   <p className="text-sm text-muted-foreground">Our complete guide to visiting someone in prison</p>
                 </CardContent>
               </Card>
-            </Link>
+            </TrackedCtaLink>
           </div>
         </div>
       </section>
@@ -400,11 +469,11 @@ export default function HomePage() {
           <p className="text-primary-foreground/70 mb-8 max-w-2xl mx-auto">
             Browse prisons by country, region, or security level. Our comprehensive database provides factual, up-to-date information.
           </p>
-          <Link href="/prisons">
+          <TrackedCtaLink href="/prisons" promotionName="home_footer_start_exploring" className="inline-flex">
             <Button size="lg" variant="secondary" className="gap-2">
               <MapPin className="h-4 w-4" /> Start Exploring
             </Button>
-          </Link>
+          </TrackedCtaLink>
         </div>
       </section>
     </div>

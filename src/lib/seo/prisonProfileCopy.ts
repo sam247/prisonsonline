@@ -103,6 +103,41 @@ export function buildHowToVisitBody(p: Prison): string {
   return `${limited} ${append}`;
 }
 
+const PLANNING_HEADINGS = [
+  (name: string) => `Planning a prison visit to ${name}`,
+  (name: string) => `Planning your visit to ${name}`,
+  (name: string) => `Before you visit ${name}`,
+];
+
+/** Copy only — does not reuse visitingInfo or VISIT_APPEND_VARIANTS. */
+const PLANNING_BODIES: string[][] = [
+  [
+    "Most jurisdictions require you to book visits through an official channel, and slots can fill quickly.",
+    "Read the establishment’s published visitor rules well ahead of time—ID, dress codes, and what you may bring are not standardised across sites.",
+    "Expect real differences between prisons: what applies at one location may not apply at another, even within the same country.",
+  ],
+  [
+    "Arranging a visit usually starts with an official booking process rather than turning up unannounced.",
+    "Check the latest visitor guidance from the operating authority before you travel, because policies are updated and can catch families out.",
+    "Rules and practical steps vary between institutions; treat each establishment as its own case when you plan.",
+  ],
+  [
+    "If you are organising a visit, confirm how bookings work for this jurisdiction and allow time for approvals where they exist.",
+    "Visitor requirements change; verifying rules shortly before the date reduces the risk of being turned away at the gate.",
+    "One prison’s procedures are not a template for every other site—always confirm details for the specific place you are visiting.",
+  ],
+];
+
+export function buildPlanningVisitHeading(name: string, slug: string): string {
+  const idx = slugVariantIndex(slug, PLANNING_HEADINGS.length);
+  return PLANNING_HEADINGS[idx](name);
+}
+
+export function buildPlanningVisitBody(p: Prison): string {
+  const idx = slugVariantIndex(p.slug, PLANNING_BODIES.length);
+  return PLANNING_BODIES[idx].join(" ");
+}
+
 export function buildContactHeading(name: string): string {
   return `Contact details for ${name}`;
 }
