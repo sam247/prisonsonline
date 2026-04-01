@@ -4,6 +4,8 @@ import { MapPin, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Prison } from "@/types/prison";
+import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
+import { FacilityImageFallback } from "@/components/media/FacilityImageFallback";
 
 interface PrisonCardProps {
   prison: Prison;
@@ -21,20 +23,25 @@ function cardMetaLine(prison: Prison): string | null {
 export function PrisonCardContent({ prison, variant = "default" }: PrisonCardProps) {
   const meta = cardMetaLine(prison);
   const pad = variant === "compact" ? "p-4" : "p-5";
-  const real = prison.facilityImage?.type === "real" ? prison.facilityImage : undefined;
+  const visual = resolvePrisonFacilityVisual(prison);
 
   return (
     <Card className="group h-full transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 overflow-hidden">
-      {real && (
+      {(visual.kind === "real" || visual.kind === "editorial") && (
         <div className="relative aspect-video w-full bg-muted border-b border-border/50">
           <Image
-            src={real.src}
-            alt={real.alt}
+            src={visual.image.src}
+            alt={visual.image.alt}
             fill
             className="object-cover"
             sizes="(max-width: 640px) 100vw, 320px"
-            unoptimized={real.src.endsWith(".svg")}
+            unoptimized={visual.image.src.endsWith(".svg")}
           />
+        </div>
+      )}
+      {visual.kind === "fallback" && (
+        <div className="border-b border-border/50 bg-muted/30">
+          <FacilityImageFallback prison={prison} variant="card" />
         </div>
       )}
       <CardContent className={pad}>

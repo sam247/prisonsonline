@@ -10,6 +10,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { CountryCard } from "@/components/CountryCard";
 import { StatsPanel } from "@/components/StatsPanel";
 import { prisons, getPrisonsByCountry } from "@/data/prisons";
+import { pickPrisonsDiverseRegions } from "@/lib/queries/homePrisonPicks";
 import { guides } from "@/data/guides";
 import { allArticles } from "@/data/articles.merge";
 import { isGeneratedArticle } from "@/types/siteArticle";
@@ -35,9 +36,21 @@ import {
   HeartHandshake,
 } from "lucide-react";
 
-const featuredSlugs = ["hmp-bullingdon", "san-quentin", "adx-florence", "rikers-island"];
-const featuredPrisons = prisons.filter((p) => featuredSlugs.includes(p.slug));
-const ukPrisons = prisons.filter((p) => p.countrySlug === "uk").slice(0, 5);
+const ukPool = prisons.filter((p) => p.countrySlug === "uk");
+const usPool = prisons.filter((p) => p.countrySlug === "us");
+const ukDirectoryHome = pickPrisonsDiverseRegions(ukPool, 6);
+const usDirectoryHome = pickPrisonsDiverseRegions(usPool, 6);
+const popularSlugs = [
+  "hmp-wandsworth",
+  "hmp-manchester",
+  "florence-admax-usp",
+  "brooklyn-mdc",
+  "atlanta-fci",
+  "alderson-fpc",
+];
+const popularPrisons = popularSlugs
+  .map((slug) => prisons.find((p) => p.slug === slug))
+  .filter((p): p is (typeof prisons)[number] => Boolean(p));
 const recentlyUpdatedHome = getRecentlyUpdatedPrisons(prisons, 10);
 
 const iconMap: Record<string, ReactNode> = {
@@ -81,7 +94,7 @@ export default function HomePage() {
               <SearchBar size="large" className="max-w-2xl mx-auto lg:mx-0 mb-3" />
               <p className="text-sm text-primary-foreground/50 mb-8 max-w-2xl mx-auto lg:mx-0">
                 Search by prison name, country or city —{" "}
-                <span className="italic">Try: HMP Wandsworth, Rikers Island, London</span>
+                <span className="italic">Try: HMP Wandsworth, Florence ADX, London</span>
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
                 <TrackedCtaLink href="/prisons" promotionName="home_hero_search_all" className="inline-flex">
@@ -115,6 +128,167 @@ export default function HomePage() {
                 sizes="(max-width: 1024px) 100vw, 420px"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b bg-card">
+        <div className="container py-14">
+          <h2 className="text-2xl font-bold text-foreground mb-2">Find prison information by need</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Jump to guides that match what you are trying to do next.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <TrackedContentLink
+              href="/guides/how-prison-visits-work"
+              contentType="guide"
+              itemId="home_need_visiting"
+              className="block"
+            >
+              <Card className="h-full border-border/60 hover:shadow-md transition-shadow">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-1">Visiting a prisoner</h3>
+                  <p className="text-sm text-muted-foreground">How visits are arranged and what to prepare for.</p>
+                </CardContent>
+              </Card>
+            </TrackedContentLink>
+            <TrackedContentLink
+              href="/guides/life-inside-prison"
+              contentType="guide"
+              itemId="home_need_money"
+              className="block"
+            >
+              <Card className="h-full border-border/60 hover:shadow-md transition-shadow">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-1">Sending money to prisoners</h3>
+                  <p className="text-sm text-muted-foreground">
+                    General context for now; a dedicated money-and-accounts guide is planned.
+                  </p>
+                  {/* TODO: point href at dedicated prisoner money guide when published */}
+                </CardContent>
+              </Card>
+            </TrackedContentLink>
+            <TrackedContentLink
+              href="/guides/how-prison-visits-work"
+              contentType="guide"
+              itemId="home_need_booking"
+              className="block"
+            >
+              <Card className="h-full border-border/60 hover:shadow-md transition-shadow">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-1">Booking a prison visit</h3>
+                  <p className="text-sm text-muted-foreground">Booking channels, timing, and common requirements.</p>
+                </CardContent>
+              </Card>
+            </TrackedContentLink>
+            <TrackedContentLink
+              href="/guides/rights-of-prisoners"
+              contentType="guide"
+              itemId="home_need_rights"
+              className="block"
+            >
+              <Card className="h-full border-border/60 hover:shadow-md transition-shadow">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-1">Prison rules and rights</h3>
+                  <p className="text-sm text-muted-foreground">Rights, rules, and where to verify current policy.</p>
+                </CardContent>
+              </Card>
+            </TrackedContentLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b bg-muted/30">
+        <div className="container py-16">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">UK Prisons Directory</h2>
+              <p className="text-muted-foreground mt-1">A sample of establishments across UK regions</p>
+            </div>
+            <TrackedInlineLink
+              href="/prisons/uk"
+              itemId="/prisons/uk_directory"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+            >
+              All UK prisons <ArrowRight className="h-4 w-4" />
+            </TrackedInlineLink>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {ukDirectoryHome.map((prison) => (
+              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_uk_directory" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b bg-card">
+        <div className="container py-16">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">US Federal and State Prisons</h2>
+              <p className="text-muted-foreground mt-1 max-w-2xl">
+                Browse federal facilities and selected major US prisons. This directory is largely BOP-sourced; state
+                and local coverage is not comprehensive.
+              </p>
+            </div>
+            <TrackedInlineLink
+              href="/prisons/us"
+              itemId="/prisons/us_directory"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1 shrink-0"
+            >
+              Federal US directory <ArrowRight className="h-4 w-4" />
+            </TrackedInlineLink>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {usDirectoryHome.map((prison) => (
+              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_us_directory" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b bg-muted/30">
+        <div className="container py-16">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">Popular Prisons</h2>
+              <p className="text-muted-foreground mt-1">Frequently searched UK and US establishments</p>
+            </div>
+            <TrackedInlineLink
+              href="/prisons"
+              itemId="/prisons_view_popular"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+            >
+              View all <ArrowRight className="h-4 w-4" />
+            </TrackedInlineLink>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {popularPrisons.map((prison) => (
+              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_popular" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b bg-card">
+        <div className="container py-16">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">Recently updated prisons</h2>
+              <p className="text-muted-foreground mt-1">Profiles with the freshest source metadata in this build</p>
+            </div>
+            <TrackedInlineLink
+              href="/prisons"
+              itemId="/prisons_recent_footer"
+              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
+            >
+              Browse all <ArrowRight className="h-4 w-4" />
+            </TrackedInlineLink>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {recentlyUpdatedHome.map((prison) => (
+              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_recently_updated" />
+            ))}
           </div>
         </div>
       </section>
@@ -175,7 +349,7 @@ export default function HomePage() {
                         {iconMap[guide.icon] || <BookOpen className="h-5 w-5" />}
                       </div>
                       <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
-                        {guide.title}
+                        {guide.title} (UK)
                       </h3>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{guide.excerpt}</p>
@@ -184,73 +358,6 @@ export default function HomePage() {
               </TrackedContentLink>
             );
           })}
-        </div>
-      </section>
-
-      <section className="bg-secondary/30">
-        <div className="container py-16">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground">Featured Prisons</h2>
-              <p className="text-muted-foreground mt-1">Notable prisons from around the world</p>
-            </div>
-            <TrackedInlineLink
-              href="/prisons"
-              itemId="/prisons_view_all_featured"
-              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
-            >
-              View all <ArrowRight className="h-4 w-4" />
-            </TrackedInlineLink>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {featuredPrisons.map((prison) => (
-              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_featured" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="container py-16">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h2 className="text-2xl font-bold text-foreground">Popular UK Prisons</h2>
-            <p className="text-muted-foreground mt-1">Frequently searched prisons in the United Kingdom</p>
-          </div>
-          <TrackedInlineLink
-            href="/prisons/uk"
-            itemId="/prisons/uk_all"
-            className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
-          >
-            All UK prisons <ArrowRight className="h-4 w-4" />
-          </TrackedInlineLink>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {ukPrisons.map((prison) => (
-            <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_uk_popular" />
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-secondary/30">
-        <div className="container py-16">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground">Recently updated prisons</h2>
-              <p className="text-muted-foreground mt-1">Profiles with the freshest source metadata in this build</p>
-            </div>
-            <TrackedInlineLink
-              href="/prisons"
-              itemId="/prisons_recent_footer"
-              className="text-sm font-medium text-accent hover:underline flex items-center gap-1"
-            >
-              Browse all <ArrowRight className="h-4 w-4" />
-            </TrackedInlineLink>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {recentlyUpdatedHome.map((prison) => (
-              <TrackedPrisonCard key={prison.slug} prison={prison} listName="home_recently_updated" />
-            ))}
-          </div>
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import type { Prison } from "@/types/prison";
+import prisonImages from "@/data/prisonImages.json";
 
 const SOURCE_DATE_KEYS = [
   "updatedAt",
@@ -25,14 +26,28 @@ function parseRawDate(value: unknown): Date | null {
   return null;
 }
 
+type PrisonImageRow = { updatedAt?: string };
+
+let buildFallbackSingleton: Date | null = null;
+
+/** One timestamp per Node process (stable for a given `pnpm build` run). */
+export function getPrisonLastModBuildFallback(): Date {
+  if (!buildFallbackSingleton) buildFallbackSingleton = new Date();
+  return buildFallbackSingleton;
+}
+
 export function getPrisonLastModifiedDate(prison: Prison, fallback: Date): Date {
   const raw = prison.sourceRaw;
-  if (!raw || typeof raw !== "object") return fallback;
-
-  for (const key of SOURCE_DATE_KEYS) {
-    const d = parseRawDate(raw[key]);
-    if (d) return d;
+  if (raw && typeof raw === "object") {
+    for (const key of SOURCE_DATE_KEYS) {
+      const d = parseRawDate(raw[key]);
+      if (d) return d;
+    }
   }
+
+  const imgRow = (prisonImages as Record<string, PrisonImageRow>)[prison.slug];
+  const imgDate = parseRawDate(imgRow?.updatedAt);
+  if (imgDate) return imgDate;
 
   return fallback;
 }

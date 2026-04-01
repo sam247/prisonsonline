@@ -30,7 +30,11 @@ import {
   buildPrisonTypeHeading,
 } from "@/lib/seo/prisonProfileCopy";
 import { getVisitingGuidesForPrison } from "@/lib/seo/prisonVisitingGuides";
+import { isPrisonInIntentRollout } from "@/lib/seo/intentRollout";
+import { intentHref } from "@/lib/seo/prisonIntentCopy";
+import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
 import { ContentImage } from "@/components/media/ContentImage";
+import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { FacilityImageFallback } from "@/components/media/FacilityImageFallback";
 import { PrisonCard } from "@/components/PrisonCard";
 import { Badge } from "@/components/ui/badge";
@@ -116,6 +120,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
     prison.dataProvenance === "hmpps_import" && prison.capacity === 0 && prison.openedYear === 0;
   const showBopImportNote =
     prison.dataProvenance === "bop_import" && prison.capacity === 0 && prison.openedYear === 0;
+  const facilityVisual = resolvePrisonFacilityVisual(prison);
 
   return (
     <div className="min-h-screen">
@@ -188,12 +193,48 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </Link>
             </nav>
 
+            {isPrisonInIntentRollout(prison) ? (
+              <section aria-labelledby="prison-information-heading" className="scroll-mt-4">
+                <h2 id="prison-information-heading" className="text-xl font-bold mb-3">
+                  Prison information
+                </h2>
+                <ul className="space-y-2 text-sm text-accent">
+                  <li>
+                    <Link href={intentHref(prison.countrySlug, prison.slug, "visiting-times")} className="hover:underline">
+                      Visiting times for {prison.name}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={intentHref(prison.countrySlug, prison.slug, "contact-details")} className="hover:underline">
+                      Contact details for {prison.name}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={intentHref(prison.countrySlug, prison.slug, "booking-a-visit")} className="hover:underline">
+                      How to book a visit to {prison.name}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={intentHref(prison.countrySlug, prison.slug, "what-to-expect")} className="hover:underline">
+                      What to expect at {prison.name}
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+            ) : null}
+
             <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
               <h2 id="facility-visual-heading" className="sr-only">
                 Establishment image
               </h2>
-              {prison.facilityImage?.type === "real" ? (
-                <ContentImage image={prison.facilityImage} />
+              {facilityVisual.kind === "real" ? (
+                <ContentImage image={facilityVisual.image} />
+              ) : facilityVisual.kind === "editorial" ? (
+                <EditorialImageBlock
+                  image={facilityVisual.image}
+                  aspectClassName="aspect-video"
+                  sizes="(max-width: 1024px) 100vw, 48rem"
+                />
               ) : (
                 <FacilityImageFallback prison={prison} />
               )}
@@ -292,6 +333,13 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 {buildPlanningVisitHeading(prison.name, prison.slug)}
               </h2>
               <p className="text-muted-foreground leading-relaxed">{buildPlanningVisitBody(prison)}</p>
+              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                For a step-by-step overview, read{" "}
+                <Link href="/guides/how-prison-visits-work" className="text-accent hover:underline">
+                  how prison visits work
+                </Link>{" "}
+                — then confirm every rule with the operator for this establishment.
+              </p>
             </section>
 
             {prison.inspectionNotes && (
