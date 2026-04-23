@@ -30,8 +30,8 @@ import {
   buildPrisonTypeHeading,
 } from "@/lib/seo/prisonProfileCopy";
 import { getVisitingGuidesForPrison } from "@/lib/seo/prisonVisitingGuides";
-import { isPrisonInIntentRollout } from "@/lib/seo/intentRollout";
-import { intentHref } from "@/lib/seo/prisonIntentCopy";
+import { intentsForPrison, isPrisonInIntentRollout } from "@/lib/seo/intentRollout";
+import { intentHref, intentTopicLabel } from "@/lib/seo/prisonIntentCopy";
 import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
 import { ContentImage } from "@/components/media/ContentImage";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
@@ -39,6 +39,8 @@ import { FacilityImageFallback } from "@/components/media/FacilityImageFallback"
 import { PrisonCard } from "@/components/PrisonCard";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { AdSenseUnit } from "@/components/ads/AdSenseUnit";
+import { slotForTemplate } from "@/lib/ads/layoutPolicy";
 import { MapPin, ChevronRight, BookOpen, FileText } from "lucide-react";
 import type { Prison } from "@/types/prison";
 
@@ -97,6 +99,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
     prison.countrySlug === "us"
       ? getSiteArticle(slugUsFacilityTypeExplainer(facilityTypeSlugForPrison(prison)))
       : undefined;
+  const availableIntents = intentsForPrison(prison);
 
   const profilePath = `/prisons/${prison.countrySlug}/${prison.slug}`;
   const relatedSlugs = new Set(related.map((r) => r.slug));
@@ -199,26 +202,13 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                   Prison information
                 </h2>
                 <ul className="space-y-2 text-sm text-accent">
-                  <li>
-                    <Link href={intentHref(prison.countrySlug, prison.slug, "visiting-times")} className="hover:underline">
-                      Visiting times for {prison.name}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={intentHref(prison.countrySlug, prison.slug, "contact-details")} className="hover:underline">
-                      Contact details for {prison.name}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={intentHref(prison.countrySlug, prison.slug, "booking-a-visit")} className="hover:underline">
-                      How to book a visit to {prison.name}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={intentHref(prison.countrySlug, prison.slug, "what-to-expect")} className="hover:underline">
-                      What to expect at {prison.name}
-                    </Link>
-                  </li>
+                  {availableIntents.map((intent) => (
+                    <li key={intent}>
+                      <Link href={intentHref(prison.countrySlug, prison.slug, intent)} className="hover:underline">
+                        {intentTopicLabel(intent)} for {prison.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </section>
             ) : null}
@@ -422,6 +412,44 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 <p className="text-sm text-muted-foreground">No articles reference this prison yet.</p>
               )}
             </section>
+
+            {slotForTemplate("entity", 0) ? (
+              <section aria-label="Sponsored" className="pt-2">
+                <div className="rounded-md border border-border/50 p-3 bg-muted/20">
+                  <p className="text-[11px] text-muted-foreground mb-2">Sponsored</p>
+                  <AdSenseUnit slot={slotForTemplate("entity", 0)!} style={{ minHeight: 280 }} />
+                </div>
+              </section>
+            ) : null}
+
+            <section aria-labelledby="journey-heading" className="border-t border-border/60 pt-8">
+              <h2 id="journey-heading" className="text-xl font-bold mb-4">
+                Next steps from this listing
+              </h2>
+              <ul className="space-y-2 text-sm">
+                {availableIntents.slice(0, 4).map((intent) => (
+                  <li key={intent}>
+                    <Link href={intentHref(prison.countrySlug, prison.slug, intent)} className="text-accent hover:underline">
+                      {intentTopicLabel(intent)} for {prison.name}
+                    </Link>
+                  </li>
+                ))}
+                {guideLinks.slice(0, 2).map((guide) => (
+                  <li key={guide.slug}>
+                    <Link href={`/guides/${guide.slug}`} className="text-accent hover:underline">
+                      Guide: {guide.title}
+                    </Link>
+                  </li>
+                ))}
+                {prison.countrySlug === "uk" ? (
+                  <li>
+                    <Link href="/probation" className="text-accent hover:underline">
+                      Browse UK probation centres
+                    </Link>
+                  </li>
+                ) : null}
+              </ul>
+            </section>
           </div>
 
           <aside className="space-y-6 lg:pt-1">
@@ -620,6 +648,15 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             </div>
           </section>
         )}
+
+        {slotForTemplate("entity", 1) ? (
+          <section className="mt-12" aria-label="Sponsored">
+            <div className="rounded-md border border-border/50 p-3 bg-muted/20">
+              <p className="text-[11px] text-muted-foreground mb-2">Sponsored</p>
+              <AdSenseUnit slot={slotForTemplate("entity", 1)!} style={{ minHeight: 250 }} />
+            </div>
+          </section>
+        ) : null}
       </div>
     </div>
   );

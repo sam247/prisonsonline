@@ -2,6 +2,7 @@ import { articles } from "@/data/articles";
 import { buildGeneratedArticles, assertNoSlugCollisions } from "@/lib/programmatic/articles/buildGeneratedArticles";
 import { buildUsGeneratedArticles } from "@/lib/programmatic/articles/buildUsGeneratedArticles";
 import type { GeneratedArticle, ManualSiteArticle, SiteArticle } from "@/types/siteArticle";
+import { prunedGeneratedArticleSlugs } from "@/data/generated/articlePrune.generated";
 
 const manualSiteArticles: ManualSiteArticle[] = articles.map((a) => ({
   ...a,
@@ -20,14 +21,16 @@ function assertGeneratedArticlesUnique(all: GeneratedArticle[]): void {
 }
 
 const generatedArticlesRaw: GeneratedArticle[] = [...ukGenerated, ...usGenerated];
-assertGeneratedArticlesUnique(generatedArticlesRaw);
+const prunedSet = new Set(prunedGeneratedArticleSlugs);
+const generatedArticlesAfterPrune = generatedArticlesRaw.filter((a) => !prunedSet.has(a.slug));
+assertGeneratedArticlesUnique(generatedArticlesAfterPrune);
 assertNoSlugCollisions(
   articles.map((a) => a.slug),
-  generatedArticlesRaw,
+  generatedArticlesAfterPrune,
 );
 
 /** All programmatically generated articles (derived from prison datasets). */
-export const generatedArticles: GeneratedArticle[] = generatedArticlesRaw;
+export const generatedArticles: GeneratedArticle[] = generatedArticlesAfterPrune;
 
 /** Manual editorial articles plus generated directory articles, in stable order (manual first). */
 export const allArticles: SiteArticle[] = [...manualSiteArticles, ...generatedArticles];

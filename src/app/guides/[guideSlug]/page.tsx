@@ -6,6 +6,8 @@ import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { getGuideCoverImage } from "@/lib/media/resolvers";
 import { ChevronRight } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { AdSenseUnit } from "@/components/ads/AdSenseUnit";
+import { slotForTemplate } from "@/lib/ads/layoutPolicy";
 
 type Props = { params: { guideSlug: string } };
 
@@ -97,6 +99,14 @@ export default function GuideDetailPage({ params }: Props) {
               </p>
             );
           })}
+          {slotForTemplate("guide", 0) ? (
+            <section className="mt-8 mb-6" aria-label="Sponsored">
+              <div className="rounded-md border border-border/50 p-3 bg-muted/20">
+                <p className="text-[11px] text-muted-foreground mb-2">Sponsored</p>
+                <AdSenseUnit slot={slotForTemplate("guide", 0)!} style={{ minHeight: 250 }} />
+              </div>
+            </section>
+          ) : null}
           <FaqSection faqs={guide.faqs} />
         </div>
       </div>

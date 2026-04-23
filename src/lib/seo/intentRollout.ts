@@ -1,5 +1,6 @@
 import { prisons } from "@/data/prisons";
 import type { Prison } from "@/types/prison";
+import { isInTopEntityCohort } from "@/lib/seo/entityCohort";
 
 /** Fixed allow-list: route segment must match exactly (unknown segments → notFound). */
 export const PRISON_INTENT_SLUGS = [
@@ -7,6 +8,10 @@ export const PRISON_INTENT_SLUGS = [
   "contact-details",
   "booking-a-visit",
   "what-to-expect",
+  "sending-money",
+  "phone-calls",
+  "email-a-prisoner",
+  "legal-visits",
 ] as const;
 
 export type PrisonIntentSlug = (typeof PRISON_INTENT_SLUGS)[number];
@@ -26,6 +31,20 @@ export const US_INTENT_ROLLOUT_SLUGS = [
 
 const US_ROLLOUT_SET = new Set<string>(US_INTENT_ROLLOUT_SLUGS);
 
+const BASE_INTENTS: PrisonIntentSlug[] = [
+  "visiting-times",
+  "contact-details",
+  "booking-a-visit",
+  "what-to-expect",
+];
+
+const EXPANDED_INTENTS: PrisonIntentSlug[] = [
+  "sending-money",
+  "phone-calls",
+  "email-a-prisoner",
+  "legal-visits",
+];
+
 export function isPrisonIntentSlug(value: string): value is PrisonIntentSlug {
   return (PRISON_INTENT_SLUGS as readonly string[]).includes(value);
 }
@@ -43,10 +62,18 @@ export function prisonsEligibleForIntentPages(): Prison[] {
   );
 }
 
+export function intentsForPrison(prison: Prison): PrisonIntentSlug[] {
+  if (!isPrisonInIntentRollout(prison)) return [];
+  if (isInTopEntityCohort(prison.countrySlug, prison.slug)) {
+    return [...BASE_INTENTS, ...EXPANDED_INTENTS];
+  }
+  return BASE_INTENTS;
+}
+
 export function intentGenerateStaticParams(): { country: string; slug: string; intent: string }[] {
   const list = prisonsEligibleForIntentPages();
   return list.flatMap((p) =>
-    PRISON_INTENT_SLUGS.map((intent) => ({
+    intentsForPrison(p).map((intent) => ({
       country: p.countrySlug,
       slug: p.slug,
       intent,

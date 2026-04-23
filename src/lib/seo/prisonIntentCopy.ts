@@ -12,6 +12,14 @@ export function buildIntentPageTitle(prison: Prison, intent: PrisonIntentSlug): 
       return `How to book a visit — ${prison.name}`;
     case "what-to-expect":
       return `What to expect when visiting — ${prison.name}`;
+    case "sending-money":
+      return `How to send money and funds — ${prison.name}`;
+    case "phone-calls":
+      return `Phone calls and approved numbers — ${prison.name}`;
+    case "email-a-prisoner":
+      return `Email routes and digital messaging — ${prison.name}`;
+    case "legal-visits":
+      return `Legal visits and professional access — ${prison.name}`;
   }
 }
 
@@ -34,6 +42,23 @@ export function buildIntentMetaDescription(prison: Prison, intent: PrisonIntentS
       return `${base} Booking rules, approvals, and visitor lists differ by jurisdiction and site.`.slice(0, 160);
     case "what-to-expect":
       return `${base} Visitor expectations (ID, searches, conduct) vary; verify before you travel.`.slice(0, 160);
+    case "sending-money":
+      return `${base} Funding routes and payment policies differ; check current operator channels before sending.`.slice(0, 160);
+    case "phone-calls":
+      return `${base} Call access, approved numbers, and call windows vary by establishment and sentence status.`.slice(
+        0,
+        160,
+      );
+    case "email-a-prisoner":
+      return `${base} Digital messaging availability differs by jurisdiction and provider; verify before relying on it.`.slice(
+        0,
+        160,
+      );
+    case "legal-visits":
+      return `${base} Legal visit booking and confidentiality procedures differ by prison and legal status.`.slice(
+        0,
+        160,
+      );
   }
 }
 
@@ -44,6 +69,10 @@ export function siblingIntentsFor(intent: PrisonIntentSlug): PrisonIntentSlug[] 
     "booking-a-visit": ["visiting-times", "what-to-expect"],
     "contact-details": ["visiting-times", "what-to-expect"],
     "what-to-expect": ["booking-a-visit", "visiting-times"],
+    "sending-money": ["contact-details", "phone-calls"],
+    "phone-calls": ["contact-details", "email-a-prisoner"],
+    "email-a-prisoner": ["contact-details", "phone-calls"],
+    "legal-visits": ["booking-a-visit", "contact-details"],
   };
   return map[intent];
 }
@@ -85,6 +114,14 @@ export function intentTopicLabel(intent: PrisonIntentSlug): string {
       return "Booking a visit";
     case "what-to-expect":
       return "What to expect";
+    case "sending-money":
+      return "Sending money";
+    case "phone-calls":
+      return "Phone calls";
+    case "email-a-prisoner":
+      return "Email a prisoner";
+    case "legal-visits":
+      return "Legal visits";
   }
 }
 
@@ -123,6 +160,26 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
     `Visitor centres sometimes run separately from the main gate; follow signage and staff instructions. Photography and phones are usually restricted.`,
     `Children may need guardians present and extra identification. If a visit cannot proceed, staff should explain the reason and what to do next under local rules.`,
   ];
+  const midMoney = [
+    `Money transfer options differ between jurisdictions and providers. Some establishments use card-based systems, while others permit approved bank routes or operator portals.`,
+    `Payment processing and account posting times can vary. If funds are urgent for essentials, check published cut-off times and any restrictions tied to status or sanctions.`,
+    `Never send cash by unapproved routes. Use official methods only, and keep transaction references in case tracing is needed.`,
+  ];
+  const midCalls = [
+    `Telephone access is usually controlled by approved numbers and account balances. People in custody may have restricted call windows based on wing routines and status.`,
+    `Calls are commonly monitored and recorded except where legal privilege applies. Remind family members not to discuss sensitive legal matters on standard lines.`,
+    `If a number is blocked or changed, the update process may take time. Confirm identity and relationship requirements before requesting amendments.`,
+  ];
+  const midEmail = [
+    `Some systems provide secure email-style messaging, while others rely only on post and phone. Availability can differ even within the same country or agency.`,
+    `Message delivery is often screened and may not be immediate. Avoid sending urgent legal or medical requests through channels that do not guarantee rapid handling.`,
+    `Attachment rules are strict. Use plain text where possible and confirm what formats are accepted before you send anything important.`,
+  ];
+  const midLegal = [
+    `Legal visits and professional appointments usually follow separate booking routes from social visits, with additional checks for representation and confidentiality.`,
+    `Bring professional identification and case references when required. Many establishments require advance notice and may limit last-minute access windows.`,
+    `For time-critical hearings, confirm escalation routes with the operator and maintain a written record of requests and responses.`,
+  ];
 
   let mid: string[];
   switch (intent) {
@@ -137,6 +194,18 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
       break;
     case "what-to-expect":
       mid = midExpect;
+      break;
+    case "sending-money":
+      mid = midMoney;
+      break;
+    case "phone-calls":
+      mid = midCalls;
+      break;
+    case "email-a-prisoner":
+      mid = midEmail;
+      break;
+    case "legal-visits":
+      mid = midLegal;
       break;
   }
 
@@ -160,6 +229,10 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
 }
 
 export function guideSlugsForIntent(intent: PrisonIntentSlug): string[] {
+  if (intent === "sending-money") return ["rights-of-prisoners", "how-prison-sentences-work"];
+  if (intent === "phone-calls") return ["how-prison-visits-work", "rights-of-prisoners"];
+  if (intent === "email-a-prisoner") return ["how-prison-visits-work", "life-inside-prison"];
+  if (intent === "legal-visits") return ["rights-of-prisoners", "how-prison-sentences-work"];
   if (intent === "contact-details") return ["rights-of-prisoners", "life-inside-prison"];
   if (intent === "what-to-expect") return ["how-prison-visits-work", "rights-of-prisoners"];
   return ["how-prison-visits-work", "rights-of-prisoners"];

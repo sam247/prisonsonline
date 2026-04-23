@@ -15,6 +15,7 @@ This README summarises **what is implemented**, **constraints**, **nuances**, an
 | Raw data rules, merge, security mapping | [docs/data-pipeline.md](./docs/data-pipeline.md) |
 | Article ↔ prison slug conventions | [docs/guides-articles-linking.md](./docs/guides-articles-linking.md) |
 | Dataset-backed (programmatic) articles | [docs/programmatic-articles.md](./docs/programmatic-articles.md) |
+| Growth controls (top cohort + prune) | [docs/growth-operations.md](./docs/growth-operations.md) |
 | Regenerating UK/probation/HMCTS TS from JSON | `npm run data:build` → `scripts/build-institutional-data.mjs` |
 | Regenerating US federal prisons TS | `npm run data:build:us` → `scripts/build-us-prisons.mjs` (`us_prisons_clean_bundle/us_prisons_clean.json`) |
 | Public URL inventory | §4 Routes below + `src/app/sitemap.ts` |
@@ -173,6 +174,8 @@ cp .env.example .env.local   # set NEXT_PUBLIC_SITE_URL for production
 npm run dev
 npm run data:build            # regenerate src/data/generated/* from HMPPS JSON
 npm run data:build:us         # regenerate usPrisons.generated.ts from BOP clean JSON
+npm run data:build:growth-cohort  # build top-entity cohort from data/growth CSV exports
+npm run data:build:article-prune  # build generated-article prune list from growth CSV
 npm run data:build:strict     # fail on duplicate prison slugs / strict errors
 npm run build                 # runs data:build + data:build:us then next build
 npm run start

@@ -7,6 +7,7 @@ export function GET() {
   const urls = [
     `${base}/sitemaps/prisons.xml`,
     `${base}/sitemaps/prison-intent.xml`,
+    `${base}/sitemaps/probation.xml`,
     `${base}/sitemaps/regions.xml`,
     `${base}/sitemaps/guides.xml`,
     `${base}/sitemaps/categories.xml`,

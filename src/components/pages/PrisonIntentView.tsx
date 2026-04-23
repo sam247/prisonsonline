@@ -12,6 +12,8 @@ import {
   siblingIntentsFor,
 } from "@/lib/seo/prisonIntentCopy";
 import { guides } from "@/data/guides";
+import { AdSenseUnit } from "@/components/ads/AdSenseUnit";
+import { slotForTemplate } from "@/lib/ads/layoutPolicy";
 
 export function PrisonIntentView({
   prison,
@@ -77,6 +79,15 @@ export function PrisonIntentView({
           ))}
         </div>
 
+        {slotForTemplate("intent", 0) ? (
+          <section className="mt-8" aria-label="Sponsored">
+            <div className="rounded-md border border-border/50 p-3 bg-muted/20">
+              <p className="text-[11px] text-muted-foreground mb-2">Sponsored</p>
+              <AdSenseUnit slot={slotForTemplate("intent", 0)!} style={{ minHeight: 250 }} />
+            </div>
+          </section>
+        ) : null}
+
         <section aria-labelledby="intent-related-heading" className="mt-10 pt-8 border-t border-border/60">
           <h2 id="intent-related-heading" className="text-lg font-semibold text-foreground mb-4">
             Related on this site
@@ -110,6 +121,33 @@ export function PrisonIntentView({
                 </Link>
               </li>
             ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="intent-next-steps-heading" className="mt-8 pt-6 border-t border-border/60">
+          <h2 id="intent-next-steps-heading" className="text-lg font-semibold text-foreground mb-3">
+            Next step journey
+          </h2>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href={`/prisons/${prison.countrySlug}/${prison.slug}`} className="text-accent hover:underline">
+                Return to full profile
+              </Link>
+            </li>
+            {guideLinks.slice(0, 2).map((g) => (
+              <li key={`${g.slug}-next`}>
+                <Link href={`/guides/${g.slug}`} className="text-accent hover:underline">
+                  Read guide: {g.title}
+                </Link>
+              </li>
+            ))}
+            {prison.countrySlug === "uk" ? (
+              <li>
+                <Link href="/probation" className="text-accent hover:underline">
+                  Find related probation services
+                </Link>
+              </li>
+            ) : null}
           </ul>
         </section>
       </article>
