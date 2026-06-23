@@ -7,6 +7,8 @@ const guideSlugs = [
   "life-inside-prison",
   "prison-categories-explained",
   "rights-of-prisoners",
+  "can-you-get-haircuts-in-prison",
+  "can-you-send-pictures-in-prison-letters",
 ];
 
 const articleSlugs = [

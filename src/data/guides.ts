@@ -84,6 +84,42 @@ export const guides: Guide[] = [
     ],
   },
   {
+    title: "Can You Get Haircuts in Prison?",
+    slug: "can-you-get-haircuts-in-prison",
+    excerpt:
+      "General guidance on prison haircuts, barbering routines, hygiene rules, and why access varies between establishments.",
+    icon: "FileText",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for prison grooming guidance - not a photograph of a facility.",
+    },
+    content:
+      "Yes, people in prison can usually get haircuts, but the arrangement depends on the prison, the regime, staffing, and the prisoner's status. In many prisons, haircuts are offered through an internal barbering system rather than an outside salon. That may mean a trained prisoner barber, a supervised workshop, or a scheduled wing-based service rather than a choice of appointment times. Access can be slower during restricted regimes, staff shortages, or when movement around the prison is reduced. This guide is general orientation only: prisons set their own practical routines, so always treat local rules and current staff instructions as the final word.\n\n## How prison haircuts usually work\n\nMost prisons manage haircuts as part of day-to-day regime activity. Some have a dedicated barbershop area; others run haircut sessions on residential wings. In many systems, prisoners book through wing staff, unit orderlies, or a routine list rather than walking in when they want. Waiting times vary. A busy local prison or reception site may operate very differently from a training prison or open prison.\n\n## Who cuts prisoners' hair\n\nHaircuts are often carried out by other prisoners who have been trained and approved to work as prison barbers. Staff supervision, hygiene checks, and tool-control rules are usually stricter than in the community. Clippers, scissors, and other sharp equipment are controlled items, so sessions can be delayed or limited if staffing levels or security procedures change.\n\n## Limits and practical rules\n\nA prisoner is unlikely to have the same choice, frequency, or styling options they would expect outside prison. Rules can affect beard trimming, hair dye, specialist products, and the use of personal grooming items kept in cells. Medical needs, religious practice, and cultural requirements may also affect how prisons handle hair and facial-hair requests, but those decisions still sit within local policy and security rules.\n\n## Why access varies so much\n\nThe most important point is that there is no single universal haircut rule that applies in exactly the same way everywhere. Regime restrictions, lockdowns, staff shortages, first-night status, segregation, healthcare needs, and incentive or privilege issues can all affect access. If you are asking on behalf of someone in custody, the safest route is to contact the prison directly or check whether the prison's own guidance mentions grooming arrangements.\n\nHTML:Use the <a href=\"/prisons\">Prison Finder</a> to locate the prison first, then use the prison profile or official operator contact details to confirm the current regime.",
+    faqs: [
+      {
+        question: "Do prisoners have to pay for haircuts?",
+        answer:
+          "That depends on the prison system and local arrangement. Some prisons provide basic haircuts through the regime, while others may charge a small amount through prison accounts or canteen-style systems.",
+      },
+      {
+        question: "Can prisoners choose any hairstyle they want?",
+        answer:
+          "Usually not. Style choices can be limited by local rules, available equipment, hygiene controls, and staff decisions about what is practical or acceptable in custody.",
+      },
+      {
+        question: "Can prisoners keep their beard or shave their head?",
+        answer:
+          "Often yes, but local rules still apply. Religious practice, healthcare needs, and security considerations can all affect what is allowed and how grooming requests are handled.",
+      },
+      {
+        question: "How often can a prisoner get a haircut?",
+        answer:
+          "There is no fixed universal timetable. Frequency varies by prison, staffing, lockdown conditions, and demand from other prisoners on the wing or unit.",
+      },
+    ],
+  },
+  {
     title: "What Happens When Someone Goes to Prison",
     slug: "what-happens-going-to-prison",
     excerpt: "Understanding the reception process, from court to cell allocation and the first days inside.",
@@ -171,6 +207,42 @@ export const guides: Guide[] = [
       { question: "Are prisoners entitled to healthcare?", answer: "Yes, prisoners are entitled to the same standard of healthcare as the general population. In England and Wales, prison healthcare is commissioned by NHS England and includes GP, dental, mental health, and specialist services." },
       { question: "Can prisoners make complaints?", answer: "Yes, all prisons have a formal complaints system. Unresolved complaints can be escalated to the Prisons and Probation Ombudsman. Independent Monitoring Boards also provide oversight." },
       { question: "Do prisoners have the right to education?", answer: "Yes, prisoners have the right to access education. Most prisons offer a range of educational opportunities from basic literacy and numeracy to vocational qualifications and degree-level courses." },
+    ],
+  },
+  {
+    title: "Can You Send Pictures in Prison Letters?",
+    slug: "can-you-send-pictures-in-prison-letters",
+    excerpt:
+      "General guidance on sending photographs in prison mail, common restrictions, and why every prison's mailroom rules should be checked first.",
+    icon: "Package",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for prison mail guidance - not a photograph of a facility.",
+    },
+    content:
+      "Sometimes yes, but whether you can send pictures in prison letters depends on the prison, the mail provider, and the rules that apply to the person receiving them. Some prisons allow printed photographs in ordinary post; others restrict the number, size, paper type, or subject matter. Certain establishments prefer approved digital messaging systems instead of loose photographs in envelopes. Because mail is searched and rules change, the safest assumption is that pictures may be allowed only under specific conditions rather than automatically. This guide gives general orientation only and does not replace the prison's own mail policy.\n\n## Why prisons restrict pictures\n\nPhotographs can raise security, safeguarding, and decency issues. A prison may refuse images if they contain nudity, coded content, gang references, hidden layers, inappropriate messages, or anything staff believe could disrupt order or place someone at risk. Rules may also limit laminated prints, Polaroids, or thick photo paper if those formats are harder to search or store safely.\n\n## Common limits to expect\n\nEven where photos are allowed, prisons often limit how many can be sent at one time and how large they can be. Some sites require standard printed photos only. Others route all mail through a scanning service, which means the prisoner receives a scanned copy rather than the original print. If the prison uses digital messaging or a photo-upload provider, staff may direct families to that service instead of ordinary post.\n\n## Check the prison's mail route first\n\nThe most important step is to confirm the prisoner's correct postal or digital mail route before you send anything. Mail rules can differ by prison, by security category, and sometimes by the prisoner's status or location within the prison. If you send items to the wrong address or in the wrong format, the pictures may be rejected, delayed, or destroyed under local policy.\n\n## A safer way to approach it\n\nIf you want to send family pictures, children's drawings, or sentimental images, start by checking the prison's official contact guidance and mail rules. Look for information about photo limits, banned content, digital messaging providers, and whether original prints are returned. If nothing is published, contact the prison before posting. That is safer than relying on old forum advice or another prison's rules.\n\nHTML:Find the prison first through the <a href=\"/prisons\">Prison Finder</a>, then check the establishment's official mail or contact instructions before sending photographs.",
+    faqs: [
+      {
+        question: "Can I send printed photographs to someone in prison?",
+        answer:
+          "Often yes, but only if the prison allows them and the photos meet local rules on size, quantity, content, and paper type. Always check the prison's own guidance first.",
+      },
+      {
+        question: "Are Polaroids or instant photos allowed?",
+        answer:
+          "Often no, or only rarely. Some prisons restrict Polaroids and thicker photo materials because they are harder to search and may not fit the prison's mailroom rules.",
+      },
+      {
+        question: "Will the prisoner receive the original photo?",
+        answer:
+          "Not always. Some prison mail systems scan incoming post and provide a copied or digital version instead of the original print.",
+      },
+      {
+        question: "Can a prison reject family pictures?",
+        answer:
+          "Yes. A prison can reject photographs that breach decency, safety, gang-related, or mailroom-format rules, even when the sender did not intend any problem.",
+      },
     ],
   },
 ];
