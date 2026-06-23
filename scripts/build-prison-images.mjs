@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Reads data/prison-images.csv (exported from Google Sheet), resolves Wikimedia Commons
- * file pages to direct image URLs via the Commons API, writes src/data/prisonImages.json
+ * file pages to direct image URLs via the Commons API, or accepts direct upload URLs,
+ * then writes src/data/prisonImages.json
  *
  * Run: node scripts/build-prison-images.mjs
  */
@@ -27,16 +28,22 @@ function normalizeSlug(raw) {
   return s;
 }
 
-/** @param {string} url */
-function fileTitleFromCommonsUrl(url) {
+/** @param {string} rawUrl */
+function resolveWikimediaSource(rawUrl) {
   try {
-    const u = new URL(url.trim());
-    if (!u.hostname.includes("wikimedia.org")) return null;
+    const u = new URL(rawUrl.trim());
+    if (!u.hostname.includes("wikimedia.org")) return { fileTitle: null, directUrl: null };
+    if (u.hostname === "upload.wikimedia.org") {
+      return { fileTitle: null, directUrl: u.toString() };
+    }
     const seg = u.pathname.replace(/^\/wiki\//, "");
-    if (!seg.startsWith("File:")) return null;
-    return decodeURIComponent(seg.replace(/_/g, " "));
+    if (!seg.startsWith("File:")) return { fileTitle: null, directUrl: null };
+    return {
+      fileTitle: decodeURIComponent(seg.replace(/_/g, " ")),
+      directUrl: null,
+    };
   } catch {
-    return null;
+    return { fileTitle: null, directUrl: null };
   }
 }
 
@@ -129,21 +136,22 @@ async function main() {
 
   const licenceCol = idx.licence >= 0 ? idx.licence : idx.license;
 
-  /** @type {{ slug: string, fileTitle: string, credit: string, licence: string, alt: string }[]} */
+  /** @type {{ slug: string, fileTitle: string | null, directUrl: string | null, credit: string, licence: string, alt: string }[]} */
   const rows = [];
   for (let r = 1; r < lines.length; r++) {
     const line = parseCsvLine(lines[r]);
     const slugRaw = line[idx.slug]?.trim();
     const url = line[idx.wikimedia_page_url]?.trim();
     const slug = normalizeSlug(slugRaw);
-    const fileTitle = fileTitleFromCommonsUrl(url);
-    if (!slug || !fileTitle) {
-      console.warn(`Skipping row ${r + 1}: missing slug or invalid wikimedia_page_url`);
+    const { fileTitle, directUrl } = resolveWikimediaSource(url);
+    if (!slug || (!fileTitle && !directUrl)) {
+      console.warn(`Skipping row ${r + 1}: missing slug or unsupported wikimedia_page_url`);
       continue;
     }
     rows.push({
       slug,
       fileTitle,
+      directUrl,
       credit: idx.credit >= 0 ? (line[idx.credit] || "").trim() : "",
       licence: licenceCol >= 0 ? (line[licenceCol] || "").trim() : "",
       alt: idx.alt >= 0 ? (line[idx.alt] || "").trim() : "",
@@ -156,7 +164,7 @@ async function main() {
   const chunkSize = 8;
   for (let i = 0; i < rows.length; i += chunkSize) {
     const chunk = rows.slice(i, i + chunkSize);
-    const titles = chunk.map((row) => row.fileTitle);
+    const titles = chunk.flatMap((row) => (row.fileTitle ? [row.fileTitle] : []));
     let titleToUrl;
     try {
       titleToUrl = await fetchImageUrlsForTitles(titles);
@@ -166,8 +174,8 @@ async function main() {
     }
 
     for (const row of chunk) {
-      let imageUrl = titleToUrl.get(row.fileTitle);
-      if (!imageUrl) {
+      let imageUrl = row.directUrl ?? (row.fileTitle ? titleToUrl.get(row.fileTitle) : undefined);
+      if (!imageUrl && row.fileTitle) {
         for (const [t, u] of titleToUrl) {
           if (normalizeTitleKey(t) === normalizeTitleKey(row.fileTitle)) {
             imageUrl = u;

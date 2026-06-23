@@ -10,6 +10,10 @@ export type PrisonImageRecord = {
 
 const prisonImages = prisonImagesJson as Record<string, PrisonImageRecord>;
 
+const prisonImageSlugAliases: Record<string, string[]> = {
+  "hmp-yoi-bronzefield": ["hmp-bronzefield"],
+};
+
 /**
  * Normalizes a sheet slug column: full URL, path like /prisons/uk/hmp-x, or bare slug.
  */
@@ -28,7 +32,9 @@ export function normalizePrisonImageKey(raw: string): string | null {
  * Resolved Wikimedia (or other) facility photo for a prison slug. Used when merging into `Prison.facilityImage`.
  */
 export function getPrisonImage(slug: string): RealFacilityImage | undefined {
-  const row = prisonImages[slug];
+  const row =
+    prisonImages[slug] ??
+    prisonImageSlugAliases[slug]?.map((alias) => prisonImages[alias]).find((candidate) => Boolean(candidate));
   if (!row?.imageUrl?.trim()) return undefined;
   return {
     type: "real",

@@ -17,7 +17,7 @@
     "licence": "CC BY-SA 4.0",
     "alt": "Exterior view of HMP Belmarsh"
   },
-  "hmp-wakfield": {
+  "hmp-wakefield": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/The_Main_Entrance_Gate%2C_Wakefield_Prison_-_geograph.org.uk_-_3545534.jpg",
     "credit": "Bill Henderson",
     "licence": "CC BY-SA 4.0",
@@ -29,10 +29,64 @@
     "licence": "CC BY-SA 4.0",
     "alt": "Exterior view of HMP Wormwood Scrubs"
   },
-  "hmp-yoi-bronzefield": {
+  "hmp-bronzefield": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Entrance_to_Bronzefield_Prison.jpg",
     "credit": "DanielMichaelPerry",
     "licence": "CC BY-SA 4.0",
     "alt": "Exterior view of HMP Bronzefield"
+  },
+  "hmp-berwyn": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/HMP_Berwyn_%28geograph_7100546%29.jpg",
+    "credit": "Mike Parker",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Berwyn"
+  },
+  "hmp-manchester": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/HMP_Manchester_%281%29.jpg",
+    "credit": "Rept0n1x",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Manchester"
+  },
+  "hmp-wandsworth": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/HMP_Wandsworth%2C_SW18_-_geograph.org.uk_-_2077186.jpg",
+    "credit": "Phillip Perry",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Wandsworth"
+  },
+  "hmp-birmingham": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/HM_Prison_Birmingham%2C_Winson_Green_-_geograph.org.uk_-_7717860.jpg",
+    "credit": "Chris Allen",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Birmingham"
+  },
+  "hmp-bristol": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/HMP_Bristol%2C_rear_view_-_geograph.org.uk_-_742695.jpg",
+    "credit": "Matt Redmond",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Bristol"
+  },
+  "hmp-haverigg": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/HM_Prison_Haverigg_-_geograph.org.uk_-_2983690.jpg",
+    "credit": "Perry Dark",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Haverigg"
+  },
+  "hmp-channings-wood": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/HM_Prison%2C_Channings_Wood_-_geograph.org.uk_-_1615692.jpg",
+    "credit": "Roger Cornfoot",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Channings Wood"
+  },
+  "hmp-leicester": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Hmp_leicester.jpg",
+    "credit": "JRawle",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Leicester"
+  },
+  "hmp-buckley-hall": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Buckley_Hall_Prison%2C_Rochdale_-_geograph.org.uk_-_89118.jpg",
+    "credit": "michael ely",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of HMP Buckley Hall"
   }
 }
