@@ -4,7 +4,6 @@ import {
   listUkSecurityHubSlugs,
   getPrisonsForUkSecurityHub,
   securityLevelForCategorySlug,
-  securityHubTitle,
 } from "@/lib/programmatic/ukPrisonHubs";
 import { readMoreArticleForUkSecurityHub } from "@/lib/programmatic/articles/readMoreArticle";
 import { buildPageMetadata } from "@/lib/seo/metadata";

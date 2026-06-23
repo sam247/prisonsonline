@@ -2,6 +2,7 @@
 
 ## Recently Completed
 
+- Fixed a Vercel build failure caused by an unused `securityHubTitle` import in the UK category hub page.
 - Synced `data/prison-images.csv` to the latest Google Sheet image rows.
 - Updated `scripts/build-prison-images.mjs` to accept direct Wikimedia upload URLs as well as Commons file-page URLs.
 - Added a slug alias so the Bronzefield image still resolves on the current site while the sheet uses `hmp-bronzefield`.
