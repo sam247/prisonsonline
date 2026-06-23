@@ -2,60 +2,76 @@ import type { Prison } from "@/types/prison";
 import { slugVariantIndex } from "@/lib/seo/prisonProfileCopy";
 import type { PrisonIntentSlug } from "@/lib/seo/intentRollout";
 
+function searchFacingPrisonName(prison: Prison): string {
+  if (prison.slug === "florence-admax-usp") return "ADX Florence (Florence ADMAX USP)";
+  if (prison.slug === "hmp-manchester") return "HMP Manchester (Strangeways)";
+  return prison.name;
+}
+
 export function buildIntentPageTitle(prison: Prison, intent: PrisonIntentSlug): string {
+  const name = searchFacingPrisonName(prison);
   switch (intent) {
     case "visiting-times":
-      return `Visiting times and schedules — ${prison.name}`;
+      return `${name} visiting times and visitor information`;
     case "contact-details":
-      return `Contact details and enquiries — ${prison.name}`;
+      return `${name} contact details, phone and address`;
     case "booking-a-visit":
-      return `How to book a visit — ${prison.name}`;
+      return `${name} booking a visit and visitor information`;
     case "what-to-expect":
-      return `What to expect when visiting — ${prison.name}`;
+      return `${name} visits: what to expect and visitor rules`;
     case "sending-money":
-      return `How to send money and funds — ${prison.name}`;
+      return `${name} sending money and prison funds`;
     case "phone-calls":
-      return `Phone calls and approved numbers — ${prison.name}`;
+      return `${name} phone calls and approved numbers`;
     case "email-a-prisoner":
-      return `Email routes and digital messaging — ${prison.name}`;
+      return `${name} email a prisoner and digital messaging`;
     case "legal-visits":
-      return `Legal visits and professional access — ${prison.name}`;
+      return `${name} legal visits and professional access`;
   }
 }
 
 export function buildIntentMetaDescription(prison: Prison, intent: PrisonIntentSlug): string {
-  const loc = [prison.city, prison.stateOrRegion, prison.country].filter(Boolean).join(", ");
+  const name = searchFacingPrisonName(prison);
+  const loc = [prison.city, prison.stateOrRegion].filter(Boolean).join(", ");
   const op = prison.operator?.trim();
-  const prov =
-    prison.dataProvenance === "hmpps_import"
-      ? "HMPPS listing data"
-      : prison.dataProvenance === "bop_import"
-        ? "BOP facility listing"
-        : "directory import";
-  const base = `${prison.name} (${loc}). Neutral directory context from ${prov}; confirm procedures with ${op || "the operating authority"}.`;
   switch (intent) {
     case "visiting-times":
-      return `${base} Visiting hours and rotas change — use official channels for current times.`.slice(0, 160);
+      return `${name} visiting times, visitor guidance, booking context, phone and address${loc ? ` for ${loc}` : ""}. Confirm live schedules with ${op || "the operator"}.`.slice(
+        0,
+        160,
+      );
     case "contact-details":
-      return `${base} Official phone, post, and enquiry routes are set by the operator.`.slice(0, 160);
+      return `${name} contact details, phone number, address and enquiry routes${loc ? ` for ${loc}` : ""}. Confirm current details with ${op || "the operator"}.`.slice(
+        0,
+        160,
+      );
     case "booking-a-visit":
-      return `${base} Booking rules, approvals, and visitor lists differ by jurisdiction and site.`.slice(0, 160);
+      return `${name} booking a visit guidance, visitor rules, phone and address${loc ? ` for ${loc}` : ""}. Confirm live booking steps with ${op || "the operator"}.`.slice(
+        0,
+        160,
+      );
     case "what-to-expect":
-      return `${base} Visitor expectations (ID, searches, conduct) vary; verify before you travel.`.slice(0, 160);
+      return `${name} visitor guidance covering arrival checks, visit rules, phone and address${loc ? ` for ${loc}` : ""}. Verify current requirements with ${op || "the operator"}.`.slice(
+        0,
+        160,
+      );
     case "sending-money":
-      return `${base} Funding routes and payment policies differ; check current operator channels before sending.`.slice(0, 160);
+      return `${name} sending money guidance, approved payment routes and prison funds information${loc ? ` for ${loc}` : ""}. Confirm live rules with ${op || "the operator"}.`.slice(
+        0,
+        160,
+      );
     case "phone-calls":
-      return `${base} Call access, approved numbers, and call windows vary by establishment and sentence status.`.slice(
+      return `${name} phone call guidance, approved numbers and contact context${loc ? ` for ${loc}` : ""}. Confirm current call rules with ${op || "the operator"}.`.slice(
         0,
         160,
       );
     case "email-a-prisoner":
-      return `${base} Digital messaging availability differs by jurisdiction and provider; verify before relying on it.`.slice(
+      return `${name} email a prisoner guidance and digital messaging context${loc ? ` for ${loc}` : ""}. Confirm current availability with ${op || "the operator"}.`.slice(
         0,
         160,
       );
     case "legal-visits":
-      return `${base} Legal visit booking and confidentiality procedures differ by prison and legal status.`.slice(
+      return `${name} legal visits guidance, booking context and professional access details${loc ? ` for ${loc}` : ""}. Confirm current procedures with ${op || "the operator"}.`.slice(
         0,
         160,
       );

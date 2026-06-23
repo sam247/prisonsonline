@@ -52,15 +52,30 @@ function leadSummaryText(p: Prison): string {
   return sentences.slice(0, 2).join(" ") || o;
 }
 
+function searchFacingPrisonName(p: Prison): string {
+  if (p.slug === "florence-admax-usp") return "ADX Florence (Florence ADMAX USP)";
+  if (p.slug === "hmp-manchester") return "HMP Manchester (Strangeways)";
+  return p.name.trim();
+}
+
 function formatPrisonMetaDescription(p: Prison): string {
-  const parts: string[] = [];
-  const primary = p.shortDescription?.trim();
-  if (primary) parts.push(primary.replace(/\s+/g, " ").slice(0, 100));
-  const loc = [p.postcode, p.stateOrRegion, p.country].filter(Boolean).join(" · ");
-  if (loc) parts.push(loc);
-  let s = parts.join(" ").replace(/\s+/g, " ").trim();
-  if (!s) s = p.overview.replace(/\s+/g, " ").trim();
-  return s.slice(0, 160);
+  const name = searchFacingPrisonName(p);
+  const location =
+    p.countrySlug === "uk"
+      ? [p.city, "England & Wales"].filter(Boolean).join(", ")
+      : [p.city, p.stateOrRegion].filter(Boolean).join(", ");
+  const descriptor =
+    p.slug === "florence-admax-usp"
+      ? "Supermax BOP facility profile"
+      : p.securityLevel?.trim()
+        ? `${p.securityLevel.trim()} prison profile`
+        : "Prison profile";
+  const detail =
+    p.countrySlug === "us"
+      ? "visiting information, address, contact details, and facility context"
+      : "visiting information, contact details, address, and practical prison information";
+  const primary = `${name}${location ? ` in ${location}` : ""}. ${descriptor} with ${detail}.`;
+  return primary.replace(/\s+/g, " ").trim().slice(0, 160);
 }
 
 export { formatPrisonMetaDescription };

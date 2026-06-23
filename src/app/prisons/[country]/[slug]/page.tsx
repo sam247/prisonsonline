@@ -22,7 +22,7 @@ export function generateMetadata({ params }: Props) {
   if (resolved.kind === "prison") {
     const p = resolved.prison;
     return buildPageMetadata({
-      title: buildPrisonPageTitle(p.name, p.slug),
+      title: buildPrisonPageTitle(p),
       description: formatPrisonMetaDescription(p),
       path: `/prisons/${country}/${slug}`,
     });

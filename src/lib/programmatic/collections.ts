@@ -44,7 +44,7 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
     intro:
       "These establishments are identified from HMPPS administrative fields (gender, cohort, or name). Confirm details with official sources before visiting or contacting a prison.",
     metaDescription:
-      "Browse women’s and female-provision prisons in England and Wales from official HMPPS administrative data.",
+      "Browse women’s prisons and female-provision establishments in England and Wales from HMPPS administrative data.",
     priority: 0.55,
   },
   "mens-prisons": {
@@ -54,7 +54,7 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
     intro:
       "Filtered using gender labels from the HMPPS prison export. Some mixed or specialist sites may not appear here if the source label differs.",
     metaDescription:
-      "Directory of men’s prisons in England and Wales based on HMPPS administrative gender fields.",
+      "Browse men’s prisons in England and Wales from HMPPS administrative gender fields.",
     priority: 0.54,
   },
   "high-security": {
@@ -64,7 +64,7 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
     intro:
       "Includes Category A and sites whose predominant function is described as high security in the import.",
     metaDescription:
-      "Directory of high-security and Category A prisons in England and Wales based on HMPPS listings.",
+      "Browse high-security and Category A prisons in England and Wales from HMPPS listings.",
     priority: 0.55,
   },
   "private-prisons": {
@@ -74,7 +74,7 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
     intro:
       "Identified from operator names (e.g. Serco, G4S, Sodexo) and HMPPS sub-group labels referencing private management.",
     metaDescription:
-      "Privately managed prisons in England and Wales from HMPPS administrative data.",
+      "Browse privately managed prisons in England and Wales from HMPPS administrative data.",
     priority: 0.55,
   },
   "training-prisons": {
@@ -84,7 +84,7 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
     intro:
       "Based on the “Predominant Function” field in the HMPPS export (e.g. Cat B/C trainer roles).",
     metaDescription:
-      "Training and trainer prisons in England and Wales from HMPPS administrative data.",
+      "Browse training and trainer prisons in England and Wales from HMPPS administrative data.",
     priority: 0.53,
   },
   "reception-prisons": {
@@ -94,7 +94,7 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
     intro:
       "Includes sites where the predominant function or cohort references reception and resettlement flows.",
     metaDescription:
-      "Reception and resettlement prisons in England and Wales from HMPPS data.",
+      "Browse reception and resettlement prisons in England and Wales from HMPPS data.",
     priority: 0.53,
   },
   "open-prisons": {
@@ -104,7 +104,7 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
     intro:
       "Open conditions are inferred from category mapping and predominant function text. Always verify category with the establishment.",
     metaDescription:
-      "Open prisons and Category D sites in England and Wales from HMPPS listings.",
+      "Browse open prisons and Category D sites in England and Wales from HMPPS listings.",
     priority: 0.53,
   },
 };

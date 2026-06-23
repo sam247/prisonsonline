@@ -17,9 +17,25 @@ export function generateMetadata({ params }: Props) {
   const list = getPrisonsByCountry(country);
   const meta = getCountry(country);
   const name = list[0]?.country || meta?.name || country;
+  if (country === "uk") {
+    return buildPageMetadata({
+      title: "UK prisons in England & Wales",
+      description:
+        "Browse UK prisons in England and Wales by prison name, region, category, operator, and prison type.",
+      path: `/prisons/${country}`,
+    });
+  }
+  if (country === "us") {
+    return buildPageMetadata({
+      title: "Federal prisons in the United States",
+      description:
+        "Browse Federal Bureau of Prisons facilities by prison name, state, and facility type across the United States.",
+      path: `/prisons/${country}`,
+    });
+  }
   return buildPageMetadata({
     title: `Prisons in ${name}`,
-    description: `Browse prisons in ${name}. Facilities, regions, and directory listings.`,
+    description: `Browse prisons in ${name} by prison name, region, and directory listing.`,
     path: `/prisons/${country}`,
   });
 }

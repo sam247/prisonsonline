@@ -19,8 +19,8 @@ export function generateMetadata({ params }: Props) {
   if (!r) {
     return buildPageMetadata({ title: "Not found", path });
   }
-  const title = `${r.subgroupLabel} prisons (England & Wales)`;
-  const description = `Prisons grouped under HMPPS “Prison Sub-Group 1: ${r.subgroupLabel}” (${r.prisons.length} establishments).`;
+  const title = `${r.subgroupLabel} prisons in England & Wales`;
+  const description = `Browse ${r.prisons.length} prisons in the HMPPS administrative sub-group “${r.subgroupLabel}” across England and Wales.`;
   return buildPageMetadata({ title, description, path });
 }
 
@@ -29,10 +29,10 @@ export default function UkSubgroupHubPage({ params }: Props) {
   if (!r) notFound();
 
   const path = `/prisons/uk/subgroup/${params.subgroupSlug}`;
-  const title = `${r.subgroupLabel} prisons (England & Wales)`;
+  const title = `${r.subgroupLabel} prisons in England & Wales`;
   const subtitle = `${r.prisons.length} establishments in this administrative sub-group.`;
   const intro =
-    "Sub-groups are taken from the HMPPS “Prison Sub-Group 1” field. They reflect administrative clustering, not necessarily a single security level or function.";
+    "Browse prisons in this HMPPS administrative sub-group for England and Wales. Sub-groups come from the “Prison Sub-Group 1” field and reflect administrative clustering, not necessarily a single security level or function.";
   const leaf = r.subgroupLabel;
 
   return (

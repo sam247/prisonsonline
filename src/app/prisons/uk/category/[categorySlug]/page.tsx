@@ -23,8 +23,8 @@ export function generateMetadata({ params }: Props) {
   if (!level || list.length === 0) {
     return buildPageMetadata({ title: "Not found", path });
   }
-  const title = securityHubTitle(params.categorySlug);
-  const description = `${title}: ${list.length} establishments mapped from HMPPS fields to security category ${level}.`;
+  const title = `${level} prisons in England & Wales`;
+  const description = `Browse ${list.length} ${level} prisons in England and Wales. HMPPS-based directory listing grouped by security category.`;
   return buildPageMetadata({ title, description, path });
 }
 
@@ -34,10 +34,10 @@ export default function UkSecurityCategoryHubPage({ params }: Props) {
   if (!level || prisonList.length === 0) notFound();
 
   const path = `/prisons/uk/category/${params.categorySlug}`;
-  const title = securityHubTitle(params.categorySlug);
+  const title = `${level} prisons in England & Wales`;
   const subtitle = `${prisonList.length} establishments classified as ${level} in this import.`;
   const intro =
-    "Security category is inferred from HMPPS predominant function, cohort, and related text in the build pipeline. It is indicative only—always verify with HM Prison Service or official listings.";
+    "Browse prisons grouped under this England and Wales security category view. Category mapping is inferred from HMPPS predominant function, cohort, and related text in the build pipeline, so always verify category with HM Prison and Probation Service or official listings.";
   const leaf = level;
   const readMore = readMoreArticleForUkSecurityHub(params.categorySlug);
 
