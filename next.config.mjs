@@ -1,3 +1,5 @@
+import { legacyRootRedirects } from "./config/legacy-root-redirects.mjs";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -11,6 +13,9 @@ const nextConfig = {
         pathname: "/wikipedia/**",
       },
     ],
+  },
+  async redirects() {
+    return legacyRootRedirects;
   },
 };
 
