@@ -18,10 +18,12 @@
 - Added permanent redirects from those legacy root URLs to their new guide paths.
 - Migrated `can-you-have-piercings-in-prison` and `can-you-wear-glasses-in-prison` into canonical guide pages under `/guides/...`.
 - Added permanent redirects from those legacy root URLs to their new guide paths.
+- Added an explicit legacy-retire middleware layer for four stale root-level legacy URLs that should return `410 Gone` with deindex signals.
+- Documented the retire handling in `docs/legacy-url-audit-2026-06-23.md`.
 
 ## Next Up
 
 - Re-check GSC after reindexing to see whether CTR improves on prison entity and prison intent pages.
-- Decide whether stale legacy posts should remain unhandled or move to an explicit retire/deindex layer.
+- Re-check GSC after crawl / reprocessing to confirm the retired legacy URLs stop attracting impressions.
 - Consider a second SEO pass for the strongest prison intent templates and UK browse hubs.
 - Expand image coverage and verify each sheet slug matches the current runtime prison slug set.

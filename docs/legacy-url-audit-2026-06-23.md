@@ -22,6 +22,7 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
   - prison entity duplicates such as `/hmp-bullingdon` and `/hmp-the-mount`
   - old question-style posts such as `/can-you-get-haircuts-in-prison`
   - stale or off-architecture posts such as `/how-to-become-a-prison-officer`
+- Live fetches confirmed that the four retire-candidate URLs were still serving old legacy article content on the public domain.
 
 ## Interpretation
 
@@ -34,8 +35,10 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 - Added explicit permanent redirects for root-level guide slugs to `/guides/...`.
 - Added explicit permanent redirects for root-level manual article slugs to `/articles/...`.
 - Added explicit permanent redirects for confirmed root-level prison entity duplicates where the canonical prison profile already exists.
+- Added an explicit legacy-retire middleware layer for selected stale root-level URLs that should return `410 Gone`.
 - Redirect definitions live in `config/legacy-root-redirects.mjs`.
 - Redirects are wired into `next.config.mjs`.
+- Retire handling lives in `src/middleware.ts`.
 
 ## Redirected Canonical Pairs
 
@@ -102,20 +105,29 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 - `/the-uks-most-dangerous-prisoners-2023`
   - Reason: date-stamped / stale news-style framing with no clean canonical replacement.
 
+### Retired Explicitly
+
+- `/behind-bars-in-japan-a-look-inside-the-countrys-prison-system`
+  - Action: return `410 Gone` with `X-Robots-Tag: noindex, nofollow` via middleware.
+- `/a-guide-to-the-pre-sentence-investigation-psi-report`
+  - Action: return `410 Gone` with `X-Robots-Tag: noindex, nofollow` via middleware.
+- `/how-to-become-a-prison-officer`
+  - Action: return `410 Gone` with `X-Robots-Tag: noindex, nofollow` via middleware.
+- `/the-uks-most-dangerous-prisoners-2023`
+  - Action: return `410 Gone` with `X-Robots-Tag: noindex, nofollow` via middleware.
+
 ## Still Open
 
 These legacy URLs were observed in GSC and remain unresolved in code because they need an explicit product decision first:
-
-- `/behind-bars-in-japan-a-look-inside-the-countrys-prison-system`
-- `/a-guide-to-the-pre-sentence-investigation-psi-report`
-- `/how-to-become-a-prison-officer`
-- `/the-uks-most-dangerous-prisoners-2023`
+- None in the legacy URL set covered by this audit. The remaining work is to re-check GSC after deindexing and confirm impressions fall away.
 
 ## Recommendation For Next Pass
 
-- For `retire candidate` URLs, decide whether to:
-  - leave them as 404 / soft-removed if they are already gone
-  - add an explicit legacy-retire handling layer later if they keep showing in GSC
+- Re-check GSC after crawl / reprocessing to confirm the retired URLs stop attracting impressions.
+- If any new legacy root URLs appear in GSC, classify them into:
+  - canonical redirect
+  - content migration
+  - explicit `410` retire handling
 - Only add redirects when the target is materially equivalent to the old intent.
 
 ## Notes
