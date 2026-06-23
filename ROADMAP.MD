@@ -16,12 +16,12 @@
 - Added direct root-level prison entity redirects for confirmed duplicates like `hmp-bullingdon` and `hmp-the-mount`.
 - Migrated `can-you-get-haircuts-in-prison` and `can-you-send-pictures-in-prison-letters` into canonical guide pages under `/guides/...`.
 - Added permanent redirects from those legacy root URLs to their new guide paths.
+- Migrated `can-you-have-piercings-in-prison` and `can-you-wear-glasses-in-prison` into canonical guide pages under `/guides/...`.
+- Added permanent redirects from those legacy root URLs to their new guide paths.
 
 ## Next Up
 
 - Re-check GSC after reindexing to see whether CTR improves on prison entity and prison intent pages.
-- Decide whether the prison-life legacy questions should be rebuilt as fresh `/guides/...` pages or retired.
-- Decide whether the remaining prison-life legacy questions (`can-you-have-piercings-in-prison`, `can-you-wear-glasses-in-prison`) should be rebuilt as fresh `/guides/...` pages or retired.
 - Decide whether stale legacy posts should remain unhandled or move to an explicit retire/deindex layer.
 - Consider a second SEO pass for the strongest prison intent templates and UK browse hubs.
 - Expand image coverage and verify each sheet slug matches the current runtime prison slug set.

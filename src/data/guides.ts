@@ -120,6 +120,42 @@ export const guides: Guide[] = [
     ],
   },
   {
+    title: "Can You Have Piercings in Prison?",
+    slug: "can-you-have-piercings-in-prison",
+    excerpt:
+      "General guidance on piercings in prison, jewellery restrictions, searches, healthcare issues, and why local rules matter.",
+    icon: "FileText",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for prison jewellery guidance - not a photograph of a facility.",
+    },
+    content:
+      "Sometimes yes, but whether a prisoner can keep or wear piercings depends on the prison, the security regime, healthcare concerns, and local rules about jewellery. A piercing itself is not always the issue; the practical question is often whether the jewellery is safe, removable, easy to search, or likely to create conflict, concealment, or injury risks. Some prisons allow simple retained piercings, while others may require jewellery to be removed, stored, or replaced with safer alternatives if healthcare agrees. This guide is general orientation only. Always treat the individual prison's own rules and staff instructions as the final word.\n\n## Why prisons care about piercings\n\nJewellery can raise security and safety issues in custody. Metal items can affect search procedures, be used in fights, create self-harm risks, or cause medical problems if they are not kept clean. In some settings, staff are mainly concerned with practical management rather than the piercing itself. That is why one prison may be more restrictive than another, especially during reception, segregation, healthcare observation, or transfer.\n\n## Existing piercings versus new piercings\n\nA prisoner who already has a piercing when they arrive may be treated differently from someone asking to get a new piercing in custody. Existing piercings may be reviewed as part of reception, healthcare checks, and property decisions. Getting a new piercing in prison is usually far less likely and may not be permitted at all unless there is a very unusual local arrangement.\n\n## What rules can affect\n\nRules may affect facial piercings, body jewellery, retainers, sleeping with jewellery in place, and whether an item has to be removed for searching, work, education, healthcare, or court appearances. Medical advice, faith practice, and individual risk factors can all matter, but prisons still balance those points against security and safety.\n\n## What to do if you need clarity\n\nIf you are asking for yourself or on behalf of someone in prison, do not assume that social media or old forum posts reflect the current rule. Check the prison's own contact guidance first. If the issue is linked to medical treatment, healing, or a healthcare need, the safest route is to ask the prison directly how those cases are handled rather than relying on general advice.\n\nHTML:Use the <a href=\"/prisons\">Prison Finder</a> to find the establishment first, then confirm the current visitor, property, or healthcare guidance with the prison directly.",
+    faqs: [
+      {
+        question: "Can prisoners keep earrings or facial piercings?",
+        answer:
+          "Sometimes, but it depends on the prison's local safety and security rules. Some items may be allowed, while others may need to be removed or replaced with a safer option if staff or healthcare require it.",
+      },
+      {
+        question: "Can someone get a new piercing while in prison?",
+        answer:
+          "Usually not. New piercings are far less likely to be permitted in custody because of hygiene, infection, supervision, and security concerns.",
+      },
+      {
+        question: "What if removing a piercing is difficult or unsafe?",
+        answer:
+          "That should be raised with prison staff and healthcare. Medical advice may be needed if removal could cause injury, infection, or another health issue.",
+      },
+      {
+        question: "Do prisons allow plastic retainers instead of metal jewellery?",
+        answer:
+          "Sometimes, but not everywhere. Some prisons may accept a safer alternative if healthcare or local policy supports it, while others may still restrict it.",
+      },
+    ],
+  },
+  {
     title: "What Happens When Someone Goes to Prison",
     slug: "what-happens-going-to-prison",
     excerpt: "Understanding the reception process, from court to cell allocation and the first days inside.",
@@ -242,6 +278,42 @@ export const guides: Guide[] = [
         question: "Can a prison reject family pictures?",
         answer:
           "Yes. A prison can reject photographs that breach decency, safety, gang-related, or mailroom-format rules, even when the sender did not intend any problem.",
+      },
+    ],
+  },
+  {
+    title: "Can You Wear Glasses in Prison?",
+    slug: "can-you-wear-glasses-in-prison",
+    excerpt:
+      "General guidance on prescription glasses in prison, property rules, replacement issues, and why healthcare and local prison routines matter.",
+    icon: "FileText",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for prison eyewear guidance - not a photograph of a facility.",
+    },
+    content:
+      "Yes, prisoners can usually wear glasses in prison if they need them, especially where the glasses are prescription eyewear. In practice, though, access, replacement, repairs, and the type of frames allowed can depend on the prison's healthcare arrangements, property checks, and local safety rules. A prisoner may arrive with their own glasses, be issued with replacements later, or need healthcare assessment if their prescription is unclear or the glasses are damaged. This guide is general orientation only and does not replace the prison's own property or healthcare rules.\n\n## Why glasses matter in custody\n\nEyewear is often a basic healthcare and daily-living issue, not just a personal preference. Prisoners may need glasses to read legal papers, attend education, move safely around the prison, or manage a medical condition. That is why prisons will often treat prescription glasses differently from purely cosmetic items. Even so, staff may still inspect frames, lenses, cases, and accessories under normal property and security rules.\n\n## Bringing glasses into prison\n\nIf someone arrives in custody already wearing prescription glasses, those glasses will usually be considered during reception and property checks. Staff may record them, inspect them, or ask healthcare to review the prisoner's needs if the glasses are damaged or there is doubt about whether they are necessary. Sunglasses, designer extras, or unusual accessories may be treated differently from ordinary prescription eyewear.\n\n## Replacement and repair issues\n\nOne of the main practical problems is not whether glasses are allowed, but how quickly they can be repaired or replaced. If glasses break, the prisoner may need to go through healthcare, prison administration, or an approved supplier arrangement. Timescales can vary. Some prisons may also restrict what family members can send in directly, so it is safer to check the prison's property rules before posting replacement eyewear.\n\n## What rules can vary\n\nLocal practice can affect frame types, tinted lenses, spare pairs, storage, and whether accessories like hard cases are allowed in possession. Security category, healthcare needs, and behaviour management can also affect how items are handled. If the prisoner has an urgent sight problem, that should be raised as a healthcare issue rather than treated as a routine property question.\n\nHTML:Find the establishment through the <a href=\"/prisons\">Prison Finder</a> first, then confirm eyewear, property, or healthcare instructions with the prison directly.",
+    faqs: [
+      {
+        question: "Can prisoners keep prescription glasses?",
+        answer:
+          "Usually yes. Prescription glasses are commonly treated as a healthcare need, although the prison may still inspect them and apply local property rules.",
+      },
+      {
+        question: "Can family send replacement glasses into prison?",
+        answer:
+          "Sometimes, but not always directly. Many prisons have specific property and healthcare rules, so it is best to check before sending replacement eyewear.",
+      },
+      {
+        question: "Are sunglasses allowed in prison?",
+        answer:
+          "Often not as freely as ordinary prescription glasses. Tinted or non-essential eyewear may be restricted unless there is a medical reason and the prison accepts it.",
+      },
+      {
+        question: "What happens if a prisoner's glasses break?",
+        answer:
+          "The prisoner may need to report it through healthcare or prison staff so repair or replacement arrangements can be made. Timing varies by prison and supplier process.",
       },
     ],
   },

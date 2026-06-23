@@ -45,7 +45,9 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 - `/what-to-wear-to-a-prison-visit` → `/guides/what-to-wear-to-a-prison-visit`
 - `/what-can-you-bring-to-prison` → `/guides/what-can-you-bring-to-prison`
 - `/can-you-get-haircuts-in-prison` → `/guides/can-you-get-haircuts-in-prison`
+- `/can-you-have-piercings-in-prison` → `/guides/can-you-have-piercings-in-prison`
 - `/can-you-send-pictures-in-prison-letters` → `/guides/can-you-send-pictures-in-prison-letters`
+- `/can-you-wear-glasses-in-prison` → `/guides/can-you-wear-glasses-in-prison`
 - `/what-happens-going-to-prison` → `/guides/what-happens-going-to-prison`
 - `/how-prison-sentences-work` → `/guides/how-prison-sentences-work`
 - `/life-inside-prison` → `/guides/life-inside-prison`
@@ -78,19 +80,16 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 - `/hmp-the-mount`
   - Reason: exact prison entity already exists at a canonical App Router URL.
 
-### Keep / Migrate Later
-
-- `/can-you-have-piercings-in-prison`
-  - Reason: same as above; query-led informational intent with some topical relevance.
-- `/can-you-wear-glasses-in-prison`
-  - Reason: prison-life informational intent; no confident replacement exists today.
-
-### Migrated This Phase
+### Migrated Prison-Life Guides
 
 - `/can-you-get-haircuts-in-prison`
   - Action: created `/guides/can-you-get-haircuts-in-prison` and redirected the legacy root URL.
 - `/can-you-send-pictures-in-prison-letters`
   - Action: created `/guides/can-you-send-pictures-in-prison-letters` and redirected the legacy root URL.
+- `/can-you-have-piercings-in-prison`
+  - Action: created `/guides/can-you-have-piercings-in-prison` and redirected the legacy root URL.
+- `/can-you-wear-glasses-in-prison`
+  - Action: created `/guides/can-you-wear-glasses-in-prison` and redirected the legacy root URL.
 
 ### Retire Candidate
 
@@ -107,8 +106,6 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 
 These legacy URLs were observed in GSC and remain unresolved in code because they need an explicit product decision first:
 
-- `/can-you-have-piercings-in-prison`
-- `/can-you-wear-glasses-in-prison`
 - `/behind-bars-in-japan-a-look-inside-the-countrys-prison-system`
 - `/a-guide-to-the-pre-sentence-investigation-psi-report`
 - `/how-to-become-a-prison-officer`
@@ -116,7 +113,6 @@ These legacy URLs were observed in GSC and remain unresolved in code because the
 
 ## Recommendation For Next Pass
 
-- For the remaining `keep / migrate later` URLs, decide whether to create fresh guides under `/guides/...` with updated copy and then redirect the old roots.
 - For `retire candidate` URLs, decide whether to:
   - leave them as 404 / soft-removed if they are already gone
   - add an explicit legacy-retire handling layer later if they keep showing in GSC
