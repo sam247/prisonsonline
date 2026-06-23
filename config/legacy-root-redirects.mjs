@@ -21,6 +21,19 @@ const articleSlugs = [
   "prison-systems-worldwide",
 ];
 
+const prisonEntityRedirects = [
+  {
+    source: "/hmp-bullingdon",
+    destination: "/prisons/uk/hmp-bullingdon",
+    permanent: true,
+  },
+  {
+    source: "/hmp-the-mount",
+    destination: "/prisons/uk/hmp-the-mount",
+    permanent: true,
+  },
+];
+
 /**
  * Root-level legacy slugs that should consolidate into the canonical App Router paths.
  * Keep this list deliberate: only add entries when the canonical replacement is clear.
@@ -36,4 +49,5 @@ export const legacyRootRedirects = [
     destination: `/articles/${slug}`,
     permanent: true,
   })),
+  ...prisonEntityRedirects,
 ];

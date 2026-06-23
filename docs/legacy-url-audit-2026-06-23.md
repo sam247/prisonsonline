@@ -18,6 +18,10 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 - The current App Router owns canonical article paths under `/articles/[articleSlug]`.
 - The current App Router owns canonical guide paths under `/guides/[guideSlug]`.
 - Google Search Console and live URL checks previously showed legacy root-level article-style URLs still appearing on the domain.
+- A broader GSC page export also surfaced root-level legacy URLs beyond the first sample, including:
+  - prison entity duplicates such as `/hmp-bullingdon` and `/hmp-the-mount`
+  - old question-style posts such as `/can-you-get-haircuts-in-prison`
+  - stale or off-architecture posts such as `/how-to-become-a-prison-officer`
 
 ## Interpretation
 
@@ -29,6 +33,7 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 
 - Added explicit permanent redirects for root-level guide slugs to `/guides/...`.
 - Added explicit permanent redirects for root-level manual article slugs to `/articles/...`.
+- Added explicit permanent redirects for confirmed root-level prison entity duplicates where the canonical prison profile already exists.
 - Redirect definitions live in `config/legacy-root-redirects.mjs`.
 - Redirects are wired into `next.config.mjs`.
 
@@ -57,21 +62,61 @@ Document the current legacy URL situation on `prisonsonline.com`, capture what w
 - `/women-in-prison` → `/articles/women-in-prison`
 - `/prison-systems-worldwide` → `/articles/prison-systems-worldwide`
 
-## Still Open
+### Prison Entity Duplicates
 
-These legacy URLs were observed earlier and do not yet have a confident replacement in the current repo:
+- `/hmp-bullingdon` → `/prisons/uk/hmp-bullingdon`
+- `/hmp-the-mount` → `/prisons/uk/hmp-the-mount`
+
+## Decision Log
+
+### Redirect Now
+
+- `/hmp-bullingdon`
+  - Reason: exact prison entity already exists at a canonical App Router URL.
+- `/hmp-the-mount`
+  - Reason: exact prison entity already exists at a canonical App Router URL.
+
+### Keep / Migrate Later
 
 - `/can-you-get-haircuts-in-prison`
+  - Reason: still prison-audience relevant and could become a focused guide if you want to build a prison-life informational cluster.
+- `/can-you-have-piercings-in-prison`
+  - Reason: same as above; query-led informational intent with some topical relevance.
+- `/can-you-send-pictures-in-prison-letters`
+  - Reason: fits family / prison-mail guidance and could become a better guide later.
+- `/can-you-wear-glasses-in-prison`
+  - Reason: prison-life informational intent; no confident replacement exists today.
+
+### Retire Candidate
+
+- `/behind-bars-in-japan-a-look-inside-the-countrys-prison-system`
+  - Reason: no current canonical equivalent, weak fit with the present UK/US directory architecture, and not worth a blind redirect.
+- `/a-guide-to-the-pre-sentence-investigation-psi-report`
+  - Reason: legal/probation-adjacent but no strong in-repo equivalent; should only survive if deliberately migrated into a new guide.
+- `/how-to-become-a-prison-officer`
+  - Reason: employment/careers intent sits outside the current directory and family-guidance focus.
+- `/the-uks-most-dangerous-prisoners-2023`
+  - Reason: date-stamped / stale news-style framing with no clean canonical replacement.
+
+## Still Open
+
+These legacy URLs were observed in GSC and remain unresolved in code because they need an explicit product decision first:
+
+- `/can-you-get-haircuts-in-prison`
+- `/can-you-have-piercings-in-prison`
+- `/can-you-send-pictures-in-prison-letters`
+- `/can-you-wear-glasses-in-prison`
 - `/behind-bars-in-japan-a-look-inside-the-countrys-prison-system`
 - `/a-guide-to-the-pre-sentence-investigation-psi-report`
+- `/how-to-become-a-prison-officer`
+- `/the-uks-most-dangerous-prisoners-2023`
 
 ## Recommendation For Next Pass
 
-- Pull a broader GSC export of root-level non-canonical URLs.
-- Decide one of:
-  - keep and migrate content into the Next.js architecture
-  - redirect to a clearly relevant replacement
-  - intentionally retire with a stronger deindex strategy
+- For `keep / migrate later` URLs, decide whether to create fresh guides under `/guides/...` with updated copy and then redirect the old roots.
+- For `retire candidate` URLs, decide whether to:
+  - leave them as 404 / soft-removed if they are already gone
+  - add an explicit legacy-retire handling layer later if they keep showing in GSC
 - Only add redirects when the target is materially equivalent to the old intent.
 
 ## Notes

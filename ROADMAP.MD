@@ -12,10 +12,13 @@
 - Audited legacy root-level content URLs versus the current App Router structure.
 - Added low-risk permanent redirects from root-level duplicate guide/article slugs to canonical `/guides/...` and `/articles/...` paths.
 - Documented legacy URL findings, redirect decisions, and unresolved legacy pages in `docs/legacy-url-audit-2026-06-23.md`.
+- Added a second-pass legacy decision log covering redirect-now, keep/migrate-later, and retire-candidate URL groups.
+- Added direct root-level prison entity redirects for confirmed duplicates like `hmp-bullingdon` and `hmp-the-mount`.
 
 ## Next Up
 
 - Re-check GSC after reindexing to see whether CTR improves on prison entity and prison intent pages.
-- Review unresolved legacy URLs that do not yet have a confident replacement path.
+- Decide whether the prison-life legacy questions should be rebuilt as fresh `/guides/...` pages or retired.
+- Decide whether stale legacy posts should remain unhandled or move to an explicit retire/deindex layer.
 - Consider a second SEO pass for the strongest prison intent templates and UK browse hubs.
 - Expand image coverage and verify each sheet slug matches the current runtime prison slug set.
