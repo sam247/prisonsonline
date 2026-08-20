@@ -12,24 +12,22 @@ import {
 import { listUkHubSitemapPaths } from "@/lib/programmatic/ukPrisonHubs";
 import { listUsFederalSitemapPaths } from "@/lib/programmatic/usFederalHubs";
 import { intentsForPrison, prisonsEligibleForIntentPages } from "@/lib/seo/intentRollout";
-import { getPrisonLastModifiedDate, getPrisonLastModBuildFallback } from "@/lib/seo/prisonLastModified";
+import { getPrisonSitemapLastModifiedDate } from "@/lib/seo/prisonLastModified";
 
-export type SitemapUrlEntry = { loc: string; lastmod: Date };
+export type SitemapUrlEntry = { loc: string; lastmod?: Date };
 
 export function buildPrisonProfileEntries(base: string): SitemapUrlEntry[] {
-  const fb = getPrisonLastModBuildFallback();
   return prisons.map((p) => ({
     loc: `${base}/prisons/${p.countrySlug}/${p.slug}`,
-    lastmod: getPrisonLastModifiedDate(p, fb),
+    lastmod: getPrisonSitemapLastModifiedDate(p) ?? undefined,
   }));
 }
 
 export function buildPrisonIntentEntries(base: string): SitemapUrlEntry[] {
-  const fb = getPrisonLastModBuildFallback();
   const list = prisonsEligibleForIntentPages();
   const out: SitemapUrlEntry[] = [];
   for (const p of list) {
-    const lastmod = getPrisonLastModifiedDate(p, fb);
+    const lastmod = getPrisonSitemapLastModifiedDate(p) ?? undefined;
     for (const intent of intentsForPrison(p)) {
       out.push({
         loc: `${base}/prisons/${p.countrySlug}/${p.slug}/${intent}`,
@@ -40,39 +38,39 @@ export function buildPrisonIntentEntries(base: string): SitemapUrlEntry[] {
   return out;
 }
 
-export function buildRegionEntries(base: string, now: Date): SitemapUrlEntry[] {
+export function buildRegionEntries(base: string): SitemapUrlEntry[] {
   const entries: SitemapUrlEntry[] = [];
   const countrySlugs = Array.from(
     new Set([...prisons.map((p) => p.countrySlug), ...countriesData.map((c) => c.slug)]),
   );
   for (const country of countrySlugs) {
-    entries.push({ loc: `${base}/prisons/${country}`, lastmod: now });
+    entries.push({ loc: `${base}/prisons/${country}` });
   }
   for (const { country, slug } of allCountrySecondSegmentParams()) {
     if (getPrisonByCountryAndSlug(country, slug)) continue;
     if (getPrisonsByRegion(country, slug).length === 0) continue;
-    entries.push({ loc: `${base}/prisons/${country}/${slug}`, lastmod: now });
+    entries.push({ loc: `${base}/prisons/${country}/${slug}` });
   }
   return entries;
 }
 
-export function buildGuideEntries(base: string, now: Date): SitemapUrlEntry[] {
-  return guides.map((g) => ({ loc: `${base}/guides/${g.slug}`, lastmod: now }));
+export function buildGuideEntries(base: string): SitemapUrlEntry[] {
+  return guides.map((g) => ({ loc: `${base}/guides/${g.slug}` }));
 }
 
-export function buildProbationEntries(base: string, now: Date): SitemapUrlEntry[] {
-  const out: SitemapUrlEntry[] = [{ loc: `${base}/probation`, lastmod: now }];
+export function buildProbationEntries(base: string): SitemapUrlEntry[] {
+  const out: SitemapUrlEntry[] = [{ loc: `${base}/probation` }];
   const centres = getProbationCentresByCountry("uk");
   const regions = getProbationRegionsByCountry("uk");
-  for (const centre of centres) out.push({ loc: `${base}/probation/uk/${centre.slug}`, lastmod: now });
-  for (const region of regions) out.push({ loc: `${base}/probation/uk/${region}`, lastmod: now });
+  for (const centre of centres) out.push({ loc: `${base}/probation/uk/${centre.slug}` });
+  for (const region of regions) out.push({ loc: `${base}/probation/uk/${region}` });
   for (const typeSlug of listProbationServiceTypeHubSlugs("uk")) {
-    out.push({ loc: `${base}/probation/uk/service-type/${typeSlug}`, lastmod: now });
+    out.push({ loc: `${base}/probation/uk/service-type/${typeSlug}` });
   }
   return out;
 }
 
-export function buildCategoriesEntries(base: string, now: Date): SitemapUrlEntry[] {
+export function buildCategoriesEntries(base: string): SitemapUrlEntry[] {
   const entries: SitemapUrlEntry[] = [];
   const staticPaths = [
     "/",
@@ -85,26 +83,27 @@ export function buildCategoriesEntries(base: string, now: Date): SitemapUrlEntry
     "/about",
   ];
   for (const path of staticPaths) {
-    entries.push({ loc: `${base}${path}`, lastmod: now });
+    entries.push({ loc: `${base}${path}` });
   }
 
   for (const collectionSlug of listUkCollectionSlugs()) {
     const spec = getProgrammaticCollection(collectionSlug);
     if (!spec) continue;
     if (getPrisonsForUkCollection(collectionSlug).length === 0) continue;
-    entries.push({ loc: `${base}${spec.canonicalPath}`, lastmod: now });
+    entries.push({ loc: `${base}${spec.canonicalPath}` });
   }
 
   for (const { path } of listUkHubSitemapPaths()) {
-    entries.push({ loc: `${base}${path}`, lastmod: now });
+    entries.push({ loc: `${base}${path}` });
   }
 
   for (const { path } of listUsFederalSitemapPaths()) {
-    entries.push({ loc: `${base}${path}`, lastmod: now });
+    entries.push({ loc: `${base}${path}` });
   }
 
   for (const a of allArticles) {
-    entries.push({ loc: `${base}/articles/${a.slug}`, lastmod: now });
+    const date = new Date("modifiedDate" in a && a.modifiedDate ? a.modifiedDate : a.date);
+    entries.push({ loc: `${base}/articles/${a.slug}`, lastmod: Number.isNaN(date.getTime()) ? undefined : date });
   }
 
   return entries;

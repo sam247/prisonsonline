@@ -1,5 +1,6 @@
 import type { Prison } from "@/types/prison";
 import { getBaseUrl } from "@/lib/site";
+import { getFacilityVerification } from "@/data/facilitySources";
 
 /** Factual WebPage JSON-LD for prison profiles (no ratings or claims). */
 export function prisonProfileWebPageJsonLd(opts: {
@@ -69,10 +70,21 @@ export function prisonProfileJsonLdGraph(opts: { prison: Prison; path: string; d
 
   const building: Record<string, unknown> = {
     "@type": "GovernmentBuilding",
+    "@id": `${url}#facility`,
     name: opts.prison.name,
     description: opts.description.slice(0, 500),
     url,
   };
+
+  const verification = getFacilityVerification(opts.prison.countrySlug, opts.prison.slug);
+  const officialSource = verification?.sources[0];
+  if (officialSource) building.sameAs = officialSource.url;
+  if (opts.prison.operator?.trim() && verification?.fieldSources.operator?.length) {
+    building.parentOrganization = { "@type": "Organization", name: opts.prison.operator.trim() };
+  }
+  if (opts.prison.phone?.trim() && verification?.fieldSources.phone?.length) {
+    building.telephone = opts.prison.phone.trim();
+  }
 
   const addr = postalAddressForPrison(opts.prison);
   if (addr) building.address = addr;

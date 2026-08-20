@@ -9,6 +9,7 @@ import { ChevronRight, BookOpen } from "lucide-react";
 import { guides } from "@/data/guides";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { getCountryEditorialImage } from "@/lib/media/resolvers";
+import { getBaseUrl } from "@/lib/site";
 
 export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
   const countryPrisons = getPrisonsByCountry(countrySlug);
@@ -38,9 +39,28 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
     { label: "Regions", value: regions.length },
     { label: "Total Capacity", value: capacitySum > 0 ? capacitySum : "—" },
   ];
+  const base = getBaseUrl();
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${base}/prisons/${countrySlug}#collection`,
+    name: `Prisons in ${countryName}`,
+    url: `${base}/prisons/${countrySlug}`,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: countryPrisons.length,
+      itemListElement: countryPrisons.map((prison, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: prison.name,
+        url: `${base}/prisons/${prison.countrySlug}/${prison.slug}`,
+      })),
+    },
+  };
 
   return (
     <div className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
       <div className="border-b bg-card">
         <div className="container py-3">
           <nav className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -82,6 +102,25 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
           <div className="mb-8 max-w-3xl">
             <p className="text-muted-foreground leading-relaxed">{countryData.description}</p>
           </div>
+        )}
+
+        {countrySlug === "uk" && (
+          <section className="mb-10 max-w-4xl rounded-lg border border-border/60 bg-card p-5 sm:p-6">
+            <h2 className="text-lg font-semibold mb-2">England and Wales prison directory</h2>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              This reference list groups the current HMPPS-derived prison records by category, function, operator and administrative region. Counts are calculated from the visible records and do not represent a live operational total.
+            </p>
+            <nav aria-label="Key UK prison lists" className="flex flex-wrap gap-x-4 gap-y-2 mt-4 text-sm">
+              <Link href="/prisons/uk/category/category-c" className="text-accent hover:underline">Category C prisons</Link>
+              <Link href="/prisons/uk/category/category-b" className="text-accent hover:underline">Category B prisons</Link>
+              <Link href="/prisons/uk/collection/womens-prisons" className="text-accent hover:underline">Women’s prisons</Link>
+              <Link href="/prisons/uk/collection/private-prisons" className="text-accent hover:underline">Private prisons</Link>
+              <Link href="/prisons/uk/collection/high-security" className="text-accent hover:underline">High-security prisons</Link>
+            </nav>
+            <p className="text-xs text-muted-foreground mt-4">
+              Official reference: <a href="https://www.gov.uk/government/collections/prisons-in-england-and-wales" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK prisons in England and Wales</a>.
+            </p>
+          </section>
         )}
 
         {countrySlug === "us" && listUsFacilityTypeHubSlugs().length > 0 && (

@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { ChevronRight, BookOpen } from "lucide-react";
 import type { Prison } from "@/types/prison";
-import type { PrisonIntentSlug } from "@/lib/seo/intentRollout";
+import { isIntentEnabledForPrison, type PrisonIntentSlug } from "@/lib/seo/intentRollout";
 import { prisonIntentJsonLdGraph } from "@/lib/seo/prisonIntentJsonLd";
 import {
   buildIntentBodyParagraphs,
-  buildIntentPageTitle,
+  buildIntentMetaDescription,
+  buildIntentPageHeading,
   guideSlugsForIntent,
   intentHref,
   intentTopicLabel,
@@ -14,6 +15,10 @@ import {
 import { guides } from "@/data/guides";
 import { AdSenseUnit } from "@/components/ads/AdSenseUnit";
 import { slotForTemplate } from "@/lib/ads/layoutPolicy";
+import { getFacilityVerification } from "@/data/facilitySources";
+import { FacilityFactBlock } from "@/components/facility/FacilityFactBlock";
+import { LegalVisitBlock } from "@/components/facility/LegalVisitBlock";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 
 export function PrisonIntentView({
   prison,
@@ -23,14 +28,15 @@ export function PrisonIntentView({
   intent: PrisonIntentSlug;
 }) {
   const intentPath = intentHref(prison.countrySlug, prison.slug, intent);
-  const title = buildIntentPageTitle(prison, intent);
+  const heading = buildIntentPageHeading(prison, intent);
   const paragraphs = buildIntentBodyParagraphs(prison, intent);
+  const verification = getFacilityVerification(prison.countrySlug, prison.slug);
   const guideSlugs = guideSlugsForIntent(intent);
   const guideLinks = guideSlugs
     .map((slug) => guides.find((g) => g.slug === slug))
     .filter((g): g is (typeof guides)[number] => Boolean(g));
-  const siblings = siblingIntentsFor(intent);
-  const metaDesc = paragraphs.slice(0, 2).join(" ").slice(0, 500);
+  const siblings = siblingIntentsFor(intent).filter((sibling) => isIntentEnabledForPrison(prison, sibling));
+  const metaDesc = buildIntentMetaDescription(prison, intent);
   const jsonLd = prisonIntentJsonLdGraph({
     prison,
     intent,
@@ -57,14 +63,14 @@ export function PrisonIntentView({
               {prison.name}
             </Link>
             <ChevronRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
-            <span className="text-foreground font-medium">{title}</span>
+            <span className="text-foreground font-medium">{heading}</span>
           </nav>
         </div>
       </div>
 
       <header className="bg-primary text-primary-foreground">
         <div className="container py-10 md:py-12">
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h1>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{heading}</h1>
           <p className="mt-2 text-primary-foreground/80 text-sm md:text-base max-w-3xl leading-relaxed">
             Directory context for {prison.name} in {prison.city}, {prison.stateOrRegion}. Confirm all operational detail
             with {prison.operator?.trim() || "the official operator"}.
@@ -73,11 +79,13 @@ export function PrisonIntentView({
       </header>
 
       <article className="container py-10 max-w-3xl">
-        <div className="prose prose-neutral dark:prose-invert max-w-none space-y-4 text-muted-foreground leading-relaxed">
-          {paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
+        {intent === "contact-details" ? <FacilityFactBlock prison={prison} verification={verification} /> : null}
+        {intent === "legal-visits" && verification?.legalVisits ? <LegalVisitBlock prison={prison} verification={verification} /> : null}
+        {intent !== "legal-visits" ? (
+          <div className="prose prose-neutral dark:prose-invert max-w-none space-y-4 text-muted-foreground leading-relaxed">
+            {paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+          </div>
+        ) : null}
 
         {slotForTemplate("intent", 0) ? (
           <section className="mt-8" aria-label="Sponsored">
@@ -116,9 +124,9 @@ export function PrisonIntentView({
             ))}
             {siblings.map((s) => (
               <li key={s}>
-                <Link href={intentHref(prison.countrySlug, prison.slug, s)} className="text-accent hover:underline">
+                <TrackedLink href={intentHref(prison.countrySlug, prison.slug, s)} className="text-accent hover:underline" eventName="intent_navigation" eventParams={{ page_family: `prison_${intent}`, entity_slug: prison.slug, intent_slug: s }}>
                   {intentTopicLabel(s)} — {prison.name}
-                </Link>
+                </TrackedLink>
               </li>
             ))}
           </ul>

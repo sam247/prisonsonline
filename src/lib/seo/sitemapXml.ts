@@ -8,11 +8,11 @@ export function xmlEscape(s: string): string {
     .replace(/'/g, "&apos;");
 }
 
-export function buildUrlSetXml(entries: { loc: string; lastmod: Date }[]): string {
+export function buildUrlSetXml(entries: { loc: string; lastmod?: Date }[]): string {
   const body = entries
     .map(
       (e) =>
-        `  <url>\n    <loc>${xmlEscape(e.loc)}</loc>\n    <lastmod>${e.lastmod.toISOString()}</lastmod>\n  </url>`,
+        `  <url>\n    <loc>${xmlEscape(e.loc)}</loc>${e.lastmod ? `\n    <lastmod>${e.lastmod.toISOString()}</lastmod>` : ""}\n  </url>`,
     )
     .join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>`;

@@ -4,7 +4,7 @@ import { getPrisonByCountryAndSlug } from "@/data/prisons";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import {
   intentGenerateStaticParams,
-  isPrisonInIntentRollout,
+  isIntentEnabledForPrison,
   isPrisonIntentSlug,
 } from "@/lib/seo/intentRollout";
 import { buildIntentMetaDescription, buildIntentPageTitle } from "@/lib/seo/prisonIntentCopy";
@@ -22,7 +22,7 @@ export function generateMetadata({ params }: Props) {
     return buildPageMetadata({ title: "Not found", path });
   }
   const prison = getPrisonByCountryAndSlug(country, slug);
-  if (!prison || !isPrisonInIntentRollout(prison)) {
+  if (!prison || !isIntentEnabledForPrison(prison, intentParam)) {
     return buildPageMetadata({ title: "Not found", path });
   }
   return buildPageMetadata({
@@ -36,6 +36,6 @@ export default function PrisonIntentPage({ params }: Props) {
   const { country, slug, intent: intentParam } = params;
   if (!isPrisonIntentSlug(intentParam)) notFound();
   const prison = getPrisonByCountryAndSlug(country, slug);
-  if (!prison || !isPrisonInIntentRollout(prison)) notFound();
+  if (!prison || !isIntentEnabledForPrison(prison, intentParam)) notFound();
   return <PrisonIntentView prison={prison} intent={intentParam} />;
 }

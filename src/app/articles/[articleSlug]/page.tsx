@@ -39,6 +39,7 @@ export function generateMetadata({ params }: Props) {
     title: article.title,
     description: articleDescription(article),
     path: `/articles/${article.slug}`,
+    preserveTitle: true,
   });
 }
 
@@ -58,6 +59,11 @@ export default function ArticleDetailPage({ params }: Props) {
     description: articleDescription(article),
     path,
     datePublished: `${article.date}T12:00:00.000Z`,
+    dateModified: article.modifiedDate ? `${article.modifiedDate}T12:00:00.000Z` : undefined,
+    author: article.author,
+    reviewer: article.reviewer,
+    image: "coverImage" in article ? article.coverImage?.src : undefined,
+    sources: article.sources,
   });
 
   const relatedPrisons = article.relatedPrisons.map((slug) => getPrison(slug)).filter(Boolean);
@@ -112,6 +118,9 @@ export default function ArticleDetailPage({ params }: Props) {
               month: "long",
               year: "numeric",
             })}
+            {article.author && <span className="block mt-1">By {article.author.name}</span>}
+            {article.reviewer && <span className="block mt-1">Reviewed by {article.reviewer.name}</span>}
+            {article.modifiedDate && <span className="block mt-1">Updated {new Date(article.modifiedDate).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>}
             {generated && (
               <span className="block mt-1 text-primary-foreground/60 max-w-2xl">
                 Counts and labels reflect the prison import in this site build. They are not live government
@@ -137,6 +146,14 @@ export default function ArticleDetailPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
             <ArticleBody article={article} />
+            {article.sources?.length ? (
+              <section aria-labelledby="article-sources-heading" className="mt-10 pt-8 border-t border-border/60">
+                <h2 id="article-sources-heading" className="text-xl font-bold mb-4">Sources and references</h2>
+                <ul className="space-y-2 text-sm">
+                  {article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{source.name}</a></li>)}
+                </ul>
+              </section>
+            ) : null}
           </div>
 
           <div className="space-y-6">

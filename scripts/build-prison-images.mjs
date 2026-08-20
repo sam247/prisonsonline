@@ -104,9 +104,7 @@ function normalizeTitleKey(t) {
 
 async function main() {
   if (!fs.existsSync(CSV_PATH)) {
-    console.warn(`No ${CSV_PATH}; writing empty prisonImages.json`);
-    fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
-    fs.writeFileSync(OUT_PATH, "{}\n", "utf8");
+    console.warn(`No ${CSV_PATH}; preserving existing prisonImages.json`);
     return;
   }
 
@@ -114,9 +112,7 @@ async function main() {
   raw = raw.replace(/^\uFEFF/, "");
   const lines = raw.split(/\r?\n/).filter((l) => l.trim() !== "");
   if (lines.length < 2) {
-    console.warn("CSV has no data rows; writing {}");
-    fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
-    fs.writeFileSync(OUT_PATH, "{}\n", "utf8");
+    console.warn("CSV has no data rows; preserving existing prisonImages.json");
     return;
   }
 

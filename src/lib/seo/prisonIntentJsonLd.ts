@@ -22,6 +22,11 @@ export function prisonIntentJsonLdGraph(opts: {
     name: title,
     description: opts.description.slice(0, 500),
     url,
+    about: {
+      "@id": `${base}${profilePath}#facility`,
+      "@type": "GovernmentBuilding",
+      name: opts.prison.name,
+    },
   };
 
   const breadcrumb = {

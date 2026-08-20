@@ -1,5 +1,6 @@
 import type { Prison } from "@/types/prison";
 import prisonImages from "@/data/prisonImages.json";
+import { getFacilityVerification } from "@/data/facilitySources";
 
 const SOURCE_DATE_KEYS = [
   "updatedAt",
@@ -50,6 +51,26 @@ export function getPrisonLastModifiedDate(prison: Prison, fallback: Date): Date 
   if (imgDate) return imgDate;
 
   return fallback;
+}
+
+/** Defensible source/verification date for sitemap output; null means omit lastmod. */
+export function getPrisonSitemapLastModifiedDate(prison: Prison): Date | null {
+  const verification = getFacilityVerification(prison.countrySlug, prison.slug);
+  const checked = verification?.sources
+    .map((source) => parseRawDate(source.checkedAt))
+    .filter((date): date is Date => Boolean(date))
+    .sort((a, b) => b.getTime() - a.getTime())[0];
+  if (checked) return checked;
+
+  const raw = prison.sourceRaw;
+  if (raw && typeof raw === "object") {
+    for (const key of SOURCE_DATE_KEYS) {
+      const date = parseRawDate(raw[key]);
+      if (date) return date;
+    }
+  }
+  const imageDate = parseRawDate((prisonImages as Record<string, PrisonImageRow>)[prison.slug]?.updatedAt);
+  return imageDate;
 }
 
 export function getPrisonLastModifiedMs(prison: Prison, fallbackMs: number): number {

@@ -19,12 +19,7 @@ function parseCsvRows(text) {
 
 function run() {
   if (!fs.existsSync(INPUT_FILE)) {
-    fs.writeFileSync(
-      OUTPUT_FILE,
-      "/* eslint-disable */\n/** Auto-generated control file for pruning low-value generated article families. */\n\nexport const prunedGeneratedArticleSlugs: string[] = [];\n",
-      "utf8",
-    );
-    console.log("No prune CSV found. Wrote empty prune list.");
+    console.log("No prune CSV found. Preserved the existing prune control file.");
     return;
   }
 
@@ -50,4 +45,3 @@ function run() {
 }
 
 run();
-

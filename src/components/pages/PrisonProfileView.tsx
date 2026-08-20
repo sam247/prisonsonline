@@ -43,6 +43,7 @@ import { AdSenseUnit } from "@/components/ads/AdSenseUnit";
 import { slotForTemplate } from "@/lib/ads/layoutPolicy";
 import { MapPin, ChevronRight, BookOpen, FileText } from "lucide-react";
 import type { Prison } from "@/types/prison";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 
 function leadSummaryText(p: Prison): string {
   const sd = p.shortDescription?.trim();
@@ -72,8 +73,8 @@ function formatPrisonMetaDescription(p: Prison): string {
         : "Prison profile";
   const detail =
     p.countrySlug === "us"
-      ? "visiting information, address, contact details, and facility context"
-      : "visiting information, contact details, address, and practical prison information";
+      ? "facility type, operator, location, and general facility context"
+      : "category, operator, location, and general facility information";
   const primary = `${name}${location ? ` in ${location}` : ""}. ${descriptor} with ${detail}.`;
   return primary.replace(/\s+/g, " ").trim().slice(0, 160);
 }
@@ -219,9 +220,14 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 <ul className="space-y-2 text-sm text-accent">
                   {availableIntents.map((intent) => (
                     <li key={intent}>
-                      <Link href={intentHref(prison.countrySlug, prison.slug, intent)} className="hover:underline">
-                        {intentTopicLabel(intent)} for {prison.name}
-                      </Link>
+                      <TrackedLink
+                        href={intentHref(prison.countrySlug, prison.slug, intent)}
+                        className="hover:underline"
+                        eventName="intent_navigation"
+                        eventParams={{ page_family: "prison_profile", entity_slug: prison.slug, intent_slug: intent }}
+                      >
+                        {intent === "contact-details" ? `${prison.name} contact details` : `${prison.name} ${intentTopicLabel(intent).toLowerCase()}`}
+                      </TrackedLink>
                     </li>
                   ))}
                 </ul>

@@ -27,6 +27,9 @@ export function PrisonListingTemplate({
   stats,
   readMoreLink,
   heroImage,
+  methodology,
+  relatedLinks,
+  officialSources,
 }: {
   breadcrumbs: PrisonListingCrumb[];
   title: string;
@@ -40,6 +43,9 @@ export function PrisonListingTemplate({
   readMoreLink?: { href: string; label: string };
   /** Optional narrow editorial banner above the title block. */
   heroImage?: EditorialImage;
+  methodology?: string;
+  relatedLinks?: { href: string; label: string }[];
+  officialSources?: { href: string; label: string }[];
 }) {
   const n = establishmentCountFromStats(stats);
   const countFactualLine =
@@ -110,6 +116,28 @@ export function PrisonListingTemplate({
               </Link>
             </p>
           )}
+          {methodology && (
+            <div className="pt-2">
+              <h2 className="text-sm font-semibold mb-1">Methodology</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">{methodology}</p>
+            </div>
+          )}
+          {officialSources?.length ? (
+            <div className="pt-2">
+              <h2 className="text-sm font-semibold mb-1">Official sources</h2>
+              <ul className="text-sm space-y-1">
+                {officialSources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{source.label}</a></li>)}
+              </ul>
+            </div>
+          ) : null}
+          {relatedLinks?.length ? (
+            <nav aria-label="Related prison collections" className="pt-2">
+              <h2 className="text-sm font-semibold mb-2">Related prison lists</h2>
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                {relatedLinks.map((link) => <Link key={link.href} href={link.href} className="text-accent hover:underline">{link.label}</Link>)}
+              </div>
+            </nav>
+          ) : null}
         </div>
       </div>
 

@@ -9,6 +9,10 @@
     "data:build:growth-cohort": "node scripts/build-growth-cohort.mjs",
     "data:build:article-prune": "node scripts/build-article-prune.mjs",
     "data:build:images": "node scripts/build-prison-images.mjs",
+    "audit:intents": "node scripts/audit-prison-intents.mjs",
+    "check:sitemaps": "tsx scripts/check-sitemaps.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
     "data:build:strict": "node scripts/build-institutional-data.mjs --strict",
     "prebuild": "npm run data:build && npm run data:build:us && npm run data:build:images && npm run data:build:growth-cohort && npm run data:build:article-prune",
     "build": "next build",
@@ -40,6 +44,7 @@
     "eslint-config-next": "14.2.18",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   },
   "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"

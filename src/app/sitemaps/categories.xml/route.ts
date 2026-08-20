@@ -6,8 +6,7 @@ import { buildCategoriesEntries } from "@/lib/seo/sitemapEntries";
 /** Static hubs, collections, UK/US programmatic paths, and articles (non-prison-profile URLs). */
 export function GET() {
   const base = getBaseUrl();
-  const now = new Date();
-  const xml = buildUrlSetXml(buildCategoriesEntries(base, now));
+  const xml = buildUrlSetXml(buildCategoriesEntries(base));
   return new NextResponse(xml, {
     headers: { "Content-Type": "application/xml; charset=utf-8" },
   });

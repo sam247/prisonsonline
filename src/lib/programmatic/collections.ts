@@ -40,9 +40,9 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
   "womens-prisons": {
     kind: "gender",
     title: "Women’s prisons (England & Wales)",
-    subtitle: "Establishments in the HMPPS listing associated with women’s or female provision.",
+    subtitle: "A comprehensive directory view of establishments associated with women’s or female provision.",
     intro:
-      "These establishments are identified from HMPPS administrative fields (gender, cohort, or name). Confirm details with official sources before visiting or contacting a prison.",
+      "Women’s prisons hold women and, at some sites, young women or mother-and-baby units. This broader list uses gender, cohort and facility-name evidence rather than only the narrow “Female” predominant-function label.",
     metaDescription:
       "Browse women’s prisons and female-provision establishments in England and Wales from HMPPS administrative data.",
     priority: 0.55,
@@ -60,9 +60,9 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
   "high-security": {
     kind: "security",
     title: "High-security prisons (England & Wales)",
-    subtitle: "Category A and high-security function establishments from HMPPS data.",
+    subtitle: "Category A and high-security-function establishments in the current directory.",
     intro:
-      "Includes Category A and sites whose predominant function is described as high security in the import.",
+      "High-security prisons hold people whose escape would present the greatest public risk. This collection includes Category A establishments and sites whose predominant function is recorded as high security; it is distinct from the administrative long-term and high-security estate grouping.",
     metaDescription:
       "Browse high-security and Category A prisons in England and Wales from HMPPS listings.",
     priority: 0.55,
@@ -70,9 +70,9 @@ const meta: Record<UkCollectionSlug, Omit<ProgrammaticCollection, "slug" | "cano
   "private-prisons": {
     kind: "operator",
     title: "Privately managed prisons (England & Wales)",
-    subtitle: "Establishments operated under private-sector contracts or listed as privately managed.",
+    subtitle: "Establishments operated under private-sector contracts or recorded as privately managed.",
     intro:
-      "Identified from operator names (e.g. Serco, G4S, Sodexo) and HMPPS sub-group labels referencing private management.",
+      "Private prisons are custodial establishments managed by contracted operators rather than directly by the public prison service. This list is derived from operator names and private-management labels in the current HMPPS-derived import.",
     metaDescription:
       "Browse privately managed prisons in England and Wales from HMPPS administrative data.",
     priority: 0.55,

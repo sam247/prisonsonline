@@ -57,6 +57,10 @@ export interface GeneratedArticle {
   explainerKey?: string;
   /** US federal facility-type hub slug (e.g. fci, usp). */
   facilityTypeSlug?: string;
+  author?: { name: string; url?: string };
+  reviewer?: { name: string; url?: string };
+  modifiedDate?: string;
+  sources?: { name: string; url: string }[];
 }
 
 export type ManualSiteArticle = Article & { sourceType: "manual" };

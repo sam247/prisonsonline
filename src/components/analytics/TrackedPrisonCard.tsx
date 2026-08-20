@@ -23,6 +23,7 @@ export function TrackedPrisonCard({
           content_type: "prison_profile",
           item_id: prison.slug,
           item_list_name: listName,
+          page_family: listName === "finder_results" ? "prison_finder" : "prison_hub",
         })
       }
     >

@@ -27,7 +27,7 @@ export function SearchBar({
     const trimmed = query.trim();
     if (!trimmed) return;
 
-    sendGtagEvent("search", { search_term: trimmed });
+    sendGtagEvent("search", { page_family: "prison_finder", query_length: trimmed.length });
 
     if (onSearch) {
       onSearch(trimmed);

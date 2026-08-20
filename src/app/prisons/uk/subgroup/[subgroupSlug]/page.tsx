@@ -31,8 +31,9 @@ export default function UkSubgroupHubPage({ params }: Props) {
   const path = `/prisons/uk/subgroup/${params.subgroupSlug}`;
   const title = `${r.subgroupLabel} prisons in England & Wales`;
   const subtitle = `${r.prisons.length} establishments in this administrative sub-group.`;
-  const intro =
-    "Browse prisons in this HMPPS administrative sub-group for England and Wales. Sub-groups come from the “Prison Sub-Group 1” field and reflect administrative clustering, not necessarily a single security level or function.";
+  const intro = params.subgroupSlug === "long-term-and-high-security-estate"
+    ? "This is the exact HMPPS-derived “Prison Sub-Group 1” classification for the long-term and high-security estate. It is an administrative grouping, not a synonym for Category A or the broader high-security collection."
+    : "Browse prisons in this HMPPS administrative sub-group for England and Wales. Sub-groups come from the “Prison Sub-Group 1” field and reflect administrative clustering, not necessarily a single security level or function.";
   const leaf = r.subgroupLabel;
 
   return (
@@ -53,6 +54,11 @@ export default function UkSubgroupHubPage({ params }: Props) {
         { label: "Sub-group", value: r.subgroupLabel },
       ]}
       heroImage={getUkHubEditorialImage("subgroup", params.subgroupSlug)}
+      methodology="Sub-group pages use the exact Prison Sub-Group 1 value from the current HMPPS-derived import."
+      relatedLinks={params.subgroupSlug === "long-term-and-high-security-estate" ? [
+        { href: "/prisons/uk/collection/high-security", label: "High-security prison collection" },
+        { href: "/prisons/uk/long-term-and-high-security-estate", label: "Administrative estate region" },
+      ] : undefined}
     />
   );
 }

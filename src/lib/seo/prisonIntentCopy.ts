@@ -12,13 +12,15 @@ export function buildIntentPageTitle(prison: Prison, intent: PrisonIntentSlug): 
   const name = searchFacingPrisonName(prison);
   switch (intent) {
     case "visiting-times":
-      return `${name} visiting times and visitor information`;
+      return `${name} Visiting Times`;
     case "contact-details":
-      return `${name} contact details, phone and address`;
+      return `${name} Address, Postcode & Phone`.length <= 60
+        ? `${name} Address, Postcode & Phone`
+        : `${name} Contact Details`;
     case "booking-a-visit":
-      return `${name} booking a visit and visitor information`;
+      return `${name} Booking a Visit`;
     case "what-to-expect":
-      return `${name} visits: what to expect and visitor rules`;
+      return `${name} Visit Rules & What to Expect`;
     case "sending-money":
       return `${name} sending money and prison funds`;
     case "phone-calls":
@@ -26,8 +28,14 @@ export function buildIntentPageTitle(prison: Prison, intent: PrisonIntentSlug): 
     case "email-a-prisoner":
       return `${name} email a prisoner and digital messaging`;
     case "legal-visits":
-      return `${name} legal visits and professional access`;
+      return `${name} Legal Visits`;
   }
+}
+
+export function buildIntentPageHeading(prison: Prison, intent: PrisonIntentSlug): string {
+  const name = searchFacingPrisonName(prison);
+  if (intent === "contact-details") return `${name} Contact Details`;
+  return buildIntentPageTitle(prison, intent);
 }
 
 export function buildIntentMetaDescription(prison: Prison, intent: PrisonIntentSlug): string {
@@ -41,7 +49,7 @@ export function buildIntentMetaDescription(prison: Prison, intent: PrisonIntentS
         160,
       );
     case "contact-details":
-      return `${name} contact details, phone number, address and enquiry routes${loc ? ` for ${loc}` : ""}. Confirm current details with ${op || "the operator"}.`.slice(
+      return `${name} address, postcode, telephone and available official contact routes${loc ? ` for ${loc}` : ""}. Source links are shown where verified.`.slice(
         0,
         160,
       );
@@ -71,7 +79,7 @@ export function buildIntentMetaDescription(prison: Prison, intent: PrisonIntentS
         160,
       );
     case "legal-visits":
-      return `${name} legal visits guidance, booking context and professional access details${loc ? ` for ${loc}` : ""}. Confirm current procedures with ${op || "the operator"}.`.slice(
+      return `${name} legal and professional visit booking details${loc ? ` for ${loc}` : ""}, with facility-specific official contact routes and schedules.`.slice(
         0,
         160,
       );

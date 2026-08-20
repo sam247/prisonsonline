@@ -139,7 +139,7 @@ export function buildPlanningVisitBody(p: Prison): string {
 }
 
 export function buildContactHeading(name: string): string {
-  return `Contact details for ${name}`;
+  return `${name} facility details`;
 }
 
 export function buildContactBody(p: Prison): string {

@@ -35,8 +35,13 @@ export default function UkSecurityCategoryHubPage({ params }: Props) {
   const path = `/prisons/uk/category/${params.categorySlug}`;
   const title = `${level} prisons in England & Wales`;
   const subtitle = `${prisonList.length} establishments classified as ${level} in this import.`;
-  const intro =
-    "Browse prisons grouped under this England and Wales security category view. Category mapping is inferred from HMPPS predominant function, cohort, and related text in the build pipeline, so always verify category with HM Prison and Probation Service or official listings.";
+  const definition =
+    level === "Category B"
+      ? "Category B prisons hold people for whom the highest security is not required but escape must be made very difficult."
+      : level === "Category C"
+        ? "Category C prisons hold people who cannot be trusted in open conditions but are considered unlikely to try to escape."
+        : `This page groups establishments mapped to ${level} in the current prison dataset.`;
+  const intro = `${definition} The list below is a directory view, not an operational or placement decision.`;
   const leaf = level;
   const readMore = readMoreArticleForUkSecurityHub(params.categorySlug);
 
@@ -59,6 +64,13 @@ export default function UkSecurityCategoryHubPage({ params }: Props) {
       ]}
       readMoreLink={readMore ?? undefined}
       heroImage={getUkHubEditorialImage("category", params.categorySlug)}
+      methodology="Category mapping uses the HMPPS-derived category, predominant-function and cohort fields in the current import. Facility profiles retain the source labels so the grouping can be checked."
+      officialSources={[{ href: "https://www.gov.uk/guidance/categorisation-recategorisation-and-open-conditions", label: "GOV.UK categorisation guidance" }]}
+      relatedLinks={[
+        { href: "/prisons/uk/collection/high-security", label: "High-security prisons" },
+        { href: "/prisons/uk/collection/open-prisons", label: "Open prisons" },
+        { href: "/prisons/uk", label: "All UK prisons" },
+      ]}
     />
   );
 }

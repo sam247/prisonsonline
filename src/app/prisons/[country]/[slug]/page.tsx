@@ -56,5 +56,17 @@ export default function PrisonOrRegionPage({ params }: Props) {
       />
     );
   }
+  if (country === "uk" && slug === "long-term-and-high-security-estate") {
+    return (
+      <RegionPrisonsView
+        countrySlug={country}
+        regionSlug={slug}
+        prisons={resolved.prisons}
+        intro="This page reflects the HMPPS-derived long-term and high-security administrative estate grouping. It is broader than a simple Category A list and can include establishments with different category labels or specialist long-term functions."
+        footnote="Administrative estate groupings and individual prison categories serve different purposes. Check each prison profile and its linked official source for current facility information."
+        readMoreLink={{ href: "/prisons/uk/collection/high-security", label: "Compare the high-security prison collection" }}
+      />
+    );
+  }
   return <RegionPrisonsView countrySlug={country} regionSlug={slug} prisons={resolved.prisons} />;
 }

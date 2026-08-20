@@ -11,6 +11,10 @@ export interface Article {
   relatedGuides: string[];
   /** Optional cover (editorial only). */
   coverImage?: EditorialImage;
+  author?: { name: string; url?: string };
+  reviewer?: { name: string; url?: string };
+  modifiedDate?: string;
+  sources?: { name: string; url: string }[];
 }
 
 export const articles: Article[] = [

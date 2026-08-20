@@ -34,7 +34,7 @@ export function RegionPrisonsView({
   const base = getBaseUrl();
   const regionPath = `/prisons/${countrySlug}/${regionSlug}`;
   const heroImage = getRegionBrowseEditorialImage(countrySlug, regionSlug);
-  const jsonLd = breadcrumbJsonLd(
+  const breadcrumb = breadcrumbJsonLd(
     [
       { name: "Prisons", path: "/prisons" },
       { name: countryName, path: `/prisons/${countrySlug}` },
@@ -42,6 +42,30 @@ export function RegionPrisonsView({
     ],
     base,
   );
+  const breadcrumbNode: Record<string, unknown> = { ...breadcrumb };
+  delete breadcrumbNode["@context"];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${base}${regionPath}#collection`,
+        name: `Prisons in ${regionName}`,
+        url: `${base}${regionPath}`,
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: regionPrisons.length,
+          itemListElement: regionPrisons.map((prison, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: prison.name,
+            url: `${base}/prisons/${prison.countrySlug}/${prison.slug}`,
+          })),
+        },
+      },
+      breadcrumbNode,
+    ],
+  };
 
   return (
     <>

@@ -22,6 +22,9 @@ export function UkHubListingPage({
   readMoreLink,
   listingCountryForJsonLd = defaultListingCountry,
   heroImage,
+  methodology,
+  relatedLinks,
+  officialSources,
 }: {
   canonicalPath: string;
   breadcrumbs: PrisonListingCrumb[];
@@ -38,6 +41,9 @@ export function UkHubListingPage({
   /** Override middle breadcrumb segment for JSON-LD (default: UK). */
   listingCountryForJsonLd?: { name: string; path: string };
   heroImage?: EditorialImage;
+  methodology?: string;
+  relatedLinks?: { href: string; label: string }[];
+  officialSources?: { href: string; label: string }[];
 }) {
   const base = getBaseUrl();
   const trail = [
@@ -45,7 +51,29 @@ export function UkHubListingPage({
     { name: listingCountryForJsonLd.name, path: listingCountryForJsonLd.path },
     { name: jsonLdLeafName, path: canonicalPath },
   ];
-  const jsonLd = breadcrumbJsonLd(trail, base);
+  const breadcrumb = breadcrumbJsonLd(trail, base);
+  const breadcrumbNode: Record<string, unknown> = { ...breadcrumb };
+  delete breadcrumbNode["@context"];
+  const collectionPage = {
+    "@type": "CollectionPage",
+    "@id": `${base}${canonicalPath}#collection`,
+    name: title,
+    url: `${base}${canonicalPath}`,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: prisonList.length,
+      itemListElement: prisonList.map((prison, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: prison.name,
+        url: `${base}/prisons/${prison.countrySlug}/${prison.slug}`,
+      })),
+    },
+  };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [collectionPage, breadcrumbNode],
+  };
 
   return (
     <>
@@ -64,6 +92,9 @@ export function UkHubListingPage({
         stats={stats}
         readMoreLink={readMoreLink}
         heroImage={heroImage}
+        methodology={methodology}
+        relatedLinks={relatedLinks}
+        officialSources={officialSources}
       />
     </>
   );

@@ -6,8 +6,7 @@ import { buildRegionEntries } from "@/lib/seo/sitemapEntries";
 /** Country indexes and region listing pages only (no prison profile URLs). */
 export function GET() {
   const base = getBaseUrl();
-  const now = new Date();
-  const xml = buildUrlSetXml(buildRegionEntries(base, now));
+  const xml = buildUrlSetXml(buildRegionEntries(base));
   return new NextResponse(xml, {
     headers: { "Content-Type": "application/xml; charset=utf-8" },
   });

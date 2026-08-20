@@ -60,6 +60,18 @@ export default function UkCollectionPage({ params }: Props) {
       stats={stats}
       readMoreLink={readMore ?? undefined}
       heroImage={getUkHubEditorialImage("collection", collectionSlug)}
+      methodology="Collections are calculated from visible HMPPS-derived fields such as gender, category, predominant function and operator. Counts update with the underlying import; no establishments are added manually to inflate the list."
+      officialSources={[{ href: "https://www.gov.uk/government/collections/prisons-in-england-and-wales", label: "GOV.UK prisons in England and Wales" }]}
+      relatedLinks={collectionSlug === "womens-prisons" ? [
+        { href: "/prisons/uk/function/female", label: "Female function classification" },
+        { href: "/prisons/uk", label: "All UK prisons" },
+      ] : collectionSlug === "high-security" ? [
+        { href: "/prisons/uk/long-term-and-high-security-estate", label: "Long-term and high-security estate" },
+        { href: "/prisons/uk/category/category-b", label: "Category B prisons" },
+      ] : collectionSlug === "private-prisons" ? [
+        { href: "/prisons/uk", label: "All UK prisons" },
+        { href: "/prisons/uk/collection/high-security", label: "High-security prisons" },
+      ] : undefined}
     />
   );
 }
