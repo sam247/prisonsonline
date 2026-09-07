@@ -15,6 +15,7 @@ const footerLinks = [
     title: "Resources",
     links: [
       { label: "Prison Guides", href: "/guides" },
+      { label: "Find a UK Prison Address", href: "/guides/how-to-find-a-uk-prison-address" },
       { label: "How Visits Work", href: "/guides/how-prison-visits-work" },
       { label: "Prison Sentences", href: "/guides/how-prison-sentences-work" },
       { label: "Articles", href: "/articles" },

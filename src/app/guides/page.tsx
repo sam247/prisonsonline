@@ -4,7 +4,7 @@ import { guides } from "@/data/guides";
 import { Card, CardContent } from "@/components/ui/card";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { getGuideCoverImage } from "@/lib/media/resolvers";
-import { BookOpen, Users, Building2, Scale, Clock, Shield, FileText, Shirt, Package } from "lucide-react";
+import { BookOpen, Users, Building2, Scale, Clock, Shield, FileText, Shirt, Package, MapPin } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildPageMetadata({
@@ -22,6 +22,7 @@ const iconMap: Record<string, ReactNode> = {
   FileText: <FileText className="h-6 w-6" />,
   Shirt: <Shirt className="h-6 w-6" />,
   Package: <Package className="h-6 w-6" />,
+  MapPin: <MapPin className="h-6 w-6" />,
 };
 
 export default function GuidesIndexPage() {

@@ -317,6 +317,47 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    title: "How to Find a UK Prison Address",
+    slug: "how-to-find-a-uk-prison-address",
+    excerpt:
+      "Find a UK prison’s postal address, postcode and switchboard number, then open that establishment’s contact-details page instead of relying on forum posts.",
+    icon: "MapPin",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for finding a UK prison address — not a photograph of a facility.",
+    },
+    content:
+      "People looking up a UK prison address usually need a postal address, postcode, or switchboard number so they can write a letter, confirm they have the right establishment, or start a visit booking. Searches such as “HMP Wandsworth address” are best answered on that prison’s own contact-details page. This guide shows how to reach those pages from the directory, how to browse by security category when you do not yet have the name, and when to double-check the details on GOV.UK. It is general orientation only: it does not replace official HMPPS or GOV.UK records, and it does not list every prison’s address here.\n\n## If you already know the prison name\n\nOpen the prison’s profile in the UK directory, then use the contact-details page for that site. That is the page on this website meant to hold the postal address, postcode, and telephone number for one establishment. Profile pages describe the prison; contact-details pages own the address and phone lookup. If a search engine offered a directory listing instead of an address, follow through to the contact-details URL rather than copying an old forum post.\n\nHTML:High-demand contact pages include <a href=\"/prisons/uk/hmp-wandsworth/contact-details\">HMP Wandsworth contact details</a>, <a href=\"/prisons/uk/hmp-thameside/contact-details\">HMP Thameside contact details</a>, <a href=\"/prisons/uk/hmp-wormwood-scrubs/contact-details\">HMP Wormwood Scrubs contact details</a>, <a href=\"/prisons/uk/hmp-bullingdon/contact-details\">HMP Bullingdon contact details</a>, <a href=\"/prisons/uk/hmp-durham/contact-details\">HMP Durham contact details</a>, <a href=\"/prisons/uk/hmp-five-wells/contact-details\">HMP Five Wells contact details</a>, <a href=\"/prisons/uk/hmp-preston/contact-details\">HMP Preston contact details</a>, and <a href=\"/prisons/uk/hmp-yoi-bronzefield/contact-details\">HMP Bronzefield contact details</a>.\n\nHTML:You can also start from the <a href=\"/prisons/uk\">UK prison directory</a> or the <a href=\"/prisons\">Prison Finder</a> if you only have a partial name.\n\n## If you know the category but not the name\n\nEngland and Wales male prisons are grouped by security category. Category B and Category C lists are the busiest browse pages on this site. Use them when you know the type of prison but not the exact HMP name, then open the matching contact-details page once you have identified the establishment. Category pages are lists; they are not a substitute for a named prison’s address page.\n\nHTML:Browse <a href=\"/prisons/uk/category/category-c\">Category C prisons</a> and <a href=\"/prisons/uk/category/category-b\">Category B prisons</a>. If the site is privately managed, the <a href=\"/prisons/uk/collection/private-prisons\">privately managed prisons</a> collection can also narrow the list. For the category definitions themselves, see <a href=\"/guides/prison-categories-explained\">Prison Categories Explained</a>.\n\n## What a contact-details page is for\n\nUse the contact-details page to check the postal address and postcode before you send mail, and the published switchboard or enquiry number before you call. Visiting still needs a separate booking process; the phone number on a contact page is not automatically a visits booking line. Mail usually needs the prisoner’s full name and prison number as well as the establishment address. Rules on photographs, enclosures, and digital mail providers differ by prison, so treat the contact page as the route to the right site rather than a complete mail manual.\n\n## Confirm the details officially\n\nAddresses, phone numbers, and mail routes change. After you have identified the prison here, confirm the live details on GOV.UK’s Find a prison service or the establishment’s own published contact page before you post a letter or travel. This directory is compiled from HMPPS administrative data used in the current site build; it is not a government website and it does not cover every Scottish or Northern Ireland establishment in the same way as England and Wales HMP sites.\n\nHTML:When you are ready to book a visit rather than post a letter, read <a href=\"/guides/how-prison-visits-work\">How Prison Visits Work</a> after you have the right contact-details page.\n\n## A simple order of steps\n\n- Confirm the establishment name, including YOI in the title where that is how the site is listed.\n- Open that prison’s contact-details page for the address, postcode, and telephone number.\n- If you only know the type of prison, browse the Category B or Category C list first.\n- Add the prisoner’s name and prison number to any letter, then confirm the postal route on GOV.UK before you send it.",
+    faqs: [
+      {
+        question: "How do I find a UK prison address?",
+        answer:
+          "Search for the HMP name in the UK directory, then open that prison’s contact-details page. That page is where this site keeps the postal address, postcode, and telephone number for one establishment. Confirm the live details on GOV.UK before you post mail.",
+      },
+      {
+        question: "What should I write on a letter to someone in prison?",
+        answer:
+          "Use the prisoner’s full name and prison number, then the prison’s postal address and postcode from the contact-details page. Do not rely on an old forum address. Extra items such as photographs follow that prison’s own mail rules.",
+      },
+      {
+        question: "Is the phone number on a prison contact page for booking visits?",
+        answer:
+          "Not necessarily. The published number is usually a switchboard or general enquiry line. Visit booking often uses a separate line, an online form, or a visits centre process. Check the prison’s visiting information after you have the right site.",
+      },
+      {
+        question: "Can I find a prison by category if I do not know the name?",
+        answer:
+          "Yes. Category C and Category B directory pages list establishments in those security bands. Identify the prison from the list, then open its contact-details page for the address rather than treating the category list as the address itself.",
+      },
+      {
+        question: "Why do some listings include YOI in the name?",
+        answer:
+          "Some establishments are recorded as HMP/YOI in the source data, even when people search for the shorter HMP name. Use the listing name that matches the directory so you open the correct contact-details page.",
+      },
+    ],
+  },
 ];
 
 export const getGuide = (slug: string) => guides.find(g => g.slug === slug);
