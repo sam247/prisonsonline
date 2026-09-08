@@ -13,10 +13,16 @@ export function buildIntentPageTitle(prison: Prison, intent: PrisonIntentSlug): 
   switch (intent) {
     case "visiting-times":
       return `${name} Visiting Times`;
-    case "contact-details":
+    case "contact-details": {
+      // Wandsworth-only snippet test (2026-09-08). Other prisons keep the shared pattern.
+      if (prison.slug === "hmp-wandsworth" && prison.postcode?.trim()) {
+        const withPostcode = `${name} Address & Phone | ${prison.postcode.trim()}`;
+        return withPostcode.length <= 60 ? withPostcode : `${name} Address & Phone`;
+      }
       return `${name} Address, Postcode & Phone`.length <= 60
         ? `${name} Address, Postcode & Phone`
         : `${name} Contact Details`;
+    }
     case "booking-a-visit":
       return `${name} Booking a Visit`;
     case "what-to-expect":
@@ -48,11 +54,25 @@ export function buildIntentMetaDescription(prison: Prison, intent: PrisonIntentS
         0,
         160,
       );
-    case "contact-details":
+    case "contact-details": {
+      // Wandsworth-only snippet test (2026-09-08): surface concrete address + phone in SERP.
+      if (prison.slug === "hmp-wandsworth") {
+        const addr = prison.address?.trim();
+        const phone = prison.phone?.trim();
+        const concrete = [
+          addr ? `${name} postal address: ${addr}.` : null,
+          phone ? `Phone ${phone}.` : null,
+          "Official contact details for Wandsworth prison.",
+        ]
+          .filter(Boolean)
+          .join(" ");
+        return concrete.slice(0, 160);
+      }
       return `${name} address, postcode, telephone and available official contact routes${loc ? ` for ${loc}` : ""}. Source links are shown where verified.`.slice(
         0,
         160,
       );
+    }
     case "booking-a-visit":
       return `${name} booking a visit guidance, visitor rules, phone and address${loc ? ` for ${loc}` : ""}. Confirm live booking steps with ${op || "the operator"}.`.slice(
         0,

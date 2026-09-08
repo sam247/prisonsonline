@@ -9,6 +9,7 @@ import { prisonProfileJsonLdGraph } from "@/lib/seo/prisonJsonLd";
 import { prisonIntentJsonLdGraph } from "@/lib/seo/prisonIntentJsonLd";
 import { buildPrisonIntentEntries, buildProbationEntries } from "@/lib/seo/sitemapEntries";
 import { buildUrlSetXml } from "@/lib/seo/sitemapXml";
+import { buildIntentMetaDescription, buildIntentPageTitle } from "@/lib/seo/prisonIntentCopy";
 
 test("complete titles stay within the rendered budget", () => {
   const titles = [
@@ -26,6 +27,17 @@ test("profile title owns entity/category rather than contact intent", () => {
   const title = buildPrisonPageTitle(prison);
   assert.match(title, /HMP Berwyn/);
   assert.doesNotMatch(title, /address|contact|visit/i);
+});
+
+test("Wandsworth contact-details snippet test uses concrete postcode and phone", () => {
+  const wandsworth = getPrisonByCountryAndSlug("uk", "hmp-wandsworth");
+  const ranby = getPrisonByCountryAndSlug("uk", "hmp-ranby");
+  assert.ok(wandsworth && ranby);
+  assert.equal(buildIntentPageTitle(wandsworth, "contact-details"), "HMP Wandsworth Address & Phone | SW18 3HU");
+  assert.match(buildIntentMetaDescription(wandsworth, "contact-details"), /SW18 3HU/);
+  assert.match(buildIntentMetaDescription(wandsworth, "contact-details"), /\(020\) 8588 4000/);
+  assert.equal(buildIntentPageTitle(ranby, "contact-details"), "HMP Ranby Address, Postcode & Phone");
+  assert.doesNotMatch(buildIntentMetaDescription(ranby, "contact-details"), /DN22 8EU/);
 });
 
 test("legal visits are independently enabled for seven sourced prisons", () => {

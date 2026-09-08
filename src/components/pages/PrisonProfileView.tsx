@@ -45,6 +45,17 @@ import { MapPin, ChevronRight, BookOpen, FileText } from "lucide-react";
 import type { Prison } from "@/types/prison";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
 
+/**
+ * First-wave ownership pilot (2026-09-08): only these UK profiles get an
+ * explicit early address/phone CTA to /contact-details. Other prisons
+ * (including Ranby) remain controls.
+ */
+const PROFILE_CONTACT_OWNERSHIP_PILOT = new Set([
+  "hmp-elmley",
+  "hmp-hewell",
+  "hmp-garth",
+]);
+
 function leadSummaryText(p: Prison): string {
   const sd = p.shortDescription?.trim();
   if (sd) return sd;
@@ -140,6 +151,11 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
   const showBopImportNote =
     prison.dataProvenance === "bop_import" && prison.capacity === 0 && prison.openedYear === 0;
   const facilityVisual = resolvePrisonFacilityVisual(prison);
+  const contactDetailsHref = intentHref(prison.countrySlug, prison.slug, "contact-details");
+  const showContactOwnershipCta =
+    prison.countrySlug === "uk" &&
+    PROFILE_CONTACT_OWNERSHIP_PILOT.has(prison.slug) &&
+    availableIntents.includes("contact-details");
 
   return (
     <div className="min-h-screen">
@@ -194,6 +210,25 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               neutral framing only; confirm all operational detail with the Federal Bureau of Prisons.
             </p>
           )}
+          {showContactOwnershipCta ? (
+            <p className="text-sm text-foreground/90 mt-4 leading-relaxed">
+              Looking for the postal address, postcode or phone number? See{" "}
+              <TrackedLink
+                href={contactDetailsHref}
+                className="text-accent hover:underline font-medium"
+                eventName="intent_navigation"
+                eventParams={{
+                  page_family: "prison_profile",
+                  entity_slug: prison.slug,
+                  intent_slug: "contact-details",
+                  cta: "lead_ownership",
+                }}
+              >
+                {prison.name} address, postcode and phone
+              </TrackedLink>
+              .
+            </p>
+          ) : null}
         </div>
       </div>
 
@@ -226,7 +261,11 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                         eventName="intent_navigation"
                         eventParams={{ page_family: "prison_profile", entity_slug: prison.slug, intent_slug: intent }}
                       >
-                        {intent === "contact-details" ? `${prison.name} contact details` : `${prison.name} ${intentTopicLabel(intent).toLowerCase()}`}
+                        {intent === "contact-details"
+                          ? showContactOwnershipCta
+                            ? `${prison.name} address, postcode and phone`
+                            : `${prison.name} contact details`
+                          : `${prison.name} ${intentTopicLabel(intent).toLowerCase()}`}
                       </TrackedLink>
                     </li>
                   ))}
@@ -367,6 +406,25 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 {buildContactHeading(prison.name)}
               </h2>
               <p className="text-muted-foreground leading-relaxed">{buildContactBody(prison)}</p>
+              {showContactOwnershipCta ? (
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  For the full postal address, postcode and telephone listing, use{" "}
+                  <TrackedLink
+                    href={contactDetailsHref}
+                    className="text-accent hover:underline"
+                    eventName="intent_navigation"
+                    eventParams={{
+                      page_family: "prison_profile",
+                      entity_slug: prison.slug,
+                      intent_slug: "contact-details",
+                      cta: "contact_section",
+                    }}
+                  >
+                    {prison.name} contact details
+                  </TrackedLink>
+                  .
+                </p>
+              ) : null}
             </section>
 
             <section aria-labelledby="location-heading">
