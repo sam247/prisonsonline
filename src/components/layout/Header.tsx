@@ -11,6 +11,7 @@ import { sendGtagEvent } from "@/lib/analytics/gtag";
 const navItems = [
   { label: "Prison Finder", href: "/prisons" },
   { label: "Probation Directory", href: "/probation" },
+  { label: "Courts", href: "/courts" },
   { label: "Prisons by Country", href: "/countries" },
   { label: "Prison Guides", href: "/guides" },
   { label: "Articles", href: "/articles" },

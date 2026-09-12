@@ -13,6 +13,7 @@ import { listUkHubSitemapPaths } from "@/lib/programmatic/ukPrisonHubs";
 import { listUsFederalSitemapPaths } from "@/lib/programmatic/usFederalHubs";
 import { intentsForPrison, prisonsEligibleForIntentPages } from "@/lib/seo/intentRollout";
 import { getPrisonSitemapLastModifiedDate } from "@/lib/seo/prisonLastModified";
+import { getIndexableCourts, listCourtTypeHubSummaries } from "@/lib/queries/courts";
 
 export type SitemapUrlEntry = { loc: string; lastmod?: Date };
 
@@ -66,6 +67,17 @@ export function buildProbationEntries(base: string): SitemapUrlEntry[] {
   for (const region of regions) out.push({ loc: `${base}/probation/uk/${region}` });
   for (const typeSlug of listProbationServiceTypeHubSlugs("uk")) {
     out.push({ loc: `${base}/probation/uk/service-type/${typeSlug}` });
+  }
+  return out;
+}
+
+export function buildCourtsEntries(base: string): SitemapUrlEntry[] {
+  const out: SitemapUrlEntry[] = [{ loc: `${base}/courts` }];
+  for (const hub of listCourtTypeHubSummaries()) {
+    out.push({ loc: `${base}/courts/${hub.slug}` });
+  }
+  for (const court of getIndexableCourts()) {
+    out.push({ loc: `${base}/courts/${court.slug}` });
   }
   return out;
 }

@@ -6,6 +6,7 @@
     "dev": "next dev",
     "data:build": "node scripts/build-institutional-data.mjs",
     "data:build:us": "node scripts/build-us-prisons.mjs",
+    "data:build:courts": "node scripts/build-court-directory.mjs",
     "data:build:growth-cohort": "node scripts/build-growth-cohort.mjs",
     "data:build:article-prune": "node scripts/build-article-prune.mjs",
     "data:build:images": "node scripts/build-prison-images.mjs",
@@ -14,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
     "data:build:strict": "node scripts/build-institutional-data.mjs --strict",
-    "prebuild": "npm run data:build && npm run data:build:us && npm run data:build:images && npm run data:build:growth-cohort && npm run data:build:article-prune",
+    "prebuild": "npm run data:build && npm run data:build:us && npm run data:build:courts && npm run data:build:images && npm run data:build:growth-cohort && npm run data:build:article-prune",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

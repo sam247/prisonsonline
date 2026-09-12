@@ -3,6 +3,8 @@
 export { ukPrisonsGenerated } from "./ukPrisons.generated";
 export { probationCentresGenerated } from "./probationCentres.generated";
 export { hmctsSitesGenerated } from "./hmctsSites.generated";
+export { courtsGenerated } from "./courts.generated";
+export { prisonCoordsGenerated } from "./prisonCoords.generated";
 export { ukRegionsGenerated } from "./ukRegions.generated";
 export { ukOperatorsGenerated } from "./ukOperators.generated";
 

@@ -44,6 +44,11 @@ import { slotForTemplate } from "@/lib/ads/layoutPolicy";
 import { MapPin, ChevronRight, BookOpen, FileText } from "lucide-react";
 import type { Prison } from "@/types/prison";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import {
+  NEARBY_DISCLAIMER,
+  formatDistanceMiles,
+  getNearbyCourtsForPrison,
+} from "@/lib/queries/nearbyCourtsPrisons";
 
 /**
  * First-wave ownership pilot (2026-09-08): only these UK profiles get an
@@ -129,6 +134,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
   const availableIntents = intentsForPrison(prison);
 
   const profilePath = `/prisons/${prison.countrySlug}/${prison.slug}`;
+  const nearbyCourts =
+    prison.countrySlug === "uk" ? getNearbyCourtsForPrison(prison.slug, prison.countrySlug, 3) : [];
   const relatedSlugs = new Set(related.map((r) => r.slug));
   const sameRegionAll = getPrisonsByRegion(prison.countrySlug, prison.regionSlug)
     .filter((p) => p.slug !== prison.slug)
@@ -709,6 +716,25 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             </ul>
           </section>
         )}
+
+        {nearbyCourts.length > 0 ? (
+          <section className="mt-16 border-t border-border/60 pt-12" aria-labelledby="nearby-courts-heading">
+            <h2 id="nearby-courts-heading" className="text-xl font-bold mb-2">
+              Courts near {prison.name}
+            </h2>
+            <ul className="space-y-2 text-sm mb-3">
+              {nearbyCourts.map((court) => (
+                <li key={court.slug}>
+                  <Link href={court.href} className="text-accent hover:underline font-medium">
+                    {court.name}
+                  </Link>
+                  <span className="text-muted-foreground"> — {formatDistanceMiles(court.distanceMiles)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-muted-foreground max-w-2xl">{NEARBY_DISCLAIMER}</p>
+          </section>
+        ) : null}
 
         {related.length > 0 && (
           <section className="mt-16 border-t border-border/60 pt-12" aria-labelledby="related-prisons-heading">

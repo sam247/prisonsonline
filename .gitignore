@@ -19,6 +19,9 @@
 # unrelated reference export (nested git repo; see SOURCE.md)
 LOVABLE_BUILD/
 
+# build caches (FaCT CSV, postcodes.io overlays, etc.)
+.cache/
+
 # misc
 .DS_Store
 *.pem

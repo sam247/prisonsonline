@@ -8,6 +8,7 @@ export function GET() {
     `${base}/sitemaps/prisons.xml`,
     `${base}/sitemaps/prison-intent.xml`,
     `${base}/sitemaps/probation.xml`,
+    `${base}/sitemaps/courts.xml`,
     `${base}/sitemaps/regions.xml`,
     `${base}/sitemaps/guides.xml`,
     `${base}/sitemaps/categories.xml`,
