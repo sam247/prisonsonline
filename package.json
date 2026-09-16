@@ -14,6 +14,8 @@
     "check:sitemaps": "tsx scripts/check-sitemaps.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
+    "verify:uk": "tsx scripts/verify-uk-prisons.ts --limit=1",
+    "verify:uk:dry-run": "tsx scripts/verify-uk-prisons.ts --limit=10",
     "data:build:strict": "node scripts/build-institutional-data.mjs --strict",
     "prebuild": "npm run data:build && npm run data:build:us && npm run data:build:courts && npm run data:build:images && npm run data:build:growth-cohort && npm run data:build:article-prune",
     "build": "next build",

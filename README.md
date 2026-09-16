@@ -177,9 +177,14 @@ npm run data:build:us         # regenerate usPrisons.generated.ts from BOP clean
 npm run data:build:growth-cohort  # build top-entity cohort from data/growth CSV exports
 npm run data:build:article-prune  # build generated-article prune list from growth CSV
 npm run data:build:strict     # fail on duplicate prison slugs / strict errors
+npm run verify:uk             # Phase 1 UK GOV.UK verifier — one due prison, dry-run (no production writes)
+npm run verify:uk:dry-run     # same verifier against 10 due UK prisons; writes data/verification/reports/
 npm run build                 # runs data:build + data:build:us then next build
 npm run start
+npm run lint
 ```
+
+UK prison verification: [docs/uk-prison-verifier.md](./docs/uk-prison-verifier.md). Dry-run is default. Production overlay writes require `--write` **and** `UK_PRISON_VERIFIER_WRITE=1`.
 
 ---
 

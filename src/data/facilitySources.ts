@@ -1,4 +1,5 @@
-import type { FacilityVerificationRecord } from "@/types/facilitySource";
+import type { FacilityFactField, FacilityVerificationRecord } from "@/types/facilitySource";
+import { ukVerificationOverlay } from "./generated/ukVerificationOverlay.generated";
 
 const CHECKED_AT = "2026-08-20";
 const GOV = "GOV.UK — HM Prison and Probation Service";
@@ -177,5 +178,42 @@ export function getFacilityVerification(
   countrySlug: string,
   prisonSlug: string,
 ): FacilityVerificationRecord | undefined {
-  return recordsByKey.get(`${countrySlug}/${prisonSlug}`);
+  const key = `${countrySlug}/${prisonSlug}`;
+  const base = recordsByKey.get(key);
+  const overlay = ukVerificationOverlay.entries?.[key];
+  if (!overlay?.overrides || Object.keys(overlay.overrides).length === 0) return base;
+
+  const overlayFields = Object.keys(overlay.overrides) as FacilityFactField[];
+  const overlayFieldSources = Object.fromEntries(
+    overlayFields.map((field) => [field, ["official"]]),
+  ) as FacilityVerificationRecord["fieldSources"];
+  const overlaySource = overlay.sourceUrl
+    ? {
+        id: "official",
+        name: GOV,
+        url: overlay.sourceUrl,
+        checkedAt: overlay.appliedAt.slice(0, 10),
+      }
+    : undefined;
+
+  if (!base) {
+    return {
+      countrySlug,
+      prisonSlug,
+      sources: overlaySource ? [overlaySource] : [],
+      fieldSources: overlayFieldSources,
+      overrides: overlay.overrides,
+    };
+  }
+
+  const sources = overlaySource
+    ? [overlaySource, ...base.sources.filter((source) => source.url !== overlaySource.url)]
+    : base.sources;
+
+  return {
+    ...base,
+    sources,
+    fieldSources: { ...base.fieldSources, ...overlayFieldSources },
+    overrides: { ...base.overrides, ...overlay.overrides },
+  };
 }

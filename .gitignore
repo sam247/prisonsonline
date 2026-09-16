@@ -34,6 +34,15 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# UK verifier runtime artifacts (reports under reports/run-* are local; committed samples are named PHASE1_*)
+data/verification/state.json
+data/verification/audit.jsonl
+data/verification/overlay.json
+data/verification/latest.json
+data/verification/reports/run-*
+
+# vercel
+
 # vercel
 .vercel
 
