@@ -1,5 +1,6 @@
 import type { FacilityFactField, FacilityVerificationRecord } from "@/types/facilitySource";
 import { ukVerificationOverlay } from "./generated/ukVerificationOverlay.generated";
+import { usVerificationOverlay } from "./generated/usVerificationOverlay.generated";
 
 const CHECKED_AT = "2026-08-20";
 const GOV = "GOV.UK — HM Prison and Probation Service";
@@ -174,13 +175,31 @@ const recordsByKey = new Map(
   facilityVerificationRecords.map((record) => [`${record.countrySlug}/${record.prisonSlug}`, record]),
 );
 
+function overlayFor(countrySlug: string, key: string) {
+  if (countrySlug === "uk") return ukVerificationOverlay.entries?.[key];
+  if (countrySlug === "us" || countrySlug === "united-states") return usVerificationOverlay.entries?.[key];
+  return undefined;
+}
+
+function overlaySourceName(countrySlug: string, url?: string): string {
+  if (countrySlug === "uk") return GOV;
+  if (!url) return "Official US government source";
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "").toLowerCase();
+    if (host === "bop.gov") return "Federal Bureau of Prisons";
+  } catch {
+    return "Official US government source";
+  }
+  return "Official US government source";
+}
+
 export function getFacilityVerification(
   countrySlug: string,
   prisonSlug: string,
 ): FacilityVerificationRecord | undefined {
   const key = `${countrySlug}/${prisonSlug}`;
   const base = recordsByKey.get(key);
-  const overlay = ukVerificationOverlay.entries?.[key];
+  const overlay = overlayFor(countrySlug, key);
   if (!overlay?.overrides || Object.keys(overlay.overrides).length === 0) return base;
 
   const overlayFields = Object.keys(overlay.overrides) as FacilityFactField[];
@@ -190,7 +209,7 @@ export function getFacilityVerification(
   const overlaySource = overlay.sourceUrl
     ? {
         id: "official",
-        name: GOV,
+        name: overlaySourceName(countrySlug, overlay.sourceUrl),
         url: overlay.sourceUrl,
         checkedAt: overlay.appliedAt.slice(0, 10),
       }

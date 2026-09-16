@@ -45,9 +45,16 @@ function lineForField(result: PrisonVerificationResult, fieldName: string): stri
   return `- ${row.field}: ${row.classification}${current}${official} | ${row.evidence}${would}${applied}`;
 }
 
-export function renderMarkdownReport(report: RunReport): string {
+export function renderMarkdownReport(
+  report: RunReport,
+  options?: { title?: string; dryRunNote?: string },
+): string {
+  const title = options?.title ?? "UK prison verifier report";
+  const dryRunNote =
+    options?.dryRunNote ??
+    "Dry-run cannot mutate production prison data (HMPPS JSON, generated prison modules, or the live overlay).";
   const lines: string[] = [
-    "# UK prison verifier report",
+    `# ${title}`,
     "",
     `Generated: ${report.generatedAt}`,
     `Mode: **${report.mode}** (writesEnabled=${report.writesEnabled})`,
@@ -55,7 +62,7 @@ export function renderMarkdownReport(report: RunReport): string {
     `Summary: current=${report.summary.current} changed=${report.summary.changed} review=${report.summary.reviewRequired} failed=${report.summary.failed} productionMutations=${report.summary.productionMutations}`,
     "",
     report.mode === "dry-run"
-      ? "Dry-run cannot mutate production prison data (HMPPS JSON, generated prison modules, or the live overlay)."
+      ? dryRunNote
       : "Write mode is active. Only SAFE_AUTO_CHANGE overlay fields may have been applied.",
     "",
   ];
@@ -63,6 +70,11 @@ export function renderMarkdownReport(report: RunReport): string {
   for (const result of report.prisons) {
     lines.push(`## ${result.published.name || result.prisonSlug} (\`${result.prisonSlug}\`)`);
     lines.push("");
+    if (result.authority) {
+      lines.push(
+        `- Authority: ${result.authority.identified ? `${result.authority.name} (${result.authority.kind})` : "NOT IDENTIFIED"} — ${result.authority.evidence}`,
+      );
+    }
     lines.push(`- Official source located: ${result.source?.ok ? result.source.url : "NO"}`);
     if (result.source?.ok) lines.push(`- Discovery method: ${result.source.method}`);
     lines.push(`- Run status: ${result.audit.runStatus} / ${result.audit.verificationStatus}`);
@@ -90,11 +102,11 @@ export function renderMarkdownReport(report: RunReport): string {
   return `${lines.join("\n").trim()}\n`;
 }
 
-export function renderCliSummary(report: RunReport): string {
+export function renderCliSummary(report: RunReport, label = "UK verifier"): string {
   const rows = report.prisons.map((result) => {
     const source = result.source?.ok ? result.source.url : "unidentified";
     const auto = result.audit.wouldHaveAutoApplied.map((field) => field.field).join(",") || "-";
     return `${result.prisonSlug}\t${result.audit.verificationStatus}\t${source}\twouldAuto=${auto}\tmutated=${result.productionMutated}`;
   });
-  return [`UK verifier ${report.mode}: ${report.prisonCount} prisons`, ...rows].join("\n");
+  return [`${label} ${report.mode}: ${report.prisonCount} prisons`, ...rows].join("\n");
 }

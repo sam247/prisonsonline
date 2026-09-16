@@ -41,6 +41,13 @@ data/verification/overlay.json
 data/verification/latest.json
 data/verification/reports/run-*
 
+# US verifier runtime artifacts
+data/verification/us/state.json
+data/verification/us/audit.jsonl
+data/verification/us/overlay.json
+data/verification/us/latest.json
+data/verification/us/reports/run-*
+
 # vercel
 
 # vercel

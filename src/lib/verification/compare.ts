@@ -21,7 +21,7 @@ function diff(partial: Omit<FieldDiff, "wouldAutoApply"> & { writesEnabled?: boo
   return { ...partial, wouldAutoApply };
 }
 
-function categoriesCompatible(current?: string, official?: string): boolean {
+export function ukCategoriesCompatible(current?: string, official?: string): boolean {
   const cur = (current ?? "").toLowerCase();
   const off = (official ?? "").toLowerCase();
   if (!cur || !off) return true;
@@ -34,14 +34,41 @@ function categoriesCompatible(current?: string, official?: string): boolean {
   return false;
 }
 
+export interface ComparePolicy {
+  canOverride: (url: string) => boolean;
+  phonesEqual: (a?: string, b?: string) => boolean;
+  postcodesEqual: (a?: string, b?: string) => boolean;
+  namesEquivalent: (a?: string, b?: string) => boolean;
+  addressesEquivalent: (a?: string, b?: string) => boolean;
+  categoriesCompatible: (current?: string, official?: string) => boolean;
+  sourceName: string;
+  nameMatchEvidence: string;
+  nonAuthoritativeBlock: string;
+}
+
+export const UK_COMPARE_POLICY: ComparePolicy = {
+  canOverride: canOverrideFromSourceUrl,
+  phonesEqual,
+  postcodesEqual,
+  namesEquivalent,
+  addressesEquivalent,
+  categoriesCompatible: ukCategoriesCompatible,
+  sourceName: "GOV.UK",
+  nameMatchEvidence: "Official name matches after HMP/Prison normalisation.",
+  nonAuthoritativeBlock: "Blocked: source is not an authoritative UK government URL.",
+};
+
 export function compareFacts(input: {
   published: PublishedFacts;
   official: OfficialFacts;
   sourceUrl: string;
+  policy?: ComparePolicy;
 }): { fields: FieldDiff[]; missingOfficialFields: MissingOfficialField[] } {
   const { published, official, sourceUrl } = input;
-  const govOk = canOverrideFromSourceUrl(sourceUrl);
+  const policy = input.policy ?? UK_COMPARE_POLICY;
+  const govOk = policy.canOverride(sourceUrl);
   const fields: FieldDiff[] = [];
+  const src = policy.sourceName;
 
   const currentName = present(published.name);
   const officialName = present(official.officialName);
@@ -55,14 +82,14 @@ export function compareFacts(input: {
         confidence: "medium",
       }),
     );
-  } else if (namesEquivalent(currentName, officialName)) {
+  } else if (policy.namesEquivalent(currentName, officialName)) {
     fields.push(
       diff({
         field: "name",
         classification: "NO_CHANGE",
         currentValue: currentName,
         officialValue: officialName,
-        evidence: "Official name matches after HMP/Prison normalisation.",
+        evidence: policy.nameMatchEvidence,
         confidence: "high",
       }),
     );
@@ -87,7 +114,7 @@ export function compareFacts(input: {
         field: "address",
         classification: "NO_CHANGE",
         currentValue: currentAddress,
-        evidence: "GOV.UK omitted an address. Existing value is not treated as wrong and is not deleted.",
+        evidence: `${src} omitted an address. Existing value is not treated as wrong and is not deleted.`,
         confidence: "high",
       }),
     );
@@ -101,7 +128,7 @@ export function compareFacts(input: {
         confidence: "medium",
       }),
     );
-  } else if (addressesEquivalent(currentAddress, officialAddress)) {
+  } else if (policy.addressesEquivalent(currentAddress, officialAddress)) {
     fields.push(
       diff({
         field: "address",
@@ -133,7 +160,7 @@ export function compareFacts(input: {
         field: "postcode",
         classification: "NO_CHANGE",
         currentValue: currentPostcode,
-        evidence: "GOV.UK omitted a postcode. Existing value is not auto-deleted.",
+        evidence: `${src} omitted a postcode. Existing value is not auto-deleted.`,
         confidence: "high",
       }),
     );
@@ -147,7 +174,7 @@ export function compareFacts(input: {
         confidence: "high",
       }),
     );
-  } else if (postcodesEqual(currentPostcode, officialPostcode)) {
+  } else if (policy.postcodesEqual(currentPostcode, officialPostcode)) {
     fields.push(
       diff({
         field: "postcode",
@@ -166,7 +193,7 @@ export function compareFacts(input: {
         currentValue: currentPostcode,
         officialValue: officialPostcode,
         evidence: govOk
-          ? "Clear postcode replacement from the official GOV.UK contact address."
+          ? `Clear postcode replacement from the official ${src} contact address.`
           : "Non-government evidence cannot override postcode.",
         confidence: "high",
       }),
@@ -181,7 +208,7 @@ export function compareFacts(input: {
         field: "phone",
         classification: "NO_CHANGE",
         currentValue: currentPhone,
-        evidence: "GOV.UK contact block did not include a switchboard number. Existing phone is not deleted.",
+        evidence: `${src} contact block did not include a switchboard number. Existing phone is not deleted.`,
         confidence: "high",
       }),
     );
@@ -195,7 +222,7 @@ export function compareFacts(input: {
         confidence: "high",
       }),
     );
-  } else if (phonesEqual(currentPhone, officialPhone)) {
+  } else if (policy.phonesEqual(currentPhone, officialPhone)) {
     fields.push(
       diff({
         field: "phone",
@@ -214,7 +241,7 @@ export function compareFacts(input: {
         currentValue: currentPhone,
         officialValue: officialPhone,
         evidence: govOk
-          ? "Clear telephone replacement from the GOV.UK Contact section (not the visits booking line)."
+          ? `Clear telephone replacement from the ${src} contact section (not the visits booking line).`
           : "Non-government evidence cannot override telephone.",
         confidence: "high",
       }),
@@ -229,7 +256,7 @@ export function compareFacts(input: {
         field: "email",
         classification: "NO_CHANGE",
         currentValue: currentEmail,
-        evidence: "GOV.UK omitted an establishment email. Existing value is not deleted.",
+        evidence: `${src} omitted an establishment email. Existing value is not deleted.`,
         confidence: "high",
       }),
     );
@@ -276,7 +303,7 @@ export function compareFacts(input: {
         classification: "NO_CHANGE",
         currentValue: currentOperator,
         evidence:
-          "GOV.UK did not publish a comparable operator field (publishing organisation is not the prison operator). Existing value kept.",
+          `${src} did not publish a comparable operator field (publishing organisation is not the prison operator). Existing value kept.`,
         confidence: "high",
       }),
     );
@@ -312,11 +339,14 @@ export function compareFacts(input: {
         field: "category",
         classification: "NO_CHANGE",
         currentValue: currentCategory,
-        evidence: "GOV.UK did not publish a structured security category. Inferred HMPPS mapping is left unchanged.",
+        evidence:
+          src === "GOV.UK"
+            ? "GOV.UK did not publish a structured security category. Inferred HMPPS mapping is left unchanged."
+            : `${src} did not publish a structured security category. Inferred mapping is left unchanged.`,
         confidence: "high",
       }),
     );
-  } else if (categoriesCompatible(currentCategory, officialCategory)) {
+  } else if (policy.categoriesCompatible(currentCategory, officialCategory)) {
     fields.push(
       diff({
         field: "category",
@@ -347,7 +377,7 @@ export function compareFacts(input: {
           ...fields[i],
           classification: "REVIEW_REQUIRED",
           wouldAutoApply: false,
-          evidence: `${fields[i].evidence} Blocked: source is not an authoritative UK government URL.`,
+          evidence: `${fields[i].evidence} ${policy.nonAuthoritativeBlock}`,
         };
       }
     }
@@ -358,21 +388,28 @@ export function compareFacts(input: {
     missingOfficialFields.push({
       field: "governor",
       officialValue: official.governor,
-      note: "GOV.UK publishes a governor name; we have no governor field. Reported only — not invented on the prison model.",
+      note: `${src} publishes a governor name; we have no governor field. Reported only — not invented on the prison model.`,
     });
   }
   if (official.visitingTelephone) {
     missingOfficialFields.push({
       field: "visitingTelephone",
       officialValue: official.visitingTelephone,
-      note: "GOV.UK publishes a visits booking number separate from the establishment switchboard. No dedicated field exists.",
+      note: `${src} publishes a visits booking number separate from the establishment switchboard. No dedicated field exists.`,
     });
   }
   if (official.gettingThere) {
     missingOfficialFields.push({
       field: "gettingThere",
       officialValue: official.gettingThere.slice(0, 160),
-      note: "GOV.UK publishes getting-there notes. We do not add this as a new schema field.",
+      note: `${src} publishes getting-there notes. We do not add this as a new schema field.`,
+    });
+  }
+  if (official.fax) {
+    missingOfficialFields.push({
+      field: "fax",
+      officialValue: official.fax,
+      note: `${src} publishes a fax number. We have no fax field. Reported only — not invented on the prison model.`,
     });
   }
 
