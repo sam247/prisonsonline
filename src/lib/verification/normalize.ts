@@ -149,7 +149,7 @@ export function isoDay(now: Date): string {
 }
 
 const US_FACILITY_TYPE_WORDS =
-  /\b(fpc|fci|usp|fdc|fmc|mcc|mdc|fcc|rrm|ccm|mcfp|usmcfp|ftc|scp|federal|prison|camp|correctional|institution|penitentiary|detention|center|centre|complex|bureau|prisons)\b/g;
+  /\b(fpc|fci|usp|fdc|fmc|mcc|mdc|fcc|rrm|ccm|mcfp|usmcfp|ftc|scp|adx|admax|federal|prison|camp|correctional|institution|penitentiary|detention|center|centre|complex|bureau|prisons)\b/g;
 
 /** "Alderson Fpc" and "FPC Alderson" are the same facility name. Does not strip Low/Medium/High. */
 export function coreUsFacilityName(value: string | undefined | null): string {

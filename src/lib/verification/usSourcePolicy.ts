@@ -98,6 +98,7 @@ export function usComparePolicy(
     namesEquivalent: usNamesEquivalent,
     addressesEquivalent,
     categoriesCompatible: usCategoriesCompatible,
+    leaveBlankAddress: true,
     sourceName: "the official US authority",
     nameMatchEvidence: "Official name matches after facility-type normalisation.",
     nonAuthoritativeBlock:

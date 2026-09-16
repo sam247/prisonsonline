@@ -41,6 +41,8 @@ export interface ComparePolicy {
   namesEquivalent: (a?: string, b?: string) => boolean;
   addressesEquivalent: (a?: string, b?: string) => boolean;
   categoriesCompatible: (current?: string, official?: string) => boolean;
+  /** When true, official address with no published address is NO_CHANGE (overlay cannot hold address). */
+  leaveBlankAddress?: boolean;
   sourceName: string;
   nameMatchEvidence: string;
   nonAuthoritativeBlock: string;
@@ -119,15 +121,27 @@ export function compareFacts(input: {
       }),
     );
   } else if (!currentAddress) {
-    fields.push(
-      diff({
-        field: "address",
-        classification: "REVIEW_REQUIRED",
-        officialValue: officialAddress,
-        evidence: "Official address exists and we publish none. Filling a blank address is queued for review rather than auto-applied.",
-        confidence: "medium",
-      }),
-    );
+    if (policy.leaveBlankAddress) {
+      fields.push(
+        diff({
+          field: "address",
+          classification: "NO_CHANGE",
+          officialValue: officialAddress,
+          evidence: "Address is not published on this profile. Not auto-filled onto protected content (overlay has no address field).",
+          confidence: "high",
+        }),
+      );
+    } else {
+      fields.push(
+        diff({
+          field: "address",
+          classification: "REVIEW_REQUIRED",
+          officialValue: officialAddress,
+          evidence: "Official address exists and we publish none. Filling a blank address is queued for review rather than auto-applied.",
+          confidence: "medium",
+        }),
+      );
+    }
   } else if (policy.addressesEquivalent(currentAddress, officialAddress)) {
     fields.push(
       diff({

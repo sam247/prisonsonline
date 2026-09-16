@@ -4,6 +4,18 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "",
-  "entries": {}
+  "updatedAt": "2026-09-16T20:34:08.484Z",
+  "entries": {
+    "united-states/adx-florence": {
+      "prisonSlug": "adx-florence",
+      "countrySlug": "united-states",
+      "appliedAt": "2026-09-16T20:34:08.484Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/flm/",
+      "overrides": {
+        "postcode": "81226",
+        "phone": "719-784-9464",
+        "email": "FLX-ExecAssistant-S@bop.gov"
+      }
+    }
+  }
 };

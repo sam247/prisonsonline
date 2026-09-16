@@ -16,6 +16,15 @@ export function isUsPrison(prison: Pick<PrisonVerificationInput, "countrySlug">)
   return prison.countrySlug === "us" || prison.countrySlug === "united-states";
 }
 
+/** Closed / historical profiles stay published but are out of the active verification queue. */
+export function isExcludedFromUsActiveQueue(
+  prison: Pick<PrisonVerificationInput, "operator" | "facilityType">,
+): boolean {
+  if (/\bclosed\b/i.test(prison.operator ?? "")) return true;
+  if (/\b(historical|museum)\b/i.test(prison.facilityType ?? "")) return true;
+  return false;
+}
+
 /**
  * never verified → failed/retry → oldest verification.
  * Throughput later is `--limit N` over this same ordering — no redesign.
@@ -71,8 +80,11 @@ export function selectUsPrisonsDue(input: {
     return us.filter((p) => wanted.has(p.slug));
   }
 
+  // Active queue only — closed/historical facilities are classified but not auto-selected.
+  const active = us.filter((p) => !isExcludedFromUsActiveQueue(p));
+
   const nowMs = input.now.getTime();
-  const ranked = us
+  const ranked = active
     .map((prison) => {
       const row = input.state[prison.slug];
       const status: VerificationStatus = row?.verificationStatus ?? "UNVERIFIED";

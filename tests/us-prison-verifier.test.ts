@@ -4,7 +4,7 @@ import type { FacilityVerificationRecord } from "@/types/facilitySource";
 import { compareFacts, overallStatus } from "@/lib/verification/compare";
 import { publishedFacts } from "@/lib/verification/publishedFacts";
 import { validateAiExtraction } from "@/lib/verification/aiGuard";
-import { selectUsPrisonsDue, isUkPrison, isUsPrison } from "@/lib/verification/selectPrison";
+import { selectUsPrisonsDue, isUkPrison, isUsPrison, isExcludedFromUsActiveQueue } from "@/lib/verification/selectPrison";
 import {
   applySafeAutoChanges,
   applyUsSafeAutoChanges,
@@ -588,4 +588,40 @@ test("isUsPrison covers BOP import and legacy united-states slugs", () => {
   assert.equal(isUsPrison(usFederal()), true);
   assert.equal(isUsPrison(statePrison()), true);
   assert.equal(isUsPrison(ukPrison()), false);
+});
+
+test("ADX Florence name matches BOP Florence ADMAX USP after normalisation", () => {
+  assert.equal(usNamesEquivalent("ADX Florence", "Florence ADMAX USP"), true);
+  assert.equal(usNamesEquivalent("ADX Florence", "USP Florence ADMAX"), true);
+});
+
+test("closed or historical US facilities are excluded from the active verifier queue", () => {
+  const alcatraz: PrisonVerificationInput = {
+    slug: "alcatraz",
+    countrySlug: "united-states",
+    country: "United States",
+    name: "Alcatraz Federal Penitentiary",
+    operator: "Federal Bureau of Prisons (Closed)",
+    facilityType: "Historical / Museum",
+  };
+  const active: PrisonVerificationInput = {
+    slug: "adx-florence",
+    countrySlug: "united-states",
+    country: "United States",
+    name: "ADX Florence",
+    operator: "Federal Bureau of Prisons",
+  };
+  assert.equal(isExcludedFromUsActiveQueue(alcatraz), true);
+  assert.equal(isExcludedFromUsActiveQueue(active), false);
+
+  const selected = selectUsPrisonsDue({
+    prisons: [alcatraz, active],
+    state: {},
+    now: new Date("2026-09-16T12:00:00Z"),
+    limit: 5,
+  });
+  assert.deepEqual(
+    selected.map((p) => p.slug),
+    ["adx-florence"],
+  );
 });

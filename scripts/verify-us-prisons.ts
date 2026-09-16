@@ -60,7 +60,7 @@ function toInput(prison: (typeof prisons)[number]): PrisonVerificationInput {
     phone: prison.phone,
     operator: prison.operator,
     securityLevel: prison.securityLevel,
-    facilityType: prison.facilityType,
+    facilityType: prison.facilityType ?? prison.type,
     city: prison.city,
     stateOrRegion: prison.stateOrRegion,
   };
