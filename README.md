@@ -179,12 +179,16 @@ npm run data:build:article-prune  # build generated-article prune list from grow
 npm run data:build:strict     # fail on duplicate prison slugs / strict errors
 npm run verify:uk             # Phase 1 UK GOV.UK verifier — one due prison, dry-run (no production writes)
 npm run verify:uk:dry-run     # same verifier against 10 due UK prisons; writes data/verification/reports/
+npm run verify:us             # Phase 1 US verifier — one due prison, dry-run (no production writes)
+npm run verify:us:dry-run     # same verifier against 10 due US prisons; writes data/verification/us/reports/
 npm run build                 # runs data:build + data:build:us then next build
 npm run start
 npm run lint
 ```
 
 UK prison verification: [docs/uk-prison-verifier.md](./docs/uk-prison-verifier.md). Dry-run is default. Production overlay writes require `--write` **and** `UK_PRISON_VERIFIER_WRITE=1`.
+
+US prison verification: [docs/us-prison-verifier.md](./docs/us-prison-verifier.md). Dry-run is default. Federal facilities use BOP only; state/local facilities use the identified official corrections authority. Production overlay writes require `--write` **and** `US_PRISON_VERIFIER_WRITE=1`. If the authority cannot be identified, the result is `REVIEW_REQUIRED` — never general web consensus.
 
 ---
 
@@ -234,3 +238,5 @@ hmpps_hmcts_json/        # raw JSON (source of generated TS)
 - [docs/data-pipeline.md](./docs/data-pipeline.md) — pipeline, merge, security mapping, gaps
 - [docs/guides-articles-linking.md](./docs/guides-articles-linking.md) — slug and resolver conventions
 - [docs/programmatic-articles.md](./docs/programmatic-articles.md) — generated article families, slugs, thresholds
+- [docs/uk-prison-verifier.md](./docs/uk-prison-verifier.md) — Phase 1 UK GOV.UK verifier (dry-run default)
+- [docs/us-prison-verifier.md](./docs/us-prison-verifier.md) — Phase 1 US verifier (BOP / official state DOC; dry-run default)

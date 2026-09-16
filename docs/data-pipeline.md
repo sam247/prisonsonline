@@ -36,6 +36,8 @@ Runs [`scripts/build-institutional-data.mjs`](../scripts/build-institutional-dat
 
 Merged export: **`prisons`** in [`src/data/prisons.ts`](../src/data/prisons.ts).
 
+US federal rows come from [`us_prisons_clean_bundle/us_prisons_clean.json`](../us_prisons_clean_bundle/us_prisons_clean.json) via `npm run data:build:us`. The US verifier never edits that JSON or `usPrisons.generated.ts`; see [us-prison-verifier.md](us-prison-verifier.md).
+
 ## Slugs and routing
 
 - UK prison URL slug = JSON `id` when unique and URL-safe (e.g. `hmp-belmarsh`).

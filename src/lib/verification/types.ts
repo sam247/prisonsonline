@@ -42,6 +42,7 @@ export interface OfficialFacts {
   operator?: string;
   category?: string;
   gettingThere?: string;
+  fax?: string;
   withdrawn: boolean;
   sourceUpdatedAt?: string;
 }
@@ -74,11 +75,16 @@ export interface PrisonVerificationInput {
   phone?: string;
   operator?: string;
   securityLevel?: string;
+  facilityType?: string;
+  city?: string;
+  stateOrRegion?: string;
 }
+
+export type VerificationCountrySlug = "uk" | "us" | "united-states";
 
 export interface PrisonStateRecord {
   prisonSlug: string;
-  countrySlug: "uk";
+  countrySlug: VerificationCountrySlug;
   verificationStatus: VerificationStatus;
   lastVerifiedAt?: string;
   nextVerificationAt?: string;
@@ -89,7 +95,7 @@ export interface PrisonStateRecord {
 export interface VerificationAuditRecord {
   prisonId: string;
   prisonSlug: string;
-  country: "uk";
+  country: "uk" | "us";
   verifiedAt: string;
   dryRun: boolean;
   writesEnabled: boolean;
@@ -109,16 +115,18 @@ export interface VerificationAuditRecord {
   newValues?: FacilityFactOverrides;
 }
 
+export type OverlayGenerator = "uk-prison-verifier" | "us-prison-verifier";
+
 export interface OverlayEntry {
   prisonSlug: string;
-  countrySlug: "uk";
+  countrySlug: VerificationCountrySlug;
   appliedAt: string;
   sourceUrl: string;
   overrides: FacilityFactOverrides;
 }
 
 export interface OverlayFile {
-  generatedBy: "uk-prison-verifier";
+  generatedBy: OverlayGenerator;
   updatedAt: string;
   entries: Record<string, OverlayEntry>;
 }
@@ -145,13 +153,33 @@ export interface GovukContentDocument {
   organisationTitles: string[];
 }
 
+export type SourceDiscoveryMethod =
+  | "facility-source"
+  | "govuk-collection"
+  | "slug-heuristic"
+  | "govuk-search"
+  | "bop-directory"
+  | "state-official";
+
 export interface SourceDiscoveryResult {
   ok: true;
   url: string;
   basePath: string;
-  method: "facility-source" | "govuk-collection" | "slug-heuristic" | "govuk-search";
+  method: SourceDiscoveryMethod;
   title: string;
   withdrawn: boolean;
+}
+
+export type UsAuthorityKind = "federal-bop" | "state-corrections" | "local-corrections";
+
+export interface UsAuthoritySummary {
+  identified: boolean;
+  kind?: UsAuthorityKind;
+  name?: string;
+  jurisdiction?: string;
+  allowedHosts: string[];
+  evidence: string;
+  reviewRequired: boolean;
 }
 
 export interface SourceDiscoveryFailure {
@@ -182,6 +210,7 @@ export interface PrisonVerificationResult {
   audit: VerificationAuditRecord;
   overlayWritten: boolean;
   productionMutated: boolean;
+  authority?: UsAuthoritySummary;
 }
 
 export const VERIFIABLE_FIELDS: readonly VerifiableField[] = [

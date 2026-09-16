@@ -147,3 +147,47 @@ export function isoNow(now: Date): string {
 export function isoDay(now: Date): string {
   return now.toISOString().slice(0, 10);
 }
+
+const US_FACILITY_TYPE_WORDS =
+  /\b(fpc|fci|usp|fdc|fmc|mcc|mdc|fcc|rrm|ccm|mcfp|usmcfp|ftc|scp|federal|prison|camp|correctional|institution|penitentiary|detention|center|centre|complex|bureau|prisons)\b/g;
+
+/** "Alderson Fpc" and "FPC Alderson" are the same facility name. Does not strip Low/Medium/High. */
+export function coreUsFacilityName(value: string | undefined | null): string {
+  return collapseSpace(value)
+    .toLowerCase()
+    .replace(US_FACILITY_TYPE_WORDS, " ")
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function usNamesEquivalent(a?: string, b?: string): boolean {
+  const left = coreUsFacilityName(a);
+  const right = coreUsFacilityName(b);
+  return Boolean(left) && left === right;
+}
+
+/** NANP comparison: +1 / formatting ignored; compare 10-digit national numbers. */
+export function normalizeUsPhoneDigits(value: string | undefined | null): string {
+  let digits = collapseSpace(value).replace(/\D/g, "");
+  if (digits.length === 11 && digits.startsWith("1")) digits = digits.slice(1);
+  return digits;
+}
+
+export function usPhonesEqual(a?: string, b?: string): boolean {
+  const left = normalizeUsPhoneDigits(a);
+  const right = normalizeUsPhoneDigits(b);
+  return Boolean(left) && left.length === 10 && left === right;
+}
+
+export function normalizeUsZip(value: string | undefined | null): string {
+  const digits = collapseSpace(value).replace(/\D/g, "");
+  return digits.length >= 5 ? digits.slice(0, 5) : digits;
+}
+
+export function usZipsEqual(a?: string, b?: string): boolean {
+  const left = normalizeUsZip(a);
+  const right = normalizeUsZip(b);
+  return Boolean(left) && left.length === 5 && left === right;
+}
