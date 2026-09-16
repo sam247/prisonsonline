@@ -28,6 +28,7 @@ npm run verify:uk:dry-run      # ten due UK prisons, dry-run
 The command prints a TSV summary and writes:
 
 - `data/verification/reports/run-<timestamp>.md` — field-by-field report for Sam
+- `data/verification/reports/PHASE1_DRY_RUN.md` — checked-in sample from a 10-prison run
 - `data/verification/reports/run-<timestamp>.json` — machine-readable copy
 - `data/verification/latest.json` — what ran, success, source, changes, review, next check, failures
 - `data/verification/audit.jsonl` — append-only audit trail

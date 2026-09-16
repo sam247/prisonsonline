@@ -106,6 +106,25 @@ test("name normalisation treats HMP Belmarsh as Belmarsh Prison", () => {
   assert.equal(postcodesEqual("SE28 0EB", "se280eb"), true);
 });
 
+test("HTML GOV.UK contact widget extracts a clean address, not markup", () => {
+  const html = `
+    <h2>Contact Bedford</h2>
+    <p>Governor: Sarah Bott</p>
+    <p>Telephone: 01234 373 000</p>
+    <p>Email: ignored@prisonadvice.org.uk</p>
+    <h3>Address</h3>
+    <div class="address"><div class="adr org fn"><p> HMP Bedford<br>St Loyes Street<br>Bedford<br>MK40 1HG </p></div></div>
+    <p>a passing G4S or private-visits mention must not be treated as the operator</p>
+  `;
+  const facts = extractGovukFacts({ title: "Bedford Prison", body: html });
+  assert.equal(facts.address, "HMP Bedford, St Loyes Street, Bedford, MK40 1HG");
+  assert.equal(facts.postcode, "MK40 1HG");
+  assert.equal(facts.phone, "01234 373 000");
+  assert.equal(facts.governor, "Sarah Bott");
+  assert.equal(facts.email, undefined);
+  assert.equal(facts.operator, undefined);
+});
+
 test("extractor reads the Contact switchboard, not the visits booking line", () => {
   const facts = extractGovukFacts({
     title: "Belmarsh Prison",
