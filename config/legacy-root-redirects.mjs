@@ -27,6 +27,17 @@ const articleSlugs = [
 
 const prisonEntityRedirects = [
   {
+    source: "/prisons/uk/hertfordhire-essex-and-suffolk",
+    destination: "/prisons/uk/hertfordshire-essex-and-suffolk",
+    permanent: true,
+  },
+  {
+    source: "/prisons/uk/hertfordhire-essex-and-suffolk/:path*",
+    destination: "/prisons/uk/hertfordshire-essex-and-suffolk",
+    permanent: true,
+  },
+
+  {
     source: "/prisons/united-states/adx-florence",
     destination: "/prisons/us/florence-admax-usp",
     permanent: true,

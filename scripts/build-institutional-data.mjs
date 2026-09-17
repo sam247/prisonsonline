@@ -23,6 +23,21 @@ function slugify(s) {
     .slice(0, 120);
 }
 
+/**
+ * Correct known HMPPS Prison Region label misspellings before slugify/display.
+ * Keeps URLs stable and readable; does not invent new regions.
+ */
+const PRISON_REGION_LABEL_CORRECTIONS = new Map([
+  ["HERTFORDHIRE, ESSEX & SUFFOLK", "HERTFORDSHIRE, ESSEX & SUFFOLK"],
+]);
+
+function correctPrisonRegionLabel(name) {
+  const raw = String(name || "").trim();
+  if (PRISON_REGION_LABEL_CORRECTIONS.has(raw)) return PRISON_REGION_LABEL_CORRECTIONS.get(raw);
+  // Defensive token fix if punctuation/spacing differs slightly.
+  return raw.replace(/HERTFORDHIRE/gi, "HERTFORDSHIRE");
+}
+
 const UK_POSTCODE = /([A-Z]{1,2}\d[A-Z0-9]?\s*\d[A-Z]{2})\b/i;
 
 function extractPostcode(text) {
@@ -117,7 +132,7 @@ function uniqueSlug(base, used) {
 
 function normaliseHmppsPrison(raw, usedSlugs) {
   const p = parseLabelledLines(raw.description);
-  const regionName = (p["Prison Region"] || "Unknown region").trim();
+  const regionName = correctPrisonRegionLabel((p["Prison Region"] || "Unknown region").trim());
   const regionSlug = slugify(regionName);
   const slug = uniqueSlug(raw.id || raw.name, usedSlugs);
   const addressLine = (p.Address || "").replace(/\s+/g, " ").trim();

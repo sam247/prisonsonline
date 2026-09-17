@@ -25,7 +25,7 @@ Baselines for 7 / 28 / 90-day measurement. Directory records are never modified 
 
 - ADX Florence dual URLs → eng/verifier
 - Category B/C hub indexation check
-- Possible `hertfordhire-essex-and-suffolk` typo slug
+- ~~Possible `hertfordhire-essex-and-suffolk` typo slug~~ → migrated 2026-09-17 to `hertfordshire-essex-and-suffolk` (see `docs/seo-url-migrations.md`)
 
 ## 2026-09-17 — INTERVENTION B (shipped)
 

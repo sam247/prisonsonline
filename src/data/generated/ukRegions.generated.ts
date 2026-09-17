@@ -33,8 +33,8 @@ export const ukRegionsGenerated = [
     "prisonCount": 5
   },
   {
-    "slug": "hertfordhire-essex-and-suffolk",
-    "name": "HERTFORDHIRE, ESSEX & SUFFOLK",
+    "slug": "hertfordshire-essex-and-suffolk",
+    "name": "HERTFORDSHIRE, ESSEX & SUFFOLK",
     "prisonCount": 5
   },
   {
