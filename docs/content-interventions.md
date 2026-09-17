@@ -26,3 +26,17 @@ Baselines for 7 / 28 / 90-day measurement. Directory records are never modified 
 - ADX Florence dual URLs → eng/verifier
 - Category B/C hub indexation check
 - Possible `hertfordhire-essex-and-suffolk` typo slug
+
+## 2026-09-17 — INTERVENTION B (shipped)
+
+- **URL:** `/guides/how-prison-visits-work`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** UK-first (US called out separately; no US guide created)
+- **Change:** England/Wales process first; GOV.UK prison-visits booking link; timetable intent deferred to prison profiles / official pages; internal links to dress and property guides; light FAQ expand. No directory edits.
+- **GSC baseline (lookup 2026-09-17, ~90d):** clicks 0, impressions 251, CTR 0%, avg position ~61.9
+- **Hypothesis:** UK-first process clarity + official booking link + profile handoff for times will improve CTR on book/visit queries and reduce US/UK confusion.
+- **Skipped instead of address how-to:** CONTENT_STATE_MISMATCH unresolved (see above).
+- **Haircuts consolidate:** already covered by legacy root→`/guides/` redirects; residual root impressions only — not a new ship.
+- **Directory records modified:** 0
+- **Commit:** https://github.com/sam247/prisonsonline/commit/416b3042138c94e6e8aced588c0fccf3e60880a5
+
