@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { getGuide } from "@/data/guides";
+import { guideSlugsForIntent } from "@/lib/seo/prisonIntentCopy";
+import { buildGuideEntries } from "@/lib/seo/sitemapEntries";
 import { buildSeoTitle, MAX_RENDERED_TITLE_LENGTH } from "@/lib/seo/title";
 import { buildPrisonPageTitle } from "@/lib/seo/prisonTitle";
 import { getPrisonByCountryAndSlug } from "@/data/prisons";
@@ -82,4 +85,20 @@ test("sitemaps contain the 516 base URLs plus seven legal pages without fake fre
   const xml = buildUrlSetXml(probation);
   assert.match(xml, /<loc>https:\/\/prisonsonline.com\/probation<\/loc>/);
   assert.doesNotMatch(xml, /<lastmod>/);
+});
+
+
+test("address how-to links into contact-details winners without changing intent guide wiring", () => {
+  const guide = getGuide("how-to-find-a-uk-prison-address");
+  assert.ok(guide);
+  assert.match(guide.content, /\/prisons\/uk\/category\/category-c/);
+  assert.match(guide.content, /\/prisons\/uk\/category\/category-b/);
+  assert.match(guide.content, /\/prisons\/uk\/hmp-wandsworth\/contact-details/);
+  assert.match(guide.content, /\/prisons\/uk\/hmp-thameside\/contact-details/);
+  assert.match(guide.content, /\/prisons\/uk\/hmp-bullingdon\/contact-details/);
+  assert.match(guide.content, /\/prisons\/uk\/collection\/private-prisons/);
+  assert.match(guide.content, /gov\.uk\/government\/collections\/prisons-in-england-and-wales/);
+  assert.deepEqual(guideSlugsForIntent("contact-details"), ["rights-of-prisoners", "life-inside-prison"]);
+  const sitemap = buildGuideEntries("https://prisonsonline.com");
+  assert.ok(sitemap.some((entry) => entry.loc.endsWith("/guides/how-to-find-a-uk-prison-address")));
 });

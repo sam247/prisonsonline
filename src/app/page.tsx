@@ -60,9 +60,11 @@ const iconMap: Record<string, ReactNode> = {
   Clock: <Clock className="h-6 w-6" />,
   Shield: <Shield className="h-6 w-6" />,
   FileText: <FileText className="h-6 w-6" />,
+  MapPin: <MapPin className="h-6 w-6" />,
 };
 
 const commonSituationSlugs = [
+  "how-to-find-a-uk-prison-address",
   "how-prison-visits-work",
   "what-happens-going-to-prison",
   "how-prison-sentences-work",
@@ -70,7 +72,9 @@ const commonSituationSlugs = [
   "prison-categories-explained",
   "rights-of-prisoners",
 ];
-const commonSituationGuides = guides.filter((g) => commonSituationSlugs.includes(g.slug));
+const commonSituationGuides = commonSituationSlugs
+  .map((slug) => guides.find((g) => g.slug === slug))
+  .filter((g): g is (typeof guides)[number] => Boolean(g));
 
 export default function HomePage() {
   const stats = [

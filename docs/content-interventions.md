@@ -13,7 +13,23 @@ Baselines for 7 / 28 / 90-day measurement. Directory records are never modified 
 - **Directory records modified:** 0
 - **Commit:** https://github.com/sam247/prisonsonline/commit/e95f926c367bb1848e9f8c1dddd6a2ec19de6eb3
 
-## CONTENT_STATE_MISMATCH — `/guides/how-to-find-a-uk-prison-address` (open, not Intervention B)
+
+## RESOLVED — `/guides/how-to-find-a-uk-prison-address` (2026-09-17)
+
+**Decision (Sam via CoS):** Review PR #1 against current main; rebase/adapt if sound; do not blind-merge; do not create a second guide; abandon if below standard.
+
+**Review:** PR #1 draft remained factually sound and useful — UK-first, defers named-address intent to `/prisons/uk/{slug}/contact-details`, category browse to category hubs, points readers to GOV.UK for confirmation, safe subject, ~complete how-to without padding. Architecture had drifted (guide migrations, discovery hooks, GOV.UK Find-a-prison now 301 → collections URL).
+
+**Action:** CREATE adapted from PR #1 (not a blind merge). Shipped to `main` with discovery on homepage Common situations + footer; MapPin icon wiring; sitemap count 13; growth test asserting winner links and unchanged `guideSlugsForIntent("contact-details")`.
+
+**Intent ownership preserved:** named-prison address → contact-details pages; category browse → category hubs; this guide is complementary how-to only.
+
+**Directory / verifier overlays:** 0 touched.
+
+**PR #1:** close as superseded by direct main ship (adapted).
+
+
+## SUPERSEDED LOG — was CONTENT_STATE_MISMATCH `/guides/how-to-find-a-uk-prison-address` (open, not Intervention B)
 
 ### Root cause (investigated 2026-09-17)
 

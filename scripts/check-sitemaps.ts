@@ -40,7 +40,7 @@ assert.ok(
   !regions.some((e) => e.loc.includes("/prisons/united-states/adx-florence")),
   "Legacy ADX path must not appear in region sitemap",
 );
-assert.equal(guides.length, 12, "Guide sitemap count regression");
+assert.equal(guides.length, 13, "Guide sitemap count regression");
 assert.equal(categories.length, 137, "Categories sitemap count regression");
 assert.equal(probation.length, 328, "Probation sitemap count regression");
 assert.ok(courts.length > 100, `Expected populated courts sitemap, found ${courts.length}`);
