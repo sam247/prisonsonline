@@ -15,11 +15,27 @@ Baselines for 7 / 28 / 90-day measurement. Directory records are never modified 
 
 ## CONTENT_STATE_MISMATCH — `/guides/how-to-find-a-uk-prison-address` (open, not Intervention B)
 
-- Better Ranking memory claims shipped 2026-09-07 as complementary how-to; contact-details pages own named-prison address intent.
-- Repo `src/data/guides.ts` history checked across recent commits: slug never present.
-- No legacy redirect entry found for this slug in `config/legacy-root-redirects.mjs` during this pass.
-- Live production: not served as a guide (bot challenge/404 behaviour).
-- **Action:** Do not recreate until mismatch is resolved (memory vs repo vs production). Investigation only — not a second publication.
+### Root cause (investigated 2026-09-17)
+
+**False “shipped” signal.** Better Ranking memory + growth experiment `3397deea-3be5-4107-b00d-28c660e42ac8` claim the guide shipped 2026-09-07. What actually happened:
+
+1. **PR opened, never merged:** https://github.com/sam247/prisonsonline/pull/1 (`cursor/uk-prison-address-guide-54e9`, state **OPEN**, `mergedAt: null`). Cursor agent PR body says the guide was added and tested locally; it was never landed on `main`.
+2. **Registry:** `src/data/guides.ts` on `main` has 12 guides; slug `how-to-find-a-uk-prison-address` is **absent**. Full `path=src/data/guides.ts` commit history on GitHub also never introduces that slug on `main`.
+3. **Routes:** `/guides/[guideSlug]` is generated only from the `guides` array (`generateStaticParams`). No registry entry ⇒ no static page.
+4. **Sitemap:** guide sitemap emits the same 12 registry slugs; address how-to not included.
+5. **GSC (~90d lookup 2026-09-17):** URL variants `found: false` (0 clicks / 0 impressions).
+6. **Redirects:** no legacy redirect for this slug.
+7. **Intent ownership (still valid):** named-prison address queries remain owned by `/prisons/uk/{slug}/contact-details`; category browse by category hubs. A complementary how-to is optional adjacent content — not a directory change.
+
+### Branch artifact
+
+PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery links, and a growth test. It may be stale vs later guide migrations on `main` and would need rebase/review before any publish decision.
+
+### Action
+
+- **Do not recreate** and **do not merge PR #1** without an explicit Sam publish decision (would be a CREATE).
+- Correct Better Ranking “shipped” memory/experiment notes to **drafted-in-PR-not-merged**.
+- Keep mismatch ticket open until Sam decides: merge/rebase PR #1, rewrite fresh, or abandon.
 
 ## Retained referrals
 
