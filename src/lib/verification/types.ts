@@ -189,12 +189,53 @@ export interface SourceDiscoveryFailure {
 
 export type SourceDiscovery = SourceDiscoveryResult | SourceDiscoveryFailure;
 
+
+export type CompletenessClassification =
+  | "SAFE_FILL"
+  | "NO_SOURCE_VALUE"
+  | "REVIEW_REQUIRED"
+  | "UNSUPPORTED_FIELD";
+
+/** VERIFY corrections vs COMPLETENESS additive fills — kept distinct in reports. */
+export type ChangeKind = "CORRECTION" | "SAFE_FILL";
+
+export type CompletenessFillField = "phone" | "email" | "postcode";
+
+export interface CompletenessFieldResult {
+  field: string;
+  classification: CompletenessClassification;
+  kind?: ChangeKind;
+  publishedValue?: string;
+  officialValue?: string;
+  evidence: string;
+  wouldWrite: boolean;
+}
+
+export interface CompletenessReport {
+  suppressed: boolean;
+  suppressReason?: string;
+  emptyFieldsFound: string[];
+  safeFills: CompletenessFieldResult[];
+  fillsApplied: CompletenessFieldResult[];
+  unsupportedFieldsFound: CompletenessFieldResult[];
+  completenessReviewRequired: CompletenessFieldResult[];
+  noSourceValues: CompletenessFieldResult[];
+  completenessWritesEnabled: boolean;
+  completenessMutated: boolean;
+}
+
 export interface VerifierRunOptions {
   dryRun: boolean;
   writesEnabled: boolean;
   now?: Date;
   /** Optional AI extraction blob. Malformed → fail closed, zero mutations. */
   aiExtractionRaw?: unknown;
+  /**
+   * Completeness overlay writes. Default off.
+   * Requires matching UK_PRISON_COMPLETENESS_WRITE=1 or US_PRISON_COMPLETENESS_WRITE=1
+   * plus --completeness-write. Independent of VERIFY writesEnabled.
+   */
+  completenessWritesEnabled?: boolean;
 }
 
 export interface PrisonVerificationResult {
@@ -211,6 +252,8 @@ export interface PrisonVerificationResult {
   overlayWritten: boolean;
   productionMutated: boolean;
   authority?: UsAuthoritySummary;
+  /** Empty-field completeness pass (separate from VERIFY). */
+  completeness?: CompletenessReport;
 }
 
 export const VERIFIABLE_FIELDS: readonly VerifiableField[] = [

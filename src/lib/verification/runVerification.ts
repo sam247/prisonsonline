@@ -1,6 +1,11 @@
 import type { FacilityVerificationRecord } from "@/types/facilitySource";
 import { validateAiExtraction } from "./aiGuard";
 import { applySafeAutoChanges, type OverlayStore } from "./applyChanges";
+import {
+  applySafeFills,
+  attachSuppressedCompleteness,
+  evaluateCompleteness,
+} from "./completeness";
 import { compareFacts, minConfidence, overallStatus } from "./compare";
 import { discoverAuthoritativeSource } from "./discoverSource";
 import { extractGovukFacts } from "./extractGovukFacts";
@@ -60,6 +65,11 @@ function failedResult(input: {
     audit,
     overlayWritten: false,
     productionMutated: false,
+    completeness: attachSuppressedCompleteness(
+      input.published,
+      input.errors.join(" ") || "VERIFY failed — completeness suppressed.",
+      Boolean(input.options.completenessWritesEnabled) && !input.options.dryRun,
+    ),
   };
 }
 
@@ -257,6 +267,11 @@ export async function verifyUkPrison(input: {
       audit,
       overlayWritten: false,
       productionMutated: false,
+      completeness: attachSuppressedCompleteness(
+        published,
+        "GOV.UK page withdrawn — completeness suppressed.",
+        Boolean(input.options.completenessWritesEnabled) && !input.options.dryRun,
+      ),
     };
   }
 
@@ -286,6 +301,27 @@ export async function verifyUkPrison(input: {
     extraErrors: [],
   });
 
+  const completenessWritesWanted =
+    Boolean(input.options.completenessWritesEnabled) && !input.options.dryRun;
+  let completeness = evaluateCompleteness({
+    published,
+    official,
+    verificationStatus: audit.verificationStatus,
+    sourceAvailable: true,
+    completenessWritesEnabled: completenessWritesWanted,
+  });
+  completeness = applySafeFills({
+    countrySlug: "uk",
+    prisonSlug: input.prison.slug,
+    sourceUrl: document.webUrl,
+    published,
+    report: completeness,
+    writesEnabled: completenessWritesWanted,
+    now,
+    store: input.overlayStore,
+    market: "uk",
+  });
+
   return {
     prisonSlug: input.prison.slug,
     countrySlug: "uk",
@@ -297,8 +333,9 @@ export async function verifyUkPrison(input: {
     fields: compared.fields,
     missingOfficialFields: compared.missingOfficialFields,
     audit,
-    overlayWritten: apply.overlayWritten,
-    productionMutated: apply.overlayWritten,
+    overlayWritten: apply.overlayWritten || completeness.completenessMutated,
+    productionMutated: apply.overlayWritten || completeness.completenessMutated,
+    completeness,
   };
 }
 
