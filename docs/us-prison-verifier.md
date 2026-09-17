@@ -73,3 +73,21 @@ US_PRISON_VERIFIER_WRITE=1 npx tsx scripts/verify-us-prisons.ts --limit=1 --writ
 ```bash
 npm test
 ```
+
+## Empty-field completeness (additive)
+
+After VERIFY on the same prison, the worker can classify empty supported fields (`phone`, `email`, `postcode`/`ZIP`) as:
+
+- `SAFE_FILL` — empty published field + explicit authoritative value (additive only)
+- `NO_SOURCE_VALUE` — empty published field, official source omits the value
+- `REVIEW_REQUIRED` — e.g. empty address with an official address (no auto-fill)
+- `UNSUPPORTED_FIELD` — official value exists for a field we do not store (report only)
+
+Completeness writes are **off by default** and independent of VERIFY writes:
+
+```bash
+US_PRISON_COMPLETENESS_WRITE=1 npx tsx scripts/verify-us-prisons.ts --slugs=... --completeness-write
+```
+
+If VERIFY fails or the facility/identity is `REVIEW_REQUIRED`, completeness writes are suppressed. Populated fields are never overwritten. See `data/verification/reports/COMPLETENESS_DRY_RUN.md`.
+

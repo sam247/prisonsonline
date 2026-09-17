@@ -1,13 +1,18 @@
 import type { FacilityVerificationRecord } from "@/types/facilitySource";
 import { validateAiExtraction } from "./aiGuard";
 import { applyUsSafeAutoChanges, type OverlayStore } from "./applyChanges";
+import {
+  applySafeFills,
+  attachSuppressedCompleteness,
+  evaluateCompleteness,
+} from "./completeness";
 import { compareFacts, minConfidence, overallStatus } from "./compare";
 import { discoverUsAuthoritativeSource, matchedBopLocation } from "./discoverUsSource";
 import { extractBopFacts } from "./extractBopFacts";
 import { SourceUnavailableError, type HttpGet } from "./govukClient";
 import { addDays, isoNow } from "./normalize";
 import { publishedFacts } from "./publishedFacts";
-import { isUkPrison, isUsPrison } from "./selectPrison";
+import { isUkPrison, isUsPrison, isExcludedFromUsActiveQueue } from "./selectPrison";
 import { authoritySummary, resolveUsAuthority, type ResolvedUsAuthority } from "./usAuthority";
 import { canOverrideFromUsSourceUrl, usComparePolicy } from "./usSourcePolicy";
 import type { BopLocation } from "./bopClient";
@@ -69,6 +74,11 @@ function failedResult(input: {
     overlayWritten: false,
     productionMutated: false,
     authority: input.authority,
+    completeness: attachSuppressedCompleteness(
+      input.published,
+      input.errors.join(" ") || "VERIFY failed — completeness suppressed.",
+      Boolean(input.options.completenessWritesEnabled) && !input.options.dryRun,
+    ),
   };
 }
 
@@ -125,6 +135,11 @@ function reviewResult(input: {
     overlayWritten: false,
     productionMutated: false,
     authority: input.authority,
+    completeness: attachSuppressedCompleteness(
+      input.published,
+      input.evidence || "REVIEW_REQUIRED — completeness suppressed.",
+      Boolean(input.options.completenessWritesEnabled) && !input.options.dryRun,
+    ),
   };
 }
 
@@ -418,6 +433,28 @@ export async function verifyUsPrison(input: {
     extraErrors: [],
   });
 
+  const completenessWritesWanted =
+    Boolean(input.options.completenessWritesEnabled) && !input.options.dryRun;
+  let completeness = evaluateCompleteness({
+    published,
+    official,
+    verificationStatus: audit.verificationStatus,
+    sourceAvailable: true,
+    completenessWritesEnabled: completenessWritesWanted,
+    historicalExcluded: isExcludedFromUsActiveQueue(input.prison),
+  });
+  completeness = applySafeFills({
+    countrySlug: input.prison.countrySlug,
+    prisonSlug: input.prison.slug,
+    sourceUrl,
+    published,
+    report: completeness,
+    writesEnabled: completenessWritesWanted,
+    now,
+    store: input.overlayStore,
+    market: "us",
+  });
+
   return {
     prisonSlug: input.prison.slug,
     countrySlug: input.prison.countrySlug,
@@ -429,9 +466,10 @@ export async function verifyUsPrison(input: {
     fields: compared.fields,
     missingOfficialFields: compared.missingOfficialFields,
     audit,
-    overlayWritten: apply.overlayWritten,
-    productionMutated: apply.overlayWritten,
+    overlayWritten: apply.overlayWritten || completeness.completenessMutated,
+    productionMutated: apply.overlayWritten || completeness.completenessMutated,
     authority,
+    completeness,
   };
 }
 

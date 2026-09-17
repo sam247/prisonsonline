@@ -18,6 +18,7 @@ import { selectUsPrisonsDue } from "@/lib/verification/selectPrison";
 import { verifyUsPrison, nextUsStateFromResult } from "@/lib/verification/runUsVerification";
 import { defaultUsHttpGet, fetchBopLocations } from "@/lib/verification/bopClient";
 import { productionUsWritesEnabled, type OverlayStore } from "@/lib/verification/applyChanges";
+import { productionUsCompletenessWritesEnabled } from "@/lib/verification/completeness";
 import { emptyUsOverlay } from "@/lib/verification/applyChanges";
 import {
   US_OVERLAY_JSON_RELATIVE,
@@ -40,6 +41,7 @@ function parseArgs(argv: string[]) {
   const outFlag = argv.find((arg) => arg.startsWith("--out="))?.slice("--out=".length);
   return {
     writeFlag: argv.includes("--write"),
+    completenessWriteFlag: argv.includes("--completeness-write"),
     slugs: slugsFlag ? slugsFlag.split(",").map((s) => s.trim()).filter(Boolean) : undefined,
     limit: limitFlag ? Number(limitFlag) : slugsFlag ? 50 : 1,
     outDir: outFlag,
@@ -101,6 +103,15 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
     return;
   }
 
+  const completenessWritesEnabled = productionUsCompletenessWritesEnabled({
+    writeFlag: args.completenessWriteFlag,
+    env: process.env,
+  });
+  if (args.completenessWriteFlag && !completenessWritesEnabled) {
+    process.stderr.write(
+      "Ignoring --completeness-write because completeness write env is not '1'. Completeness stays dry-run.\n",
+    );
+  }
   const writesEnabled = productionUsWritesEnabled({
     writeFlag: args.writeFlag,
     env: process.env,
@@ -152,7 +163,7 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
       bopLocations,
       http,
       overlayStore,
-      options: { dryRun: !writesEnabled, writesEnabled, now },
+      options: { dryRun: !writesEnabled, writesEnabled, completenessWritesEnabled, now },
     });
     results.push(result);
     appendAudit(verificationDir, result.audit);

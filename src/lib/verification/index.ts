@@ -23,3 +23,13 @@ export { applySafeAutoChanges, applyUsSafeAutoChanges, emptyOverlay, emptyUsOver
 export { buildRunReport, renderMarkdownReport } from "./report";
 export { resolveUsAuthority } from "./usAuthority";
 export { isBopGovUrl, canOverrideFromUsSourceUrl } from "./usSourcePolicy";
+
+export {
+  evaluateCompleteness,
+  applySafeFills,
+  attachSuppressedCompleteness,
+  productionCompletenessWritesEnabled,
+  productionUsCompletenessWritesEnabled,
+  SAFE_FILL_FIELDS,
+} from "./completeness";
+export type { CompletenessReport, CompletenessFieldResult, CompletenessClassification, ChangeKind } from "./types";

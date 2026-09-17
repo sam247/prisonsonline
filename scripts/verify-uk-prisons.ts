@@ -18,6 +18,7 @@ import { selectUkPrisonsDue } from "@/lib/verification/selectPrison";
 import { verifyUkPrison, nextStateFromResult } from "@/lib/verification/runVerification";
 import { defaultHttpGet, fetchGovukPrisonsCollection } from "@/lib/verification/govukClient";
 import { productionWritesEnabled, type OverlayStore } from "@/lib/verification/applyChanges";
+import { productionCompletenessWritesEnabled } from "@/lib/verification/completeness";
 import {
   OVERLAY_JSON_RELATIVE,
   OVERLAY_TS_RELATIVE,
@@ -39,6 +40,7 @@ function parseArgs(argv: string[]) {
   const outFlag = argv.find((arg) => arg.startsWith("--out="))?.slice("--out=".length);
   return {
     writeFlag: argv.includes("--write"),
+    completenessWriteFlag: argv.includes("--completeness-write"),
     slugs: slugsFlag ? slugsFlag.split(",").map((s) => s.trim()).filter(Boolean) : undefined,
     limit: limitFlag ? Number(limitFlag) : slugsFlag ? 50 : 1,
     outDir: outFlag,
@@ -95,6 +97,15 @@ Default mode is dry-run. Dry-run cannot mutate HMPPS JSON, generated prison modu
     return;
   }
 
+  const completenessWritesEnabled = productionCompletenessWritesEnabled({
+    writeFlag: args.completenessWriteFlag,
+    env: process.env,
+  });
+  if (args.completenessWriteFlag && !completenessWritesEnabled) {
+    process.stderr.write(
+      "Ignoring --completeness-write because completeness write env is not '1'. Completeness stays dry-run.\n",
+    );
+  }
   const writesEnabled = productionWritesEnabled({
     writeFlag: args.writeFlag,
     env: process.env,
@@ -146,7 +157,7 @@ Default mode is dry-run. Dry-run cannot mutate HMPPS JSON, generated prison modu
       collection,
       http,
       overlayStore,
-      options: { dryRun: !writesEnabled, writesEnabled, now },
+      options: { dryRun: !writesEnabled, writesEnabled, completenessWritesEnabled, now },
     });
     results.push(result);
     appendAudit(verificationDir, result.audit);
