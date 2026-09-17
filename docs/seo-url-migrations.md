@@ -16,4 +16,4 @@ Baselines captured before redirect ships. Directory verifier overlays are not mo
 - **Generation fix:** `correctPrisonRegionLabel()` in `scripts/build-institutional-data.mjs` maps `HERTFORDHIRE, ESSEX & SUFFOLK` → `HERTFORDSHIRE, ESSEX & SUFFOLK` before slugify
 - **Sitemap:** only corrected slug emitted after regen
 - **Verifier overlays / facilitySources / completeness whitelist:** untouched
-- **Commit:** (filled after push)
+- **Commit:** https://github.com/sam247/prisonsonline/commit/98b8e3710fdb92cdea51002d694ea5306861659d
