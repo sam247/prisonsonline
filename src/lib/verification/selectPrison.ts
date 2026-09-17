@@ -16,10 +16,20 @@ export function isUsPrison(prison: Pick<PrisonVerificationInput, "countrySlug">)
   return prison.countrySlug === "us" || prison.countrySlug === "united-states";
 }
 
-/** Closed / historical profiles stay published but are out of the active verification queue. */
+/**
+ * Legacy slug that duplicates a BOP-import facility. Both pages may stay published,
+ * but only the BOP-import slug stays in the active verification queue.
+ * URL/canonical consolidation is a Sam decision (verifier does not touch slugs).
+ */
+export const US_LEGACY_DUPLICATE_OF_BOP: Readonly<Record<string, string>> = {
+  "adx-florence": "florence-admax-usp",
+};
+
+/** Closed / historical / known dual-URL legacy duplicates stay published but out of the active queue. */
 export function isExcludedFromUsActiveQueue(
-  prison: Pick<PrisonVerificationInput, "operator" | "facilityType">,
+  prison: Pick<PrisonVerificationInput, "slug" | "operator" | "facilityType">,
 ): boolean {
+  if (prison.slug in US_LEGACY_DUPLICATE_OF_BOP) return true;
   if (/\bclosed\b/i.test(prison.operator ?? "")) return true;
   if (/\b(historical|museum)\b/i.test(prison.facilityType ?? "")) return true;
   return false;

@@ -4,7 +4,7 @@ import type { FacilityVerificationRecord } from "@/types/facilitySource";
 import { compareFacts, overallStatus } from "@/lib/verification/compare";
 import { publishedFacts } from "@/lib/verification/publishedFacts";
 import { validateAiExtraction } from "@/lib/verification/aiGuard";
-import { selectUsPrisonsDue, isUkPrison, isUsPrison, isExcludedFromUsActiveQueue } from "@/lib/verification/selectPrison";
+import { selectUsPrisonsDue, isUkPrison, isUsPrison, isExcludedFromUsActiveQueue, US_LEGACY_DUPLICATE_OF_BOP } from "@/lib/verification/selectPrison";
 import {
   applySafeAutoChanges,
   applyUsSafeAutoChanges,
@@ -605,6 +605,14 @@ test("closed or historical US facilities are excluded from the active verifier q
     facilityType: "Historical / Museum",
   };
   const active: PrisonVerificationInput = {
+    slug: "florence-admax-usp",
+    countrySlug: "us",
+    country: "United States",
+    name: "Florence Admax Usp",
+    operator: "Federal Bureau of Prisons",
+    dataProvenance: "bop_import",
+  };
+  const legacyDuplicate: PrisonVerificationInput = {
     slug: "adx-florence",
     countrySlug: "united-states",
     country: "United States",
@@ -612,16 +620,21 @@ test("closed or historical US facilities are excluded from the active verifier q
     operator: "Federal Bureau of Prisons",
   };
   assert.equal(isExcludedFromUsActiveQueue(alcatraz), true);
+  assert.equal(isExcludedFromUsActiveQueue(legacyDuplicate), true);
   assert.equal(isExcludedFromUsActiveQueue(active), false);
 
   const selected = selectUsPrisonsDue({
-    prisons: [alcatraz, active],
+    prisons: [alcatraz, legacyDuplicate, active],
     state: {},
     now: new Date("2026-09-16T12:00:00Z"),
     limit: 5,
   });
   assert.deepEqual(
     selected.map((p) => p.slug),
-    ["adx-florence"],
+    ["florence-admax-usp"],
   );
+});
+
+test("ADX Florence legacy slug is treated as a dual-URL duplicate of florence-admax-usp", () => {
+  assert.equal(US_LEGACY_DUPLICATE_OF_BOP["adx-florence"], "florence-admax-usp");
 });

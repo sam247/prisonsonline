@@ -418,7 +418,12 @@ test("empty overlay leaves existing facility verification records unchanged", ()
   const belmarsh = getFacilityVerification("uk", "hmp-belmarsh");
   assert.ok(belmarsh);
   assert.equal(belmarsh.overrides?.phone, "020 8331 4400");
-  assert.equal(getFacilityVerification("us", "florence-admax-usp"), undefined);
+  // US BOP directory page may carry SAFE overlay email; UK records stay independent.
+  const florence = getFacilityVerification("us", "florence-admax-usp");
+  if (florence) {
+    assert.equal(florence.overrides?.email, "FLX-ExecAssistant-S@bop.gov");
+    assert.notEqual(florence.countrySlug, "uk");
+  }
 });
 
 test("protected prose and URL fields are not in the compare set", () => {
