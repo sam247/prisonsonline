@@ -5,6 +5,9 @@
  * then writes src/data/prisonImages.json
  *
  * Run: node scripts/build-prison-images.mjs
+ *
+ * Deploy safety: Vercel/CI builds must not fail when Commons rate-limits (HTTP 429).
+ * Prefer SKIP_COMMONS_FETCH=1 or an existing prisonImages.json over a hard exit.
  */
 import fs from "fs";
 import path from "path";
@@ -16,6 +19,27 @@ const CSV_PATH = path.join(ROOT, "data", "prison-images.csv");
 const OUT_PATH = path.join(ROOT, "src", "data", "prisonImages.json");
 
 const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
+const USER_AGENT =
+  "PrisonsOnlineBot/1.0 (https://prisonsonline.com; image-build; contact: hello@prisonsonline.com)";
+
+/** Skip live Commons calls on Vercel/CI unless explicitly forced. */
+function shouldSkipCommonsFetch() {
+  if (process.env.FORCE_COMMONS_FETCH === "1") return false;
+  if (process.env.SKIP_COMMONS_FETCH === "1") return true;
+  // Vercel sets VERCEL=1; keep deploys offline-safe when committed JSON exists.
+  if ((process.env.VERCEL === "1" || process.env.CI === "true") && fs.existsSync(OUT_PATH)) {
+    return true;
+  }
+  return false;
+}
+
+function preserveExisting(reason) {
+  if (fs.existsSync(OUT_PATH)) {
+    console.warn(`${reason}; preserving existing ${path.relative(ROOT, OUT_PATH)}`);
+    return true;
+  }
+  return false;
+}
 
 /** @param {string} raw */
 function normalizeSlug(raw) {
@@ -69,6 +93,10 @@ function parseCsvLine(line) {
   return out;
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 /** @param {string[]} titles */
 async function fetchImageUrlsForTitles(titles) {
   if (titles.length === 0) return new Map();
@@ -79,20 +107,55 @@ async function fetchImageUrlsForTitles(titles) {
     iiprop: "url",
     titles: titles.join("|"),
   });
-  const res = await fetch(`${COMMONS_API}?${params}`);
-  if (!res.ok) throw new Error(`Commons API ${res.status}`);
-  const data = await res.json();
-  /** @type {Map<string, string>} */
-  const map = new Map();
-  const pages = data.query?.pages;
-  if (!pages) return map;
-  for (const page of Object.values(pages)) {
-    if (page.missing || page.invalid) continue;
-    const title = page.title;
-    const url = page.imageinfo?.[0]?.url;
-    if (title && url) map.set(title, url);
+
+  const maxAttempts = 4;
+  let lastErr = null;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const res = await fetch(`${COMMONS_API}?${params}`, {
+        headers: {
+          "User-Agent": USER_AGENT,
+          Accept: "application/json",
+        },
+      });
+      if (res.status === 429 || res.status >= 500) {
+        lastErr = new Error(`Commons API ${res.status}`);
+        const retryAfter = Number(res.headers.get("retry-after"));
+        const waitMs = Number.isFinite(retryAfter) && retryAfter > 0
+          ? retryAfter * 1000
+          : 500 * 2 ** (attempt - 1);
+        if (attempt < maxAttempts) {
+          console.warn(`Commons ${res.status}; retry ${attempt}/${maxAttempts - 1} in ${waitMs}ms`);
+          await sleep(waitMs);
+          continue;
+        }
+        throw lastErr;
+      }
+      if (!res.ok) throw new Error(`Commons API ${res.status}`);
+      const data = await res.json();
+      /** @type {Map<string, string>} */
+      const map = new Map();
+      const pages = data.query?.pages;
+      if (!pages) return map;
+      for (const page of Object.values(pages)) {
+        if (page.missing || page.invalid) continue;
+        const title = page.title;
+        const url = page.imageinfo?.[0]?.url;
+        if (title && url) map.set(title, url);
+      }
+      return map;
+    } catch (e) {
+      lastErr = e;
+      if (attempt < maxAttempts) {
+        const waitMs = 500 * 2 ** (attempt - 1);
+        console.warn(`Commons fetch failed (${e}); retry ${attempt}/${maxAttempts - 1} in ${waitMs}ms`);
+        await sleep(waitMs);
+        continue;
+      }
+      throw lastErr;
+    }
   }
-  return map;
+  throw lastErr ?? new Error("Commons API failed");
 }
 
 function normalizeTitleKey(t) {
@@ -104,7 +167,13 @@ function normalizeTitleKey(t) {
 
 async function main() {
   if (!fs.existsSync(CSV_PATH)) {
-    console.warn(`No ${CSV_PATH}; preserving existing prisonImages.json`);
+    if (preserveExisting(`No ${CSV_PATH}`)) return;
+    console.warn(`No ${CSV_PATH}; nothing to build`);
+    return;
+  }
+
+  if (shouldSkipCommonsFetch()) {
+    preserveExisting("Skipping Commons fetch on Vercel/CI (committed JSON present)");
     return;
   }
 
@@ -112,7 +181,8 @@ async function main() {
   raw = raw.replace(/^\uFEFF/, "");
   const lines = raw.split(/\r?\n/).filter((l) => l.trim() !== "");
   if (lines.length < 2) {
-    console.warn("CSV has no data rows; preserving existing prisonImages.json");
+    if (preserveExisting("CSV has no data rows")) return;
+    console.warn("CSV has no data rows; nothing to build");
     return;
   }
 
@@ -166,6 +236,7 @@ async function main() {
       titleToUrl = await fetchImageUrlsForTitles(titles);
     } catch (e) {
       console.error("Commons API error:", e);
+      if (preserveExisting("Commons unavailable during image build")) return;
       process.exit(1);
     }
 
@@ -190,6 +261,9 @@ async function main() {
         alt: row.alt || `Photograph of ${row.slug.replace(/-/g, " ")}`,
       };
     }
+
+    // Be polite between chunks — reduces 429 risk on local/full rebuilds.
+    if (i + chunkSize < rows.length) await sleep(200);
   }
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
@@ -199,5 +273,6 @@ async function main() {
 
 main().catch((e) => {
   console.error(e);
+  if (preserveExisting("Unexpected image build failure")) return;
   process.exit(1);
 });
