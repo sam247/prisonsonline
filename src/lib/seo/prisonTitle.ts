@@ -1,7 +1,7 @@
 import type { Prison } from "@/types/prison";
 
 function titleName(p: Pick<Prison, "name" | "slug">): string {
-  if (p.slug === "florence-admax-usp") return "ADX Florence / Florence ADMAX USP";
+  if (p.slug === "florence-admax-usp") return "ADX Florence";
   if (p.slug === "hmp-manchester") return "HMP Manchester (Strangeways)";
   return p.name.trim();
 }

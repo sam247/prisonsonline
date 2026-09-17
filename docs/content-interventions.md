@@ -40,3 +40,12 @@ Baselines for 7 / 28 / 90-day measurement. Directory records are never modified 
 - **Directory records modified:** 0
 - **Commit:** https://github.com/sam247/prisonsonline/commit/416b3042138c94e6e8aced588c0fccf3e60880a5
 
+## 2026-09-17 — ADX Florence URL canonicalisation (Sam-approved)
+
+- **301:** `/prisons/united-states/adx-florence` → `/prisons/us/florence-admax-usp` (and nested paths)
+- **Removed** legacy international duplicate profile `adx-florence` so sitemap only lists the BOP destination
+- **Display:** destination H1/title lead with **ADX Florence**; BOP listing name retained as secondary when different
+- **Links:** article `relatedPrisons` slugs updated `adx-florence` → `florence-admax-usp`
+- **Search aliases:** content-layer only (not verifier overlays)
+- **Verifier / facilitySources / completeness whitelist:** untouched
+

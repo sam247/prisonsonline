@@ -70,7 +70,7 @@ function leadSummaryText(p: Prison): string {
 }
 
 function searchFacingPrisonName(p: Prison): string {
-  if (p.slug === "florence-admax-usp") return "ADX Florence (Florence ADMAX USP)";
+  if (p.slug === "florence-admax-usp") return "ADX Florence";
   if (p.slug === "hmp-manchester") return "HMP Manchester (Strangeways)";
   return p.name.trim();
 }
@@ -109,6 +109,7 @@ function GlanceRow({ label, value }: { label: string; value?: string | null }) {
 }
 
 export function PrisonProfileView({ prison }: { prison: Prison }) {
+  const displayName = searchFacingPrisonName(prison);
   const related = getRelatedPrisonsForProfile(prison, 8);
   const relatedArticles = getRelatedArticlesForPrison(prison);
   const relatedGuides = getRelatedGuidesForPrison(prison);
@@ -182,7 +183,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               {prison.country}
             </Link>
             <ChevronRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
-            <span className="text-foreground font-medium">{prison.name}</span>
+            <span className="text-foreground font-medium">{displayName}</span>
           </nav>
         </div>
       </div>
@@ -192,7 +193,10 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
           <Badge variant="secondary" className="mb-4">
             {prison.securityLevel}
           </Badge>
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">{prison.name}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">{displayName}</h1>
+          {displayName !== prison.name.trim() ? (
+            <p className="text-sm text-muted-foreground mb-3">Also listed as {prison.name}</p>
+          ) : null}
           <div className="flex items-center gap-2 text-primary-foreground/80">
             <MapPin className="h-4 w-4 shrink-0" aria-hidden />
             <p>

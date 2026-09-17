@@ -24,7 +24,7 @@ export const articles: Article[] = [
     excerpt: "A look at some of the most dangerous and notorious prisons across the globe, from overcrowded facilities to maximum-security lockdowns.",
     category: "Prison Systems",
     date: "2025-03-10",
-    relatedPrisons: ["adx-florence", "rikers-island", "angola"],
+    relatedPrisons: ["florence-admax-usp", "rikers-island", "angola"],
     relatedGuides: ["prison-categories-explained", "life-inside-prison"],
     coverImage: {
       type: "editorial",
@@ -252,7 +252,7 @@ The evidence is clear that rehabilitation programmes, when properly designed and
     excerpt: "How the concept of the supermax prison evolved from Alcatraz to modern facilities like ADX Florence.",
     category: "Prison History",
     date: "2024-12-20",
-    relatedPrisons: ["adx-florence", "alcatraz"],
+    relatedPrisons: ["florence-admax-usp", "alcatraz"],
     relatedGuides: ["prison-categories-explained"],
     coverImage: {
       type: "editorial",
@@ -451,7 +451,7 @@ The challenges faced by women in prison are distinct and require specific respon
     excerpt: "A comparative look at prison systems across different countries, from Scandinavia to Southeast Asia.",
     category: "Prison Systems",
     date: "2024-10-25",
-    relatedPrisons: ["adx-florence", "hmp-belmarsh", "san-quentin"],
+    relatedPrisons: ["florence-admax-usp", "hmp-belmarsh", "san-quentin"],
     relatedGuides: ["prison-categories-explained", "life-inside-prison"],
     content: `Prison systems around the world vary enormously in their philosophy, conditions, and outcomes. From the rehabilitation-focused models of Scandinavia to the punitive approaches found in parts of Asia and the Americas, how societies choose to imprison their citizens reflects deep cultural values and political priorities.
 

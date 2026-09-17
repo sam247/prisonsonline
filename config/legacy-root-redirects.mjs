@@ -27,6 +27,17 @@ const articleSlugs = [
 
 const prisonEntityRedirects = [
   {
+    source: "/prisons/united-states/adx-florence",
+    destination: "/prisons/us/florence-admax-usp",
+    permanent: true,
+  },
+  {
+    source: "/prisons/united-states/adx-florence/:path*",
+    destination: "/prisons/us/florence-admax-usp",
+    permanent: true,
+  },
+
+  {
     source: "/hmp-bullingdon",
     destination: "/prisons/uk/hmp-bullingdon",
     permanent: true,

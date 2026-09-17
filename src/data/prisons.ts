@@ -54,17 +54,25 @@ export const getRelatedPrisons = (prison: Prison, limit = 4) =>
     )
     .slice(0, limit);
 
+/** Content-layer search aliases (not verifier overlays). */
+const PRISON_SEARCH_ALIASES: Record<string, string[]> = {
+  "florence-admax-usp": ["adx florence", "adx", "alcatraz of the rockies", "florence admax"],
+};
+
 export const searchPrisons = (query: string) => {
   const q = query.toLowerCase();
-  return prisons.filter(
-    (p) =>
+  return prisons.filter((p) => {
+    const aliases = PRISON_SEARCH_ALIASES[p.slug] ?? [];
+    return (
       p.name.toLowerCase().includes(q) ||
       p.country.toLowerCase().includes(q) ||
       p.stateOrRegion.toLowerCase().includes(q) ||
       p.city.toLowerCase().includes(q) ||
       (p.postcode?.toLowerCase().includes(q) ?? false) ||
-      (p.address?.toLowerCase().includes(q) ?? false),
-  );
+      (p.address?.toLowerCase().includes(q) ?? false) ||
+      aliases.some((a) => a.includes(q) || q.includes(a))
+    );
+  });
 };
 
 export const securityLevels = Array.from(new Set(prisons.map((p) => p.securityLevel))).sort();

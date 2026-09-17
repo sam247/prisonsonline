@@ -30,34 +30,7 @@ export const legacyInternationalPrisons: Prison[] = [
     institutionalId: "legacy:san-quentin",
     dataProvenance: "manual",
   },
-  {
-    name: "ADX Florence",
-    slug: "adx-florence",
-    country: "United States",
-    countrySlug: "united-states",
-    stateOrRegion: "Colorado",
-    regionSlug: "colorado",
-    city: "Florence",
-    securityLevel: "Supermax",
-    capacity: 490,
-    operator: "Federal Bureau of Prisons",
-    openedYear: 1994,
-    latitude: 38.3586,
-    longitude: -105.0977,
-    type: "Male Adult",
-    overview:
-      "ADX Florence, also known as the 'Alcatraz of the Rockies', is the most secure federal prison in the United States. It houses inmates deemed too dangerous or high-profile for other facilities.",
-    history:
-      "ADX Florence was opened in 1994 following a series of violent incidents at other federal prisons. It was designed to house the most dangerous, high-profile, and escape-prone inmates in the federal prison system.",
-    prisonLife:
-      "Inmates spend approximately 23 hours per day in solitary confinement in 7×12 foot concrete cells. Limited human interaction and strict security protocols define daily existence at ADX Florence.",
-    visitingInfo:
-      "Visits are extremely restricted and must be approved well in advance. All visits are non-contact and conducted through glass barriers. Background checks are required for all visitors.",
-    notableInmates:
-      "ADX Florence houses some of America's most dangerous criminals including Ted Kaczynski (the Unabomber), Dzhokhar Tsarnaev (Boston Marathon bomber), Joaquín 'El Chapo' Guzmán, and Robert Hanssen (FBI spy).",
-    institutionalId: "legacy:adx-florence",
-    dataProvenance: "manual",
-  },
+
   {
     name: "Rikers Island",
     slug: "rikers-island",
