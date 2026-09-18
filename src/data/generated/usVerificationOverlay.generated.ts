@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "2026-09-17T09:35:53.494Z",
+  "updatedAt": "2026-09-18T08:26:16.463Z",
   "entries": {
     "united-states/adx-florence": {
       "prisonSlug": "adx-florence",
@@ -24,6 +24,15 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/flm/",
       "overrides": {
         "email": "FLX-ExecAssistant-S@bop.gov"
+      }
+    },
+    "us/allenwood-low-fci": {
+      "prisonSlug": "allenwood-low-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-09-18T08:26:16.463Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/alf/",
+      "overrides": {
+        "email": "ALX-ExecAssistant-S@bop.gov"
       }
     }
   }
