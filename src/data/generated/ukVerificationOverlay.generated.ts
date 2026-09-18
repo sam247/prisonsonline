@@ -4,6 +4,16 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const ukVerificationOverlay: OverlayFile = {
   "generatedBy": "uk-prison-verifier",
-  "updatedAt": "",
-  "entries": {}
+  "updatedAt": "2026-09-18T08:03:14.138Z",
+  "entries": {
+    "uk/hmp-birmingham": {
+      "prisonSlug": "hmp-birmingham",
+      "countrySlug": "uk",
+      "appliedAt": "2026-09-18T08:03:14.138Z",
+      "sourceUrl": "https://www.gov.uk/guidance/birmingham-prison",
+      "overrides": {
+        "phone": "0121 598 8000"
+      }
+    }
+  }
 };
