@@ -81,3 +81,13 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Search aliases:** content-layer only (not verifier overlays)
 - **Verifier / facilitySources / completeness whitelist:** untouched
 
+## 2026-09-21 — INTERVENTION A (shipped)
+
+- **URL:** `/guides/can-you-get-haircuts-in-prison`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England/Wales first; US high-level separate (no invented prison-specific rules)
+- **Change:** Lead with clear yes + UK/US framing; answer barbers / do-you-have-to-cut / how haircuts work / frequency-payment caveats as local; internal links to piercings, glasses, life-inside, going-to-prison, Prison Finder; add demand FAQs for barbers and mandatory cuts; tighten excerpt for CTR. Slug unchanged. No directory edits.
+- **GSC baseline (lookup 2026-09-21, ~90d):** clicks 0, impressions 133, CTR 0%, avg position ~39.7
+- **Hypothesis:** Direct answers to high-impression long-tail queries (barbers, must you cut hair, how haircuts work) plus related-guide internal links will lift CTR from mid-pack impressions without inventing local rules.
+- **Directory records modified:** 0
+- **Commit:** PENDING_AFTER_PUSH
