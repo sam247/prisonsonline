@@ -90,4 +90,15 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **GSC baseline (lookup 2026-09-21, ~90d):** clicks 0, impressions 133, CTR 0%, avg position ~39.7
 - **Hypothesis:** Direct answers to high-impression long-tail queries (barbers, must you cut hair, how haircuts work) plus related-guide internal links will lift CTR from mid-pack impressions without inventing local rules.
 - **Directory records modified:** 0
-- **Commit:** PENDING_AFTER_PUSH
+- **Commit:** https://github.com/sam247/prisonsonline/commit/825325595109f8bab12a2f3ff7da6a4e90a9e1b5
+
+## 2026-09-21 — INTERVENTION B (shipped)
+
+- **URL:** `/guides/what-happens-going-to-prison`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England/Wales reception / first days first; US high-level separate
+- **Change:** Reframed as England/Wales reception, first night, and induction; softened absolute claims (clothing, biometrics) as usual/local; linked real GOV.UK prison-life and Early days in custody pages; internal links to sentences, categories, life-inside, visits, haircuts, Prison Finder; light FAQ soften/expand. No directory edits. No invented statistics.
+- **GSC baseline (lookup 2026-09-21, ~90d):** clicks 0, impressions 120, CTR 0%, avg position ~65.8
+- **Hypothesis:** UK-first reception clarity + official GOV.UK orientation links + related-guide internal links will improve CTR on “what happens / going to prison / induction” queries stuck at deep positions.
+- **Directory records modified:** 0
+- **Commit:** PENDING_B_SHA
