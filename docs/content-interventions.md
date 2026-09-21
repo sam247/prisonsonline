@@ -101,4 +101,4 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **GSC baseline (lookup 2026-09-21, ~90d):** clicks 0, impressions 120, CTR 0%, avg position ~65.8
 - **Hypothesis:** UK-first reception clarity + official GOV.UK orientation links + related-guide internal links will improve CTR on “what happens / going to prison / induction” queries stuck at deep positions.
 - **Directory records modified:** 0
-- **Commit:** PENDING_B_SHA
+- **Commit:** https://github.com/sam247/prisonsonline/commit/bae17f3e7ab7eda26315f4c1ea45e482afe1cc27
