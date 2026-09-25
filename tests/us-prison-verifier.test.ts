@@ -638,3 +638,9 @@ test("closed or historical US facilities are excluded from the active verifier q
 test("ADX Florence legacy slug is treated as a dual-URL duplicate of florence-admax-usp", () => {
   assert.equal(US_LEGACY_DUPLICATE_OF_BOP["adx-florence"], "florence-admax-usp");
 });
+
+test("Beaumont Med Fci matches BOP Beaumont Medium FCI (abbreviation normalised for comparison only)", () => {
+  assert.equal(usNamesEquivalent("Beaumont Med Fci", "Beaumont Medium FCI"), true);
+  assert.equal(usNamesEquivalent("Beaumont Med Fci", "Beaumont Low FCI"), false);
+  assert.equal(usNamesEquivalent("Allenwood Low Fci", "Allenwood Medium FCI"), false);
+});

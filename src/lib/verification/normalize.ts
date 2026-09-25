@@ -158,6 +158,10 @@ export function coreUsFacilityName(value: string | undefined | null): string {
     .replace(US_FACILITY_TYPE_WORDS, " ")
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9]+/g, " ")
+    // Security-level abbreviations compare equal to the full word (comparison only; published names untouched).
+    .replace(/\bmed\b/g, "medium")
+    .replace(/\bmin\b/g, "minimum")
+    .replace(/\bmax\b/g, "maximum")
     .replace(/\s+/g, " ")
     .trim();
 }
