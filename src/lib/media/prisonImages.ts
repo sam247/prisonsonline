@@ -6,6 +6,11 @@ export type PrisonImageRecord = {
   credit: string;
   licence: string;
   alt: string;
+  licenceUrl?: string;
+  author?: string;
+  title?: string;
+  sourceUrl?: string;
+  caption?: string;
 };
 
 const prisonImages = prisonImagesJson as Record<string, PrisonImageRecord>;
@@ -42,5 +47,10 @@ export function getPrisonImage(slug: string): RealFacilityImage | undefined {
     alt: row.alt.trim() || `Photograph of ${slug.replace(/-/g, " ")}`,
     ...(row.credit?.trim() ? { credit: row.credit.trim() } : {}),
     ...(row.licence?.trim() ? { licence: row.licence.trim() } : {}),
+    ...(row.licenceUrl?.trim() ? { licenceUrl: row.licenceUrl.trim() } : {}),
+    ...(row.author?.trim() ? { author: row.author.trim() } : {}),
+    ...(row.title?.trim() ? { title: row.title.trim() } : {}),
+    ...(row.sourceUrl?.trim() ? { sourceUrl: row.sourceUrl.trim() } : {}),
+    ...(row.caption?.trim() ? { caption: row.caption.trim() } : {}),
   };
 }

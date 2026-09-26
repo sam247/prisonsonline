@@ -10,6 +10,14 @@ export interface RealFacilityImage {
   credit?: string;
   /** Licence string (e.g. CC BY-SA 4.0) when sourced from Commons or similar. */
   licence?: string;
+  /** Licence deed URL (absent for plain public domain). */
+  licenceUrl?: string;
+  /** Author / creator as given on the source file page (HTML stripped). */
+  author?: string;
+  /** Title of the work (Commons ObjectName, or file name without extension). */
+  title?: string;
+  /** Source file page, e.g. the Wikimedia Commons `File:` page. */
+  sourceUrl?: string;
 }
 
 /** Generic thematic imagery for browse/editorial surfaces only. */
