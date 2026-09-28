@@ -79,6 +79,19 @@ export function resolveUkOverlayModuleWrite(input: {
   return renderOverlayModule(mergeOverlayFiles(input.seed, input.stored));
 }
 
+/**
+ * US twin of resolveUkOverlayModuleWrite: null when no overlay entry was written
+ * this run (committed module stays byte-identical); otherwise seed + stored merged.
+ */
+export function resolveUsOverlayModuleWrite(input: {
+  seed: OverlayFile;
+  stored: OverlayFile;
+  overlayWritten: boolean;
+}): string | null {
+  if (!input.overlayWritten) return null;
+  return renderUsOverlayModule(mergeOverlayFiles(input.seed, input.stored));
+}
+
 export function memoryOverlayStore(initial: OverlayFile = emptyOverlay()): OverlayStore & { snapshot(): OverlayFile } {
   let current: OverlayFile = structuredClone(initial);
   return {

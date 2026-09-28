@@ -13,7 +13,8 @@ import {
   productionUsWritesEnabled,
   productionWritesEnabled,
 } from "@/lib/verification/applyChanges";
-import { memoryOverlayStore } from "@/lib/verification/stateStore";
+import { memoryOverlayStore, mergeOverlayFiles, resolveUsOverlayModuleWrite, seededOverlayStore } from "@/lib/verification/stateStore";
+import { usVerificationOverlay } from "@/data/generated/usVerificationOverlay.generated";
 import { verifyUkPrison } from "@/lib/verification/runVerification";
 import { verifyUsPrison } from "@/lib/verification/runUsVerification";
 import { resolveUsAuthority } from "@/lib/verification/usAuthority";
@@ -524,7 +525,8 @@ test("empty US overlay leaves existing UK facility verification records unchange
   const belmarsh = getFacilityVerification("uk", "hmp-belmarsh");
   assert.ok(belmarsh);
   assert.equal(belmarsh.overrides?.phone, "020 8331 4400");
-  assert.equal(getFacilityVerification("us", "alderson-fpc"), undefined);
+  // US records come only from the committed overlay; a slug with no overlay entry has none.
+  assert.equal(getFacilityVerification("us", "not-a-real-us-prison"), undefined);
 });
 
 test("protected prose and URL fields are not in the compare set", () => {
@@ -643,4 +645,31 @@ test("Beaumont Med Fci matches BOP Beaumont Medium FCI (abbreviation normalised 
   assert.equal(usNamesEquivalent("Beaumont Med Fci", "Beaumont Medium FCI"), true);
   assert.equal(usNamesEquivalent("Beaumont Med Fci", "Beaumont Low FCI"), false);
   assert.equal(usNamesEquivalent("Allenwood Low Fci", "Allenwood Medium FCI"), false);
+});
+
+test("US overlay: no-change --write run leaves committed usVerificationOverlay untouched", () => {
+  const seed = structuredClone(usVerificationOverlay);
+  const store = seededOverlayStore(memoryOverlayStore(), seed);
+  assert.ok(store.read().entries["us/florence-admax-usp"], "committed ADX overlay visible through seeded store");
+  assert.equal(resolveUsOverlayModuleWrite({ seed, stored: store.read(), overlayWritten: false }), null);
+});
+
+test("US overlay: new SAFE entry merges alongside committed entries (empty runtime overlay.json)", () => {
+  const seed = structuredClone(usVerificationOverlay);
+  const inner = memoryOverlayStore();
+  const store = seededOverlayStore(inner, seed);
+  const next = store.read();
+  next.entries["us/test-new-fci"] = {
+    prisonSlug: "test-new-fci",
+    appliedAt: "2026-09-28T00:00:00.000Z",
+    sourceUrl: "https://www.bop.gov/locations/institutions/tst/",
+    overrides: { email: "TST-ExecAssistant-S@bop.gov" },
+  } as (typeof next.entries)[string];
+  store.write(next);
+  const source = resolveUsOverlayModuleWrite({ seed, stored: store.read(), overlayWritten: true });
+  assert.ok(source);
+  for (const key of Object.keys(seed.entries)) assert.ok(source!.includes(JSON.stringify(key)), `kept ${key}`);
+  assert.ok(source!.includes("TST-ExecAssistant-S@bop.gov"));
+  const merged = mergeOverlayFiles(seed, inner.snapshot());
+  assert.equal(Object.keys(merged.entries).length, Object.keys(seed.entries).length + 1);
 });

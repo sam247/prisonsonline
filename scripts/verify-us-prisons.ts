@@ -13,6 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { prisons } from "@/data/prisons";
 import { getFacilityVerification } from "@/data/facilitySources";
+import { usVerificationOverlay } from "@/data/generated/usVerificationOverlay.generated";
 import type { PrisonVerificationInput } from "@/lib/verification/types";
 import { selectUsPrisonsDue } from "@/lib/verification/selectPrison";
 import { verifyUsPrison, nextUsStateFromResult } from "@/lib/verification/runUsVerification";
@@ -27,7 +28,8 @@ import {
   defaultUsVerificationDir,
   fileOverlayStore,
   loadState,
-  renderUsOverlayModule,
+  resolveUsOverlayModuleWrite,
+  seededOverlayStore,
   saveState,
   upsertPrisonState,
   writeJsonFile,
@@ -127,7 +129,9 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
   const verificationDir = defaultUsVerificationDir(root);
   const overlayJsonPath = path.join(root, US_OVERLAY_JSON_RELATIVE);
   const overlayTsPath = path.join(root, US_OVERLAY_TS_RELATIVE);
-  const diskStore = fileOverlayStore(overlayJsonPath, emptyUsOverlay());
+  // Seed from the committed generated overlay so SAFE entries are merged, never replaced.
+  const overlaySeed = structuredClone(usVerificationOverlay);
+  const diskStore = seededOverlayStore(fileOverlayStore(overlayJsonPath, emptyUsOverlay()), overlaySeed);
   const overlayStore = gatedOverlayStore(writesEnabled, diskStore);
 
   const http = defaultUsHttpGet();
@@ -173,9 +177,15 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
   saveState(verificationDir, nextState);
 
   if (writesEnabled) {
-    const overlay = diskStore.read();
-    fs.mkdirSync(path.dirname(overlayTsPath), { recursive: true });
-    fs.writeFileSync(overlayTsPath, renderUsOverlayModule(overlay), "utf8");
+    const moduleSource = resolveUsOverlayModuleWrite({
+      seed: overlaySeed,
+      stored: diskStore.read(),
+      overlayWritten: results.some((result) => result.overlayWritten),
+    });
+    if (moduleSource !== null) {
+      fs.mkdirSync(path.dirname(overlayTsPath), { recursive: true });
+      fs.writeFileSync(overlayTsPath, moduleSource, "utf8");
+    }
   }
 
   const report = buildRunReport(results, isoNow(now));
