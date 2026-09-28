@@ -102,3 +102,17 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Hypothesis:** UK-first reception clarity + official GOV.UK orientation links + related-guide internal links will improve CTR on “what happens / going to prison / induction” queries stuck at deep positions.
 - **Directory records modified:** 0
 - **Commit:** https://github.com/sam247/prisonsonline/commit/bae17f3e7ab7eda26315f4c1ea45e482afe1cc27
+
+## 2026-09-28 — INTERVENTION B (PR ready)
+
+- **URL:** `/guides/life-inside-prison`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England/Wales first; US high-level separate
+- **Change:** UK-first “what do prisoners do all day” lead; softened absolute unlock times and wage figures as local/typical; GOV.UK Prison life + education/work links; internal links to going-to-prison, categories, haircuts, visits/dress/bring, sentences, Prison Finder; FAQ for all-day routine. No directory edits.
+- **GSC baseline (lookup 2026-09-28):**
+  - ~28d: clicks 0, impressions 9, CTR 0%, avg position ~70.8
+  - ~90d: clicks 0, impressions 90, CTR 0%, avg position ~68.5
+- **Hypothesis:** Direct answers to daily-routine long-tail queries plus official and related-guide links will improve CTR from mid/deep pack without inventing one national timetable.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/life-inside-guide-2026-09-28`
+
