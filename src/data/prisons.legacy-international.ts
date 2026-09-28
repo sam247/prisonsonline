@@ -3,7 +3,7 @@ import type { Prison } from "@/types/prison";
 /** Manual narrative profiles for non-UK prisons (articles and URLs depend on these slugs). */
 export const legacyInternationalPrisons: Prison[] = [
   {
-    name: "San Quentin State Prison",
+    name: "San Quentin Rehabilitation Center",
     slug: "san-quentin",
     country: "United States",
     countrySlug: "united-states",
@@ -83,32 +83,6 @@ export const legacyInternationalPrisons: Prison[] = [
     notableInmates:
       "Alcatraz housed some of the most famous criminals in American history including Al Capone, Robert Stroud (the 'Birdman of Alcatraz'), George 'Machine Gun' Kelly, Mickey Cohen, and Whitey Bulger.",
     institutionalId: "legacy:alcatraz",
-    dataProvenance: "manual",
-  },
-  {
-    name: "USP Leavenworth",
-    slug: "usp-leavenworth",
-    country: "United States",
-    countrySlug: "united-states",
-    stateOrRegion: "Kansas",
-    regionSlug: "kansas",
-    city: "Leavenworth",
-    securityLevel: "Medium",
-    capacity: 1170,
-    operator: "Federal Bureau of Prisons",
-    openedYear: 1903,
-    latitude: 39.3112,
-    longitude: -94.9203,
-    type: "Male Adult",
-    overview:
-      "USP Leavenworth is a medium-security United States penitentiary in Leavenworth, Kansas. Known as the 'Big House' and 'Hot House', it was the largest maximum-security federal prison in the US for many years.",
-    history:
-      "Construction began in 1897 using inmate labor. The prison was completed in 1903 and designed to be a model institution. It was the first federal penitentiary and has housed many notable inmates throughout its history.",
-    prisonLife:
-      "The facility offers various programmes including UNICOR industries, education, and vocational training. The iconic domed building remains in use, though the prison has been reclassified to medium security.",
-    visitingInfo:
-      "Visits are held on weekends and federal holidays. Visitors must be on the approved visiting list. Photo identification is required and all visitors are subject to security screening.",
-    institutionalId: "legacy:usp-leavenworth",
     dataProvenance: "manual",
   },
   {
@@ -201,8 +175,8 @@ export const legacyInternationalPrisons: Prison[] = [
     capacity: 2469,
     operator: "California Department of Corrections and Rehabilitation",
     openedYear: 1880,
-    latitude: 38.6757,
-    longitude: -121.1778,
+    latitude: 38.6946,
+    longitude: -121.1624,
     type: "Male Adult",
     overview:
       "Folsom State Prison is a state prison in Represa, California. Made famous by Johnny Cash's live album recorded there in 1968, it is the second-oldest prison in California.",

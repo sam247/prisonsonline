@@ -26,7 +26,7 @@ assert.match(indexRoute, /\/sitemaps\/courts\.xml/);
 assert.ok(probation.length > 300, `Expected a populated probation sitemap, found ${probation.length}`);
 assert.equal(new Set(probation.map((entry) => entry.loc)).size, probation.length, "Probation sitemap contains duplicate URLs");
 assert.equal(intents.length, 523, "Intent sitemap should contain 516 base URLs plus seven legal-visit URLs");
-assert.equal(prisons.length, 274, "Prison profile sitemap count regression");
+assert.equal(prisons.length, 273, "Prison profile sitemap count regression");
 assert.ok(
   prisons.some((e) => e.loc.endsWith("/prisons/us/florence-admax-usp")),
   "Canonical ADX Florence destination missing from prison sitemap",
@@ -35,7 +35,15 @@ assert.ok(
   !prisons.some((e) => e.loc.includes("/prisons/united-states/adx-florence")),
   "Legacy ADX Florence URL must not appear in prison sitemap",
 );
-assert.equal(regions.length, 70, "Region sitemap count regression");
+assert.ok(
+  !prisons.some((e) => e.loc.includes("/prisons/united-states/usp-leavenworth")),
+  "Legacy USP Leavenworth URL must not appear in prison sitemap (301 to /prisons/us/leavenworth-fci)",
+);
+assert.ok(
+  prisons.some((e) => e.loc.endsWith("/prisons/us/leavenworth-fci")),
+  "Canonical Leavenworth FCI destination missing from prison sitemap",
+);
+assert.equal(regions.length, 69, "Region sitemap count regression");
 assert.ok(
   !regions.some((e) => e.loc.includes("/prisons/united-states/adx-florence")),
   "Legacy ADX path must not appear in region sitemap",
@@ -69,4 +77,8 @@ console.log(
     null,
     2,
   ),
+);
+assert.ok(
+  regions.some((e) => e.loc.endsWith("/prisons/us/puerto-rico")) && !regions.some((e) => e.loc.endsWith("/prisons/us/rq")),
+  "Puerto Rico region must be /prisons/us/puerto-rico, not the legacy RQ code",
 );

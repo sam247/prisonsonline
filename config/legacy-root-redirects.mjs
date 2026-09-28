@@ -47,6 +47,26 @@ const prisonEntityRedirects = [
     destination: "/prisons/us/florence-admax-usp",
     permanent: true,
   },
+  {
+    source: "/prisons/united-states/usp-leavenworth",
+    destination: "/prisons/us/leavenworth-fci",
+    permanent: true,
+  },
+  {
+    source: "/prisons/united-states/usp-leavenworth/:path*",
+    destination: "/prisons/us/leavenworth-fci",
+    permanent: true,
+  },
+  {
+    source: "/prisons/united-states/kansas",
+    destination: "/prisons/us/kansas",
+    permanent: true,
+  },
+  {
+    source: "/prisons/us/rq",
+    destination: "/prisons/us/puerto-rico",
+    permanent: true,
+  },
 
   {
     source: "/hmp-bullingdon",
