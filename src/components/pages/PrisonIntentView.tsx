@@ -31,6 +31,8 @@ export function PrisonIntentView({
   const heading = buildIntentPageHeading(prison, intent);
   const paragraphs = buildIntentBodyParagraphs(prison, intent);
   const verification = getFacilityVerification(prison.countrySlug, prison.slug);
+  // Client blocks never need the raw HMPPS audit row; keep it (and its stale values) out of the RSC payload.
+  const clientPrison: Prison = { ...prison, sourceRaw: undefined };
   const guideSlugs = guideSlugsForIntent(intent);
   const guideLinks = guideSlugs
     .map((slug) => guides.find((g) => g.slug === slug))
@@ -79,8 +81,8 @@ export function PrisonIntentView({
       </header>
 
       <article className="container py-10 max-w-3xl">
-        {intent === "contact-details" ? <FacilityFactBlock prison={prison} verification={verification} /> : null}
-        {intent === "legal-visits" && verification?.legalVisits ? <LegalVisitBlock prison={prison} verification={verification} /> : null}
+        {intent === "contact-details" ? <FacilityFactBlock prison={clientPrison} verification={verification} /> : null}
+        {intent === "legal-visits" && verification?.legalVisits ? <LegalVisitBlock prison={clientPrison} verification={verification} /> : null}
         {intent !== "legal-visits" ? (
           <div className="prose prose-neutral dark:prose-invert max-w-none space-y-4 text-muted-foreground leading-relaxed">
             {paragraphs.map((p, i) => <p key={i}>{p}</p>)}

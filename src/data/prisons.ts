@@ -3,15 +3,26 @@ import { getPrisonImage } from "@/lib/media/prisonImages";
 import { ukPrisonsGenerated } from "./generated/ukPrisons.generated";
 import { usPrisonsGenerated } from "./generated/usPrisons.generated";
 import { legacyInternationalPrisons } from "./prisons.legacy-international";
+import { getFacilityVerification } from "./facilitySources";
+import { applyVerifiedContactFacts } from "@/lib/verification/applyVerifiedFacts";
 
 export type { Prison } from "@/types/prison";
 
 /** UK HMPPS import, US federal BOP import, then legacy manual international profiles. */
 const basePrisons: Prison[] = [...ukPrisonsGenerated, ...usPrisonsGenerated, ...legacyInternationalPrisons];
 
+/**
+ * UK rows: verified contact overrides (facilitySources + UK verification overlay) replace the
+ * HMPPS import phone/address/postcode everywhere, including the phone string embedded in prose.
+ */
+function withVerifiedFacts(p: Prison): Prison {
+  if (p.countrySlug !== "uk") return p;
+  return applyVerifiedContactFacts(p, getFacilityVerification(p.countrySlug, p.slug));
+}
+
 /** Merges `src/data/prisonImages.json` (from `data/prison-images.csv` + build script) when no explicit `facilityImage` on the row. */
 export const prisons: Prison[] = basePrisons.map((p) => ({
-  ...p,
+  ...withVerifiedFacts(p),
   facilityImage: p.facilityImage ?? getPrisonImage(p.slug),
 }));
 
