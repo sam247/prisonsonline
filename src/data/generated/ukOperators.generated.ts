@@ -8,11 +8,6 @@ export const ukOperatorsGenerated = [
     "prisonCount": 6
   },
   {
-    "slug": "not-specified",
-    "name": "Not specified",
-    "prisonCount": 1
-  },
-  {
     "slug": "public-sector-prison",
     "name": "Public Sector Prison",
     "prisonCount": 107

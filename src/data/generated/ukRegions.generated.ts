@@ -78,11 +78,6 @@ export const ukRegionsGenerated = [
     "prisonCount": 4
   },
   {
-    "slug": "unknown-region",
-    "name": "Unknown region",
-    "prisonCount": 1
-  },
-  {
     "slug": "west-midlands",
     "name": "WEST MIDLANDS",
     "prisonCount": 7
