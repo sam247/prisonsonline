@@ -7,7 +7,17 @@ import { publishedFacts } from "@/lib/verification/publishedFacts";
 import { validateAiExtraction } from "@/lib/verification/aiGuard";
 import { selectUkPrisonsDue, isUsPrison } from "@/lib/verification/selectPrison";
 import { applySafeAutoChanges, emptyOverlay, productionWritesEnabled } from "@/lib/verification/applyChanges";
-import { memoryOverlayStore } from "@/lib/verification/stateStore";
+import {
+  OVERLAY_TS_RELATIVE,
+  memoryOverlayStore,
+  renderOverlayModule,
+  resolveUkOverlayModuleWrite,
+  seededOverlayStore,
+} from "@/lib/verification/stateStore";
+import { applySafeFills, evaluateCompleteness } from "@/lib/verification/completeness";
+import { ukVerificationOverlay } from "@/data/generated/ukVerificationOverlay.generated";
+import fs from "node:fs";
+import path from "node:path";
 import { verifyUkPrison } from "@/lib/verification/runVerification";
 import { canOverrideFromSourceUrl, isAuthoritativeUkGovUrl } from "@/lib/verification/sourcePolicy";
 import { namesEquivalent, phonesEqual, postcodesEqual } from "@/lib/verification/normalize";
@@ -471,4 +481,100 @@ test("applySafeAutoChanges is a no-op without writesEnabled", () => {
   });
   assert.equal(result.overlayWritten, false);
   assert.deepEqual(store.snapshot().entries, {});
+});
+
+// --- Overlay merge regression (2026-09-28: a no-change --write run wiped Birmingham) ---
+
+const BIRMINGHAM_KEY = "uk/hmp-birmingham";
+
+function committedOverlaySeed() {
+  const seed = structuredClone(ukVerificationOverlay);
+  assert.equal(seed.entries[BIRMINGHAM_KEY]?.overrides.phone, "0121 598 8000");
+  return seed;
+}
+
+test("no-change --write run preserves existing Birmingham SAFE overlay and leaves module byte-identical", async () => {
+  const seed = committedOverlaySeed();
+  // Runtime overlay.json is gitignored, so a fresh run starts with an empty on-disk store.
+  const inner = memoryOverlayStore(emptyOverlay());
+  const store = seededOverlayStore(inner, seed);
+  const verification: FacilityVerificationRecord = {
+    countrySlug: "uk",
+    prisonSlug: "hmp-belmarsh",
+    sources: [{ id: "official", name: "GOV.UK", url: "https://www.gov.uk/guidance/belmarsh-prison", checkedAt: "2026-08-20" }],
+    fieldSources: { phone: ["official"], email: ["official"] },
+    overrides: { phone: "020 8331 4400", email: "communications.Belmarsh@justice.gov.uk" },
+  };
+  const result = await verifyUkPrison({
+    prison: ukPrison({ phone: "020 8331 4400" }),
+    verification,
+    collection: COLLECTION,
+    http: httpMap(BELMARSH_ROUTES),
+    overlayStore: store,
+    options: { dryRun: false, writesEnabled: true, completenessWritesEnabled: true, now: new Date("2026-09-28T08:00:00Z") },
+  });
+  assert.equal(result.overlayWritten, false);
+  assert.equal(store.read().entries[BIRMINGHAM_KEY]?.overrides.phone, "0121 598 8000");
+
+  const moduleWrite = resolveUkOverlayModuleWrite({ seed, stored: store.read(), overlayWritten: result.overlayWritten });
+  assert.equal(moduleWrite, null, "no-change run must not rewrite the generated overlay module");
+
+  // Even if rendered, the merged overlay must equal the committed module byte-for-byte.
+  const committed = fs.readFileSync(path.join(process.cwd(), OVERLAY_TS_RELATIVE), "utf8");
+  assert.equal(renderOverlayModule(store.read()), committed);
+  assert.doesNotMatch(renderOverlayModule(store.read()), /"entries": \{\}/);
+});
+
+test("new SAFE_AUTO_CHANGE merges alongside existing Birmingham overlay instead of replacing it", async () => {
+  const seed = committedOverlaySeed();
+  const store = seededOverlayStore(memoryOverlayStore(emptyOverlay()), seed);
+  const result = await verifyUkPrison({
+    prison: ukPrison(),
+    collection: COLLECTION,
+    http: httpMap(BELMARSH_ROUTES),
+    overlayStore: store,
+    options: { dryRun: false, writesEnabled: true, now: new Date("2026-09-28T08:00:00Z") },
+  });
+  assert.equal(result.overlayWritten, true);
+  const moduleWrite = resolveUkOverlayModuleWrite({ seed, stored: store.read(), overlayWritten: true });
+  assert.ok(moduleWrite);
+  assert.match(moduleWrite, /"uk\/hmp-birmingham"/);
+  assert.match(moduleWrite, /"phone": "0121 598 8000"/);
+  assert.match(moduleWrite, /"uk\/hmp-belmarsh"/);
+  assert.match(moduleWrite, /"phone": "020 8331 4400"/);
+  assert.deepEqual(store.read().entries[BIRMINGHAM_KEY], seed.entries[BIRMINGHAM_KEY]);
+});
+
+test("completeness SAFE_FILL write merges alongside existing Birmingham overlay", () => {
+  const seed = committedOverlaySeed();
+  const store = seededOverlayStore(memoryOverlayStore(emptyOverlay()), seed);
+  const published = { name: "HMP Example", address: "1 Test Road", postcode: "AB1 2CD", phone: "01234 567890" };
+  const report = evaluateCompleteness({
+    published,
+    official: {
+      officialName: "Example Prison",
+      address: "1 Test Road",
+      postcode: "AB1 2CD",
+      phone: "01234 567890",
+      email: "example@justice.gov.uk",
+      withdrawn: false,
+    },
+    verificationStatus: "CURRENT",
+    sourceAvailable: true,
+  });
+  const applied = applySafeFills({
+    countrySlug: "uk",
+    prisonSlug: "hmp-example",
+    sourceUrl: "https://www.gov.uk/guidance/example-prison",
+    published,
+    report,
+    writesEnabled: true,
+    now: new Date("2026-09-28T08:00:00Z"),
+    store,
+    market: "uk",
+  });
+  assert.equal(applied.completenessMutated, true);
+  const entries = store.read().entries;
+  assert.equal(entries["uk/hmp-example"]?.overrides.email, "example@justice.gov.uk");
+  assert.deepEqual(entries[BIRMINGHAM_KEY], seed.entries[BIRMINGHAM_KEY]);
 });
