@@ -13,6 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { prisons } from "@/data/prisons";
 import { getFacilityVerification } from "@/data/facilitySources";
+import { ukVerificationOverlay } from "@/data/generated/ukVerificationOverlay.generated";
 import type { PrisonVerificationInput } from "@/lib/verification/types";
 import { selectUkPrisonsDue } from "@/lib/verification/selectPrison";
 import { verifyUkPrison, nextStateFromResult } from "@/lib/verification/runVerification";
@@ -26,8 +27,9 @@ import {
   defaultVerificationDir,
   fileOverlayStore,
   loadState,
-  renderOverlayModule,
+  resolveUkOverlayModuleWrite,
   saveState,
+  seededOverlayStore,
   upsertPrisonState,
   writeJsonFile,
 } from "@/lib/verification/stateStore";
@@ -121,7 +123,9 @@ Default mode is dry-run. Dry-run cannot mutate HMPPS JSON, generated prison modu
   const verificationDir = defaultVerificationDir(root);
   const overlayJsonPath = path.join(root, OVERLAY_JSON_RELATIVE);
   const overlayTsPath = path.join(root, OVERLAY_TS_RELATIVE);
-  const diskStore = fileOverlayStore(overlayJsonPath);
+  // Seed from the committed generated overlay so SAFE entries are merged, never replaced.
+  const overlaySeed = structuredClone(ukVerificationOverlay);
+  const diskStore = seededOverlayStore(fileOverlayStore(overlayJsonPath), overlaySeed);
   const overlayStore = gatedOverlayStore(writesEnabled, diskStore);
 
   const http = defaultHttpGet();
@@ -167,9 +171,15 @@ Default mode is dry-run. Dry-run cannot mutate HMPPS JSON, generated prison modu
   saveState(verificationDir, nextState);
 
   if (writesEnabled) {
-    const overlay = diskStore.read();
-    fs.mkdirSync(path.dirname(overlayTsPath), { recursive: true });
-    fs.writeFileSync(overlayTsPath, renderOverlayModule(overlay), "utf8");
+    const moduleSource = resolveUkOverlayModuleWrite({
+      seed: overlaySeed,
+      stored: diskStore.read(),
+      overlayWritten: results.some((result) => result.overlayWritten),
+    });
+    if (moduleSource !== null) {
+      fs.mkdirSync(path.dirname(overlayTsPath), { recursive: true });
+      fs.writeFileSync(overlayTsPath, moduleSource, "utf8");
+    }
   }
 
   const report = buildRunReport(results, isoNow(now));

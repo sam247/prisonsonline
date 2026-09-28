@@ -33,6 +33,52 @@ export function fileOverlayStore(filePath: string, fallback: OverlayFile = empty
   };
 }
 
+/**
+ * Merge two overlay files entry-by-entry. Entries only in `base` are kept;
+ * entries in `incoming` are added, and for shared keys the incoming entry wins
+ * while its overrides are layered over the base overrides (field-level merge).
+ */
+export function mergeOverlayFiles(base: OverlayFile, incoming: OverlayFile): OverlayFile {
+  const entries: OverlayFile["entries"] = structuredClone(base.entries ?? {});
+  for (const [key, entry] of Object.entries(incoming.entries ?? {})) {
+    const previous = entries[key];
+    entries[key] = {
+      ...structuredClone(entry),
+      overrides: { ...previous?.overrides, ...entry.overrides },
+    };
+  }
+  const updatedAt = [base.updatedAt, incoming.updatedAt].filter(Boolean).sort().pop() ?? "";
+  return { generatedBy: incoming.generatedBy ?? base.generatedBy, updatedAt, entries };
+}
+
+/**
+ * Wrap an overlay store so reads always include the committed (seed) overlay
+ * entries, e.g. the entries already in ukVerificationOverlay.generated.ts. The
+ * runtime overlay.json is gitignored and may be missing or stale, so without
+ * this a --write run would start from an empty overlay and wipe earlier SAFE
+ * overlays. Writes pass through unchanged (they already contain the seed).
+ */
+export function seededOverlayStore(inner: OverlayStore, seed: OverlayFile): OverlayStore {
+  return {
+    read: () => mergeOverlayFiles(seed, inner.read()),
+    write: (file) => inner.write(file),
+  };
+}
+
+/**
+ * Decide what (if anything) a --write run should write to the generated UK
+ * overlay module. Returns null when no overlay entry was written this run so
+ * the committed module stays byte-identical; otherwise the merged module.
+ */
+export function resolveUkOverlayModuleWrite(input: {
+  seed: OverlayFile;
+  stored: OverlayFile;
+  overlayWritten: boolean;
+}): string | null {
+  if (!input.overlayWritten) return null;
+  return renderOverlayModule(mergeOverlayFiles(input.seed, input.stored));
+}
+
 export function memoryOverlayStore(initial: OverlayFile = emptyOverlay()): OverlayStore & { snapshot(): OverlayFile } {
   let current: OverlayFile = structuredClone(initial);
   return {
