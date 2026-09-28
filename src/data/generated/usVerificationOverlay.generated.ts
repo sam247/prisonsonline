@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "2026-09-25T08:22:01.834Z",
+  "updatedAt": "2026-09-28T08:23:23.669Z",
   "entries": {
     "united-states/adx-florence": {
       "prisonSlug": "adx-florence",
@@ -87,6 +87,24 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/bmm/",
       "overrides": {
         "email": "BMX-ExecAssistant-S@bop.gov"
+      }
+    },
+    "us/alderson-fpc": {
+      "prisonSlug": "alderson-fpc",
+      "countrySlug": "us",
+      "appliedAt": "2026-09-28T08:23:23.669Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/ald/",
+      "overrides": {
+        "email": "ALD-ExecAssistant-S@bop.gov"
+      }
+    },
+    "us/aliceville-fci": {
+      "prisonSlug": "aliceville-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-09-28T08:23:23.669Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/ali/",
+      "overrides": {
+        "email": "ALI-ExecAssistant-S@bop.gov"
       }
     }
   }
