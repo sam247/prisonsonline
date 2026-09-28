@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -455,9 +456,10 @@ function loadUkPrisons() {
       const m = address.match(/\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b/i);
       if (m) postcode = m[1];
     }
+    const identity = correctPrisonIdentity(r);
     return {
-      slug: r.id,
-      name: r.name,
+      slug: identity.id,
+      name: identity.name,
       countrySlug: "uk",
       address: address || undefined,
       postcode: postcode || undefined,

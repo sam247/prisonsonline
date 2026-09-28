@@ -27,6 +27,16 @@ const articleSlugs = [
 
 const prisonEntityRedirects = [
   {
+    source: "/prisons/uk/hmp-wakfield",
+    destination: "/prisons/uk/hmp-wakefield",
+    permanent: true,
+  },
+  {
+    source: "/prisons/uk/hmp-wakfield/:path*",
+    destination: "/prisons/uk/hmp-wakefield/:path*",
+    permanent: true,
+  },
+  {
     source: "/prisons/uk/hertfordhire-essex-and-suffolk",
     destination: "/prisons/uk/hertfordshire-essex-and-suffolk",
     permanent: true,
