@@ -6,6 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -134,16 +135,17 @@ function normaliseHmppsPrison(raw, usedSlugs) {
   const p = parseLabelledLines(raw.description);
   const regionName = correctPrisonRegionLabel((p["Prison Region"] || "Unknown region").trim());
   const regionSlug = slugify(regionName);
-  const slug = uniqueSlug(raw.id || raw.name, usedSlugs);
+  const identity = correctPrisonIdentity(raw);
+  const slug = uniqueSlug(identity.id || identity.name, usedSlugs);
   const addressLine = (p.Address || "").replace(/\s+/g, " ").trim();
   const postcode = extractPostcode(addressLine) || extractPostcode(raw.description);
   const city = guessCity(addressLine, postcode) || guessCity(p.Address || "", postcode);
-  const { overview, history, prisonLife, visitingInfo } = synthesiseNarrative(raw.name, p);
+  const { overview, history, prisonLife, visitingInfo } = synthesiseNarrative(identity.name, p);
   const lat = raw.latitude != null && !Number.isNaN(Number(raw.latitude)) ? Number(raw.latitude) : 0;
   const lng = raw.longitude != null && !Number.isNaN(Number(raw.longitude)) ? Number(raw.longitude) : 0;
 
   return {
-    name: raw.name,
+    name: identity.name,
     slug,
     country: "United Kingdom",
     countrySlug: "uk",
@@ -161,7 +163,7 @@ function normaliseHmppsPrison(raw, usedSlugs) {
     history,
     prisonLife,
     visitingInfo,
-    institutionalId: `hmpps-prison:${raw.id}`,
+    institutionalId: `hmpps-prison:${identity.id}`,
     dataProvenance: "hmpps_import",
     address: addressLine || undefined,
     postcode: postcode || undefined,

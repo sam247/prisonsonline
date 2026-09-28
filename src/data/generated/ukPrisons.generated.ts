@@ -3029,8 +3029,8 @@ export const ukPrisonsGeneratedRaw = [
     }
   },
   {
-    "name": "HMP Wakfield",
-    "slug": "hmp-wakfield",
+    "name": "HMP Wakefield",
+    "slug": "hmp-wakefield",
     "country": "United Kingdom",
     "countrySlug": "uk",
     "stateOrRegion": "LONG TERM & HIGH SECURITY ESTATE",
@@ -3044,10 +3044,10 @@ export const ukPrisonsGeneratedRaw = [
     "longitude": 0,
     "type": "Trainer · High Security",
     "overview": "Wakefield is a high security prison for men, including men convicted of a sex offence, in West Yorkshire.",
-    "history": "Detailed historical narrative for HMP Wakfield is not part of the imported dataset. This profile reflects current listing fields (region, function, operator, and cohort) from HMPPS data.",
+    "history": "Detailed historical narrative for HMP Wakefield is not part of the imported dataset. This profile reflects current listing fields (region, function, operator, and cohort) from HMPPS data.",
     "prisonLife": "Cohort: Trainer. Predominant function: High Security. Gender provision: Mens Prison. Day-to-day regime details should be confirmed with the establishment or official prison finder information.",
     "visitingInfo": "For visits and bookings, contact the establishment on (01924) 612 000. Always follow the latest official guidance published for visitors.",
-    "institutionalId": "hmpps-prison:hmp-wakfield",
+    "institutionalId": "hmpps-prison:hmp-wakefield",
     "dataProvenance": "hmpps_import",
     "address": "5 Love Lane, Wakefield, WF2 9AG",
     "postcode": "WF2 9AG",

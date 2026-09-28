@@ -501,7 +501,7 @@ export const prisonCoordsGeneratedRaw = [
     "source": "postcodes.io"
   },
   {
-    "slug": "hmp-wakfield",
+    "slug": "hmp-wakefield",
     "postcode": "WF2 9AG",
     "latitude": 53.683308,
     "longitude": -1.50929,
