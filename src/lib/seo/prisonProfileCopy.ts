@@ -1,4 +1,5 @@
 import type { Prison } from "@/types/prison";
+import { joinAddressAndPostcode } from "@/lib/address";
 
 /** Stable variant index from slug (deterministic across SSR/build). */
 export function slugVariantIndex(slug: string, modulo: number): number {
@@ -151,7 +152,7 @@ export function buildContactBody(p: Prison): string {
     return CONTACT_FALLBACKS[slugVariantIndex(p.slug, CONTACT_FALLBACKS.length)];
   }
 
-  const addressLine = [addr, post].filter(Boolean).join(", ");
+  const addressLine = joinAddressAndPostcode(addr, post);
   const v = slugVariantIndex(p.slug, 3);
 
   if (v === 0 && addressLine && phone) {
