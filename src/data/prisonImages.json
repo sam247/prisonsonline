@@ -147,5 +147,36 @@
     "title": "Entrance to Bronzefield Prison",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_Bronzefield_Prison.jpg",
     "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "hmp-wayland": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Main_Entrance_to_HMP_Wayland.JPG",
+    "credit": "Chelb",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of the main entrance to HMP Wayland prison",
+    "author": "Chelb",
+    "title": "Main Entrance to HMP Wayland",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Main_Entrance_to_HMP_Wayland.JPG",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Main entrance to HM Prison Wayland in Norfolk."
+  },
+  "allenwood-usp": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/USP_Allenwood_updated.jpg",
+    "credit": "United States Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Entrance to USP Allenwood",
+    "author": "United States Federal Bureau of Prisons",
+    "title": "USP Allenwood updated",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:USP_Allenwood_updated.jpg",
+    "caption": "Entrance of the United States Penitentiary, Allenwood."
+  },
+  "hazelton-usp": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/USP_Hazelton.jpg",
+    "credit": "US Department of Justice",
+    "licence": "Public domain",
+    "alt": "Entrance to USP Hazelton",
+    "author": "US Department of Justice",
+    "title": "USP Hazelton",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:USP_Hazelton.jpg",
+    "caption": "Entrance of the United States Penitentiary Hazelton."
   }
 }
