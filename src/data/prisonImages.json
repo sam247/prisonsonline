@@ -148,7 +148,6 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_Bronzefield_Prison.jpg",
     "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
   },
-<<<<<<< HEAD
   "hmp-forest-bank": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/HM_Prison_Forest_Bank.jpg",
     "credit": "Liverpoolpics",
@@ -181,7 +180,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alderson_Federal_Prison_Camp_entrance.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Entrance to the Federal Prison Camp in Alderson, West Virginia."
-=======
+  },
   "hmp-wayland": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Main_Entrance_to_HMP_Wayland.JPG",
     "credit": "Chelb",
@@ -212,6 +211,5 @@
     "title": "USP Hazelton",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:USP_Hazelton.jpg",
     "caption": "Entrance of the United States Penitentiary Hazelton."
->>>>>>> origin/bot/image-curator/images-2026-10-01
   }
 }
