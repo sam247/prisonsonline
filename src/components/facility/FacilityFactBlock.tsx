@@ -6,6 +6,7 @@ import type { Prison } from "@/types/prison";
 import type { FacilityVerificationRecord } from "@/types/facilitySource";
 import { sendGtagEvent } from "@/lib/analytics/gtag";
 import { Card, CardContent } from "@/components/ui/card";
+import { addressWithoutPostcode, joinAddressAndPostcode } from "@/lib/address";
 
 function FactRow({ label, children }: { label: string; children?: React.ReactNode }) {
   if (!children) return null;
@@ -32,15 +33,17 @@ export function FacilityFactBlock({
 }) {
   const [copied, setCopied] = useState(false);
   const facts = verification?.overrides ?? {};
-  const address = facts.address ?? prison.address;
+  const fullAddress = facts.address ?? prison.address;
   const postcode = facts.postcode ?? prison.postcode;
+  // Postcode has its own row below, so don't repeat it at the end of the address line.
+  const address = postcode ? addressWithoutPostcode(fullAddress, postcode) : fullAddress;
   const phone = facts.phone ?? prison.phone;
   const email = facts.email;
   const operator = facts.operator ?? prison.operator;
   const category = facts.category ?? prison.securityLevel;
 
   const copyAddress = async () => {
-    const value = [address, postcode].filter(Boolean).join(", ");
+    const value = joinAddressAndPostcode(fullAddress, postcode);
     if (!value || !navigator.clipboard) return;
     await navigator.clipboard.writeText(value);
     setCopied(true);

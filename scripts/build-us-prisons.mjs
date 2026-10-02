@@ -52,6 +52,7 @@ const STATE_CODE_TO_NAME = {
   OK: "Oklahoma",
   OR: "Oregon",
   PA: "Pennsylvania",
+  PR: "Puerto Rico",
   RI: "Rhode Island",
   SC: "South Carolina",
   SD: "South Dakota",
@@ -110,7 +111,9 @@ function facilityTypeLabel(ft) {
 }
 
 function buildRecord(raw) {
-  const code = String(raw.state || "").toUpperCase().trim();
+  const rawCode = String(raw.state || "").toUpperCase().trim();
+  // The bundle carries the legacy FIPS code RQ for Puerto Rico; bop.gov lists Guaynabo MDC with state PR.
+  const code = rawCode === "RQ" ? "PR" : rawCode;
   const stateName = STATE_CODE_TO_NAME[code] || code || "Unknown";
   const regionSlug = slugify(stateName);
   const facilityType = String(raw.facilityType || "other").toLowerCase();

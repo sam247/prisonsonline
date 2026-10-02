@@ -78,8 +78,9 @@ test("facility and intent schema share a stable entity id", () => {
   assert.equal((webPage.about as Record<string, unknown>)["@id"], building["@id"]);
 });
 
-test("sitemaps contain the 516 base URLs plus seven legal pages without fake freshness", () => {
-  assert.equal(buildPrisonIntentEntries("https://prisonsonline.com").length, 523);
+test("sitemaps contain the 512 base URLs plus seven legal pages without fake freshness", () => {
+  // 516 → 512 base URLs: the blank HMPPS row prison-122 (4 intent URLs) is no longer published.
+  assert.equal(buildPrisonIntentEntries("https://prisonsonline.com").length, 519);
   const probation = buildProbationEntries("https://prisonsonline.com");
   assert.ok(probation.length > 300);
   const xml = buildUrlSetXml(probation);

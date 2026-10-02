@@ -23,6 +23,7 @@ export function isUsPrison(prison: Pick<PrisonVerificationInput, "countrySlug">)
  */
 export const US_LEGACY_DUPLICATE_OF_BOP: Readonly<Record<string, string>> = {
   "adx-florence": "florence-admax-usp",
+  "usp-leavenworth": "leavenworth-fci",
 };
 
 /** Closed / historical / known dual-URL legacy duplicates stay published but out of the active queue. */

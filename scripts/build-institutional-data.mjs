@@ -4,9 +4,11 @@
  * Run: node scripts/build-institutional-data.mjs [--strict]
  */
 import fs from "fs";
+import { applyUkCityCorrection } from "./uk-city-corrections.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
+import { deriveCityFromAddress } from "./uk-address-city.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -85,14 +87,7 @@ function mapSecurityLevel(p) {
 }
 
 function guessCity(address, postcode) {
-  if (!address) return "";
-  let a = address.replace(/\s+/g, " ").trim();
-  if (postcode) a = a.replace(new RegExp(postcode.replace(/ /g, "\\s*"), "i"), "").trim();
-  const parts = a.split(",").map((s) => s.trim()).filter(Boolean);
-  if (parts.length === 0) return "";
-  const last = parts[parts.length - 1];
-  if (/^(UK|England|Wales|Scotland|Northern Ireland)$/i.test(last)) return parts[parts.length - 2] || parts[0];
-  return parts[parts.length - 1] || parts[0];
+  return deriveCityFromAddress(address, postcode).city;
 }
 
 function synthesiseNarrative(name, p) {
@@ -117,6 +112,13 @@ function synthesiseNarrative(name, p) {
     ? `For visits and bookings, contact the establishment on ${phone}. Always follow the latest official guidance published for visitors.`
     : "Contact the establishment for up-to-date visiting arrangements. Check GOV.UK for official visitor information.";
   return { overview, history, prisonLife, visitingInfo };
+}
+
+/** True when an HMPPS prison row has no name and no labelled field values (blank export row). */
+function isEmptyHmppsPrisonRow(raw) {
+  if (String(raw?.name || "").trim()) return false;
+  const p = parseLabelledLines(raw?.description);
+  return Object.values(p).every((v) => !String(v || "").trim());
 }
 
 function uniqueSlug(base, used) {
@@ -151,7 +153,8 @@ function normaliseHmppsPrison(raw, usedSlugs) {
     countrySlug: "uk",
     stateOrRegion: regionName,
     regionSlug,
-    city: city || "—",
+    // Explicit, sourced city corrections win over address derivation (scripts/uk-city-corrections.mjs).
+    city: applyUkCityCorrection(slug, city || "—"),
     securityLevel: mapSecurityLevel(p),
     capacity: 0,
     operator: (p.Operator || "Not specified").replace(/\s+/g, " ").trim(),
@@ -280,7 +283,14 @@ function main() {
     : [];
 
   const usedPrison = new Set();
-  const prisons = prisonsJson.map((r) => normaliseHmppsPrison(r, usedPrison));
+  // Upstream HMPPS export carries blank placeholder rows (e.g. "prison-122": empty name, every
+  // labelled field blank). They are not establishments; publishing them produced an empty,
+  // nameless profile. Skip them so no page, hub or sitemap entry is generated.
+  const emptyPrisonRows = prisonsJson.filter((r) => isEmptyHmppsPrisonRow(r));
+  emptyPrisonRows.forEach((r) => report.warnings.push(`Skipped empty HMPPS prison row: ${r.id}`));
+  const prisons = prisonsJson
+    .filter((r) => !isEmptyHmppsPrisonRow(r))
+    .map((r) => normaliseHmppsPrison(r, usedPrison));
 
   prisons.forEach((p) => {
     if (!p.stateOrRegion || p.stateOrRegion === "Unknown region") report.warnings.push(`Missing region: ${p.slug}`);
@@ -314,7 +324,7 @@ function main() {
     .map(([name, prisonCount]) => ({ slug: slugify(name) || "unknown", name, prisonCount }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const expectedMap = prisons.length + probation.length + hmcts.length;
+  const expectedMap = prisonsJson.length + probation.length + hmcts.length;
   if (mapJson.length && mapJson.length !== expectedMap) {
     report.warnings.push(`hmpps_sites_map.json count ${mapJson.length} !== split sum ${expectedMap}`);
   }
