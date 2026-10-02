@@ -147,5 +147,38 @@
     "title": "Entrance to Bronzefield Prison",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_Bronzefield_Prison.jpg",
     "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "hmp-forest-bank": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/HM_Prison_Forest_Bank.jpg",
+    "credit": "Liverpoolpics",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of HMP Forest Bank prison",
+    "author": "Liverpoolpics",
+    "title": "HM Prison Forest Bank",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison_Forest_Bank.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Exterior of HM Prison Forest Bank in Salford."
+  },
+  "hmp-durham": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Durham_Prison_-_geograph.org.uk_-_228811.jpg",
+    "credit": "John Illingworth",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior view of HMP Durham prison",
+    "author": "John Illingworth",
+    "title": "Durham Prison - geograph.org.uk - 228811",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Durham_Prison_-_geograph.org.uk_-_228811.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "HM Prison Durham seen from Durham Cathedral."
+  },
+  "alderson-fpc": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Alderson_Federal_Prison_Camp_entrance.jpg",
+    "credit": "Christopher Ziemnowicz",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Entrance to the Alderson Federal Prison Camp",
+    "author": "Christopher Ziemnowicz",
+    "title": "Alderson Federal Prison Camp entrance",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alderson_Federal_Prison_Camp_entrance.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Entrance to the Federal Prison Camp in Alderson, West Virginia."
   }
 }
