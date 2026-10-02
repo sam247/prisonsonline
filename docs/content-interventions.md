@@ -102,3 +102,17 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Hypothesis:** UK-first reception clarity + official GOV.UK orientation links + related-guide internal links will improve CTR on “what happens / going to prison / induction” queries stuck at deep positions.
 - **Directory records modified:** 0
 - **Commit:** https://github.com/sam247/prisonsonline/commit/bae17f3e7ab7eda26315f4c1ea45e482afe1cc27
+
+## 2026-09-28 — INTERVENTION A (PR ready)
+
+- **URL:** `/guides/how-prison-sentences-work`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England/Wales first; US high-level separate
+- **Change:** Reframed lead away from outdated universal “serve half” claim; clarified SDS / EDS / indeterminate differences; pointed to GOV.UK Progression Model + Sentencing Council; softened IPP headcount claim; internal links to life-inside, going-to-prison, categories, Prison Finder; FAQ expand for SDS/EDS. No directory edits.
+- **GSC baseline (lookup 2026-09-28):**
+  - ~28d: clicks 0, impressions 2, CTR 0%, avg position ~72
+  - ~90d: clicks 0, impressions 105, CTR 0%, avg position ~82.2
+- **Hypothesis:** Clearer England/Wales sentence-type answers for determinate/EDS/SDS long-tail queries plus official links will lift CTR from deep positions without inventing personal release dates.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/sentences-guide-2026-09-28`
+
