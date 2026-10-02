@@ -4,6 +4,7 @@
  * Run: node scripts/build-institutional-data.mjs [--strict]
  */
 import fs from "fs";
+import { applyUkCityCorrection } from "./uk-city-corrections.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
@@ -152,7 +153,8 @@ function normaliseHmppsPrison(raw, usedSlugs) {
     countrySlug: "uk",
     stateOrRegion: regionName,
     regionSlug,
-    city: city || "—",
+    // Explicit, sourced city corrections win over address derivation (scripts/uk-city-corrections.mjs).
+    city: applyUkCityCorrection(slug, city || "—"),
     securityLevel: mapSecurityLevel(p),
     capacity: 0,
     operator: (p.Operator || "Not specified").replace(/\s+/g, " ").trim(),
