@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
+import { deriveCityFromAddress } from "./uk-address-city.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -85,14 +86,7 @@ function mapSecurityLevel(p) {
 }
 
 function guessCity(address, postcode) {
-  if (!address) return "";
-  let a = address.replace(/\s+/g, " ").trim();
-  if (postcode) a = a.replace(new RegExp(postcode.replace(/ /g, "\\s*"), "i"), "").trim();
-  const parts = a.split(",").map((s) => s.trim()).filter(Boolean);
-  if (parts.length === 0) return "";
-  const last = parts[parts.length - 1];
-  if (/^(UK|England|Wales|Scotland|Northern Ireland)$/i.test(last)) return parts[parts.length - 2] || parts[0];
-  return parts[parts.length - 1] || parts[0];
+  return deriveCityFromAddress(address, postcode).city;
 }
 
 function synthesiseNarrative(name, p) {
