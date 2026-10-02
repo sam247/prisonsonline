@@ -119,6 +119,13 @@ function synthesiseNarrative(name, p) {
   return { overview, history, prisonLife, visitingInfo };
 }
 
+/** True when an HMPPS prison row has no name and no labelled field values (blank export row). */
+function isEmptyHmppsPrisonRow(raw) {
+  if (String(raw?.name || "").trim()) return false;
+  const p = parseLabelledLines(raw?.description);
+  return Object.values(p).every((v) => !String(v || "").trim());
+}
+
 function uniqueSlug(base, used) {
   let s = slugify(base) || "prison";
   let n = s;
@@ -280,7 +287,14 @@ function main() {
     : [];
 
   const usedPrison = new Set();
-  const prisons = prisonsJson.map((r) => normaliseHmppsPrison(r, usedPrison));
+  // Upstream HMPPS export carries blank placeholder rows (e.g. "prison-122": empty name, every
+  // labelled field blank). They are not establishments; publishing them produced an empty,
+  // nameless profile. Skip them so no page, hub or sitemap entry is generated.
+  const emptyPrisonRows = prisonsJson.filter((r) => isEmptyHmppsPrisonRow(r));
+  emptyPrisonRows.forEach((r) => report.warnings.push(`Skipped empty HMPPS prison row: ${r.id}`));
+  const prisons = prisonsJson
+    .filter((r) => !isEmptyHmppsPrisonRow(r))
+    .map((r) => normaliseHmppsPrison(r, usedPrison));
 
   prisons.forEach((p) => {
     if (!p.stateOrRegion || p.stateOrRegion === "Unknown region") report.warnings.push(`Missing region: ${p.slug}`);
@@ -314,7 +328,7 @@ function main() {
     .map(([name, prisonCount]) => ({ slug: slugify(name) || "unknown", name, prisonCount }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const expectedMap = prisons.length + probation.length + hmcts.length;
+  const expectedMap = prisonsJson.length + probation.length + hmcts.length;
   if (mapJson.length && mapJson.length !== expectedMap) {
     report.warnings.push(`hmpps_sites_map.json count ${mapJson.length} !== split sum ${expectedMap}`);
   }
