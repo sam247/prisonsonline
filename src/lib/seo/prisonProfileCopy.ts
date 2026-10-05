@@ -1,5 +1,11 @@
 import type { Prison } from "@/types/prison";
 import { joinAddressAndPostcode } from "@/lib/address";
+import {
+  hasUkHmppsTypeFields,
+  ukCohortSentence,
+  ukPrisonTypeLabel,
+  withIndefiniteArticle,
+} from "@/lib/seo/ukPrisonTypeLabel";
 
 /** Stable variant index from slug (deterministic across SSR/build). */
 export function slugVariantIndex(slug: string, modulo: number): number {
@@ -194,7 +200,28 @@ export function buildPrisonTypeHeading(name: string): string {
   return `What type of prison is ${name}?`;
 }
 
+/** UK framing variants; `{label}` already carries its indefinite article. */
+const UK_TYPE_OPENINGS = [
+  "{name} is {label}.",
+  "HMPPS listing data describes {name} as {label}.",
+  "In the HMPPS listing, {name} is recorded as {label}.",
+  "{name} appears in this directory as {label}.",
+];
+
+/**
+ * UK (HMPPS import) rows: plain-English type line built from category, predominant function,
+ * gender and cohort, e.g. "HMP Gartree is a Category B training prison for adult men."
+ */
+function buildUkPrisonTypeBody(p: Prison): string {
+  const label = withIndefiniteArticle(ukPrisonTypeLabel(p));
+  const tpl = UK_TYPE_OPENINGS[slugVariantIndex(p.slug, UK_TYPE_OPENINGS.length)];
+  const opening = tpl.replace("{name}", p.name.trim()).replace("{label}", label);
+  return cleanSpace([opening, ukCohortSentence(p)].filter(Boolean).join(" "));
+}
+
 export function buildPrisonTypeBody(p: Prison): string {
+  if (hasUkHmppsTypeFields(p)) return buildUkPrisonTypeBody(p);
+
   const sec = !isNoneLike(p.securityLevel) ? cleanSpace(p.securityLevel) : "";
   const typ = !isNoneLike(p.type) ? cleanSpace(p.type) : "";
   const gen = !isNoneLike(p.gender) && p.gender ? cleanSpace(p.gender) : "";
