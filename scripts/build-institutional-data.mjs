@@ -5,6 +5,7 @@
  */
 import fs from "fs";
 import { applyUkCityCorrection } from "./uk-city-corrections.mjs";
+import { applyUkAddressCorrection } from "./uk-address-corrections.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
@@ -168,7 +169,8 @@ function normaliseHmppsPrison(raw, usedSlugs) {
     visitingInfo,
     institutionalId: `hmpps-prison:${identity.id}`,
     dataProvenance: "hmpps_import",
-    address: addressLine || undefined,
+    // Explicit, sourced address-string corrections win over feed typos (scripts/uk-address-corrections.mjs).
+    address: applyUkAddressCorrection(slug, addressLine) || undefined,
     postcode: postcode || undefined,
     phone: (p.Telephone || "").replace(/\s+/g, " ").trim() || undefined,
     gender: (p.Gender || "").trim() || undefined,
