@@ -1,0 +1,159 @@
+{
+  "checkedAt": "2026-10-05T11:43:31.462Z",
+  "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+  "enriched": 128,
+  "issues": [
+    {
+      "id": "us/baltimore-ccm",
+      "reason": "state mismatch",
+      "evidence": {
+        "published": {
+          "address": "400 FIRST STREET NW 5TH FLOOR",
+          "postcode": "20534",
+          "city": "Washington",
+          "state": "DC"
+        },
+        "official": {
+          "address": "400 FIRST STREET, NW",
+          "postcode": "20534",
+          "city": "WASHINGTON",
+          "state": "MD"
+        }
+      }
+    },
+    {
+      "id": "us/carswell-fmc",
+      "reason": "address mismatch",
+      "evidence": {
+        "published": {
+          "address": "NAVAL AIR STATION 1200 MEANDERING ROAD",
+          "postcode": "76114",
+          "city": "Fort Worth",
+          "state": "TX"
+        },
+        "official": {
+          "address": "NAVAL AIR STATION",
+          "postcode": "76114",
+          "city": "FORT WORTH",
+          "state": "TX"
+        }
+      }
+    },
+    {
+      "id": "us/dublin-fci",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/forrest-city-fci",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/fort-dix-fci",
+      "reason": "address mismatch",
+      "evidence": {
+        "published": {
+          "address": "5756 HARTFORD & POINTVILLE RD",
+          "postcode": "08640",
+          "city": "Joint Base Mdl",
+          "state": "NJ"
+        },
+        "official": {
+          "address": "5756 HARTFORD &",
+          "postcode": "08640",
+          "city": "JOINT BASE MDL",
+          "state": "NJ"
+        }
+      }
+    },
+    {
+      "id": "us/fort-worth-administrative-fmc",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/guaynabo-mdc",
+      "reason": "Legacy state code RQ; official BOP uses PR (Puerto Rico)",
+      "evidence": {
+        "published": "RQ",
+        "official": "PR"
+      }
+    },
+    {
+      "id": "us/la-tuna-fci",
+      "reason": "address mismatch",
+      "evidence": {
+        "published": {
+          "address": "LA TUNA FCI/SCP 8500 DONIPHAN ROAD",
+          "postcode": "79821",
+          "city": "Anthony",
+          "state": "TX"
+        },
+        "official": {
+          "address": "LA TUNA FCI/SCP",
+          "postcode": "79821",
+          "city": "ANTHONY",
+          "state": "TX"
+        }
+      }
+    },
+    {
+      "id": "us/lee-usp",
+      "reason": "address mismatch",
+      "evidence": {
+        "published": {
+          "address": "LEE COUNTY INDUSTRIAL PARK HICKORY FLATS ROAD",
+          "postcode": "24277",
+          "city": "Pennington Gap",
+          "state": "VA"
+        },
+        "official": {
+          "address": "LEE COUNTY INDUSTRIAL PARK",
+          "postcode": "24277",
+          "city": "PENNINGTON GAP",
+          "state": "VA"
+        }
+      }
+    },
+    {
+      "id": "us/lompoc-fci",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/montgomery-ccm",
+      "reason": "address mismatch",
+      "evidence": {
+        "published": {
+          "address": "MAXWELL AFB BLDG 1209 820 WILLOW STREET",
+          "postcode": "36112",
+          "city": "Montgomery",
+          "state": "AL"
+        },
+        "official": {
+          "address": "MAXWELL AFB, BLDG 1209",
+          "postcode": "36112",
+          "city": "MONTGOMERY",
+          "state": "AL"
+        }
+      }
+    },
+    {
+      "id": "us/new-york-mcc",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/pensacola-fpc",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/petersburg-fci",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/pollock-med-fci",
+      "reason": "No unique match in official BOP directory"
+    },
+    {
+      "id": "us/terminal-island-fci",
+      "reason": "No unique match in official BOP directory"
+    }
+  ]
+}

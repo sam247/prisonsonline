@@ -15,8 +15,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.725277605059226,
+    "longitude": -80.65844535827637,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "GLEN RAY RD. BOX A",
+      "postcode": "24910",
+      "city": "ALDERSON",
+      "stateCode": "WV",
+      "facilityType": "FPC"
+    },
     "type": "FPC",
     "overview": "Alderson Fpc is a Federal Bureau of Prisons (FPC) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -43,7 +53,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "304-445-3300",
       "fax": "304-445-3320",
       "facilityType": "fpc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.725277605059226,
+      "longitude": -80.65844535827637,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "GLEN RAY RD. BOX A",
+        "postcode": "24910",
+        "city": "ALDERSON",
+        "stateCode": "WV",
+        "facilityType": "FPC"
+      }
     }
   },
   {
@@ -58,8 +80,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.144055298450276,
+    "longitude": -88.1669569015503,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "11070 HIGHWAY 14",
+      "postcode": "35442",
+      "city": "ALICEVILLE",
+      "stateCode": "AL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Aliceville Fci is a Federal Bureau of Prisons (FCI) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -86,7 +118,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "205-373-5000",
       "fax": "205-373-5020",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.144055298450276,
+      "longitude": -88.1669569015503,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "11070 HIGHWAY 14",
+        "postcode": "35442",
+        "city": "ALICEVILLE",
+        "stateCode": "AL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -101,8 +145,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.163656667848024,
+    "longitude": -76.92302942276001,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "RT 15,2 MILES N OF ALLENWOOD",
+      "postcode": "17810",
+      "city": "ALLENWOOD",
+      "stateCode": "PA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Allenwood Low Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -129,7 +183,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "570-547-1990",
       "fax": "570-547-0343",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.163656667848024,
+      "longitude": -76.92302942276001,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "RT 15,2 MILES N OF ALLENWOOD",
+        "postcode": "17810",
+        "city": "ALLENWOOD",
+        "stateCode": "PA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -144,8 +210,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.128455655130786,
+    "longitude": -76.91230058670044,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "RT 15, 2 MI N OF ALLENWOOD",
+      "postcode": "17810",
+      "city": "WHITE DEER",
+      "stateCode": "PA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Allenwood Med Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -172,7 +248,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "570-547-7950",
       "fax": "570-547-7751",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.128455655130786,
+      "longitude": -76.91230058670044,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "RT 15, 2 MI N OF ALLENWOOD",
+        "postcode": "17810",
+        "city": "WHITE DEER",
+        "stateCode": "PA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -187,8 +275,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.128455655130786,
+    "longitude": -76.91230058670044,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "RT 15,2 MILES N OF ALLENWOOD",
+      "postcode": "17810",
+      "city": "ALLENWOOD",
+      "stateCode": "PA",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Allenwood Usp is a Federal Bureau of Prisons (USP) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -215,7 +313,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "570-547-0963",
       "fax": "570-547-9201",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.128455655130786,
+      "longitude": -76.91230058670044,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "RT 15,2 MILES N OF ALLENWOOD",
+        "postcode": "17810",
+        "city": "ALLENWOOD",
+        "stateCode": "PA",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -230,8 +340,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.43626194850654,
+    "longitude": -82.70134449005127,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "ST. ROUTE 716",
+      "postcode": "41105",
+      "city": "ASHLAND",
+      "stateCode": "KY",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Ashland Fci is a Federal Bureau of Prisons (FCI) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -258,7 +378,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "606-928-6414",
       "fax": "606-929-4395",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.43626194850654,
+      "longitude": -82.70134449005127,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "ST. ROUTE 716",
+        "postcode": "41105",
+        "city": "ASHLAND",
+        "stateCode": "KY",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -273,8 +405,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.71188173364292,
+    "longitude": -84.3639063835144,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "719 MCDONOUGH BLVD S.E.",
+      "postcode": "30315",
+      "city": "ATLANTA",
+      "stateCode": "GA",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Atlanta Ccm is a Federal Bureau of Prisons (OTHER) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -301,7 +443,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "470-832-5841",
       "fax": "404-635-5390",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.71188173364292,
+      "longitude": -84.3639063835144,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "719 MCDONOUGH BLVD S.E.",
+        "postcode": "30315",
+        "city": "ATLANTA",
+        "stateCode": "GA",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -316,8 +470,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.711463,
+    "longitude": -84.371153,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "601 MCDONOUGH BLVD SE",
+      "postcode": "30315",
+      "city": "ATLANTA",
+      "stateCode": "GA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Atlanta Fci is a Federal Bureau of Prisons (FCI) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -344,7 +508,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "404-635-5100",
       "fax": "404-331-2403",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.711463,
+      "longitude": -84.371153,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "601 MCDONOUGH BLVD SE",
+        "postcode": "30315",
+        "city": "ATLANTA",
+        "stateCode": "GA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -359,8 +535,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.38309935091961,
+    "longitude": -120.55909395217896,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1 FEDERAL WAY",
+      "postcode": "95301",
+      "city": "ATWATER",
+      "stateCode": "CA",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Atwater Usp is a Federal Bureau of Prisons (USP) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -387,7 +573,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "209-386-0257",
       "fax": "209-386-4635",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.38309935091961,
+      "longitude": -120.55909395217896,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1 FEDERAL WAY",
+        "postcode": "95301",
+        "city": "ATWATER",
+        "stateCode": "CA",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -445,8 +643,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 30.192914965504624,
+    "longitude": -97.30746388435364,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1341 HIGHWAY 95 NORTH",
+      "postcode": "78602",
+      "city": "BASTROP",
+      "stateCode": "TX",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Bastrop Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -473,7 +681,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "512-321-3903",
       "fax": "512-304-0117",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 30.192914965504624,
+      "longitude": -97.30746388435364,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1341 HIGHWAY 95 NORTH",
+        "postcode": "78602",
+        "city": "BASTROP",
+        "stateCode": "TX",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -488,8 +708,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 29.963523369409856,
+    "longitude": -94.07785892486572,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "5560 KNAUTH ROAD",
+      "postcode": "77705",
+      "city": "BEAUMONT",
+      "stateCode": "TX",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Beaumont Low Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -516,7 +746,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "409-727-8172",
       "fax": "409-626-3500",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 29.963523369409856,
+      "longitude": -94.07785892486572,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "5560 KNAUTH ROAD",
+        "postcode": "77705",
+        "city": "BEAUMONT",
+        "stateCode": "TX",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -531,8 +773,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 29.963523369409856,
+    "longitude": -94.07785892486572,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "5830 KNAUTH ROAD",
+      "postcode": "77705",
+      "city": "BEAUMONT",
+      "stateCode": "TX",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Beaumont Med Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -559,7 +811,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "409-727-0101",
       "fax": "409-720-5000",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 29.963523369409856,
+      "longitude": -94.07785892486572,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "5830 KNAUTH ROAD",
+        "postcode": "77705",
+        "city": "BEAUMONT",
+        "stateCode": "TX",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -574,8 +838,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 29.963523369409856,
+    "longitude": -94.07785892486572,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "6200 KNAUTH ROAD",
+      "postcode": "77705",
+      "city": "BEAUMONT",
+      "stateCode": "TX",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Beaumont Usp is a Federal Bureau of Prisons (USP) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -602,7 +876,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "409-727-8188",
       "fax": "409-626-3700",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 29.963523369409856,
+      "longitude": -94.07785892486572,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "6200 KNAUTH ROAD",
+        "postcode": "77705",
+        "city": "BEAUMONT",
+        "stateCode": "TX",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -617,8 +903,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.808292105520145,
+    "longitude": -81.12555742263794,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1600 INDUSTRIAL ROAD",
+      "postcode": "25813",
+      "city": "BEAVER",
+      "stateCode": "WV",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Beckley Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -645,7 +941,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "304-252-9758",
       "fax": "304-256-4956",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.808292105520145,
+      "longitude": -81.12555742263794,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1600 INDUSTRIAL ROAD",
+        "postcode": "25813",
+        "city": "BEAVER",
+        "stateCode": "WV",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -660,8 +968,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 34.67387626588273,
+    "longitude": -79.72460746765137,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "696 MUCKERMAN ROAD",
+      "postcode": "29512",
+      "city": "BENNETTSVILLE",
+      "stateCode": "SC",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Bennettsville Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -688,7 +1006,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "843-454-8200",
       "fax": "843-454-8219",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 34.67387626588273,
+      "longitude": -79.72460746765137,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "696 MUCKERMAN ROAD",
+        "postcode": "29512",
+        "city": "BENNETTSVILLE",
+        "stateCode": "SC",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -703,8 +1033,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 44.52254966316118,
+    "longitude": -71.13761186599731,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1 SUCCESS LOOP ROAD",
+      "postcode": "03570",
+      "city": "BERLIN",
+      "stateCode": "NH",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Berlin Fci is a Federal Bureau of Prisons (FCI) facility in New Hampshire, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -731,7 +1071,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "603-342-4000",
       "fax": "603-342-4250",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 44.52254966316118,
+      "longitude": -71.13761186599731,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1 SUCCESS LOOP ROAD",
+        "postcode": "03570",
+        "city": "BERLIN",
+        "stateCode": "NH",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -746,8 +1098,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.84246141054429,
+    "longitude": -82.53667831420898,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1197 AIRPORT ROAD",
+      "postcode": "41224",
+      "city": "INEZ",
+      "stateCode": "KY",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Big Sandy Usp is a Federal Bureau of Prisons (USP) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -774,7 +1136,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "606-433-2400",
       "fax": "606-433-2577",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.84246141054429,
+      "longitude": -82.53667831420898,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1197 AIRPORT ROAD",
+        "postcode": "41224",
+        "city": "INEZ",
+        "stateCode": "KY",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -789,8 +1163,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.22123811076942,
+    "longitude": -101.50749206542969,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1900 SIMLER AVE",
+      "postcode": "79720",
+      "city": "BIG SPRING",
+      "stateCode": "TX",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Big Spring Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -817,7 +1201,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "432-466-2300",
       "fax": "432-466-2576",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.22123811076942,
+      "longitude": -101.50749206542969,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1900 SIMLER AVE",
+        "postcode": "79720",
+        "city": "BIG SPRING",
+        "stateCode": "TX",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -832,8 +1228,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.66022101614251,
+    "longitude": -74.00356829166412,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "80 29TH STREET",
+      "postcode": "11232",
+      "city": "BROOKLYN",
+      "stateCode": "NY",
+      "facilityType": "MDC"
+    },
     "type": "MDC",
     "overview": "Brooklyn Mdc is a Federal Bureau of Prisons (MDC) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -860,7 +1266,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "718-840-4200",
       "fax": "718-840-5005",
       "facilityType": "mdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.66022101614251,
+      "longitude": -74.00356829166412,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "80 29TH STREET",
+        "postcode": "11232",
+        "city": "BROOKLYN",
+        "stateCode": "NY",
+        "facilityType": "MDC"
+      }
     }
   },
   {
@@ -875,8 +1293,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 30.676010684831894,
+    "longitude": -96.36138439178467,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1100 URSULINE AVENUE",
+      "postcode": "77803",
+      "city": "BRYAN",
+      "stateCode": "TX",
+      "facilityType": "FPC"
+    },
     "type": "FPC",
     "overview": "Bryan Fpc is a Federal Bureau of Prisons (FPC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -903,7 +1331,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "979-823-1879",
       "fax": "979-821-3316",
       "facilityType": "fpc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 30.676010684831894,
+      "longitude": -96.36138439178467,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1100 URSULINE AVENUE",
+        "postcode": "77803",
+        "city": "BRYAN",
+        "stateCode": "TX",
+        "facilityType": "FPC"
+      }
     }
   },
   {
@@ -918,8 +1358,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.138212637486205,
+    "longitude": -78.79944920539856,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "OLD N. CAROLINA HWY 75",
+      "postcode": "27509",
+      "city": "BUTNER",
+      "stateCode": "NC",
+      "facilityType": "FMC"
+    },
     "type": "FMC",
     "overview": "Butner Fmc is a Federal Bureau of Prisons (FMC) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -946,7 +1396,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "919-575-3900",
       "fax": "919-575-4801",
       "facilityType": "fmc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.138212637486205,
+      "longitude": -78.79944920539856,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "OLD N. CAROLINA HWY 75",
+        "postcode": "27509",
+        "city": "BUTNER",
+        "stateCode": "NC",
+        "facilityType": "FMC"
+      }
     }
   },
   {
@@ -961,8 +1423,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.138212637486205,
+    "longitude": -78.79944920539856,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "OLD NC HWY 75",
+      "postcode": "27509",
+      "city": "BUTNER",
+      "stateCode": "NC",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Butner Low Fci is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -989,7 +1461,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "919-575-5000",
       "fax": "919-575-5023",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.138212637486205,
+      "longitude": -78.79944920539856,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "OLD NC HWY 75",
+        "postcode": "27509",
+        "city": "BUTNER",
+        "stateCode": "NC",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1004,8 +1488,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.138212637486205,
+    "longitude": -78.79944920539856,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "OLD NC HWY 75",
+      "postcode": "27509",
+      "city": "BUTNER",
+      "stateCode": "NC",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Butner Med I Fci is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1032,7 +1526,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "919-575-4541",
       "fax": "919-575-2091",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.138212637486205,
+      "longitude": -78.79944920539856,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "OLD NC HWY 75",
+        "postcode": "27509",
+        "city": "BUTNER",
+        "stateCode": "NC",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1047,8 +1553,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.138212637486205,
+    "longitude": -78.79944920539856,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "OLD NC HWY 75",
+      "postcode": "27509",
+      "city": "BUTNER",
+      "stateCode": "NC",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Butner Med Ii Fci is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1075,7 +1591,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "919-575-8000",
       "fax": "919-575-8020",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.138212637486205,
+      "longitude": -78.79944920539856,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "OLD NC HWY 75",
+        "postcode": "27509",
+        "city": "BUTNER",
+        "stateCode": "NC",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1090,8 +1618,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.56763099525645,
+    "longitude": -75.40834307670593,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "3057 ERIC J. WILLIAMS",
+      "postcode": "18472",
+      "city": "WAYMART",
+      "stateCode": "PA",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Canaan Usp is a Federal Bureau of Prisons (USP) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1118,7 +1656,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "570-488-8000",
       "fax": "570-488-8130",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.56763099525645,
+      "longitude": -75.40834307670593,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "3057 ERIC J. WILLIAMS",
+        "postcode": "18472",
+        "city": "WAYMART",
+        "stateCode": "PA",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -1176,8 +1726,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.879379047907044,
+    "longitude": -87.63412535190582,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1901 BUTTERFIELD ROAD, SUITE",
+      "postcode": "60515",
+      "city": "DOWNERS GROVE",
+      "stateCode": "IL",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Chicago Ccm is a Federal Bureau of Prisons (OTHER) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1204,7 +1764,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "331-903-4043",
       "fax": "630-271-8676",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.879379047907044,
+      "longitude": -87.63412535190582,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1901 BUTTERFIELD ROAD, SUITE",
+        "postcode": "60515",
+        "city": "DOWNERS GROVE",
+        "stateCode": "IL",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -1219,8 +1791,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.876665007896996,
+    "longitude": -87.63018518686295,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "71 WEST VAN BUREN STREET",
+      "postcode": "60605",
+      "city": "CHICAGO",
+      "stateCode": "IL",
+      "facilityType": "MCC"
+    },
     "type": "MCC",
     "overview": "Chicago Mcc is a Federal Bureau of Prisons (MCC) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1247,7 +1829,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "312-322-0567",
       "fax": "312-347-4012",
       "facilityType": "mcc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.876665007896996,
+      "longitude": -87.63018518686295,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "71 WEST VAN BUREN STREET",
+        "postcode": "60605",
+        "city": "CHICAGO",
+        "stateCode": "IL",
+        "facilityType": "MCC"
+      }
     }
   },
   {
@@ -1262,8 +1856,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.10385710591814,
+    "longitude": -84.51236665248871,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "36 E. 7TH ST., SUITE 2107-A",
+      "postcode": "45202",
+      "city": "CINCINNATI",
+      "stateCode": "OH",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Cincinnati Ccm is a Federal Bureau of Prisons (OTHER) facility in Ohio, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1290,7 +1894,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "513-826-9364",
       "fax": "513-684-2590",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.10385710591814,
+      "longitude": -84.51236665248871,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "36 E. 7TH ST., SUITE 2107-A",
+        "postcode": "45202",
+        "city": "CINCINNATI",
+        "stateCode": "OH",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -1305,8 +1921,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 28.755825012996887,
+    "longitude": -82.0135349035263,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "846 NE 54TH TERRACE",
+      "postcode": "33521",
+      "city": "SUMTERVILLE",
+      "stateCode": "FL",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Coleman I Usp is a Federal Bureau of Prisons (USP) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1333,7 +1959,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "352-689-6000",
       "fax": "352-689-6012",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 28.755825012996887,
+      "longitude": -82.0135349035263,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "846 NE 54TH TERRACE",
+        "postcode": "33521",
+        "city": "SUMTERVILLE",
+        "stateCode": "FL",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -1348,8 +1986,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 28.755825012996887,
+    "longitude": -82.0135349035263,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "846 NE 54TH TERRACE",
+      "postcode": "33521",
+      "city": "SUMTERVILLE",
+      "stateCode": "FL",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Coleman Ii Usp is a Federal Bureau of Prisons (USP) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1376,7 +2024,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "352-689-7000",
       "fax": "352-689-7012",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 28.755825012996887,
+      "longitude": -82.0135349035263,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "846 NE 54TH TERRACE",
+        "postcode": "33521",
+        "city": "SUMTERVILLE",
+        "stateCode": "FL",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -1391,8 +2051,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 28.755825012996887,
+    "longitude": -82.0135349035263,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "846 NE 54TH TERRACE",
+      "postcode": "33521",
+      "city": "SUMTERVILLE",
+      "stateCode": "FL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Coleman Low Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1419,7 +2089,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "352-689-4000",
       "fax": "352-689-4008",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 28.755825012996887,
+      "longitude": -82.0135349035263,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "846 NE 54TH TERRACE",
+        "postcode": "33521",
+        "city": "SUMTERVILLE",
+        "stateCode": "FL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1434,8 +2116,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 28.755825012996887,
+    "longitude": -82.0135349035263,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "846 NE 54TH TERRACE",
+      "postcode": "33521",
+      "city": "SUMTERVILLE",
+      "stateCode": "FL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Coleman Med Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1462,7 +2154,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "352-689-5000",
       "fax": "352-689-5027",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 28.755825012996887,
+      "longitude": -82.0135349035263,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "846 NE 54TH TERRACE",
+        "postcode": "33521",
+        "city": "SUMTERVILLE",
+        "stateCode": "FL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1477,8 +2181,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.59560288583264,
+    "longitude": -78.754141330719,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "14601 BURBRIDGE RD SE",
+      "postcode": "21502",
+      "city": "CUMBERLAND",
+      "stateCode": "MD",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Cumberland Fci is a Federal Bureau of Prisons (FCI) facility in Maryland, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1505,7 +2219,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "301-784-1000",
       "fax": "301-784-1008",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.59560288583264,
+      "longitude": -78.754141330719,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "14601 BURBRIDGE RD SE",
+        "postcode": "21502",
+        "city": "CUMBERLAND",
+        "stateCode": "MD",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1520,8 +2246,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.812670070909164,
+    "longitude": -96.81384086608887,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "US ARMED FORCES RESERVE CMPL",
+      "postcode": "75051",
+      "city": "GRAND PRAIRIE",
+      "stateCode": "TX",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Dallas Ccm is a Federal Bureau of Prisons (OTHER) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1548,7 +2284,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "469-928-2182",
       "fax": "972-730-8838",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.812670070909164,
+      "longitude": -96.81384086608887,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "US ARMED FORCES RESERVE CMPL",
+        "postcode": "75051",
+        "city": "GRAND PRAIRIE",
+        "stateCode": "TX",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -1563,8 +2311,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.4406915868142,
+    "longitude": -73.47323656082153,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "33 1/2 PEMBROKE STATION",
+      "postcode": "06811",
+      "city": "DANBURY",
+      "stateCode": "CT",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Danbury Fci is a Federal Bureau of Prisons (FCI) facility in Connecticut, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1591,7 +2349,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "203-743-6471",
       "fax": "203-312-5110",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.4406915868142,
+      "longitude": -73.47323656082153,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "33 1/2 PEMBROKE STATION",
+        "postcode": "06811",
+        "city": "DANBURY",
+        "stateCode": "CT",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1606,8 +2376,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 42.09890703288096,
+    "longitude": -83.66957902908325,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4026 E. ARKONA RD.",
+      "postcode": "48160",
+      "city": "MILAN",
+      "stateCode": "MI",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Detroit Ccm is a Federal Bureau of Prisons (OTHER) facility in Michigan, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1634,7 +2414,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "734-508-9048",
       "fax": "734-439-7671",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 42.09890703288096,
+      "longitude": -83.66957902908325,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4026 E. ARKONA RD.",
+        "postcode": "48160",
+        "city": "MILAN",
+        "stateCode": "MI",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -1649,8 +2441,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 42.52879629320373,
+    "longitude": -71.62627816200256,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "42 PATTON ROAD",
+      "postcode": "01432",
+      "city": "AYER",
+      "stateCode": "MA",
+      "facilityType": "FMC"
+    },
     "type": "FMC",
     "overview": "Devens Fmc is a Federal Bureau of Prisons (FMC) facility in Massachusetts, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1677,7 +2479,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "978-796-1000",
       "fax": "978-796-1118",
       "facilityType": "fmc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 42.52879629320373,
+      "longitude": -71.62627816200256,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "42 PATTON ROAD",
+        "postcode": "01432",
+        "city": "AYER",
+        "stateCode": "MA",
+        "facilityType": "FMC"
+      }
     }
   },
   {
@@ -1735,8 +2549,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 46.8342697,
+    "longitude": -92.1958948,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4464 RALSTON DRIVE",
+      "postcode": "55811",
+      "city": "DULUTH",
+      "stateCode": "MN",
+      "facilityType": "FPC"
+    },
     "type": "FPC",
     "overview": "Duluth Fpc is a Federal Bureau of Prisons (FPC) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1763,7 +2587,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "218-722-8634",
       "fax": "218-733-4701",
       "facilityType": "fpc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 46.8342697,
+      "longitude": -92.1958948,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4464 RALSTON DRIVE",
+        "postcode": "55811",
+        "city": "DULUTH",
+        "stateCode": "MN",
+        "facilityType": "FPC"
+      }
     }
   },
   {
@@ -1778,8 +2614,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.760097075210616,
+    "longitude": -81.9198989868164,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "501 GARY HILL ROAD",
+      "postcode": "29824",
+      "city": "EDGEFIELD",
+      "stateCode": "SC",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Edgefield Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1806,7 +2652,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "803-637-1500",
       "fax": "803-637-9840",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.760097075210616,
+      "longitude": -81.9198989868164,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "501 GARY HILL ROAD",
+        "postcode": "29824",
+        "city": "EDGEFIELD",
+        "stateCode": "SC",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1821,8 +2679,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 35.537063059389546,
+    "longitude": -98.00233840942383,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4205 HIGHWAY 66 WEST",
+      "postcode": "73036",
+      "city": "EL RENO",
+      "stateCode": "OK",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "El Reno Fci is a Federal Bureau of Prisons (FCI) facility in Oklahoma, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1849,7 +2717,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "405-262-4875",
       "fax": "405-319-7626",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 35.537063059389546,
+      "longitude": -98.00233840942383,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4205 HIGHWAY 66 WEST",
+        "postcode": "73036",
+        "city": "EL RENO",
+        "stateCode": "OK",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1864,8 +2744,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.76804545819932,
+    "longitude": -80.7119607925415,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "8730 SCROGGS ROAD",
+      "postcode": "44432",
+      "city": "LISBON",
+      "stateCode": "OH",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Elkton Fci is a Federal Bureau of Prisons (FCI) facility in Ohio, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1892,7 +2782,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "330-420-6200",
       "fax": "330-420-6436",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.76804545819932,
+      "longitude": -80.7119607925415,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "8730 SCROGGS ROAD",
+        "postcode": "44432",
+        "city": "LISBON",
+        "stateCode": "OH",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1907,8 +2809,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.63874440886546,
+    "longitude": -105.10702729225159,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "9595 WEST QUINCY AVENUE",
+      "postcode": "80123",
+      "city": "LITTLETON",
+      "stateCode": "CO",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Englewood Fci is a Federal Bureau of Prisons (FCI) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1935,7 +2847,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "303-763-4300",
       "fax": "303-763-2553",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.63874440886546,
+      "longitude": -105.10702729225159,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "9595 WEST QUINCY AVENUE",
+        "postcode": "80123",
+        "city": "LITTLETON",
+        "stateCode": "CO",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1950,8 +2874,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.71999903656538,
+    "longitude": -81.25186800956726,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "100 PRISON ROAD",
+      "postcode": "29918",
+      "city": "ESTILL",
+      "stateCode": "SC",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Estill Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -1978,7 +2912,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "803-625-4607",
       "fax": "803-625-5635",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.71999903656538,
+      "longitude": -81.25186800956726,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "100 PRISON ROAD",
+        "postcode": "29918",
+        "city": "ESTILL",
+        "stateCode": "SC",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -1993,8 +2939,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.38979954241257,
+    "longitude": -75.15979886054993,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "655 FAIRTON-MILLVILLE ROAD",
+      "postcode": "08320",
+      "city": "FAIRTON",
+      "stateCode": "NJ",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Fairton Fci is a Federal Bureau of Prisons (FCI) facility in New Jersey, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2021,7 +2977,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "856-453-1177",
       "fax": "856-453-4015",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.38979954241257,
+      "longitude": -75.15979886054993,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "655 FAIRTON-MILLVILLE ROAD",
+        "postcode": "08320",
+        "city": "FAIRTON",
+        "stateCode": "NJ",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2036,8 +3004,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.3614873975681,
+    "longitude": -105.10712921619415,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "5880 HWY 67 SOUTH",
+      "postcode": "81226",
+      "city": "FLORENCE",
+      "stateCode": "CO",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Florence Admax Usp is a Federal Bureau of Prisons (USP) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2064,7 +3042,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "719-784-9464",
       "fax": "719-784-5290",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.3614873975681,
+      "longitude": -105.10712921619415,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "5880 HWY 67 SOUTH",
+        "postcode": "81226",
+        "city": "FLORENCE",
+        "stateCode": "CO",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -2079,8 +3069,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.3614873975681,
+    "longitude": -105.10712921619415,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "5880 HWY 67 SOUTH",
+      "postcode": "81226",
+      "city": "FLORENCE",
+      "stateCode": "CO",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Florence Fci is a Federal Bureau of Prisons (FCI) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2107,7 +3107,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "719-784-9100",
       "fax": "719-784-9504",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.3614873975681,
+      "longitude": -105.10712921619415,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "5880 HWY 67 SOUTH",
+        "postcode": "81226",
+        "city": "FLORENCE",
+        "stateCode": "CO",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2122,8 +3134,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.3614873975681,
+    "longitude": -105.10712921619415,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "5880 HWY 67 S",
+      "postcode": "81226",
+      "city": "FLORENCE",
+      "stateCode": "CO",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Florence High Usp is a Federal Bureau of Prisons (USP) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2150,7 +3172,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "719-784-9454",
       "fax": "719-784-5157",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.3614873975681,
+      "longitude": -105.10712921619415,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "5880 HWY 67 S",
+        "postcode": "81226",
+        "city": "FLORENCE",
+        "stateCode": "CO",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -2208,8 +3242,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 34.979139884580924,
+    "longitude": -90.81344962120056,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1400 DALE BUMPERS ROAD",
+      "postcode": "72335",
+      "city": "FORREST CITY",
+      "stateCode": "AR",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Forrest City Med Fci is a Federal Bureau of Prisons (FCI) facility in Arkansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2236,7 +3280,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "870-494-4200",
       "fax": "870-494-4496",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 34.979139884580924,
+      "longitude": -90.81344962120056,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1400 DALE BUMPERS ROAD",
+        "postcode": "72335",
+        "city": "FORREST CITY",
+        "stateCode": "AR",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2337,8 +3393,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.922157403987896,
+    "longitude": -80.78066825866699,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "201 FCI LANE",
+      "postcode": "26351",
+      "city": "GLENVILLE",
+      "stateCode": "WV",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Gilmer Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2365,7 +3431,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "304-626-2500",
       "fax": "304-626-2693",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.922157403987896,
+      "longitude": -80.78066825866699,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "201 FCI LANE",
+        "postcode": "26351",
+        "city": "GLENVILLE",
+        "stateCode": "WV",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2380,8 +3458,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.86760525803305,
+    "longitude": -89.41413044929504,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "100 U.S. HWY 40",
+      "postcode": "62246",
+      "city": "GREENVILLE",
+      "stateCode": "IL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Greenville Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2408,7 +3496,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "618-664-6200",
       "fax": "618-664-6372",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.86760525803305,
+      "longitude": -89.41413044929504,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "100 U.S. HWY 40",
+        "postcode": "62246",
+        "city": "GREENVILLE",
+        "stateCode": "IL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2423,8 +3523,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 18.423649287643677,
+    "longitude": -66.11253619194031,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "652 CARRETERA 28",
+      "postcode": "00965",
+      "city": "GUAYNABO",
+      "stateCode": "PR",
+      "facilityType": "MDC"
+    },
     "type": "MDC",
     "overview": "Guaynabo Mdc is a Federal Bureau of Prisons (MDC) facility in Puerto Rico, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2451,7 +3561,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "787-749-4480",
       "fax": "787-775-7824",
       "facilityType": "mdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 18.423649287643677,
+      "longitude": -66.11253619194031,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "652 CARRETERA 28",
+        "postcode": "00965",
+        "city": "GUAYNABO",
+        "stateCode": "PR",
+        "facilityType": "MDC"
+      }
     }
   },
   {
@@ -2466,8 +3588,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.674229,
+    "longitude": -79.498873,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1640 SKY VIEW DRIVE",
+      "postcode": "26525",
+      "city": "BRUCETON MILLS",
+      "stateCode": "WV",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Hazelton Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2494,7 +3626,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "304-379-1500",
       "fax": "304-379-1531",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.674229,
+      "longitude": -79.498873,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1640 SKY VIEW DRIVE",
+        "postcode": "26525",
+        "city": "BRUCETON MILLS",
+        "stateCode": "WV",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2509,8 +3653,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.674229,
+    "longitude": -79.498873,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1640 SKY VIEW DRIVE",
+      "postcode": "26525",
+      "city": "BRUCETON MILLS",
+      "stateCode": "WV",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Hazelton Usp is a Federal Bureau of Prisons (USP) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2537,7 +3691,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "304-379-5000",
       "fax": "304-379-5039",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.674229,
+      "longitude": -79.498873,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1640 SKY VIEW DRIVE",
+        "postcode": "26525",
+        "city": "BRUCETON MILLS",
+        "stateCode": "WV",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -2552,8 +3718,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.14406729825646,
+    "longitude": -120.16358613967896,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "741-925 ACCESS ROAD A-25",
+      "postcode": "96113",
+      "city": "HERLONG",
+      "stateCode": "CA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Herlong Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2580,7 +3756,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "530-827-8000",
       "fax": "530-827-8024",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.14406729825646,
+      "longitude": -120.16358613967896,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "741-925 ACCESS ROAD A-25",
+        "postcode": "96113",
+        "city": "HERLONG",
+        "stateCode": "CA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2595,8 +3783,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 21.333987785347585,
+    "longitude": -157.92874574661255,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "351 ELLIOTT ST",
+      "postcode": "96819",
+      "city": "HONOLULU",
+      "stateCode": "HI",
+      "facilityType": "FDC"
+    },
     "type": "FDC",
     "overview": "Honolulu Fdc is a Federal Bureau of Prisons (FDC) facility in Hawaii, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2623,7 +3821,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "808-838-4200",
       "fax": "808-838-4507",
       "facilityType": "fdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 21.333987785347585,
+      "longitude": -157.92874574661255,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "351 ELLIOTT ST",
+        "postcode": "96819",
+        "city": "HONOLULU",
+        "stateCode": "HI",
+        "facilityType": "FDC"
+      }
     }
   },
   {
@@ -2638,8 +3848,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 29.75869136693049,
+    "longitude": -95.36042153835297,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1200 TEXAS AVENUE",
+      "postcode": "77002",
+      "city": "HOUSTON",
+      "stateCode": "TX",
+      "facilityType": "FDC"
+    },
     "type": "FDC",
     "overview": "Houston Fdc is a Federal Bureau of Prisons (FDC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2666,7 +3886,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "713-221-5400",
       "fax": "713-229-4200",
       "facilityType": "fdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 29.75869136693049,
+      "longitude": -95.36042153835297,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1200 TEXAS AVENUE",
+        "postcode": "77002",
+        "city": "HOUSTON",
+        "stateCode": "TX",
+        "facilityType": "FDC"
+      }
     }
   },
   {
@@ -2681,8 +3913,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 31.56110354219634,
+    "longitude": -81.89178943634033,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2600 HIGHWAY 301 SOUTH",
+      "postcode": "31599",
+      "city": "JESUP",
+      "stateCode": "GA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Jesup Fci is a Federal Bureau of Prisons (FCI) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2709,7 +3951,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "912-427-0870",
       "fax": "912-427-1125",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 31.56110354219634,
+      "longitude": -81.89178943634033,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2600 HIGHWAY 301 SOUTH",
+        "postcode": "31599",
+        "city": "JESUP",
+        "stateCode": "GA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2724,8 +3978,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.11654316704711,
+    "longitude": -94.61968660354614,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "400 STATE AVE., RM 131",
+      "postcode": "66101",
+      "city": "KANSAS CITY",
+      "stateCode": "KS",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Kansas City Ccm is a Federal Bureau of Prisons (OTHER) facility in Kansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2752,7 +4016,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "620-307-7531",
       "fax": "913-551-1120",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.11654316704711,
+      "longitude": -94.61968660354614,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "400 STATE AVE., RM 131",
+        "postcode": "66101",
+        "city": "KANSAS CITY",
+        "stateCode": "KS",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -2810,8 +4086,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.32765014712151,
+    "longitude": -94.93635892868042,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1300 METROPOLITAN",
+      "postcode": "66048",
+      "city": "LEAVENWORTH",
+      "stateCode": "KS",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Leavenworth Fci is a Federal Bureau of Prisons (FCI) facility in Kansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2838,7 +4124,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "913-682-8700",
       "fax": "913-578-1010",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.32765014712151,
+      "longitude": -94.93635892868042,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1300 METROPOLITAN",
+        "postcode": "66048",
+        "city": "LEAVENWORTH",
+        "stateCode": "KS",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2896,8 +4194,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.98107250469765,
+    "longitude": -76.91349685192108,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2400 ROBERT F. MILLER DRIVE",
+      "postcode": "17837",
+      "city": "LEWISBURG",
+      "stateCode": "PA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Lewisburg Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2924,7 +4232,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "570-523-1251",
       "fax": "570-522-7745",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.98107250469765,
+      "longitude": -76.91349685192108,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2400 ROBERT F. MILLER DRIVE",
+        "postcode": "17837",
+        "city": "LEWISBURG",
+        "stateCode": "PA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -2939,8 +4259,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.09795632354743,
+    "longitude": -84.56653118133545,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "3301 LEESTOWN ROAD",
+      "postcode": "40511",
+      "city": "LEXINGTON",
+      "stateCode": "KY",
+      "facilityType": "FMC"
+    },
     "type": "FMC",
     "overview": "Lexington Fmc is a Federal Bureau of Prisons (FMC) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -2967,7 +4297,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "859-255-6812",
       "fax": "859-253-8821",
       "facilityType": "fmc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.09795632354743,
+      "longitude": -84.56653118133545,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "3301 LEESTOWN ROAD",
+        "postcode": "40511",
+        "city": "LEXINGTON",
+        "stateCode": "KY",
+        "facilityType": "FMC"
+      }
     }
   },
   {
@@ -3025,8 +4367,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 34.67613503380097,
+    "longitude": -120.50559997558594,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "3901 KLEIN BLVD",
+      "postcode": "93436",
+      "city": "LOMPOC",
+      "stateCode": "CA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Lompoc Ii Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3053,7 +4405,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "805-735-2771",
       "fax": "805-736-1292",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 34.67613503380097,
+      "longitude": -120.50559997558594,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "3901 KLEIN BLVD",
+        "postcode": "93436",
+        "city": "LOMPOC",
+        "stateCode": "CA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3068,8 +4432,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.7270523232909,
+    "longitude": -118.26810121536255,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1299 SEASIDE AVENUE",
+      "postcode": "90731",
+      "city": "SAN PEDRO",
+      "stateCode": "CA",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Long Beach Ccm is a Federal Bureau of Prisons (OTHER) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3096,7 +4470,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "424-450-2866",
       "fax": "310-732-5291",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.7270523232909,
+      "longitude": -118.26810121536255,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1299 SEASIDE AVENUE",
+        "postcode": "90731",
+        "city": "SAN PEDRO",
+        "stateCode": "CA",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -3111,8 +4497,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.495313768972544,
+    "longitude": -78.61657619476318,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "772 SAINT JOSEPH ST.",
+      "postcode": "15940",
+      "city": "LORETTO",
+      "stateCode": "PA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Loretto Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3139,7 +4535,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "814-472-4140",
       "fax": "814-471-1507",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.495313768972544,
+      "longitude": -78.61657619476318,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "772 SAINT JOSEPH ST.",
+        "postcode": "15940",
+        "city": "LORETTO",
+        "stateCode": "PA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3154,8 +4562,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 34.05352165876335,
+    "longitude": -118.23806047439575,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "535 N ALAMEDA STREET",
+      "postcode": "90012",
+      "city": "LOS ANGELES",
+      "stateCode": "CA",
+      "facilityType": "MDC"
+    },
     "type": "MDC",
     "overview": "Los Angeles Mdc is a Federal Bureau of Prisons (MDC) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3182,7 +4600,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "213-485-0439",
       "fax": "213-253-9510",
       "facilityType": "mdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 34.05352165876335,
+      "longitude": -118.23806047439575,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "535 N ALAMEDA STREET",
+        "postcode": "90012",
+        "city": "LOS ANGELES",
+        "stateCode": "CA",
+        "facilityType": "MDC"
+      }
     }
   },
   {
@@ -3197,8 +4627,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.1808772921765,
+    "longitude": -83.78428101539612,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "805 FOX HOLLOW ROAD",
+      "postcode": "40962",
+      "city": "MANCHESTER",
+      "stateCode": "KY",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Manchester Fci is a Federal Bureau of Prisons (FCI) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3225,7 +4665,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "606-598-1900",
       "fax": "606-599-4115",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.1808772921765,
+      "longitude": -83.78428101539612,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "805 FOX HOLLOW ROAD",
+        "postcode": "40962",
+        "city": "MANCHESTER",
+        "stateCode": "KY",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3240,8 +4692,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 30.812283043070753,
+    "longitude": -85.18894046545029,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "3625 FCI ROAD",
+      "postcode": "32446",
+      "city": "MARIANNA",
+      "stateCode": "FL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Marianna Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3268,7 +4730,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "850-526-2313",
       "fax": "850-718-2014",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 30.812283043070753,
+      "longitude": -85.18894046545029,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "3625 FCI ROAD",
+        "postcode": "32446",
+        "city": "MARIANNA",
+        "stateCode": "FL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3283,8 +4757,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.66132489364545,
+    "longitude": -88.98763239383698,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4500 PRISON ROAD",
+      "postcode": "62959",
+      "city": "MARION",
+      "stateCode": "IL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Marion Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3311,7 +4795,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "618-964-1441",
       "fax": "618-964-2058",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.66132489364545,
+      "longitude": -88.98763239383698,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4500 PRISON ROAD",
+        "postcode": "62959",
+        "city": "MARION",
+        "stateCode": "IL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3326,8 +4822,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.6857315434324,
+    "longitude": -84.39077138900757,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "330 FEDERAL WAY",
+      "postcode": "42635",
+      "city": "PINE KNOT",
+      "stateCode": "KY",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Mccreary Usp is a Federal Bureau of Prisons (USP) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3354,7 +4860,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "606-354-7000",
       "fax": "606-354-7190",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.6857315434324,
+      "longitude": -84.39077138900757,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "330 FEDERAL WAY",
+        "postcode": "42635",
+        "city": "PINE KNOT",
+        "stateCode": "KY",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -3369,8 +4887,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.47926852959168,
+    "longitude": -81.55574083328247,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "101 FEDERAL DRIVE",
+      "postcode": "24801",
+      "city": "WELCH",
+      "stateCode": "WV",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Mcdowell Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3397,7 +4925,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "304-436-7300",
       "fax": "304-436-7318",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.47926852959168,
+      "longitude": -81.55574083328247,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "101 FEDERAL DRIVE",
+        "postcode": "24801",
+        "city": "WELCH",
+        "stateCode": "WV",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3412,8 +4952,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.796124056544855,
+    "longitude": -78.69246125221252,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "6975 ROUTE 59",
+      "postcode": "16738",
+      "city": "LEWIS RUN",
+      "stateCode": "PA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Mckean Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3440,7 +4990,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "814-362-8900",
       "fax": "814-363-6821",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.796124056544855,
+      "longitude": -78.69246125221252,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "6975 ROUTE 59",
+        "postcode": "16738",
+        "city": "LEWIS RUN",
+        "stateCode": "PA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3455,8 +5017,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 35.155301850272586,
+    "longitude": -89.86424267292023,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1101 JOHN A DENIE ROAD",
+      "postcode": "38134",
+      "city": "MEMPHIS",
+      "stateCode": "TN",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Memphis Fci is a Federal Bureau of Prisons (FCI) facility in Tennessee, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3483,7 +5055,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "901-372-2269",
       "fax": "901-384-5462",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 35.155301850272586,
+      "longitude": -89.86424267292023,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1101 JOHN A DENIE ROAD",
+        "postcode": "38134",
+        "city": "MEMPHIS",
+        "stateCode": "TN",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3498,8 +5082,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.73076525449928,
+    "longitude": -120.39236515760422,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "33500 WEST CALIFORNIA AVENUE",
+      "postcode": "93640",
+      "city": "MENDOTA",
+      "stateCode": "CA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Mendota Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3526,7 +5120,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "559-274-4000",
       "fax": "559-274-4223",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.73076525449928,
+      "longitude": -120.39236515760422,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "33500 WEST CALIFORNIA AVENUE",
+        "postcode": "93640",
+        "city": "MENDOTA",
+        "stateCode": "CA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3541,8 +5147,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 25.778068631351726,
+    "longitude": -80.19376873970032,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "401 N MIAMI AVENUE",
+      "postcode": "33128",
+      "city": "MIAMI",
+      "stateCode": "FL",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Miami Ccm is a Federal Bureau of Prisons (OTHER) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3569,7 +5185,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "786-584-4730",
       "fax": "305-536-4024",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 25.778068631351726,
+      "longitude": -80.19376873970032,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "401 N MIAMI AVENUE",
+        "postcode": "33128",
+        "city": "MIAMI",
+        "stateCode": "FL",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -3584,8 +5212,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 25.616883771255377,
+    "longitude": -80.41434556245804,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "15801 S.W. 137TH AVENUE",
+      "postcode": "33177",
+      "city": "MIAMI",
+      "stateCode": "FL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Miami Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3612,7 +5250,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "305-259-2100",
       "fax": "305-259-2160",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 25.616883771255377,
+      "longitude": -80.41434556245804,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "15801 S.W. 137TH AVENUE",
+        "postcode": "33177",
+        "city": "MIAMI",
+        "stateCode": "FL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3627,8 +5277,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 25.778017910255254,
+    "longitude": -80.19311964511871,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "33 NE 4TH STREET",
+      "postcode": "33132",
+      "city": "MIAMI",
+      "stateCode": "FL",
+      "facilityType": "FDC"
+    },
     "type": "FDC",
     "overview": "Miami Fdc is a Federal Bureau of Prisons (FDC) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3655,7 +5315,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "305-577-0010",
       "fax": "305-536-7368",
       "facilityType": "fdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 25.778017910255254,
+      "longitude": -80.19311964511871,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "33 NE 4TH STREET",
+        "postcode": "33132",
+        "city": "MIAMI",
+        "stateCode": "FL",
+        "facilityType": "FDC"
+      }
     }
   },
   {
@@ -3670,8 +5342,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 42.098914993554835,
+    "longitude": -83.66956830024719,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4004 EAST ARKONA ROAD",
+      "postcode": "48160",
+      "city": "MILAN",
+      "stateCode": "MI",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Milan Fci is a Federal Bureau of Prisons (FCI) facility in Michigan, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3698,7 +5380,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "734-439-1511",
       "fax": "734-439-5534",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 42.098914993554835,
+      "longitude": -83.66956830024719,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4004 EAST ARKONA ROAD",
+        "postcode": "48160",
+        "city": "MILAN",
+        "stateCode": "MI",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -3713,8 +5407,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 44.97805044643724,
+    "longitude": -93.26568603515625,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "300 SOUTH 4TH ST, SUITE 1210",
+      "postcode": "55415",
+      "city": "MINNEAPOLIS",
+      "stateCode": "MN",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Minneapolis Ccm is a Federal Bureau of Prisons (OTHER) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3741,7 +5445,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "612-332-5026",
       "fax": "612-332-5029",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 44.97805044643724,
+      "longitude": -93.26568603515625,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "300 SOUTH 4TH ST, SUITE 1210",
+        "postcode": "55415",
+        "city": "MINNEAPOLIS",
+        "stateCode": "MN",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -3799,8 +5515,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.3920136112194,
+    "longitude": -86.35764867067337,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "MAXWELL AIR FORCE BASE",
+      "postcode": "36112",
+      "city": "MONTGOMERY",
+      "stateCode": "AL",
+      "facilityType": "FPC"
+    },
     "type": "FPC",
     "overview": "Montgomery Fpc is a Federal Bureau of Prisons (FPC) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3827,7 +5553,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "334-293-2100",
       "fax": "334-293-2329",
       "facilityType": "fpc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.3920136112194,
+      "longitude": -86.35764867067337,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "MAXWELL AIR FORCE BASE",
+        "postcode": "36112",
+        "city": "MONTGOMERY",
+        "stateCode": "AL",
+        "facilityType": "FPC"
+      }
     }
   },
   {
@@ -3842,8 +5580,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.60530793983782,
+    "longitude": -79.95054602622986,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "446 GREENBAG ROAD, ROUTE 857",
+      "postcode": "26501",
+      "city": "MORGANTOWN",
+      "stateCode": "WV",
+      "facilityType": "FPC"
+    },
     "type": "FPC",
     "overview": "Morgantown Fpc is a Federal Bureau of Prisons (FPC) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3870,7 +5618,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "304-296-4416",
       "fax": "304-284-3600",
       "facilityType": "fpc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.60530793983782,
+      "longitude": -79.95054602622986,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "446 GREENBAG ROAD, ROUTE 857",
+        "postcode": "26501",
+        "city": "MORGANTOWN",
+        "stateCode": "WV",
+        "facilityType": "FPC"
+      }
     }
   },
   {
@@ -3885,8 +5645,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.15833785894452,
+    "longitude": -86.78255081176758,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "701 BROADWAY ST, SUITE 124",
+      "postcode": "37203",
+      "city": "NASHVILLE",
+      "stateCode": "TN",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Nashville Ccm is a Federal Bureau of Prisons (OTHER) facility in Tennessee, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3913,7 +5683,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "629-266-6380",
       "fax": "615-736-5147",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.15833785894452,
+      "longitude": -86.78255081176758,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "701 BROADWAY ST, SUITE 124",
+        "postcode": "37203",
+        "city": "NASHVILLE",
+        "stateCode": "TN",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -3971,8 +5753,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 30.832138156154823,
+    "longitude": -92.64348328113556,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1507 EAST WHATLEY ROAD",
+      "postcode": "71463",
+      "city": "OAKDALE",
+      "stateCode": "LA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Oakdale I Fci is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -3999,7 +5791,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "318-335-4070",
       "fax": "318-215-2688",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 30.832138156154823,
+      "longitude": -92.64348328113556,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1507 EAST WHATLEY ROAD",
+        "postcode": "71463",
+        "city": "OAKDALE",
+        "stateCode": "LA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4014,8 +5818,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 30.832138156154823,
+    "longitude": -92.64348328113556,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2105 EAST WHATLEY ROAD",
+      "postcode": "71463",
+      "city": "OAKDALE",
+      "stateCode": "LA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Oakdale Ii Fci is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4042,7 +5856,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "318-335-4466",
       "fax": "318-215-2185",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 30.832138156154823,
+      "longitude": -92.64348328113556,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2105 EAST WHATLEY ROAD",
+        "postcode": "71463",
+        "city": "OAKDALE",
+        "stateCode": "LA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4057,8 +5883,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 35.39205872746594,
+    "longitude": -97.61861085891724,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "7410 S. MACARTHUR BLVD",
+      "postcode": "73169",
+      "city": "OKLAHOMA CITY",
+      "stateCode": "OK",
+      "facilityType": "FTC"
+    },
     "type": "OTHER",
     "overview": "Oklahoma City Ftc is a Federal Bureau of Prisons (OTHER) facility in Oklahoma, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4085,7 +5921,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "405-682-4075",
       "fax": "405-680-4043",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 35.39205872746594,
+      "longitude": -97.61861085891724,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "7410 S. MACARTHUR BLVD",
+        "postcode": "73169",
+        "city": "OKLAHOMA CITY",
+        "stateCode": "OK",
+        "facilityType": "FTC"
+      }
     }
   },
   {
@@ -4100,8 +5948,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 28.75962721130452,
+    "longitude": -82.00122356414795,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "6303 COUNTY ROAD 500",
+      "postcode": "34785",
+      "city": "WILDWOOD",
+      "stateCode": "FL",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Orlando Ccm is a Federal Bureau of Prisons (OTHER) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4128,7 +5986,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "352-254-6140",
       "fax": "352-689-7396",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 28.75962721130452,
+      "longitude": -82.00122356414795,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "6303 COUNTY ROAD 500",
+        "postcode": "34785",
+        "city": "WILDWOOD",
+        "stateCode": "FL",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -4143,8 +6013,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.476777534148226,
+    "longitude": -74.53333675861359,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "TWO MILE DRIVE",
+      "postcode": "10963",
+      "city": "OTISVILLE",
+      "stateCode": "NY",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Otisville Fci is a Federal Bureau of Prisons (FCI) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4171,7 +6051,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "845-386-6700",
       "fax": "845-386-6727",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.476777534148226,
+      "longitude": -74.53333675861359,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "TWO MILE DRIVE",
+        "postcode": "10963",
+        "city": "OTISVILLE",
+        "stateCode": "NY",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4186,8 +6078,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 43.86168895704511,
+    "longitude": -89.64906513690948,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "COUNTY ROAD G & ELK AVENUE",
+      "postcode": "53952",
+      "city": "OXFORD",
+      "stateCode": "WI",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Oxford Fci is a Federal Bureau of Prisons (FCI) facility in Wisconsin, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4214,7 +6116,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "608-584-5511",
       "fax": "608-584-6314",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 43.86168895704511,
+      "longitude": -89.64906513690948,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "COUNTY ROAD G & ELK AVENUE",
+        "postcode": "53952",
+        "city": "OXFORD",
+        "stateCode": "WI",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4229,8 +6143,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.538068780531134,
+    "longitude": -89.66444492340088,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2600 S. SECOND ST.",
+      "postcode": "61554",
+      "city": "PEKIN",
+      "stateCode": "IL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Pekin Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4257,7 +6181,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "309-346-8588",
       "fax": "309-477-4670",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.538068780531134,
+      "longitude": -89.66444492340088,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2600 S. SECOND ST.",
+        "postcode": "61554",
+        "city": "PEKIN",
+        "stateCode": "IL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4358,8 +6294,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.29818430631364,
+    "longitude": -77.34108924865723,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1060 RIVER ROAD",
+      "postcode": "23860",
+      "city": "HOPEWELL",
+      "stateCode": "VA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Petersburg Med Fci is a Federal Bureau of Prisons (FCI) facility in Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4386,7 +6332,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "804-504-7200",
       "fax": "804-504-7204",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.29818430631364,
+      "longitude": -77.34108924865723,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1060 RIVER ROAD",
+        "postcode": "23860",
+        "city": "HOPEWELL",
+        "stateCode": "VA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4401,8 +6359,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.94940796479055,
+    "longitude": -75.14578700065613,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2ND & CHESTNUT ST - 7TH FL",
+      "postcode": "19106",
+      "city": "PHILADELPHIA",
+      "stateCode": "PA",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Philadelphia Ccm is a Federal Bureau of Prisons (OTHER) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4429,7 +6397,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "445-201-8783",
       "fax": "215-521-7486",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.94940796479055,
+      "longitude": -75.14578700065613,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2ND & CHESTNUT ST - 7TH FL",
+        "postcode": "19106",
+        "city": "PHILADELPHIA",
+        "stateCode": "PA",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -4444,8 +6424,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.95254156143854,
+    "longitude": -75.15206336975098,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "700 ARCH STREET",
+      "postcode": "19106",
+      "city": "PHILADELPHIA",
+      "stateCode": "PA",
+      "facilityType": "FDC"
+    },
     "type": "FDC",
     "overview": "Philadelphia Fdc is a Federal Bureau of Prisons (FDC) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4472,7 +6462,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "215-521-4000",
       "fax": "215-521-7220",
       "facilityType": "fdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.95254156143854,
+      "longitude": -75.15206336975098,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "700 ARCH STREET",
+        "postcode": "19106",
+        "city": "PHILADELPHIA",
+        "stateCode": "PA",
+        "facilityType": "FDC"
+      }
     }
   },
   {
@@ -4487,8 +6489,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.451026,
+    "longitude": -112.07539,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "230 N FIRST AVE, SUITE 405",
+      "postcode": "85003",
+      "city": "PHOENIX",
+      "stateCode": "AZ",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Phoenix Ccm is a Federal Bureau of Prisons (OTHER) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4515,7 +6527,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "602-333-0537",
       "fax": "602-514-7076",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.451026,
+      "longitude": -112.07539,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "230 N FIRST AVE, SUITE 405",
+        "postcode": "85003",
+        "city": "PHOENIX",
+        "stateCode": "AZ",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -4530,8 +6554,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.8338130100535,
+    "longitude": -112.16604351997375,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "37900 N 45TH AVE",
+      "postcode": "85086",
+      "city": "PHOENIX",
+      "stateCode": "AZ",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Phoenix Fci is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4558,7 +6592,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "623-465-9757",
       "fax": "623-465-5199",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.8338130100535,
+      "longitude": -112.16604351997375,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "37900 N 45TH AVE",
+        "postcode": "85086",
+        "city": "PHOENIX",
+        "stateCode": "AZ",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4573,8 +6619,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.44363210182356,
+    "longitude": -79.99524235725403,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1000 LIBERTY AVENUE,STE 1315",
+      "postcode": "15222",
+      "city": "PITTSBURGH",
+      "stateCode": "PA",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Pittsburgh Ccm is a Federal Bureau of Prisons (OTHER) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4601,7 +6657,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "412-395-7930",
       "fax": "412-434-1301",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.44363210182356,
+      "longitude": -79.99524235725403,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1000 LIBERTY AVENUE,STE 1315",
+        "postcode": "15222",
+        "city": "PITTSBURGH",
+        "stateCode": "PA",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -4659,8 +6727,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 31.46112044918768,
+    "longitude": -92.44189381599426,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1000 AIRBASE ROAD",
+      "postcode": "71467",
+      "city": "POLLOCK",
+      "stateCode": "LA",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Pollock Usp is a Federal Bureau of Prisons (USP) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4687,7 +6765,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "318-561-5300",
       "fax": "318-561-5391",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 31.46112044918768,
+      "longitude": -92.44189381599426,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1000 AIRBASE ROAD",
+        "postcode": "71467",
+        "city": "POLLOCK",
+        "stateCode": "LA",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -4702,8 +6792,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 36.144528857027744,
+    "longitude": -78.79013657569885,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "OLD NC 75 HIGHWAY",
+      "postcode": "27509",
+      "city": "BUTNER",
+      "stateCode": "NC",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Raleigh Ccm is a Federal Bureau of Prisons (OTHER) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4730,7 +6830,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "919-964-6150",
       "fax": "919-575-2073",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 36.144528857027744,
+      "longitude": -78.79013657569885,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "OLD NC 75 HIGHWAY",
+        "postcode": "27509",
+        "city": "BUTNER",
+        "stateCode": "NC",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -4745,8 +6857,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 44.29396385164661,
+    "longitude": -74.09729540348053,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "128 RAY BROOK ROAD",
+      "postcode": "12977",
+      "city": "RAY BROOK",
+      "stateCode": "NY",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Ray Brook Fci is a Federal Bureau of Prisons (FCI) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4773,7 +6895,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "518-897-4000",
       "fax": "518-897-4216",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 44.29396385164661,
+      "longitude": -74.09729540348053,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "128 RAY BROOK ROAD",
+        "postcode": "12977",
+        "city": "RAY BROOK",
+        "stateCode": "NY",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4788,8 +6922,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 44.02235399723002,
+    "longitude": -92.43875026702881,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2110 EAST CENTER STREET",
+      "postcode": "55904",
+      "city": "ROCHESTER",
+      "stateCode": "MN",
+      "facilityType": "FMC"
+    },
     "type": "FMC",
     "overview": "Rochester Fmc is a Federal Bureau of Prisons (FMC) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4816,7 +6960,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "507-287-0674",
       "fax": "507-424-7600",
       "facilityType": "fmc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 44.02235399723002,
+      "longitude": -92.43875026702881,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2110 EAST CENTER STREET",
+        "postcode": "55904",
+        "city": "ROCHESTER",
+        "stateCode": "MN",
+        "facilityType": "FMC"
+      }
     }
   },
   {
@@ -4831,8 +6987,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.58354934727576,
+    "longitude": -121.49880051612854,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "501 I STREET, SUITE 9-400",
+      "postcode": "95814",
+      "city": "SACRAMENTO",
+      "stateCode": "CA",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Sacramento Ccm is a Federal Bureau of Prisons (OTHER) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4859,7 +7025,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "916-288-4266",
       "fax": "916-930-2008",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.58354934727576,
+      "longitude": -121.49880051612854,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "501 I STREET, SUITE 9-400",
+        "postcode": "95814",
+        "city": "SACRAMENTO",
+        "stateCode": "CA",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -4874,8 +7052,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.7172639931445,
+    "longitude": -109.72694993019104,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1529 WEST HIGHWAY 366",
+      "postcode": "85546",
+      "city": "SAFFORD",
+      "stateCode": "AZ",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Safford Fci is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4902,7 +7090,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "928-428-6600",
       "fax": "928-348-1331",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.7172639931445,
+      "longitude": -109.72694993019104,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1529 WEST HIGHWAY 366",
+        "postcode": "85546",
+        "city": "SAFFORD",
+        "stateCode": "AZ",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -4917,8 +7117,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 29.41751655130468,
+    "longitude": -98.48473906517029,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "727 EAST CESAR E. CHAVEZ BLV",
+      "postcode": "78206",
+      "city": "SAN ANTONIO",
+      "stateCode": "TX",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "San Antonio Ccm is a Federal Bureau of Prisons (OTHER) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4945,7 +7155,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "726-224-5472",
       "fax": "210-472-6224",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 29.41751655130468,
+      "longitude": -98.48473906517029,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "727 EAST CESAR E. CHAVEZ BLV",
+        "postcode": "78206",
+        "city": "SAN ANTONIO",
+        "stateCode": "TX",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -4960,8 +7182,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.713711922121874,
+    "longitude": -117.16561675071716,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "808 UNION STREET",
+      "postcode": "92101",
+      "city": "SAN DIEGO",
+      "stateCode": "CA",
+      "facilityType": "MCC"
+    },
     "type": "MCC",
     "overview": "San Diego Mcc is a Federal Bureau of Prisons (MCC) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -4988,7 +7220,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "619-232-4311",
       "fax": "619-595-0390",
       "facilityType": "mcc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.713711922121874,
+      "longitude": -117.16561675071716,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "808 UNION STREET",
+        "postcode": "92101",
+        "city": "SAN DIEGO",
+        "stateCode": "CA",
+        "facilityType": "MCC"
+      }
     }
   },
   {
@@ -5003,8 +7247,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 46.11080500419979,
+    "longitude": -92.85080194473267,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2300 COUNTY RD 29",
+      "postcode": "55072",
+      "city": "SANDSTONE",
+      "stateCode": "MN",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Sandstone Fci is a Federal Bureau of Prisons (FCI) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5031,7 +7285,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "320-245-2262",
       "fax": "320-245-0385",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 46.11080500419979,
+      "longitude": -92.85080194473267,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2300 COUNTY RD 29",
+        "postcode": "55072",
+        "city": "SANDSTONE",
+        "stateCode": "MN",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5046,8 +7312,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 40.720412475732395,
+    "longitude": -76.35017931461334,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "INTERSTATE 81 & 901 W",
+      "postcode": "17954",
+      "city": "MINERSVILLE",
+      "stateCode": "PA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Schuylkill Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5074,7 +7350,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "570-544-7100",
       "fax": "570-544-7224",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 40.720412475732395,
+      "longitude": -76.35017931461334,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "INTERSTATE 81 & 901 W",
+        "postcode": "17954",
+        "city": "MINERSVILLE",
+        "stateCode": "PA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5089,8 +7377,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.65720731538505,
+    "longitude": -96.56396627426147,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2113 NORTH HWY 175",
+      "postcode": "75159",
+      "city": "SEAGOVILLE",
+      "stateCode": "TX",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Seagoville Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5117,7 +7415,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "972-287-2911",
       "fax": "972-287-5466",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.65720731538505,
+      "longitude": -96.56396627426147,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2113 NORTH HWY 175",
+        "postcode": "75159",
+        "city": "SEAGOVILLE",
+        "stateCode": "TX",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5132,8 +7442,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 47.422708646659736,
+    "longitude": -122.30184316635132,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2425 SOUTH 200TH STREET",
+      "postcode": "98198",
+      "city": "SEATTLE",
+      "stateCode": "WA",
+      "facilityType": "FDC"
+    },
     "type": "FDC",
     "overview": "Seatac Fdc is a Federal Bureau of Prisons (FDC) facility in Washington, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5160,7 +7480,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "206-870-5700",
       "fax": "206-870-5717",
       "facilityType": "fdc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 47.422708646659736,
+      "longitude": -122.30184316635132,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2425 SOUTH 200TH STREET",
+        "postcode": "98198",
+        "city": "SEATTLE",
+        "stateCode": "WA",
+        "facilityType": "FDC"
+      }
     }
   },
   {
@@ -5175,8 +7507,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 47.4227076,
+    "longitude": -122.3024917,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2425 SOUTH 200 ST (AT FDC)",
+      "postcode": "98198",
+      "city": "SEATTLE",
+      "stateCode": "WA",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "Seattle Ccm is a Federal Bureau of Prisons (OTHER) facility in Washington, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5203,7 +7545,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "253-765-2769",
       "fax": "206-870-1012",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 47.4227076,
+      "longitude": -122.3024917,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2425 SOUTH 200 ST (AT FDC)",
+        "postcode": "98198",
+        "city": "SEATTLE",
+        "stateCode": "WA",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -5218,8 +7572,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 45.0840436625543,
+    "longitude": -123.39583039283752,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "27072 BALLSTON ROAD",
+      "postcode": "97378",
+      "city": "SHERIDAN",
+      "stateCode": "OR",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Sheridan Fci is a Federal Bureau of Prisons (FCI) facility in Oregon, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5246,7 +7610,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "503-843-4442",
       "fax": "503-843-6645",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 45.0840436625543,
+      "longitude": -123.39583039283752,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "27072 BALLSTON ROAD",
+        "postcode": "97378",
+        "city": "SHERIDAN",
+        "stateCode": "OR",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5261,8 +7637,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 37.177577690810566,
+    "longitude": -93.32125067710876,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1900 W. SUNSHINE ST",
+      "postcode": "65807",
+      "city": "SPRINGFIELD",
+      "stateCode": "MO",
+      "facilityType": "MCFP"
+    },
     "type": "OTHER",
     "overview": "Springfield Usmcfp is a Federal Bureau of Prisons (OTHER) facility in Missouri, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5289,7 +7675,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "417-862-7041",
       "fax": "417-837-1717",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 37.177577690810566,
+      "longitude": -93.32125067710876,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1900 W. SUNSHINE ST",
+        "postcode": "65807",
+        "city": "SPRINGFIELD",
+        "stateCode": "MO",
+        "facilityType": "MCFP"
+      }
     }
   },
   {
@@ -5304,8 +7702,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 38.62438528072939,
+    "longitude": -90.19984602928162,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1222 SPRUCE ST, SUITE 6.101",
+      "postcode": "63103",
+      "city": "ST LOUIS",
+      "stateCode": "MO",
+      "facilityType": "RRM"
+    },
     "type": "OTHER",
     "overview": "St Louis Ccm is a Federal Bureau of Prisons (OTHER) facility in Missouri, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5332,7 +7740,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "314-410-6818",
       "fax": "314-539-2465",
       "facilityType": "other",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 38.62438528072939,
+      "longitude": -90.19984602928162,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1222 SPRUCE ST, SUITE 6.101",
+        "postcode": "63103",
+        "city": "ST LOUIS",
+        "stateCode": "MO",
+        "facilityType": "RRM"
+      }
     }
   },
   {
@@ -5347,8 +7767,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.42497652085813,
+    "longitude": -86.14289224147797,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "565 EAST RENFROE ROAD",
+      "postcode": "35160",
+      "city": "TALLADEGA",
+      "stateCode": "AL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Talladega Fci is a Federal Bureau of Prisons (FCI) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5375,7 +7805,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "256-315-4100",
       "fax": "256-315-4495",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.42497652085813,
+      "longitude": -86.14289224147797,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "565 EAST RENFROE ROAD",
+        "postcode": "35160",
+        "city": "TALLADEGA",
+        "stateCode": "AL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5390,8 +7832,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 30.440196462640507,
+    "longitude": -84.2227578163147,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "501 CAPITAL CIRCLE, NE",
+      "postcode": "32301",
+      "city": "TALLAHASSEE",
+      "stateCode": "FL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Tallahassee Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5418,7 +7870,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "850-878-2173",
       "fax": "850-671-6105",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 30.440196462640507,
+      "longitude": -84.2227578163147,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "501 CAPITAL CIRCLE, NE",
+        "postcode": "32301",
+        "city": "TALLAHASSEE",
+        "stateCode": "FL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5476,8 +7940,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.41426418872239,
+    "longitude": -87.45132207870483,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4200 BUREAU ROAD NORTH",
+      "postcode": "47808",
+      "city": "TERRE HAUTE",
+      "stateCode": "IN",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Terre Haute Fci is a Federal Bureau of Prisons (FCI) facility in Indiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5504,7 +7978,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "812-238-1531",
       "fax": "812-238-3301",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.41426418872239,
+      "longitude": -87.45132207870483,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4200 BUREAU ROAD NORTH",
+        "postcode": "47808",
+        "city": "TERRE HAUTE",
+        "stateCode": "IN",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5519,8 +8005,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 39.40987096713173,
+    "longitude": -87.45582818984985,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4700 BUREAU ROAD SOUTH",
+      "postcode": "47802",
+      "city": "TERRE HAUTE",
+      "stateCode": "IN",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Terre Haute Usp is a Federal Bureau of Prisons (USP) facility in Indiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5547,7 +8043,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "812-244-4400",
       "fax": "812-244-4791",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 39.40987096713173,
+      "longitude": -87.45582818984985,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4700 BUREAU ROAD SOUTH",
+        "postcode": "47802",
+        "city": "TERRE HAUTE",
+        "stateCode": "IN",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -5562,8 +8070,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.37551640898179,
+    "longitude": -94.09211754798889,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "4001 LEOPARD DRIVE",
+      "postcode": "75501",
+      "city": "TEXARKANA",
+      "stateCode": "TX",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Texarkana Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5590,7 +8108,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "903-838-4587",
       "fax": "903-223-4424",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.37551640898179,
+      "longitude": -94.09211754798889,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "4001 LEOPARD DRIVE",
+        "postcode": "75501",
+        "city": "TEXARKANA",
+        "stateCode": "TX",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5605,8 +8135,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 41.969953,
+    "longitude": -90.104878,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1100 ONE MILE ROAD",
+      "postcode": "61285",
+      "city": "THOMSON",
+      "stateCode": "IL",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Thomson Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5633,7 +8173,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "815-259-1000",
       "fax": "815-259-0186",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 41.969953,
+      "longitude": -90.104878,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1100 ONE MILE ROAD",
+        "postcode": "61285",
+        "city": "THOMSON",
+        "stateCode": "IL",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5648,8 +8200,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 28.447770202636647,
+    "longitude": -98.32241177558899,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "US HIGHWAY 72 WEST",
+      "postcode": "78071",
+      "city": "THREE RIVERS",
+      "stateCode": "TX",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Three Rivers Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5676,7 +8238,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "361-786-3576",
       "fax": "361-786-5051",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 28.447770202636647,
+      "longitude": -98.32241177558899,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "US HIGHWAY 72 WEST",
+        "postcode": "78071",
+        "city": "THREE RIVERS",
+        "stateCode": "TX",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5691,8 +8265,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.08849219605296,
+    "longitude": -110.85797846317291,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "8901 S. WILMOT ROAD",
+      "postcode": "85756",
+      "city": "TUCSON",
+      "stateCode": "AZ",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Tucson Fci is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5719,7 +8303,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "520-574-7100",
       "fax": "520-663-4406",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.08849219605296,
+      "longitude": -110.85797846317291,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "8901 S. WILMOT ROAD",
+        "postcode": "85756",
+        "city": "TUCSON",
+        "stateCode": "AZ",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5734,8 +8330,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.08849219605296,
+    "longitude": -110.85797846317291,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "9300 SOUTH WILMOT ROAD",
+      "postcode": "85756",
+      "city": "TUCSON",
+      "stateCode": "AZ",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Tucson Usp is a Federal Bureau of Prisons (USP) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5762,7 +8368,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "520-663-5000",
       "fax": "520-663-5024",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.08849219605296,
+      "longitude": -110.85797846317291,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "9300 SOUTH WILMOT ROAD",
+        "postcode": "85756",
+        "city": "TUCSON",
+        "stateCode": "AZ",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -5777,8 +8395,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 34.57220331752011,
+    "longitude": -117.36047387123108,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "13777 AIR EXPRESSWAY BLVD",
+      "postcode": "92394",
+      "city": "VICTORVILLE",
+      "stateCode": "CA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Victorville Med I Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5805,7 +8433,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "760-246-2400",
       "fax": "760-246-2461",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 34.57220331752011,
+      "longitude": -117.36047387123108,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "13777 AIR EXPRESSWAY BLVD",
+        "postcode": "92394",
+        "city": "VICTORVILLE",
+        "stateCode": "CA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5820,8 +8460,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 34.57220331752011,
+    "longitude": -117.36047387123108,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "13777 AIR EXPRESSWAY BLVD",
+      "postcode": "92394",
+      "city": "VICTORVILLE",
+      "stateCode": "CA",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Victorville Med Ii Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5848,7 +8498,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "760-530-5700",
       "fax": "760-530-5706",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 34.57220331752011,
+      "longitude": -117.36047387123108,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "13777 AIR EXPRESSWAY BLVD",
+        "postcode": "92394",
+        "city": "VICTORVILLE",
+        "stateCode": "CA",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5863,8 +8525,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 34.57220331752011,
+    "longitude": -117.36047387123108,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "13777 AIR EXPRESSWAY BLVD",
+      "postcode": "92394",
+      "city": "VICTORVILLE",
+      "stateCode": "CA",
+      "facilityType": "USP"
+    },
     "type": "USP",
     "overview": "Victorville Usp is a Federal Bureau of Prisons (USP) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5891,7 +8563,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "760-530-5000",
       "fax": "760-530-5103",
       "facilityType": "usp",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 34.57220331752011,
+      "longitude": -117.36047387123108,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "13777 AIR EXPRESSWAY BLVD",
+        "postcode": "92394",
+        "city": "VICTORVILLE",
+        "stateCode": "CA",
+        "facilityType": "USP"
+      }
     }
   },
   {
@@ -5906,8 +8590,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 44.0658184987203,
+    "longitude": -93.51654767990112,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1000 UNIVERSITY DR, SW",
+      "postcode": "56093",
+      "city": "WASECA",
+      "stateCode": "MN",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Waseca Fci is a Federal Bureau of Prisons (FCI) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5934,7 +8628,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "507-835-8972",
       "fax": "507-837-4547",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 44.0658184987203,
+      "longitude": -93.51654767990112,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1000 UNIVERSITY DR, SW",
+        "postcode": "56093",
+        "city": "WASECA",
+        "stateCode": "MN",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5949,8 +8655,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 33.58941958610805,
+    "longitude": -79.8901104927063,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "8301 HIGHWAY 521",
+      "postcode": "29590",
+      "city": "SALTERS",
+      "stateCode": "SC",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Williamsburg Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -5977,7 +8693,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "843-387-9400",
       "fax": "843-387-6961",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 33.58941958610805,
+      "longitude": -79.8901104927063,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "8301 HIGHWAY 521",
+        "postcode": "29590",
+        "city": "SALTERS",
+        "stateCode": "SC",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -5992,8 +8720,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 42.87985586556123,
+    "longitude": -97.3919802904129,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "1016 DOUGLAS AVENUE",
+      "postcode": "57078",
+      "city": "YANKTON",
+      "stateCode": "SD",
+      "facilityType": "FPC"
+    },
     "type": "FPC",
     "overview": "Yankton Fpc is a Federal Bureau of Prisons (FPC) facility in South Dakota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -6020,7 +8758,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "605-665-3262",
       "fax": "605-668-1113",
       "facilityType": "fpc",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 42.87985586556123,
+      "longitude": -97.3919802904129,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "1016 DOUGLAS AVENUE",
+        "postcode": "57078",
+        "city": "YANKTON",
+        "stateCode": "SD",
+        "facilityType": "FPC"
+      }
     }
   },
   {
@@ -6035,8 +8785,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.87846088847022,
+    "longitude": -90.41682600975037,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2225 HALEY BARBOUR PARKWAY",
+      "postcode": "39194",
+      "city": "YAZOO CITY",
+      "stateCode": "MS",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Yazoo City Low Fci is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -6063,7 +8823,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "662-751-4800",
       "fax": "662-751-4958",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.87846088847022,
+      "longitude": -90.41682600975037,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2225 HALEY BARBOUR PARKWAY",
+        "postcode": "39194",
+        "city": "YAZOO CITY",
+        "stateCode": "MS",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -6078,8 +8850,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.87846088847022,
+    "longitude": -90.41682600975037,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2225 HALEY BARBOUR PARKWAY",
+      "postcode": "39194",
+      "city": "YAZOO CITY",
+      "stateCode": "MS",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Yazoo City Low Ii Fci is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -6106,7 +8888,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "662-716-1020",
       "fax": "662-716-1036",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.87846088847022,
+      "longitude": -90.41682600975037,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2225 HALEY BARBOUR PARKWAY",
+        "postcode": "39194",
+        "city": "YAZOO CITY",
+        "stateCode": "MS",
+        "facilityType": "FCI"
+      }
     }
   },
   {
@@ -6121,8 +8915,18 @@ export const usPrisonsGenerated: Prison[] = [
     "capacity": 0,
     "operator": "Federal Bureau of Prisons",
     "openedYear": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 32.87846088847022,
+    "longitude": -90.41682600975037,
+    "coordinateEvidence": {
+      "precision": "facility",
+      "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+      "checkedAt": "2026-10-05T11:43:31.462Z",
+      "address": "2225 HALEY BARBOUR PKWY",
+      "postcode": "39194",
+      "city": "YAZOO CITY",
+      "stateCode": "MS",
+      "facilityType": "FCI"
+    },
     "type": "FCI",
     "overview": "Yazoo City Med Fci is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
@@ -6149,7 +8953,19 @@ export const usPrisonsGenerated: Prison[] = [
       "phone": "662-716-1241",
       "fax": "662-716-1255",
       "facilityType": "fci",
-      "dataProvenance": "bop_import"
+      "dataProvenance": "bop_import",
+      "latitude": 32.87846088847022,
+      "longitude": -90.41682600975037,
+      "coordinateEvidence": {
+        "precision": "facility",
+        "source": "https://www.bop.gov/PublicInfo/execute/locations?todo=query&output=json",
+        "checkedAt": "2026-10-05T11:43:31.462Z",
+        "address": "2225 HALEY BARBOUR PKWY",
+        "postcode": "39194",
+        "city": "YAZOO CITY",
+        "stateCode": "MS",
+        "facilityType": "FCI"
+      }
     }
   }
 ];

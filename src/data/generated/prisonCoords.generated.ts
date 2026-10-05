@@ -46,6 +46,13 @@ export const prisonCoordsGeneratedRaw = [
     "source": "postcodes.io"
   },
   {
+    "slug": "hmp-brixton",
+    "postcode": "SW2 5XF",
+    "latitude": 51.451965,
+    "longitude": -0.124685,
+    "source": "postcodes.io"
+  },
+  {
     "slug": "hmp-buckley-hall",
     "postcode": "OL12 9DP",
     "latitude": 53.63373,

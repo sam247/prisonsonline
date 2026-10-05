@@ -3,6 +3,7 @@
  * Sources: hmctsSites.generated + FaCT OGL CSV + postcodes.io (build-time only).
  * Fail-closed if FaCT cannot be fetched and no valid cache exists.
  */
+import { postcodeCoordinateMatches } from "../src/lib/prison-map/postcode-cache.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -374,7 +375,8 @@ async function geocodePrisonPostcodes(prisons) {
     }
   }
 
-  const missing = entries.filter((e) => !cache[e.slug]?.latitude);
+  const cacheMatches = (entry) => postcodeCoordinateMatches(cache[entry.slug], entry.postcode);
+  const missing = entries.filter((e) => !cacheMatches(e));
   const unresolved = [];
   const BATCH = 100;
 
@@ -419,11 +421,12 @@ async function geocodePrisonPostcodes(prisons) {
   }
 
   // Recompute unresolved against final cache
-  const stillMissing = entries.filter((e) => !cache[e.slug]?.latitude);
+  const stillMissing = entries.filter((e) => !cacheMatches(e));
   ensureDir(CACHE);
   fs.writeFileSync(POSTCODE_CACHE, JSON.stringify(cache, null, 2), "utf8");
 
   const overlay = entries
+    .filter(cacheMatches)
     .map((e) => cache[e.slug])
     .filter((c) => c && Number.isFinite(c.latitude) && Number.isFinite(c.longitude));
 
