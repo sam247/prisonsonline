@@ -36,6 +36,19 @@ export interface Prison {
   /** 0 when unknown / not geocoded. */
   latitude: number;
   longitude: number;
+  /** Geographic evidence; coordinates are never a promise of an exact entrance. */
+  coordinateEvidence?: {
+    precision: "facility" | "postcode" | "legacy";
+    source: string;
+    checkedAt?: string;
+    address?: string;
+    postcode?: string;
+    city?: string;
+    stateCode?: string;
+    facilityType?: string;
+  };
+  status?: "historic";
+  statusSource?: string;
   type: string;
   overview: string;
   history: string;

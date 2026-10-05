@@ -44,6 +44,8 @@ export interface BopLocation {
   privateFacl: string;
   faclTypeDescription: string;
   gender?: string;
+  latitude?: number;
+  longitude?: number;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -82,6 +84,8 @@ export function parseBopLocations(raw: unknown): BopLocation[] {
       privateFacl: readString(loc.privateFacl),
       faclTypeDescription: readString(loc.faclTypeDescription),
       gender: readString(loc.gender) || undefined,
+      latitude: readString(loc.latitude).trim() ? Number(loc.latitude) : undefined,
+      longitude: readString(loc.longitude).trim() ? Number(loc.longitude) : undefined,
     });
   }
   return parsed;

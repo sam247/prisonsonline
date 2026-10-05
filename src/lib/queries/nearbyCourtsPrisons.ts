@@ -1,3 +1,4 @@
+import { projectMapRecord } from "@/lib/prison-map/records";
 import { prisons } from "@/data/prisons";
 import { prisonCoordsGenerated } from "@/data/generated/prisonCoords.generated";
 import { getIndexableCourts, courtHasReliableCoords } from "@/lib/queries/courts";
@@ -32,9 +33,11 @@ const prisonCoordBySlug = new Map(prisonCoordsGenerated.map((p) => [p.slug, p]))
 export function getPrisonOverlayCoords(slug: string): { latitude: number; longitude: number } | null {
   const row = prisonCoordBySlug.get(slug);
   if (!row) return null;
-  if (!Number.isFinite(row.latitude) || !Number.isFinite(row.longitude)) return null;
-  if (row.latitude === 0 && row.longitude === 0) return null;
-  return { latitude: row.latitude, longitude: row.longitude };
+  const prison = prisons.find(p => p.countrySlug === "uk" && p.slug === slug);
+  if (!prison) return null;
+  const record = projectMapRecord(prison, row);
+  if (record.latitude == null || record.longitude == null) return null;
+  return { latitude: record.latitude, longitude: record.longitude };
 }
 
 export function getNearbyPrisonsForCourt(court: Court, limit = 3): NearbyPlace[] {

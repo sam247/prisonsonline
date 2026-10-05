@@ -60,6 +60,8 @@ export const legacyInternationalPrisons: Prison[] = [
   {
     name: "Alcatraz Federal Penitentiary",
     slug: "alcatraz",
+    status: "historic",
+    statusSource: "https://www.nps.gov/alca/learn/historyculture/index.htm",
     country: "United States",
     countrySlug: "united-states",
     stateOrRegion: "California",
