@@ -63,7 +63,7 @@ export const guides: Guide[] = [
     title: "What Can You Bring to a Prison Visit",
     slug: "what-can-you-bring-to-prison",
     excerpt:
-      "What typically belongs in your pocket for ID and screening, what stays in the car, and how property rules differ from visits-hall vending.",
+      "What to bring to a prison visit in England and Wales: the accepted ID list, what goes in the locker, banned items, and food, gift and money rules.",
     icon: "Package",
     coverImage: {
       type: "editorial",
@@ -71,17 +71,37 @@ export const guides: Guide[] = [
       alt: "Abstract illustration for visitor belongings — not a photograph of a facility.",
     },
     content:
-      "Prison visits are tightly controlled, and what you can carry through the gate is narrower than everyday life. In most systems you will need valid photo identification and sometimes a second form of ID; everything else is judged against a prohibited-items list that can include phones, cameras, cash beyond small change for vending, and any item that could be passed to a prisoner without staff seeing it. Some halls sell drinks and snacks during the visit; others expect you to arrive with nothing but keys and ID in a clear bag. Never assume that because another prison allowed an item, the next one will too. Read the booking email, the visitors’ leaflet, and the official website for the establishment you are attending. If you are mapping which site you are visiting first, use our prison directory to jump from a name to the correct operator source rather than relying on outdated forum posts.\n\n## Usually allowed\n\nGovernment-issued photo ID, booking reference if you were given one, and any medication in original packaging with documentation when the prison has pre-approved it.\n\n## Usually refused\n\nMobile phones, recording devices, large bags, sharp tools, and gifts intended for the prisoner without going through property channels.\n\nHTML:Browse all establishments from the <a href=\"/prisons\">Prison Finder</a> to confirm contact numbers and visitor pages before you pack.",
+      "For a prison visit in England and Wales, bring accepted ID and very little else. Every visitor aged 16 or over must prove their identity before entry, and most other belongings — phones, bags, food, gifts, and usually cash — go in a locker or stay in the car. Exact rules are set by each prison, so check its visiting page before you travel. This guide is general orientation, not one prison’s rulebook.\n\nUnited States jails and prisons set their own visitor rules through the state DOC, county, or federal Bureau of Prisons. Do not treat England and Wales visit rules as a US rulebook.\n\nHTML:The national ID list is HMPPS’s <a href=\"https://www.gov.uk/government/publications/management-of-security-at-visits-policy-framework-closed-estate/acceptable-forms-of-identification-id-when-visiting-a-prison-in-england-and-wales-annex-a\">Acceptable forms of ID when visiting a prison (Annex A)</a>. GOV.UK’s <a href=\"https://www.gov.uk/staying-in-touch-with-someone-in-prison/banned-items\">banned items</a> page explains what you must never pass to a prisoner. Find the right establishment and its visiting page in the <a href=\"/prisons\">Prison Finder</a>.\n\n## What ID do I need for a prison visit?\n\nAll visitors, apart from children under 16 who are with an adult, must prove who they are. HMPPS accepts one document from its List A — for example a passport, a UK photocard driving licence, an EU or EEA identity card or driving licence, a PASS proof-of-age card with a unique reference number (including the Citizen ID card), an armed forces ID card, or a UK biometric residence permit. If you have none of those, you can usually combine one document from List B (such as an older person’s bus pass or Freedom Pass) with one from List C (such as a birth certificate, marriage certificate, signed tenancy agreement, or a bank card in your name). Without accepted ID you are likely to be turned away unless the prison agreed an exception in advance.\n\n## What you can usually take in\n\nYour ID, your booking confirmation if you were sent one, and a locker key or token. Many prisons let you take a small amount of money or a card for the visits-hall café or vending, but the amount and method are local. Essential medication should be in its original packaging, and it is safest to tell the prison before the visit. Baby items for a young child are often allowed in limited amounts — ask when you book.\n\n## What stays in the locker or car\n\nMobile phones, smartwatches, cameras and other electronic devices, bags, coats in some prisons, food and drink from outside, cigarettes and vapes, and anything you meant to give the prisoner. Lockers are common in visitors’ centres; some prisons ask you to leave pushchairs and car seats too. If you are unsure, assume an item will not be allowed into the hall.\n\n## Items that are banned or illegal to pass on\n\nGOV.UK says it is a criminal offence to send or give a prisoner illegal drugs, alcohol, weapons, a camera, or a mobile phone. You also must not pass anything that is indecent, written in code, or a threat to security. Visitors can expect searches: rub-down searches (including of children) and drug dogs are used at many prisons, and breaking the rules can end a visit or lead to a visiting ban.\n\n## Can you bring food or gifts?\n\nUsually not. Food and drink from outside are normally refused in the visits hall; where refreshments are available they are bought inside, often from a café run by the prison or a charity in the visitors’ centre. Gifts, clothes, and books for the prisoner do not go across the table — they go through the prison’s own property process, which differs between establishments. Money for a prisoner is sent online by debit card rather than handed over on a visit.\n\n## What to wear\n\nHTML:Prisons apply family-friendly dress codes and can turn you away for clothing they consider inappropriate. See <a href=\"/guides/what-to-wear-to-a-prison-visit\">what to wear to a prison visit</a>, and for booking steps and visit allowances see <a href=\"/guides/how-prison-visits-work\">how prison visits work</a>.\n\n## What can prisoners have in their cells?\n\nHTML:That is a separate question from visitor property. In-cell items depend on the prison’s local facilities list and the incentives level the prisoner is on. For daily routine and privileges, see <a href=\"/guides/life-inside-prison\">life inside prison</a> and <a href=\"/guides/rights-of-prisoners\">rights of prisoners</a>.\n\n## Help with visit costs\n\nHTML:If you get certain benefits or have an NHS health certificate, you may be able to get help with travel and other visit costs through GOV.UK’s <a href=\"https://www.gov.uk/help-with-prison-visits\">help with prison visits</a> scheme.\n\n## US visits (high level only)\n\nUS facilities publish their own ID, dress, and property rules, and some require visitors to be pre-approved. Check the facility’s official visiting page.\n\nHTML:Locate the facility via the <a href=\"/prisons\">Prison Finder</a> before relying on general advice.",
     faqs: [
+      {
+        question: "What ID do I need to visit someone in prison?",
+        answer:
+          "In England and Wales every visitor aged 16 or over needs accepted ID — one List A document such as a passport or UK photocard driving licence, or one List B plus one List C document from the HMPPS list. Children under 16 must be with an adult who meets the ID rules.",
+      },
       {
         question: "Can I bring a bag into the visits hall?",
         answer:
-          "Many sites restrict bags to small clear pouches or ban them entirely except for essential medical items. Expect to leave larger bags in a locker or your vehicle.",
+          "Usually not. Most prisons ask you to leave bags in a locker or your car, allowing only essentials such as ID, a locker key, and any pre-agreed medication or baby items.",
       },
       {
         question: "Is cash allowed?",
         answer:
-          "Some visits halls use coins or cards for vending; others restrict cash. Follow the facility’s instructions—bringing large amounts can cause delays or refusal.",
+          "Some visits halls let you bring a small amount of money or a card for the café or vending; others do not. You cannot hand money to a prisoner — send it online by debit card instead.",
+      },
+      {
+        question: "Can you bring food to a prison visit?",
+        answer:
+          "Food and drink from outside are normally not allowed. Many visits halls or visitors’ centres sell refreshments instead; check the prison’s visiting page.",
+      },
+      {
+        question: "Can I give the prisoner a gift during the visit?",
+        answer:
+          "No. Passing items across the table is not allowed, and giving a prisoner drugs, alcohol, weapons, a camera, or a mobile phone is a criminal offence. Gifts and property go through the prison’s own property process.",
+      },
+      {
+        question: "Can I take my phone into a prison visit?",
+        answer:
+          "No. Mobile phones and other electronic devices must be left in a locker or your car before you go through security.",
       },
     ],
   },
