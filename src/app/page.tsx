@@ -406,14 +406,13 @@ export default function HomePage() {
               <Map className="h-7 w-7" />
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-foreground mb-2">Browse prisons by country</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-2">Find prisons near you</h2>
           <p className="text-muted-foreground mb-6">
-            Search and filter the directory for UK and US facilities by name, region, or facility type.
-            An interactive map is not available yet — use the Prison Finder instead.
+            Explore prisons geographically using our interactive map. Search by location to find facilities near any address in the UK or US.
           </p>
-          <TrackedCtaLink href="/prisons" promotionName="home_prison_finder_browse" className="inline-flex">
+          <TrackedCtaLink href="/prison-map" promotionName="home_prison_map" className="inline-flex">
             <Button className="gap-2">
-              <MapPin className="h-4 w-4" /> Browse all prisons
+              <MapPin className="h-4 w-4" /> Open Prison Map
             </Button>
           </TrackedCtaLink>
         </div>
