@@ -211,5 +211,37 @@
     "title": "USP Hazelton",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:USP_Hazelton.jpg",
     "caption": "Entrance of the United States Penitentiary Hazelton."
+  },
+  "hmp-dartmoor": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Dartmoor_Prison_from_the_air.jpg",
+    "credit": "andrewrabbott",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Aerial view of HMP Dartmoor prison",
+    "author": "andrewrabbott",
+    "title": "Dartmoor Prison from the air",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dartmoor_Prison_from_the_air.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Aerial view of HM Prison Dartmoor."
+  },
+  "ashland-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/FCIAshland.jpg",
+    "credit": "U.S. Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Exterior view of FCI Ashland",
+    "author": "U.S. Federal Bureau of Prisons",
+    "title": "FCIAshland",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCIAshland.jpg",
+    "caption": "Exterior of the Federal Correctional Institution, Ashland."
+  },
+  "atwater-usp": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/USPAtwater.jpg",
+    "credit": "Platinummedia",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Aerial view of USP Atwater",
+    "author": "Platinummedia",
+    "title": "USPAtwater",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:USPAtwater.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Aerial view of United States Penitentiary, Atwater, in 2021."
   }
 }
