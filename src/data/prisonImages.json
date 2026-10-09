@@ -243,5 +243,36 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:USPAtwater.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Aerial view of United States Penitentiary, Atwater, in 2021."
+  },
+  "hmp-exeter": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/HM_Prison%2C_Exeter_-_geograph.org.uk_-_1062012.jpg",
+    "credit": "Roger Cornfoot",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior view of HMP Exeter prison",
+    "author": "Roger Cornfoot",
+    "title": "HM Prison, Exeter - geograph.org.uk - 1062012",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison,_Exeter_-_geograph.org.uk_-_1062012.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Exterior of HM Prison Exeter."
+  },
+  "brooklyn-mdc": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Fed29jail5bbtjeh.JPG",
+    "credit": "Jim.henderson",
+    "licence": "Public domain",
+    "alt": "Exterior view of MDC Brooklyn",
+    "author": "Jim.henderson",
+    "title": "Fed29jail5bbtjeh",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fed29jail5bbtjeh.JPG",
+    "caption": "Metropolitan Detention Center, Brooklyn, seen across 29th Street in 2008."
+  },
+  "big-spring-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/FCI_Big_Spring.jpg",
+    "credit": "Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Exterior view of FCI Big Spring",
+    "author": "Federal Bureau of Prisons",
+    "title": "FCI Big Spring",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Big_Spring.jpg",
+    "caption": "Exterior of the Federal Correctional Institution, Big Spring."
   }
 }
