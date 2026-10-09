@@ -31,8 +31,8 @@ import {
   ArrowRight,
   CheckCircle,
   Map,
-  Hotel,
-  Navigation,
+  Shirt,
+  Package,
   HeartHandshake,
 } from "lucide-react";
 
@@ -381,13 +381,20 @@ export default function HomePage() {
             </TrackedInlineLink>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {countriesData.slice(0, 4).map((country) => (
-              <CountryCard
-                key={country.slug}
-                country={country}
-                listedPrisonCount={getPrisonsByCountry(country.slug).length}
-              />
-            ))}
+            {countriesData
+              .map((country) => ({
+                country,
+                listedPrisonCount: getPrisonsByCountry(country.slug).length,
+              }))
+              .filter(({ listedPrisonCount }) => listedPrisonCount > 0)
+              .slice(0, 4)
+              .map(({ country, listedPrisonCount }) => (
+                <CountryCard
+                  key={country.slug}
+                  country={country}
+                  listedPrisonCount={listedPrisonCount}
+                />
+              ))}
           </div>
         </div>
       </section>
@@ -527,29 +534,41 @@ export default function HomePage() {
             <p className="text-muted-foreground mt-1">Resources to help you prepare</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            <TrackedCtaLink href="/visit-planning/hotels" promotionName="home_visit_hotels" className="block">
+            <TrackedCtaLink
+              href="/guides/what-to-wear-to-a-prison-visit"
+              promotionName="home_visit_what_to_wear"
+              className="block"
+            >
               <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 text-center">
                 <CardContent className="p-5">
                   <div className="flex justify-center mb-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                      <Hotel className="h-5 w-5" />
+                      <Shirt className="h-5 w-5" />
                     </div>
                   </div>
-                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-1">Find nearby hotels</h3>
-                  <p className="text-sm text-muted-foreground">Accommodation close to the prison you&apos;re visiting</p>
+                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
+                    What to wear
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Dress codes and gate rules so you are not turned away</p>
                 </CardContent>
               </Card>
             </TrackedCtaLink>
-            <TrackedCtaLink href="/visit-planning/journey" promotionName="home_visit_journey" className="block">
+            <TrackedCtaLink
+              href="/guides/what-can-you-bring-to-prison"
+              promotionName="home_visit_what_to_bring"
+              className="block"
+            >
               <Card className="h-full group transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 border-border/60 text-center">
                 <CardContent className="p-5">
                   <div className="flex justify-center mb-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                      <Navigation className="h-5 w-5" />
+                      <Package className="h-5 w-5" />
                     </div>
                   </div>
-                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-1">Plan your journey</h3>
-                  <p className="text-sm text-muted-foreground">Directions and transport options for your visit</p>
+                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
+                    What you can bring
+                  </h3>
+                  <p className="text-sm text-muted-foreground">ID, property rules, and what usually stays outside</p>
                 </CardContent>
               </Card>
             </TrackedCtaLink>
@@ -565,8 +584,10 @@ export default function HomePage() {
                       <HeartHandshake className="h-5 w-5" />
                     </div>
                   </div>
-                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-1">Get help with visits</h3>
-                  <p className="text-sm text-muted-foreground">Our complete guide to visiting someone in prison</p>
+                  <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
+                    How visits work
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Booking, visitor lists, and what to expect on the day</p>
                 </CardContent>
               </Card>
             </TrackedCtaLink>

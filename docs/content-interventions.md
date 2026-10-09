@@ -129,3 +129,33 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Directory records modified:** 0
 - **Branch:** `bot/content-manager/life-inside-guide-2026-09-28`
 
+
+## 2026-10-05 — INTERVENTION A (PR ready)
+
+- **URL:** `/guides/rights-of-prisoners`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England/Wales first; US high-level separate
+- **Change:** UK-first lead answering “what rights do prisoners have / lose”; Human Rights Act + ECHR Articles 2/3/8/9 framed as protections that can be lawfully limited; corrected voting section to RPA 1983 s.3 (convicted prisoners detained under sentence; remand not covered; Scotland local-election exception; Hirst context) instead of a blanket “serving prisoners cannot vote”; healthcare corrected to NHS in England / local health boards in Wales; GOV.UK-sourced outdoor time, punishments, visit minimums, legal-mail rules; official links (GOV.UK rights, Prison Rules 1999, RPA s.3, PPO, IMB, HMIP, Nelson Mandela Rules); internal links to visits, bring, life-inside, categories, sentences, Prison Finder; FAQ expanded for rights kept/lost, voting, Human Rights Act, healthcare, complaints. Title and slug unchanged; excerpt tightened. No directory edits.
+- **GSC baseline (lookup 2026-10-05, exact URL):**
+  - ~7d: clicks 0, impressions 0 (not found)
+  - ~28d: clicks 0, impressions 1, CTR 0%, avg position 19
+  - ~90d: clicks 0, impressions 89, CTR 0%, avg position ~84.3
+- **Query cluster (90d):** prisoners rights, rights of prisoners, human rights for/of prisoners, what rights do prisoners lose, inmate rights.
+- **Hypothesis:** Direct UK-first answers on rights kept/lost and voting, plus official sources, will lift position and CTR on the prisoner-rights cluster from very deep positions without inventing prison-specific rules.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/prisoner-rights-guide-2026-10-05`
+
+## 2026-10-05 — INTERVENTION B (PR ready)
+
+- **URL:** `/guides/what-can-you-bring-to-prison`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England/Wales first; US high-level separate
+- **Change:** Answer-first “bring accepted ID and very little else” lead; HMPPS Annex A accepted-ID lists (List A, or List B + List C; under-16s with an adult) with official link; usually-allowed vs locker items; GOV.UK banned-items / criminal-offence list and searches; food, gifts and money rules (money sent online, gifts via property process); short in-cell property handoff; help-with-visit-costs link; internal links to what-to-wear (link only — that page stays awaiting_data and is not edited), visits, life-inside, rights, Prison Finder; FAQs for ID, food, gifts, phones. Title and slug unchanged; excerpt tightened. No directory edits.
+- **GSC baseline (lookup 2026-10-05, exact URL):**
+  - ~7d: clicks 0, impressions 0 (not found)
+  - ~28d: clicks 0, impressions 2, CTR 0%, avg position 68
+  - ~90d: clicks 0, impressions 52, CTR 0%, avg position ~61.8
+- **Query cluster (90d):** what can you take when visiting a prisoner, prison items allowed, can you bring food to prison visit, what id do i need for a prison visit, what are prisoners allowed to have in their cells.
+- **Hypothesis:** A concrete, officially sourced ID list and clear allowed/locker/banned answers will improve relevance and CTR for visitor-property queries without inventing prison-specific rules.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/visit-bring-guide-2026-10-05`
