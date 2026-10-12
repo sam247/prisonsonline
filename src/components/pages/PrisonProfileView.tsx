@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isHmppsGroupRegion, otherPrisonsInLabel, prisonsInLabel, regionDisplayLabel } from "@/lib/prisons/hmppsGroupLabel";
 import { getPrisonsByRegion } from "@/data/prisons";
 import {
   getRelatedArticlesForPrison,
@@ -200,7 +201,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
           <div className="flex items-center gap-2 text-primary-foreground/80">
             <MapPin className="h-4 w-4 shrink-0" aria-hidden />
             <p>
-              {prison.city}, {prison.stateOrRegion}, {prison.country}
+              {isHmppsGroupRegion(prison)
+                ? `${prison.city}, ${prison.country} · ${regionDisplayLabel(prison)}`
+                : `${prison.city}, ${prison.stateOrRegion}, ${prison.country}`}
             </p>
           </div>
         </div>
@@ -251,7 +254,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 href={`/prisons/${prison.countrySlug}/${prison.regionSlug}`}
                 className="text-accent hover:underline w-fit"
               >
-                Other prisons in {prison.stateOrRegion}
+                {otherPrisonsInLabel(prison)}
               </Link>
               <Link href={`/prisons/${prison.countrySlug}`} className="text-accent hover:underline w-fit">
                 All prisons in {prison.country}
@@ -550,7 +553,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                   href={`/prisons/${prison.countrySlug}/${prison.regionSlug}`}
                   className="text-sm text-accent hover:underline inline-flex items-center gap-1"
                 >
-                  Prisons in {prison.stateOrRegion}
+                  {prisonsInLabel(prison)}
                   <ChevronRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
                 </Link>
               </CardContent>
@@ -697,7 +700,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             aria-labelledby="other-prisons-region-heading"
           >
             <h2 id="other-prisons-region-heading" className="text-xl font-bold mb-4">
-              Other prisons in {prison.stateOrRegion}
+              {otherPrisonsInLabel(prison)}
             </h2>
             <ul className="space-y-3 text-sm max-w-2xl">
               {regionLinkPrisons.map((p) => {
