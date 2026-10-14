@@ -44,10 +44,12 @@ export function CountryCard({ country, listedPrisonCount }: CountryCardProps) {
                 {prisonCount} {prisonCount === 1 ? "prison" : "prisons"}
               </span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Users className="h-3.5 w-3.5" />
-              <span>{country.prisonPopulation.toLocaleString()} inmates</span>
-            </div>
+            {country.prisonPopulation != null && country.prisonPopulation > 0 && (
+              <div className="flex items-center gap-1.5">
+                <Users className="h-3.5 w-3.5" />
+                <span>{country.prisonPopulation.toLocaleString()} inmates</span>
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
