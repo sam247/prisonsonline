@@ -14,7 +14,10 @@ export const INTL_COUNTRIES = {
   au: { name: "Australia", regionField: "region", levels: ["state", "territory"] },
   nz: { name: "New Zealand", regionField: "region", levels: ["national"] },
   ie: { name: "Ireland", regionField: "region", levels: ["national"] },
-  za: { name: "South Africa", regionField: "region", levels: ["national"] },
+  // ZA: region level is the official DCS region; the official management area is required and stands in
+  // for the city where DCS gives none. The operator may be absent only for a centre DCS lists as private
+  // without naming the operator; the profile then says so.
+  za: { name: "South Africa", regionField: "dcsRegion", levels: ["national"], requiredFields: ["managementArea"], cityFallbackField: "managementArea", allowUnnamedPrivateOperator: true },
 };
 
 const STATUSES = new Set(["open", "closed", "historic"]);
@@ -43,7 +46,12 @@ export function validateBundle(cc, rows) {
   const seen = new Set();
   rows.forEach((r, i) => {
     const at = `${cc}[${i}] ${r.slug ?? "?"}`;
-    for (const f of ["slug", "name", "country", "jurisdiction", "jurisdictionLevel", "operator", "operatorType", "status", "city", "sourceUrl", "checkedAt", cfg.regionField]) {
+    const required = ["slug", "name", "country", "jurisdiction", "jurisdictionLevel", "operatorType", "status", "sourceUrl", "checkedAt", cfg.regionField, ...(cfg.requiredFields ?? [])];
+    if (!(cfg.cityFallbackField && r.city == null)) required.push("city");
+    if (!(cfg.allowUnnamedPrivateOperator && r.operator == null && r.operatorType === "private")) required.push("operator");
+    if ("province" in r && cc === "za") errors.push(`${at}: inferred province must not be present`);
+    if (cc === "za" && "region" in r) errors.push(`${at}: inferred region must not be present; use dcsRegion`);
+    for (const f of required) {
       if (typeof r[f] !== "string" || !r[f].trim()) errors.push(`${at}: missing ${f}`);
     }
     if (r.country !== cc) errors.push(`${at}: country must be "${cc}"`);
@@ -70,6 +78,7 @@ export function validateBundle(cc, rows) {
 
 function facilityLabel(cc, r) {
   if (cc === "ca") return r.jurisdictionLevel === "federal" ? "Federal correctional institution" : `${r.jurisdictionLevel === "territorial" ? "Territorial" : "Provincial"} correctional facility`;
+  if (cc === "za") return "Correctional centre";
   if (cc === "au") return `${r.operatorType === "private" ? "Privately operated" : "Publicly operated"} correctional centre`;
   return "Correctional facility";
 }
@@ -77,6 +86,10 @@ function facilityLabel(cc, r) {
 export function toPrison(cc, r) {
   const cfg = INTL_COUNTRIES[cc];
   const region = r[cfg.regionField].trim();
+  const city = (r.city ?? r[cfg.cityFallbackField] ?? "").trim();
+  const operator = r.operator ?? "Private operator (not named by the official source)";
+  const area = r.managementArea ? `the ${r.managementArea.trim()} management area of the DCS ${region} region` : "";
+  const place = area ? (r.city ? `${city}, in ${area}` : area) : `${city}, ${region}`;
   const type = r.facilityType?.trim() || facilityLabel(cc, r);
   const located = r.coordinateEvidence?.precision === "facility" && typeof r.latitude === "number" && typeof r.longitude === "number";
   const statusNote = r.status === "closed" && /temporarily closed/i.test(r.notes ?? "") ? "Temporarily closed" : undefined;
@@ -88,11 +101,12 @@ export function toPrison(cc, r) {
     countrySlug: cc,
     stateOrRegion: region,
     regionSlug: slugify(region),
-    city: r.city.trim(),
+    city,
+    ...(r.managementArea ? { managementArea: r.managementArea.trim() } : {}),
     securityLevel: SECURITY_UNION.has(r.securityLevel) ? r.securityLevel : "Not specified",
     ...(r.securityLevel && !/^not specified$/i.test(r.securityLevel.trim()) ? { securityDescription: r.securityLevel.trim() } : {}),
     capacity: r.capacity ?? 0,
-    operator: r.operator,
+    operator,
     openedYear: r.yearOpened ?? 0,
     latitude: located ? r.latitude : 0,
     longitude: located ? r.longitude : 0,
@@ -101,7 +115,7 @@ export function toPrison(cc, r) {
     ...(r.statusSource ? { statusSource: r.statusSource } : {}),
     ...(statusNote ? { statusNote } : {}),
     type,
-    overview: `${r.name.trim()} is a ${type.toLowerCase()} in ${r.city.trim()}, ${region}, operated by ${r.operator}.${statusPhrase}`,
+    overview: `${r.name.trim()} is a ${type.toLowerCase()} in ${place}, operated by ${r.operator ? (/^Department /.test(r.operator) ? `the ${r.operator}` : r.operator) : "a private operator not named by the official source"}.${statusPhrase}`,
     history: "",
     prisonLife: "",
     visitingInfo: "",
