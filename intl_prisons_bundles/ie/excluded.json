@@ -1,0 +1,51 @@
+[
+  {
+    "name": "St Patrick's Institution",
+    "jurisdiction": "Ireland (seed)",
+    "reason": "Closed/historic: former young offenders institution (Mountjoy Campus West), closed 2017. Still named on the IPS 'Request Visit' page but has no prison page in the IPS prisons list; not published.",
+    "evidenceUrl": "https://www.irishprisons.ie/prisons/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Fort Mitchel (Spike Island)",
+    "jurisdiction": "Ireland (seed)",
+    "reason": "Closed/historic (closed 2004); not in IPS prisons list. Could be added later as historic only if real content and an official status source.",
+    "evidenceUrl": "https://www.irishprisons.ie/prisons/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Shanganagh Castle",
+    "jurisdiction": "Ireland (seed)",
+    "reason": "Closed/historic open centre (closed 2002); not in IPS prisons list.",
+    "evidenceUrl": "https://www.irishprisons.ie/prisons/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Cork Prison (old building)",
+    "jurisdiction": "Ireland (seed)",
+    "reason": "Superseded: replaced by new Cork Prison on Rathmore Road (2016); current prison published.",
+    "evidenceUrl": "https://www.irishprisons.ie/prison/cork-prison/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Central Mental Hospital / National Forensic Mental Health Service",
+    "jurisdiction": "Ireland (seed)",
+    "reason": "Out of scope: forensic hospital (HSE), not IPS.",
+    "evidenceUrl": "https://www.irishprisons.ie/prisons/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Oberstown Children Detention Campus",
+    "jurisdiction": "Ireland (seed)",
+    "reason": "Out of scope: youth detention (Dept of Children), not IPS.",
+    "evidenceUrl": "https://www.irishprisons.ie/prisons/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Building Services Division / Operational Support Group / Prison Service Escort Corps / IPS College",
+    "jurisdiction": "Ireland (seed)",
+    "reason": "Out of scope: IPS support units listed under Prisons menu, not places of detention.",
+    "evidenceUrl": "https://www.irishprisons.ie/prisons/",
+    "checkedAt": "2026-10-16"
+  }
+]
