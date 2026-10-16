@@ -274,5 +274,114 @@
     "title": "FCI Big Spring",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Big_Spring.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Big Spring."
+  },
+  "goulburn-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/GoulburnGaol.jpg",
+    "credit": "Matilda",
+    "licence": "CC BY-SA 2.5",
+    "alt": "Exterior view of Goulburn Correctional Centre",
+    "author": "Matilda",
+    "title": "GoulburnGaol",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:GoulburnGaol.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "caption": "Goulburn Correctional Centre, New South Wales."
+  },
+  "bathurst-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Penitentiary_Batrurst%2C_NSW_Australia.jpg",
+    "credit": "Ian Sutton",
+    "licence": "CC BY 2.0",
+    "alt": "Exterior view of Bathurst Correctional Centre",
+    "author": "Ian Sutton",
+    "title": "Penitentiary Batrurst, NSW Australia",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Penitentiary_Batrurst,_NSW_Australia.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "caption": "Bathurst Correctional Centre (Bathurst Gaol), New South Wales."
+  },
+  "cessnock-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cessnock_Correctional_Centre_%281%29.jpg",
+    "credit": "Eva Rinaldi",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior view of Cessnock Correctional Centre",
+    "author": "Eva Rinaldi",
+    "title": "Cessnock Correctional Centre (1)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cessnock_Correctional_Centre_(1).jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Cessnock Correctional Centre, New South Wales, in 2013."
+  },
+  "cooma-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Cooma_Correctional_Centre_Entrance.jpg",
+    "credit": "Ymblanter",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of Cooma Correctional Centre",
+    "author": "Ymblanter",
+    "title": "Cooma Correctional Centre Entrance",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cooma_Correctional_Centre_Entrance.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Entrance to Cooma Correctional Centre, New South Wales."
+  },
+  "melbourne-assessment-prison-precinct": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/HM_Melb_Assessment_Prison.jpg",
+    "credit": "Canley",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of Melbourne Assessment Prison",
+    "author": "Canley",
+    "title": "HM Melb Assessment Prison",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Melb_Assessment_Prison.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Melbourne Assessment Prison on Spencer Street, West Melbourne."
+  },
+  "woodford-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Woodford_Correctional_Centre.jpg",
+    "credit": "Shiftchange",
+    "licence": "CC0",
+    "alt": "Exterior view of Woodford Correctional Centre",
+    "author": "Shiftchange",
+    "title": "Woodford Correctional Centre",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Woodford_Correctional_Centre.jpg",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "caption": "Woodford Correctional Centre, Queensland."
+  },
+  "yatala-labour-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Yatala_prison_rear_2008.JPG",
+    "credit": "Peripitus",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of Yatala Labour Prison",
+    "author": "Peripitus",
+    "title": "Yatala prison rear 2008",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yatala_prison_rear_2008.JPG",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "caption": "Rear of Yatala Labour Prison, Adelaide, in 2008."
+  },
+  "albany-regional-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Albany_Regional_Prison2.jpg",
+    "credit": "Hughesdarren",
+    "licence": "Public domain",
+    "alt": "Exterior view of Albany Regional Prison",
+    "author": "Hughesdarren",
+    "title": "Albany Regional Prison2",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albany_Regional_Prison2.jpg",
+    "caption": "Albany Regional Prison, Western Australia."
+  },
+  "bandyup-women-s-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/BandyupWomensPrison_gobeirne.jpg",
+    "credit": "Greg O'Beirne",
+    "licence": "CC BY 3.0",
+    "alt": "Exterior view of Bandyup Women's Prison",
+    "author": "Greg O'Beirne",
+    "title": "BandyupWomensPrison gobeirne",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BandyupWomensPrison_gobeirne.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "caption": "Aerial view of Bandyup Women's Prison, West Swan, in 2004."
+  },
+  "alexander-maconochie-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/ACT_gaol.jpg",
+    "credit": "Graeme Bartlett",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of Alexander Maconochie Centre",
+    "author": "Graeme Bartlett",
+    "title": "ACT gaol",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ACT_gaol.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Aerial view of the Alexander Maconochie Centre, Canberra, near completion in 2008."
   }
 }
