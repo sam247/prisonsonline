@@ -35,9 +35,20 @@ export function normalizePrisonImageKey(raw: string): string | null {
 
 /**
  * Resolved Wikimedia (or other) facility photo for a prison slug. Used when merging into `Prison.facilityImage`.
+ *
+ * Image records are keyed by bare slug. A slug used by more than one country (e.g. the frozen
+ * `prince-albert-correctional-centre`, CA and ZA) is ambiguous: its bare-slug record is never used,
+ * so one country's photo cannot appear on the other's page. Such a prison only gets an image from a
+ * country-scoped key (`<countrySlug>/<slug>`).
  */
-export function getPrisonImage(slug: string): RealFacilityImage | undefined {
+export function getPrisonImage(
+  slug: string,
+  scope?: { countrySlug: string; ambiguousSlugs: ReadonlySet<string> },
+): RealFacilityImage | undefined {
+  const scoped = scope ? prisonImages[`${scope.countrySlug}/${slug}`] : undefined;
+  if (!scoped && scope?.ambiguousSlugs.has(slug)) return undefined;
   const row =
+    scoped ??
     prisonImages[slug] ??
     prisonImageSlugAliases[slug]?.map((alias) => prisonImages[alias]).find((candidate) => Boolean(candidate));
   if (!row?.imageUrl?.trim()) return undefined;

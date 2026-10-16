@@ -55,6 +55,8 @@ export interface Prison {
   statusSource?: string;
   /** Qualifier from the official source, e.g. "Temporarily closed". Status stays closed. */
   statusNote?: string;
+  /** Official population/role description where the source gives one instead of a facility type. */
+  facilityDescription?: string;
   type: string;
   overview: string;
   history: string;
