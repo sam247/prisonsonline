@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const ukVerificationOverlay: OverlayFile = {
   "generatedBy": "uk-prison-verifier",
-  "updatedAt": "2026-09-18T08:03:14.138Z",
+  "updatedAt": "2026-10-16T08:09:44.873Z",
   "entries": {
     "uk/hmp-birmingham": {
       "prisonSlug": "hmp-birmingham",
@@ -13,6 +13,15 @@ export const ukVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.gov.uk/guidance/birmingham-prison",
       "overrides": {
         "phone": "0121 598 8000"
+      }
+    },
+    "uk/hmp-elmley": {
+      "prisonSlug": "hmp-elmley",
+      "countrySlug": "uk",
+      "appliedAt": "2026-10-16T08:09:44.873Z",
+      "sourceUrl": "https://www.gov.uk/guidance/elmley-prison",
+      "overrides": {
+        "email": "businesshubelmleycorrespondence@justice.gov.uk"
       }
     }
   }
