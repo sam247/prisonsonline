@@ -7,6 +7,8 @@ import { getRelatedPrisonsForProfile } from "@/lib/queries/relatedPrisons";
 import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
 import { getBaseUrl } from "@/lib/site";
 import type { Prison } from "@/types/prison";
+import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
+import { ContentImage } from "@/components/media/ContentImage";
 
 /**
  * Profile for official-source international rows (ca, au, nz, ie, za).
@@ -58,6 +60,7 @@ function hostname(url: string): string {
 
 export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
   const status = intlStatusLabel(prison);
+  const facilityVisual = resolvePrisonFacilityVisual(prison);
   const related = getRelatedPrisonsForProfile(prison, 6);
   const regionHref = `/prisons/${prison.countrySlug}/${prison.regionSlug}`;
   const countryHref = `/prisons/${prison.countrySlug}`;
@@ -143,6 +146,15 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
                   ? `This facility is listed by its official source as ${prison.statusNote ? prison.statusNote.toLowerCase() : "closed"}. It is kept here for reference.`
                   : "This is a historic facility and no longer holds prisoners."}
               </p>
+            ) : null}
+
+            {facilityVisual.kind === "real" ? (
+              <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
+                <h2 id="facility-visual-heading" className="sr-only">
+                  Establishment image
+                </h2>
+                <ContentImage image={facilityVisual.image} />
+              </section>
             ) : null}
 
             <section aria-labelledby="overview-heading">
