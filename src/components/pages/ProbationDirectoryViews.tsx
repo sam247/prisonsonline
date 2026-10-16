@@ -15,7 +15,7 @@ export function ProbationDirectoryIndexView({
       <header>
         <h1 className="text-3xl font-bold tracking-tight">UK Probation Directory</h1>
         <p className="text-muted-foreground mt-2 max-w-3xl">
-          Structured directory of probation offices and reporting centres in the current HMPPS-derived dataset ({total} centres).
+          Structured directory of probation offices and reporting centres listed from HMPPS sources ({total} centres).
         </p>
       </header>
       <section>
@@ -76,7 +76,7 @@ export function ProbationRegionView({
         ))}
       </ul>
       <p className="text-xs text-muted-foreground">
-        Source data: HMPPS listing import used in this build. Confirm live details before travel.
+        Source: HMPPS public listings. Confirm live details before travel.
       </p>
       <Link href="/probation" className="text-sm text-accent hover:underline">
         Back to probation directory
@@ -120,7 +120,7 @@ export function ProbationCentreView({ centre }: { centre: ProbationCentre }) {
       </Card>
       <div className="text-sm text-muted-foreground space-y-2">
         <p>
-          This page is a factual directory listing generated from public-service dataset fields. Contact routes and opening arrangements may change.
+          This page is a factual directory listing based on published HMPPS information. Contact routes and opening arrangements may change.
         </p>
         {centre.regionSlug ? (
           <p>

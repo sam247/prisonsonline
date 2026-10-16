@@ -214,13 +214,13 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
           <p className="text-base text-foreground/90 leading-relaxed">{leadSummaryText(prison)}</p>
           {prison.dataProvenance === "hmpps_import" && (
             <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-              Profile fields are derived from published HMPPS listing data used in this site build. Narrative sections
-              below summarise import fields; they are not independent inspections or reports.
+              Profile fields are derived from published HMPPS listing data. Narrative sections
+              below summarise published listing details; they are not independent inspections or reports.
             </p>
           )}
           {prison.dataProvenance === "bop_import" && (
             <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-              Profile fields are derived from the BOP-derived facility listing used in this build. Narrative sections are
+              Profile fields are based on the Federal Bureau of Prisons facility listing. Narrative sections are
               neutral framing only; confirm all operational detail with the Federal Bureau of Prisons.
             </p>
           )}
@@ -557,7 +557,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 <CardContent className="p-6 space-y-3">
                   <h3 className="font-semibold">Federal directory</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Links appear only when this build publishes the matching hub or article.
+                    Links appear only where a matching hub or article is available.
                   </p>
                   <ul className="text-sm space-y-2">
                     {usFacilityHub && (
@@ -596,7 +596,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                   <CardContent className="p-6 space-y-4">
                     <h3 className="font-semibold">Directory hubs</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                      Only hubs that meet listing thresholds in this build are linked.
+                      Only hubs with enough listed prisons are linked.
                     </p>
                     {(operatorHub || securityHub || functionHub || subgroupHub) && (
                       <div>
@@ -744,7 +744,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
               {prison.countrySlug === "us" && prison.dataProvenance === "bop_import"
                 ? "Other federal sites in the same state or with the same facility-type code where available, then other US federal listings in this import."
-                : "Other establishments in the same region, operator, or security category where the dataset supports it, then other sites in the same country."}
+                : "Other establishments in the same region, operator, or security category where that information is available, then other sites in the same country."}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {related.map((p) => (

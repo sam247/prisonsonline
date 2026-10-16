@@ -263,7 +263,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-2xl font-bold text-foreground">Recently updated prisons</h2>
-              <p className="text-muted-foreground mt-1">Profiles with the freshest source metadata in this build</p>
+              <p className="text-muted-foreground mt-1">Recently updated prison profiles</p>
             </div>
             <TrackedInlineLink
               href="/prisons"

@@ -32,9 +32,9 @@ export default function UsFacilityTypeHubPage({ params }: Props) {
 
   const path = `/prisons/us/facility-type/${params.typeSlug}`;
   const title = `${r.typeLabel} federal facilities (United States)`;
-  const subtitle = `${r.prisons.length} establishments from the BOP-derived import in this build.`;
+  const subtitle = `${r.prisons.length} Federal Bureau of Prisons establishments.`;
   const intro =
-    "Facility type codes come from the federal import (e.g. FCI, USP, FPC). They are administrative labels for browsing this directory, not a substitute for official BOP classification pages.";
+    "Facility type codes come from the Federal Bureau of Prisons listing (e.g. FCI, USP, FPC). They are administrative labels for browsing this directory, not a substitute for official BOP classification pages.";
   const readMore = readMoreArticleForUsFacilityTypeHub(params.typeSlug);
 
   return (

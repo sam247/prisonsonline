@@ -128,10 +128,10 @@ export function siblingIntentsFor(intent: PrisonIntentSlug): PrisonIntentSlug[] 
 
 function provenancePhrase(p: Prison): string {
   if (p.dataProvenance === "hmpps_import") {
-    return "Fields on this profile summarise the HMPPS-derived listing used in this site build, not independent inspection reports.";
+    return "Fields on this profile summarise published HMPPS listing details, not independent inspection reports.";
   }
   if (p.dataProvenance === "bop_import") {
-    return "Fields here reflect the Federal Bureau of Prisons–derived listing in this build; operational detail can change without notice.";
+    return "Fields here reflect the Federal Bureau of Prisons facility listing; operational detail can change without notice.";
   }
   return "This page is directory context only; it does not replace notices, contracts, or instructions from the custodial operator.";
 }
@@ -193,9 +193,9 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
   const listedAs = hasUkHmppsTypeFields(prison) ? typeWithArticle : `${typeWithArticle} establishment`;
   const openers = [
     `${prison.name} is listed in this directory as ${listedAs} in ${loc}, operated where shown by ${prison.operator?.trim() || "the relevant authority"}.`,
-    `This profile covers ${prison.name} in ${loc}; the listing describes it as ${typeWithArticle} for navigation purposes within this dataset.`,
-    `Readers looking up ${prison.name} will see ${typeBare} labelling and ${loc} as recorded in the import behind this build.`,
-    `${prison.name} appears here with ${typeBare} labelling and a ${loc} address context drawn from the same structured import as the main prison page.`,
+    `This profile covers ${prison.name} in ${loc}; the listing describes it as ${typeWithArticle} for navigation purposes on this site.`,
+    `Readers looking up ${prison.name} will see ${typeBare} labelling and ${loc} as recorded in the published listing.`,
+    `${prison.name} appears here with ${typeBare} labelling and a ${loc} address context drawn from the same listing details as the main prison page.`,
   ];
   const intro = openers[idxOpen];
 

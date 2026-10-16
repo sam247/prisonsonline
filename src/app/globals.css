@@ -99,6 +99,13 @@
     @apply border-border;
   }
 
+  /* Guard against sideways scroll from full-width-responsive AdSense units (100vw + scrollbar)
+     and other off-canvas children. `clip` (not `hidden`) keeps position: sticky working. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }

@@ -4,7 +4,7 @@ import type { UkCollectionSlug } from "@/lib/programmatic/collections";
 import { getProgrammaticCollection } from "@/lib/programmatic/collections";
 
 const DATA_CAVEAT =
-  "Figures and labels on Prisons Online come from the HMPPS prison export used in this build. Security category and function wording are administrative fields in that source (and category may be inferred where the export does not map cleanly). Always confirm visiting rules, contact details, and regime information with official HMPPS or GOV.UK sources.";
+  "Figures and labels on Prisons Online come from published HMPPS prison information. Security category and function wording are administrative fields in that source (and category may be inferred where the export does not map cleanly). Always confirm visiting rules, contact details, and regime information with official HMPPS or GOV.UK sources.";
 
 function sortPrisonsByName(prisons: Prison[]): Prison[] {
   return [...prisons].sort((a, b) => a.name.localeCompare(b.name, "en-GB"));
@@ -37,7 +37,7 @@ export function buildRegionArticleSections(
       id: "grouping",
       heading: "How the regional group is defined",
       paragraphs: [
-        `We include ${count} establishment${count === 1 ? "" : "s"} whose administrative region in the import matches “${regionName}”. Region names and boundaries follow the source data; if a site sits near a border, check the establishment profile and official listings.`,
+        `We include ${count} establishment${count === 1 ? "" : "s"} whose administrative region is listed as “${regionName}”. Region names and boundaries follow the source data; if a site sits near a border, check the establishment profile and official listings.`,
         DATA_CAVEAT,
       ],
     },
@@ -62,7 +62,7 @@ export function buildRegionArticleSections(
     {
       question: "Is this an official government list?",
       answer:
-        "No. It is an independent directory built from an HMPPS-derived dataset. Always use GOV.UK and HMPPS sources for authoritative information.",
+        "No. It is an independent directory built from published HMPPS information. Always use GOV.UK and HMPPS sources for authoritative information.",
     },
     {
       question: "Why might my prison not appear in this region?",
@@ -84,7 +84,7 @@ export function buildOperatorArticleSections(
       id: "purpose",
       heading: "What this page is for",
       paragraphs: [
-        `This article explains how we list prisons associated with “${operatorLabel}” in our England and Wales dataset. It complements the operator hub page, which shows the live grid for that label.`,
+        `This article explains how we list prisons associated with “${operatorLabel}” in our England and Wales listings. It complements the operator hub page, which shows the live grid for that label.`,
         "Operator strings are taken from the HMPPS export; management arrangements can change, so treat the label as a directory snapshot rather than a legal description of the contract.",
       ],
     },
@@ -92,7 +92,7 @@ export function buildOperatorArticleSections(
       id: "count",
       heading: "Establishments in this operator group",
       paragraphs: [
-        `The current import includes ${count} establishment${count === 1 ? "" : "s"} sharing this operator label.`,
+        `We currently list ${count} establishment${count === 1 ? "" : "s"} sharing this operator label.`,
         examples
           ? `Examples include: ${examples}. Full membership is linked below and on the operator hub.`
           : "Linked profiles below match this group.",
@@ -104,7 +104,7 @@ export function buildOperatorArticleSections(
     {
       question: "Does “operator” mean the prison is privately run?",
       answer:
-        "Not necessarily. The field reflects the label in the import (which may include the public sector as well as contracted providers). Check official sources for contract status.",
+        "Not necessarily. The field reflects the published operator label (which may include the public sector as well as contracted providers). Check official sources for contract status.",
     },
   ];
   return { bodySections, faqs };
@@ -136,7 +136,7 @@ export function buildSecurityArticleSections(
     },
     {
       id: "examples",
-      heading: "Examples from the dataset",
+      heading: "Examples",
       paragraphs: [
         examples
           ? `Illustrative entries: ${examples}. Use the hub page for the complete filtered grid.`
@@ -170,14 +170,14 @@ export function buildCollectionArticleSections(
         `“${title}” is a thematic slice of our England and Wales directory. This article explains the intent of that slice and how many prisons it currently contains.`,
         spec?.intro
           ? `From the collection hub: ${spec.intro}`
-          : "The collection hub applies transparent filters to the same import you see elsewhere on the site.",
+          : "The collection hub applies transparent filters to the same listings you see elsewhere on the site.",
       ],
     },
     {
       id: "count",
       heading: "Size of the group today",
       paragraphs: [
-        `The current import places ${count} establishment${count === 1 ? "" : "s"} in this thematic group. Counts change when the underlying export changes.`,
+        `We currently place ${count} establishment${count === 1 ? "" : "s"} in this thematic group. Counts change when the published listings change.`,
         examples ? `Examples include: ${examples}.` : "",
         DATA_CAVEAT,
       ].filter(Boolean),
@@ -250,18 +250,18 @@ export function buildExplainerSpecs(params: {
           id: "scope",
           heading: "Scope",
           paragraphs: [
-            "Prisons Online is a reference site. Category and function fields are displayed as they are modelled from the HMPPS prison export in this build.",
+            "Prisons Online is a reference site. Category and function fields are displayed as they are published in HMPPS prison information.",
             DATA_CAVEAT,
           ],
         },
         {
           id: "counts",
-          heading: "What the import contains today",
+          heading: "What we list today",
           paragraphs: [
-            `Across England and Wales we currently hold ${ukPrisonCount} prison records in this build.`,
+            `Across England and Wales we currently hold ${ukPrisonCount} prison records.`,
             catSummary
               ? `Category-band counts in our model (for hubs that meet our minimum size rules) include: ${catSummary}.`
-              : "Category bands are available on hub pages where the dataset groups enough establishments together.",
+              : "Category bands are available on hub pages where enough establishments share a band.",
           ],
         },
         {
@@ -284,7 +284,7 @@ export function buildExplainerSpecs(params: {
       key: "training-reception-hmpps-fields",
       title: "What “training” and “reception” mean in our HMPPS-based listings",
       description:
-        "How we use predominant function text from the import for training and reception themed collections—without claiming a legal definition.",
+        "How we use published predominant function text for training and reception themed collections—without claiming a legal definition.",
       intro:
         "Training and reception themed pages filter on wording in the HMPPS export. This article clarifies that mechanism for readers using our collections.",
       relatedGuides: ["what-happens-going-to-prison", "life-inside-prison"],
@@ -318,7 +318,7 @@ export function buildExplainerSpecs(params: {
     },
     {
       key: "private-prisons-dataset",
-      title: "Privately managed prisons in this dataset",
+      title: "Privately managed prisons in England and Wales",
       description:
         "How we flag privately managed prisons from operator and sub-group fields, and how many appear in the current England and Wales import.",
       intro:
@@ -332,7 +332,7 @@ export function buildExplainerSpecs(params: {
             "We reuse the same rules as our private-prisons collection: operator names and sub-group labels that indicate private management in the HMPPS export.",
             `At present ${privateCollectionCount} establishment${privateCollectionCount === 1 ? "" : "s"} appear in that thematic collection.`,
             examplePrivateNames
-              ? `Examples from the dataset: ${examplePrivateNames}.`
+              ? `Examples: ${examplePrivateNames}.`
               : "",
             DATA_CAVEAT,
           ].filter(Boolean),
@@ -352,14 +352,14 @@ export function buildExplainerSpecs(params: {
       description:
         "How open-condition sites are identified from category and function text in the import, and how many appear in our open-prisons collection.",
       intro:
-        "Open conditions are sensitive to regime and category. Our site reflects import fields only.",
+        "Open conditions are sensitive to regime and category. Our site reflects published listing details only.",
       relatedGuides: ["prison-categories-explained", "life-inside-prison"],
       bodySections: [
         {
           id: "open",
           heading: "Open prisons collection",
           paragraphs: [
-            `Our open-prisons thematic list includes Category D sites and establishments whose predominant function text references open conditions where the import supports it. ${openCollectionCount} establishment${openCollectionCount === 1 ? "" : "s"} currently match that collection.`,
+            `Our open-prisons thematic list includes Category D sites and establishments whose predominant function text references open conditions where the published text supports it. ${openCollectionCount} establishment${openCollectionCount === 1 ? "" : "s"} currently match that collection.`,
             DATA_CAVEAT,
           ],
         },
@@ -401,7 +401,7 @@ export function buildExplainerSpecs(params: {
           id: "data",
           heading: "Data freshness",
           paragraphs: [
-            `This build includes ${ukPrisonCount} England and Wales prison records from our pipeline. Regenerate the site after import updates to refresh counts and labels.`,
+            `We currently list ${ukPrisonCount} England and Wales prison records. Counts and labels are refreshed when official listings change.`,
           ],
         },
       ],

@@ -1,3 +1,4 @@
+import { visitorVisitingInfo } from "@/lib/seo/visitorCopy";
 import type { Prison } from "@/types/prison";
 import { joinAddressAndPostcode } from "@/lib/address";
 import {
@@ -75,7 +76,7 @@ export function buildHowToVisitHeading(name: string): string {
 }
 
 export function buildHowToVisitBody(p: Prison): string {
-  const raw = p.visitingInfo?.trim();
+  const raw = visitorVisitingInfo(p);
   const appendIdx = slugVariantIndex(p.slug, VISIT_APPEND_VARIANTS.length);
   const append = VISIT_APPEND_VARIANTS[appendIdx];
 
