@@ -27,9 +27,16 @@ function withVerifiedFacts(p: Prison): Prison {
 }
 
 /** Merges `src/data/prisonImages.json` (from `data/prison-images.csv` + build script) when no explicit `facilityImage` on the row. */
+const slugCountries = new Map<string, Set<string>>();
+for (const p of basePrisons) slugCountries.set(p.slug, (slugCountries.get(p.slug) ?? new Set()).add(p.countrySlug));
+/** Slugs shared by more than one country; their bare-slug image records are ambiguous and never applied. */
+export const crossCountrySlugs: ReadonlySet<string> = new Set(
+  Array.from(slugCountries).filter(([, ccs]) => ccs.size > 1).map(([slug]) => slug),
+);
+
 export const prisons: Prison[] = basePrisons.map((p) => ({
   ...withVerifiedFacts(p),
-  facilityImage: p.facilityImage ?? getPrisonImage(p.slug),
+  facilityImage: p.facilityImage ?? getPrisonImage(p.slug, { countrySlug: p.countrySlug, ambiguousSlugs: crossCountrySlugs }),
 }));
 
 export const countries = Array.from(new Set(prisons.map((p) => p.country))).sort();

@@ -80,17 +80,42 @@ function facilityLabel(cc, r) {
   if (cc === "ca") return r.jurisdictionLevel === "federal" ? "Federal correctional institution" : `${r.jurisdictionLevel === "territorial" ? "Territorial" : "Provincial"} correctional facility`;
   if (cc === "za") return "Correctional centre";
   if (cc === "au") return `${r.operatorType === "private" ? "Privately operated" : "Publicly operated"} correctional centre`;
+  if (cc === "ie" || cc === "nz") return "Prison";
   return "Correctional facility";
+}
+
+const FACILITY_NOUN = /\b(centre|center|jail|prison|institution|facility|camp|complex|penitentiary)\b/i;
+
+/**
+ * Overview sentence built only from bundle facts. Official capitalisation is kept; a clause that would not
+ * read grammatically (e.g. a population description in facilityType) is dropped from the sentence rather
+ * than forced into it.
+ */
+export function buildOverview({ name, type, typeIsOwnLabel, city, region, placeText, operator, operatorMissingText, statusPhrase }) {
+  const typeText = typeIsOwnLabel ? type.charAt(0).toLowerCase() + type.slice(1) : type;
+  const article = /^[aeiou]/i.test(typeText) ? "an" : "a";
+  const sameName = (a, b) => a.trim().toLowerCase() === b.trim().toLowerCase();
+  const place = city && region && !sameName(city, region) ? `${city}, ${region}` : city || region;
+  const where = placeText ? ` in ${placeText}` : place ? ` in ${place}` : "";
+  const op = operator ? ` The operator is ${operator}.` : operatorMissingText ? ` ${operatorMissingText}` : "";
+  return `${name} is ${article} ${typeText}${where}.${op}${statusPhrase}`;
 }
 
 export function toPrison(cc, r) {
   const cfg = INTL_COUNTRIES[cc];
   const region = r[cfg.regionField].trim();
+  const rawType = r.facilityType?.trim();
+  const typeIsFacility = Boolean(rawType && !rawType.includes(";") && FACILITY_NOUN.test(rawType));
+  const type = typeIsFacility ? rawType : facilityLabel(cc, r);
+  // A facilityType that describes the population or role (e.g. IPS "Adult males; main committal prison for Dublin")
+  // is kept verbatim as its own fact instead of being forced into the overview sentence.
+  const facilityDescription = rawType && !typeIsFacility ? rawType : undefined;
   const city = (r.city ?? r[cfg.cityFallbackField] ?? "").trim();
   const operator = r.operator ?? "Private operator (not named by the official source)";
-  const area = r.managementArea ? `the ${r.managementArea.trim()} management area of the DCS ${region} region` : "";
-  const place = area ? (r.city ? `${city}, in ${area}` : area) : `${city}, ${region}`;
-  const type = r.facilityType?.trim() || facilityLabel(cc, r);
+  // ZA: place is the official DCS management area and region; the city is shown only where DCS gives one.
+  const placeText = r.managementArea
+    ? `${r.city ? `${city}, in ` : ""}the ${r.managementArea.trim()} management area of the DCS ${region} region`
+    : undefined;
   const located = r.coordinateEvidence?.precision === "facility" && typeof r.latitude === "number" && typeof r.longitude === "number";
   const statusNote = r.status === "closed" && /temporarily closed/i.test(r.notes ?? "") ? "Temporarily closed" : undefined;
   const statusPhrase = r.status === "closed" ? ` It is listed by its official source as ${statusNote ? "temporarily closed" : "closed"}.` : r.status === "historic" ? " It is a historic site and no longer holds prisoners." : "";
@@ -115,7 +140,12 @@ export function toPrison(cc, r) {
     ...(r.statusSource ? { statusSource: r.statusSource } : {}),
     ...(statusNote ? { statusNote } : {}),
     type,
-    overview: `${r.name.trim()} is a ${type.toLowerCase()} in ${place}, operated by ${r.operator ? (/^Department /.test(r.operator) ? `the ${r.operator}` : r.operator) : "a private operator not named by the official source"}.${statusPhrase}`,
+    ...(facilityDescription ? { facilityDescription } : {}),
+    overview: buildOverview({
+      name: r.name.trim(), type, typeIsOwnLabel: !typeIsFacility, city, region, placeText,
+      operator: r.operator, operatorMissingText: r.operator ? undefined : "The operator is not named by the official source.",
+      statusPhrase,
+    }),
     history: "",
     prisonLife: "",
     visitingInfo: "",
