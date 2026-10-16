@@ -142,7 +142,7 @@ export default function HomePage() {
           <p className="text-muted-foreground mb-8 max-w-2xl">
             Jump to guides that match what you are trying to do next.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <TrackedContentLink
               href="/guides/how-prison-visits-work"
               contentType="guide"
@@ -153,22 +153,6 @@ export default function HomePage() {
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-foreground mb-1">Visiting a prisoner</h3>
                   <p className="text-sm text-muted-foreground">How visits are arranged and what to prepare for.</p>
-                </CardContent>
-              </Card>
-            </TrackedContentLink>
-            <TrackedContentLink
-              href="/guides/life-inside-prison"
-              contentType="guide"
-              itemId="home_need_money"
-              className="block"
-            >
-              <Card className="h-full border-border/60 hover:shadow-md transition-shadow">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-1">Sending money to prisoners</h3>
-                  <p className="text-sm text-muted-foreground">
-                    General context for now; a dedicated money-and-accounts guide is planned.
-                  </p>
-                  {/* TODO: point href at dedicated prisoner money guide when published */}
                 </CardContent>
               </Card>
             </TrackedContentLink>

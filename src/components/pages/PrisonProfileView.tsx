@@ -36,7 +36,7 @@ import { intentHref, intentTopicLabel } from "@/lib/seo/prisonIntentCopy";
 import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
 import { ContentImage } from "@/components/media/ContentImage";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
-import { FacilityImageFallback } from "@/components/media/FacilityImageFallback";
+import { hasVisitorHistory } from "@/lib/seo/visitorCopy";
 import { PrisonCard } from "@/components/PrisonCard";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -287,6 +287,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             ) : null}
 
+            {facilityVisual.kind === "real" || facilityVisual.kind === "editorial" ? (
             <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
               <h2 id="facility-visual-heading" className="sr-only">
                 Establishment image
@@ -299,10 +300,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                   aspectClassName="aspect-video"
                   sizes="(max-width: 1024px) 100vw, 48rem"
                 />
-              ) : (
-                <FacilityImageFallback prison={prison} />
-              )}
+              ) : null}
             </section>
+            ) : null}
 
             <section aria-labelledby="at-a-glance-heading">
               <h2 id="at-a-glance-heading" className="text-xl font-bold mb-4">
@@ -332,14 +332,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                       value={prison.facilityType ? prison.facilityType.toUpperCase() : undefined}
                     />
                   </dl>
-                  {showHmppsCapacityNote && (
+                  {(showHmppsCapacityNote || showBopImportNote) && (
                     <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50 leading-relaxed">
-                      The HMPPS import used here does not include capacity or opening year for these establishments.
-                    </p>
-                  )}
-                  {showBopImportNote && (
-                    <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50 leading-relaxed">
-                      This BOP listing import does not include capacity, opening year, or coordinates for these sites.
+                      Capacity and opening year are not listed for this establishment. Check the official operator&apos;s page for current figures.
                     </p>
                   )}
                 </CardContent>
@@ -362,12 +357,14 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               <p className="text-muted-foreground leading-relaxed">{prison.overview}</p>
             </section>
 
-            <section aria-labelledby="history-heading">
-              <h2 id="history-heading" className="text-xl font-bold mb-4">
-                History
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">{prison.history}</p>
-            </section>
+            {hasVisitorHistory(prison.history) ? (
+              <section aria-labelledby="history-heading">
+                <h2 id="history-heading" className="text-xl font-bold mb-4">
+                  History
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">{prison.history}</p>
+              </section>
+            ) : null}
 
             {prison.notableInmates && (
               <section aria-labelledby="notable-heading">
@@ -454,11 +451,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                       Map preview — {prison.latitude.toFixed(4)}, {prison.longitude.toFixed(4)}
                     </div>
                   </div>
-                ) : (
-                  <div className="bg-secondary/50 rounded-lg p-6 text-muted-foreground text-sm space-y-2">
-                    <p>Coordinates are not available for this establishment in the current dataset.</p>
-                  </div>
-                )}
+                ) : null}
               </div>
             </section>
 

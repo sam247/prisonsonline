@@ -179,7 +179,7 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
           </div>
         ) : (
           <p className="text-muted-foreground">
-            Prison data for {countryName} is coming soon. We are actively expanding our directory.
+            We do not list prisons for {countryName} yet. Use the Prison Finder to browse the countries we cover.
           </p>
         )}
 
