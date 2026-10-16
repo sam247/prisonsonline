@@ -246,5 +246,25 @@
     "alexander-maconochie-centre",
     "darwin-correctional-centre",
     "alice-springs-correctional-centre"
+  ],
+  "nz": [
+    "northland-region-corrections-facility",
+    "auckland-prison",
+    "mt-eden-corrections-facility",
+    "auckland-south-corrections-facility",
+    "auckland-region-women-s-corrections-facility",
+    "spring-hill-corrections-facility",
+    "waikeria-prison",
+    "tongariro-prison",
+    "whanganui-prison",
+    "manawatu-prison",
+    "hawke-s-bay-regional-prison",
+    "rimutaka-prison",
+    "arohata-prison",
+    "christchurch-men-s-prison",
+    "christchurch-women-s-prison",
+    "rolleston-prison",
+    "otago-corrections-facility",
+    "invercargill-prison"
   ]
 }

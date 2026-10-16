@@ -3,6 +3,7 @@ import { getPrisonImage } from "@/lib/media/prisonImages";
 import { ukPrisonsGenerated } from "./generated/ukPrisons.generated";
 import { usPrisonsGenerated } from "./generated/usPrisons.generated";
 import { auPrisonsGenerated } from "./generated/auPrisons.generated";
+import { nzPrisonsGenerated } from "./generated/nzPrisons.generated";
 import { caPrisonsGenerated } from "./generated/caPrisons.generated";
 import { legacyInternationalPrisons } from "./prisons.legacy-international";
 import { getFacilityVerification } from "./facilitySources";
@@ -11,7 +12,7 @@ import { applyVerifiedContactFacts } from "@/lib/verification/applyVerifiedFacts
 export type { Prison } from "@/types/prison";
 
 /** UK HMPPS import, US federal BOP import, official-source international bundles, then legacy manual international profiles. */
-export const officialInternationalPrisons: Prison[] = [...caPrisonsGenerated, ...auPrisonsGenerated];
+export const officialInternationalPrisons: Prison[] = [...caPrisonsGenerated, ...auPrisonsGenerated, ...nzPrisonsGenerated];
 const basePrisons: Prison[] = [...ukPrisonsGenerated, ...usPrisonsGenerated, ...officialInternationalPrisons, ...legacyInternationalPrisons];
 
 /**
