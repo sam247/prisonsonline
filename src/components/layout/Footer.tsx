@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TrackedInlineLink } from "@/components/analytics/TrackedInlineLink";
+import { ConsentDialogLink } from "c15t/next";
 
 const footerLinks = [
   {
@@ -25,8 +26,10 @@ const footerLinks = [
     title: "About",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Privacy Policy", href: "/about" },
-      { label: "Contact", href: "/about" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Cookie Policy", href: "/cookies" },
+      { label: "Terms", href: "/terms" },
+      { label: "Contact", href: "/contact" },
     ],
   },
 ];
@@ -60,6 +63,13 @@ export function Footer() {
                     </TrackedInlineLink>
                   </li>
                 ))}
+                {group.title === "About" ? (
+                  <li>
+                    <ConsentDialogLink className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                      Privacy settings
+                    </ConsentDialogLink>
+                  </li>
+                ) : null}
               </ul>
             </div>
           ))}

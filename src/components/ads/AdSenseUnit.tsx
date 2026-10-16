@@ -1,5 +1,6 @@
 "use client";
 
+import { useConsent } from "c15t/next";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
@@ -13,9 +14,10 @@ type AdSenseUnitProps = {
 
 function AdSenseIns({ slot, className, style }: AdSenseUnitProps) {
   const insRef = useRef<HTMLModElement>(null);
+  const marketingAllowed = useConsent("marketing");
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (!marketingAllowed) return;
     const el = insRef.current;
     if (!el) return;
     if (el.getAttribute("data-adsbygoogle-status")) return;
@@ -26,7 +28,7 @@ function AdSenseIns({ slot, className, style }: AdSenseUnitProps) {
     } catch {
       /* ignore */
     }
-  }, []);
+  }, [marketingAllowed]);
 
   return (
     <ins
