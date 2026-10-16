@@ -15,6 +15,9 @@ import { guides } from "@/data/guides";
 import { allArticles } from "@/data/articles.merge";
 import { isGeneratedArticle } from "@/types/siteArticle";
 import { countriesData } from "@/data/countries";
+
+/** Homepage "Browse by Country" cards, in display order. */
+const HOME_COUNTRY_SLUGS = ["uk", "us", "united-states", "ca", "au", "nz", "ie", "za"];
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { getArticleCoverImage, getGuideCoverImage, getHomeHeroEditorialImage } from "@/lib/media/resolvers";
 import { getRecentlyUpdatedPrisons } from "@/lib/seo/prisonLastModified";
@@ -365,13 +368,15 @@ export default function HomePage() {
             </TrackedInlineLink>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {countriesData
-              .map((country) => ({
-                country,
-                listedPrisonCount: getPrisonsByCountry(country.slug).length,
-              }))
+            {HOME_COUNTRY_SLUGS.map((slug) => countriesData.find((c) => c.slug === slug))
+              .filter((country): country is NonNullable<typeof country> => Boolean(country))
+              .map((country) => {
+                const listed = getPrisonsByCountry(country.slug);
+                // Official-source countries count open facilities only (closed ones are listed for reference).
+                const official = listed.length > 0 && listed.every((p) => p.dataProvenance === "official_source");
+                return { country, listedPrisonCount: official ? listed.filter((p) => p.status !== "closed").length : listed.length };
+              })
               .filter(({ listedPrisonCount }) => listedPrisonCount > 0)
-              .slice(0, 4)
               .map(({ country, listedPrisonCount }) => (
                 <CountryCard
                   key={country.slug}
