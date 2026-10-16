@@ -2,10 +2,10 @@ import { ImageOff } from "lucide-react";
 import type { Prison } from "@/types/prison";
 
 export function FacilityImageFallback({
-  prison,
   variant = "profile",
 }: {
-  prison: Prison;
+  /** Kept for call-site compatibility; not rendered. */
+  prison?: Prison;
   /** Cards use a shorter message in the same visual slot. */
   variant?: "profile" | "card";
 }) {
