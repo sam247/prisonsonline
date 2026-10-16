@@ -1,0 +1,377 @@
+[
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Northland Region Corrections Facility",
+    "slug": "northland-region-corrections-facility",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to low-medium security men",
+    "region": "Northland",
+    "city": "Kaikohe",
+    "address": "Ohaeawai Rd, State Highway 12, Kaikohe 0472",
+    "yearOpened": 2005,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/northland_region_corrections_facility",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Near Ngawha"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Auckland Prison",
+    "slug": "auckland-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to maximum security men",
+    "region": "Auckland",
+    "city": "Albany",
+    "address": "Paremoremo Rd, Albany 0632",
+    "yearOpened": 1968,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/auckland_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Also known as Paremoremo; contains NZ's only specialist maximum-security unit"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Mt Eden Corrections Facility",
+    "slug": "mt-eden-corrections-facility",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Remand prisoners",
+    "region": "Auckland",
+    "city": "Auckland",
+    "address": "1 Lauder Rd, Mt Eden, Auckland 1024",
+    "yearOpened": 2011,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/mt_eden_corrections_facility",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Main reception prison for remanded men in Auckland region. Stats table names it 'Mount Eden Corrections Facility'."
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Auckland South Corrections Facility",
+    "slug": "auckland-south-corrections-facility",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Serco New Zealand",
+    "operatorType": "private",
+    "operatorSource": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/auckland_south_corrections_facility",
+    "securityLevel": "Minimum to high security men",
+    "region": "Auckland",
+    "city": "Wiri",
+    "address": "21 Kiwi Tamaki Road, Wiri, Auckland 2104",
+    "yearOpened": 2015,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/auckland_south_corrections_facility",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Privately operated by Serco New Zealand under a PPP with Corrections"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Auckland Region Women's Corrections Facility",
+    "slug": "auckland-region-women-s-corrections-facility",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to maximum security women",
+    "region": "Auckland",
+    "city": "Wiri",
+    "address": "20 Hautu Dr, Wiri, Auckland 2104",
+    "yearOpened": 2006,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/auckland_region_womens_corrections_facility",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "women"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Spring Hill Corrections Facility",
+    "slug": "spring-hill-corrections-facility",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security men",
+    "region": "Waikato",
+    "city": "Te Kauwhata",
+    "address": "Hampton Downs Rd, Te Kauwhata, Waikato 3782",
+    "yearOpened": 2007,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/spring_hill_corrections_facility",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ]
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Waikeria Prison",
+    "slug": "waikeria-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security male prisoners",
+    "region": "Waikato",
+    "city": "Te Awamutu",
+    "address": "Waikeria Road, 16km south of Te Awamutu",
+    "yearOpened": 1911,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/waikeria_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Official page gives location description, not a street number"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Tongariro Prison",
+    "slug": "tongariro-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to low-medium security male prisoners",
+    "region": "Waikato",
+    "city": "Turangi",
+    "address": "State Highway 1, Hautu Road, Turangi 3382",
+    "yearOpened": 1922,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/tongariro_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Also referred to as Tongariro/Rangipō Prison in Corrections brochures"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Whanganui Prison",
+    "slug": "whanganui-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security male prisoners",
+    "region": "Manawatū-Whanganui",
+    "city": "Whanganui",
+    "address": "Pauri Rd, Whanganui 4572",
+    "yearOpened": 1978,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/whanganui_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ]
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Manawatū Prison",
+    "slug": "manawatu-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Not specified",
+    "region": "Manawatū-Whanganui",
+    "city": "Linton",
+    "address": "Camp Rd, Linton 4820",
+    "capacity": 290,
+    "capacitySource": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/manawatu_prison",
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/manawatu_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Official page: houses up to 290 prisoners; adjacent to Linton military camp"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Hawke's Bay Regional Prison",
+    "slug": "hawke-s-bay-regional-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security male prisoners",
+    "region": "Hawke's Bay",
+    "city": "Hastings",
+    "address": "138 Mangaroa Rd, Hastings 4174",
+    "yearOpened": 1989,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/hawkes_bay_regional_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ]
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Rimutaka Prison",
+    "slug": "rimutaka-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security male prisoners",
+    "region": "Wellington",
+    "city": "Upper Hutt",
+    "address": "Freyberg Rd extension, Trentham, Upper Hutt 5018",
+    "yearOpened": 1967,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/rimutaka_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Originally called Wi Tako"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Arohata Prison",
+    "slug": "arohata-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security women",
+    "region": "Wellington",
+    "city": "Tawa",
+    "address": "1 Main Rd, Tawa, Wellington 5028",
+    "yearOpened": 1944,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/arohata_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "women"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Christchurch Men's Prison",
+    "slug": "christchurch-men-s-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security men",
+    "region": "Canterbury",
+    "city": "Christchurch",
+    "address": "West Coast Rd, Christchurch",
+    "yearOpened": 1915,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/christchurch_mens_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Also known as Paparua"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Christchurch Women's Prison",
+    "slug": "christchurch-women-s-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to high security women",
+    "region": "Canterbury",
+    "city": "Christchurch",
+    "address": "Newtons Rd, Christchurch 8042",
+    "yearOpened": 1974,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/christchurch_womens_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "women"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Rolleston Prison",
+    "slug": "rolleston-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to low-medium security men",
+    "region": "Canterbury",
+    "city": "Rolleston",
+    "address": "Runners Road, Rolleston, Christchurch",
+    "yearOpened": 1958,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/rolleston_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ]
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Otago Corrections Facility",
+    "slug": "otago-corrections-facility",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Low to high-medium security men",
+    "region": "Otago",
+    "city": "Milburn",
+    "address": "62 Narrowdale Rd, Milburn, Otago 9291",
+    "yearOpened": 2007,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/otago_corrections_facility",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ],
+    "notes": "Near Milton"
+  },
+  {
+    "country": "nz",
+    "status": "open",
+    "checkedAt": "2026-10-16",
+    "name": "Invercargill Prison",
+    "slug": "invercargill-prison",
+    "jurisdiction": "Ara Poutama Aotearoa (Department of Corrections)",
+    "jurisdictionLevel": "national",
+    "operator": "Ara Poutama Aotearoa (Department of Corrections)",
+    "operatorType": "public",
+    "securityLevel": "Minimum to low-medium security men",
+    "region": "Southland",
+    "city": "Invercargill",
+    "address": "42 Liffey St, Invercargill 9810",
+    "yearOpened": 1910,
+    "sourceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/invercargill_prison",
+    "additionalSourceUrls": [
+      "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025"
+    ]
+  }
+]

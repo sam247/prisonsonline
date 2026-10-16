@@ -4,6 +4,7 @@
  */
 const intlCountryAliases = {
   ca: ["canada"],
+  nz: ["new-zealand"],
   au: ["australia"],
 };
 
