@@ -55,6 +55,8 @@ export interface Prison {
   statusSource?: string;
   /** Qualifier from the official source, e.g. "Temporarily closed". Status stays closed. */
   statusNote?: string;
+  /** Official management area (South Africa DCS). */
+  managementArea?: string;
   type: string;
   overview: string;
   history: string;
