@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { PrisonCard } from "@/components/PrisonCard";
 import { ContentImage } from "@/components/media/ContentImage";
+import { ProfileMapPreview } from "@/components/facility/ProfileMapPreview";
 import { getRelatedPrisonsForProfile } from "@/lib/queries/relatedPrisons";
 import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
 import { getBaseUrl } from "@/lib/site";
@@ -47,6 +48,17 @@ function Fact({ label, value }: { label: string; value?: string | number | null 
       <dt className="text-xs font-medium text-muted-foreground pt-0.5">{label}</dt>
       <dd className="text-sm text-foreground leading-snug">{v}</dd>
     </div>
+  );
+}
+
+/** Only official facility-precision coordinates are shown; nothing is geocoded or approximated. */
+export function hasOfficialCoordinates(p: Prison): boolean {
+  return (
+    p.coordinateEvidence?.precision === "facility" &&
+    Boolean(p.coordinateEvidence.source) &&
+    Number.isFinite(p.latitude) &&
+    Number.isFinite(p.longitude) &&
+    !(p.latitude === 0 && p.longitude === 0)
   );
 }
 
@@ -176,12 +188,21 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
                     <Fact label="Operator" value={prison.operator} />
                     <Fact label="Operator type" value={prison.operatorType === "private" ? "Private" : prison.operatorType === "public" ? "Public" : undefined} />
                     <Fact label="Address" value={address} />
-                    <Fact label="Capacity (official)" value={prison.capacity} />
+                    {typeof prison.capacity === "number" && Number.isFinite(prison.capacity) && prison.capacity > 0 ? (
+                      <Fact label="Capacity (official)" value={prison.capacity} />
+                    ) : null}
                     <Fact label="Opened" value={prison.openedYear > 0 ? String(prison.openedYear) : undefined} />
                   </dl>
                 </CardContent>
               </Card>
             </section>
+
+            {hasOfficialCoordinates(prison) ? (
+              <section aria-labelledby="location-heading">
+                <h2 id="location-heading" className="text-xl font-bold mb-4">Location</h2>
+                <ProfileMapPreview latitude={prison.latitude} longitude={prison.longitude} />
+              </section>
+            ) : null}
 
             <section aria-labelledby="source-heading">
               <h2 id="source-heading" className="text-xl font-bold mb-4">Official source</h2>
