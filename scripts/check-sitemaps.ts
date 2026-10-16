@@ -26,10 +26,14 @@ assert.match(indexRoute, /\/sitemaps\/courts\.xml/);
 assert.ok(probation.length > 300, `Expected a populated probation sitemap, found ${probation.length}`);
 assert.equal(new Set(probation.map((entry) => entry.loc)).size, probation.length, "Probation sitemap contains duplicate URLs");
 assert.equal(intents.length, 519, "Intent sitemap should contain 512 base URLs plus seven legal-visit URLs");
-// 272 UK/US profiles + 137 open Canada profiles (10 closed Canada facilities are excluded).
-assert.equal(prisons.length, 409, "Prison profile sitemap count regression");
+// 272 UK/US profiles + 137 open Canada + 95 open Australia + 18 New Zealand + 13 Ireland profiles (closed facilities are excluded).
+assert.equal(prisons.length, 535, "Prison profile sitemap count regression");
 assert.equal(prisons.filter((e) => e.loc.includes("/prisons/ca/")).length, 137, "Canada profile sitemap count (open facilities only)");
 assert.ok(!prisons.some((e) => e.loc.endsWith("/prisons/ca/toronto-jail")), "Closed Canada facilities must not appear in the prison sitemap");
+assert.equal(prisons.filter((e) => e.loc.includes("/prisons/au/")).length, 95, "Australia profile sitemap count (open facilities only)");
+for (const slug of ["dawn-de-loas-correctional-centre", "oberon-correctional-centre"]) assert.ok(!prisons.some((e) => e.loc.endsWith(`/prisons/au/${slug}`)), `Temporarily closed ${slug} must not appear in the prison sitemap`);
+assert.equal(prisons.filter((e) => e.loc.includes("/prisons/nz/")).length, 18, "New Zealand profile sitemap count");
+assert.equal(prisons.filter((e) => e.loc.includes("/prisons/ie/")).length, 13, "Ireland profile sitemap count");
 assert.ok(
   prisons.some((e) => e.loc.endsWith("/prisons/us/florence-admax-usp")),
   "Canonical ADX Florence destination missing from prison sitemap",
@@ -47,9 +51,16 @@ assert.ok(
   "Canonical Leavenworth FCI destination missing from prison sitemap",
 );
 // 68 previously; /prisons/canada hub replaced by /prisons/ca, plus 13 Canada province/territory pages.
-assert.equal(regions.length, 81, "Region sitemap count regression");
+// AU: /prisons/australia hub replaced by /prisons/au, plus 8 state/territory pages (81 - 1 + 9).
+// NZ: new /prisons/nz hub plus 9 region pages (89 + 10).
+// IE: new /prisons/ie hub plus 7 county pages (99 + 8).
+assert.equal(regions.length, 107, "Region sitemap count regression");
 assert.ok(regions.some((e) => e.loc.endsWith("/prisons/ca")), "Canada hub missing from region sitemap");
 assert.ok(!regions.some((e) => e.loc.endsWith("/prisons/canada")), "Legacy /prisons/canada must not appear (301 to /prisons/ca)");
+assert.ok(regions.some((e) => e.loc.endsWith("/prisons/au")), "Australia hub missing from region sitemap");
+assert.ok(regions.some((e) => e.loc.endsWith("/prisons/nz")), "New Zealand hub missing from region sitemap");
+assert.ok(regions.some((e) => e.loc.endsWith("/prisons/ie")), "Ireland hub missing from region sitemap");
+assert.ok(!regions.some((e) => e.loc.endsWith("/prisons/australia")), "Legacy /prisons/australia must not appear (301 to /prisons/au)");
 assert.ok(
   !regions.some((e) => e.loc.includes("/prisons/united-states/adx-florence")),
   "Legacy ADX path must not appear in region sitemap",

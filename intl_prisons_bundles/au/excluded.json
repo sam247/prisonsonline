@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Cessnock Correctional Complex",
+    "jurisdiction": "NSW",
+    "reason": "Umbrella complex page; constituent centres (Cessnock, Hunter, Shortland) published separately.",
+    "evidenceUrl": "https://correctiveservices.dcj.nsw.gov.au/correctional-centres/find-a-correctional-centre/cessnock-correctional-complex.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Francis Greenway Correctional Complex",
+    "jurisdiction": "NSW",
+    "reason": "Umbrella complex; constituent centres (John Morony, Geoffrey Pearce, Dillwynia) published separately.",
+    "evidenceUrl": "https://correctiveservices.dcj.nsw.gov.au/correctional-centres/find-a-correctional-centre/francis-greenway-correctional-complex.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Long Bay Correctional Complex",
+    "jurisdiction": "NSW",
+    "reason": "Umbrella complex; MSPC published separately, Long Bay Hospital excluded.",
+    "evidenceUrl": "https://correctiveservices.dcj.nsw.gov.au/correctional-centres/find-a-correctional-centre/long-bay-correctional-complex.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Silverwater Correctional Complex",
+    "jurisdiction": "NSW",
+    "reason": "Umbrella complex; MRRC, Silverwater Women's and Dawn de Loas published separately.",
+    "evidenceUrl": "https://correctiveservices.dcj.nsw.gov.au/correctional-centres/find-a-correctional-centre/silverwater-correctional-complex.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Long Bay Hospital",
+    "jurisdiction": "NSW",
+    "reason": "Out of scope (forensic/prison hospital): maximum-security facility for medical and psychiatric cases. Decision needed if Sam wants prison hospitals included.",
+    "evidenceUrl": "https://correctiveservices.dcj.nsw.gov.au/correctional-centres/find-a-correctional-centre/long-bay-hospital.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Port Phillip Prison (St John's Subacute Unit)",
+    "jurisdiction": "VIC",
+    "reason": "Ruling: excluded. Official page says general prison operations ceased end of 2025; now a 20-bed maximum-security subacute medical unit. Operator not stated on official page. Out of scope (medical unit).",
+    "evidenceUrl": "https://www.corrections.vic.gov.au/contact-or-visit-a-prison/prisons-in-victoria/port-phillip-prison-st-johns-subacute-unit",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Dhurringile Prison",
+    "jurisdiction": "VIC (seed)",
+    "reason": "Not in Corrections Victoria 'Prisons in Victoria' list (closed); no official status page found.",
+    "evidenceUrl": "https://www.corrections.vic.gov.au/contact-or-visit-a-prison/prisons-in-victoria",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Maribyrnong Community Residential Facility",
+    "jurisdiction": "VIC",
+    "reason": "Out of scope: post-release community residential facility (halfway-house type).",
+    "evidenceUrl": "https://www.corrections.vic.gov.au/being-in-prison/leaving-prison/maribyrnong-community-residential-facility",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Wulgunggo Ngalu Learning Place",
+    "jurisdiction": "VIC",
+    "reason": "Out of scope: community-corrections residential program for Aboriginal men on CCOs (not custodial; healing-lodge type).",
+    "evidenceUrl": "https://www.corrections.vic.gov.au/community-corrections/wulgunggo-ngalu-learning-place",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Banksia Hill Detention Centre",
+    "jurisdiction": "WA",
+    "reason": "Out of scope: youth detention.",
+    "evidenceUrl": "https://www.wa.gov.au/service/justice/criminal-law/visiting-prisons-or-detention-centre",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Roebourne / Wheatbelt (Dowerin) / Walpole / Warburton / Wyndham Work Camps",
+    "jurisdiction": "WA",
+    "reason": "Work camps (minimum-security annexes of parent prisons; PO Box only). Ruling: excluded (work camps out of scope).",
+    "evidenceUrl": "https://www.wa.gov.au/organisation/department-of-justice/corrective-services/our-prison-and-detention-centre-locations",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Judy Lazarus Transition Centre",
+    "jurisdiction": "VIC",
+    "reason": "transition centre, out of scope",
+    "evidenceUrl": "https://www.corrections.vic.gov.au/contact-or-visit-a-prison/prisons-in-victoria/judy-lazarus-transition-centre",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Barkly Work Camp",
+    "jurisdiction": "NT (seed)",
+    "reason": "Ruling: excluded (work camps out of scope).",
+    "evidenceUrl": "https://nt.gov.au/law/prisons/darwin-correctional-centre",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "QLD work camps / Townsville Women's (as separate)",
+    "jurisdiction": "QLD (seed)",
+    "reason": "Not separate entries on QCS prison locations list.",
+    "evidenceUrl": "https://corrections.qld.gov.au/prison-locations/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Brisbane Youth Detention Centre / Cleveland / West Moreton YDC",
+    "jurisdiction": "QLD (seed)",
+    "reason": "Out of scope: youth detention.",
+    "evidenceUrl": "https://corrections.qld.gov.au/prison-locations/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Frank Baxter / Reiby / Cobham / Acmena youth justice centres",
+    "jurisdiction": "NSW (seed)",
+    "reason": "Out of scope: youth detention (Youth Justice NSW).",
+    "evidenceUrl": "https://correctiveservices.dcj.nsw.gov.au/correctional-centres/find-a-correctional-centre/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Forensic Hospital (Malabar)",
+    "jurisdiction": "NSW (seed)",
+    "reason": "Out of scope: forensic hospital (Justice Health).",
+    "evidenceUrl": "https://correctiveservices.dcj.nsw.gov.au/correctional-centres/find-a-correctional-centre/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Thomas Embling Hospital",
+    "jurisdiction": "VIC (seed)",
+    "reason": "Out of scope: forensic hospital.",
+    "evidenceUrl": "https://www.corrections.vic.gov.au/contact-or-visit-a-prison/prisons-in-victoria/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Ashley Youth Detention Centre",
+    "jurisdiction": "TAS (seed)",
+    "reason": "Out of scope: youth detention.",
+    "evidenceUrl": "https://www.justice.tas.gov.au/prisonservice/contact-and-visits/visiting",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Bimberi Youth Justice Centre",
+    "jurisdiction": "ACT (seed)",
+    "reason": "Out of scope: youth detention.",
+    "evidenceUrl": "https://www.act.gov.au/directorates-and-agencies/justice-and-community-safety-directorate/act-corrective-services",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Don Dale / Alice Springs Youth Detention Centre",
+    "jurisdiction": "NT (seed)",
+    "reason": "Out of scope: youth detention.",
+    "evidenceUrl": "https://nt.gov.au/law/prisons",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Adelaide Youth Training Centre (Kurlana Tapa)",
+    "jurisdiction": "SA (seed)",
+    "reason": "Out of scope: youth detention.",
+    "evidenceUrl": "https://www.corrections.sa.gov.au/prison/prison-locations/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Pentridge, Fremantle, Boggo Road, Old Melbourne Gaol, Adelaide Gaol, Old Dubbo Gaol etc.",
+    "jurisdiction": "various (seed)",
+    "reason": "Historic/closed heritage prisons: no current corrective-services status page; not published. Could add later as 'historic' only with real content and an official heritage/status source.",
+    "checkedAt": "2026-10-16"
+  }
+]

@@ -4,6 +4,9 @@
  */
 const intlCountryAliases = {
   ca: ["canada"],
+  ie: ["ireland"],
+  nz: ["new-zealand"],
+  au: ["australia"],
 };
 
 export const intlCountryRedirects = Object.entries(intlCountryAliases).flatMap(([cc, names]) =>

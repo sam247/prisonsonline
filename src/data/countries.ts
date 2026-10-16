@@ -1,5 +1,8 @@
 import type { EditorialImage } from "@/types/media";
 import type { Prison } from "@/types/prison";
+import { auPrisonsGenerated } from "./generated/auPrisons.generated";
+import { nzPrisonsGenerated } from "./generated/nzPrisons.generated";
+import { iePrisonsGenerated } from "./generated/iePrisons.generated";
 import { caPrisonsGenerated } from "./generated/caPrisons.generated";
 
 /** Directory counts for official-source countries come only from the generated data (open facilities). */
@@ -59,13 +62,37 @@ export const countriesData: Country[] = [
       "The Correctional Service of Canada classifies each federal institution as minimum, medium, maximum, multi-level or clustered security. Provincial and territorial facilities use their own classifications, shown on a profile only where the official source states one.",
   },
   {
-    name: "Australia",
-    slug: "australia",
+    name: "Ireland",
+    slug: "ie",
+    region: "Europe",
+    prisonCount: openCount(iePrisonsGenerated),
+    prisonPopulation: 0,
+    description:
+      "Prisons run by the Irish Prison Service. Each listing is checked against an official government source, linked on its profile.",
+    securitySystemDescription:
+      "A profile shows a security classification only where the official source states one.",
+  },
+  {
+    name: "New Zealand",
+    slug: "nz",
     region: "Oceania",
-    prisonCount: 101,
-    prisonPopulation: 42000,
-    description: "Australia's prison system is managed by individual states and territories. Each jurisdiction operates its own correctional service. The country has faced ongoing challenges with Indigenous overrepresentation in the prison population.",
-    securitySystemDescription: "Most states use a classification system ranging from Minimum to Maximum security. Some jurisdictions use numerical ratings. Open and closed prison categories are common across states.",
+    prisonCount: openCount(nzPrisonsGenerated),
+    prisonPopulation: 0,
+    description:
+      "Prisons run by Ara Poutama Aotearoa (the Department of Corrections), plus one prison operated privately under contract. Each listing is checked against an official government source, linked on its profile.",
+    securitySystemDescription:
+      "A profile shows a security classification only where the official source states one.",
+  },
+  {
+    name: "Australia",
+    slug: "au",
+    region: "Oceania",
+    prisonCount: openCount(auPrisonsGenerated),
+    prisonPopulation: 0,
+    description:
+      "Correctional centres run by Australia's state and territory corrective services, including privately operated centres under government contract. Each listing is checked against an official government source, linked on its profile.",
+    securitySystemDescription:
+      "Each state and territory sets its own security classifications. A profile shows a classification only where the official source states one.",
   },
   {
     name: "France",

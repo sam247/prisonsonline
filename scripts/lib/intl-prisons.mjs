@@ -79,7 +79,8 @@ export function toPrison(cc, r) {
   const region = r[cfg.regionField].trim();
   const type = r.facilityType?.trim() || facilityLabel(cc, r);
   const located = r.coordinateEvidence?.precision === "facility" && typeof r.latitude === "number" && typeof r.longitude === "number";
-  const statusPhrase = r.status === "closed" ? " It is listed by its official source as closed." : r.status === "historic" ? " It is a historic site and no longer holds prisoners." : "";
+  const statusNote = r.status === "closed" && /temporarily closed/i.test(r.notes ?? "") ? "Temporarily closed" : undefined;
+  const statusPhrase = r.status === "closed" ? ` It is listed by its official source as ${statusNote ? "temporarily closed" : "closed"}.` : r.status === "historic" ? " It is a historic site and no longer holds prisoners." : "";
   return {
     name: r.name.trim(),
     slug: r.slug,
@@ -98,6 +99,7 @@ export function toPrison(cc, r) {
     ...(located ? { coordinateEvidence: { precision: "facility", source: r.coordinateEvidence.source, ...(r.coordinateEvidence.checkedAt ? { checkedAt: r.coordinateEvidence.checkedAt } : {}) } } : {}),
     status: r.status,
     ...(r.statusSource ? { statusSource: r.statusSource } : {}),
+    ...(statusNote ? { statusNote } : {}),
     type,
     overview: `${r.name.trim()} is a ${type.toLowerCase()} in ${r.city.trim()}, ${region}, operated by ${r.operator}.${statusPhrase}`,
     history: "",

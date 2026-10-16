@@ -1,0 +1,58 @@
+[
+  {
+    "name": "New Plymouth Remand Centre",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Closed/historic: still appears in an old CPTS call-display list but absent from the Sept 2025 per-prison population table and Corrections' 18-prison list; closed 2013 per seed. Not published.",
+    "evidenceUrl": "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Wellington Prison (Mt Crawford)",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Closed/historic (closed 2012; mothballed); not in current Corrections prison list.",
+    "evidenceUrl": "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Mt Eden Prison (old, 1882)",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Historic: superseded by Mt Eden Corrections Facility (2011); heritage building. Not published as a separate prison.",
+    "evidenceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations/mt_eden_corrections_facility",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Ohura Prison",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Closed/historic (closed 2005); not in current list.",
+    "evidenceUrl": "https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_facts_and_statistics_-_september_2025",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Te Whare Manaakitanga – Special Treatment Unit at Rimutaka Prison",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Unit within Rimutaka Prison (shares address); not a separate prison.",
+    "evidenceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations?result_41337_result_page=I",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Community Corrections sites / Corrections Staff College",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Out of scope: probation/community sites and training facility, not places of detention.",
+    "evidenceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Oranga Tamariki youth justice residences",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Out of scope: youth detention (Oranga Tamariki, not Corrections).",
+    "evidenceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Regional forensic psychiatric units (e.g. Mason Clinic)",
+    "jurisdiction": "New Zealand (seed)",
+    "reason": "Out of scope: forensic hospitals (Health NZ).",
+    "evidenceUrl": "https://www.corrections.govt.nz/about_us/getting_in_touch/our_locations",
+    "checkedAt": "2026-10-16"
+  }
+]
