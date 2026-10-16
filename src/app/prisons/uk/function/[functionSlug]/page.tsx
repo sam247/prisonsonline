@@ -54,7 +54,7 @@ export default function UkFunctionHubPage({ params }: Props) {
         { label: "Function", value: r.functionLabel },
       ]}
       heroImage={getUkHubEditorialImage("function", params.functionSlug)}
-      methodology="This page uses the exact predominant-function label in the imported record and does not infer additional facilities."
+      methodology="This page uses the exact predominant-function label in the published record and does not infer additional facilities."
       relatedLinks={params.functionSlug === "female" ? [{ href: "/prisons/uk/collection/womens-prisons", label: "Complete women’s prisons list" }] : undefined}
     />
   );
