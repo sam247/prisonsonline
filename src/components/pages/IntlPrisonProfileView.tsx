@@ -3,10 +3,12 @@ import { ChevronRight, ExternalLink, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { PrisonCard } from "@/components/PrisonCard";
+import { ContentImage } from "@/components/media/ContentImage";
 import { getRelatedPrisonsForProfile } from "@/lib/queries/relatedPrisons";
 import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
 import { getBaseUrl } from "@/lib/site";
 import type { Prison } from "@/types/prison";
+import { formatIntlAddress, formatIntlSecurity } from "@/lib/intl/profileCopy";
 
 /**
  * Profile for official-source international rows (ca, au, nz, ie, za).
@@ -64,8 +66,8 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
   const profilePath = `${countryHref}/${prison.slug}`;
   const base = getBaseUrl();
   const sources = [prison.sourceUrl, ...(prison.additionalSourceUrls ?? [])].filter((u): u is string => Boolean(u));
-  const address = [prison.address, prison.city, prison.stateOrRegion, prison.postcode].filter(Boolean).join(", ");
-  const security = prison.securityDescription ?? (prison.securityLevel !== "Not specified" ? prison.securityLevel : undefined);
+  const address = formatIntlAddress(prison);
+  const security = formatIntlSecurity(prison.securityDescription ?? prison.securityLevel);
 
   const breadcrumb = breadcrumbJsonLd(
     [
@@ -145,6 +147,15 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
               </p>
             ) : null}
 
+            {prison.facilityImage?.type === "real" ? (
+              <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
+                <h2 id="facility-visual-heading" className="sr-only">
+                  Establishment image
+                </h2>
+                <ContentImage image={prison.facilityImage} />
+              </section>
+            ) : null}
+
             <section aria-labelledby="overview-heading">
               <h2 id="overview-heading" className="text-xl font-bold mb-4">Overview</h2>
               <p className="text-muted-foreground leading-relaxed">{prison.overview}</p>
@@ -158,6 +169,7 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
                     <Fact label="Status" value={status ?? "Open"} />
                     <Fact label="Facility type" value={prison.type} />
                     <Fact label="Security classification" value={security} />
+                    <Fact label="Official description" value={prison.facilityDescription} />
                     <Fact label="Jurisdiction" value={prison.jurisdiction} />
                     <Fact label="Management area" value={prison.managementArea} />
                     <Fact label="Level" value={prison.jurisdictionLevel ? LEVEL_LABEL[prison.jurisdictionLevel] : undefined} />
