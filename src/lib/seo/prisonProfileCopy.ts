@@ -1,5 +1,6 @@
 import { visitorVisitingInfo } from "@/lib/seo/visitorCopy";
 import type { Prison } from "@/types/prison";
+import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
 import { joinAddressAndPostcode } from "@/lib/address";
 import {
   hasUkHmppsTypeFields,
@@ -186,9 +187,11 @@ export function buildLocationHeading(name: string): string {
 
 export function buildLocationBody(p: Prison): string {
   const city = cleanSpace(p.city) || "this location";
-  const region = cleanSpace(p.stateOrRegion) || "the listed region";
+  const region = cleanSpace(geographicRegion(p));
   const country = cleanSpace(p.country) || "the listed country";
-  const tpl = LOCATION_OPENINGS[slugVariantIndex(p.slug, LOCATION_OPENINGS.length)];
+  const tpl = region
+    ? LOCATION_OPENINGS[slugVariantIndex(p.slug, LOCATION_OPENINGS.length)]
+    : "{name} is based in {city}, {country}.";
   let body = tpl.replace("{name}", p.name).replace("{city}", city).replace("{region}", region).replace("{country}", country);
   const hasCoords = p.latitude !== 0 || p.longitude !== 0;
   if (hasCoords) {
