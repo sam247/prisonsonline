@@ -4,6 +4,16 @@ import { addressesEquivalent, collapseSpace, usZipsEqual } from "@/lib/verificat
 
 export type MapCountry = "uk" | "us";
 
+/**
+ * Explicit countrySlug → map country. Unknown countries return null and must be
+ * excluded from the map; never default to "us".
+ */
+export function mapCountryForSlug(countrySlug: string): MapCountry | null {
+  if (countrySlug === "uk") return "uk";
+  if (countrySlug === "us" || countrySlug === "united-states") return "us";
+  return null;
+}
+
 export function validCoordinates(latitude: unknown, longitude: unknown, country: MapCountry): boolean {
   if (typeof latitude !== "number" || typeof longitude !== "number" || !Number.isFinite(latitude) || !Number.isFinite(longitude)) return false;
   // UK inventory is England/Wales; US bounds also cover Alaska, Hawaii and Puerto Rico.
@@ -32,7 +42,8 @@ export function bopLocationConflicts(
 export type MapRecord = {
   id: string;
   name: string;
-  country: MapCountry;
+  /** null when the prison's country has no map support; such records always carry an exclusion. */
+  country: MapCountry | null;
   href: string;
   city: string;
   state: string;

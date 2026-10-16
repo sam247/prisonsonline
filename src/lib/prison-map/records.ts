@@ -4,11 +4,19 @@ import { prisonCoordsGenerated, type PrisonCoordOverlay } from "@/data/generated
 import { publishedFacts } from "@/lib/verification/publishedFacts";
 import type { Prison } from "@/types/prison";
 import { postcodeCoordinateMatches } from "./postcode-cache.mjs";
-import { bopLocationConflicts, validCoordinates, type MapRecord } from "./location";
+import { bopLocationConflicts, mapCountryForSlug, validCoordinates, type MapRecord } from "./location";
 
 export function projectMapRecord(prison: Prison, overlay?: PrisonCoordOverlay): MapRecord {
   const facts = publishedFacts(prison, getFacilityVerification(prison.countrySlug, prison.slug));
-  const country = prison.countrySlug === "uk" ? "uk" : "us";
+  const country = mapCountryForSlug(prison.countrySlug);
+  if (!country) {
+    return {
+      id: `${prison.countrySlug}/${prison.slug}`, name: prison.name.trim() || "Unnamed establishment", country: null,
+      href: `/prisons/${prison.countrySlug}/${prison.slug}`, city: prison.city, state: "",
+      type: prison.predominantFunction ?? prison.type, status: prison.status, reentryOffice: false,
+      exclusion: `Unsupported map country: ${prison.countrySlug || "(none)"}`,
+    };
+  }
   const evidence = prison.coordinateEvidence;
   const reentryOffice = evidence?.facilityType?.toUpperCase() === "RRM" || /-(ccm|rrm)$/.test(prison.slug);
   let latitude = prison.latitude;
@@ -50,6 +58,6 @@ export function projectMapRecord(prison: Prison, overlay?: PrisonCoordOverlay): 
 
 export function getPrisonMapRecords(): MapRecord[] {
   const overlay = new Map(prisonCoordsGenerated.map(p => [p.slug, p]));
-  return prisons.filter(p => ["uk", "us", "united-states"].includes(p.countrySlug))
+  return prisons.filter(p => mapCountryForSlug(p.countrySlug) !== null)
     .map(p => projectMapRecord(p, p.countrySlug === "uk" ? overlay.get(p.slug) : undefined));
 }
