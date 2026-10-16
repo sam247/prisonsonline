@@ -29,7 +29,7 @@ function withVerifiedFacts(p: Prison): Prison {
 /** Merges `src/data/prisonImages.json` (from `data/prison-images.csv` + build script) when no explicit `facilityImage` on the row. */
 export const prisons: Prison[] = basePrisons.map((p) => ({
   ...withVerifiedFacts(p),
-  facilityImage: p.facilityImage ?? getPrisonImage(p.slug),
+  facilityImage: p.facilityImage ?? getPrisonImage(p.countrySlug, p.slug),
 }));
 
 export const countries = Array.from(new Set(prisons.map((p) => p.country))).sort();

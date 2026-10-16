@@ -1,5 +1,5 @@
 {
-  "hmp-ashfield": {
+  "uk/hmp-ashfield": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/HMP_Ashfield%2C_Pucklechurch_-_geograph.org.uk_-_5067559.jpg",
     "credit": "Jaggery",
     "licence": "CC BY-SA 2.0",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Ashfield,_Pucklechurch_-_geograph.org.uk_-_5067559.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-bedford": {
+  "uk/hmp-bedford": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/BedfordGaol.JPG",
     "credit": "Simon Speed",
     "licence": "Public domain",
@@ -18,7 +18,7 @@
     "title": "BedfordGaol",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:BedfordGaol.JPG"
   },
-  "hmp-belmarsh": {
+  "uk/hmp-belmarsh": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/HMP_Belmarsh%2C_from_carpark.jpg",
     "credit": "Neil Clifton",
     "licence": "CC BY-SA 2.0",
@@ -28,7 +28,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Belmarsh,_from_carpark.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-berwyn": {
+  "uk/hmp-berwyn": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/HMP_Berwyn_%28geograph_7100546%29.jpg",
     "credit": "Mike Parker",
     "licence": "CC BY-SA 2.0",
@@ -38,7 +38,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Berwyn_(geograph_7100546).jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-birmingham": {
+  "uk/hmp-birmingham": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/HM_Prison_Birmingham%2C_Winson_Green_-_geograph.org.uk_-_7717860.jpg",
     "credit": "Chris Allen",
     "licence": "CC BY-SA 2.0",
@@ -48,7 +48,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison_Birmingham,_Winson_Green_-_geograph.org.uk_-_7717860.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-bristol": {
+  "uk/hmp-bristol": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/HMP_Bristol%2C_rear_view_-_geograph.org.uk_-_742695.jpg",
     "credit": "Matt Redmond",
     "licence": "CC BY-SA 2.0",
@@ -58,7 +58,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Bristol,_rear_view_-_geograph.org.uk_-_742695.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-buckley-hall": {
+  "uk/hmp-buckley-hall": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Buckley_Hall_Prison%2C_Rochdale_-_geograph.org.uk_-_89118.jpg",
     "credit": "michael ely",
     "licence": "CC BY-SA 2.0",
@@ -68,7 +68,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buckley_Hall_Prison,_Rochdale_-_geograph.org.uk_-_89118.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-channings-wood": {
+  "uk/hmp-channings-wood": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/HM_Prison%2C_Channings_Wood_-_geograph.org.uk_-_1615692.jpg",
     "credit": "Roger Cornfoot",
     "licence": "CC BY-SA 2.0",
@@ -78,7 +78,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison,_Channings_Wood_-_geograph.org.uk_-_1615692.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-haverigg": {
+  "uk/hmp-haverigg": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/HM_Prison_Haverigg_-_geograph.org.uk_-_2983690.jpg",
     "credit": "Perry Dark",
     "licence": "CC BY-SA 2.0",
@@ -88,7 +88,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison_Haverigg_-_geograph.org.uk_-_2983690.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-leicester": {
+  "uk/hmp-leicester": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Hmp_leicester.jpg",
     "credit": "JRawle",
     "licence": "CC BY-SA 2.5",
@@ -98,7 +98,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hmp_leicester.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5"
   },
-  "hmp-manchester": {
+  "uk/hmp-manchester": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/HMP_Manchester_%281%29.jpg",
     "credit": "Rept0n1x",
     "licence": "CC BY-SA 2.0",
@@ -108,7 +108,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Manchester_(1).jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-wakefield": {
+  "uk/hmp-wakefield": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/The_Main_Entrance_Gate%2C_Wakefield_Prison_-_geograph.org.uk_-_3545534.jpg",
     "credit": "Bill Henderson",
     "licence": "CC BY-SA 2.0",
@@ -118,7 +118,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Main_Entrance_Gate,_Wakefield_Prison_-_geograph.org.uk_-_3545534.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-wandsworth": {
+  "uk/hmp-wandsworth": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/HMP_Wandsworth%2C_SW18_-_geograph.org.uk_-_2077186.jpg",
     "credit": "Phillip Perry",
     "licence": "CC BY-SA 2.0",
@@ -128,7 +128,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Wandsworth,_SW18_-_geograph.org.uk_-_2077186.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
   },
-  "hmp-wormwood-scrubs": {
+  "uk/hmp-wormwood-scrubs": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/HM_Prison_Wormwood_Scrubs_in_spring_2013_%281%29.JPG",
     "credit": "Chmee2",
     "licence": "CC BY-SA 3.0",
@@ -138,7 +138,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison_Wormwood_Scrubs_in_spring_2013_(1).JPG",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
   },
-  "hmp-bronzefield": {
+  "uk/hmp-bronzefield": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Entrance_to_Bronzefield_Prison.jpg",
     "credit": "DanielMichaelPerry",
     "licence": "CC0",
@@ -148,7 +148,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_Bronzefield_Prison.jpg",
     "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
   },
-  "hmp-forest-bank": {
+  "uk/hmp-forest-bank": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/HM_Prison_Forest_Bank.jpg",
     "credit": "Liverpoolpics",
     "licence": "CC BY-SA 3.0",
@@ -159,7 +159,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Exterior of HM Prison Forest Bank in Salford."
   },
-  "hmp-durham": {
+  "uk/hmp-durham": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Durham_Prison_-_geograph.org.uk_-_228811.jpg",
     "credit": "John Illingworth",
     "licence": "CC BY-SA 2.0",
@@ -170,7 +170,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "HM Prison Durham seen from Durham Cathedral."
   },
-  "alderson-fpc": {
+  "us/alderson-fpc": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Alderson_Federal_Prison_Camp_entrance.jpg",
     "credit": "Christopher Ziemnowicz",
     "licence": "CC BY-SA 3.0",
@@ -181,7 +181,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Entrance to the Federal Prison Camp in Alderson, West Virginia."
   },
-  "hmp-wayland": {
+  "uk/hmp-wayland": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Main_Entrance_to_HMP_Wayland.JPG",
     "credit": "Chelb",
     "licence": "CC BY-SA 4.0",
@@ -192,7 +192,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Main entrance to HM Prison Wayland in Norfolk."
   },
-  "allenwood-usp": {
+  "us/allenwood-usp": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/USP_Allenwood_updated.jpg",
     "credit": "United States Federal Bureau of Prisons",
     "licence": "Public domain",
@@ -202,7 +202,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:USP_Allenwood_updated.jpg",
     "caption": "Entrance of the United States Penitentiary, Allenwood."
   },
-  "hazelton-usp": {
+  "us/hazelton-usp": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/USP_Hazelton.jpg",
     "credit": "US Department of Justice",
     "licence": "Public domain",
@@ -212,7 +212,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:USP_Hazelton.jpg",
     "caption": "Entrance of the United States Penitentiary Hazelton."
   },
-  "hmp-dartmoor": {
+  "uk/hmp-dartmoor": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Dartmoor_Prison_from_the_air.jpg",
     "credit": "andrewrabbott",
     "licence": "CC BY-SA 4.0",
@@ -223,7 +223,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Aerial view of HM Prison Dartmoor."
   },
-  "ashland-fci": {
+  "us/ashland-fci": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/FCIAshland.jpg",
     "credit": "U.S. Federal Bureau of Prisons",
     "licence": "Public domain",
@@ -233,7 +233,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCIAshland.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Ashland."
   },
-  "atwater-usp": {
+  "us/atwater-usp": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/USPAtwater.jpg",
     "credit": "Platinummedia",
     "licence": "CC BY-SA 4.0",
@@ -244,7 +244,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Aerial view of United States Penitentiary, Atwater, in 2021."
   },
-  "hmp-exeter": {
+  "uk/hmp-exeter": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/HM_Prison%2C_Exeter_-_geograph.org.uk_-_1062012.jpg",
     "credit": "Roger Cornfoot",
     "licence": "CC BY-SA 2.0",
@@ -255,7 +255,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "Exterior of HM Prison Exeter."
   },
-  "brooklyn-mdc": {
+  "us/brooklyn-mdc": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Fed29jail5bbtjeh.JPG",
     "credit": "Jim.henderson",
     "licence": "Public domain",
@@ -265,7 +265,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fed29jail5bbtjeh.JPG",
     "caption": "Metropolitan Detention Center, Brooklyn, seen across 29th Street in 2008."
   },
-  "big-spring-fci": {
+  "us/big-spring-fci": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/FCI_Big_Spring.jpg",
     "credit": "Federal Bureau of Prisons",
     "licence": "Public domain",
@@ -275,7 +275,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Big_Spring.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Big Spring."
   },
-  "aliceville-fci": {
+  "us/aliceville-fci": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/FCIalicevillefull.jpg",
     "credit": "Federal Bureau of Prisons",
     "licence": "Public domain",
@@ -285,7 +285,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCIalicevillefull.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Aliceville."
   },
-  "hmp-liverpool": {
+  "uk/hmp-liverpool": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Admin_block%2C_HMP_Liverpool.jpg",
     "credit": "Rodhullandemu",
     "licence": "CC BY-SA 4.0",
@@ -296,7 +296,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Reception and admission block of HM Prison Liverpool across Hornby Road."
   },
-  "terre-haute-usp": {
+  "us/terre-haute-usp": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/TerreHauteUSP.jpg",
     "credit": "Federal Bureau of Prisons",
     "licence": "Public domain",
@@ -306,7 +306,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:TerreHauteUSP.jpg",
     "caption": "Exterior of the United States Penitentiary, Terre Haute."
   },
-  "hmp-stafford": {
+  "uk/hmp-stafford": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HMP_Stafford.jpg",
     "credit": "Stephen Pearce",
     "licence": "CC BY-SA 2.0",
@@ -317,7 +317,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "Exterior of HM Prison Stafford."
   },
-  "hmp-yoi-lincoln": {
+  "uk/hmp-yoi-lincoln": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/HMP_Lincoln.jpg",
     "credit": "Matthew Smith",
     "licence": "CC BY-SA 2.0",
@@ -328,7 +328,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "Gatehouse and frontage of HM Prison Lincoln."
   },
-  "oxford-fci": {
+  "us/oxford-fci": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/FCI_Oxford_main_entrance.jpg",
     "credit": "BOP",
     "licence": "Public domain",
@@ -338,7 +338,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Oxford_main_entrance.jpg",
     "caption": "Main entrance of the Federal Correctional Institution, Oxford."
   },
-  "collins-bay-institution": {
+  "ca/collins-bay-institution": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Collins_Bay_Institution.JPG",
     "credit": "P199",
     "licence": "CC BY-SA 3.0",
@@ -349,7 +349,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Collins Bay Institution, Kingston, Ontario."
   },
-  "dorchester-penitentiary": {
+  "ca/dorchester-penitentiary": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/DorchesterPen2.jpg",
     "credit": "Verne Equinox at English Wikipedia",
     "licence": "CC BY-SA 3.0",
@@ -360,7 +360,7 @@
     "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
     "caption": "Dorchester Penitentiary, New Brunswick."
   },
-  "stony-mountain-institution": {
+  "ca/stony-mountain-institution": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Stony_Mountain_Manitoba_-_Federal_Penitentiary.JPG",
     "credit": "Bluejaywpg",
     "licence": "Public domain",
@@ -370,7 +370,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stony_Mountain_Manitoba_-_Federal_Penitentiary.JPG",
     "caption": "Stony Mountain Institution, Manitoba, in 2008."
   },
-  "archambault-institution": {
+  "ca/archambault-institution": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/%C3%89tablissement_Archambault.jpg",
     "credit": "DomLemLali",
     "licence": "CC BY-SA 4.0",
@@ -381,7 +381,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Archambault Institution, Sainte-Anne-des-Plaines, Quebec."
   },
-  "etablissement-de-detention-de-montreal-bordeaux": {
+  "ca/etablissement-de-detention-de-montreal-bordeaux": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Montr%C3%A9al%2C_08_avril_2009._Boul._Gouin_Ouest._%285562534267%29.jpg",
     "credit": "Philippe Du Berger",
     "licence": "CC BY 2.0",
@@ -392,7 +392,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
     "caption": "Bordeaux Prison on Boulevard Gouin Ouest, Montreal, in 2009."
   },
-  "toronto-east-detention-centre": {
+  "ca/toronto-east-detention-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Toronto_East_Detention_Centre.jpg",
     "credit": "GTD Aquitaine",
     "licence": "Public domain",
@@ -402,7 +402,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toronto_East_Detention_Centre.jpg",
     "caption": "Toronto East Detention Centre, Scarborough, Ontario."
   },
-  "central-east-correctional-centre": {
+  "ca/central-east-correctional-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Central-East_Correctional_Centre.JPG",
     "credit": "P199",
     "licence": "Public domain",
@@ -412,7 +412,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Central-East_Correctional_Centre.JPG",
     "caption": "Central East Correctional Centre, Lindsay, Ontario."
   },
-  "ottawa-carleton-detention-centre": {
+  "ca/ottawa-carleton-detention-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Ottawa-Carleton_Detention_Ctr.jpg",
     "credit": "P199",
     "licence": "CC BY-SA 4.0",
@@ -423,7 +423,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Ottawa-Carleton Detention Centre, Ottawa."
   },
-  "central-nova-scotia-correctional-facility": {
+  "ca/central-nova-scotia-correctional-facility": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Central_Nova_Scotia_Correctional_Facility_overview_May_2019.jpg",
     "credit": "Ben MacLeod",
     "licence": "CC BY-SA 4.0",
@@ -434,7 +434,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Central Nova Scotia Correctional Facility in May 2019."
   },
-  "aaqqigiarvik-correctional-healing-facility": {
+  "ca/aaqqigiarvik-correctional-healing-facility": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Aaqqigiarvik_Correctional_Healing_Facility_front_entrance.jpg",
     "credit": "OhanaUnited",
     "licence": "CC BY-SA 4.0",
@@ -445,7 +445,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Entrance to the Aaqqigiarvik Correctional Healing Facility, Iqaluit."
   },
-  "goulburn-correctional-centre": {
+  "au/goulburn-correctional-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/GoulburnGaol.jpg",
     "credit": "Matilda",
     "licence": "CC BY-SA 2.5",
@@ -456,7 +456,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5",
     "caption": "Goulburn Correctional Centre, New South Wales."
   },
-  "bathurst-correctional-centre": {
+  "au/bathurst-correctional-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Penitentiary_Batrurst%2C_NSW_Australia.jpg",
     "credit": "Ian Sutton",
     "licence": "CC BY 2.0",
@@ -467,7 +467,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
     "caption": "Bathurst Correctional Centre (Bathurst Gaol), New South Wales."
   },
-  "cessnock-correctional-centre": {
+  "au/cessnock-correctional-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cessnock_Correctional_Centre_%281%29.jpg",
     "credit": "Eva Rinaldi",
     "licence": "CC BY-SA 2.0",
@@ -478,7 +478,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "Cessnock Correctional Centre, New South Wales, in 2013."
   },
-  "cooma-correctional-centre": {
+  "au/cooma-correctional-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Cooma_Correctional_Centre_Entrance.jpg",
     "credit": "Ymblanter",
     "licence": "CC BY-SA 4.0",
@@ -489,7 +489,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Entrance to Cooma Correctional Centre, New South Wales."
   },
-  "melbourne-assessment-prison-precinct": {
+  "au/melbourne-assessment-prison-precinct": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/HM_Melb_Assessment_Prison.jpg",
     "credit": "Canley",
     "licence": "CC BY-SA 4.0",
@@ -500,7 +500,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Melbourne Assessment Prison on Spencer Street, West Melbourne."
   },
-  "woodford-correctional-centre": {
+  "au/woodford-correctional-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Woodford_Correctional_Centre.jpg",
     "credit": "Shiftchange",
     "licence": "CC0",
@@ -511,7 +511,7 @@
     "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "caption": "Woodford Correctional Centre, Queensland."
   },
-  "yatala-labour-prison": {
+  "au/yatala-labour-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Yatala_prison_rear_2008.JPG",
     "credit": "Peripitus",
     "licence": "CC BY-SA 3.0",
@@ -522,7 +522,7 @@
     "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
     "caption": "Rear of Yatala Labour Prison, Adelaide, in 2008."
   },
-  "albany-regional-prison": {
+  "au/albany-regional-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Albany_Regional_Prison2.jpg",
     "credit": "Hughesdarren",
     "licence": "Public domain",
@@ -532,7 +532,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albany_Regional_Prison2.jpg",
     "caption": "Albany Regional Prison, Western Australia."
   },
-  "bandyup-women-s-prison": {
+  "au/bandyup-women-s-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/BandyupWomensPrison_gobeirne.jpg",
     "credit": "Greg O'Beirne",
     "licence": "CC BY 3.0",
@@ -543,7 +543,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
     "caption": "Aerial view of Bandyup Women's Prison, West Swan, in 2004."
   },
-  "alexander-maconochie-centre": {
+  "au/alexander-maconochie-centre": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/ACT_gaol.jpg",
     "credit": "Graeme Bartlett",
     "licence": "CC BY-SA 3.0",
@@ -554,7 +554,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Aerial view of the Alexander Maconochie Centre, Canberra, near completion in 2008."
   },
-  "auckland-prison": {
+  "nz/auckland-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Paremoremo_Prison_High_Security_I.jpg",
     "credit": "Ingolfson",
     "licence": "Public domain",
@@ -564,7 +564,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paremoremo_Prison_High_Security_I.jpg",
     "caption": "High-security section of Auckland Prison, Paremoremo, in 2008."
   },
-  "auckland-region-women-s-corrections-facility": {
+  "nz/auckland-region-women-s-corrections-facility": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Auckland_Region_Women%27s_Prison.jpg",
     "credit": "Ingolfson",
     "licence": "Public domain",
@@ -574,7 +574,7 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Auckland_Region_Women%27s_Prison.jpg",
     "caption": "Auckland Region Women's Corrections Facility, Wiri, in 2009."
   },
-  "arohata-prison": {
+  "nz/arohata-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Arohata_Womens_Prison.JPG",
     "credit": "Not your siblings' deletionist",
     "licence": "CC0",
@@ -585,7 +585,7 @@
     "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "caption": "Arohata Prison, Tawa, Wellington, in 2013."
   },
-  "manawatu-prison": {
+  "nz/manawatu-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Manawatu_Prison.jpg",
     "credit": "AxonsArachnida",
     "licence": "CC BY-SA 3.0",
@@ -596,7 +596,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Manawatū Prison, Linton."
   },
-  "christchurch-women-s-prison": {
+  "nz/christchurch-women-s-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Christchurch_Women%27s_Prison_-_cropped.jpg",
     "credit": "Murray Foubister",
     "licence": "CC BY-SA 2.0",
@@ -607,7 +607,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "Aerial view of Christchurch Women's Prison in 2017."
   },
-  "mountjoy-prison": {
+  "ie/mountjoy-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Mountjoy_Prison.jpg",
     "credit": "HNS",
     "licence": "CC BY-SA 2.0",
@@ -618,7 +618,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "Mountjoy Prison, Dublin, in 2007."
   },
-  "portlaoise-prison": {
+  "ie/portlaoise-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Portlaoise_Prison%2C_2021-07-21.jpg",
     "credit": "瑞丽江的河水",
     "licence": "CC BY-SA 4.0",
@@ -629,7 +629,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Portlaoise Prison in July 2021."
   },
-  "midlands-prison": {
+  "ie/midlands-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Midlands_Prison_-_2025-07-06_02.jpg",
     "credit": "瑞丽江的河水",
     "licence": "CC BY-SA 4.0",
@@ -640,7 +640,7 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "caption": "Midlands Prison, Portlaoise, in July 2025."
   },
-  "arbour-hill-prison": {
+  "ie/arbour-hill-prison": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Arbour_Hill_Prison.JPG",
     "credit": "Smirkybec",
     "licence": "CC BY-SA 3.0",
