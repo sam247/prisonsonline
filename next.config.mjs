@@ -1,4 +1,5 @@
 import { legacyRootRedirects } from "./config/legacy-root-redirects.mjs";
+import { withConsentManifest } from "c15t/next/build";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,4 +20,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withConsentManifest(nextConfig);

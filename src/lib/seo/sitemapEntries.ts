@@ -93,6 +93,10 @@ export function buildCategoriesEntries(base: string): SitemapUrlEntry[] {
     "/prison-map",
     "/probation",
     "/about",
+    "/privacy",
+    "/cookies",
+    "/terms",
+    "/contact",
   ];
   for (const path of staticPaths) {
     entries.push({ loc: `${base}${path}` });
