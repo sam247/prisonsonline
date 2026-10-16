@@ -47,3 +47,24 @@ export function prisonsInLabel(p: PrisonLike): string {
 export function geographicRegion(p: PrisonLike): string {
   return isHmppsGroupRegion(p) ? "" : (p.stateOrRegion ?? "").trim();
 }
+
+/** Readable name for a raw region string when it is an HMPPS group; otherwise null. */
+export function hmppsGroupReadableName(raw: string | null | undefined): string | null {
+  const key = (raw ?? "").trim().toUpperCase();
+  return HMPPS_NON_GEOGRAPHIC_GROUPS.has(key) ? READABLE_NAMES[key] : null;
+}
+
+/**
+ * Visible title-safe name for a UK region/group string: HMPPS groups become
+ * "the <Readable Name> (HMPPS prison group)"-style labels via the callers below;
+ * geographic regions are returned unchanged.
+ */
+export function regionTitleName(raw: string | null | undefined): string {
+  return hmppsGroupReadableName(raw) ?? (raw ?? "").trim();
+}
+
+/** Visible hub/article heading: "Prisons in <Region>" or "<Group>: HMPPS prison group". */
+export function prisonsInHeading(raw: string | null | undefined): string {
+  const g = hmppsGroupReadableName(raw);
+  return g ? `${g}: HMPPS prison group` : `Prisons in ${(raw ?? "").trim()}`;
+}

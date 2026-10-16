@@ -1,3 +1,4 @@
+import { hmppsGroupReadableName, regionTitleName } from "@/lib/prisons/hmppsGroupLabel";
 import { getPrisonsByCountry, getPrisonsByRegion, getRegionsByCountry } from "@/data/prisons";
 import type { GeneratedArticle } from "@/types/siteArticle";
 import {
@@ -108,7 +109,7 @@ export function buildGeneratedArticles(): GeneratedArticle[] {
       slug,
       title: `Prisons in ${regionName}: how this regional group works`,
       description: `Directory note for prisons grouped under “${regionName}” in our England and Wales listings (${prisons.length} establishments). Not an official list.`,
-      intro: `We currently associate ${prisons.length} establishment${prisons.length === 1 ? "" : "s"} with “${regionName}” in our HMPPS-derived data. This article explains how to use that grouping alongside the regional browse page and individual profiles.`,
+      intro: `We currently associate ${prisons.length} establishment${prisons.length === 1 ? "" : "s"} with ${hmppsGroupReadableName(regionName) ? `the ${regionTitleName(regionName)} HMPPS prison group` : `“${regionName}”`} in our HMPPS-derived data. This article explains how to use that grouping alongside the regional browse page and individual profiles.`,
       bodySections,
       countrySlug: "uk",
       articleKind: "uk_region",
@@ -118,7 +119,7 @@ export function buildGeneratedArticles(): GeneratedArticle[] {
       relatedGuides: ["prison-categories-explained", "how-prison-visits-work"],
       relatedArticleSlugs: [],
       relatedCollections: [],
-      hubLinks: [{ label: `Browse all prisons in ${regionName}`, href: `/prisons/uk/${regionSlug}` }],
+      hubLinks: [{ label: `Browse all prisons in ${hmppsGroupReadableName(regionName) ? `the ${regionTitleName(regionName)} group` : regionName}`, href: `/prisons/uk/${regionSlug}` }],
       faqs,
       sourceType: "generated",
       regionSlug,
