@@ -1,3 +1,4 @@
+import { hmppsGroupReadableName } from "@/lib/prisons/hmppsGroupLabel";
 import type { Prison } from "@/types/prison";
 import type { GeneratedArticleBodySection, GeneratedArticleFaq } from "@/types/siteArticle";
 import type { UkCollectionSlug } from "@/lib/programmatic/collections";
@@ -18,10 +19,13 @@ function exampleNames(prisons: Prison[], n: number): string {
 }
 
 export function buildRegionArticleSections(
-  regionName: string,
+  rawRegionName: string,
   regionSlug: string,
   prisons: Prison[],
 ): { bodySections: GeneratedArticleBodySection[]; faqs: GeneratedArticleFaq[] } {
+  // Display-only: HMPPS functional groups read as e.g. "Youth Custody Service (HMPPS prison group)".
+  const groupName = hmppsGroupReadableName(rawRegionName);
+  const regionName = groupName ? `${groupName} (HMPPS prison group)` : rawRegionName;
   const count = prisons.length;
   const examples = exampleNames(prisons, 5);
   const bodySections: GeneratedArticleBodySection[] = [

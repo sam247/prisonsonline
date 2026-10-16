@@ -1,3 +1,4 @@
+import { hmppsGroupReadableName } from "@/lib/prisons/hmppsGroupLabel";
 import { PrisonListingTemplate } from "@/components/programmatic/PrisonListingTemplate";
 import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
 import { getBaseUrl } from "@/lib/site";
@@ -76,7 +77,7 @@ export function RegionPrisonsView({
       <PrisonListingTemplate
       breadcrumbs={breadcrumbs}
       title={`Prisons in ${regionName}`}
-      subtitle={`${regionPrisons.length} facilities in ${regionName}, ${countryName}`}
+      subtitle={countrySlug === "uk" && hmppsGroupReadableName(regionName) ? `${regionPrisons.length} facilities in this HMPPS prison group, ${countryName}` : `${regionPrisons.length} facilities in ${regionName}, ${countryName}`}
       intro={intro}
       eyebrow={eyebrow}
       footnote={footnote}
