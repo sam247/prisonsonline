@@ -1,12 +1,22 @@
 import type { SiteArticle } from "@/types/siteArticle";
 import { isGeneratedArticle } from "@/types/siteArticle";
+import { LIST_ITEM, manualContentBlocks } from "@/lib/articles/manualContentBlocks";
 
 const MANUAL_BODY_CLASS = "text-muted-foreground leading-relaxed mb-4";
 const SECTION_HEADING = "text-xl font-bold mt-8 mb-4 text-foreground";
 const SUB_HEADING = "text-lg font-semibold mt-6 mb-3 text-foreground";
 
 function renderManualContent(content: string) {
-  return content.split("\n\n").map((para, i) => {
+  return manualContentBlocks(content).map((para, i) => {
+    if (para.split("\n").every((l) => LIST_ITEM.test(l))) {
+      return (
+        <ul key={i} className={`${MANUAL_BODY_CLASS} list-disc pl-6 space-y-2`}>
+          {para.split("\n").map((l, j) => (
+            <li key={j}>{l.replace(LIST_ITEM, "")}</li>
+          ))}
+        </ul>
+      );
+    }
     if (para.startsWith("## ")) {
       return (
         <h2 key={i} className={SECTION_HEADING}>

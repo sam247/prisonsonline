@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
 import Image from "next/image";
 import { MapPin, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -58,7 +59,7 @@ export function PrisonCardContent({ prison, variant = "default" }: PrisonCardPro
           <MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5" />
           <span className="leading-snug">
             {prison.city}
-            {prison.stateOrRegion ? ` · ${prison.stateOrRegion}` : ""}
+            {geographicRegion(prison) ? ` · ${geographicRegion(prison)}` : ""}
             {prison.country ? ` · ${prison.country}` : ""}
           </span>
         </div>
