@@ -35,7 +35,7 @@ import { intentHref, intentTopicLabel } from "@/lib/seo/prisonIntentCopy";
 import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
 import { ContentImage } from "@/components/media/ContentImage";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
-import { hasVisitorHistory } from "@/lib/seo/visitorCopy";
+import { hasVisitorHistory, visitorOverview, visitorPrisonLife } from "@/lib/seo/visitorCopy";
 import { PrisonCard } from "@/components/PrisonCard";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -64,7 +64,7 @@ const PROFILE_CONTACT_OWNERSHIP_PILOT = new Set([
 function leadSummaryText(p: Prison): string {
   const sd = p.shortDescription?.trim();
   if (sd) return sd;
-  const o = p.overview.trim();
+  const o = visitorOverview(p);
   const sentences = o.split(/(?<=[.!?])\s+/).filter(Boolean);
   return sentences.slice(0, 2).join(" ") || o;
 }
@@ -351,7 +351,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               <h2 id="overview-heading" className="text-xl font-bold mb-4">
                 Overview
               </h2>
-              <p className="text-muted-foreground leading-relaxed">{prison.overview}</p>
+              <p className="text-muted-foreground leading-relaxed">{visitorOverview(prison)}</p>
             </section>
 
             {hasVisitorHistory(prison.history) ? (
@@ -372,12 +372,14 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             )}
 
-            <section aria-labelledby="life-heading">
-              <h2 id="life-heading" className="text-xl font-bold mb-4">
-                Prison Life
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">{prison.prisonLife}</p>
-            </section>
+            {visitorPrisonLife(prison.prisonLife) ? (
+              <section aria-labelledby="life-heading">
+                <h2 id="life-heading" className="text-xl font-bold mb-4">
+                  Prison Life
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">{visitorPrisonLife(prison.prisonLife)}</p>
+              </section>
+            ) : null}
 
             <section aria-labelledby="visiting-heading">
               <h2 id="visiting-heading" className="text-xl font-bold mb-4">
