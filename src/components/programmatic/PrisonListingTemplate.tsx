@@ -50,7 +50,9 @@ export function PrisonListingTemplate({
   const n = establishmentCountFromStats(stats);
   const countFactualLine =
     typeof n === "number"
-      ? `This page lists ${n} establishment${n === 1 ? "" : "s"} from the current import.`
+      ? prisonList.length > 0 && prisonList.every((p) => p.dataProvenance === "official_source")
+        ? `This page lists ${n} facilit${n === 1 ? "y" : "ies"}, each checked against an official source.`
+        : `This page lists ${n} establishment${n === 1 ? "" : "s"} from the current import.`
       : undefined;
 
   return (

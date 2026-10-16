@@ -35,6 +35,7 @@ import { intentsForPrison, isPrisonInIntentRollout } from "@/lib/seo/intentRollo
 import { intentHref, intentTopicLabel } from "@/lib/seo/prisonIntentCopy";
 import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
 import { ContentImage } from "@/components/media/ContentImage";
+import { ProfileMapPreview } from "@/components/facility/ProfileMapPreview";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { hasVisitorHistory, visitorOverview, visitorPrisonLife } from "@/lib/seo/visitorCopy";
 import { PrisonCard } from "@/components/PrisonCard";
@@ -446,14 +447,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </h2>
               <div className="space-y-6">
                 <p className="text-muted-foreground leading-relaxed">{buildLocationBody(prison)}</p>
-                {hasCoords ? (
-                  <div>
-                    <div className="bg-secondary/50 rounded-lg h-48 flex items-center justify-center text-muted-foreground text-sm">
-                      <MapPin className="h-5 w-5 mr-2 shrink-0" aria-hidden />
-                      Map preview — {prison.latitude.toFixed(4)}, {prison.longitude.toFixed(4)}
-                    </div>
-                  </div>
-                ) : null}
+                {hasCoords ? <ProfileMapPreview latitude={prison.latitude} longitude={prison.longitude} /> : null}
               </div>
             </section>
 
