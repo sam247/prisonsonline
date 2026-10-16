@@ -24,7 +24,7 @@
     "verify:ca": "tsx scripts/verify-ca-prisons.ts",
     "verify:ca:live": "tsx scripts/verify-ca-prisons.ts --live",
     "data:build:strict": "node scripts/build-institutional-data.mjs --strict",
-    "prebuild": "npm run data:build && npm run data:build:us && npm run data:build:ca && npm run data:build:au && npm run data:build:nz && npm run data:build:courts && npm run data:build:images && npm run data:build:growth-cohort && npm run data:build:article-prune",
+    "prebuild": "npm run data:build && npm run data:build:us && npm run data:build:ca && npm run data:build:au && npm run data:build:nz && npm run data:build:ie && npm run data:build:courts && npm run data:build:images && npm run data:build:growth-cohort && npm run data:build:article-prune",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -35,7 +35,10 @@
     "verify:au:live": "tsx scripts/verify-au-prisons.ts --live",
     "data:build:nz": "node scripts/build-nz-prisons.mjs",
     "verify:nz": "tsx scripts/verify-nz-prisons.ts",
-    "verify:nz:live": "tsx scripts/verify-nz-prisons.ts --live"
+    "verify:nz:live": "tsx scripts/verify-nz-prisons.ts --live",
+    "data:build:ie": "node scripts/build-ie-prisons.mjs",
+    "verify:ie": "tsx scripts/verify-ie-prisons.ts",
+    "verify:ie:live": "tsx scripts/verify-ie-prisons.ts --live"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

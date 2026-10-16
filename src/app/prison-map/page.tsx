@@ -6,7 +6,7 @@ import { MAP_COUNTRIES, MAP_COUNTRY_ORDER } from "@/lib/prison-map/location";
 import { PrisonMapClient } from "./prison-map-client";
 
 export const metadata = buildPageMetadata({
-  title: "Prison Map", description: "Find prisons in the UK, US, Canada, Australia and New Zealand geographically, search facility locations and open prison profiles. UK markers show approximate postcode locations.", path: "/prison-map",
+  title: "Prison Map", description: "Find prisons in the UK, US, Canada, Australia, New Zealand and Ireland geographically, search facility locations and open prison profiles. UK markers show approximate postcode locations.", path: "/prison-map",
 });
 
 export default function PrisonMapPage() {
@@ -20,7 +20,7 @@ export default function PrisonMapPage() {
     <div className="container space-y-6 py-6 md:py-8">
       <p className="text-sm text-muted-foreground">{uk} UK postcode locations · {us} US prison and facility profiles · {offices} optional reentry offices{intl.map(t => ` · ${t}`).join("")}. Records without reliable locations remain available in the directory and are flagged for review.</p>
       <PrisonMapClient records={records} />
-      <nav aria-label="Prison directories" className="flex flex-wrap gap-x-6 gap-y-2 border-t pt-4 text-sm">{[["/prisons", "Prison Finder"], ["/prisons/uk", "UK prison directory"], ["/prisons/us", "US federal directory"], ["/prisons/united-states", "US legacy profiles"], ["/prisons/ca", "Canada prison directory"], ["/prisons/nz", "New Zealand prison directory"], ["/prisons/au", "Australia prison directory"]].map(([href, label]) => <Link key={href} href={href} className="inline-flex min-h-11 items-center text-accent underline">{label}</Link>)}</nav>
+      <nav aria-label="Prison directories" className="flex flex-wrap gap-x-6 gap-y-2 border-t pt-4 text-sm">{[["/prisons", "Prison Finder"], ["/prisons/uk", "UK prison directory"], ["/prisons/us", "US federal directory"], ["/prisons/united-states", "US legacy profiles"], ["/prisons/ca", "Canada prison directory"], ["/prisons/ie", "Ireland prison directory"], ["/prisons/nz", "New Zealand prison directory"], ["/prisons/au", "Australia prison directory"]].map(([href, label]) => <Link key={href} href={href} className="inline-flex min-h-11 items-center text-accent underline">{label}</Link>)}</nav>
     </div>
   </div>;
 }

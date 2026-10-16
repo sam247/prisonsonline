@@ -266,5 +266,20 @@
     "rolleston-prison",
     "otago-corrections-facility",
     "invercargill-prison"
+  ],
+  "ie": [
+    "arbour-hill-prison",
+    "castlerea-prison",
+    "cloverhill-prison",
+    "cork-prison",
+    "limerick-prison",
+    "loughan-house",
+    "midlands-prison",
+    "mountjoy-prison",
+    "mountjoy-female-prison-dochas-centre",
+    "portlaoise-prison",
+    "shelton-abbey",
+    "training-unit",
+    "wheatfield-place-of-detention"
   ]
 }

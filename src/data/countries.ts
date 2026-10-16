@@ -2,6 +2,7 @@ import type { EditorialImage } from "@/types/media";
 import type { Prison } from "@/types/prison";
 import { auPrisonsGenerated } from "./generated/auPrisons.generated";
 import { nzPrisonsGenerated } from "./generated/nzPrisons.generated";
+import { iePrisonsGenerated } from "./generated/iePrisons.generated";
 import { caPrisonsGenerated } from "./generated/caPrisons.generated";
 
 /** Directory counts for official-source countries come only from the generated data (open facilities). */
@@ -59,6 +60,17 @@ export const countriesData: Country[] = [
       "Federal institutions run by the Correctional Service of Canada, and provincial and territorial correctional facilities. Each listing is checked against an official government source, linked on its profile.",
     securitySystemDescription:
       "The Correctional Service of Canada classifies each federal institution as minimum, medium, maximum, multi-level or clustered security. Provincial and territorial facilities use their own classifications, shown on a profile only where the official source states one.",
+  },
+  {
+    name: "Ireland",
+    slug: "ie",
+    region: "Europe",
+    prisonCount: openCount(iePrisonsGenerated),
+    prisonPopulation: 0,
+    description:
+      "Prisons run by the Irish Prison Service. Each listing is checked against an official government source, linked on its profile.",
+    securitySystemDescription:
+      "A profile shows a security classification only where the official source states one.",
   },
   {
     name: "New Zealand",
