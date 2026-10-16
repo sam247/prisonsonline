@@ -112,3 +112,21 @@
     @apply font-semibold tracking-tight;
   }
 }
+
+[data-branding="inth"] {
+  display: none !important;
+}
+
+[data-testid="consent-banner-footer"] {
+  background: hsl(var(--accent));
+  border-radius: 0 0 12px 12px;
+}
+
+[data-testid="consent-banner-footer"] button {
+  color: hsl(var(--accent-foreground));
+  border-color: hsl(var(--accent-foreground) / 0.55);
+}
+
+[data-testid="consent-banner-footer"] button:hover {
+  background: hsl(var(--accent-foreground) / 0.14);
+}

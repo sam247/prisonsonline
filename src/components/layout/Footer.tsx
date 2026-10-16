@@ -41,7 +41,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Image src="/logo-icon.png" alt="Prisons Online" width={32} height={32} className="h-8 w-auto" />
+              <Image src="/logo-full-white.png" alt="Prisons Online" width={469} height={112} className="h-10 w-auto" />
             </div>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
               A global prison directory and information resource. Find prison information, learn about prison systems, and access guides for families.
