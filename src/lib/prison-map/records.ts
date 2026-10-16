@@ -33,6 +33,9 @@ export function projectMapRecord(prison: Prison, overlay?: PrisonCoordOverlay): 
     } else {
       exclusion = overlay ? "Postcode changed since coordinates were resolved" : "No postcode coordinates available";
     }
+  } else if (prison.dataProvenance === "official_source") {
+    // International rows: plot only facility-precision coordinates published by an official source.
+    if (evidence?.precision !== "facility" || !evidence.source) exclusion = "No official facility coordinates published";
   } else if (prison.dataProvenance === "bop_import") {
     if (!evidence || evidence.precision !== "facility") exclusion = "No verified BOP coordinates available";
     else {
@@ -49,7 +52,7 @@ export function projectMapRecord(prison: Prison, overlay?: PrisonCoordOverlay): 
     id: `${prison.countrySlug}/${prison.slug}`, name: prison.name.trim() || "Unnamed establishment", country,
     href: `/prisons/${prison.countrySlug}/${prison.slug}`, city: prison.city,
     // Never present UK administrative/management groups as geographic regions.
-    state: country === "us" ? (prison.sourceRaw?.state === "RQ" ? "Puerto Rico" : prison.stateOrRegion) : "",
+    state: country === "uk" ? "" : (prison.sourceRaw?.state === "RQ" ? "Puerto Rico" : prison.stateOrRegion),
     type: reentryOffice ? "Reentry management office" : prison.predominantFunction ?? prison.type,
     status: prison.status, reentryOffice, exclusion,
     ...(!exclusion ? { latitude, longitude, precision } : {}),

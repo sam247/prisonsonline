@@ -17,8 +17,9 @@ import { getIndexableCourts, listCourtTypeHubSummaries } from "@/lib/queries/cou
 
 export type SitemapUrlEntry = { loc: string; lastmod?: Date };
 
+/** Closed facilities keep their (labelled) profile pages but are not listed in sitemaps. */
 export function buildPrisonProfileEntries(base: string): SitemapUrlEntry[] {
-  return prisons.map((p) => ({
+  return prisons.filter((p) => p.status !== "closed").map((p) => ({
     loc: `${base}/prisons/${p.countrySlug}/${p.slug}`,
     lastmod: getPrisonSitemapLastModifiedDate(p) ?? undefined,
   }));

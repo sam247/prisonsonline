@@ -1,0 +1,312 @@
+[
+  {
+    "name": "Montée Saint-François Institution",
+    "jurisdiction": "federal (wiki seed)",
+    "reason": "Not listed in CD 706 Annex B or CSC national facility directory; former name of a minimum unit now part of a clustered institution (e.g. Federal Training Centre, Dorchester, Saskatchewan Penitentiary, Stony Mountain). Not a separate current facility.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/acts-regulations-policy/commissioners-directives/706.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Westmorland Institution",
+    "jurisdiction": "federal (wiki seed)",
+    "reason": "Not listed in CD 706 Annex B or CSC national facility directory; former name of a minimum unit now part of a clustered institution (e.g. Federal Training Centre, Dorchester, Saskatchewan Penitentiary, Stony Mountain). Not a separate current facility.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/acts-regulations-policy/commissioners-directives/706.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Riverbend Institution",
+    "jurisdiction": "federal (wiki seed)",
+    "reason": "Not listed in CD 706 Annex B or CSC national facility directory; former name of a minimum unit now part of a clustered institution (e.g. Federal Training Centre, Dorchester, Saskatchewan Penitentiary, Stony Mountain). Not a separate current facility.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/acts-regulations-policy/commissioners-directives/706.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Rockwood Institution",
+    "jurisdiction": "federal (wiki seed)",
+    "reason": "Not listed in CD 706 Annex B or CSC national facility directory; former name of a minimum unit now part of a clustered institution (e.g. Federal Training Centre, Dorchester, Saskatchewan Penitentiary, Stony Mountain). Not a separate current facility.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/acts-regulations-policy/commissioners-directives/706.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Talbot Institution",
+    "jurisdiction": "Quebec (wiki seed)",
+    "reason": "Not found on CSC or Quebec official lists; unconfirmed.",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "East Coast Forensic Hospital",
+    "jurisdiction": "Nova Scotia (wiki seed)",
+    "reason": "Forensic psychiatric hospital (health authority), not a correctional facility on the NS Justice list.",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Canadian Forces Service Prison and Detention Barracks",
+    "jurisdiction": "Department of National Defence (wiki seed)",
+    "reason": "Military detention; no DND official page checked; out of scope for civilian directory.",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Baffin Correctional Centre",
+    "jurisdiction": "Nunavut",
+    "reason": "Closed; replaced by Aaqqigiarvik Correctional Healing Facility in 2021 per NU Corrections Annual Report. Candidate for a 'closed' row once an official closure source is cited separately.",
+    "evidenceUrl": "https://www.assembly.nu.ca/sites/default/files/2026-03/TD-010-7%281%29-EN-Corrections_Annual_Report_2024-25.pdf",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Makigiarvik",
+    "jurisdiction": "Nunavut (wiki seed)",
+    "reason": "Now the medium-security unit of Aaqqigiarvik Correctional Healing Facility, not a separate facility.",
+    "evidenceUrl": "https://www.assembly.nu.ca/sites/default/files/2026-03/TD-010-7%281%29-EN-Corrections_Annual_Report_2024-25.pdf",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Kugluktuk Ilavut Centre",
+    "jurisdiction": "Nunavut",
+    "reason": "Open-custody halfway house (community residential), out of scope for prison directory. Kugluktuk was closed for renovation in 2024-25.",
+    "evidenceUrl": "https://www.assembly.nu.ca/sites/default/files/2026-03/TD-010-7%281%29-EN-Corrections_Annual_Report_2024-25.pdf",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Uttaqivik Community Residential Centre",
+    "jurisdiction": "Nunavut",
+    "reason": "Open-custody halfway house (community residential), out of scope for prison directory. Kugluktuk was closed for renovation in 2024-25.",
+    "evidenceUrl": "https://www.assembly.nu.ca/sites/default/files/2026-03/TD-010-7%281%29-EN-Corrections_Annual_Report_2024-25.pdf",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Waseskun Healing Centre",
+    "jurisdiction": "federal (CCRA s. 81)",
+    "reason": "Confirmed in CSC directory, but s. 81 lodge operated by an Indigenous community/organisation under agreement, not a CSC institution in CD 706 Annex B. Excluded pending scope decision.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Buffalo Sage Wellness House",
+    "jurisdiction": "federal (CCRA s. 81)",
+    "reason": "Confirmed in CSC directory, but s. 81 lodge operated by an Indigenous community/organisation under agreement, not a CSC institution in CD 706 Annex B. Excluded pending scope decision.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Eagle Women's Healing Lodge",
+    "jurisdiction": "federal (CCRA s. 81)",
+    "reason": "Confirmed in CSC directory, but s. 81 lodge operated by an Indigenous community/organisation under agreement, not a CSC institution in CD 706 Annex B. Excluded pending scope decision.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "O-Chi-Chak-Ko-Sipi Healing Lodge",
+    "jurisdiction": "federal (CCRA s. 81)",
+    "reason": "Confirmed in CSC directory, but s. 81 lodge operated by an Indigenous community/organisation under agreement, not a CSC institution in CD 706 Annex B. Excluded pending scope decision.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Prince Albert Grand Council Spiritual Healing Lodge",
+    "jurisdiction": "federal (CCRA s. 81)",
+    "reason": "Confirmed in CSC directory, but s. 81 lodge operated by an Indigenous community/organisation under agreement, not a CSC institution in CD 706 Annex B. Excluded pending scope decision.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Stan Daniels Healing Centre",
+    "jurisdiction": "federal (CCRA s. 81)",
+    "reason": "Confirmed in CSC directory, but s. 81 lodge operated by an Indigenous community/organisation under agreement, not a CSC institution in CD 706 Annex B. Excluded pending scope decision.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Carlton Annex CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Carlton CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Newfoundland and Labrador (St. John's) CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Parrtown CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Jamieson CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Hochelaga CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Laferrière CCC (closed until 2028)",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Marcel-Caron CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Martineau CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Ogilvy CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Sherbrooke CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Keele CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Henry Traill CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Osborne CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Oskana CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Chilliwack CCC",
+    "jurisdiction": "federal",
+    "reason": "Community Correctional Centre (residential for offenders on conditional release); out of scope.",
+    "evidenceUrl": "https://www.canada.ca/en/correctional-service/corporate/facilities-security/institutional-profiles/directory.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "St. John's Lockup",
+    "jurisdiction": "Newfoundland and Labrador",
+    "reason": "Short-term court holding unit; out of scope.",
+    "evidenceUrl": "https://www.gov.nl.ca/jps/corrections/institutional-services/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Corner Brook Lockup",
+    "jurisdiction": "Newfoundland and Labrador",
+    "reason": "Short-term court holding unit; out of scope.",
+    "evidenceUrl": "https://www.gov.nl.ca/jps/corrections/institutional-services/",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Besnard Lake Community Correctional Centre",
+    "jurisdiction": "Saskatchewan",
+    "reason": "Listed officially, but the page gives no city/location; schema needs a city.",
+    "evidenceUrl": "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/correctional-facilities-and-probation/correctional-facilities-and-community-corrections-offices",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Prince Albert Reintegration Unit",
+    "jurisdiction": "Saskatchewan",
+    "reason": "Reduced-custody reintegration unit; out of scope (and may be co-located with secure centres).",
+    "evidenceUrl": "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/correctional-facilities-and-probation/correctional-facilities-and-community-corrections-offices",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Regina Reintegration Unit",
+    "jurisdiction": "Saskatchewan",
+    "reason": "Reduced-custody reintegration unit; out of scope (and may be co-located with secure centres).",
+    "evidenceUrl": "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/correctional-facilities-and-probation/correctional-facilities-and-community-corrections-offices",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Saskatoon Reintegration Unit",
+    "jurisdiction": "Saskatchewan",
+    "reason": "Reduced-custody reintegration unit; out of scope (and may be co-located with secure centres).",
+    "evidenceUrl": "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/correctional-facilities-and-probation/correctional-facilities-and-community-corrections-offices",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Saskatoon Reintegration Unit for Women",
+    "jurisdiction": "Saskatchewan",
+    "reason": "Reduced-custody reintegration unit; out of scope (and may be co-located with secure centres).",
+    "evidenceUrl": "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/correctional-facilities-and-probation/correctional-facilities-and-community-corrections-offices",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Saskatchewan Hospital North Battleford (secure offender beds)",
+    "jurisdiction": "Saskatchewan",
+    "reason": "Psychiatric hospital with secure beds; out of scope.",
+    "evidenceUrl": "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/correctional-facilities-and-probation/correctional-facilities-and-community-corrections-offices",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "New Brunswick Youth Centre",
+    "jurisdiction": "New Brunswick",
+    "reason": "Youth facility; out of scope.",
+    "evidenceUrl": "https://www.gnb.ca/en/topic/laws-safety/courts-jails/jails-correction.html",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "PEI Youth Centre",
+    "jurisdiction": "Prince Edward Island",
+    "reason": "Youth facility; out of scope.",
+    "evidenceUrl": "https://www.princeedwardisland.ca/en/information/justice-and-public-safety/provincial-custody-programs",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Isumaqsunngittukkuvik Young Offenders Facility",
+    "jurisdiction": "Nunavut",
+    "reason": "Youth facility; out of scope.",
+    "checkedAt": "2026-10-16"
+  },
+  {
+    "name": "Kingston Penitentiary and other historic/closed federal sites",
+    "jurisdiction": "federal",
+    "reason": "No official CSC closure/historic page checked in this pass; historic rows deferred until an official source is cited.",
+    "checkedAt": "2026-10-16"
+  }
+]

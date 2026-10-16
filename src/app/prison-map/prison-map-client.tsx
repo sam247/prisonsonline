@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Component, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { filterMapRecords, type MapCountry, type MapRecord } from "@/lib/prison-map/location";
+import { filterMapRecords, MAP_COUNTRIES, MAP_COUNTRY_ORDER, type MapCountry, type MapRecord } from "@/lib/prison-map/location";
 
 const MapRenderer = dynamic(() => import("./map-renderer"), { ssr: false, loading: () => <div className="flex h-[320px] items-center justify-center bg-muted md:h-[580px]" role="status">Loading interactive map. Prison results are available below.</div> });
 class MapBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
@@ -27,7 +27,9 @@ export function PrisonMapClient({ records }: { records: MapRecord[] }) {
   const mapped = useMemo(() => filtered.filter(p => !p.exclusion), [filtered]);
   const missing = filtered.length - mapped.length;
   const selected = filtered.find(p => p.id === selectedId);
-  const states = useMemo(() => Array.from(new Set(records.filter(p => p.country === "us" && !p.exclusion && (!p.reentryOffice || reentryOffices)).map(p => p.state))).filter(Boolean).sort(), [records, reentryOffices]);
+  const regionLabel = MAP_COUNTRIES[country].regionLabel;
+  const countries = useMemo(() => MAP_COUNTRY_ORDER.filter(c => records.some(p => p.country === c)), [records]);
+  const states = useMemo(() => Array.from(new Set(records.filter(p => p.country === country && !p.exclusion && (!p.reentryOffice || reentryOffices)).map(p => p.state))).filter(Boolean).sort(), [records, country, reentryOffices]);
   const select = useCallback((id: string) => { previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; setSelectedId(id); }, []);
   const close = useCallback(() => { setSelectedId(null); previousFocus.current?.focus({ preventScroll: true }); }, []);
   useEffect(() => { if (selectedId && !filtered.some(p => p.id === selectedId)) setSelectedId(null); }, [selectedId, filtered]);
@@ -41,11 +43,11 @@ export function PrisonMapClient({ records }: { records: MapRecord[] }) {
   return <section aria-label="Find prisons on the map" className="space-y-4">
     <div className="rounded-lg border bg-card p-4">
       <div className="flex flex-wrap gap-2" role="group" aria-label="Map country">
-        {(["uk", "us"] as const).map(c => <Button key={c} variant={country === c ? "default" : "outline"} aria-pressed={country === c} className="min-h-11" onClick={() => { setCountry(c); setState(""); setSelectedId(null); }}>{c === "uk" ? "United Kingdom" : "United States"}</Button>)}
+        {countries.map(c => <Button key={c} variant={country === c ? "default" : "outline"} aria-pressed={country === c} className="min-h-11" onClick={() => { setCountry(c); setState(""); setSelectedId(null); }}>{MAP_COUNTRIES[c].label}</Button>)}
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         <div><label htmlFor="map-search" className="mb-1 block text-sm font-medium">Search prisons</label><Input id="map-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Prison name or location" className="min-h-11" /></div>
-        {country === "us" && <div><label htmlFor="map-state" className="mb-1 block text-sm font-medium">State or territory</label><select id="map-state" value={state} onChange={e => setState(e.target.value)} className="min-h-11 w-full rounded-md border bg-background px-3 text-sm"><option value="">All states and territories</option>{states.map(s => <option key={s} value={s}>{s}</option>)}</select></div>}
+        {regionLabel && <div><label htmlFor="map-state" className="mb-1 block text-sm font-medium">{regionLabel}</label><select id="map-state" value={state} onChange={e => setState(e.target.value)} className="min-h-11 w-full rounded-md border bg-background px-3 text-sm"><option value="">{MAP_COUNTRIES[country].regionAllLabel}</option>{states.map(s => <option key={s} value={s}>{s}</option>)}</select></div>}
       </div>
       <div className="mt-2 flex flex-wrap items-center gap-x-4">
         {country === "us" && <label className="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" checked={reentryOffices} onChange={e => { setReentryOffices(e.target.checked); setState(""); }} className="h-5 w-5 accent-accent" />Reentry offices <span className="text-muted-foreground">(administrative locations)</span></label>}
@@ -58,8 +60,8 @@ export function PrisonMapClient({ records }: { records: MapRecord[] }) {
       <div className="space-y-4">
         {selected && <section aria-label="Selected prison" className="rounded-lg border bg-card p-4">
           <div className="flex items-start justify-between gap-2"><h2 ref={detailHeading} tabIndex={-1} className="text-lg font-semibold focus-visible:outline-accent">{selected.name}</h2><Button variant="ghost" className="min-h-11 shrink-0 px-2" onClick={close} aria-label="Close prison details">Close</Button></div>
-          <p className="mt-2 text-sm">{selected.country === "uk" ? "United Kingdom" : "United States"}{[selected.city, selected.state].filter(Boolean).length > 0 ? ` · ${[selected.city, selected.state].filter(Boolean).join(", ")}` : ""}</p>
-          <p className="mt-2 text-sm text-muted-foreground">{selected.type}{selected.status === "historic" ? " · Historic prison" : ""}</p>
+          <p className="mt-2 text-sm">{selected.country ? MAP_COUNTRIES[selected.country].label : ""}{[selected.city, selected.state].filter(Boolean).length > 0 ? ` · ${[selected.city, selected.state].filter(Boolean).join(", ")}` : ""}</p>
+          <p className="mt-2 text-sm text-muted-foreground">{selected.type}{selected.status === "historic" ? " · Historic prison" : selected.status === "closed" ? " · Closed" : ""}</p>
           <p className="mt-3 text-xs text-muted-foreground">{selected.exclusion ? `Not mapped: ${selected.exclusion}` : selected.precision ? precisionLabels[selected.precision] : ""}</p>
           <Link href={selected.href} className="mt-3 inline-flex min-h-11 items-center font-medium text-accent underline">View prison profile</Link>
         </section>}
@@ -67,7 +69,7 @@ export function PrisonMapClient({ records }: { records: MapRecord[] }) {
           <h2 className="border-b p-4 font-semibold">Prison results</h2>
           {filtered.length === 0 ? <p className="p-4 text-sm text-muted-foreground">No prisons match. Try another name or clear your filters.</p> : <ul className="max-h-[420px] overflow-y-auto divide-y">{filtered.map(p => <li key={p.id} className={p.id === selectedId ? "bg-secondary p-3" : "p-3"}>
             <button onClick={() => select(p.id)} aria-pressed={p.id === selectedId} className="min-h-11 w-full text-left text-sm font-medium hover:text-accent focus-visible:outline-accent">{p.name}</button>
-            <p className="text-xs text-muted-foreground">{[p.city, p.state].filter(Boolean).join(", ")}{p.status === "historic" ? " · Historic prison" : ""}{p.exclusion ? " · Location needs review" : ""}</p>
+            <p className="text-xs text-muted-foreground">{[p.city, p.state].filter(Boolean).join(", ")}{p.status === "historic" ? " · Historic prison" : p.status === "closed" ? " · Closed" : ""}{p.exclusion ? " · Location needs review" : ""}</p>
             <Link href={p.href} aria-label={`${p.name} profile`} className="inline-flex min-h-11 items-center text-xs text-accent underline">Profile</Link>
           </li>)}</ul>}
         </section>

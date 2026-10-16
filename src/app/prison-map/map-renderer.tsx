@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet.markercluster";
-import type { MapRecord } from "@/lib/prison-map/location";
+import { MAP_COUNTRIES, type MapCountry, type MapRecord } from "@/lib/prison-map/location";
 import styles from "./map.module.css";
 
 export default function MapRenderer({ records, country, selectedId, onSelect }: {
-  records: MapRecord[]; country: "uk" | "us"; selectedId: string | null; onSelect: (id: string) => void;
+  records: MapRecord[]; country: MapCountry; selectedId: string | null; onSelect: (id: string) => void;
 }) {
   const container = useRef<HTMLDivElement>(null);
   const map = useRef<L.Map>();
@@ -54,7 +54,7 @@ export default function MapRenderer({ records, country, selectedId, onSelect }: 
       cluster.current.addLayer(marker);
     }
     if (located.length) map.current.fitBounds(L.latLngBounds(located.map(p => [p.latitude!, p.longitude!])), { padding: [32, 32], maxZoom: 12, animate: false });
-    else map.current.setView(country === "uk" ? [54, -2] : [38, -98], country === "uk" ? 6 : 4);
+    else map.current.setView(MAP_COUNTRIES[country].center, MAP_COUNTRIES[country].zoom);
   }, [records, country, onSelect]);
 
   useEffect(() => {

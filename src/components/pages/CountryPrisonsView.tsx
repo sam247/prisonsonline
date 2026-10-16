@@ -32,13 +32,21 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
   }
 
   const capacitySum = countryPrisons.reduce((sum, p) => sum + p.capacity, 0);
+  const isOfficialSource = countryPrisons.length > 0 && countryPrisons.every((p) => p.dataProvenance === "official_source");
+  const closedCount = countryPrisons.filter((p) => p.status === "closed").length;
   const countryBanner = countryData?.coverImage ?? getCountryEditorialImage(countrySlug);
-  const stats = [
+  const stats = isOfficialSource
+    ? [
+        { label: "Open facilities", value: countryPrisons.length - closedCount },
+        ...(closedCount > 0 ? [{ label: "Closed (listed for reference)", value: closedCount }] : []),
+        { label: "Regions", value: regions.length },
+      ]
+    : [
     { label: "Prisons Listed", value: countryPrisons.length || countryData?.prisonCount || 0 },
     { label: "Prison Population", value: countryData?.prisonPopulation ?? "—" },
     { label: "Regions", value: regions.length },
     { label: "Total Capacity", value: capacitySum > 0 ? capacitySum : "—" },
-  ];
+      ];
   const base = getBaseUrl();
   const collectionJsonLd = {
     "@context": "https://schema.org",

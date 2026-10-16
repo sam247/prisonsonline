@@ -1,8 +1,29 @@
-import type { Prison } from "@/types/prison";
+import type { Prison, PrisonStatus } from "@/types/prison";
 import type { BopLocation } from "@/lib/verification/bopClient";
 import { addressesEquivalent, collapseSpace, usZipsEqual } from "@/lib/verification/normalize";
 
-export type MapCountry = "uk" | "us";
+export type MapCountry = "uk" | "us" | "ca";
+
+export type MapCountryConfig = {
+  label: string;
+  /** Label for the region filter; omitted where the map offers no region filter (UK). */
+  regionLabel?: string;
+  regionAllLabel?: string;
+  center: [number, number];
+  zoom: number;
+  /** Inclusive [minLat, maxLat, minLng, maxLng] sanity bounds for plotted coordinates. */
+  bounds: [number, number, number, number];
+};
+
+/** Display order is the key order. */
+export const MAP_COUNTRIES: Record<MapCountry, MapCountryConfig> = {
+  // UK inventory is England/Wales; US bounds also cover Alaska, Hawaii and Puerto Rico.
+  uk: { label: "United Kingdom", center: [54, -2], zoom: 6, bounds: [49, 61, -9, 3] },
+  us: { label: "United States", regionLabel: "State or territory", regionAllLabel: "All states and territories", center: [38, -98], zoom: 4, bounds: [18, 72, -180, -64] },
+  ca: { label: "Canada", regionLabel: "Province or territory", regionAllLabel: "All provinces and territories", center: [56, -96], zoom: 3, bounds: [41.6, 83.2, -141.1, -52.5] },
+};
+
+export const MAP_COUNTRY_ORDER = Object.keys(MAP_COUNTRIES) as MapCountry[];
 
 /**
  * Explicit countrySlug → map country. Unknown countries return null and must be
@@ -11,15 +32,14 @@ export type MapCountry = "uk" | "us";
 export function mapCountryForSlug(countrySlug: string): MapCountry | null {
   if (countrySlug === "uk") return "uk";
   if (countrySlug === "us" || countrySlug === "united-states") return "us";
+  if (countrySlug === "ca") return "ca";
   return null;
 }
 
 export function validCoordinates(latitude: unknown, longitude: unknown, country: MapCountry): boolean {
   if (typeof latitude !== "number" || typeof longitude !== "number" || !Number.isFinite(latitude) || !Number.isFinite(longitude)) return false;
-  // UK inventory is England/Wales; US bounds also cover Alaska, Hawaii and Puerto Rico.
-  return country === "uk"
-    ? latitude >= 49 && latitude <= 61 && longitude >= -9 && longitude <= 3
-    : latitude >= 18 && latitude <= 72 && longitude >= -180 && longitude <= -64;
+  const [minLat, maxLat, minLng, maxLng] = MAP_COUNTRIES[country].bounds;
+  return latitude >= minLat && latitude <= maxLat && longitude >= minLng && longitude <= maxLng;
 }
 
 export function bopLocationConflicts(
@@ -48,7 +68,7 @@ export type MapRecord = {
   city: string;
   state: string;
   type: string;
-  status?: "historic";
+  status?: PrisonStatus;
   latitude?: number;
   longitude?: number;
   precision?: "facility" | "postcode" | "legacy";

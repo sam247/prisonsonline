@@ -50,9 +50,18 @@ export function PrisonCardContent({ prison, variant = "default" }: PrisonCardPro
           <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
             {prison.name}
           </h3>
-          <Badge variant="secondary" className="shrink-0 text-xs font-medium">
-            {prison.securityLevel}
-          </Badge>
+          <div className="flex shrink-0 flex-col items-end gap-1">
+            {prison.status === "closed" || prison.status === "historic" ? (
+              <Badge variant="destructive" className="text-xs font-medium">
+                {prison.status === "closed" ? "Closed" : "Historic"}
+              </Badge>
+            ) : null}
+            {prison.dataProvenance === "official_source" && prison.securityLevel === "Not specified" ? null : (
+              <Badge variant="secondary" className="text-xs font-medium">
+                {prison.securityLevel}
+              </Badge>
+            )}
+          </div>
         </div>
 
         <div className="flex items-start gap-1.5 text-sm text-muted-foreground mb-1.5">
