@@ -140,7 +140,7 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
             {status ? (
               <p role="note" className="rounded-md border border-destructive/40 bg-destructive/5 p-4 text-sm">
                 {status === "Closed"
-                  ? "This facility is listed by its official source as closed. It is kept here for reference."
+                  ? `This facility is listed by its official source as ${prison.statusNote ? prison.statusNote.toLowerCase() : "closed"}. It is kept here for reference.`
                   : "This is a historic facility and no longer holds prisoners."}
               </p>
             ) : null}

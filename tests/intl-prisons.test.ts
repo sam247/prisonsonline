@@ -90,7 +90,7 @@ test("country directories: counts from data and legacy URLs redirect", () => {
     assert.equal(country.prisonCount, open, `${cc} prisonCount derived from data`);
   }
   const map = new Map(intlCountryRedirects.map((r) => [r.source, r]));
-  for (const [cc, name] of [["ca", "canada"]] as const) {
+  for (const [cc, name] of [["au", "australia"], ["ca", "canada"]] as const) {
     if (!SHIPPED.includes(cc)) continue;
     for (const source of [`/countries/${name}`, `/prisons/${name}`]) {
       assert.equal(map.get(source)?.destination, `/prisons/${cc}`, source);
@@ -105,5 +105,15 @@ test("generated files are in sync with their bundles", () => {
     const rows = JSON.parse(fs.readFileSync(bundlePaths(cc).rows, "utf8"));
     const generated = officialInternationalPrisons.filter((p) => p.countrySlug === cc);
     assert.deepEqual(generated.map((p) => ({ ...p, facilityImage: undefined })), rows.map((r: unknown) => ({ ...toPrison(cc, r), facilityImage: undefined })), `${cc}: run npm run data:build:${cc}`);
+  }
+});
+
+test("AU temporarily closed facilities are closed, labelled, and never listed as operating", () => {
+  for (const slug of ["dawn-de-loas-correctional-centre", "oberon-correctional-centre"]) {
+    const p = officialInternationalPrisons.find((x) => x.countrySlug === "au" && x.slug === slug);
+    assert.ok(p, slug);
+    assert.equal(p.status, "closed");
+    assert.equal(p.statusNote, "Temporarily closed");
+    assert.match(p.overview, /temporarily closed/);
   }
 });
