@@ -159,3 +159,15 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Hypothesis:** A concrete, officially sourced ID list and clear allowed/locker/banned answers will improve relevance and CTR for visitor-property queries without inventing prison-specific rules.
 - **Directory records modified:** 0
 - **Branch:** `bot/content-manager/visit-bring-guide-2026-10-05`
+
+## 2026-10-12 — INTERVENTION B (PR ready)
+
+- **URL:** template-wide prison intent openers (`src/lib/seo/prisonIntentCopy.ts` → `buildIntentBodyParagraphs`)
+- **Decision:** UPDATE (standing follow-up after PR #24 / release 2026-10-09)
+- **Jurisdiction:** UK HMPPS rows use `ukPrisonTypeLabel` / `withIndefiniteArticle` / `hasUkHmppsTypeFields`; non-UK keeps type/securityLevel wording (no forced UK category nouns)
+- **Change:** Intent-page opener paragraphs no longer interpolate raw `prison.type` / `securityLevel` for UK establishments (same garbled-copy class as profile type lines fixed in #24). Unit tests assert no raw HMPPS codes in UK intent openers and that non-UK openers stay non-UK.
+- **GSC baseline:** N/A page-level (template-wide opener wording). Measurement is qualitative: no raw HMPPS codes in intent openers on UK pages.
+- **Hypothesis:** Cleaner UK intent openers reduce duplicate/garbled type strings and improve trust on high-volume intent URLs without directory changes.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/intent-opener-type-labels-2026-10-12`
+
