@@ -159,3 +159,30 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Hypothesis:** A concrete, officially sourced ID list and clear allowed/locker/banned answers will improve relevance and CTR for visitor-property queries without inventing prison-specific rules.
 - **Directory records modified:** 0
 - **Branch:** `bot/content-manager/visit-bring-guide-2026-10-05`
+
+## 2026-10-12 — INTERVENTION A (PR ready)
+
+- **URL:** `/articles/prison-overcrowding-england-wales`
+- **Decision:** EXPAND + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England/Wales first (Scotland/NI called out as separate systems)
+- **Change:** Answer-first lead on overcrowding as population vs CNA/operational capacity; removed hard-dated 2024 absolute headcount/capacity claims; pointed readers to MoJ weekly/monthly population and Offender management statistics quarterly; explained CNA vs operational capacity with HMIP glossary + Certified Prisoner Accommodation Policy Framework links; durable drivers (longer sentences, remand, recalls, limited headroom) and effects (shared cells, regime/rehab strain); updated short-term response framing (ECSL ended / SDS40-style measures — check live GOV.UK); FAQ for overcrowded?, CNA vs op cap, why it happens, visits/daily life; internal links to sentences, life-inside, rights, categories, Prison Finder; relatedGuides expanded; excerpt tightened for CTR. Title/slug unchanged. ArticleBody gained HTML: paragraph support (mirrors guides) so official/internal anchors render. No directory edits.
+- **GSC baseline (lookup 2026-10-12, BR/GSC):**
+  - ~7d: not assessed separately (may be empty)
+  - ~28d (2026-09-13→10-10 page list): URL not in top pages (~0 clicks / ~0–few impressions in recent cliff)
+  - ~90d (2026-07-13→10-10): clicks 0, impressions 105, CTR 0%, avg position ~89.21
+- **Query cluster (90d on URL):** prison overcrowding, overcrowded prisons uk, prison overcrowding uk/statistics, overcrowding in uk prisons, uk prison overcrowding, how full are uk prisons (deep pack ~83–100)
+- **Hypothesis:** Clear CNA/capacity definitions + official MoJ links + related-guide internal links will improve relevance and CTR on overcrowding/how-full queries stuck at deep positions without inventing a live headcount.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/overcrowding-article-2026-10-12`
+
+## 2026-10-12 — INTERVENTION B (PR ready)
+
+- **URL:** template-wide prison intent openers (`src/lib/seo/prisonIntentCopy.ts` → `buildIntentBodyParagraphs`)
+- **Decision:** UPDATE (standing follow-up after PR #24 / release 2026-10-09)
+- **Jurisdiction:** UK HMPPS rows use `ukPrisonTypeLabel` / `withIndefiniteArticle` / `hasUkHmppsTypeFields`; non-UK keeps type/securityLevel wording (no forced UK category nouns)
+- **Change:** Intent-page opener paragraphs no longer interpolate raw `prison.type` / `securityLevel` for UK establishments (same garbled-copy class as profile type lines fixed in #24). Unit tests assert no raw HMPPS codes in UK intent openers and that non-UK openers stay non-UK.
+- **GSC baseline:** N/A page-level (template-wide opener wording). Measurement is qualitative: no raw HMPPS codes in intent openers on UK pages.
+- **Hypothesis:** Cleaner UK intent openers reduce duplicate/garbled type strings and improve trust on high-volume intent URLs without directory changes.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/intent-opener-type-labels-2026-10-12`
+

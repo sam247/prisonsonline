@@ -1,6 +1,11 @@
 import type { Prison } from "@/types/prison";
 import { slugVariantIndex } from "@/lib/seo/prisonProfileCopy";
 import type { PrisonIntentSlug } from "@/lib/seo/intentRollout";
+import {
+  hasUkHmppsTypeFields,
+  ukPrisonTypeLabel,
+  withIndefiniteArticle,
+} from "@/lib/seo/ukPrisonTypeLabel";
 
 function searchFacingPrisonName(prison: Prison): string {
   if (prison.slug === "florence-admax-usp") return "ADX Florence (Florence ADMAX USP)";
@@ -174,13 +179,23 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
   const idxOpen = slugVariantIndex(prison.slug, 4);
   const idxDisc = slugVariantIndex(prison.slug, disclaimerVariants(prison).length);
   const idxCta = slugVariantIndex(prison.slug, ctaVariants(prison).length);
-  const type = prison.type?.trim() || prison.securityLevel;
   const loc = [prison.city, prison.stateOrRegion, prison.country].filter(Boolean).join(", ");
+  // UK (HMPPS) rows: plain-English type via ukPrisonTypeLabel (same class of fix as profile copy / PR #24).
+  // Non-UK: keep raw type/securityLevel wording — do not force UK category nouns onto US facilities.
+  const typeBare = hasUkHmppsTypeFields(prison)
+    ? ukPrisonTypeLabel(prison)
+    : (prison.type?.trim() || prison.securityLevel || "correctional facility").trim();
+  const typeWithArticle = hasUkHmppsTypeFields(prison)
+    ? withIndefiniteArticle(typeBare)
+    : /^[aeiou]/i.test(typeBare)
+      ? `an ${typeBare}`
+      : `a ${typeBare}`;
+  const listedAs = hasUkHmppsTypeFields(prison) ? typeWithArticle : `${typeWithArticle} establishment`;
   const openers = [
-    `${prison.name} is listed in this directory as a ${type} establishment in ${loc}, operated where shown by ${prison.operator?.trim() || "the relevant authority"}.`,
-    `This profile covers ${prison.name} in ${loc}; the listing describes it as ${type} for navigation purposes within this dataset.`,
-    `Readers looking up ${prison.name} will see ${type} metadata and ${loc} as recorded in the import behind this build.`,
-    `${prison.name} appears here with ${type} labelling and a ${loc} address context drawn from the same structured import as the main prison page.`,
+    `${prison.name} is listed in this directory as ${listedAs} in ${loc}, operated where shown by ${prison.operator?.trim() || "the relevant authority"}.`,
+    `This profile covers ${prison.name} in ${loc}; the listing describes it as ${typeWithArticle} for navigation purposes within this dataset.`,
+    `Readers looking up ${prison.name} will see ${typeBare} labelling and ${loc} as recorded in the import behind this build.`,
+    `${prison.name} appears here with ${typeBare} labelling and a ${loc} address context drawn from the same structured import as the main prison page.`,
   ];
   const intro = openers[idxOpen];
 

@@ -274,5 +274,68 @@
     "title": "FCI Big Spring",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Big_Spring.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Big Spring."
+  },
+  "aliceville-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/FCIalicevillefull.jpg",
+    "credit": "Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Exterior view of FCI Aliceville",
+    "author": "Federal Bureau of Prisons",
+    "title": "FCIalicevillefull",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCIalicevillefull.jpg",
+    "caption": "Exterior of the Federal Correctional Institution, Aliceville."
+  },
+  "hmp-liverpool": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Admin_block%2C_HMP_Liverpool.jpg",
+    "credit": "Rodhullandemu",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Reception and admission block of HMP Liverpool",
+    "author": "Rodhullandemu",
+    "title": "Admin block, HMP Liverpool",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Admin_block,_HMP_Liverpool.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Reception and admission block of HM Prison Liverpool across Hornby Road."
+  },
+  "terre-haute-usp": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/TerreHauteUSP.jpg",
+    "credit": "Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Exterior view of USP Terre Haute",
+    "author": "Federal Bureau of Prisons",
+    "title": "TerreHauteUSP",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TerreHauteUSP.jpg",
+    "caption": "Exterior of the United States Penitentiary, Terre Haute."
+  },
+  "hmp-stafford": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HMP_Stafford.jpg",
+    "credit": "Stephen Pearce",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior wall and wing of HMP Stafford",
+    "author": "Stephen Pearce",
+    "title": "HMP Stafford",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Stafford.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Exterior of HM Prison Stafford."
+  },
+  "hmp-yoi-lincoln": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/HMP_Lincoln.jpg",
+    "credit": "Matthew Smith",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Gatehouse and frontage of HMP Lincoln",
+    "author": "Matthew Smith",
+    "title": "HMP Lincoln",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Lincoln.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Gatehouse and frontage of HM Prison Lincoln."
+  },
+  "oxford-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/FCI_Oxford_main_entrance.jpg",
+    "credit": "BOP",
+    "licence": "Public domain",
+    "alt": "Main entrance of FCI Oxford",
+    "author": "BOP",
+    "title": "FCI Oxford main entrance",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Oxford_main_entrance.jpg",
+    "caption": "Main entrance of the Federal Correctional Institution, Oxford."
   }
 }

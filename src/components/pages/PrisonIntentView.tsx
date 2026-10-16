@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isHmppsGroupRegion, prisonsInLabel, regionDisplayLabel } from "@/lib/prisons/hmppsGroupLabel";
 import { ChevronRight, BookOpen } from "lucide-react";
 import type { Prison } from "@/types/prison";
 import { isIntentEnabledForPrison, type PrisonIntentSlug } from "@/lib/seo/intentRollout";
@@ -74,7 +75,7 @@ export function PrisonIntentView({
         <div className="container py-10 md:py-12">
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{heading}</h1>
           <p className="mt-2 text-primary-foreground/80 text-sm md:text-base max-w-3xl leading-relaxed">
-            Directory context for {prison.name} in {prison.city}, {prison.stateOrRegion}. Confirm all operational detail
+            Directory context for {prison.name} in {prison.city}{isHmppsGroupRegion(prison) ? ` (${regionDisplayLabel(prison)})` : `, ${prison.stateOrRegion}`}. Confirm all operational detail
             with {prison.operator?.trim() || "the official operator"}.
           </p>
         </div>
@@ -113,7 +114,7 @@ export function PrisonIntentView({
                 href={`/prisons/${prison.countrySlug}/${prison.regionSlug}`}
                 className="text-accent hover:underline"
               >
-                Prisons in {prison.stateOrRegion}
+                {prisonsInLabel(prison)}
               </Link>
             </li>
             {guideLinks.map((g) => (
