@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           <p className="text-primary-foreground/70">How Prisons Online handles personal information</p>
         </div>
       </section>
-      <article className="container max-w-3xl py-10 space-y-8 text-muted-foreground leading-relaxed">
+      <article className="container py-10 space-y-8 text-muted-foreground leading-relaxed">
         <p>Last updated: 16 October 2026</p>
         <section>
           <h2 className="text-xl font-bold text-foreground mb-3">Who we are</h2>

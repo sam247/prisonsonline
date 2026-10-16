@@ -18,7 +18,7 @@ export default function TermsPage() {
           <p className="text-primary-foreground/70">Terms for using Prisons Online</p>
         </div>
       </section>
-      <article className="container max-w-3xl py-10 space-y-8 text-muted-foreground leading-relaxed">
+      <article className="container py-10 space-y-8 text-muted-foreground leading-relaxed">
         <p>Last updated: 16 October 2026</p>
         <section>
           <h2 className="text-xl font-bold text-foreground mb-3">Agreement</h2>
