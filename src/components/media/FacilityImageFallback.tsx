@@ -1,4 +1,4 @@
-import { ImageOff, MapPin } from "lucide-react";
+import { ImageOff } from "lucide-react";
 import type { Prison } from "@/types/prison";
 
 export function FacilityImageFallback({
@@ -9,7 +9,6 @@ export function FacilityImageFallback({
   /** Cards use a shorter message in the same visual slot. */
   variant?: "profile" | "card";
 }) {
-  const hasCoords = prison.latitude !== 0 || prison.longitude !== 0;
   const isCard = variant === "card";
 
   return (
@@ -34,20 +33,6 @@ export function FacilityImageFallback({
             </p>
           </div>
         </div>
-        {hasCoords && (
-          <div className="sm:w-[min(100%,280px)] border-t sm:border-t-0 sm:border-l border-border/50 bg-secondary/30">
-            <div className="flex h-full min-h-[140px] flex-col items-center justify-center gap-2 px-4 py-6 text-muted-foreground text-sm">
-              <MapPin className="h-5 w-5 shrink-0" aria-hidden />
-              <p className="text-center tabular-nums text-xs leading-relaxed">
-                Coordinates on file
-                <br />
-                <span className="text-foreground/90">
-                  {prison.latitude.toFixed(4)}, {prison.longitude.toFixed(4)}
-                </span>
-              </p>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { PrisonCard } from "@/components/PrisonCard";
 import { ContentImage } from "@/components/media/ContentImage";
+import { joinPlaceParts } from "@/lib/prisons/intlDisplay";
 import { ProfileMapPreview } from "@/components/facility/ProfileMapPreview";
 import { getRelatedPrisonsForProfile } from "@/lib/queries/relatedPrisons";
 import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
@@ -143,7 +144,7 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
           <h1 className="text-3xl md:text-4xl font-bold mb-3">{prison.name}</h1>
           <div className="flex items-center gap-2 text-primary-foreground/80">
             <MapPin className="h-4 w-4 shrink-0" aria-hidden />
-            <p>{[prison.city, prison.stateOrRegion, prison.country].filter(Boolean).join(", ")}</p>
+            <p>{joinPlaceParts([prison.city, prison.stateOrRegion, prison.country])}</p>
           </div>
         </div>
       </header>
