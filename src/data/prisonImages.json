@@ -274,5 +274,49 @@
     "title": "FCI Big Spring",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Big_Spring.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Big Spring."
+  },
+  "mountjoy-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Mountjoy_Prison.jpg",
+    "credit": "HNS",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior view of Mountjoy Prison",
+    "author": "HNS",
+    "title": "Mountjoy Prison",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mountjoy_Prison.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Mountjoy Prison, Dublin, in 2007."
+  },
+  "portlaoise-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Portlaoise_Prison%2C_2021-07-21.jpg",
+    "credit": "瑞丽江的河水",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of Portlaoise Prison",
+    "author": "瑞丽江的河水",
+    "title": "Portlaoise Prison, 2021-07-21",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portlaoise_Prison,_2021-07-21.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Portlaoise Prison in July 2021."
+  },
+  "midlands-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Midlands_Prison_-_2025-07-06_02.jpg",
+    "credit": "瑞丽江的河水",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of Midlands Prison",
+    "author": "瑞丽江的河水",
+    "title": "Midlands Prison - 2025-07-06 02",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Midlands_Prison_-_2025-07-06_02.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Midlands Prison, Portlaoise, in July 2025."
+  },
+  "arbour-hill-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Arbour_Hill_Prison.JPG",
+    "credit": "Smirkybec",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of Arbour Hill Prison",
+    "author": "Smirkybec",
+    "title": "Arbour Hill Prison",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arbour_Hill_Prison.JPG",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Arbour Hill Prison, Dublin, in 2014."
   }
 }
