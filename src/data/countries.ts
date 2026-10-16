@@ -3,6 +3,7 @@ import type { Prison } from "@/types/prison";
 import { auPrisonsGenerated } from "./generated/auPrisons.generated";
 import { nzPrisonsGenerated } from "./generated/nzPrisons.generated";
 import { iePrisonsGenerated } from "./generated/iePrisons.generated";
+import { zaPrisonsGenerated } from "./generated/zaPrisons.generated";
 import { caPrisonsGenerated } from "./generated/caPrisons.generated";
 
 /** Directory counts for official-source countries come only from the generated data (open facilities). */
@@ -60,6 +61,17 @@ export const countriesData: Country[] = [
       "Federal institutions run by the Correctional Service of Canada, and provincial and territorial correctional facilities. Each listing is checked against an official government source, linked on its profile.",
     securitySystemDescription:
       "The Correctional Service of Canada classifies each federal institution as minimum, medium, maximum, multi-level or clustered security. Provincial and territorial facilities use their own classifications, shown on a profile only where the official source states one.",
+  },
+  {
+    name: "South Africa",
+    slug: "za",
+    region: "Africa",
+    prisonCount: openCount(zaPrisonsGenerated),
+    prisonPopulation: 0,
+    description:
+      "Correctional centres run by the Department of Correctional Services (DCS), grouped by DCS region, including one centre DCS lists as privately operated. Each listing is checked against the official DCS facility list, linked on its profile.",
+    securitySystemDescription:
+      "A profile shows a security classification only where the official DCS listing states one.",
   },
   {
     name: "Ireland",

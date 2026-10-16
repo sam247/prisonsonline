@@ -47,8 +47,16 @@ test("slugs are unique per country and never collide with region slugs", () => {
     const regions = new Set(rows.map((p) => p.regionSlug));
     for (const s of slugs) assert.ok(!regions.has(s), `${cc}: prison slug ${s} collides with a region slug`);
   }
-  const all = prisons.map((p) => p.slug);
-  for (const p of officialInternationalPrisons) assert.equal(all.filter((s) => s === p.slug).length, 1, `${p.slug} unique site-wide`);
+  // Frozen slugs shared by two countries. Routes are country-scoped, so URLs stay unique, but prison images
+  // are keyed by bare slug, so a shared slug must never carry an image record until image lookup is country-aware.
+  const FROZEN_CROSS_COUNTRY: Record<string, string[]> = { "prince-albert-correctional-centre": ["ca", "za"] };
+  for (const p of officialInternationalPrisons) {
+    const owners = prisons.filter((x) => x.slug === p.slug).map((x) => x.countrySlug).sort();
+    if (FROZEN_CROSS_COUNTRY[p.slug]) {
+      assert.deepEqual(owners, FROZEN_CROSS_COUNTRY[p.slug], `${p.slug} known cross-country owners`);
+      assert.equal(p.facilityImage, undefined, `${p.slug} is shared across countries and must not carry a slug-keyed image`);
+    } else assert.equal(owners.length, 1, `${p.slug} unique site-wide`);
+  }
 });
 
 test("closed prisons stay out of sitemaps; no intent URLs for new countries", () => {
@@ -115,5 +123,24 @@ test("AU temporarily closed facilities are closed, labelled, and never listed as
     assert.equal(p.status, "closed");
     assert.equal(p.statusNote, "Temporarily closed");
     assert.match(p.overview, /temporarily closed/);
+  }
+});
+
+test("ZA uses official DCS regions and management areas; nothing inferred is shown", () => {
+  const DCS_REGIONS = ["Eastern Cape", "Free State / Northern Cape", "Gauteng", "KwaZulu-Natal", "Limpopo, Mpumalanga & North West", "Western Cape"];
+  const za = officialInternationalPrisons.filter((p) => p.countrySlug === "za");
+  assert.equal(za.length, 215);
+  assert.deepEqual(Array.from(new Set(za.map((p) => p.stateOrRegion))).sort(), [...DCS_REGIONS].sort());
+  const rows = JSON.parse(fs.readFileSync(bundlePaths("za").rows, "utf8")) as Record<string, unknown>[];
+  for (const r of rows) {
+    assert.equal(r.country, "za");
+    assert.ok(!("region" in r) && !("province" in r), `${r.slug}: no inferred province`);
+    assert.ok(!/inferred/i.test(String(r.notes ?? "")), `${r.slug}: no inferred note`);
+  }
+  for (const p of za) {
+    assert.ok(p.managementArea?.trim(), `${p.slug}: management area`);
+    assert.ok(p.city.trim(), `${p.slug}: never a blank city`);
+    assert.ok(p.operator.trim(), `${p.slug}: never a blank operator`);
+    assert.equal(p.jurisdiction, "Department of Correctional Services");
   }
 });

@@ -171,6 +171,7 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
                     <Fact label="Security classification" value={security} />
                     <Fact label="Official description" value={prison.facilityDescription} />
                     <Fact label="Jurisdiction" value={prison.jurisdiction} />
+                    <Fact label="Management area" value={prison.managementArea} />
                     <Fact label="Level" value={prison.jurisdictionLevel ? LEVEL_LABEL[prison.jurisdictionLevel] : undefined} />
                     <Fact label="Operator" value={prison.operator} />
                     <Fact label="Operator type" value={prison.operatorType === "private" ? "Private" : prison.operatorType === "public" ? "Public" : undefined} />

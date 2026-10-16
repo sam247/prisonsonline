@@ -14,7 +14,10 @@ export const INTL_COUNTRIES = {
   au: { name: "Australia", regionField: "region", levels: ["state", "territory"] },
   nz: { name: "New Zealand", regionField: "region", levels: ["national"] },
   ie: { name: "Ireland", regionField: "region", levels: ["national"] },
-  za: { name: "South Africa", regionField: "region", levels: ["national"] },
+  // ZA: region level is the official DCS region; the official management area is required and stands in
+  // for the city where DCS gives none. The operator may be absent only for a centre DCS lists as private
+  // without naming the operator; the profile then says so.
+  za: { name: "South Africa", regionField: "dcsRegion", levels: ["national"], requiredFields: ["managementArea"], cityFallbackField: "managementArea", allowUnnamedPrivateOperator: true },
 };
 
 const STATUSES = new Set(["open", "closed", "historic"]);
@@ -43,7 +46,12 @@ export function validateBundle(cc, rows) {
   const seen = new Set();
   rows.forEach((r, i) => {
     const at = `${cc}[${i}] ${r.slug ?? "?"}`;
-    for (const f of ["slug", "name", "country", "jurisdiction", "jurisdictionLevel", "operator", "operatorType", "status", "city", "sourceUrl", "checkedAt", cfg.regionField]) {
+    const required = ["slug", "name", "country", "jurisdiction", "jurisdictionLevel", "operatorType", "status", "sourceUrl", "checkedAt", cfg.regionField, ...(cfg.requiredFields ?? [])];
+    if (!(cfg.cityFallbackField && r.city == null)) required.push("city");
+    if (!(cfg.allowUnnamedPrivateOperator && r.operator == null && r.operatorType === "private")) required.push("operator");
+    if ("province" in r && cc === "za") errors.push(`${at}: inferred province must not be present`);
+    if (cc === "za" && "region" in r) errors.push(`${at}: inferred region must not be present; use dcsRegion`);
+    for (const f of required) {
       if (typeof r[f] !== "string" || !r[f].trim()) errors.push(`${at}: missing ${f}`);
     }
     if (r.country !== cc) errors.push(`${at}: country must be "${cc}"`);
@@ -70,6 +78,7 @@ export function validateBundle(cc, rows) {
 
 function facilityLabel(cc, r) {
   if (cc === "ca") return r.jurisdictionLevel === "federal" ? "Federal correctional institution" : `${r.jurisdictionLevel === "territorial" ? "Territorial" : "Provincial"} correctional facility`;
+  if (cc === "za") return "Correctional centre";
   if (cc === "au") return `${r.operatorType === "private" ? "Privately operated" : "Publicly operated"} correctional centre`;
   if (cc === "ie" || cc === "nz") return "Prison";
   return "Correctional facility";
@@ -82,13 +91,13 @@ const FACILITY_NOUN = /\b(centre|center|jail|prison|institution|facility|camp|co
  * read grammatically (e.g. a population description in facilityType) is dropped from the sentence rather
  * than forced into it.
  */
-export function buildOverview({ name, type, typeIsOwnLabel, city, region, operator, statusPhrase }) {
+export function buildOverview({ name, type, typeIsOwnLabel, city, region, placeText, operator, operatorMissingText, statusPhrase }) {
   const typeText = typeIsOwnLabel ? type.charAt(0).toLowerCase() + type.slice(1) : type;
   const article = /^[aeiou]/i.test(typeText) ? "an" : "a";
   const sameName = (a, b) => a.trim().toLowerCase() === b.trim().toLowerCase();
   const place = city && region && !sameName(city, region) ? `${city}, ${region}` : city || region;
-  const where = place ? ` in ${place}` : "";
-  const op = operator ? ` The operator is ${operator}.` : "";
+  const where = placeText ? ` in ${placeText}` : place ? ` in ${place}` : "";
+  const op = operator ? ` The operator is ${operator}.` : operatorMissingText ? ` ${operatorMissingText}` : "";
   return `${name} is ${article} ${typeText}${where}.${op}${statusPhrase}`;
 }
 
@@ -101,6 +110,12 @@ export function toPrison(cc, r) {
   // A facilityType that describes the population or role (e.g. IPS "Adult males; main committal prison for Dublin")
   // is kept verbatim as its own fact instead of being forced into the overview sentence.
   const facilityDescription = rawType && !typeIsFacility ? rawType : undefined;
+  const city = (r.city ?? r[cfg.cityFallbackField] ?? "").trim();
+  const operator = r.operator ?? "Private operator (not named by the official source)";
+  // ZA: place is the official DCS management area and region; the city is shown only where DCS gives one.
+  const placeText = r.managementArea
+    ? `${r.city ? `${city}, in ` : ""}the ${r.managementArea.trim()} management area of the DCS ${region} region`
+    : undefined;
   const located = r.coordinateEvidence?.precision === "facility" && typeof r.latitude === "number" && typeof r.longitude === "number";
   const statusNote = r.status === "closed" && /temporarily closed/i.test(r.notes ?? "") ? "Temporarily closed" : undefined;
   const statusPhrase = r.status === "closed" ? ` It is listed by its official source as ${statusNote ? "temporarily closed" : "closed"}.` : r.status === "historic" ? " It is a historic site and no longer holds prisoners." : "";
@@ -111,11 +126,12 @@ export function toPrison(cc, r) {
     countrySlug: cc,
     stateOrRegion: region,
     regionSlug: slugify(region),
-    city: r.city.trim(),
+    city,
+    ...(r.managementArea ? { managementArea: r.managementArea.trim() } : {}),
     securityLevel: SECURITY_UNION.has(r.securityLevel) ? r.securityLevel : "Not specified",
     ...(r.securityLevel && !/^not specified$/i.test(r.securityLevel.trim()) ? { securityDescription: r.securityLevel.trim() } : {}),
     capacity: r.capacity ?? 0,
-    operator: r.operator,
+    operator,
     openedYear: r.yearOpened ?? 0,
     latitude: located ? r.latitude : 0,
     longitude: located ? r.longitude : 0,
@@ -125,7 +141,11 @@ export function toPrison(cc, r) {
     ...(statusNote ? { statusNote } : {}),
     type,
     ...(facilityDescription ? { facilityDescription } : {}),
-    overview: buildOverview({ name: r.name.trim(), type, typeIsOwnLabel: !typeIsFacility, city: r.city.trim(), region, operator: r.operator, statusPhrase }),
+    overview: buildOverview({
+      name: r.name.trim(), type, typeIsOwnLabel: !typeIsFacility, city, region, placeText,
+      operator: r.operator, operatorMissingText: r.operator ? undefined : "The operator is not named by the official source.",
+      statusPhrase,
+    }),
     history: "",
     prisonLife: "",
     visitingInfo: "",

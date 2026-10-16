@@ -57,6 +57,8 @@ export interface Prison {
   statusNote?: string;
   /** Official population/role description where the source gives one instead of a facility type. */
   facilityDescription?: string;
+  /** Official management area (South Africa DCS). */
+  managementArea?: string;
   type: string;
   overview: string;
   history: string;
