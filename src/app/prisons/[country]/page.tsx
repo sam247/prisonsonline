@@ -33,6 +33,14 @@ export function generateMetadata({ params }: Props) {
       path: `/prisons/${country}`,
     });
   }
+  if (list.length > 0 && list.every((p) => p.dataProvenance === "official_source")) {
+    const regions = new Set(list.map((p) => p.stateOrRegion)).size;
+    return buildPageMetadata({
+      title: `Prisons in ${name}`,
+      description: `Browse ${list.filter((p) => p.status !== "closed").length} prisons and correctional facilities in ${name} across ${regions} regions, each linked to its official source.`,
+      path: `/prisons/${country}`,
+    });
+  }
   return buildPageMetadata({
     title: `Prisons in ${name}`,
     description: `Browse prisons in ${name} by prison name, region, and directory listing.`,

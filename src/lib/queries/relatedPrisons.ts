@@ -64,7 +64,8 @@ export function getRelatedPrisonsForProfile(prison: Prison, limit = 8): Prison[]
     if (takeUntilLimit()) return out.slice(0, limit);
   }
 
-  if (out.length < Math.min(4, limit)) {
+  // Official-source international rows never link across countries.
+  if (out.length < Math.min(4, limit) && prison.dataProvenance !== "official_source") {
     for (const p of prisons) {
       if (p.slug === prison.slug || seen.has(p.slug)) continue;
       if (p.countrySlug === prison.countrySlug || p.securityLevel === prison.securityLevel) {

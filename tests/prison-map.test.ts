@@ -90,7 +90,7 @@ test("country grouping, office default, search, canonical links and missing reco
     if (!record.exclusion) assert.ok(validCoordinates(record.latitude, record.longitude, record.country));
   }
   assert.ok(projectMapRecord({ ...prisons[0], address: undefined, postcode: undefined }).exclusion);
-  assert.equal(records.length, prisons.filter(p => ["uk", "us", "united-states"].includes(p.countrySlug)).length);
+  assert.equal(records.length, prisons.filter(p => mapCountryForSlug(p.countrySlug) !== null).length);
 });
 
 test("overlapping locations keep both canonical records", () => {
@@ -129,14 +129,15 @@ test("country mapping is explicit and never defaults to us", () => {
   assert.equal(mapCountryForSlug("uk"), "uk");
   assert.equal(mapCountryForSlug("us"), "us");
   assert.equal(mapCountryForSlug("united-states"), "us");
-  for (const slug of ["ca", "au", "canada", "australia", ""]) assert.equal(mapCountryForSlug(slug), null);
+  assert.equal(mapCountryForSlug("ca"), "ca");
+  for (const slug of ["xx", "canada", "australia", ""]) assert.equal(mapCountryForSlug(slug), null);
   const base = getPrisonByCountryAndSlug("us", "alderson-fpc")!;
-  for (const countrySlug of ["ca", "au"]) {
+  for (const countrySlug of ["xx", "canada"]) {
     const record = projectMapRecord({ ...base, countrySlug, latitude: 45.4, longitude: -75.7 });
     assert.equal(record.country, null);
     assert.match(record.exclusion!, new RegExp(`Unsupported map country: ${countrySlug}`));
     assert.equal(record.latitude, undefined);
     assert.equal(filterMapRecords([record], { ...filters, country: "us" }).length, 0);
   }
-  assert.ok(records.every(r => r.country === "uk" || r.country === "us"));
+  assert.ok(records.every(r => r.country !== null && mapCountryForSlug(r.id.split("/")[0]) === r.country));
 });

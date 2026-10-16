@@ -2,14 +2,16 @@ import type { Prison } from "@/types/prison";
 import { getPrisonImage } from "@/lib/media/prisonImages";
 import { ukPrisonsGenerated } from "./generated/ukPrisons.generated";
 import { usPrisonsGenerated } from "./generated/usPrisons.generated";
+import { caPrisonsGenerated } from "./generated/caPrisons.generated";
 import { legacyInternationalPrisons } from "./prisons.legacy-international";
 import { getFacilityVerification } from "./facilitySources";
 import { applyVerifiedContactFacts } from "@/lib/verification/applyVerifiedFacts";
 
 export type { Prison } from "@/types/prison";
 
-/** UK HMPPS import, US federal BOP import, then legacy manual international profiles. */
-const basePrisons: Prison[] = [...ukPrisonsGenerated, ...usPrisonsGenerated, ...legacyInternationalPrisons];
+/** UK HMPPS import, US federal BOP import, official-source international bundles, then legacy manual international profiles. */
+export const officialInternationalPrisons: Prison[] = [...caPrisonsGenerated];
+const basePrisons: Prison[] = [...ukPrisonsGenerated, ...usPrisonsGenerated, ...officialInternationalPrisons, ...legacyInternationalPrisons];
 
 /**
  * UK rows: verified contact overrides (facilitySources + UK verification overlay) replace the
@@ -61,7 +63,8 @@ export const getRelatedPrisons = (prison: Prison, limit = 4) =>
     .filter(
       (p) =>
         p.slug !== prison.slug &&
-        (p.countrySlug === prison.countrySlug || p.securityLevel === prison.securityLevel),
+        (p.countrySlug === prison.countrySlug ||
+          (prison.dataProvenance !== "official_source" && p.securityLevel === prison.securityLevel)),
     )
     .slice(0, limit);
 

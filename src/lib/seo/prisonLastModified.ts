@@ -69,6 +69,8 @@ export function getPrisonSitemapLastModifiedDate(prison: Prison): Date | null {
       if (date) return date;
     }
   }
+  const sourceChecked = parseRawDate(prison.sourceCheckedAt);
+  if (sourceChecked) return sourceChecked;
   const imageDate = parseRawDate((prisonImages as Record<string, PrisonImageRow>)[prison.slug]?.updatedAt);
   return imageDate;
 }

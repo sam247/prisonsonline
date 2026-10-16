@@ -1,4 +1,9 @@
 import type { EditorialImage } from "@/types/media";
+import type { Prison } from "@/types/prison";
+import { caPrisonsGenerated } from "./generated/caPrisons.generated";
+
+/** Directory counts for official-source countries come only from the generated data (open facilities). */
+const openCount = (rows: Prison[]) => rows.filter((p) => p.status !== "closed" && p.status !== "historic").length;
 
 export interface Country {
   name: string;
@@ -44,12 +49,14 @@ export const countriesData: Country[] = [
   },
   {
     name: "Canada",
-    slug: "canada",
+    slug: "ca",
     region: "North America",
-    prisonCount: 43,
-    prisonPopulation: 39000,
-    description: "Canada's correctional system is divided between federal and provincial jurisdictions. The Correctional Service of Canada manages federal penitentiaries for offenders sentenced to two years or more. Provincial and territorial systems handle shorter sentences and remand.",
-    securitySystemDescription: "Federal institutions are classified as Minimum, Medium, or Maximum security. Multi-level facilities combine different security levels within one institution. Healing lodges serve Indigenous offenders.",
+    prisonCount: openCount(caPrisonsGenerated),
+    prisonPopulation: 0,
+    description:
+      "Federal institutions run by the Correctional Service of Canada, and provincial and territorial correctional facilities. Each listing is checked against an official government source, linked on its profile.",
+    securitySystemDescription:
+      "The Correctional Service of Canada classifies each federal institution as minimum, medium, maximum, multi-level or clustered security. Provincial and territorial facilities use their own classifications, shown on a profile only where the official source states one.",
   },
   {
     name: "Australia",

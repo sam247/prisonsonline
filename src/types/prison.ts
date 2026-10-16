@@ -17,7 +17,10 @@ export type SecurityLevel =
   | "Category D"
   | "Not specified";
 
-export type PrisonDataProvenance = "hmpps_import" | "manual" | "bop_import";
+export type PrisonDataProvenance = "hmpps_import" | "manual" | "bop_import" | "official_source";
+
+export type PrisonStatus = "open" | "closed" | "historic";
+export type JurisdictionLevel = "federal" | "provincial" | "territorial" | "state" | "national";
 
 export interface Prison {
   name: string;
@@ -47,7 +50,8 @@ export interface Prison {
     stateCode?: string;
     facilityType?: string;
   };
-  status?: "historic";
+  /** Omitted means open (UK/US imports). Closed facilities are labelled and excluded from sitemaps. */
+  status?: PrisonStatus;
   statusSource?: string;
   type: string;
   overview: string;
@@ -77,4 +81,15 @@ export interface Prison {
   sourceRaw?: Record<string, unknown>;
   /** BOP facility type code when imported from federal listing (e.g. fci, usp). */
   facilityType?: string;
+
+  /** International official-source rows (ca, au, nz, ie, za). */
+  jurisdiction?: string;
+  jurisdictionLevel?: JurisdictionLevel;
+  operatorType?: "public" | "private";
+  /** Official page the row was confirmed against. */
+  sourceUrl?: string;
+  additionalSourceUrls?: string[];
+  sourceCheckedAt?: string;
+  /** Security classification as worded by the official source, when it does not map onto SecurityLevel. */
+  securityDescription?: string;
 }
