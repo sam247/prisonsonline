@@ -274,5 +274,104 @@
     "title": "FCI Big Spring",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Big_Spring.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Big Spring."
+  },
+  "pollsmoor-maximum-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Pollsmoor_prison%2C_Cape_Town.jpg",
+    "credit": "Olga Ernst",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of the Pollsmoor Correctional Centre complex (whole complex)",
+    "author": "Olga Ernst",
+    "title": "Pollsmoor prison, Cape Town",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pollsmoor_prison,_Cape_Town.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Pollsmoor Correctional Centre complex, Tokai, Cape Town, seen from Ou Kaapse Weg (whole complex, not this unit specifically)."
+  },
+  "pollsmoor-medium-a-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Pollsmoor_prison%2C_Cape_Town.jpg",
+    "credit": "Olga Ernst",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of the Pollsmoor Correctional Centre complex (whole complex)",
+    "author": "Olga Ernst",
+    "title": "Pollsmoor prison, Cape Town",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pollsmoor_prison,_Cape_Town.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Pollsmoor Correctional Centre complex, Tokai, Cape Town, seen from Ou Kaapse Weg (whole complex, not this unit specifically)."
+  },
+  "pollsmoor-medium-b-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Pollsmoor_prison%2C_Cape_Town.jpg",
+    "credit": "Olga Ernst",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of the Pollsmoor Correctional Centre complex (whole complex)",
+    "author": "Olga Ernst",
+    "title": "Pollsmoor prison, Cape Town",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pollsmoor_prison,_Cape_Town.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Pollsmoor Correctional Centre complex, Tokai, Cape Town, seen from Ou Kaapse Weg (whole complex, not this unit specifically)."
+  },
+  "pollsmoor-medium-c-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Pollsmoor_prison%2C_Cape_Town.jpg",
+    "credit": "Olga Ernst",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of the Pollsmoor Correctional Centre complex (whole complex)",
+    "author": "Olga Ernst",
+    "title": "Pollsmoor prison, Cape Town",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pollsmoor_prison,_Cape_Town.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Pollsmoor Correctional Centre complex, Tokai, Cape Town, seen from Ou Kaapse Weg (whole complex, not this unit specifically)."
+  },
+  "pollsmoor-female-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Pollsmoor_prison%2C_Cape_Town.jpg",
+    "credit": "Olga Ernst",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Exterior view of the Pollsmoor Correctional Centre complex (whole complex)",
+    "author": "Olga Ernst",
+    "title": "Pollsmoor prison, Cape Town",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pollsmoor_prison,_Cape_Town.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Pollsmoor Correctional Centre complex, Tokai, Cape Town, seen from Ou Kaapse Weg (whole complex, not this unit specifically)."
+  },
+  "drakenstein-maximum-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Drakenstein_prison_5.jpg",
+    "credit": "HelenOnline",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of the Drakenstein Correctional Centre complex (whole complex)",
+    "author": "HelenOnline",
+    "title": "Drakenstein prison 5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Drakenstein_prison_5.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Entrance to the Drakenstein Correctional Centre complex near Paarl, 2013 (whole complex, not this unit specifically)."
+  },
+  "drakenstein-medium-a-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Drakenstein_prison_5.jpg",
+    "credit": "HelenOnline",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of the Drakenstein Correctional Centre complex (whole complex)",
+    "author": "HelenOnline",
+    "title": "Drakenstein prison 5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Drakenstein_prison_5.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Entrance to the Drakenstein Correctional Centre complex near Paarl, 2013 (whole complex, not this unit specifically)."
+  },
+  "zonderwater-medium-a-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Zonderwater_Prison-001.jpg",
+    "credit": "Paul Parsons",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of the Zonderwater Correctional Centre complex (whole complex)",
+    "author": "Paul Parsons",
+    "title": "Zonderwater Prison-001",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zonderwater_Prison-001.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Zonderwater Correctional Centre complex near Cullinan, Gauteng, 2011 (whole complex, not this unit specifically)."
+  },
+  "zonderwater-medium-b-correctional-centre": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Zonderwater_Prison-001.jpg",
+    "credit": "Paul Parsons",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of the Zonderwater Correctional Centre complex (whole complex)",
+    "author": "Paul Parsons",
+    "title": "Zonderwater Prison-001",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zonderwater_Prison-001.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Zonderwater Correctional Centre complex near Cullinan, Gauteng, 2011 (whole complex, not this unit specifically)."
   }
 }
