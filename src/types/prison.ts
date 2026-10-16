@@ -20,7 +20,7 @@ export type SecurityLevel =
 export type PrisonDataProvenance = "hmpps_import" | "manual" | "bop_import" | "official_source";
 
 export type PrisonStatus = "open" | "closed" | "historic";
-export type JurisdictionLevel = "federal" | "provincial" | "territorial" | "state" | "national";
+export type JurisdictionLevel = "federal" | "provincial" | "territorial" | "territory" | "state" | "national";
 
 export interface Prison {
   name: string;
@@ -53,6 +53,8 @@ export interface Prison {
   /** Omitted means open (UK/US imports). Closed facilities are labelled and excluded from sitemaps. */
   status?: PrisonStatus;
   statusSource?: string;
+  /** Qualifier from the official source, e.g. "Temporarily closed". Status stays closed. */
+  statusNote?: string;
   type: string;
   overview: string;
   history: string;

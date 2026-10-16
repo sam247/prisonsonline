@@ -2,7 +2,7 @@ import type { Prison, PrisonStatus } from "@/types/prison";
 import type { BopLocation } from "@/lib/verification/bopClient";
 import { addressesEquivalent, collapseSpace, usZipsEqual } from "@/lib/verification/normalize";
 
-export type MapCountry = "uk" | "us" | "ca";
+export type MapCountry = "uk" | "us" | "ca" | "au";
 
 export type MapCountryConfig = {
   label: string;
@@ -21,6 +21,7 @@ export const MAP_COUNTRIES: Record<MapCountry, MapCountryConfig> = {
   uk: { label: "United Kingdom", center: [54, -2], zoom: 6, bounds: [49, 61, -9, 3] },
   us: { label: "United States", regionLabel: "State or territory", regionAllLabel: "All states and territories", center: [38, -98], zoom: 4, bounds: [18, 72, -180, -64] },
   ca: { label: "Canada", regionLabel: "Province or territory", regionAllLabel: "All provinces and territories", center: [56, -96], zoom: 3, bounds: [41.6, 83.2, -141.1, -52.5] },
+  au: { label: "Australia", regionLabel: "State or territory", regionAllLabel: "All states and territories", center: [-27, 134], zoom: 4, bounds: [-44, -9, 112, 154] },
 };
 
 export const MAP_COUNTRY_ORDER = Object.keys(MAP_COUNTRIES) as MapCountry[];
@@ -33,6 +34,7 @@ export function mapCountryForSlug(countrySlug: string): MapCountry | null {
   if (countrySlug === "uk") return "uk";
   if (countrySlug === "us" || countrySlug === "united-states") return "us";
   if (countrySlug === "ca") return "ca";
+  if (countrySlug === "au") return "au";
   return null;
 }
 
