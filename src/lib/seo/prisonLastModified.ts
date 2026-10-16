@@ -1,5 +1,5 @@
 import type { Prison } from "@/types/prison";
-import prisonImages from "@/data/prisonImages.json";
+import { getPrisonImageRecord } from "@/lib/media/prisonImages";
 import { getFacilityVerification } from "@/data/facilitySources";
 
 const SOURCE_DATE_KEYS = [
@@ -46,7 +46,7 @@ export function getPrisonLastModifiedDate(prison: Prison, fallback: Date): Date 
     }
   }
 
-  const imgRow = (prisonImages as Record<string, PrisonImageRow>)[prison.slug];
+  const imgRow = (getPrisonImageRecord(prison.countrySlug, prison.slug) as PrisonImageRow | undefined);
   const imgDate = parseRawDate(imgRow?.updatedAt);
   if (imgDate) return imgDate;
 
@@ -71,7 +71,7 @@ export function getPrisonSitemapLastModifiedDate(prison: Prison): Date | null {
   }
   const sourceChecked = parseRawDate(prison.sourceCheckedAt);
   if (sourceChecked) return sourceChecked;
-  const imageDate = parseRawDate((prisonImages as Record<string, PrisonImageRow>)[prison.slug]?.updatedAt);
+  const imageDate = parseRawDate((getPrisonImageRecord(prison.countrySlug, prison.slug) as PrisonImageRow | undefined)?.updatedAt);
   return imageDate;
 }
 

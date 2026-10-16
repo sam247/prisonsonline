@@ -15,31 +15,47 @@ export type PrisonImageRecord = {
 
 const prisonImages = prisonImagesJson as Record<string, PrisonImageRecord>;
 
+/** Aliases are country-qualified keys: "<cc>/<slug>" -> other "<cc>/<slug>" keys to try. */
 const prisonImageSlugAliases: Record<string, string[]> = {
-  "hmp-yoi-bronzefield": ["hmp-bronzefield"],
+  "uk/hmp-yoi-bronzefield": ["uk/hmp-bronzefield"],
 };
 
-/**
- * Normalizes a sheet slug column: full URL, path like /prisons/uk/hmp-x, or bare slug.
- */
-export function normalizePrisonImageKey(raw: string): string | null {
-  const s = String(raw || "").trim();
-  if (!s) return null;
-  if (s.includes("/")) {
-    const parts = s.split("/").filter(Boolean);
-    const last = parts[parts.length - 1]?.replace(/\/$/, "") ?? "";
-    return last || null;
-  }
-  return s;
+/** Canonical image key: "<countrySlug>/<prisonSlug>", e.g. "ca/prince-albert-correctional-centre". */
+export function prisonImageKey(countrySlug: string, slug: string): string {
+  return `${String(countrySlug || "").trim().toLowerCase()}/${String(slug || "").trim()}`;
 }
 
 /**
- * Resolved Wikimedia (or other) facility photo for a prison slug. Used when merging into `Prison.facilityImage`.
+ * Normalizes a sheet slug column (full URL, /prisons/<cc>/<slug> path, or "<cc>/<slug>") to the
+ * country-qualified image key. Bare slugs have no country and return null.
  */
-export function getPrisonImage(slug: string): RealFacilityImage | undefined {
-  const row =
-    prisonImages[slug] ??
-    prisonImageSlugAliases[slug]?.map((alias) => prisonImages[alias]).find((candidate) => Boolean(candidate));
+export function normalizePrisonImageKey(raw: string): string | null {
+  let s = String(raw || "").trim();
+  if (!s) return null;
+  if (/^https?:\/\//i.test(s)) {
+    try {
+      s = new URL(s).pathname;
+    } catch {
+      return null;
+    }
+  }
+  const parts = s.split("/").filter(Boolean);
+  if (parts[0] === "prisons") parts.shift();
+  if (parts.length !== 2 || !parts[0] || !parts[1]) return null;
+  return prisonImageKey(parts[0], parts[1]);
+}
+
+/** Raw image record for a prison, by country + slug (with aliases). */
+export function getPrisonImageRecord(countrySlug: string, slug: string): PrisonImageRecord | undefined {
+  const key = prisonImageKey(countrySlug, slug);
+  return prisonImages[key] ?? prisonImageSlugAliases[key]?.map((alias) => prisonImages[alias]).find(Boolean);
+}
+
+/**
+ * Resolved Wikimedia (or other) facility photo for a prison. Used when merging into `Prison.facilityImage`.
+ */
+export function getPrisonImage(countrySlug: string, slug: string): RealFacilityImage | undefined {
+  const row = getPrisonImageRecord(countrySlug, slug);
   if (!row?.imageUrl?.trim()) return undefined;
   return {
     type: "real",

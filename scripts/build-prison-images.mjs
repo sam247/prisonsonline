@@ -48,15 +48,26 @@ function preserveExisting(reason) {
   return false;
 }
 
-/** @param {string} raw */
+/**
+ * Image key = "<countrySlug>/<prisonSlug>" (e.g. "ca/prince-albert-correctional-centre"), so the same slug
+ * in two countries never shares a photo. Accepts a full URL, a /prisons/<cc>/<slug> path or "<cc>/<slug>".
+ * A bare slug (no country) cannot be keyed safely and is rejected.
+ * @param {string} raw
+ */
 function normalizeSlug(raw) {
-  const s = String(raw || "").trim();
+  let s = String(raw || "").trim();
   if (!s) return null;
-  if (s.includes("/")) {
-    const parts = s.split("/").filter(Boolean);
-    return parts[parts.length - 1].replace(/\/$/, "") || null;
+  try {
+    if (/^https?:\/\//i.test(s)) s = new URL(s).pathname;
+  } catch {
+    return null;
   }
-  return s;
+  const parts = s.split("/").filter(Boolean);
+  if (parts[0] === "prisons") parts.shift();
+  if (parts.length !== 2) return null;
+  const [cc, slug] = parts.map((x) => x.toLowerCase());
+  if (!/^[a-z]{2}(-[a-z]+)*$/.test(cc) || !slug) return null;
+  return `${cc}/${slug}`;
 }
 
 /**
@@ -311,7 +322,7 @@ async function main() {
     if (!PUBLISHABLE_STATES.has(state)) continue;
     const fileTitle = resolveCommonsFileTitle(cell(line, idx.wikimedia_page_url));
     if (!slug || !fileTitle) {
-      console.warn(`Skipping row ${r + 1}: missing slug or unsupported wikimedia_page_url`);
+      console.warn(`Skipping row ${r + 1}: missing country-qualified slug (/prisons/<cc>/<slug>) or unsupported wikimedia_page_url`);
       continue;
     }
     rows.push({
@@ -365,7 +376,7 @@ async function main() {
         imageUrl: meta.imageUrl,
         credit: author,
         licence,
-        alt: row.alt || `Photograph of ${row.slug.replace(/-/g, " ")}`,
+        alt: row.alt || `Photograph of ${row.slug.split("/").pop().replace(/-/g, " ")}`,
         author,
         title: meta.title || titleFromFileName(row.fileTitle),
         sourceUrl: meta.sourceUrl,
