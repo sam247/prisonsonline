@@ -305,5 +305,37 @@
     "title": "TerreHauteUSP",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:TerreHauteUSP.jpg",
     "caption": "Exterior of the United States Penitentiary, Terre Haute."
+  },
+  "hmp-stafford": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HMP_Stafford.jpg",
+    "credit": "Stephen Pearce",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior wall and wing of HMP Stafford",
+    "author": "Stephen Pearce",
+    "title": "HMP Stafford",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Stafford.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Exterior of HM Prison Stafford."
+  },
+  "hmp-yoi-lincoln": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/HMP_Lincoln.jpg",
+    "credit": "Matthew Smith",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Gatehouse and frontage of HMP Lincoln",
+    "author": "Matthew Smith",
+    "title": "HMP Lincoln",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Lincoln.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Gatehouse and frontage of HM Prison Lincoln."
+  },
+  "oxford-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/FCI_Oxford_main_entrance.jpg",
+    "credit": "BOP",
+    "licence": "Public domain",
+    "alt": "Main entrance of FCI Oxford",
+    "author": "BOP",
+    "title": "FCI Oxford main entrance",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Oxford_main_entrance.jpg",
+    "caption": "Main entrance of the Federal Correctional Institution, Oxford."
   }
 }
