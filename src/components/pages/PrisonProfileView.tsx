@@ -36,7 +36,7 @@ import { intentHref, intentTopicLabel } from "@/lib/seo/prisonIntentCopy";
 import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
 import { ContentImage } from "@/components/media/ContentImage";
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
-import { FacilityImageFallback } from "@/components/media/FacilityImageFallback";
+import { hasVisitorHistory, visitorOverview, visitorPrisonLife } from "@/lib/seo/visitorCopy";
 import { PrisonCard } from "@/components/PrisonCard";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -65,7 +65,7 @@ const PROFILE_CONTACT_OWNERSHIP_PILOT = new Set([
 function leadSummaryText(p: Prison): string {
   const sd = p.shortDescription?.trim();
   if (sd) return sd;
-  const o = p.overview.trim();
+  const o = visitorOverview(p);
   const sentences = o.split(/(?<=[.!?])\s+/).filter(Boolean);
   return sentences.slice(0, 2).join(" ") || o;
 }
@@ -214,13 +214,13 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
           <p className="text-base text-foreground/90 leading-relaxed">{leadSummaryText(prison)}</p>
           {prison.dataProvenance === "hmpps_import" && (
             <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-              Profile fields are derived from published HMPPS listing data used in this site build. Narrative sections
-              below summarise import fields; they are not independent inspections or reports.
+              Profile fields are derived from published HMPPS listing data. Narrative sections
+              below summarise published listing details; they are not independent inspections or reports.
             </p>
           )}
           {prison.dataProvenance === "bop_import" && (
             <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-              Profile fields are derived from the BOP-derived facility listing used in this build. Narrative sections are
+              Profile fields are based on the Federal Bureau of Prisons facility listing. Narrative sections are
               neutral framing only; confirm all operational detail with the Federal Bureau of Prisons.
             </p>
           )}
@@ -287,6 +287,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             ) : null}
 
+            {facilityVisual.kind === "real" || facilityVisual.kind === "editorial" ? (
             <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
               <h2 id="facility-visual-heading" className="sr-only">
                 Establishment image
@@ -299,10 +300,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                   aspectClassName="aspect-video"
                   sizes="(max-width: 1024px) 100vw, 48rem"
                 />
-              ) : (
-                <FacilityImageFallback prison={prison} />
-              )}
+              ) : null}
             </section>
+            ) : null}
 
             <section aria-labelledby="at-a-glance-heading">
               <h2 id="at-a-glance-heading" className="text-xl font-bold mb-4">
@@ -332,14 +332,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                       value={prison.facilityType ? prison.facilityType.toUpperCase() : undefined}
                     />
                   </dl>
-                  {showHmppsCapacityNote && (
+                  {(showHmppsCapacityNote || showBopImportNote) && (
                     <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50 leading-relaxed">
-                      The HMPPS import used here does not include capacity or opening year for these establishments.
-                    </p>
-                  )}
-                  {showBopImportNote && (
-                    <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50 leading-relaxed">
-                      This BOP listing import does not include capacity, opening year, or coordinates for these sites.
+                      Capacity and opening year are not listed for this establishment. Check the official operator&apos;s page for current figures.
                     </p>
                   )}
                 </CardContent>
@@ -359,15 +354,17 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               <h2 id="overview-heading" className="text-xl font-bold mb-4">
                 Overview
               </h2>
-              <p className="text-muted-foreground leading-relaxed">{prison.overview}</p>
+              <p className="text-muted-foreground leading-relaxed">{visitorOverview(prison)}</p>
             </section>
 
-            <section aria-labelledby="history-heading">
-              <h2 id="history-heading" className="text-xl font-bold mb-4">
-                History
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">{prison.history}</p>
-            </section>
+            {hasVisitorHistory(prison.history) ? (
+              <section aria-labelledby="history-heading">
+                <h2 id="history-heading" className="text-xl font-bold mb-4">
+                  History
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">{prison.history}</p>
+              </section>
+            ) : null}
 
             {prison.notableInmates && (
               <section aria-labelledby="notable-heading">
@@ -378,12 +375,14 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             )}
 
-            <section aria-labelledby="life-heading">
-              <h2 id="life-heading" className="text-xl font-bold mb-4">
-                Prison Life
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">{prison.prisonLife}</p>
-            </section>
+            {visitorPrisonLife(prison.prisonLife) ? (
+              <section aria-labelledby="life-heading">
+                <h2 id="life-heading" className="text-xl font-bold mb-4">
+                  Prison Life
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">{visitorPrisonLife(prison.prisonLife)}</p>
+              </section>
+            ) : null}
 
             <section aria-labelledby="visiting-heading">
               <h2 id="visiting-heading" className="text-xl font-bold mb-4">
@@ -454,11 +453,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                       Map preview — {prison.latitude.toFixed(4)}, {prison.longitude.toFixed(4)}
                     </div>
                   </div>
-                ) : (
-                  <div className="bg-secondary/50 rounded-lg p-6 text-muted-foreground text-sm space-y-2">
-                    <p>Coordinates are not available for this establishment in the current dataset.</p>
-                  </div>
-                )}
+                ) : null}
               </div>
             </section>
 
@@ -564,7 +559,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 <CardContent className="p-6 space-y-3">
                   <h3 className="font-semibold">Federal directory</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Links appear only when this build publishes the matching hub or article.
+                    Links appear only where a matching hub or article is available.
                   </p>
                   <ul className="text-sm space-y-2">
                     {usFacilityHub && (
@@ -603,7 +598,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                   <CardContent className="p-6 space-y-4">
                     <h3 className="font-semibold">Directory hubs</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                      Only hubs that meet listing thresholds in this build are linked.
+                      Only hubs with enough listed prisons are linked.
                     </p>
                     {(operatorHub || securityHub || functionHub || subgroupHub) && (
                       <div>
@@ -751,7 +746,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
               {prison.countrySlug === "us" && prison.dataProvenance === "bop_import"
                 ? "Other federal sites in the same state or with the same facility-type code where available, then other US federal listings in this import."
-                : "Other establishments in the same region, operator, or security category where the dataset supports it, then other sites in the same country."}
+                : "Other establishments in the same region, operator, or security category where that information is available, then other sites in the same country."}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {related.map((p) => (

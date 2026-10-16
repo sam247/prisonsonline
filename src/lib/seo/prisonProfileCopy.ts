@@ -1,4 +1,6 @@
+import { visitorVisitingInfo } from "@/lib/seo/visitorCopy";
 import type { Prison } from "@/types/prison";
+import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
 import { joinAddressAndPostcode } from "@/lib/address";
 import {
   hasUkHmppsTypeFields,
@@ -54,13 +56,13 @@ const VISIT_APPEND_VARIANTS = [
 
 const VISIT_FALLBACKS = [
   "This directory listing does not include visit booking details for this site. Use the official prison finder or establishment contact route for your jurisdiction to confirm eligibility, times, and ID requirements.",
-  "Visiting hours and booking methods are not shown in our import for this profile. Refer to the operator’s published visitor guidance and confirm requirements before arranging a visit.",
+  "Visiting hours and booking methods are not listed on this profile. Refer to the operator’s published visitor guidance and confirm requirements before arranging a visit.",
   "We do not list visit slots or visitor rules here. Contact the establishment through official channels for your country or region to arrange a visit safely and legally.",
 ];
 
 const CONTACT_FALLBACKS = [
-  "Postal address and telephone lines for this profile were not included in the dataset used for this build. Use the official establishment or government prison finder for up-to-date contact details.",
-  "Our current import does not provide a reliable mailing address or switchboard number for this listing. Check the authority that operates the site for the correct contact points.",
+  "Postal address and telephone lines are not listed for this profile. Use the official establishment or government prison finder for up-to-date contact details.",
+  "We do not list a mailing address or switchboard number for this establishment. Check the authority that operates the site for the correct contact points.",
   "Contact channels are unavailable in this record. Look up the facility through official prison directories rather than relying on third-party summaries alone.",
 ];
 
@@ -75,7 +77,7 @@ export function buildHowToVisitHeading(name: string): string {
 }
 
 export function buildHowToVisitBody(p: Prison): string {
-  const raw = p.visitingInfo?.trim();
+  const raw = visitorVisitingInfo(p);
   const appendIdx = slugVariantIndex(p.slug, VISIT_APPEND_VARIANTS.length);
   const append = VISIT_APPEND_VARIANTS[appendIdx];
 
@@ -185,9 +187,11 @@ export function buildLocationHeading(name: string): string {
 
 export function buildLocationBody(p: Prison): string {
   const city = cleanSpace(p.city) || "this location";
-  const region = cleanSpace(p.stateOrRegion) || "the listed region";
+  const region = cleanSpace(geographicRegion(p));
   const country = cleanSpace(p.country) || "the listed country";
-  const tpl = LOCATION_OPENINGS[slugVariantIndex(p.slug, LOCATION_OPENINGS.length)];
+  const tpl = region
+    ? LOCATION_OPENINGS[slugVariantIndex(p.slug, LOCATION_OPENINGS.length)]
+    : "{name} is based in {city}, {country}.";
   let body = tpl.replace("{name}", p.name).replace("{city}", city).replace("{region}", region).replace("{country}", country);
   const hasCoords = p.latitude !== 0 || p.longitude !== 0;
   if (hasCoords) {
@@ -248,12 +252,12 @@ export function buildPrisonTypeBody(p: Prison): string {
     if (gen) parts.push(`Gender provision in the listing is ${gen}.`);
     if (fn) parts.push(`The predominant function is noted as ${fn}.`);
   } else if (idx === 2) {
-    if (fn && sec) parts.push(`Predominant function is ${fn}, with ${sec} security in the import.`);
-    else if (fn) parts.push(`The import records predominant function as ${fn}.`);
+    if (fn && sec) parts.push(`Predominant function is ${fn}, with ${sec} security.`);
+    else if (fn) parts.push(`Its predominant function is ${fn}.`);
     if (typ && !parts.length) parts.push(`Type in the listing: ${typ}.`);
     if (gen) parts.push(`Gender listing: ${gen}.`);
   } else {
-    if (sec && typ) parts.push(`${p.name} appears in the dataset as a ${sec} ${typ} site.`);
+    if (sec && typ) parts.push(`${p.name} is listed as a ${sec} ${typ} site.`);
     else if (sec) parts.push(`Security level in the listing: ${sec}.`);
     if (gen) parts.push(`It is listed as holding ${gen}.`);
     if (fn && !parts.some((s) => s.includes(fn))) parts.push(`Function: ${fn}.`);

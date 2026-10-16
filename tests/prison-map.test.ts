@@ -3,7 +3,7 @@ import test from "node:test";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { validCoordinates, bopLocationConflicts, filterMapRecords } from "@/lib/prison-map/location";
+import { validCoordinates, bopLocationConflicts, filterMapRecords, mapCountryForSlug } from "@/lib/prison-map/location";
 import { getPrisonMapRecords, projectMapRecord } from "@/lib/prison-map/records";
 import { postcodeCoordinateMatches } from "@/lib/prison-map/postcode-cache.mjs";
 import { getPrisonByCountryAndSlug, prisons } from "@/data/prisons";
@@ -123,4 +123,20 @@ test("failed or malformed refresh preserves the canonical source and writes a re
     assert.match(staleReport.error!, /stale generated facts/);
     assert.equal(await fs.readFile(inputPath, "utf8"), staleSource);
   } finally { await fs.rm(dir, { recursive: true, force: true }); }
+});
+
+test("country mapping is explicit and never defaults to us", () => {
+  assert.equal(mapCountryForSlug("uk"), "uk");
+  assert.equal(mapCountryForSlug("us"), "us");
+  assert.equal(mapCountryForSlug("united-states"), "us");
+  for (const slug of ["ca", "au", "canada", "australia", ""]) assert.equal(mapCountryForSlug(slug), null);
+  const base = getPrisonByCountryAndSlug("us", "alderson-fpc")!;
+  for (const countrySlug of ["ca", "au"]) {
+    const record = projectMapRecord({ ...base, countrySlug, latitude: 45.4, longitude: -75.7 });
+    assert.equal(record.country, null);
+    assert.match(record.exclusion!, new RegExp(`Unsupported map country: ${countrySlug}`));
+    assert.equal(record.latitude, undefined);
+    assert.equal(filterMapRecords([record], { ...filters, country: "us" }).length, 0);
+  }
+  assert.ok(records.every(r => r.country === "uk" || r.country === "us"));
 });

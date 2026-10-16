@@ -30,7 +30,7 @@ export function FacilityImageFallback({
             <p className={`text-muted-foreground leading-relaxed ${isCard ? "text-[11px] line-clamp-3" : "text-xs"}`}>
               {isCard
                 ? "No facility photo on file; we do not use generic stand-ins for named sites."
-                : "This profile lists factual fields from the current import only. We do not show generic or illustrative photos as stand-ins for named establishments."}
+                : "We do not show generic or illustrative photos as stand-ins for named establishments."}
             </p>
           </div>
         </div>

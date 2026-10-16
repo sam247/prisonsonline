@@ -40,7 +40,7 @@ export default function UkSecurityCategoryHubPage({ params }: Props) {
       ? "Category B prisons hold people for whom the highest security is not required but escape must be made very difficult."
       : level === "Category C"
         ? "Category C prisons hold people who cannot be trusted in open conditions but are considered unlikely to try to escape."
-        : `This page groups establishments mapped to ${level} in the current prison dataset.`;
+        : `This page groups establishments mapped to ${level} in our current prison listings.`;
   const intro = `${definition} The list below is a directory view, not an operational or placement decision.`;
   const leaf = level;
   const readMore = readMoreArticleForUkSecurityHub(params.categorySlug);

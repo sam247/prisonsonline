@@ -31,9 +31,9 @@ export default function UkOperatorHubPage({ params }: Props) {
 
   const path = `/prisons/uk/operator/${params.operatorSlug}`;
   const title = `${r.operatorLabel} prisons (England & Wales)`;
-  const subtitle = `${r.prisons.length} establishments from HMPPS import data.`;
+  const subtitle = `${r.prisons.length} establishments listed by HMPPS.`;
   const intro =
-    "Operator labels come directly from the HMPPS prison export. Counts reflect the current import only; always confirm management arrangements with official sources.";
+    "Operator labels come directly from published HMPPS prison information. Counts reflect current listings only; always confirm management arrangements with official sources.";
   const leaf = r.operatorLabel;
   const readMore = readMoreArticleForUkOperatorHub(params.operatorSlug);
 

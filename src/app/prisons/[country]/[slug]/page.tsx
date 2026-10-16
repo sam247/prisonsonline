@@ -49,7 +49,7 @@ export default function PrisonOrRegionPage({ params }: Props) {
         countrySlug={country}
         regionSlug={slug}
         prisons={resolved.prisons}
-        intro={`Federal Bureau of Prisons facilities grouped under ${rName} in this directory (${resolved.prisons.length} sites in the current import). State prisons and local jails are not included unless they appear elsewhere in the dataset.`}
+        intro={`Federal Bureau of Prisons facilities grouped under ${rName} in this directory (${resolved.prisons.length} sites listed). State prisons and local jails are not included.`}
         eyebrow={US_FEDERAL_HUB_EYEBROW}
         footnote={US_FEDERAL_HUB_FOOTNOTE}
         readMoreLink={readMore ?? undefined}

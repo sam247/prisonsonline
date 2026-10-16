@@ -123,7 +123,7 @@ export default function ArticleDetailPage({ params }: Props) {
             {article.modifiedDate && <span className="block mt-1">Updated {new Date(article.modifiedDate).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>}
             {generated && (
               <span className="block mt-1 text-primary-foreground/60 max-w-2xl">
-                Counts and labels reflect the prison import in this site build. They are not live government
+                Counts and labels reflect published prison listing information. They are not live government
                 data.
               </span>
             )}

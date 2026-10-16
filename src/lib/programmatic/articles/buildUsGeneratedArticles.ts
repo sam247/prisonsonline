@@ -85,13 +85,13 @@ export function buildUsGeneratedArticles(): GeneratedArticle[] {
           id: "scope",
           heading: "What is included",
           paragraphs: [
-            `Only federal BOP facilities present in our import are listed. State prisons, jails, and private facilities outside this dataset are not shown here.`,
+            `Only federal BOP facilities are listed. State prisons, jails, and private facilities are not shown here.`,
             DATA_CAVEAT,
           ],
         },
         {
           id: "examples",
-          heading: "Examples from the dataset",
+          heading: "Examples",
           paragraphs: [
             examples
               ? `Illustrative entries: ${examples}. Use the links below for full profiles.`
@@ -112,7 +112,7 @@ export function buildUsGeneratedArticles(): GeneratedArticle[] {
         {
           question: "Does this list every prison in the state?",
           answer:
-            "No. It lists federal BOP facilities from our import only. State departments of correction operate separate prison systems.",
+            "No. It lists federal BOP facilities only. State departments of correction operate separate prison systems.",
         },
       ],
       sourceType: "generated",
@@ -125,7 +125,7 @@ export function buildUsGeneratedArticles(): GeneratedArticle[] {
       slug: fedSlug,
       title: `Federal prisons in ${stateName}: how this directory groups BOP sites`,
       description: `Context for ${count} federal (BOP) facility record${count === 1 ? "" : "s"} in ${stateName} on Prisons Online.`,
-      intro: `All entries here are federal Bureau of Prisons sites in ${stateName} as represented in our BOP-derived dataset—not county jails or state prisons unless they appear separately in other parts of the site.`,
+      intro: `All entries here are federal Bureau of Prisons sites in ${stateName} as listed by the Federal Bureau of Prisons—not county jails or state prisons unless they appear separately in other parts of the site.`,
       bodySections: [
         {
           id: "federal",
@@ -139,7 +139,7 @@ export function buildUsGeneratedArticles(): GeneratedArticle[] {
           id: "count",
           heading: "Facilities in this group",
           paragraphs: [
-            `The import currently includes ${count} federal site${count === 1 ? "" : "s"} for ${stateName}.`,
+            `We currently list ${count} federal site${count === 1 ? "" : "s"} for ${stateName}.`,
             examples ? `Examples: ${examples}.` : "",
           ].filter(Boolean),
         },
@@ -172,13 +172,13 @@ export function buildUsGeneratedArticles(): GeneratedArticle[] {
       slug,
       title: `What is a ${typeLabel} prison? (Federal BOP directory note)`,
       description: `Plain-language note on ${longLabel} facilities in the federal system, with ${count} example sites from this import.`,
-      intro: `“${typeLabel}” is a Bureau of Prisons facility-type designation in our dataset. This article summarises what that label usually signals in a directory context—without replacing official BOP definitions or legal classifications.`,
+      intro: `“${typeLabel}” is a Bureau of Prisons facility-type designation. This article summarises what that label usually signals in a directory context—without replacing official BOP definitions or legal classifications.`,
       bodySections: [
         {
           id: "meaning",
           heading: "How we use this label",
           paragraphs: [
-            `In this build, ${longLabel} appears on ${count} federal record${count === 1 ? "" : "s"}. Names and acronyms follow the import; operational detail varies by site.`,
+            `${longLabel} currently appears on ${count} federal record${count === 1 ? "" : "s"}. Names and acronyms follow the BOP listing; operational detail varies by site.`,
             DATA_CAVEAT,
           ],
         },

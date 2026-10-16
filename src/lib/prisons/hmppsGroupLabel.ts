@@ -39,3 +39,11 @@ export function otherPrisonsInLabel(p: PrisonLike): string {
 export function prisonsInLabel(p: PrisonLike): string {
   return isHmppsGroupRegion(p) ? "Prisons in this HMPPS group" : `Prisons in ${p.stateOrRegion ?? ""}`;
 }
+
+/**
+ * The region to show in visitor-facing location strings ("City, Region, Country").
+ * Empty for HMPPS functional groups, which are not places; otherwise the raw region.
+ */
+export function geographicRegion(p: PrisonLike): string {
+  return isHmppsGroupRegion(p) ? "" : (p.stateOrRegion ?? "").trim();
+}

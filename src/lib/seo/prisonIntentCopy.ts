@@ -1,4 +1,5 @@
 import type { Prison } from "@/types/prison";
+import { geographicRegion, isHmppsGroupRegion } from "@/lib/prisons/hmppsGroupLabel";
 import { slugVariantIndex } from "@/lib/seo/prisonProfileCopy";
 import type { PrisonIntentSlug } from "@/lib/seo/intentRollout";
 import {
@@ -128,10 +129,10 @@ export function siblingIntentsFor(intent: PrisonIntentSlug): PrisonIntentSlug[] 
 
 function provenancePhrase(p: Prison): string {
   if (p.dataProvenance === "hmpps_import") {
-    return "Fields on this profile summarise the HMPPS-derived listing used in this site build, not independent inspection reports.";
+    return "Fields on this profile summarise published HMPPS listing details, not independent inspection reports.";
   }
   if (p.dataProvenance === "bop_import") {
-    return "Fields here reflect the Federal Bureau of Prisons–derived listing in this build; operational detail can change without notice.";
+    return "Fields here reflect the Federal Bureau of Prisons facility listing; operational detail can change without notice.";
   }
   return "This page is directory context only; it does not replace notices, contracts, or instructions from the custodial operator.";
 }
@@ -179,7 +180,7 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
   const idxOpen = slugVariantIndex(prison.slug, 4);
   const idxDisc = slugVariantIndex(prison.slug, disclaimerVariants(prison).length);
   const idxCta = slugVariantIndex(prison.slug, ctaVariants(prison).length);
-  const loc = [prison.city, prison.stateOrRegion, prison.country].filter(Boolean).join(", ");
+  const loc = [prison.city, geographicRegion(prison), prison.country].filter(Boolean).join(", ");
   // UK (HMPPS) rows: plain-English type via ukPrisonTypeLabel (same class of fix as profile copy / PR #24).
   // Non-UK: keep raw type/securityLevel wording — do not force UK category nouns onto US facilities.
   const typeBare = hasUkHmppsTypeFields(prison)
@@ -193,9 +194,9 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
   const listedAs = hasUkHmppsTypeFields(prison) ? typeWithArticle : `${typeWithArticle} establishment`;
   const openers = [
     `${prison.name} is listed in this directory as ${listedAs} in ${loc}, operated where shown by ${prison.operator?.trim() || "the relevant authority"}.`,
-    `This profile covers ${prison.name} in ${loc}; the listing describes it as ${typeWithArticle} for navigation purposes within this dataset.`,
-    `Readers looking up ${prison.name} will see ${typeBare} labelling and ${loc} as recorded in the import behind this build.`,
-    `${prison.name} appears here with ${typeBare} labelling and a ${loc} address context drawn from the same structured import as the main prison page.`,
+    `This profile covers ${prison.name} in ${loc}; the listing describes it as ${typeWithArticle} for navigation purposes on this site.`,
+    `Readers looking up ${prison.name} will see ${typeBare} labelling and ${loc} as recorded in the published listing.`,
+    `${prison.name} appears here with ${typeBare} labelling and a ${loc} address context drawn from the same listing details as the main prison page.`,
   ];
   const intro = openers[idxOpen];
 
@@ -276,8 +277,8 @@ export function buildIntentBodyParagraphs(prison: Prison, intent: PrisonIntentSl
   const bridge = guideBridge[slugVariantIndex(prison.slug, guideBridge.length)];
 
   const internal = [
-    `Related pages for this establishment include the full profile for ${prison.name}, the “${intentTopicLabel(siblingIntentsFor(intent)[0])}” and “${intentTopicLabel(siblingIntentsFor(intent)[1])}” intent pages for the same site, and the region hub listing other prisons in ${prison.stateOrRegion}.`,
-    `You can move between the main ${prison.name} profile, sibling topics on this site, and prisons in ${prison.stateOrRegion} without losing the directory context.`,
+    `Related pages for this establishment include the full profile for ${prison.name}, the “${intentTopicLabel(siblingIntentsFor(intent)[0])}” and “${intentTopicLabel(siblingIntentsFor(intent)[1])}” intent pages for the same site, and ${isHmppsGroupRegion(prison) ? "the HMPPS group hub listing other prisons in the same group" : `the region hub listing other prisons in ${prison.stateOrRegion}`}.`,
+    `You can move between the main ${prison.name} profile, sibling topics on this site, and ${isHmppsGroupRegion(prison) ? "other prisons in the same HMPPS group" : `prisons in ${prison.stateOrRegion}`} without losing the directory context.`,
   ];
   const internalPara = internal[slugVariantIndex(prison.slug, internal.length)];
 

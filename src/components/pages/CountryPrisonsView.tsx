@@ -127,7 +127,7 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
           <div className="mb-8">
             <h2 className="text-lg font-semibold mb-3">Browse by facility type</h2>
             <p className="text-sm text-muted-foreground mb-3 max-w-2xl">
-              Hubs list only types that meet the minimum size rule in this build (three or more sites).
+              Hubs list only types that have three or more sites.
             </p>
             <div className="flex flex-wrap gap-2">
               {listUsFacilityTypeHubSlugs().map((typeSlug) => (
@@ -179,7 +179,7 @@ export function CountryPrisonsView({ countrySlug }: { countrySlug: string }) {
           </div>
         ) : (
           <p className="text-muted-foreground">
-            Prison data for {countryName} is coming soon. We are actively expanding our directory.
+            We do not list prisons for {countryName} yet. Use the Prison Finder to browse the countries we cover.
           </p>
         )}
 
