@@ -274,5 +274,58 @@
     "title": "FCI Big Spring",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Big_Spring.jpg",
     "caption": "Exterior of the Federal Correctional Institution, Big Spring."
+  },
+  "auckland-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Paremoremo_Prison_High_Security_I.jpg",
+    "credit": "Ingolfson",
+    "licence": "Public domain",
+    "alt": "Exterior view of Auckland Prison",
+    "author": "Ingolfson",
+    "title": "Paremoremo Prison High Security I",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paremoremo_Prison_High_Security_I.jpg",
+    "caption": "High-security section of Auckland Prison, Paremoremo, in 2008."
+  },
+  "auckland-region-women-s-corrections-facility": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Auckland_Region_Women%27s_Prison.jpg",
+    "credit": "Ingolfson",
+    "licence": "Public domain",
+    "alt": "Exterior view of Auckland Region Women's Corrections Facility",
+    "author": "Ingolfson",
+    "title": "Auckland Region Women's Prison",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Auckland_Region_Women%27s_Prison.jpg",
+    "caption": "Auckland Region Women's Corrections Facility, Wiri, in 2009."
+  },
+  "arohata-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Arohata_Womens_Prison.JPG",
+    "credit": "Not your siblings' deletionist",
+    "licence": "CC0",
+    "alt": "Exterior view of Arohata Prison",
+    "author": "Not your siblings' deletionist",
+    "title": "Arohata Womens Prison",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arohata_Womens_Prison.JPG",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "caption": "Arohata Prison, Tawa, Wellington, in 2013."
+  },
+  "manawatu-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Manawatu_Prison.jpg",
+    "credit": "AxonsArachnida",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior view of Manawatū Prison",
+    "author": "AxonsArachnida",
+    "title": "Manawatu Prison",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manawatu_Prison.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Manawatū Prison, Linton."
+  },
+  "christchurch-women-s-prison": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Christchurch_Women%27s_Prison_-_cropped.jpg",
+    "credit": "Murray Foubister",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior view of Christchurch Women's Prison",
+    "author": "Murray Foubister",
+    "title": "Christchurch Women's Prison - cropped",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christchurch_Women%27s_Prison_-_cropped.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Aerial view of Christchurch Women's Prison in 2017."
   }
 }
