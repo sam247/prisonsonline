@@ -97,3 +97,33 @@ export function getRecentlyUpdatedPrisons(list: Prison[], limit: number): Prison
     })
     .slice(0, limit);
 }
+
+/** Latest verifier `checkedAt` date for a facility (read-only overlay data); null when undated. */
+export function getPrisonVerificationCheckedDate(prison: Prison): Date | null {
+  const verification = getFacilityVerification(prison.countrySlug, prison.slug);
+  return (
+    verification?.sources
+      .map((source) => parseRawDate(source.checkedAt))
+      .filter((date): date is Date => Boolean(date))
+      .sort((a, b) => b.getTime() - a.getTime())[0] ?? null
+  );
+}
+
+/**
+ * Homepage "recently updated" list: open facilities only, ranked by real verification
+ * checked date (newest first). Undated records are omitted — no build-time fallback.
+ * Separate from getRecentlyUpdatedPrisons / sitemap lastmod so their behaviour is unchanged.
+ */
+export function getHomepageRecentlyUpdatedPrisons(
+  list: Prison[],
+  limit: number,
+  getDate: (prison: Prison) => Date | null = getPrisonVerificationCheckedDate,
+): Prison[] {
+  return list
+    .filter((p) => p.status !== "closed" && p.status !== "historic")
+    .map((prison) => ({ prison, date: getDate(prison) }))
+    .filter((row): row is { prison: Prison; date: Date } => Boolean(row.date))
+    .sort((a, b) => b.date.getTime() - a.date.getTime() || a.prison.slug.localeCompare(b.prison.slug))
+    .slice(0, limit)
+    .map((row) => row.prison);
+}

@@ -20,7 +20,7 @@ import { countriesData } from "@/data/countries";
 const HOME_COUNTRY_SLUGS = ["uk", "us", "united-states", "ca", "au", "nz", "ie", "za"];
 import { EditorialImageBlock } from "@/components/media/EditorialImageBlock";
 import { getArticleCoverImage, getGuideCoverImage, getHomeHeroEditorialImage } from "@/lib/media/resolvers";
-import { getRecentlyUpdatedPrisons } from "@/lib/seo/prisonLastModified";
+import { getHomepageRecentlyUpdatedPrisons } from "@/lib/seo/prisonLastModified";
 import {
   MapPin,
   BookOpen,
@@ -54,7 +54,7 @@ const popularSlugs = [
 const popularPrisons = popularSlugs
   .map((slug) => prisons.find((p) => p.slug === slug))
   .filter((p): p is (typeof prisons)[number] => Boolean(p));
-const recentlyUpdatedHome = getRecentlyUpdatedPrisons(prisons, 10);
+const recentlyUpdatedHome = getHomepageRecentlyUpdatedPrisons(prisons, 10);
 
 const iconMap: Record<string, ReactNode> = {
   Users: <Users className="h-6 w-6" />,
