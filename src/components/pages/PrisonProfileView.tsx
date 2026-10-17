@@ -31,6 +31,9 @@ import {
   buildPrisonTypeHeading,
 } from "@/lib/seo/prisonProfileCopy";
 import { getVisitingGuidesForPrison } from "@/lib/seo/prisonVisitingGuides";
+import { contactVisitingRows } from "@/lib/seo/prisonContactVisiting";
+import { getFacilityVerification } from "@/data/facilitySources";
+import { ContactVisitingBlock } from "@/components/facility/ContactVisitingBlock";
 import { intentsForPrison, isPrisonInIntentRollout } from "@/lib/seo/intentRollout";
 import { intentHref, intentTopicLabel } from "@/lib/seo/prisonIntentCopy";
 import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
@@ -121,6 +124,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
 
   const hasCoords = prison.latitude !== 0 || prison.longitude !== 0;
   const visitingGuides = getVisitingGuidesForPrison();
+  const contactRows = contactVisitingRows(prison, getFacilityVerification(prison.countrySlug, prison.slug));
   const prisonTypeBody = buildPrisonTypeBody(prison);
   const thematicHubs = listMatchingCollectionHubsForPrison(prison);
   const operatorHub = ukOperatorHubHref(prison);
@@ -287,6 +291,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 </ul>
               </section>
             ) : null}
+
+            <ContactVisitingBlock rows={contactRows} />
 
             {facilityVisual.kind === "real" || facilityVisual.kind === "editorial" ? (
             <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
