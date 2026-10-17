@@ -18,6 +18,7 @@ import { usFacilityTypeHubHref, facilityTypeSlugForPrison } from "@/lib/programm
 import { slugUsFacilityTypeExplainer, slugUsStateArticle } from "@/lib/programmatic/articles/slugRules";
 import { getSiteArticle } from "@/data/articles.merge";
 import { prisonProfileJsonLdGraph } from "@/lib/seo/prisonJsonLd";
+import { formatPrisonProfileMetaDescription } from "@/lib/seo/prisonProfileMeta";
 import {
   buildContactBody,
   buildContactHeading,
@@ -154,7 +155,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
     regionLinkPrisons = sameRegionAll.slice(0, 6);
   }
 
-  const metaDesc = formatPrisonMetaDescription(prison);
+  const metaDesc = formatPrisonProfileMetaDescription(prison);
   const profileJsonLd = prisonProfileJsonLdGraph({
     prison,
     path: profilePath,

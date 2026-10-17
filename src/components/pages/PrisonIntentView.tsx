@@ -4,6 +4,7 @@ import { ChevronRight, BookOpen } from "lucide-react";
 import type { Prison } from "@/types/prison";
 import { isIntentEnabledForPrison, type PrisonIntentSlug } from "@/lib/seo/intentRollout";
 import { prisonIntentJsonLdGraph } from "@/lib/seo/prisonIntentJsonLd";
+import { formatContactDetailsMetaDescription } from "@/lib/seo/prisonContactMeta";
 import {
   buildIntentBodyParagraphs,
   buildIntentMetaDescription,
@@ -39,7 +40,8 @@ export function PrisonIntentView({
     .map((slug) => guides.find((g) => g.slug === slug))
     .filter((g): g is (typeof guides)[number] => Boolean(g));
   const siblings = siblingIntentsFor(intent).filter((sibling) => isIntentEnabledForPrison(prison, sibling));
-  const metaDesc = buildIntentMetaDescription(prison, intent);
+  const metaDesc =
+    intent === "contact-details" ? formatContactDetailsMetaDescription(prison) : buildIntentMetaDescription(prison, intent);
   const jsonLd = prisonIntentJsonLdGraph({
     prison,
     intent,

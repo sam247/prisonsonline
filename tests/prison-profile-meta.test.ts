@@ -9,6 +9,7 @@ import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
 
 const INTENT =
   /\b(address|addresses|phone|phones|telephone|telephones|postcode|postcodes|postal|contact|contacts|visit|visits|visiting|visitor|visitors)\b/i;
+const FILLER = /Profile of this establishment|Directory profile|Official contact routes|And how to visit|Visiting and contact details/i;
 
 function bySlug(slug: string) {
   const prison = prisons.find((row) => row.slug === slug);
@@ -24,6 +25,7 @@ test("profile meta descriptions use recorded facts and stay off contact intent",
     const description = descriptions[i];
     assert.ok(description.length >= 150 && description.length <= 160, `${prison.slug} ${description.length} ${description}`);
     assert.doesNotMatch(description, INTENT, prison.slug);
+    assert.doesNotMatch(description, FILLER, prison.slug);
     if (prison.postcode) assert.equal(description.includes(prison.postcode), false, prison.slug);
     if (prison.phone) assert.equal(description.includes(prison.phone), false, prison.slug);
     const rawRegion = geographicRegion(prison).replace(/\s+/g, " ").trim();
@@ -37,13 +39,13 @@ test("profile meta descriptions use recorded facts and stay off contact intent",
 
 test("representative profile metas lead with type, town and operator", () => {
   const preston = formatPrisonProfileMetaDescription(bySlug("hmp-preston"));
-  assert.match(preston, /HMP Preston is a Category B local prison for adult men in Preston, Cumbria & Lancashire/);
+  assert.match(preston, /HMP Preston is a Category B local prison for adult men in Preston, Lancashire/);
   assert.match(preston, /Public Sector Prison/);
-  assert.doesNotMatch(preston, /PR1 5AB|01772/);
+  assert.doesNotMatch(preston, /Cumbria|PR1 5AB|01772/);
 
   const elmley = formatPrisonProfileMetaDescription(bySlug("hmp-elmley"));
-  assert.match(elmley, /local prison for adult men in Sheerness, Kent, Surrey & Sussex/);
-  assert.doesNotMatch(elmley, /KENT, SURREY & SUSSEX/);
+  assert.match(elmley, /local prison for adult men in Sheerness, Kent/);
+  assert.doesNotMatch(elmley, /Surrey|KENT, SURREY & SUSSEX/);
 
   const peterborough = formatPrisonProfileMetaDescription(bySlug("hmp-peterborough"));
   assert.match(peterborough, /HMP Peterborough/);
@@ -76,19 +78,21 @@ test("representative profile metas lead with type, town and operator", () => {
   assert.match(atlantic, /Correctional Service of Canada/);
 });
 
-test("profile JSON-LD keeps the previous description text", () => {
+test("profile JSON-LD description matches the profile meta description", () => {
   const wandsworth = bySlug("hmp-wandsworth");
-  assert.equal(
+  const meta = formatPrisonProfileMetaDescription(wandsworth);
+  assert.notEqual(
     formatPrisonMetaDescription(wandsworth),
-    "HMP Wandsworth in London, England & Wales. Category B prison profile with category, operator, location, and general facility information.",
+    meta,
   );
   const atlantic = bySlug("atlantic-institution");
-  assert.equal(
-    formatIntlPrisonMetaDescription(atlantic),
-    "Atlantic Institution in Renous, New Brunswick, Canada. Operator, jurisdiction, security classification and official source.",
-  );
+  assert.notEqual(formatIntlPrisonMetaDescription(atlantic), formatPrisonProfileMetaDescription(atlantic));
+
   const view = fs.readFileSync("src/components/pages/PrisonProfileView.tsx", "utf8");
-  assert.match(view, /const metaDesc = formatPrisonMetaDescription\(prison\)/);
+  assert.match(view, /const metaDesc = formatPrisonProfileMetaDescription\(prison\)/);
+  assert.match(view, /description: metaDesc/);
+  const intl = fs.readFileSync("src/components/pages/IntlPrisonProfileView.tsx", "utf8");
+  assert.match(intl, /description: formatPrisonProfileMetaDescription\(prison\)/);
   const page = fs.readFileSync("src/app/prisons/[country]/[slug]/page.tsx", "utf8");
   assert.match(page, /description: formatPrisonProfileMetaDescription\(p\)/);
   assert.match(page, /title: buildPrisonPageTitle\(p\)/);
