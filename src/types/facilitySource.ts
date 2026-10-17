@@ -60,7 +60,7 @@ export interface PostalAddress {
 export type VisitBookingMethod = "online" | "phone" | "email" | "prisoner-led";
 
 export interface VisitBooking {
-  /** Booking routes in the order the official source lists them; the first is the primary route. */
+  /** Booking routes the official source gives for family and friends visits, primary route first. */
   methods: VisitBookingMethod[];
   /** Official online booking URL exactly as the source links it (e.g. https://www.gov.uk/prison-visits). */
   url?: string;
