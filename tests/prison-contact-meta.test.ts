@@ -18,7 +18,7 @@ function cleanAddress(value: string | undefined): string {
   return (value ?? "").replace(/\s+/g, " ").trim().replace(/\s+,/g, ",").replace(/,\s*/g, ", ");
 }
 
-test("contact-details metas keep contact intent and the recorded phone and postcode", () => {
+test("contact-details metas keep contact intent and the phone and postcode", () => {
   const contacts = prisons.filter((prison) => intentsForPrison(prison).includes("contact-details"));
   assert.equal(contacts.length, 128);
   assert.equal(contacts.filter((prison) => prison.countrySlug === "uk").length, 122);
@@ -47,7 +47,9 @@ test("contact-details metas keep contact intent and the recorded phone and postc
     assert.match(description, /\bvisiting\b/i, prison.slug);
     assert.match(description, /Visiting and contact details\.$/, prison.slug);
     assert.doesNotMatch(description, /Official contact routes|And how to visit|Profile of this establishment|Directory profile/, prison.slug);
-    assert.ok(description.includes(prison.postcode!.trim()), prison.slug);
+    assert.doesNotMatch(description, /\brecorded\b/i, prison.slug);
+    assert.doesNotMatch(description, /address and postcode/i, prison.slug);
+    assert.equal(description.split(prison.postcode!.trim()).length - 1, 1, `${prison.slug} ${description}`);
     assert.ok(description.includes(prison.phone!.trim()), prison.slug);
     const rawRegion = geographicRegion(prison).replace(/\s+/g, " ").trim();
     const letters = rawRegion.replace(/[^A-Za-z]/g, "");
@@ -68,24 +70,28 @@ test("contact-details metas keep contact intent and the recorded phone and postc
 
 test("contact metas lead with the verified address where it fits", () => {
   const preston = formatContactDetailsMetaDescription(bySlug("hmp-preston"));
-  assert.match(preston, /2 Ribbleton Lane, Preston, Lancashire, PR1 5AB/);
-  assert.match(preston, /PR1 5AB/);
+  assert.match(preston, /address: 2 Ribbleton Lane, Preston, Lancashire\./);
+  assert.equal(preston.split("PR1 5AB").length - 1, 1);
   assert.match(preston, /\(01772\) 444 550/);
   assert.match(preston, /Visiting and contact details\.$/);
-  assert.doesNotMatch(preston, /Cumbria|CUMBRIA & LANCASHIRE/);
+  assert.doesNotMatch(preston, /Cumbria|CUMBRIA & LANCASHIRE|address and postcode/);
 
   const elmley = formatContactDetailsMetaDescription(bySlug("hmp-elmley"));
-  assert.match(elmley, /Church Road, Eastchurch, Sheerness, Kent, ME12 4DZ/);
+  assert.match(elmley, /Church Road, Eastchurch, Sheerness, Kent/);
+  assert.equal(elmley.split("ME12 4DZ").length - 1, 1);
   assert.match(elmley, /\(01795\) 802 000/);
-  assert.doesNotMatch(elmley, /Surrey|KENT, SURREY & SUSSEX/);
+  assert.doesNotMatch(elmley, /Surrey|KENT, SURREY & SUSSEX|Kent, ME12 4DZ/);
 
   const peterborough = formatContactDetailsMetaDescription(bySlug("hmp-peterborough"));
-  assert.match(peterborough, /Saville Road, Westwood, Peterborough, PE3 7PD/);
+  assert.match(peterborough, /Saville Road, Westwood, Peterborough/);
+  assert.equal(peterborough.split("PE3 7PD").length - 1, 1);
   assert.match(peterborough, /\(01733\) 217 500/);
-  assert.doesNotMatch(peterborough, /PRIVATELY MANAGED PRISON/);
+  assert.match(peterborough, /Operated by Sodexo/);
+  assert.doesNotMatch(peterborough, /PRIVATELY MANAGED PRISON|Peterborough, PE3 7PD/);
 
   const wandsworth = formatContactDetailsMetaDescription(bySlug("hmp-wandsworth"));
-  assert.match(wandsworth, /Heathfield Road, London, SW18 3HU/);
+  assert.match(wandsworth, /Heathfield Road, London/);
+  assert.equal(wandsworth.split("SW18 3HU").length - 1, 1);
   assert.match(wandsworth, /\(020\) 8588 4000/);
   assert.match(wandsworth, /\baddress\b/i);
   assert.match(wandsworth, /\bcontact\b/i);
@@ -99,11 +105,11 @@ test("contact metas lead with the verified address where it fits", () => {
   const berwyn = bySlug("hmp-berwyn");
   const berwynMeta = formatContactDetailsMetaDescription(berwyn);
   assert.equal(berwynMeta.includes(cleanAddress(berwyn.address)), false);
-  assert.match(berwynMeta, /Wrexham, North Wales/);
-  assert.match(berwynMeta, /LL13 9QE/);
+  assert.match(berwynMeta, /Wrexham, Wales/);
+  assert.equal(berwynMeta.split("LL13 9QE").length - 1, 1);
   assert.match(berwynMeta, /\(01978\) 523 000/);
   assert.match(berwynMeta, /\baddress\b/i);
-  assert.doesNotMatch(berwynMeta, /HMPPS Wales/);
+  assert.doesNotMatch(berwynMeta, /North Wales|in HMPPS Wales|Wrexham, HMPPS Wales/);
 });
 
 test("contact JSON-LD uses the contact meta description and titles stay unchanged", () => {

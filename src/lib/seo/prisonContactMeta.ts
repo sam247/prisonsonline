@@ -1,6 +1,6 @@
 import type { Prison } from "@/types/prison";
 import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
-import { countyFromVerifiedAddress, textUsesHmppsAreaName } from "@/lib/seo/prisonProfileMeta";
+import { countyFromVerifiedAddress, normalizePostalCounty, operatorSentence, textUsesHmppsAreaName } from "@/lib/seo/prisonProfileMeta";
 
 /**
  * Contact-details <meta name="description"> and that page's JSON-LD description.
@@ -27,6 +27,30 @@ function cleanAddress(value: string | undefined): string {
   return clean(value).replace(/\s+,/g, ",").replace(/,\s*/g, ", ");
 }
 
+function stripTrailingPostcode(street: string, postcode: string): string {
+  let out = street;
+  if (postcode) {
+    const escaped = postcode.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+    out = out.replace(new RegExp(`,?\\s*${escaped}\\s*$`, "i"), "");
+  }
+  return out.replace(/,?\s*[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\s*$/i, "").replace(/,\s*$/, "").trim();
+}
+
+/** Address line with the postcode removed and a postal county written out in full. */
+function displayStreet(p: Prison): string {
+  const street = stripTrailingPostcode(cleanAddress(p.address), clean(p.postcode));
+  if (p.countrySlug !== "uk") return street;
+  const parts = street.split(",").map((part) => part.trim()).filter(Boolean);
+  const city = clean(p.city);
+  const idx = city ? parts.findIndex((part) => samePlace(part, city)) : -1;
+  if (idx >= 0 && idx < parts.length - 1) {
+    const county = normalizePostalCounty(parts[parts.length - 1]);
+    if (county) parts[parts.length - 1] = county;
+    else parts.pop();
+  }
+  return parts.join(", ");
+}
+
 function samePlace(a: string, b: string): boolean {
   return a.toLowerCase().replace(/-/g, " ").replace(/\s+/g, " ") === b.toLowerCase().replace(/-/g, " ").replace(/\s+/g, " ");
 }
@@ -51,13 +75,13 @@ function contactPlace(p: Prison): string {
 function keepsContactIntent(value: string, postcode: string, phone: string): boolean {
   if (value.length < 150 || value.length > 160) return false;
   if (!value.endsWith(CLOSER)) return false;
-  if (FILLER.test(value)) return false;
+  if (FILLER.test(value) || /\brecorded\b/i.test(value) || /address and postcode/i.test(value)) return false;
   if (!/\baddress\b/i.test(value)) return false;
   if (!/\bpostcode\b/i.test(value)) return false;
   if (!/\btelephone\b/i.test(value)) return false;
   if (!/\bcontact\b/i.test(value)) return false;
   if (!/\bvisiting\b/i.test(value)) return false;
-  if (postcode && !value.includes(postcode)) return false;
+  if (postcode && value.split(postcode).length - 1 !== 1) return false;
   if (phone && !value.includes(phone)) return false;
   return true;
 }
@@ -77,17 +101,13 @@ export function formatContactDetailsMetaDescription(p: Prison): string {
   const name = contactName(p);
   const postcode = clean(p.postcode);
   const phone = clean(p.phone);
-  const street = cleanAddress(p.address);
+  const street = displayStreet(p);
   const place = contactPlace(p);
   const city = clean(p.city);
   const county = p.countrySlug === "uk" ? countyFromVerifiedAddress(p) : "";
-  const operator = clean(p.operator);
-  const phoneForms = phone
-    ? [`Telephone ${phone}.`, `The telephone is ${phone}.`, `Telephone number ${phone}.`, `Recorded telephone: ${phone}.`, `The recorded telephone is ${phone}.`]
-    : ["Telephone."];
-  const postcodeForms = postcode
-    ? [`Postcode ${postcode}.`, `The postcode is ${postcode}.`, `Recorded postcode: ${postcode}.`, `The recorded postcode is ${postcode}.`]
-    : ["Postcode."];
+  const operator = operatorSentence(p);
+  const phoneForms = phone ? [`Telephone ${phone}.`, `The telephone is ${phone}.`, `Telephone number ${phone}.`] : ["Telephone."];
+  const postcodeForms = postcode ? [`Postcode ${postcode}.`, `The postcode is ${postcode}.`] : ["Postcode."];
   const placeForms = [
     "",
     place ? `In ${place}.` : "",
@@ -95,11 +115,10 @@ export function formatContactDetailsMetaDescription(p: Prison): string {
     county ? `County: ${county}.` : "",
     county ? `The county is ${county}.` : "",
   ].filter((value, index, all) => all.indexOf(value) === index);
-  const operatorForms = operator
-    ? ["", `Operator: ${operator}.`, `Operated by ${operator}.`, `The operator is ${operator}.`, `The recorded operator is ${operator}.`]
-    : [""];
-  const countryForms = p.countrySlug === "uk" ? ["", "In the United Kingdom."] : [""];
-  const telephoneWords = ["telephone", "the telephone", "recorded telephone", "the recorded telephone"];
+  const operatorForms = operator ? ["", operator] : [""];
+  const countryForms =
+    p.countrySlug === "uk" ? ["", "In the United Kingdom."] : p.countrySlug === "us" ? ["", "In the United States."] : [""];
+  const telephoneWords = ["telephone", "the telephone"];
   const cores: string[] = [];
 
   if (street) {
@@ -110,18 +129,6 @@ export function formatContactDetailsMetaDescription(p: Prison): string {
             for (const countryForm of countryForms) {
               cores.push(sentence(`${name} address: ${street}. ${postcodeForm} ${phoneForm} ${placeForm} ${operatorForm} ${countryForm} ${CLOSER}`));
               cores.push(sentence(`${name} address: ${street}. ${phoneForm} ${postcodeForm} ${placeForm} ${operatorForm} ${countryForm} ${CLOSER}`));
-            }
-          }
-        }
-      }
-    }
-    for (const phoneForm of phoneForms) {
-      for (const placeForm of placeForms) {
-        for (const operatorForm of operatorForms) {
-          for (const countryForm of countryForms) {
-            cores.push(sentence(`${name} address and postcode: ${street}. ${phoneForm} ${placeForm} ${operatorForm} ${countryForm} ${CLOSER}`));
-            if (postcode) {
-              cores.push(sentence(`${name} address and postcode ${postcode}: ${street}. ${phoneForm} ${placeForm} ${operatorForm} ${countryForm} ${CLOSER}`));
             }
           }
         }
@@ -159,13 +166,7 @@ export function formatContactDetailsMetaDescription(p: Prison): string {
     const withoutTownSentence = value.replace(/\b[Tt]own: [^.]+\.|\btown is [^.]+\./g, "");
     const townRepeat = city && withoutTownSentence.includes(city) && withoutTownSentence.length !== value.length ? 0 : 1;
     const hasOperator = operator && value.includes(operator) ? 1 : 0;
-    const naturalOperator =
-      operator && value.includes(operator) ? (/Operated by |The operator is |The recorded operator is /.test(value) ? 1 : 0) : 1;
-    const naturalPhone = /The recorded telephone is |The telephone is |Telephone \d|Telephone \(/.test(value)
-      ? 2
-      : /the telephone /.test(value)
-        ? 1
-        : 0;
-    return [hasStreet, hasPlace, hasCounty, postcodeOnce, placeOnce, countyOnce, townRepeat, hasOperator, naturalOperator, naturalPhone, 160 - value.length];
+    const naturalPhone = /The telephone is |Telephone \d|Telephone \(/.test(value) ? 2 : /the telephone /.test(value) ? 1 : 0;
+    return [hasStreet, hasPlace, hasCounty, postcodeOnce, placeOnce, countyOnce, townRepeat, hasOperator, naturalPhone, 160 - value.length];
   });
 }
