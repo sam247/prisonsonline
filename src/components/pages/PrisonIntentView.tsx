@@ -20,6 +20,8 @@ import { getFacilityVerification } from "@/data/facilitySources";
 import { FacilityFactBlock } from "@/components/facility/FacilityFactBlock";
 import { LegalVisitBlock } from "@/components/facility/LegalVisitBlock";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { ContactVisitingBlock } from "@/components/facility/ContactVisitingBlock";
+import { contactDetailsRows } from "@/lib/seo/prisonContactVisiting";
 
 export function PrisonIntentView({
   prison,
@@ -82,7 +84,16 @@ export function PrisonIntentView({
       </header>
 
       <article className="container py-10 max-w-3xl">
-        {intent === "contact-details" ? <FacilityFactBlock prison={clientPrison} verification={verification} /> : null}
+        {intent === "contact-details" ? (
+          <>
+            <FacilityFactBlock prison={clientPrison} verification={verification} />
+            {contactDetailsRows(prison, verification).length > 0 ? (
+              <div className="my-8">
+                <ContactVisitingBlock rows={contactDetailsRows(prison, verification)} />
+              </div>
+            ) : null}
+          </>
+        ) : null}
         {intent === "legal-visits" && verification?.legalVisits ? <LegalVisitBlock prison={clientPrison} verification={verification} /> : null}
         {intent !== "legal-visits" ? (
           <div className="prose prose-neutral dark:prose-invert max-w-none space-y-4 text-muted-foreground leading-relaxed">

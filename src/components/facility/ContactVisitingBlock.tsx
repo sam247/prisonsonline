@@ -46,6 +46,14 @@ export function ContactVisitingBlock({ rows }: { rows: ContactRow[] }) {
                       <span>{row.text}</span>
                     )
                   ) : null}
+                  {row.lines && row.lines.length > 0 ? (
+                    <span className="block">
+                      {row.lines.map((line, i) => (
+                        <span key={`${i}-${line}`} className="block">{line}</span>
+                      ))}
+                    </span>
+                  ) : null}
+                  {row.note ? <span className="block text-xs text-muted-foreground mt-0.5">{row.note}</span> : null}
                   {row.links && row.links.length > 0 ? (
                     <ul className="space-y-1">
                       {row.links.map((l) => (

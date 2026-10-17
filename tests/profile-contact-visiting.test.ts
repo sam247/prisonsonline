@@ -70,7 +70,9 @@ test("rows with no data are hidden; values are read, never invented", () => {
   // A US BOP row with no data at all still renders nothing invented.
   const atl = find("us", "atlanta-fci");
   const usBare: Prison = { ...atl, address: "", phone: "" };
-  const uk2 = contactVisitingRows(usBare, undefined).map((x) => x.key);
+  // Verified per-prison contact/visiting blocks (withUsContactVisiting) may add their own rows.
+  const verifiedKeys = new Set(["visiting-rules", "visiting-hours", "mailing-address", "official-page"]);
+  const uk2 = contactVisitingRows(usBare, undefined).map((x) => x.key).filter((k) => !verifiedKeys.has(k));
   assert.deepEqual(uk2, ["booking", "contact-federal-inmate"]);
 });
 
