@@ -9,6 +9,11 @@ import {
 import { compareFacts, minConfidence, overallStatus } from "./compare";
 import { discoverUsAuthoritativeSource, matchedBopLocation } from "./discoverUsSource";
 import { extractBopFacts } from "./extractBopFacts";
+import {
+  applyUsContactVisiting,
+  evaluateBopContactVisiting,
+  suppressedContactVisiting,
+} from "./bopContactVisiting";
 import { SourceUnavailableError, type HttpGet } from "./govukClient";
 import { addDays, isoNow } from "./normalize";
 import { publishedFacts } from "./publishedFacts";
@@ -17,6 +22,7 @@ import { authoritySummary, resolveUsAuthority, type ResolvedUsAuthority } from "
 import { canOverrideFromUsSourceUrl, usComparePolicy } from "./usSourcePolicy";
 import type { BopLocation } from "./bopClient";
 import type {
+  ContactVisitingReport,
   FieldDiff,
   OfficialFacts,
   PrisonStateRecord,
@@ -312,6 +318,7 @@ export async function verifyUsPrison(input: {
 
   let official: OfficialFacts | undefined;
   let sourceUrl = discovered.url;
+  let bopCode: string | undefined;
 
   if (resolved.kind === "federal-bop") {
     const loc = matchedBopLocation(input.prison, input.bopLocations);
@@ -328,6 +335,7 @@ export async function verifyUsPrison(input: {
     }
     official = extractBopFacts(loc);
     sourceUrl = discovered.url;
+    bopCode = loc.code;
   } else {
     if (!input.http) {
       return failedResult({
@@ -455,6 +463,46 @@ export async function verifyUsPrison(input: {
     market: "us",
   });
 
+  // CONTACT/VISITING (mailing address, visiting hours, visiting rules URL): VERIFY-write path,
+  // same gate as SAFE phone/email/postcode. Suppressed on identity problems or historical/legacy rows.
+  let contactVisiting: ContactVisitingReport;
+  const nameReview = compared.fields.some((field) => field.field === "name" && field.classification === "REVIEW_REQUIRED");
+  if (input.options.contactVisitingEnabled === false) {
+    contactVisiting = suppressedContactVisiting("Contact/visiting pass disabled for this run.");
+  } else if (isExcludedFromUsActiveQueue(input.prison)) {
+    contactVisiting = suppressedContactVisiting("Historical/legacy duplicate profile — contact/visiting suppressed.");
+  } else if (nameReview) {
+    contactVisiting = suppressedContactVisiting("Facility identity (name) is REVIEW_REQUIRED — contact/visiting suppressed.");
+  } else if (!bopCode || resolved.kind !== "federal-bop") {
+    contactVisiting = suppressedContactVisiting(
+      "Contact/visiting extraction is only implemented for bop.gov facility pages; state/local sources are not auto-extracted.",
+    );
+  } else if (!input.http) {
+    contactVisiting = suppressedContactVisiting("No HTTP client configured; contact/visiting not checked.");
+  } else {
+    const countryKey = input.prison.countrySlug === "united-states" ? "united-states" : "us";
+    const existing = input.overlayStore.read()?.entries?.[`${countryKey}/${input.prison.slug}`]?.contactVisiting;
+    const { source: cvSource, fields } = await evaluateBopContactVisiting({
+      code: bopCode,
+      http: input.http,
+      current: existing,
+      site: { address: input.prison.address, postcode: input.prison.postcode },
+      now,
+    });
+    const cvApply = applyUsContactVisiting({
+      countrySlug: input.prison.countrySlug,
+      prisonSlug: input.prison.slug,
+      sourceUrl,
+      source: cvSource,
+      fields,
+      writesEnabled: writesWanted,
+      now,
+      store: input.overlayStore,
+    });
+    contactVisiting = { suppressed: false, fields, applied: cvApply.applied, mutated: cvApply.overlayWritten };
+  }
+
+  const mutated = apply.overlayWritten || completeness.completenessMutated || contactVisiting.mutated;
   return {
     prisonSlug: input.prison.slug,
     countrySlug: input.prison.countrySlug,
@@ -466,10 +514,11 @@ export async function verifyUsPrison(input: {
     fields: compared.fields,
     missingOfficialFields: compared.missingOfficialFields,
     audit,
-    overlayWritten: apply.overlayWritten || completeness.completenessMutated,
-    productionMutated: apply.overlayWritten || completeness.completenessMutated,
+    overlayWritten: mutated,
+    productionMutated: mutated,
     authority,
     completeness,
+    contactVisiting,
   };
 }
 

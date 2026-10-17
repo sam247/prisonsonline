@@ -133,6 +133,8 @@ export function applyUsSafeAutoChanges(input: {
     appliedAt: isoNow(input.now),
     sourceUrl: input.sourceUrl,
     overrides: { ...previous?.overrides, ...overrides },
+    // Keep verified contact/visiting facts (they carry their own provenance).
+    ...(previous?.contactVisiting ? { contactVisiting: previous.contactVisiting } : {}),
   };
   current.generatedBy = "us-prison-verifier";
   current.entries[key] = entry;

@@ -1,4 +1,14 @@
-import type { FacilityFactOverrides } from "@/types/facilitySource";
+import type { FacilityFactOverrides, FacilityVerificationRecord } from "@/types/facilitySource";
+
+/**
+ * Verified contact/visiting blocks stored on a US overlay entry. Same shape as the
+ * FacilityVerificationRecord blocks (#77): provenance via sources[] + fieldSources,
+ * each block carries a sourceId into sources[].
+ */
+export type ContactVisitingBlocks = Pick<
+  FacilityVerificationRecord,
+  "sources" | "fieldSources" | "postalAddress" | "visitingHours" | "visitingRulesUrl"
+>;
 
 /** Internal prison verification state. Not rendered on public pages. */
 export type VerificationStatus =
@@ -123,6 +133,8 @@ export interface OverlayEntry {
   appliedAt: string;
   sourceUrl: string;
   overrides: FacilityFactOverrides;
+  /** Verified postal (inmate mail) address / visiting blocks with their own sources + fieldSources. */
+  contactVisiting?: ContactVisitingBlocks;
 }
 
 export interface OverlayFile {
@@ -236,6 +248,8 @@ export interface VerifierRunOptions {
    * plus --completeness-write. Independent of VERIFY writesEnabled.
    */
   completenessWritesEnabled?: boolean;
+  /** Contact/visiting pass (BOP only). Default on when an HTTP client is supplied; writes follow writesEnabled. */
+  contactVisitingEnabled?: boolean;
 }
 
 export interface PrisonVerificationResult {
@@ -254,6 +268,35 @@ export interface PrisonVerificationResult {
   authority?: UsAuthoritySummary;
   /** Empty-field completeness pass (separate from VERIFY). */
   completeness?: CompletenessReport;
+  /** Contact/visiting pass (postal/inmate mail address, visiting hours, visiting rules URL). VERIFY-write path. */
+  contactVisiting?: ContactVisitingReport;
+}
+
+export type ContactVisitingField = "postalAddress" | "visitingHours" | "visitingRulesUrl";
+
+export type ContactVisitingClassification =
+  | "SAFE_AUTO_CHANGE"
+  | "NO_CHANGE"
+  | "REVIEW_REQUIRED"
+  | "NO_SOURCE_VALUE"
+  | "UNSUPPORTED";
+
+export interface ContactVisitingFieldResult {
+  field: ContactVisitingField;
+  classification: ContactVisitingClassification;
+  /** Parsed official block (sourceId → the facility page source). Present for SAFE_AUTO_CHANGE / NO_CHANGE only. */
+  officialValue?: ContactVisitingBlocks[ContactVisitingField];
+  currentValue?: ContactVisitingBlocks[ContactVisitingField];
+  evidence: string;
+  wouldWrite: boolean;
+}
+
+export interface ContactVisitingReport {
+  suppressed: boolean;
+  suppressReason?: string;
+  fields: ContactVisitingFieldResult[];
+  applied: ContactVisitingField[];
+  mutated: boolean;
 }
 
 export const VERIFIABLE_FIELDS: readonly VerifiableField[] = [

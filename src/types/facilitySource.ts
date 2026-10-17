@@ -8,7 +8,9 @@ export type FacilityFactField =
   | "legalVisits"
   | "postalAddress"
   | "visitBooking"
-  | "prisonerContact";
+  | "prisonerContact"
+  | "visitingHours"
+  | "visitingRulesUrl";
 
 export interface FacilitySource {
   id: string;
@@ -53,6 +55,11 @@ export interface PostalAddress {
   lines: string[];
   /** Postcode as the official source gives it for this postal address (may differ from the site postcode). */
   postcode: string;
+  /**
+   * Recipient line the official source tells senders to put first, verbatim
+   * (US BOP inmate mail: "INMATE NAME & REGISTER NUMBER"). Not part of lines.
+   */
+  recipientFormat?: string;
   sourceId: string;
 }
 
@@ -86,6 +93,22 @@ export interface PrisonerContactRoutes {
   sourceId: string;
 }
 
+/** Typical visiting schedule exactly as the official source publishes it. */
+export interface VisitingHours {
+  /** One entry per day/slot as published, e.g. "Sat: 8:00 AM - 3:00 PM" (unit-prefixed when the source splits by unit). */
+  schedule: string[];
+  /** Short verbatim qualifier from the source. */
+  note?: string;
+  sourceId: string;
+}
+
+/** Official visiting rules / regulations document or page. */
+export interface VisitingRulesLink {
+  /** URL exactly as the official source links it (cache-busting query removed). */
+  url: string;
+  sourceId: string;
+}
+
 export interface FacilityVerificationRecord {
   countrySlug: string;
   prisonSlug: string;
@@ -96,4 +119,6 @@ export interface FacilityVerificationRecord {
   postalAddress?: PostalAddress;
   visitBooking?: VisitBooking;
   prisonerContact?: PrisonerContactRoutes;
+  visitingHours?: VisitingHours;
+  visitingRulesUrl?: VisitingRulesLink;
 }

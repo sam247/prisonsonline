@@ -42,9 +42,24 @@ export function mergeOverlayFiles(base: OverlayFile, incoming: OverlayFile): Ove
   const entries: OverlayFile["entries"] = structuredClone(base.entries ?? {});
   for (const [key, entry] of Object.entries(incoming.entries ?? {})) {
     const previous = entries[key];
+    const prevCv = previous?.contactVisiting;
+    const nextCv = entry.contactVisiting ? structuredClone(entry.contactVisiting) : undefined;
+    const contactVisiting =
+      prevCv || nextCv
+        ? {
+            ...prevCv,
+            ...nextCv,
+            sources: [
+              ...(prevCv?.sources ?? []).filter((s) => !(nextCv?.sources ?? []).some((n) => n.id === s.id)),
+              ...(nextCv?.sources ?? []),
+            ],
+            fieldSources: { ...prevCv?.fieldSources, ...nextCv?.fieldSources },
+          }
+        : undefined;
     entries[key] = {
       ...structuredClone(entry),
       overrides: { ...previous?.overrides, ...entry.overrides },
+      ...(contactVisiting ? { contactVisiting } : {}),
     };
   }
   const updatedAt = [base.updatedAt, incoming.updatedAt].filter(Boolean).sort().pop() ?? "";
