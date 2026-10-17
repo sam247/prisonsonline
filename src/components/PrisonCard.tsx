@@ -5,6 +5,7 @@ import { MapPin, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Prison } from "@/types/prison";
+import { prisonCapacityLabel } from "@/lib/prisons/capacityLabel";
 import { resolvePrisonFacilityVisual } from "@/lib/media/resolvePrisonFacilityVisual";
 import { FacilityImageFallback } from "@/components/media/FacilityImageFallback";
 
@@ -90,7 +91,7 @@ export function PrisonCardContent({ prison, variant = "default" }: PrisonCardPro
 
         {prison.capacity > 0 && (
           <p className="text-xs text-muted-foreground/70 mt-2 tabular-nums">
-            Capacity: {prison.capacity.toLocaleString()}
+            {prisonCapacityLabel(prison)}: {prison.capacity.toLocaleString()}
           </p>
         )}
       </CardContent>
