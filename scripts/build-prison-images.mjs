@@ -16,6 +16,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { prisonImageKeyForCell, readCrossCountrySlugs } from "./lib/prison-image-keys.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -48,16 +49,6 @@ function preserveExisting(reason) {
   return false;
 }
 
-/** @param {string} raw */
-function normalizeSlug(raw) {
-  const s = String(raw || "").trim();
-  if (!s) return null;
-  if (s.includes("/")) {
-    const parts = s.split("/").filter(Boolean);
-    return parts[parts.length - 1].replace(/\/$/, "") || null;
-  }
-  return s;
-}
 
 /**
  * Resolves a Commons file page URL or an upload.wikimedia.org URL to a `File:` title.
@@ -304,14 +295,15 @@ async function main() {
 
   /** @type {{ slug: string, fileTitle: string, credit: string, licence: string, licenceUrl: string, alt: string, caption: string }[]} */
   const rows = [];
+  const crossCountrySlugs = readCrossCountrySlugs(ROOT);
   for (let r = 1; r < table.length; r++) {
     const line = table[r];
     const state = cell(line, idx.result_state).toUpperCase();
-    const slug = normalizeSlug(cell(line, idx.slug));
+    const slug = prisonImageKeyForCell(cell(line, idx.slug), crossCountrySlugs);
     if (!PUBLISHABLE_STATES.has(state)) continue;
     const fileTitle = resolveCommonsFileTitle(cell(line, idx.wikimedia_page_url));
     if (!slug || !fileTitle) {
-      console.warn(`Skipping row ${r + 1}: missing slug or unsupported wikimedia_page_url`);
+      console.warn(`Skipping row ${r + 1}: missing slug (shared slugs need /prisons/<cc>/<slug>) or unsupported wikimedia_page_url`);
       continue;
     }
     rows.push({
@@ -365,7 +357,7 @@ async function main() {
         imageUrl: meta.imageUrl,
         credit: author,
         licence,
-        alt: row.alt || `Photograph of ${row.slug.replace(/-/g, " ")}`,
+        alt: row.alt || `Photograph of ${row.slug.split("/").pop().replace(/-/g, " ")}`,
         author,
         title: meta.title || titleFromFileName(row.fileTitle),
         sourceUrl: meta.sourceUrl,
