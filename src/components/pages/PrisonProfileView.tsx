@@ -46,6 +46,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AdSenseUnit } from "@/components/ads/AdSenseUnit";
 import { slotForTemplate } from "@/lib/ads/layoutPolicy";
+import { hasPublishableCoordinates } from "@/lib/prisons/coordinates";
 import { MapPin, ChevronRight, BookOpen, FileText } from "lucide-react";
 import type { Prison } from "@/types/prison";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
@@ -122,7 +123,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
   const guideLinks = relatedGuides.length > 0 ? relatedGuides : fallbackGuides;
   const guidesAreGeneral = relatedGuides.length === 0;
 
-  const hasCoords = prison.latitude !== 0 || prison.longitude !== 0;
+  const hasCoords = hasPublishableCoordinates(prison.latitude, prison.longitude);
   const visitingGuides = getVisitingGuidesForPrison();
   const contactRows = contactVisitingRows(prison, getFacilityVerification(prison.countrySlug, prison.slug));
   const prisonTypeBody = buildPrisonTypeBody(prison);

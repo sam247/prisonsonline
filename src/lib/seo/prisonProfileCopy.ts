@@ -1,6 +1,7 @@
 import { visitorVisitingInfo } from "@/lib/seo/visitorCopy";
 import type { Prison } from "@/types/prison";
 import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
+import { hasPublishableCoordinates } from "@/lib/prisons/coordinates";
 import { joinAddressAndPostcode } from "@/lib/address";
 import {
   hasUkHmppsTypeFields,
@@ -193,8 +194,7 @@ export function buildLocationBody(p: Prison): string {
     ? LOCATION_OPENINGS[slugVariantIndex(p.slug, LOCATION_OPENINGS.length)]
     : "{name} is based in {city}, {country}.";
   let body = tpl.replace("{name}", p.name).replace("{city}", city).replace("{region}", region).replace("{country}", country);
-  const hasCoords = p.latitude !== 0 || p.longitude !== 0;
-  if (hasCoords) {
+  if (hasPublishableCoordinates(p.latitude, p.longitude)) {
     body += ` Coordinates: ${p.latitude.toFixed(4)}, ${p.longitude.toFixed(4)}.`;
   }
   return body;

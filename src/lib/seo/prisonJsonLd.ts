@@ -1,6 +1,7 @@
 import type { Prison } from "@/types/prison";
 import { getBaseUrl } from "@/lib/site";
 import { getFacilityVerification } from "@/data/facilitySources";
+import { hasPublishableCoordinates } from "@/lib/prisons/coordinates";
 
 /** Factual WebPage JSON-LD for prison profiles (no ratings or claims). */
 export function prisonProfileWebPageJsonLd(opts: {
@@ -89,7 +90,7 @@ export function prisonProfileJsonLdGraph(opts: { prison: Prison; path: string; d
   const addr = postalAddressForPrison(opts.prison);
   if (addr) building.address = addr;
 
-  const hasGeo = opts.prison.latitude !== 0 || opts.prison.longitude !== 0;
+  const hasGeo = hasPublishableCoordinates(opts.prison.latitude, opts.prison.longitude);
   if (hasGeo) {
     building.geo = {
       "@type": "GeoCoordinates",
