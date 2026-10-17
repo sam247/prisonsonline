@@ -30,7 +30,11 @@ test("every block has GOV.UK provenance via sources and fieldSources", () => {
     assert.ok(r.sources.length > 0, `${r.prisonSlug}: no sources`);
     const ids = new Set(r.sources.map((s) => s.id));
     for (const s of r.sources) {
-      assert.match(s.url, /^https:\/\/www\.gov\.uk\/guidance\/[a-z-]+-prison$/, `${r.prisonSlug}: non-GOV.UK source`);
+      assert.match(
+        s.url,
+        /^https:\/\/www\.gov\.uk\/guidance\/[a-z-]+-(prison|yoi|prison-and-young-offender-institution)$/,
+        `${r.prisonSlug}: non-GOV.UK source`,
+      );
       assert.match(s.checkedAt, ISO_DATE);
       if (s.sourceModifiedAt) assert.match(s.sourceModifiedAt, ISO_DATE);
     }
@@ -291,4 +295,36 @@ test("coverage batch 3 carries GOV.UK contact & visiting data (checked 2026-10-1
     assert.equal(b.emailEnquiriesOnly, true);
     assert.equal(b.methods.includes("email"), false);
   }
+});
+
+test("coverage batch 4 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-cardiff", "hmp-leicester", "hmp-onley", "hmp-send", "hmp-spring-hill", "hmp-stafford", "hmp-yoi-askham-grange",
+    "hmp-yoi-downview", "hmp-yoi-eastwood-park", "hmp-yoi-high-down", "hmp-yoi-lincoln", "hmp-yoi-low-newton",
+    "hmp-yoi-prescoed", "hmp-yoi-standford-hill", "hmp-yoi-styal", "hmp-yoi-swinfen-hall", "hmp-yoi-winchester",
+    "hmyoi-aylesbury", "hmyoi-cookham-wood", "hmyoi-deerbolt", "hmyoi-feltham", "hmyoi-werrington", "hmyoi-wetherby",
+    "hmyoi-portland",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  assert.equal(
+    getContactVisiting("uk", "hmyoi-portland")!.sources[0].url,
+    "https://www.gov.uk/guidance/portland-prison-and-young-offender-institution",
+  );
+  assert.equal(getContactVisiting("uk", "hmyoi-feltham")!.sources[0].url, "https://www.gov.uk/guidance/feltham-yoi");
+  for (const slug of ["hmp-yoi-prescoed", "hmyoi-feltham"]) {
+    const b = getContactVisiting("uk", slug)!.visitBooking!;
+    assert.deepEqual(b.methods, ["prisoner-led"]);
+    assert.equal(b.url, undefined);
+    assert.equal(b.phone, undefined);
+  }
+  assert.deepEqual(getContactVisiting("uk", "hmp-leicester")!.visitBooking!.methods, ["prisoner-led", "online"]);
+  assert.deepEqual(getContactVisiting("uk", "hmyoi-wetherby")!.visitBooking!.methods, ["phone"]);
+  // Cookham Wood names EmailaPrisoner.com without linking it, so no emailAPrisonerUrl is stored.
+  assert.equal(getContactVisiting("uk", "hmyoi-cookham-wood")!.prisonerContact!.emailAPrisonerUrl, undefined);
 });
