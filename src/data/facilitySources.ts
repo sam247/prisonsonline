@@ -100,6 +100,16 @@ export const facilityVerificationRecords: FacilityVerificationRecord[] = [
   govRecord("hmp-wandsworth", "wandsworth-prison"),
   govRecord("hmp-ranby", "ranby-prison"),
   govRecord("hmp-gartree", "gartree-prison"),
+  govRecord("hmp-durham", "durham-prison"),
+  // GOV.UK category wording ("High Security") differs from our Category B mapping; category not claimed.
+  govRecord("hmp-manchester", "manchester-prison", {
+    fieldSources: { address: ["official"], postcode: ["official"], phone: ["official"], operator: ["official"] },
+  }),
+  // GOV.UK lists the PO Box 757 postal address (W12 0AE); site address/postcode (W12 0AN) kept canonical, not claimed.
+  govRecord("hmp-wormwood-scrubs", "wormwood-scrubs-prison", {
+    fieldSources: { phone: ["official"], operator: ["official"], category: ["official"] },
+  }),
+  govRecord("hmp-wakefield", "wakefield-prison"),
   govRecord("hmp-belmarsh", "belmarsh-prison", {
     fieldSources: { ...GOV_FIELDS, email: ["official"], legalVisits: ["official"] },
     overrides: { phone: "020 8331 4400", email: "communications.Belmarsh@justice.gov.uk" },

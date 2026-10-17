@@ -57,7 +57,7 @@ test("legal visits are independently enabled for seven sourced prisons", () => {
 });
 
 test("verification records contain real sources and valid field mappings", () => {
-  assert.equal(facilityVerificationRecords.length, 30);
+  assert.equal(facilityVerificationRecords.length, 34);
   for (const record of facilityVerificationRecords) {
     const ids = new Set(record.sources.map((source) => source.id));
     assert.ok(record.sources.every((source) => /^https:\/\//.test(source.url) && /^\d{4}-\d{2}-\d{2}$/.test(source.checkedAt)));

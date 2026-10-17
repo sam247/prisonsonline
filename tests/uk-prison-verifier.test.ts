@@ -424,7 +424,7 @@ test("collection matcher maps HMP YOI names onto GOV.UK titles", () => {
 });
 
 test("empty overlay leaves existing facility verification records unchanged", () => {
-  assert.equal(facilityVerificationRecords.length, 30);
+  assert.equal(facilityVerificationRecords.length, 34);
   const belmarsh = getFacilityVerification("uk", "hmp-belmarsh");
   assert.ok(belmarsh);
   assert.equal(belmarsh.overrides?.phone, "020 8331 4400");
