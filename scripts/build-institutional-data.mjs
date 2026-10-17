@@ -9,6 +9,7 @@ import { applyUkAddressCorrection } from "./uk-address-corrections.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
+import { restorePrisonAcronyms } from "./lib/prison-acronyms.mjs";
 import { deriveCityFromAddress } from "./uk-address-city.mjs";
 import { postcodeCoordinateMatches } from "../src/lib/prison-map/postcode-cache.mjs";
 
@@ -177,7 +178,7 @@ function normaliseHmppsPrison(raw, usedSlugs, overlayBySlug) {
   const { latitude: lat, longitude: lng } = coordinatesForHmppsPrison(raw, slug, postcode, overlayBySlug);
 
   return {
-    name: identity.name,
+    name: restorePrisonAcronyms(identity.name),
     slug,
     country: "United Kingdom",
     countrySlug: "uk",
