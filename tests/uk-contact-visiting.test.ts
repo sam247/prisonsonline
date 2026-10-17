@@ -262,3 +262,33 @@ test("coverage batch 2 carries GOV.UK contact & visiting data (checked 2026-10-1
   assert.equal(getContactVisiting("uk", "hmp-swaleside")!.prisonerContact!.sendMoneyUrl, undefined);
   assert.equal(getContactVisiting("uk", "hmp-wayland")!.visitBooking!.phone, "01953 804 152");
 });
+
+test("coverage batch 3 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-full-sutton", "hmp-yoi-drake-hall", "hmp-maidstone", "hmp-haverigg", "hmp-yoi-woodhill", "hmp-yoi-hollesley-bay",
+    "hmp-yoi-new-hall", "hmp-bristol", "hmp-yoi-chelmsford", "hmp-yoi-moorland", "hmp-kirklevington-grange",
+    "hmp-frankland", "hmp-yoi-foston-hall", "hmp-norwich", "hmp-swansea", "hmp-lancaster-farms", "hmp-the-verne",
+    "hmp-ford", "hmp-yoi-thorn-cross", "hmp-usk", "hmp-warren-hill", "hmp-yoi-east-sutton-park", "hmp-bure",
+    "hmp-buckley-hall",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  const kirklevington = getContactVisiting("uk", "hmp-kirklevington-grange")!.visitBooking!;
+  assert.deepEqual(kirklevington.methods, ["prisoner-led"]);
+  assert.equal(kirklevington.url, undefined);
+  assert.deepEqual(getContactVisiting("uk", "hmp-yoi-thorn-cross")!.visitBooking!.methods, ["phone"]);
+  // The Verne's visits email is only for step-free access arrangements, so it is not stored as a booking route.
+  const verne = getContactVisiting("uk", "hmp-the-verne")!.visitBooking!;
+  assert.deepEqual(verne.methods, ["online"]);
+  assert.equal(verne.email, undefined);
+  for (const slug of ["hmp-lancaster-farms", "hmp-bure"]) {
+    const b = getContactVisiting("uk", slug)!.visitBooking!;
+    assert.equal(b.emailEnquiriesOnly, true);
+    assert.equal(b.methods.includes("email"), false);
+  }
+});
