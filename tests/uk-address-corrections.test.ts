@@ -11,6 +11,7 @@ const apply = applyUkAddressCorrection as (slug: string, address: string) => str
 const EXPECTED: Record<string, string> = {
   "hmp-holme-house": "Holme House Road, Stockton on Tees, TS18 2QU",
   "hmyoi-cookham-wood": "Sir Evelyn Road, Rochester, ME1 3LU",
+  "hmp-preston": "2 Ribbleton Lane, Preston, Lancashire, PR1 5AB",
 };
 
 test("address correction map entries are sourced from official UK government pages", () => {
@@ -34,6 +35,10 @@ test("address correction wins over feed typo; other slugs pass through", () => {
   assert.equal(
     apply("hmp-belmarsh", "Western Way, Thamesmead, London, SE28 0EB"),
     "Western Way, Thamesmead, London, SE28 0EB",
+  );
+  assert.equal(
+    apply("hmp-preston", "2 Ribbleton Lane, Preston, Lancashire , PR1 5AB"),
+    "2 Ribbleton Lane, Preston, Lancashire, PR1 5AB",
   );
   assert.equal(apply("constructor", "X"), "X");
 });

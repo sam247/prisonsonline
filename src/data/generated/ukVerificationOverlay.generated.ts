@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const ukVerificationOverlay: OverlayFile = {
   "generatedBy": "uk-prison-verifier",
-  "updatedAt": "2026-10-16T08:09:44.873Z",
+  "updatedAt": "2026-10-17T20:04:55.411Z",
   "entries": {
     "uk/hmp-birmingham": {
       "prisonSlug": "hmp-birmingham",
@@ -22,6 +22,33 @@ export const ukVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.gov.uk/guidance/elmley-prison",
       "overrides": {
         "email": "businesshubelmleycorrespondence@justice.gov.uk"
+      }
+    },
+    "uk/hmp-leeds": {
+      "prisonSlug": "hmp-leeds",
+      "countrySlug": "uk",
+      "appliedAt": "2026-10-17T20:04:55.411Z",
+      "sourceUrl": "https://www.gov.uk/guidance/leeds-prison",
+      "overrides": {
+        "email": "complaintscorrespondenceleeds@justice.gov.uk"
+      }
+    },
+    "uk/hmp-liverpool": {
+      "prisonSlug": "hmp-liverpool",
+      "countrySlug": "uk",
+      "appliedAt": "2026-10-17T20:04:55.411Z",
+      "sourceUrl": "https://www.gov.uk/guidance/liverpool-prison",
+      "overrides": {
+        "email": "bsuliverpool@justice.gov.uk"
+      }
+    },
+    "uk/hmp-wakefield": {
+      "prisonSlug": "hmp-wakefield",
+      "countrySlug": "uk",
+      "appliedAt": "2026-10-17T20:04:55.411Z",
+      "sourceUrl": "https://www.gov.uk/guidance/wakefield-prison",
+      "overrides": {
+        "email": "correspondencewakefield@justice.gov.uk"
       }
     }
   }
