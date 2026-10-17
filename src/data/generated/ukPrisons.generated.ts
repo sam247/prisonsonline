@@ -2460,7 +2460,7 @@ export const ukPrisonsGeneratedRaw = [
     "visitingInfo": "For visits and bookings, contact the establishment on (01772) 444 550. Always follow the latest official guidance published for visitors.",
     "institutionalId": "hmpps-prison:hmp-preston",
     "dataProvenance": "hmpps_import",
-    "address": "2 Ribbleton Lane, Preston, Lancashire , PR1 5AB",
+    "address": "2 Ribbleton Lane, Preston, Lancashire, PR1 5AB",
     "postcode": "PR1 5AB",
     "phone": "(01772) 444 550",
     "gender": "Mens Prison",

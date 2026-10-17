@@ -18,6 +18,11 @@ export const UK_ADDRESS_CORRECTIONS = Object.freeze({
     sourceUrl: "https://www.gov.uk/guidance/cookham-wood-prison",
     note: "GOV.UK Contact address 'Sir Evelyn Road Rochester Kent ME1 3LU'; HMPPS feed misspells the town as 'Rochaester'. Keep existing comma-separated layout; only fix the misspelling.",
   },
+  "hmp-preston": {
+    address: "2 Ribbleton Lane, Preston, Lancashire, PR1 5AB",
+    sourceUrl: "https://www.gov.uk/guidance/preston-prison",
+    note: "GOV.UK Contact address 'HMP Preston 2 Ribbleton Lane Preston Lancashire PR1 5AB'; HMPPS feed has a stray space before the comma ('Lancashire , PR1 5AB'). Whitespace-only fix; wording unchanged.",
+  },
 });
 
 /** Return the corrected address for `slug`, or `address` unchanged when no correction exists. */
