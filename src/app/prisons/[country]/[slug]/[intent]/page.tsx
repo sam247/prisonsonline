@@ -7,6 +7,7 @@ import {
   isIntentEnabledForPrison,
   isPrisonIntentSlug,
 } from "@/lib/seo/intentRollout";
+import { formatContactDetailsMetaDescription } from "@/lib/seo/prisonContactMeta";
 import { buildIntentMetaDescription, buildIntentPageTitle } from "@/lib/seo/prisonIntentCopy";
 
 type Props = { params: { country: string; slug: string; intent: string } };
@@ -27,7 +28,10 @@ export function generateMetadata({ params }: Props) {
   }
   return buildPageMetadata({
     title: buildIntentPageTitle(prison, intentParam),
-    description: buildIntentMetaDescription(prison, intentParam),
+    description:
+      intentParam === "contact-details"
+        ? formatContactDetailsMetaDescription(prison)
+        : buildIntentMetaDescription(prison, intentParam),
     path,
   });
 }
