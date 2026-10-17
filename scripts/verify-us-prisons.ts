@@ -94,7 +94,10 @@ async function main() {
 Options:
   --limit=N          How many due US prisons to check (default 1; use 10 for a batch dry-run)
   --slugs=a,b,c      Explicit US slugs (ignores due-date selection)
-  --write            Apply SAFE_AUTO_CHANGE overlay writes (also requires US_PRISON_VERIFIER_WRITE=1)
+  --write            Apply SAFE_AUTO_CHANGE overlay writes (also requires US_PRISON_VERIFIER_WRITE=1).
+                     Covers phone/postcode/email corrections and, for BOP facilities, the
+                     contact/visiting blocks (postalAddress, visitingHours, visitingRulesUrl)
+                     parsed from the bop.gov facility page, with sources[] + fieldSources provenance.
   --out=DIR          Report directory (default data/verification/us/reports)
   --help             Show this help
 
@@ -220,6 +223,14 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
       autoChanged: row.audit.changesApplied.map((d) => d.field),
       wouldHaveAutoApplied: row.audit.wouldHaveAutoApplied.map((d) => d.field),
       reviewRequired: row.audit.reviewRequired,
+      contactVisiting: row.contactVisiting
+        ? row.contactVisiting.suppressed
+          ? { suppressed: true, reason: row.contactVisiting.suppressReason }
+          : {
+              fields: Object.fromEntries(row.contactVisiting.fields.map((f) => [f.field, f.classification])),
+              applied: row.contactVisiting.applied,
+            }
+        : null,
       nextCheck: nextState.prisons[row.prisonSlug]?.nextVerificationAt ?? null,
       failed: row.audit.runStatus === "failed",
       errors: row.audit.errors,

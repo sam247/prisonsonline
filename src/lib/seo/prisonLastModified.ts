@@ -1,5 +1,6 @@
 import type { Prison } from "@/types/prison";
-import prisonImages from "@/data/prisonImages.json";
+import { getPrisonImageRecord } from "@/lib/media/prisonImages";
+import { crossCountrySlugs } from "@/data/prisons";
 import { getFacilityVerification } from "@/data/facilitySources";
 
 const SOURCE_DATE_KEYS = [
@@ -29,6 +30,13 @@ function parseRawDate(value: unknown): Date | null {
 
 type PrisonImageRow = { updatedAt?: string };
 
+/** Same record `facilityImage` uses (country-scoped for cross-country slugs). */
+function imageRowFor(prison: Prison): PrisonImageRow | undefined {
+  return getPrisonImageRecord(prison.slug, { countrySlug: prison.countrySlug, ambiguousSlugs: crossCountrySlugs }) as
+    | PrisonImageRow
+    | undefined;
+}
+
 let buildFallbackSingleton: Date | null = null;
 
 /** One timestamp per Node process (stable for a given `pnpm build` run). */
@@ -46,7 +54,7 @@ export function getPrisonLastModifiedDate(prison: Prison, fallback: Date): Date 
     }
   }
 
-  const imgRow = (prisonImages as Record<string, PrisonImageRow>)[prison.slug];
+  const imgRow = imageRowFor(prison);
   const imgDate = parseRawDate(imgRow?.updatedAt);
   if (imgDate) return imgDate;
 
@@ -71,7 +79,7 @@ export function getPrisonSitemapLastModifiedDate(prison: Prison): Date | null {
   }
   const sourceChecked = parseRawDate(prison.sourceCheckedAt);
   if (sourceChecked) return sourceChecked;
-  const imageDate = parseRawDate((prisonImages as Record<string, PrisonImageRow>)[prison.slug]?.updatedAt);
+  const imageDate = parseRawDate(imageRowFor(prison)?.updatedAt);
   return imageDate;
 }
 
@@ -88,4 +96,34 @@ export function getRecentlyUpdatedPrisons(list: Prison[], limit: number): Prison
       return a.slug.localeCompare(b.slug);
     })
     .slice(0, limit);
+}
+
+/** Latest verifier `checkedAt` date for a facility (read-only overlay data); null when undated. */
+export function getPrisonVerificationCheckedDate(prison: Prison): Date | null {
+  const verification = getFacilityVerification(prison.countrySlug, prison.slug);
+  return (
+    verification?.sources
+      .map((source) => parseRawDate(source.checkedAt))
+      .filter((date): date is Date => Boolean(date))
+      .sort((a, b) => b.getTime() - a.getTime())[0] ?? null
+  );
+}
+
+/**
+ * Homepage "recently updated" list: open facilities only, ranked by real verification
+ * checked date (newest first). Undated records are omitted — no build-time fallback.
+ * Separate from getRecentlyUpdatedPrisons / sitemap lastmod so their behaviour is unchanged.
+ */
+export function getHomepageRecentlyUpdatedPrisons(
+  list: Prison[],
+  limit: number,
+  getDate: (prison: Prison) => Date | null = getPrisonVerificationCheckedDate,
+): Prison[] {
+  return list
+    .filter((p) => p.status !== "closed" && p.status !== "historic")
+    .map((prison) => ({ prison, date: getDate(prison) }))
+    .filter((row): row is { prison: Prison; date: Date } => Boolean(row.date))
+    .sort((a, b) => b.date.getTime() - a.date.getTime() || a.prison.slug.localeCompare(b.prison.slug))
+    .slice(0, limit)
+    .map((row) => row.prison);
 }

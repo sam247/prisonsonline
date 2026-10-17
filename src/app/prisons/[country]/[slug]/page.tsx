@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
-import { PrisonProfileView, formatPrisonMetaDescription } from "@/components/pages/PrisonProfileView";
+import { PrisonProfileView } from "@/components/pages/PrisonProfileView";
 import { RegionPrisonsView } from "@/components/pages/RegionPrisonsView";
-import { IntlPrisonProfileView, formatIntlPrisonMetaDescription } from "@/components/pages/IntlPrisonProfileView";
+import { IntlPrisonProfileView } from "@/components/pages/IntlPrisonProfileView";
 import { resolveCountrySecondSegment, allCountrySecondSegmentParams } from "@/lib/routes/resolveCountrySecondSegment";
 import { readMoreArticleForUsStateRegion } from "@/lib/programmatic/articles/readMoreArticle";
 import { US_FEDERAL_HUB_EYEBROW, US_FEDERAL_HUB_FOOTNOTE } from "@/lib/programmatic/hubCopy";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { formatPrisonProfileMetaDescription } from "@/lib/seo/prisonProfileMeta";
 import { buildPrisonPageTitle } from "@/lib/seo/prisonTitle";
 
 type Props = { params: { country: string; slug: string } };
@@ -25,13 +26,13 @@ export function generateMetadata({ params }: Props) {
     if (p.dataProvenance === "official_source") {
       return buildPageMetadata({
         title: `${p.name} | ${p.status === "closed" ? "Closed " : ""}Prison Information`,
-        description: formatIntlPrisonMetaDescription(p),
+        description: formatPrisonProfileMetaDescription(p),
         path: `/prisons/${country}/${slug}`,
       });
     }
     return buildPageMetadata({
       title: buildPrisonPageTitle(p),
-      description: formatPrisonMetaDescription(p),
+      description: formatPrisonProfileMetaDescription(p),
       path: `/prisons/${country}/${slug}`,
     });
   }

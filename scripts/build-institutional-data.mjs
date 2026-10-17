@@ -9,7 +9,9 @@ import { applyUkAddressCorrection } from "./uk-address-corrections.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
+import { restorePrisonAcronyms } from "./lib/prison-acronyms.mjs";
 import { deriveCityFromAddress } from "./uk-address-city.mjs";
+import { postcodeCoordinateMatches } from "../src/lib/prison-map/postcode-cache.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -134,7 +136,36 @@ function uniqueSlug(base, used) {
   return n;
 }
 
-function normaliseHmppsPrison(raw, usedSlugs) {
+/**
+ * HMPPS rows ship latitude/longitude as null. The postcode overlay in
+ * prisonCoords.generated.ts is the coordinate source profiles and JSON-LD read
+ * from the record. Use it only when it still matches this row's postcode and
+ * is inside Great Britain. Missing or 0,0 stays 0,0 so no map or geo is emitted.
+ * sourceRaw keeps the upstream nulls.
+ */
+function loadPrisonCoordOverlay() {
+  const file = path.join(OUT, "prisonCoords.generated.ts");
+  if (!fs.existsSync(file)) return new Map();
+  const text = fs.readFileSync(file, "utf8");
+  const match = text.match(/prisonCoordsGeneratedRaw = (\[[\s\S]*?\n\]) as const;/);
+  if (!match) return new Map();
+  const rows = JSON.parse(match[1]);
+  return new Map(rows.map((row) => [row.slug, row]));
+}
+
+function coordinatesForHmppsPrison(raw, slug, postcode, overlayBySlug) {
+  const rawLat = raw.latitude != null && !Number.isNaN(Number(raw.latitude)) ? Number(raw.latitude) : 0;
+  const rawLng = raw.longitude != null && !Number.isNaN(Number(raw.longitude)) ? Number(raw.longitude) : 0;
+  const rawUsable = Number.isFinite(rawLat) && Number.isFinite(rawLng) && !(rawLat === 0 && rawLng === 0);
+  if (rawUsable) return { latitude: rawLat, longitude: rawLng };
+  const overlay = overlayBySlug.get(slug);
+  if (postcodeCoordinateMatches(overlay, postcode)) {
+    return { latitude: overlay.latitude, longitude: overlay.longitude };
+  }
+  return { latitude: 0, longitude: 0 };
+}
+
+function normaliseHmppsPrison(raw, usedSlugs, overlayBySlug) {
   const p = parseLabelledLines(raw.description);
   const regionName = correctPrisonRegionLabel((p["Prison Region"] || "Unknown region").trim());
   const regionSlug = slugify(regionName);
@@ -144,11 +175,10 @@ function normaliseHmppsPrison(raw, usedSlugs) {
   const postcode = extractPostcode(addressLine) || extractPostcode(raw.description);
   const city = guessCity(addressLine, postcode) || guessCity(p.Address || "", postcode);
   const { overview, history, prisonLife, visitingInfo } = synthesiseNarrative(identity.name, p);
-  const lat = raw.latitude != null && !Number.isNaN(Number(raw.latitude)) ? Number(raw.latitude) : 0;
-  const lng = raw.longitude != null && !Number.isNaN(Number(raw.longitude)) ? Number(raw.longitude) : 0;
+  const { latitude: lat, longitude: lng } = coordinatesForHmppsPrison(raw, slug, postcode, overlayBySlug);
 
   return {
-    name: identity.name,
+    name: restorePrisonAcronyms(identity.name),
     slug,
     country: "United Kingdom",
     countrySlug: "uk",
@@ -290,9 +320,10 @@ function main() {
   // nameless profile. Skip them so no page, hub or sitemap entry is generated.
   const emptyPrisonRows = prisonsJson.filter((r) => isEmptyHmppsPrisonRow(r));
   emptyPrisonRows.forEach((r) => report.warnings.push(`Skipped empty HMPPS prison row: ${r.id}`));
+  const coordOverlay = loadPrisonCoordOverlay();
   const prisons = prisonsJson
     .filter((r) => !isEmptyHmppsPrisonRow(r))
-    .map((r) => normaliseHmppsPrison(r, usedPrison));
+    .map((r) => normaliseHmppsPrison(r, usedPrison, coordOverlay));
 
   prisons.forEach((p) => {
     if (!p.stateOrRegion || p.stateOrRegion === "Unknown region") report.warnings.push(`Missing region: ${p.slug}`);
@@ -362,11 +393,28 @@ function main() {
 
   emitTsFile("ukOperators.generated.ts", header, serialiseExport("ukOperatorsGenerated", operators));
 
-  emitTsFile(
-    "generatedIndex.ts",
-    `${header}export { ukPrisonsGenerated } from "./ukPrisons.generated";\nexport { probationCentresGenerated } from "./probationCentres.generated";\nexport { hmctsSitesGenerated } from "./hmctsSites.generated";\nexport { ukRegionsGenerated } from "./ukRegions.generated";\nexport { ukOperatorsGenerated } from "./ukOperators.generated";\n`,
-    "",
-  );
+  // Courts build appends its own exports to this file. Keep those lines so a
+  // prison rebuild does not drop courts or the coordinate overlay.
+  const indexPath = path.join(OUT, "generatedIndex.ts");
+  const institutionalExports = [
+    `export { ukPrisonsGenerated } from "./ukPrisons.generated";`,
+    `export { probationCentresGenerated } from "./probationCentres.generated";`,
+    `export { hmctsSitesGenerated } from "./hmctsSites.generated";`,
+    `export { ukRegionsGenerated } from "./ukRegions.generated";`,
+    `export { ukOperatorsGenerated } from "./ukOperators.generated";`,
+  ];
+  const existingIndex = fs.existsSync(indexPath) ? fs.readFileSync(indexPath, "utf8") : "";
+  const extraExports = [...existingIndex.matchAll(/^export \{[^}]+\} from "[^"]+";$/gm)]
+    .map((match) => match[0])
+    .filter((line) => !institutionalExports.includes(line));
+  const hmctsAt = institutionalExports.findIndex((line) => line.includes("hmctsSites"));
+  const indexExports = [
+    ...institutionalExports.slice(0, hmctsAt + 1),
+    ...extraExports,
+    ...institutionalExports.slice(hmctsAt + 1),
+  ];
+  // Match the committed index layout: no blank line under the header, one trailing blank line.
+  fs.writeFileSync(indexPath, `${header}${indexExports.join("\n")}\n\n\n`, "utf8");
 
   console.log("--- institutional data build ---");
   console.log("Prisons (UK):", prisons.length);

@@ -129,6 +129,21 @@ export function renderMarkdownReport(
       lines.push(`- Completeness mutated: ${completeness.completenessMutated}`);
     }
 
+    const cv = result.contactVisiting;
+    lines.push("");
+    lines.push("### CONTACT / VISITING");
+    if (!cv) {
+      lines.push("- (not evaluated)");
+    } else if (cv.suppressed) {
+      lines.push(`- Suppressed: ${cv.suppressReason ?? "yes"}`);
+    } else {
+      for (const row of cv.fields) {
+        const value = row.officialValue ? ` official=${JSON.stringify(row.officialValue)}` : "";
+        lines.push(`- ${row.field}: ${row.classification}${value} | ${row.evidence}${row.wouldWrite ? " | SAFE" : ""}`);
+      }
+      lines.push(`- Applied: ${cv.applied.join(", ") || "(none)"}`);
+    }
+
     if (result.missingOfficialFields.length) {
       lines.push("");
       lines.push("Potentially useful official fields we do not store:");
@@ -150,7 +165,13 @@ export function renderCliSummary(report: RunReport, label = "UK verifier"): stri
   const rows = report.prisons.map((result) => {
     const source = result.source?.ok ? result.source.url : "unidentified";
     const auto = result.audit.wouldHaveAutoApplied.map((field) => field.field).join(",") || "-";
-    return `${result.prisonSlug}\t${result.audit.verificationStatus}\t${source}\twouldAuto=${auto}\tmutated=${result.productionMutated}`;
+    const cv = result.contactVisiting;
+    const cvText = !cv
+      ? "-"
+      : cv.suppressed
+        ? "suppressed"
+        : cv.fields.map((row) => `${row.field}=${row.classification}`).join(",");
+    return `${result.prisonSlug}\t${result.audit.verificationStatus}\t${source}\twouldAuto=${auto}\tcontactVisiting=${cvText}\tmutated=${result.productionMutated}`;
   });
   return [`${label} ${report.mode}: ${report.prisonCount} prisons`, ...rows].join("\n");
 }

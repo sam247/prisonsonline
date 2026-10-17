@@ -749,5 +749,60 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zonderwater_Prison-001.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Zonderwater Correctional Centre complex near Cullinan, Gauteng, 2011 (whole complex, not this unit specifically)."
+  },
+  "hmp-preston": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Preston_Prison_-_Ribbleton_Street_-_geograph.org.uk_-_529975.jpg",
+    "credit": "Betty Longbottom",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Gatehouse entrance of HMP Preston on Ribbleton Street, Preston",
+    "author": "Betty Longbottom",
+    "title": "Preston Prison - Ribbleton Street - geograph.org.uk - 529975",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Preston_Prison_-_Ribbleton_Street_-_geograph.org.uk_-_529975.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Exterior of HM Prison Preston."
+  },
+  "hmp-hewell": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Open_fields%2C_closed_prison_-_geograph.org.uk_-_172397.jpg",
+    "credit": "Martin Wilson",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Distant view across fields of the HMP Hewell prison buildings near Redditch",
+    "author": "Martin Wilson",
+    "title": "Open fields, closed prison - geograph.org.uk - 172397",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Open_fields,_closed_prison_-_geograph.org.uk_-_172397.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "HM Prison Hewell seen across open fields."
+  },
+  "hmp-peterborough": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/HMP_Peterborough_-_geograph.org.uk_-_314973.jpg",
+    "credit": "Chris Stafford",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Exterior of HMP Peterborough behind its perimeter fence",
+    "author": "Chris Stafford",
+    "title": "HMP Peterborough - geograph.org.uk - 314973",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Peterborough_-_geograph.org.uk_-_314973.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Exterior of HM Prison Peterborough."
+  },
+  "hmp-ranby": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Entrance_to_HM_Prison_Ranby_-_geograph.org.uk_-_6538344.jpg",
+    "credit": "Chris Morgan",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Entrance and gatehouse of HMP Ranby, Nottinghamshire",
+    "author": "Chris Morgan",
+    "title": "Entrance to HM Prison Ranby - geograph.org.uk - 6538344",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_HM_Prison_Ranby_-_geograph.org.uk_-_6538344.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Entrance to HM Prison Ranby."
+  },
+  "hmp-nottingham": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ed/HM_Prison%2C_Nottingham_-_geograph.org.uk_-_1206842.jpg",
+    "credit": "Alan Murray-Rust",
+    "licence": "CC BY-SA 2.0",
+    "alt": "View of HMP Nottingham across Tring Vale, Sherwood, Nottingham",
+    "author": "Alan Murray-Rust",
+    "title": "HM Prison, Nottingham - geograph.org.uk - 1206842",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison,_Nottingham_-_geograph.org.uk_-_1206842.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "HM Prison Nottingham seen from Tring Vale."
   }
 }

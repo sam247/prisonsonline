@@ -6,6 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { restorePrisonAcronyms } from "./lib/prison-acronyms.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -117,7 +118,7 @@ function buildRecord(raw) {
   const stateName = STATE_CODE_TO_NAME[code] || code || "Unknown";
   const regionSlug = slugify(stateName);
   const facilityType = String(raw.facilityType || "other").toLowerCase();
-  const name = titleCaseWords(raw.name || raw.slug.replace(/-/g, " "));
+  const name = restorePrisonAcronyms(titleCaseWords(raw.name || raw.slug.replace(/-/g, " ")));
   const city = titleCaseWords(raw.city || "");
 
   const overview = `${name} is a Federal Bureau of Prisons (${facilityType.toUpperCase()}) facility in ${stateName}, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.`;

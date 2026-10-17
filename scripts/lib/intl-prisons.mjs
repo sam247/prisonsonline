@@ -6,6 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { restorePrisonAcronyms } from "./prison-acronyms.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 
@@ -119,8 +120,9 @@ export function toPrison(cc, r) {
   const located = r.coordinateEvidence?.precision === "facility" && typeof r.latitude === "number" && typeof r.longitude === "number";
   const statusNote = r.status === "closed" && /temporarily closed/i.test(r.notes ?? "") ? "Temporarily closed" : undefined;
   const statusPhrase = r.status === "closed" ? ` It is listed by its official source as ${statusNote ? "temporarily closed" : "closed"}.` : r.status === "historic" ? " It is a historic site and no longer holds prisoners." : "";
+  const name = restorePrisonAcronyms(r.name.trim());
   return {
-    name: r.name.trim(),
+    name,
     slug: r.slug,
     country: cfg.name,
     countrySlug: cc,
@@ -142,7 +144,7 @@ export function toPrison(cc, r) {
     type,
     ...(facilityDescription ? { facilityDescription } : {}),
     overview: buildOverview({
-      name: r.name.trim(), type, typeIsOwnLabel: !typeIsFacility, city, region, placeText,
+      name, type, typeIsOwnLabel: !typeIsFacility, city, region, placeText,
       operator: r.operator, operatorMissingText: r.operator ? undefined : "The operator is not named by the official source.",
       statusPhrase,
     }),

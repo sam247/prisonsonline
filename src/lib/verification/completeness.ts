@@ -303,6 +303,7 @@ export function applySafeFills(input: {
     appliedAt,
     sourceUrl: input.sourceUrl,
     overrides: merged,
+    ...(previous?.contactVisiting ? { contactVisiting: previous.contactVisiting } : {}),
   };
   current.updatedAt = appliedAt;
   input.store.write(current);
