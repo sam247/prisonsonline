@@ -4,7 +4,7 @@ import type { Prison } from "@/types/prison";
 
 export const usPrisonsGenerated: Prison[] = [
   {
-    "name": "Alderson Fpc",
+    "name": "Alderson FPC",
     "slug": "alderson-fpc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -28,7 +28,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FPC"
     },
     "type": "FPC",
-    "overview": "Alderson Fpc is a Federal Bureau of Prisons (FPC) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Alderson FPC is a Federal Bureau of Prisons (FPC) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 304-445-3300. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -38,7 +38,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "24910",
     "phone": "304-445-3300",
     "predominantFunction": "FPC (Federal Prison Camp)",
-    "shortDescription": "Alderson Fpc — FPC in West Virginia (Federal BOP listing).",
+    "shortDescription": "Alderson FPC — FPC in West Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fpc",
@@ -69,7 +69,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Aliceville Fci",
+    "name": "Aliceville FCI",
     "slug": "aliceville-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -93,7 +93,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Aliceville Fci is a Federal Bureau of Prisons (FCI) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Aliceville FCI is a Federal Bureau of Prisons (FCI) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 205-373-5000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -103,7 +103,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "35442",
     "phone": "205-373-5000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Aliceville Fci — FCI in Alabama (Federal BOP listing).",
+    "shortDescription": "Aliceville FCI — FCI in Alabama (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -134,7 +134,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Allenwood Low Fci",
+    "name": "Allenwood Low FCI",
     "slug": "allenwood-low-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -158,7 +158,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Allenwood Low Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Allenwood Low FCI is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 570-547-1990. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -168,7 +168,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "17810",
     "phone": "570-547-1990",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Allenwood Low Fci — FCI in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Allenwood Low FCI — FCI in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -199,7 +199,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Allenwood Med Fci",
+    "name": "Allenwood Med FCI",
     "slug": "allenwood-med-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -223,7 +223,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Allenwood Med Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Allenwood Med FCI is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 570-547-7950. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -233,7 +233,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "17810",
     "phone": "570-547-7950",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Allenwood Med Fci — FCI in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Allenwood Med FCI — FCI in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -264,7 +264,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Allenwood Usp",
+    "name": "Allenwood USP",
     "slug": "allenwood-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -288,7 +288,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Allenwood Usp is a Federal Bureau of Prisons (USP) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Allenwood USP is a Federal Bureau of Prisons (USP) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 570-547-0963. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -298,7 +298,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "17810",
     "phone": "570-547-0963",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Allenwood Usp — USP in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Allenwood USP — USP in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -329,7 +329,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Ashland Fci",
+    "name": "Ashland FCI",
     "slug": "ashland-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -353,7 +353,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Ashland Fci is a Federal Bureau of Prisons (FCI) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Ashland FCI is a Federal Bureau of Prisons (FCI) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 606-928-6414. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -363,7 +363,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "41105",
     "phone": "606-928-6414",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Ashland Fci — FCI in Kentucky (Federal BOP listing).",
+    "shortDescription": "Ashland FCI — FCI in Kentucky (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -394,7 +394,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Atlanta Ccm",
+    "name": "Atlanta CCM",
     "slug": "atlanta-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -418,7 +418,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Atlanta Ccm is a Federal Bureau of Prisons (OTHER) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Atlanta CCM is a Federal Bureau of Prisons (OTHER) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 470-832-5841. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -428,7 +428,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "30315",
     "phone": "470-832-5841",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Atlanta Ccm — OTHER in Georgia (Federal BOP listing).",
+    "shortDescription": "Atlanta CCM — OTHER in Georgia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -459,7 +459,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Atlanta Fci",
+    "name": "Atlanta FCI",
     "slug": "atlanta-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -483,7 +483,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Atlanta Fci is a Federal Bureau of Prisons (FCI) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Atlanta FCI is a Federal Bureau of Prisons (FCI) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 404-635-5100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -493,7 +493,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "30315",
     "phone": "404-635-5100",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Atlanta Fci — FCI in Georgia (Federal BOP listing).",
+    "shortDescription": "Atlanta FCI — FCI in Georgia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -524,7 +524,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Atwater Usp",
+    "name": "Atwater USP",
     "slug": "atwater-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -548,7 +548,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Atwater Usp is a Federal Bureau of Prisons (USP) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Atwater USP is a Federal Bureau of Prisons (USP) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 209-386-0257. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -558,7 +558,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "95301",
     "phone": "209-386-0257",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Atwater Usp — USP in California (Federal BOP listing).",
+    "shortDescription": "Atwater USP — USP in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -589,7 +589,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Baltimore Ccm",
+    "name": "Baltimore CCM",
     "slug": "baltimore-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -603,7 +603,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "OTHER",
-    "overview": "Baltimore Ccm is a Federal Bureau of Prisons (OTHER) facility in District of Columbia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Baltimore CCM is a Federal Bureau of Prisons (OTHER) facility in District of Columbia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 202-428-6161. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -613,7 +613,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "20534",
     "phone": "202-428-6161",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Baltimore Ccm — OTHER in District of Columbia (Federal BOP listing).",
+    "shortDescription": "Baltimore CCM — OTHER in District of Columbia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -632,7 +632,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Bastrop Fci",
+    "name": "Bastrop FCI",
     "slug": "bastrop-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -656,7 +656,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Bastrop Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Bastrop FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 512-321-3903. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -666,7 +666,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "78602",
     "phone": "512-321-3903",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Bastrop Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "Bastrop FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -697,7 +697,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Beaumont Low Fci",
+    "name": "Beaumont Low FCI",
     "slug": "beaumont-low-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -721,7 +721,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Beaumont Low Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Beaumont Low FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 409-727-8172. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -731,7 +731,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "77705",
     "phone": "409-727-8172",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Beaumont Low Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "Beaumont Low FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -762,7 +762,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Beaumont Med Fci",
+    "name": "Beaumont Med FCI",
     "slug": "beaumont-med-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -786,7 +786,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Beaumont Med Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Beaumont Med FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 409-727-0101. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -796,7 +796,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "77705",
     "phone": "409-727-0101",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Beaumont Med Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "Beaumont Med FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -827,7 +827,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Beaumont Usp",
+    "name": "Beaumont USP",
     "slug": "beaumont-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -851,7 +851,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Beaumont Usp is a Federal Bureau of Prisons (USP) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Beaumont USP is a Federal Bureau of Prisons (USP) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 409-727-8188. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -861,7 +861,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "77705",
     "phone": "409-727-8188",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Beaumont Usp — USP in Texas (Federal BOP listing).",
+    "shortDescription": "Beaumont USP — USP in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -892,7 +892,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Beckley Fci",
+    "name": "Beckley FCI",
     "slug": "beckley-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -916,7 +916,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Beckley Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Beckley FCI is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 304-252-9758. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -926,7 +926,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "25813",
     "phone": "304-252-9758",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Beckley Fci — FCI in West Virginia (Federal BOP listing).",
+    "shortDescription": "Beckley FCI — FCI in West Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -957,7 +957,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Bennettsville Fci",
+    "name": "Bennettsville FCI",
     "slug": "bennettsville-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -981,7 +981,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Bennettsville Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Bennettsville FCI is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 843-454-8200. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -991,7 +991,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "29512",
     "phone": "843-454-8200",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Bennettsville Fci — FCI in South Carolina (Federal BOP listing).",
+    "shortDescription": "Bennettsville FCI — FCI in South Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -1022,7 +1022,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Berlin Fci",
+    "name": "Berlin FCI",
     "slug": "berlin-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1046,7 +1046,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Berlin Fci is a Federal Bureau of Prisons (FCI) facility in New Hampshire, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Berlin FCI is a Federal Bureau of Prisons (FCI) facility in New Hampshire, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 603-342-4000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1056,7 +1056,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "03570",
     "phone": "603-342-4000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Berlin Fci — FCI in New Hampshire (Federal BOP listing).",
+    "shortDescription": "Berlin FCI — FCI in New Hampshire (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -1087,7 +1087,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Big Sandy Usp",
+    "name": "Big Sandy USP",
     "slug": "big-sandy-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1111,7 +1111,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Big Sandy Usp is a Federal Bureau of Prisons (USP) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Big Sandy USP is a Federal Bureau of Prisons (USP) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 606-433-2400. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1121,7 +1121,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "41224",
     "phone": "606-433-2400",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Big Sandy Usp — USP in Kentucky (Federal BOP listing).",
+    "shortDescription": "Big Sandy USP — USP in Kentucky (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -1152,7 +1152,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Big Spring Fci",
+    "name": "Big Spring FCI",
     "slug": "big-spring-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1176,7 +1176,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Big Spring Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Big Spring FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 432-466-2300. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1186,7 +1186,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "79720",
     "phone": "432-466-2300",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Big Spring Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "Big Spring FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -1217,7 +1217,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Brooklyn Mdc",
+    "name": "Brooklyn MDC",
     "slug": "brooklyn-mdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1241,7 +1241,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "MDC"
     },
     "type": "MDC",
-    "overview": "Brooklyn Mdc is a Federal Bureau of Prisons (MDC) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Brooklyn MDC is a Federal Bureau of Prisons (MDC) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 718-840-4200. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1251,7 +1251,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "11232",
     "phone": "718-840-4200",
     "predominantFunction": "MDC (Metropolitan Detention Center)",
-    "shortDescription": "Brooklyn Mdc — MDC in New York (Federal BOP listing).",
+    "shortDescription": "Brooklyn MDC — MDC in New York (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "mdc",
@@ -1282,7 +1282,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Bryan Fpc",
+    "name": "Bryan FPC",
     "slug": "bryan-fpc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1306,7 +1306,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FPC"
     },
     "type": "FPC",
-    "overview": "Bryan Fpc is a Federal Bureau of Prisons (FPC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Bryan FPC is a Federal Bureau of Prisons (FPC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 979-823-1879. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1316,7 +1316,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "77803",
     "phone": "979-823-1879",
     "predominantFunction": "FPC (Federal Prison Camp)",
-    "shortDescription": "Bryan Fpc — FPC in Texas (Federal BOP listing).",
+    "shortDescription": "Bryan FPC — FPC in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fpc",
@@ -1347,7 +1347,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Butner Fmc",
+    "name": "Butner FMC",
     "slug": "butner-fmc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1371,7 +1371,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FMC"
     },
     "type": "FMC",
-    "overview": "Butner Fmc is a Federal Bureau of Prisons (FMC) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Butner FMC is a Federal Bureau of Prisons (FMC) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 919-575-3900. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1381,7 +1381,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "27509",
     "phone": "919-575-3900",
     "predominantFunction": "FMC (Federal Medical Center)",
-    "shortDescription": "Butner Fmc — FMC in North Carolina (Federal BOP listing).",
+    "shortDescription": "Butner FMC — FMC in North Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fmc",
@@ -1412,7 +1412,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Butner Low Fci",
+    "name": "Butner Low FCI",
     "slug": "butner-low-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1436,7 +1436,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Butner Low Fci is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Butner Low FCI is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 919-575-5000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1446,7 +1446,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "27509",
     "phone": "919-575-5000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Butner Low Fci — FCI in North Carolina (Federal BOP listing).",
+    "shortDescription": "Butner Low FCI — FCI in North Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -1477,7 +1477,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Butner Med I Fci",
+    "name": "Butner Med I FCI",
     "slug": "butner-med-i-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1501,7 +1501,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Butner Med I Fci is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Butner Med I FCI is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 919-575-4541. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1511,7 +1511,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "27509",
     "phone": "919-575-4541",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Butner Med I Fci — FCI in North Carolina (Federal BOP listing).",
+    "shortDescription": "Butner Med I FCI — FCI in North Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -1542,7 +1542,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Butner Med Ii Fci",
+    "name": "Butner Med Ii FCI",
     "slug": "butner-med-ii-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1566,7 +1566,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Butner Med Ii Fci is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Butner Med Ii FCI is a Federal Bureau of Prisons (FCI) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 919-575-8000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1576,7 +1576,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "27509",
     "phone": "919-575-8000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Butner Med Ii Fci — FCI in North Carolina (Federal BOP listing).",
+    "shortDescription": "Butner Med Ii FCI — FCI in North Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -1607,7 +1607,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Canaan Usp",
+    "name": "Canaan USP",
     "slug": "canaan-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1631,7 +1631,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Canaan Usp is a Federal Bureau of Prisons (USP) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Canaan USP is a Federal Bureau of Prisons (USP) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 570-488-8000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1641,7 +1641,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "18472",
     "phone": "570-488-8000",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Canaan Usp — USP in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Canaan USP — USP in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -1672,7 +1672,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Carswell Fmc",
+    "name": "Carswell FMC",
     "slug": "carswell-fmc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1686,7 +1686,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FMC",
-    "overview": "Carswell Fmc is a Federal Bureau of Prisons (FMC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Carswell FMC is a Federal Bureau of Prisons (FMC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 817-782-4000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1696,7 +1696,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "76114",
     "phone": "817-782-4000",
     "predominantFunction": "FMC (Federal Medical Center)",
-    "shortDescription": "Carswell Fmc — FMC in Texas (Federal BOP listing).",
+    "shortDescription": "Carswell FMC — FMC in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fmc",
@@ -1715,7 +1715,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Chicago Ccm",
+    "name": "Chicago CCM",
     "slug": "chicago-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1739,7 +1739,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Chicago Ccm is a Federal Bureau of Prisons (OTHER) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Chicago CCM is a Federal Bureau of Prisons (OTHER) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 331-903-4043. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1749,7 +1749,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "60515",
     "phone": "331-903-4043",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Chicago Ccm — OTHER in Illinois (Federal BOP listing).",
+    "shortDescription": "Chicago CCM — OTHER in Illinois (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -1780,7 +1780,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Chicago Mcc",
+    "name": "Chicago MCC",
     "slug": "chicago-mcc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1804,7 +1804,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "MCC"
     },
     "type": "MCC",
-    "overview": "Chicago Mcc is a Federal Bureau of Prisons (MCC) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Chicago MCC is a Federal Bureau of Prisons (MCC) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 312-322-0567. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1814,7 +1814,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "60605",
     "phone": "312-322-0567",
     "predominantFunction": "MCC (Metropolitan Correctional Center)",
-    "shortDescription": "Chicago Mcc — MCC in Illinois (Federal BOP listing).",
+    "shortDescription": "Chicago MCC — MCC in Illinois (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "mcc",
@@ -1845,7 +1845,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Cincinnati Ccm",
+    "name": "Cincinnati CCM",
     "slug": "cincinnati-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1869,7 +1869,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Cincinnati Ccm is a Federal Bureau of Prisons (OTHER) facility in Ohio, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Cincinnati CCM is a Federal Bureau of Prisons (OTHER) facility in Ohio, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 513-826-9364. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1879,7 +1879,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "45202",
     "phone": "513-826-9364",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Cincinnati Ccm — OTHER in Ohio (Federal BOP listing).",
+    "shortDescription": "Cincinnati CCM — OTHER in Ohio (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -1910,7 +1910,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Coleman I Usp",
+    "name": "Coleman I USP",
     "slug": "coleman-i-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1934,7 +1934,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Coleman I Usp is a Federal Bureau of Prisons (USP) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Coleman I USP is a Federal Bureau of Prisons (USP) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 352-689-6000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -1944,7 +1944,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "33521",
     "phone": "352-689-6000",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Coleman I Usp — USP in Florida (Federal BOP listing).",
+    "shortDescription": "Coleman I USP — USP in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -1975,7 +1975,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Coleman Ii Usp",
+    "name": "Coleman Ii USP",
     "slug": "coleman-ii-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -1999,7 +1999,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Coleman Ii Usp is a Federal Bureau of Prisons (USP) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Coleman Ii USP is a Federal Bureau of Prisons (USP) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 352-689-7000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2009,7 +2009,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "33521",
     "phone": "352-689-7000",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Coleman Ii Usp — USP in Florida (Federal BOP listing).",
+    "shortDescription": "Coleman Ii USP — USP in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -2040,7 +2040,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Coleman Low Fci",
+    "name": "Coleman Low FCI",
     "slug": "coleman-low-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2064,7 +2064,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Coleman Low Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Coleman Low FCI is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 352-689-4000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2074,7 +2074,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "33521",
     "phone": "352-689-4000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Coleman Low Fci — FCI in Florida (Federal BOP listing).",
+    "shortDescription": "Coleman Low FCI — FCI in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2105,7 +2105,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Coleman Med Fci",
+    "name": "Coleman Med FCI",
     "slug": "coleman-med-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2129,7 +2129,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Coleman Med Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Coleman Med FCI is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 352-689-5000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2139,7 +2139,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "33521",
     "phone": "352-689-5000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Coleman Med Fci — FCI in Florida (Federal BOP listing).",
+    "shortDescription": "Coleman Med FCI — FCI in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2170,7 +2170,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Cumberland Fci",
+    "name": "Cumberland FCI",
     "slug": "cumberland-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2194,7 +2194,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Cumberland Fci is a Federal Bureau of Prisons (FCI) facility in Maryland, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Cumberland FCI is a Federal Bureau of Prisons (FCI) facility in Maryland, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 301-784-1000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2204,7 +2204,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "21502",
     "phone": "301-784-1000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Cumberland Fci — FCI in Maryland (Federal BOP listing).",
+    "shortDescription": "Cumberland FCI — FCI in Maryland (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2235,7 +2235,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Dallas Ccm",
+    "name": "Dallas CCM",
     "slug": "dallas-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2259,7 +2259,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Dallas Ccm is a Federal Bureau of Prisons (OTHER) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Dallas CCM is a Federal Bureau of Prisons (OTHER) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 469-928-2182. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2269,7 +2269,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "75051",
     "phone": "469-928-2182",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Dallas Ccm — OTHER in Texas (Federal BOP listing).",
+    "shortDescription": "Dallas CCM — OTHER in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -2300,7 +2300,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Danbury Fci",
+    "name": "Danbury FCI",
     "slug": "danbury-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2324,7 +2324,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Danbury Fci is a Federal Bureau of Prisons (FCI) facility in Connecticut, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Danbury FCI is a Federal Bureau of Prisons (FCI) facility in Connecticut, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 203-743-6471. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2334,7 +2334,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "06811",
     "phone": "203-743-6471",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Danbury Fci — FCI in Connecticut (Federal BOP listing).",
+    "shortDescription": "Danbury FCI — FCI in Connecticut (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2365,7 +2365,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Detroit Ccm",
+    "name": "Detroit CCM",
     "slug": "detroit-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2389,7 +2389,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Detroit Ccm is a Federal Bureau of Prisons (OTHER) facility in Michigan, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Detroit CCM is a Federal Bureau of Prisons (OTHER) facility in Michigan, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 734-508-9048. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2399,7 +2399,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "48160",
     "phone": "734-508-9048",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Detroit Ccm — OTHER in Michigan (Federal BOP listing).",
+    "shortDescription": "Detroit CCM — OTHER in Michigan (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -2430,7 +2430,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Devens Fmc",
+    "name": "Devens FMC",
     "slug": "devens-fmc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2454,7 +2454,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FMC"
     },
     "type": "FMC",
-    "overview": "Devens Fmc is a Federal Bureau of Prisons (FMC) facility in Massachusetts, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Devens FMC is a Federal Bureau of Prisons (FMC) facility in Massachusetts, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 978-796-1000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2464,7 +2464,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "01432",
     "phone": "978-796-1000",
     "predominantFunction": "FMC (Federal Medical Center)",
-    "shortDescription": "Devens Fmc — FMC in Massachusetts (Federal BOP listing).",
+    "shortDescription": "Devens FMC — FMC in Massachusetts (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fmc",
@@ -2495,7 +2495,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Dublin Fci",
+    "name": "Dublin FCI",
     "slug": "dublin-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2509,7 +2509,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "Dublin Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Dublin FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 925-833-7500. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2519,7 +2519,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "94568",
     "phone": "925-833-7500",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Dublin Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Dublin FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2538,7 +2538,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Duluth Fpc",
+    "name": "Duluth FPC",
     "slug": "duluth-fpc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2562,7 +2562,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FPC"
     },
     "type": "FPC",
-    "overview": "Duluth Fpc is a Federal Bureau of Prisons (FPC) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Duluth FPC is a Federal Bureau of Prisons (FPC) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 218-722-8634. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2572,7 +2572,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "55811",
     "phone": "218-722-8634",
     "predominantFunction": "FPC (Federal Prison Camp)",
-    "shortDescription": "Duluth Fpc — FPC in Minnesota (Federal BOP listing).",
+    "shortDescription": "Duluth FPC — FPC in Minnesota (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fpc",
@@ -2603,7 +2603,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Edgefield Fci",
+    "name": "Edgefield FCI",
     "slug": "edgefield-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2627,7 +2627,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Edgefield Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Edgefield FCI is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 803-637-1500. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2637,7 +2637,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "29824",
     "phone": "803-637-1500",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Edgefield Fci — FCI in South Carolina (Federal BOP listing).",
+    "shortDescription": "Edgefield FCI — FCI in South Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2668,7 +2668,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "El Reno Fci",
+    "name": "El Reno FCI",
     "slug": "el-reno-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2692,7 +2692,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "El Reno Fci is a Federal Bureau of Prisons (FCI) facility in Oklahoma, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "El Reno FCI is a Federal Bureau of Prisons (FCI) facility in Oklahoma, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 405-262-4875. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2702,7 +2702,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "73036",
     "phone": "405-262-4875",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "El Reno Fci — FCI in Oklahoma (Federal BOP listing).",
+    "shortDescription": "El Reno FCI — FCI in Oklahoma (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2733,7 +2733,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Elkton Fci",
+    "name": "Elkton FCI",
     "slug": "elkton-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2757,7 +2757,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Elkton Fci is a Federal Bureau of Prisons (FCI) facility in Ohio, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Elkton FCI is a Federal Bureau of Prisons (FCI) facility in Ohio, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 330-420-6200. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2767,7 +2767,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "44432",
     "phone": "330-420-6200",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Elkton Fci — FCI in Ohio (Federal BOP listing).",
+    "shortDescription": "Elkton FCI — FCI in Ohio (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2798,7 +2798,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Englewood Fci",
+    "name": "Englewood FCI",
     "slug": "englewood-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2822,7 +2822,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Englewood Fci is a Federal Bureau of Prisons (FCI) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Englewood FCI is a Federal Bureau of Prisons (FCI) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 303-763-4300. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2832,7 +2832,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "80123",
     "phone": "303-763-4300",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Englewood Fci — FCI in Colorado (Federal BOP listing).",
+    "shortDescription": "Englewood FCI — FCI in Colorado (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2863,7 +2863,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Estill Fci",
+    "name": "Estill FCI",
     "slug": "estill-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2887,7 +2887,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Estill Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Estill FCI is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 803-625-4607. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2897,7 +2897,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "29918",
     "phone": "803-625-4607",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Estill Fci — FCI in South Carolina (Federal BOP listing).",
+    "shortDescription": "Estill FCI — FCI in South Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2928,7 +2928,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Fairton Fci",
+    "name": "Fairton FCI",
     "slug": "fairton-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -2952,7 +2952,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Fairton Fci is a Federal Bureau of Prisons (FCI) facility in New Jersey, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Fairton FCI is a Federal Bureau of Prisons (FCI) facility in New Jersey, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 856-453-1177. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -2962,7 +2962,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "08320",
     "phone": "856-453-1177",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Fairton Fci — FCI in New Jersey (Federal BOP listing).",
+    "shortDescription": "Fairton FCI — FCI in New Jersey (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -2993,7 +2993,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Florence Admax Usp",
+    "name": "Florence ADMAX USP",
     "slug": "florence-admax-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3017,7 +3017,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Florence Admax Usp is a Federal Bureau of Prisons (USP) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Florence ADMAX USP is a Federal Bureau of Prisons (USP) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 719-784-9464. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3027,7 +3027,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "81226",
     "phone": "719-784-9464",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Florence Admax Usp — USP in Colorado (Federal BOP listing).",
+    "shortDescription": "Florence ADMAX USP — USP in Colorado (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -3058,7 +3058,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Florence Fci",
+    "name": "Florence FCI",
     "slug": "florence-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3082,7 +3082,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Florence Fci is a Federal Bureau of Prisons (FCI) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Florence FCI is a Federal Bureau of Prisons (FCI) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 719-784-9100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3092,7 +3092,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "81226",
     "phone": "719-784-9100",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Florence Fci — FCI in Colorado (Federal BOP listing).",
+    "shortDescription": "Florence FCI — FCI in Colorado (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3123,7 +3123,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Florence High Usp",
+    "name": "Florence High USP",
     "slug": "florence-high-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3147,7 +3147,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Florence High Usp is a Federal Bureau of Prisons (USP) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Florence High USP is a Federal Bureau of Prisons (USP) facility in Colorado, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 719-784-9454. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3157,7 +3157,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "81226",
     "phone": "719-784-9454",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Florence High Usp — USP in Colorado (Federal BOP listing).",
+    "shortDescription": "Florence High USP — USP in Colorado (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -3188,7 +3188,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Forrest City Fci",
+    "name": "Forrest City FCI",
     "slug": "forrest-city-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3202,7 +3202,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "Forrest City Fci is a Federal Bureau of Prisons (FCI) facility in Arkansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Forrest City FCI is a Federal Bureau of Prisons (FCI) facility in Arkansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 870-630-6000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3212,7 +3212,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "72335",
     "phone": "870-630-6000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Forrest City Fci — FCI in Arkansas (Federal BOP listing).",
+    "shortDescription": "Forrest City FCI — FCI in Arkansas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3231,7 +3231,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Forrest City Med Fci",
+    "name": "Forrest City Med FCI",
     "slug": "forrest-city-med-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3255,7 +3255,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Forrest City Med Fci is a Federal Bureau of Prisons (FCI) facility in Arkansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Forrest City Med FCI is a Federal Bureau of Prisons (FCI) facility in Arkansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 870-494-4200. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3265,7 +3265,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "72335",
     "phone": "870-494-4200",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Forrest City Med Fci — FCI in Arkansas (Federal BOP listing).",
+    "shortDescription": "Forrest City Med FCI — FCI in Arkansas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3296,7 +3296,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Fort Dix Fci",
+    "name": "Fort Dix FCI",
     "slug": "fort-dix-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3310,7 +3310,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "Fort Dix Fci is a Federal Bureau of Prisons (FCI) facility in New Jersey, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Fort Dix FCI is a Federal Bureau of Prisons (FCI) facility in New Jersey, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 609-723-1100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3320,7 +3320,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "08640",
     "phone": "609-723-1100",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Fort Dix Fci — FCI in New Jersey (Federal BOP listing).",
+    "shortDescription": "Fort Dix FCI — FCI in New Jersey (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3339,7 +3339,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Fort Worth Administrative Fmc",
+    "name": "Fort Worth Administrative FMC",
     "slug": "fort-worth-administrative-fmc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3353,7 +3353,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FMC",
-    "overview": "Fort Worth Administrative Fmc is a Federal Bureau of Prisons (FMC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Fort Worth Administrative FMC is a Federal Bureau of Prisons (FMC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 817-534-8400. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3363,7 +3363,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "76119",
     "phone": "817-534-8400",
     "predominantFunction": "FMC (Federal Medical Center)",
-    "shortDescription": "Fort Worth Administrative Fmc — FMC in Texas (Federal BOP listing).",
+    "shortDescription": "Fort Worth Administrative FMC — FMC in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fmc",
@@ -3382,7 +3382,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Gilmer Fci",
+    "name": "Gilmer FCI",
     "slug": "gilmer-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3406,7 +3406,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Gilmer Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Gilmer FCI is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 304-626-2500. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3416,7 +3416,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "26351",
     "phone": "304-626-2500",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Gilmer Fci — FCI in West Virginia (Federal BOP listing).",
+    "shortDescription": "Gilmer FCI — FCI in West Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3447,7 +3447,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Greenville Fci",
+    "name": "Greenville FCI",
     "slug": "greenville-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3471,7 +3471,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Greenville Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Greenville FCI is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 618-664-6200. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3481,7 +3481,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "62246",
     "phone": "618-664-6200",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Greenville Fci — FCI in Illinois (Federal BOP listing).",
+    "shortDescription": "Greenville FCI — FCI in Illinois (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3512,7 +3512,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Guaynabo Mdc",
+    "name": "Guaynabo MDC",
     "slug": "guaynabo-mdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3536,7 +3536,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "MDC"
     },
     "type": "MDC",
-    "overview": "Guaynabo Mdc is a Federal Bureau of Prisons (MDC) facility in Puerto Rico, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Guaynabo MDC is a Federal Bureau of Prisons (MDC) facility in Puerto Rico, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 787-749-4480. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3546,7 +3546,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "00965",
     "phone": "787-749-4480",
     "predominantFunction": "MDC (Metropolitan Detention Center)",
-    "shortDescription": "Guaynabo Mdc — MDC in Puerto Rico (Federal BOP listing).",
+    "shortDescription": "Guaynabo MDC — MDC in Puerto Rico (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "mdc",
@@ -3577,7 +3577,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Hazelton Fci",
+    "name": "Hazelton FCI",
     "slug": "hazelton-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3601,7 +3601,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Hazelton Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Hazelton FCI is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 304-379-1500. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3611,7 +3611,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "26525",
     "phone": "304-379-1500",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Hazelton Fci — FCI in West Virginia (Federal BOP listing).",
+    "shortDescription": "Hazelton FCI — FCI in West Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3642,7 +3642,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Hazelton Usp",
+    "name": "Hazelton USP",
     "slug": "hazelton-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3666,7 +3666,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Hazelton Usp is a Federal Bureau of Prisons (USP) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Hazelton USP is a Federal Bureau of Prisons (USP) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 304-379-5000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3676,7 +3676,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "26525",
     "phone": "304-379-5000",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Hazelton Usp — USP in West Virginia (Federal BOP listing).",
+    "shortDescription": "Hazelton USP — USP in West Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -3707,7 +3707,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Herlong Fci",
+    "name": "Herlong FCI",
     "slug": "herlong-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3731,7 +3731,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Herlong Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Herlong FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 530-827-8000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3741,7 +3741,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "96113",
     "phone": "530-827-8000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Herlong Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Herlong FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3772,7 +3772,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Honolulu Fdc",
+    "name": "Honolulu FDC",
     "slug": "honolulu-fdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3796,7 +3796,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FDC"
     },
     "type": "FDC",
-    "overview": "Honolulu Fdc is a Federal Bureau of Prisons (FDC) facility in Hawaii, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Honolulu FDC is a Federal Bureau of Prisons (FDC) facility in Hawaii, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 808-838-4200. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3806,7 +3806,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "96819",
     "phone": "808-838-4200",
     "predominantFunction": "FDC (Federal Detention Center)",
-    "shortDescription": "Honolulu Fdc — FDC in Hawaii (Federal BOP listing).",
+    "shortDescription": "Honolulu FDC — FDC in Hawaii (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fdc",
@@ -3837,7 +3837,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Houston Fdc",
+    "name": "Houston FDC",
     "slug": "houston-fdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3861,7 +3861,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FDC"
     },
     "type": "FDC",
-    "overview": "Houston Fdc is a Federal Bureau of Prisons (FDC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Houston FDC is a Federal Bureau of Prisons (FDC) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 713-221-5400. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3871,7 +3871,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "77002",
     "phone": "713-221-5400",
     "predominantFunction": "FDC (Federal Detention Center)",
-    "shortDescription": "Houston Fdc — FDC in Texas (Federal BOP listing).",
+    "shortDescription": "Houston FDC — FDC in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fdc",
@@ -3902,7 +3902,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Jesup Fci",
+    "name": "Jesup FCI",
     "slug": "jesup-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3926,7 +3926,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Jesup Fci is a Federal Bureau of Prisons (FCI) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Jesup FCI is a Federal Bureau of Prisons (FCI) facility in Georgia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 912-427-0870. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -3936,7 +3936,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "31599",
     "phone": "912-427-0870",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Jesup Fci — FCI in Georgia (Federal BOP listing).",
+    "shortDescription": "Jesup FCI — FCI in Georgia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -3967,7 +3967,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Kansas City Ccm",
+    "name": "Kansas City CCM",
     "slug": "kansas-city-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -3991,7 +3991,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Kansas City Ccm is a Federal Bureau of Prisons (OTHER) facility in Kansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Kansas City CCM is a Federal Bureau of Prisons (OTHER) facility in Kansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 620-307-7531. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4001,7 +4001,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "66101",
     "phone": "620-307-7531",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Kansas City Ccm — OTHER in Kansas (Federal BOP listing).",
+    "shortDescription": "Kansas City CCM — OTHER in Kansas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -4032,7 +4032,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "La Tuna Fci",
+    "name": "La Tuna FCI",
     "slug": "la-tuna-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4046,7 +4046,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "La Tuna Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "La Tuna FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 915-791-9000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4056,7 +4056,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "79821",
     "phone": "915-791-9000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "La Tuna Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "La Tuna FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4075,7 +4075,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Leavenworth Fci",
+    "name": "Leavenworth FCI",
     "slug": "leavenworth-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4099,7 +4099,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Leavenworth Fci is a Federal Bureau of Prisons (FCI) facility in Kansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Leavenworth FCI is a Federal Bureau of Prisons (FCI) facility in Kansas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 913-682-8700. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4109,7 +4109,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "66048",
     "phone": "913-682-8700",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Leavenworth Fci — FCI in Kansas (Federal BOP listing).",
+    "shortDescription": "Leavenworth FCI — FCI in Kansas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4140,7 +4140,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Lee Usp",
+    "name": "Lee USP",
     "slug": "lee-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4154,7 +4154,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "USP",
-    "overview": "Lee Usp is a Federal Bureau of Prisons (USP) facility in Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Lee USP is a Federal Bureau of Prisons (USP) facility in Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 276-546-0150. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4164,7 +4164,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "24277",
     "phone": "276-546-0150",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Lee Usp — USP in Virginia (Federal BOP listing).",
+    "shortDescription": "Lee USP — USP in Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -4183,7 +4183,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Lewisburg Fci",
+    "name": "Lewisburg FCI",
     "slug": "lewisburg-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4207,7 +4207,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Lewisburg Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Lewisburg FCI is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 570-523-1251. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4217,7 +4217,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "17837",
     "phone": "570-523-1251",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Lewisburg Fci — FCI in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Lewisburg FCI — FCI in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4248,7 +4248,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Lexington Fmc",
+    "name": "Lexington FMC",
     "slug": "lexington-fmc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4272,7 +4272,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FMC"
     },
     "type": "FMC",
-    "overview": "Lexington Fmc is a Federal Bureau of Prisons (FMC) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Lexington FMC is a Federal Bureau of Prisons (FMC) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 859-255-6812. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4282,7 +4282,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "40511",
     "phone": "859-255-6812",
     "predominantFunction": "FMC (Federal Medical Center)",
-    "shortDescription": "Lexington Fmc — FMC in Kentucky (Federal BOP listing).",
+    "shortDescription": "Lexington FMC — FMC in Kentucky (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fmc",
@@ -4313,7 +4313,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Lompoc Fci",
+    "name": "Lompoc FCI",
     "slug": "lompoc-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4327,7 +4327,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "Lompoc Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Lompoc FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 805-736-4154. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4337,7 +4337,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "93436",
     "phone": "805-736-4154",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Lompoc Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Lompoc FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4356,7 +4356,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Lompoc Ii Fci",
+    "name": "Lompoc Ii FCI",
     "slug": "lompoc-ii-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4380,7 +4380,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Lompoc Ii Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Lompoc Ii FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 805-735-2771. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4390,7 +4390,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "93436",
     "phone": "805-735-2771",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Lompoc Ii Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Lompoc Ii FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4421,7 +4421,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Long Beach Ccm",
+    "name": "Long Beach CCM",
     "slug": "long-beach-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4445,7 +4445,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Long Beach Ccm is a Federal Bureau of Prisons (OTHER) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Long Beach CCM is a Federal Bureau of Prisons (OTHER) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 424-450-2866. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4455,7 +4455,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "90731",
     "phone": "424-450-2866",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Long Beach Ccm — OTHER in California (Federal BOP listing).",
+    "shortDescription": "Long Beach CCM — OTHER in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -4486,7 +4486,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Loretto Fci",
+    "name": "Loretto FCI",
     "slug": "loretto-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4510,7 +4510,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Loretto Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Loretto FCI is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 814-472-4140. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4520,7 +4520,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "15940",
     "phone": "814-472-4140",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Loretto Fci — FCI in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Loretto FCI — FCI in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4551,7 +4551,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Los Angeles Mdc",
+    "name": "Los Angeles MDC",
     "slug": "los-angeles-mdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4575,7 +4575,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "MDC"
     },
     "type": "MDC",
-    "overview": "Los Angeles Mdc is a Federal Bureau of Prisons (MDC) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Los Angeles MDC is a Federal Bureau of Prisons (MDC) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 213-485-0439. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4585,7 +4585,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "90012",
     "phone": "213-485-0439",
     "predominantFunction": "MDC (Metropolitan Detention Center)",
-    "shortDescription": "Los Angeles Mdc — MDC in California (Federal BOP listing).",
+    "shortDescription": "Los Angeles MDC — MDC in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "mdc",
@@ -4616,7 +4616,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Manchester Fci",
+    "name": "Manchester FCI",
     "slug": "manchester-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4640,7 +4640,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Manchester Fci is a Federal Bureau of Prisons (FCI) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Manchester FCI is a Federal Bureau of Prisons (FCI) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 606-598-1900. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4650,7 +4650,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "40962",
     "phone": "606-598-1900",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Manchester Fci — FCI in Kentucky (Federal BOP listing).",
+    "shortDescription": "Manchester FCI — FCI in Kentucky (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4681,7 +4681,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Marianna Fci",
+    "name": "Marianna FCI",
     "slug": "marianna-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4705,7 +4705,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Marianna Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Marianna FCI is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 850-526-2313. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4715,7 +4715,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "32446",
     "phone": "850-526-2313",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Marianna Fci — FCI in Florida (Federal BOP listing).",
+    "shortDescription": "Marianna FCI — FCI in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4746,7 +4746,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Marion Fci",
+    "name": "Marion FCI",
     "slug": "marion-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4770,7 +4770,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Marion Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Marion FCI is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 618-964-1441. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4780,7 +4780,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "62959",
     "phone": "618-964-1441",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Marion Fci — FCI in Illinois (Federal BOP listing).",
+    "shortDescription": "Marion FCI — FCI in Illinois (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4811,7 +4811,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Mccreary Usp",
+    "name": "Mccreary USP",
     "slug": "mccreary-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4835,7 +4835,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Mccreary Usp is a Federal Bureau of Prisons (USP) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Mccreary USP is a Federal Bureau of Prisons (USP) facility in Kentucky, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 606-354-7000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4845,7 +4845,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "42635",
     "phone": "606-354-7000",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Mccreary Usp — USP in Kentucky (Federal BOP listing).",
+    "shortDescription": "Mccreary USP — USP in Kentucky (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -4876,7 +4876,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Mcdowell Fci",
+    "name": "Mcdowell FCI",
     "slug": "mcdowell-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4900,7 +4900,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Mcdowell Fci is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Mcdowell FCI is a Federal Bureau of Prisons (FCI) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 304-436-7300. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4910,7 +4910,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "24801",
     "phone": "304-436-7300",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Mcdowell Fci — FCI in West Virginia (Federal BOP listing).",
+    "shortDescription": "Mcdowell FCI — FCI in West Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -4941,7 +4941,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Mckean Fci",
+    "name": "Mckean FCI",
     "slug": "mckean-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -4965,7 +4965,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Mckean Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Mckean FCI is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 814-362-8900. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -4975,7 +4975,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "16738",
     "phone": "814-362-8900",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Mckean Fci — FCI in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Mckean FCI — FCI in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -5006,7 +5006,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Memphis Fci",
+    "name": "Memphis FCI",
     "slug": "memphis-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5030,7 +5030,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Memphis Fci is a Federal Bureau of Prisons (FCI) facility in Tennessee, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Memphis FCI is a Federal Bureau of Prisons (FCI) facility in Tennessee, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 901-372-2269. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5040,7 +5040,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "38134",
     "phone": "901-372-2269",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Memphis Fci — FCI in Tennessee (Federal BOP listing).",
+    "shortDescription": "Memphis FCI — FCI in Tennessee (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -5071,7 +5071,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Mendota Fci",
+    "name": "Mendota FCI",
     "slug": "mendota-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5095,7 +5095,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Mendota Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Mendota FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 559-274-4000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5105,7 +5105,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "93640",
     "phone": "559-274-4000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Mendota Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Mendota FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -5136,7 +5136,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Miami Ccm",
+    "name": "Miami CCM",
     "slug": "miami-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5160,7 +5160,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Miami Ccm is a Federal Bureau of Prisons (OTHER) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Miami CCM is a Federal Bureau of Prisons (OTHER) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 786-584-4730. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5170,7 +5170,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "33128",
     "phone": "786-584-4730",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Miami Ccm — OTHER in Florida (Federal BOP listing).",
+    "shortDescription": "Miami CCM — OTHER in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -5201,7 +5201,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Miami Fci",
+    "name": "Miami FCI",
     "slug": "miami-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5225,7 +5225,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Miami Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Miami FCI is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 305-259-2100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5235,7 +5235,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "33177",
     "phone": "305-259-2100",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Miami Fci — FCI in Florida (Federal BOP listing).",
+    "shortDescription": "Miami FCI — FCI in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -5266,7 +5266,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Miami Fdc",
+    "name": "Miami FDC",
     "slug": "miami-fdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5290,7 +5290,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FDC"
     },
     "type": "FDC",
-    "overview": "Miami Fdc is a Federal Bureau of Prisons (FDC) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Miami FDC is a Federal Bureau of Prisons (FDC) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 305-577-0010. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5300,7 +5300,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "33132",
     "phone": "305-577-0010",
     "predominantFunction": "FDC (Federal Detention Center)",
-    "shortDescription": "Miami Fdc — FDC in Florida (Federal BOP listing).",
+    "shortDescription": "Miami FDC — FDC in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fdc",
@@ -5331,7 +5331,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Milan Fci",
+    "name": "Milan FCI",
     "slug": "milan-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5355,7 +5355,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Milan Fci is a Federal Bureau of Prisons (FCI) facility in Michigan, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Milan FCI is a Federal Bureau of Prisons (FCI) facility in Michigan, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 734-439-1511. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5365,7 +5365,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "48160",
     "phone": "734-439-1511",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Milan Fci — FCI in Michigan (Federal BOP listing).",
+    "shortDescription": "Milan FCI — FCI in Michigan (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -5396,7 +5396,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Minneapolis Ccm",
+    "name": "Minneapolis CCM",
     "slug": "minneapolis-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5420,7 +5420,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Minneapolis Ccm is a Federal Bureau of Prisons (OTHER) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Minneapolis CCM is a Federal Bureau of Prisons (OTHER) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 612-332-5026. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5430,7 +5430,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "55415",
     "phone": "612-332-5026",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Minneapolis Ccm — OTHER in Minnesota (Federal BOP listing).",
+    "shortDescription": "Minneapolis CCM — OTHER in Minnesota (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -5461,7 +5461,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Montgomery Ccm",
+    "name": "Montgomery CCM",
     "slug": "montgomery-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5475,7 +5475,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "OTHER",
-    "overview": "Montgomery Ccm is a Federal Bureau of Prisons (OTHER) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Montgomery CCM is a Federal Bureau of Prisons (OTHER) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 334-922-6684. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5485,7 +5485,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "36112",
     "phone": "334-922-6684",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Montgomery Ccm — OTHER in Alabama (Federal BOP listing).",
+    "shortDescription": "Montgomery CCM — OTHER in Alabama (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -5504,7 +5504,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Montgomery Fpc",
+    "name": "Montgomery FPC",
     "slug": "montgomery-fpc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5528,7 +5528,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FPC"
     },
     "type": "FPC",
-    "overview": "Montgomery Fpc is a Federal Bureau of Prisons (FPC) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Montgomery FPC is a Federal Bureau of Prisons (FPC) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 334-293-2100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5538,7 +5538,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "36112",
     "phone": "334-293-2100",
     "predominantFunction": "FPC (Federal Prison Camp)",
-    "shortDescription": "Montgomery Fpc — FPC in Alabama (Federal BOP listing).",
+    "shortDescription": "Montgomery FPC — FPC in Alabama (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fpc",
@@ -5569,7 +5569,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Morgantown Fpc",
+    "name": "Morgantown FPC",
     "slug": "morgantown-fpc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5593,7 +5593,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FPC"
     },
     "type": "FPC",
-    "overview": "Morgantown Fpc is a Federal Bureau of Prisons (FPC) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Morgantown FPC is a Federal Bureau of Prisons (FPC) facility in West Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 304-296-4416. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5603,7 +5603,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "26501",
     "phone": "304-296-4416",
     "predominantFunction": "FPC (Federal Prison Camp)",
-    "shortDescription": "Morgantown Fpc — FPC in West Virginia (Federal BOP listing).",
+    "shortDescription": "Morgantown FPC — FPC in West Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fpc",
@@ -5634,7 +5634,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Nashville Ccm",
+    "name": "Nashville CCM",
     "slug": "nashville-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5658,7 +5658,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Nashville Ccm is a Federal Bureau of Prisons (OTHER) facility in Tennessee, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Nashville CCM is a Federal Bureau of Prisons (OTHER) facility in Tennessee, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 629-266-6380. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5668,7 +5668,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "37203",
     "phone": "629-266-6380",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Nashville Ccm — OTHER in Tennessee (Federal BOP listing).",
+    "shortDescription": "Nashville CCM — OTHER in Tennessee (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -5699,7 +5699,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "New York Mcc",
+    "name": "New York MCC",
     "slug": "new-york-mcc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5713,7 +5713,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "MCC",
-    "overview": "New York Mcc is a Federal Bureau of Prisons (MCC) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "New York MCC is a Federal Bureau of Prisons (MCC) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 646-836-6300. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5723,7 +5723,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "10007",
     "phone": "646-836-6300",
     "predominantFunction": "MCC (Metropolitan Correctional Center)",
-    "shortDescription": "New York Mcc — MCC in New York (Federal BOP listing).",
+    "shortDescription": "New York MCC — MCC in New York (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "mcc",
@@ -5742,7 +5742,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Oakdale I Fci",
+    "name": "Oakdale I FCI",
     "slug": "oakdale-i-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5766,7 +5766,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Oakdale I Fci is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Oakdale I FCI is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 318-335-4070. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5776,7 +5776,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "71463",
     "phone": "318-335-4070",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Oakdale I Fci — FCI in Louisiana (Federal BOP listing).",
+    "shortDescription": "Oakdale I FCI — FCI in Louisiana (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -5807,7 +5807,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Oakdale Ii Fci",
+    "name": "Oakdale Ii FCI",
     "slug": "oakdale-ii-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5831,7 +5831,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Oakdale Ii Fci is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Oakdale Ii FCI is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 318-335-4466. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5841,7 +5841,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "71463",
     "phone": "318-335-4466",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Oakdale Ii Fci — FCI in Louisiana (Federal BOP listing).",
+    "shortDescription": "Oakdale Ii FCI — FCI in Louisiana (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -5872,7 +5872,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Oklahoma City Ftc",
+    "name": "Oklahoma City FTC",
     "slug": "oklahoma-city-ftc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5896,7 +5896,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FTC"
     },
     "type": "OTHER",
-    "overview": "Oklahoma City Ftc is a Federal Bureau of Prisons (OTHER) facility in Oklahoma, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Oklahoma City FTC is a Federal Bureau of Prisons (OTHER) facility in Oklahoma, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 405-682-4075. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5906,7 +5906,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "73169",
     "phone": "405-682-4075",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Oklahoma City Ftc — OTHER in Oklahoma (Federal BOP listing).",
+    "shortDescription": "Oklahoma City FTC — OTHER in Oklahoma (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -5937,7 +5937,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Orlando Ccm",
+    "name": "Orlando CCM",
     "slug": "orlando-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -5961,7 +5961,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Orlando Ccm is a Federal Bureau of Prisons (OTHER) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Orlando CCM is a Federal Bureau of Prisons (OTHER) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 352-254-6140. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -5971,7 +5971,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "34785",
     "phone": "352-254-6140",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Orlando Ccm — OTHER in Florida (Federal BOP listing).",
+    "shortDescription": "Orlando CCM — OTHER in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -6002,7 +6002,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Otisville Fci",
+    "name": "Otisville FCI",
     "slug": "otisville-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6026,7 +6026,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Otisville Fci is a Federal Bureau of Prisons (FCI) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Otisville FCI is a Federal Bureau of Prisons (FCI) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 845-386-6700. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6036,7 +6036,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "10963",
     "phone": "845-386-6700",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Otisville Fci — FCI in New York (Federal BOP listing).",
+    "shortDescription": "Otisville FCI — FCI in New York (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6067,7 +6067,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Oxford Fci",
+    "name": "Oxford FCI",
     "slug": "oxford-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6091,7 +6091,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Oxford Fci is a Federal Bureau of Prisons (FCI) facility in Wisconsin, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Oxford FCI is a Federal Bureau of Prisons (FCI) facility in Wisconsin, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 608-584-5511. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6101,7 +6101,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "53952",
     "phone": "608-584-5511",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Oxford Fci — FCI in Wisconsin (Federal BOP listing).",
+    "shortDescription": "Oxford FCI — FCI in Wisconsin (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6132,7 +6132,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Pekin Fci",
+    "name": "Pekin FCI",
     "slug": "pekin-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6156,7 +6156,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Pekin Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Pekin FCI is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 309-346-8588. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6166,7 +6166,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "61554",
     "phone": "309-346-8588",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Pekin Fci — FCI in Illinois (Federal BOP listing).",
+    "shortDescription": "Pekin FCI — FCI in Illinois (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6197,7 +6197,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Pensacola Fpc",
+    "name": "Pensacola FPC",
     "slug": "pensacola-fpc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6211,7 +6211,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FPC",
-    "overview": "Pensacola Fpc is a Federal Bureau of Prisons (FPC) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Pensacola FPC is a Federal Bureau of Prisons (FPC) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 850-457-1911. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6221,7 +6221,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "32509",
     "phone": "850-457-1911",
     "predominantFunction": "FPC (Federal Prison Camp)",
-    "shortDescription": "Pensacola Fpc — FPC in Florida (Federal BOP listing).",
+    "shortDescription": "Pensacola FPC — FPC in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fpc",
@@ -6240,7 +6240,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Petersburg Fci",
+    "name": "Petersburg FCI",
     "slug": "petersburg-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6254,7 +6254,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "Petersburg Fci is a Federal Bureau of Prisons (FCI) facility in Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Petersburg FCI is a Federal Bureau of Prisons (FCI) facility in Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 804-733-7881. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6264,7 +6264,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "23860",
     "phone": "804-733-7881",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Petersburg Fci — FCI in Virginia (Federal BOP listing).",
+    "shortDescription": "Petersburg FCI — FCI in Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6283,7 +6283,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Petersburg Med Fci",
+    "name": "Petersburg Med FCI",
     "slug": "petersburg-med-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6307,7 +6307,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Petersburg Med Fci is a Federal Bureau of Prisons (FCI) facility in Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Petersburg Med FCI is a Federal Bureau of Prisons (FCI) facility in Virginia, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 804-504-7200. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6317,7 +6317,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "23860",
     "phone": "804-504-7200",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Petersburg Med Fci — FCI in Virginia (Federal BOP listing).",
+    "shortDescription": "Petersburg Med FCI — FCI in Virginia (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6348,7 +6348,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Philadelphia Ccm",
+    "name": "Philadelphia CCM",
     "slug": "philadelphia-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6372,7 +6372,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Philadelphia Ccm is a Federal Bureau of Prisons (OTHER) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Philadelphia CCM is a Federal Bureau of Prisons (OTHER) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 445-201-8783. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6382,7 +6382,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "19106",
     "phone": "445-201-8783",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Philadelphia Ccm — OTHER in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Philadelphia CCM — OTHER in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -6413,7 +6413,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Philadelphia Fdc",
+    "name": "Philadelphia FDC",
     "slug": "philadelphia-fdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6437,7 +6437,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FDC"
     },
     "type": "FDC",
-    "overview": "Philadelphia Fdc is a Federal Bureau of Prisons (FDC) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Philadelphia FDC is a Federal Bureau of Prisons (FDC) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 215-521-4000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6447,7 +6447,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "19106",
     "phone": "215-521-4000",
     "predominantFunction": "FDC (Federal Detention Center)",
-    "shortDescription": "Philadelphia Fdc — FDC in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Philadelphia FDC — FDC in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fdc",
@@ -6478,7 +6478,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Phoenix Ccm",
+    "name": "Phoenix CCM",
     "slug": "phoenix-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6502,7 +6502,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Phoenix Ccm is a Federal Bureau of Prisons (OTHER) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Phoenix CCM is a Federal Bureau of Prisons (OTHER) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 602-333-0537. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6512,7 +6512,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "85003",
     "phone": "602-333-0537",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Phoenix Ccm — OTHER in Arizona (Federal BOP listing).",
+    "shortDescription": "Phoenix CCM — OTHER in Arizona (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -6543,7 +6543,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Phoenix Fci",
+    "name": "Phoenix FCI",
     "slug": "phoenix-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6567,7 +6567,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Phoenix Fci is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Phoenix FCI is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 623-465-9757. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6577,7 +6577,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "85086",
     "phone": "623-465-9757",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Phoenix Fci — FCI in Arizona (Federal BOP listing).",
+    "shortDescription": "Phoenix FCI — FCI in Arizona (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6608,7 +6608,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Pittsburgh Ccm",
+    "name": "Pittsburgh CCM",
     "slug": "pittsburgh-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6632,7 +6632,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Pittsburgh Ccm is a Federal Bureau of Prisons (OTHER) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Pittsburgh CCM is a Federal Bureau of Prisons (OTHER) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 412-395-7930. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6642,7 +6642,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "15222",
     "phone": "412-395-7930",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Pittsburgh Ccm — OTHER in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Pittsburgh CCM — OTHER in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -6673,7 +6673,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Pollock Med Fci",
+    "name": "Pollock Med FCI",
     "slug": "pollock-med-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6687,7 +6687,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "Pollock Med Fci is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Pollock Med FCI is a Federal Bureau of Prisons (FCI) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 318-765-4400. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6697,7 +6697,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "71467",
     "phone": "318-765-4400",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Pollock Med Fci — FCI in Louisiana (Federal BOP listing).",
+    "shortDescription": "Pollock Med FCI — FCI in Louisiana (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6716,7 +6716,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Pollock Usp",
+    "name": "Pollock USP",
     "slug": "pollock-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6740,7 +6740,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Pollock Usp is a Federal Bureau of Prisons (USP) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Pollock USP is a Federal Bureau of Prisons (USP) facility in Louisiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 318-561-5300. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6750,7 +6750,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "71467",
     "phone": "318-561-5300",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Pollock Usp — USP in Louisiana (Federal BOP listing).",
+    "shortDescription": "Pollock USP — USP in Louisiana (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -6781,7 +6781,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Raleigh Ccm",
+    "name": "Raleigh CCM",
     "slug": "raleigh-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6805,7 +6805,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Raleigh Ccm is a Federal Bureau of Prisons (OTHER) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Raleigh CCM is a Federal Bureau of Prisons (OTHER) facility in North Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 919-964-6150. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6815,7 +6815,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "27509",
     "phone": "919-964-6150",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Raleigh Ccm — OTHER in North Carolina (Federal BOP listing).",
+    "shortDescription": "Raleigh CCM — OTHER in North Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -6846,7 +6846,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Ray Brook Fci",
+    "name": "Ray Brook FCI",
     "slug": "ray-brook-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6870,7 +6870,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Ray Brook Fci is a Federal Bureau of Prisons (FCI) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Ray Brook FCI is a Federal Bureau of Prisons (FCI) facility in New York, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 518-897-4000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6880,7 +6880,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "12977",
     "phone": "518-897-4000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Ray Brook Fci — FCI in New York (Federal BOP listing).",
+    "shortDescription": "Ray Brook FCI — FCI in New York (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -6911,7 +6911,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Rochester Fmc",
+    "name": "Rochester FMC",
     "slug": "rochester-fmc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -6935,7 +6935,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FMC"
     },
     "type": "FMC",
-    "overview": "Rochester Fmc is a Federal Bureau of Prisons (FMC) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Rochester FMC is a Federal Bureau of Prisons (FMC) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 507-287-0674. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -6945,7 +6945,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "55904",
     "phone": "507-287-0674",
     "predominantFunction": "FMC (Federal Medical Center)",
-    "shortDescription": "Rochester Fmc — FMC in Minnesota (Federal BOP listing).",
+    "shortDescription": "Rochester FMC — FMC in Minnesota (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fmc",
@@ -6976,7 +6976,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Sacramento Ccm",
+    "name": "Sacramento CCM",
     "slug": "sacramento-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7000,7 +7000,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Sacramento Ccm is a Federal Bureau of Prisons (OTHER) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Sacramento CCM is a Federal Bureau of Prisons (OTHER) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 916-288-4266. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7010,7 +7010,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "95814",
     "phone": "916-288-4266",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Sacramento Ccm — OTHER in California (Federal BOP listing).",
+    "shortDescription": "Sacramento CCM — OTHER in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -7041,7 +7041,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Safford Fci",
+    "name": "Safford FCI",
     "slug": "safford-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7065,7 +7065,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Safford Fci is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Safford FCI is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 928-428-6600. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7075,7 +7075,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "85546",
     "phone": "928-428-6600",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Safford Fci — FCI in Arizona (Federal BOP listing).",
+    "shortDescription": "Safford FCI — FCI in Arizona (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7106,7 +7106,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "San Antonio Ccm",
+    "name": "San Antonio CCM",
     "slug": "san-antonio-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7130,7 +7130,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "San Antonio Ccm is a Federal Bureau of Prisons (OTHER) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "San Antonio CCM is a Federal Bureau of Prisons (OTHER) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 726-224-5472. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7140,7 +7140,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "78206",
     "phone": "726-224-5472",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "San Antonio Ccm — OTHER in Texas (Federal BOP listing).",
+    "shortDescription": "San Antonio CCM — OTHER in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -7171,7 +7171,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "San Diego Mcc",
+    "name": "San Diego MCC",
     "slug": "san-diego-mcc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7195,7 +7195,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "MCC"
     },
     "type": "MCC",
-    "overview": "San Diego Mcc is a Federal Bureau of Prisons (MCC) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "San Diego MCC is a Federal Bureau of Prisons (MCC) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 619-232-4311. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7205,7 +7205,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "92101",
     "phone": "619-232-4311",
     "predominantFunction": "MCC (Metropolitan Correctional Center)",
-    "shortDescription": "San Diego Mcc — MCC in California (Federal BOP listing).",
+    "shortDescription": "San Diego MCC — MCC in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "mcc",
@@ -7236,7 +7236,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Sandstone Fci",
+    "name": "Sandstone FCI",
     "slug": "sandstone-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7260,7 +7260,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Sandstone Fci is a Federal Bureau of Prisons (FCI) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Sandstone FCI is a Federal Bureau of Prisons (FCI) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 320-245-2262. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7270,7 +7270,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "55072",
     "phone": "320-245-2262",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Sandstone Fci — FCI in Minnesota (Federal BOP listing).",
+    "shortDescription": "Sandstone FCI — FCI in Minnesota (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7301,7 +7301,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Schuylkill Fci",
+    "name": "Schuylkill FCI",
     "slug": "schuylkill-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7325,7 +7325,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Schuylkill Fci is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Schuylkill FCI is a Federal Bureau of Prisons (FCI) facility in Pennsylvania, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 570-544-7100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7335,7 +7335,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "17954",
     "phone": "570-544-7100",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Schuylkill Fci — FCI in Pennsylvania (Federal BOP listing).",
+    "shortDescription": "Schuylkill FCI — FCI in Pennsylvania (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7366,7 +7366,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Seagoville Fci",
+    "name": "Seagoville FCI",
     "slug": "seagoville-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7390,7 +7390,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Seagoville Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Seagoville FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 972-287-2911. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7400,7 +7400,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "75159",
     "phone": "972-287-2911",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Seagoville Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "Seagoville FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7431,7 +7431,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Seatac Fdc",
+    "name": "Seatac FDC",
     "slug": "seatac-fdc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7455,7 +7455,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FDC"
     },
     "type": "FDC",
-    "overview": "Seatac Fdc is a Federal Bureau of Prisons (FDC) facility in Washington, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Seatac FDC is a Federal Bureau of Prisons (FDC) facility in Washington, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 206-870-5700. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7465,7 +7465,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "98198",
     "phone": "206-870-5700",
     "predominantFunction": "FDC (Federal Detention Center)",
-    "shortDescription": "Seatac Fdc — FDC in Washington (Federal BOP listing).",
+    "shortDescription": "Seatac FDC — FDC in Washington (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fdc",
@@ -7496,7 +7496,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Seattle Ccm",
+    "name": "Seattle CCM",
     "slug": "seattle-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7520,7 +7520,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "Seattle Ccm is a Federal Bureau of Prisons (OTHER) facility in Washington, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Seattle CCM is a Federal Bureau of Prisons (OTHER) facility in Washington, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 253-765-2769. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7530,7 +7530,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "98198",
     "phone": "253-765-2769",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Seattle Ccm — OTHER in Washington (Federal BOP listing).",
+    "shortDescription": "Seattle CCM — OTHER in Washington (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -7561,7 +7561,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Sheridan Fci",
+    "name": "Sheridan FCI",
     "slug": "sheridan-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7585,7 +7585,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Sheridan Fci is a Federal Bureau of Prisons (FCI) facility in Oregon, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Sheridan FCI is a Federal Bureau of Prisons (FCI) facility in Oregon, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 503-843-4442. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7595,7 +7595,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "97378",
     "phone": "503-843-4442",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Sheridan Fci — FCI in Oregon (Federal BOP listing).",
+    "shortDescription": "Sheridan FCI — FCI in Oregon (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7626,7 +7626,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Springfield Usmcfp",
+    "name": "Springfield USMCFP",
     "slug": "springfield-usmcfp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7650,7 +7650,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "MCFP"
     },
     "type": "OTHER",
-    "overview": "Springfield Usmcfp is a Federal Bureau of Prisons (OTHER) facility in Missouri, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Springfield USMCFP is a Federal Bureau of Prisons (OTHER) facility in Missouri, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 417-862-7041. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7660,7 +7660,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "65807",
     "phone": "417-862-7041",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "Springfield Usmcfp — OTHER in Missouri (Federal BOP listing).",
+    "shortDescription": "Springfield USMCFP — OTHER in Missouri (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -7691,7 +7691,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "St Louis Ccm",
+    "name": "St Louis CCM",
     "slug": "st-louis-ccm",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7715,7 +7715,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "RRM"
     },
     "type": "OTHER",
-    "overview": "St Louis Ccm is a Federal Bureau of Prisons (OTHER) facility in Missouri, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "St Louis CCM is a Federal Bureau of Prisons (OTHER) facility in Missouri, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 314-410-6818. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7725,7 +7725,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "63103",
     "phone": "314-410-6818",
     "predominantFunction": "Other BOP facility type",
-    "shortDescription": "St Louis Ccm — OTHER in Missouri (Federal BOP listing).",
+    "shortDescription": "St Louis CCM — OTHER in Missouri (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "other",
@@ -7756,7 +7756,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Talladega Fci",
+    "name": "Talladega FCI",
     "slug": "talladega-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7780,7 +7780,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Talladega Fci is a Federal Bureau of Prisons (FCI) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Talladega FCI is a Federal Bureau of Prisons (FCI) facility in Alabama, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 256-315-4100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7790,7 +7790,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "35160",
     "phone": "256-315-4100",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Talladega Fci — FCI in Alabama (Federal BOP listing).",
+    "shortDescription": "Talladega FCI — FCI in Alabama (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7821,7 +7821,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Tallahassee Fci",
+    "name": "Tallahassee FCI",
     "slug": "tallahassee-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7845,7 +7845,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Tallahassee Fci is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Tallahassee FCI is a Federal Bureau of Prisons (FCI) facility in Florida, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 850-878-2173. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7855,7 +7855,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "32301",
     "phone": "850-878-2173",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Tallahassee Fci — FCI in Florida (Federal BOP listing).",
+    "shortDescription": "Tallahassee FCI — FCI in Florida (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7886,7 +7886,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Terminal Island Fci",
+    "name": "Terminal Island FCI",
     "slug": "terminal-island-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7900,7 +7900,7 @@ export const usPrisonsGenerated: Prison[] = [
     "latitude": 0,
     "longitude": 0,
     "type": "FCI",
-    "overview": "Terminal Island Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Terminal Island FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 310-831-8961. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7910,7 +7910,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "90731",
     "phone": "310-831-8961",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Terminal Island Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Terminal Island FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7929,7 +7929,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Terre Haute Fci",
+    "name": "Terre Haute FCI",
     "slug": "terre-haute-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -7953,7 +7953,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Terre Haute Fci is a Federal Bureau of Prisons (FCI) facility in Indiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Terre Haute FCI is a Federal Bureau of Prisons (FCI) facility in Indiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 812-238-1531. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -7963,7 +7963,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "47808",
     "phone": "812-238-1531",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Terre Haute Fci — FCI in Indiana (Federal BOP listing).",
+    "shortDescription": "Terre Haute FCI — FCI in Indiana (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -7994,7 +7994,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Terre Haute Usp",
+    "name": "Terre Haute USP",
     "slug": "terre-haute-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8018,7 +8018,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Terre Haute Usp is a Federal Bureau of Prisons (USP) facility in Indiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Terre Haute USP is a Federal Bureau of Prisons (USP) facility in Indiana, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 812-244-4400. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8028,7 +8028,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "47802",
     "phone": "812-244-4400",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Terre Haute Usp — USP in Indiana (Federal BOP listing).",
+    "shortDescription": "Terre Haute USP — USP in Indiana (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -8059,7 +8059,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Texarkana Fci",
+    "name": "Texarkana FCI",
     "slug": "texarkana-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8083,7 +8083,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Texarkana Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Texarkana FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 903-838-4587. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8093,7 +8093,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "75501",
     "phone": "903-838-4587",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Texarkana Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "Texarkana FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8124,7 +8124,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Thomson Fci",
+    "name": "Thomson FCI",
     "slug": "thomson-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8148,7 +8148,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Thomson Fci is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Thomson FCI is a Federal Bureau of Prisons (FCI) facility in Illinois, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 815-259-1000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8158,7 +8158,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "61285",
     "phone": "815-259-1000",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Thomson Fci — FCI in Illinois (Federal BOP listing).",
+    "shortDescription": "Thomson FCI — FCI in Illinois (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8189,7 +8189,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Three Rivers Fci",
+    "name": "Three Rivers FCI",
     "slug": "three-rivers-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8213,7 +8213,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Three Rivers Fci is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Three Rivers FCI is a Federal Bureau of Prisons (FCI) facility in Texas, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 361-786-3576. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8223,7 +8223,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "78071",
     "phone": "361-786-3576",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Three Rivers Fci — FCI in Texas (Federal BOP listing).",
+    "shortDescription": "Three Rivers FCI — FCI in Texas (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8254,7 +8254,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Tucson Fci",
+    "name": "Tucson FCI",
     "slug": "tucson-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8278,7 +8278,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Tucson Fci is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Tucson FCI is a Federal Bureau of Prisons (FCI) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 520-574-7100. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8288,7 +8288,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "85756",
     "phone": "520-574-7100",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Tucson Fci — FCI in Arizona (Federal BOP listing).",
+    "shortDescription": "Tucson FCI — FCI in Arizona (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8319,7 +8319,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Tucson Usp",
+    "name": "Tucson USP",
     "slug": "tucson-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8343,7 +8343,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Tucson Usp is a Federal Bureau of Prisons (USP) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Tucson USP is a Federal Bureau of Prisons (USP) facility in Arizona, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 520-663-5000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8353,7 +8353,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "85756",
     "phone": "520-663-5000",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Tucson Usp — USP in Arizona (Federal BOP listing).",
+    "shortDescription": "Tucson USP — USP in Arizona (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -8384,7 +8384,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Victorville Med I Fci",
+    "name": "Victorville Med I FCI",
     "slug": "victorville-med-i-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8408,7 +8408,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Victorville Med I Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Victorville Med I FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 760-246-2400. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8418,7 +8418,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "92394",
     "phone": "760-246-2400",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Victorville Med I Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Victorville Med I FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8449,7 +8449,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Victorville Med Ii Fci",
+    "name": "Victorville Med Ii FCI",
     "slug": "victorville-med-ii-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8473,7 +8473,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Victorville Med Ii Fci is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Victorville Med Ii FCI is a Federal Bureau of Prisons (FCI) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 760-530-5700. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8483,7 +8483,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "92394",
     "phone": "760-530-5700",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Victorville Med Ii Fci — FCI in California (Federal BOP listing).",
+    "shortDescription": "Victorville Med Ii FCI — FCI in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8514,7 +8514,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Victorville Usp",
+    "name": "Victorville USP",
     "slug": "victorville-usp",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8538,7 +8538,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "USP"
     },
     "type": "USP",
-    "overview": "Victorville Usp is a Federal Bureau of Prisons (USP) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Victorville USP is a Federal Bureau of Prisons (USP) facility in California, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 760-530-5000. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8548,7 +8548,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "92394",
     "phone": "760-530-5000",
     "predominantFunction": "USP (United States Penitentiary)",
-    "shortDescription": "Victorville Usp — USP in California (Federal BOP listing).",
+    "shortDescription": "Victorville USP — USP in California (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "usp",
@@ -8579,7 +8579,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Waseca Fci",
+    "name": "Waseca FCI",
     "slug": "waseca-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8603,7 +8603,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Waseca Fci is a Federal Bureau of Prisons (FCI) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Waseca FCI is a Federal Bureau of Prisons (FCI) facility in Minnesota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 507-835-8972. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8613,7 +8613,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "56093",
     "phone": "507-835-8972",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Waseca Fci — FCI in Minnesota (Federal BOP listing).",
+    "shortDescription": "Waseca FCI — FCI in Minnesota (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8644,7 +8644,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Williamsburg Fci",
+    "name": "Williamsburg FCI",
     "slug": "williamsburg-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8668,7 +8668,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Williamsburg Fci is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Williamsburg FCI is a Federal Bureau of Prisons (FCI) facility in South Carolina, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 843-387-9400. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8678,7 +8678,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "29590",
     "phone": "843-387-9400",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Williamsburg Fci — FCI in South Carolina (Federal BOP listing).",
+    "shortDescription": "Williamsburg FCI — FCI in South Carolina (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8709,7 +8709,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Yankton Fpc",
+    "name": "Yankton FPC",
     "slug": "yankton-fpc",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8733,7 +8733,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FPC"
     },
     "type": "FPC",
-    "overview": "Yankton Fpc is a Federal Bureau of Prisons (FPC) facility in South Dakota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Yankton FPC is a Federal Bureau of Prisons (FPC) facility in South Dakota, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 605-665-3262. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8743,7 +8743,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "57078",
     "phone": "605-665-3262",
     "predominantFunction": "FPC (Federal Prison Camp)",
-    "shortDescription": "Yankton Fpc — FPC in South Dakota (Federal BOP listing).",
+    "shortDescription": "Yankton FPC — FPC in South Dakota (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fpc",
@@ -8774,7 +8774,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Yazoo City Low Fci",
+    "name": "Yazoo City Low FCI",
     "slug": "yazoo-city-low-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8798,7 +8798,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Yazoo City Low Fci is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Yazoo City Low FCI is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 662-751-4800. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8808,7 +8808,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "39194",
     "phone": "662-751-4800",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Yazoo City Low Fci — FCI in Mississippi (Federal BOP listing).",
+    "shortDescription": "Yazoo City Low FCI — FCI in Mississippi (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8839,7 +8839,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Yazoo City Low Ii Fci",
+    "name": "Yazoo City Low Ii FCI",
     "slug": "yazoo-city-low-ii-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8863,7 +8863,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Yazoo City Low Ii Fci is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Yazoo City Low Ii FCI is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 662-716-1020. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8873,7 +8873,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "39194",
     "phone": "662-716-1020",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Yazoo City Low Ii Fci — FCI in Mississippi (Federal BOP listing).",
+    "shortDescription": "Yazoo City Low Ii FCI — FCI in Mississippi (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",
@@ -8904,7 +8904,7 @@ export const usPrisonsGenerated: Prison[] = [
     }
   },
   {
-    "name": "Yazoo City Med Fci",
+    "name": "Yazoo City Med FCI",
     "slug": "yazoo-city-med-fci",
     "country": "United States (Federal)",
     "countrySlug": "us",
@@ -8928,7 +8928,7 @@ export const usPrisonsGenerated: Prison[] = [
       "facilityType": "FCI"
     },
     "type": "FCI",
-    "overview": "Yazoo City Med Fci is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
+    "overview": "Yazoo City Med FCI is a Federal Bureau of Prisons (FCI) facility in Mississippi, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.",
     "history": "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.",
     "prisonLife": "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.",
     "visitingInfo": "The import lists phone 662-716-1241. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.",
@@ -8938,7 +8938,7 @@ export const usPrisonsGenerated: Prison[] = [
     "postcode": "39194",
     "phone": "662-716-1241",
     "predominantFunction": "FCI (Federal Correctional Institution)",
-    "shortDescription": "Yazoo City Med Fci — FCI in Mississippi (Federal BOP listing).",
+    "shortDescription": "Yazoo City Med FCI — FCI in Mississippi (Federal BOP listing).",
     "source": "us_prisons_clean_bundle/us_prisons_clean.json",
     "sourceType": "bop_prison",
     "facilityType": "fci",

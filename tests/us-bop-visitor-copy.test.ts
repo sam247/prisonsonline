@@ -9,7 +9,7 @@ test("phoenix-ccm overview keeps facts and drops import wording", () => {
   const p = usPrisonsGenerated.find((x) => x.slug === "phoenix-ccm")!;
   assert.ok(p);
   const o = visitorOverview(p);
-  assert.match(o, /^Phoenix Ccm is a Federal Bureau of Prisons \(OTHER\) facility in Arizona\./);
+  assert.match(o, /^Phoenix CCM is a Federal Bureau of Prisons \(OTHER\) facility in Arizona\./);
   assert.doesNotMatch(o, IMPORT_RE);
   assert.equal(visitorPrisonLife(p.prisonLife), "");
 });

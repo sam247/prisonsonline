@@ -9,6 +9,7 @@ import { applyUkAddressCorrection } from "./uk-address-corrections.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
+import { restorePrisonAcronyms } from "./lib/prison-acronyms.mjs";
 import { deriveCityFromAddress } from "./uk-address-city.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -148,7 +149,7 @@ function normaliseHmppsPrison(raw, usedSlugs) {
   const lng = raw.longitude != null && !Number.isNaN(Number(raw.longitude)) ? Number(raw.longitude) : 0;
 
   return {
-    name: identity.name,
+    name: restorePrisonAcronyms(identity.name),
     slug,
     country: "United Kingdom",
     countrySlug: "uk",
