@@ -235,3 +235,30 @@ test("coverage batch 1 carries GOV.UK contact & visiting data (checked 2026-10-1
   assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].url, "https://www.gov.uk/guidance/elmley-prison");
   assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].sourceModifiedAt, "2026-07-17");
 });
+
+test("coverage batch 2 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-wealstun", "hmp-whitemoor", "hmp-lewes", "hmp-swaleside", "hmp-the-mount", "hmp-exeter", "hmp-sudbury",
+    "hmp-hatfield", "hmp-lindholme", "hmp-yoi-hindley", "hmp-risley", "hmp-yoi-isis", "hmp-holme-house", "hmp-wayland",
+    "hmp-lowdham-grange", "hmp-featherstone", "hmp-leyhill", "hmp-yoi-stocken", "hmp-brixton", "hmp-north-sea-camp",
+    "hmp-yoi-hull", "hmp-littlehey", "hmp-whatton", "hmp-yoi-brinsford",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    // Hindley/Risley list a "Postal address" that is the site address itself, so no separate postalAddress.
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  const isis = getContactVisiting("uk", "hmp-yoi-isis")!.visitBooking!;
+  assert.deepEqual(isis.methods, ["prisoner-led"]);
+  assert.equal(isis.note, "Social and family visits can only be booked by the prisoner internally.");
+  assert.deepEqual(getContactVisiting("uk", "hmp-lewes")!.visitBooking!.methods, ["online"]);
+  const featherstone = getContactVisiting("uk", "hmp-featherstone")!.visitBooking!;
+  assert.equal(featherstone.emailEnquiriesOnly, true);
+  assert.equal(featherstone.methods.includes("email"), false);
+  // Swaleside's page names the send-money service without linking it, so no sendMoneyUrl is stored.
+  assert.equal(getContactVisiting("uk", "hmp-swaleside")!.prisonerContact!.sendMoneyUrl, undefined);
+  assert.equal(getContactVisiting("uk", "hmp-wayland")!.visitBooking!.phone, "01953 804 152");
+});
