@@ -149,3 +149,50 @@ test("withContactVisiting merges blocks and provenance without dropping existing
   const noContact = getFacilityVerification("uk", "hmp-gartree");
   assert.equal(withContactVisiting("uk", "hmp-gartree", noContact), noContact);
 });
+
+test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-preston", "hmp-wandsworth", "hmp-belmarsh", "hmp-yoi-pentonville", "hmp-wormwood-scrubs",
+    "hmp-birmingham", "hmp-manchester", "hmp-leeds", "hmp-liverpool", "hmp-durham", "hmp-wakefield",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.equal(r.prisonerContact?.emailAPrisonerUrl, EMAIL_A_PRISONER_URL);
+    assert.equal(r.prisonerContact?.sendMoneyUrl, SEND_PRISONER_MONEY_URL);
+  }
+  const withPostal = slugs.filter((slug) => getContactVisiting("uk", slug)!.postalAddress);
+  assert.deepEqual(withPostal, ["hmp-wandsworth", "hmp-wormwood-scrubs"]);
+  assert.deepEqual(getContactVisiting("uk", "hmp-wandsworth")!.postalAddress, {
+    lines: ["HMP Wandsworth", "PO Box 757", "Heathfield Road", "Wandsworth", "London"],
+    postcode: "SW18 3HS",
+    sourceId: CONTACT_VISITING_SOURCE_ID,
+  });
+  assert.deepEqual(getContactVisiting("uk", "hmp-wormwood-scrubs")!.postalAddress, {
+    lines: ["HMP Wormwood Scrubs", "PO Box 757", "Du Cane Road", "London"],
+    postcode: "W12 0AE",
+    sourceId: CONTACT_VISITING_SOURCE_ID,
+  });
+  // Site postcodes stay canonical on the prison record.
+  assert.equal(ukPrisonsGenerated.find((p) => p.slug === "hmp-wandsworth")!.postcode, "SW18 3HU");
+  assert.equal(ukPrisonsGenerated.find((p) => p.slug === "hmp-wormwood-scrubs")!.postcode, "W12 0AN");
+
+  const birmingham = getContactVisiting("uk", "hmp-birmingham")!.visitBooking!;
+  assert.deepEqual(birmingham.methods, ["phone", "email"]);
+  assert.equal(birmingham.url, undefined);
+  assert.equal(birmingham.phone, "0333 207 2490");
+  assert.equal(birmingham.email, "visits.birmingham@justice.gov.uk");
+
+  const manchester = getContactVisiting("uk", "hmp-manchester")!.visitBooking!;
+  assert.deepEqual(manchester.methods, ["prisoner-led", "phone", "email"]);
+  assert.equal(manchester.url, undefined);
+  assert.match(manchester.note!, /All other visits are booked by prisoner-led application\./);
+
+  for (const slug of ["hmp-leeds", "hmp-wakefield"]) {
+    const b = getContactVisiting("uk", slug)!.visitBooking!;
+    assert.equal(b.emailEnquiriesOnly, true);
+    assert.equal(b.methods.includes("email"), false);
+  }
+  assert.match(getContactVisiting("uk", "hmp-belmarsh")!.prisonerContact!.postInstructions!, /or date of birth/);
+});
