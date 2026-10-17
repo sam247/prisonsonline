@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "2026-10-16T08:19:44.937Z",
+  "updatedAt": "2026-10-17T20:38:59.329Z",
   "entries": {
     "united-states/adx-florence": {
       "prisonSlug": "adx-florence",
@@ -24,6 +24,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/flm/",
       "overrides": {
         "email": "FLX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/flm/",
+            "checkedAt": "2026-10-17"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "USP Florence ADMAX",
+            "U.S. PENITENTIARY",
+            "PO BOX 8500",
+            "FLORENCE, CO"
+          ],
+          "postcode": "81226",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/flm/flm_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/allenwood-low-fci": {
@@ -96,6 +129,25 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/ald/",
       "overrides": {
         "email": "ALD-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/ald/",
+            "checkedAt": "2026-10-17"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/ald/ald_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/aliceville-fci": {
@@ -123,6 +175,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/alp/",
       "overrides": {
         "email": "ALX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/alp/",
+            "checkedAt": "2026-10-17"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "USP Allenwood",
+            "U.S. PENITENTIARY",
+            "P.O. BOX 3000",
+            "WHITE DEER, PA"
+          ],
+          "postcode": "17887",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/alp/alp_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/atlanta-fci": {
@@ -132,6 +217,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/atl/",
       "overrides": {
         "email": "ATL-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/atl/",
+            "checkedAt": "2026-10-17"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Atlanta",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 150160",
+            "ATLANTA, GA"
+          ],
+          "postcode": "30315",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/atl/atl_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/atwater-usp": {
@@ -177,6 +295,118 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/ber/",
       "overrides": {
         "email": "BER-Execassistant-S@bop.gov"
+      }
+    },
+    "us/brooklyn-mdc": {
+      "prisonSlug": "brooklyn-mdc",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-17T20:38:59.329Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/bro/",
+      "overrides": {
+        "email": "BRO-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/bro/",
+            "checkedAt": "2026-10-17"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "MDC Brooklyn",
+            "METROPOLITAN DETENTION CENTER",
+            "P.O. BOX 329002",
+            "BROOKLYN, NY"
+          ],
+          "postcode": "11232",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/bro/bro_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/danbury-fci": {
+      "prisonSlug": "danbury-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-17T20:38:59.329Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/dan/",
+      "overrides": {
+        "email": "DAN-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/dan/",
+            "checkedAt": "2026-10-17"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Danbury",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "ROUTE 37",
+            "DANBURY, CT"
+          ],
+          "postcode": "06811",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/dan/dan_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/guaynabo-mdc": {
+      "prisonSlug": "guaynabo-mdc",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-17T20:38:59.329Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/gua/",
+      "overrides": {
+        "email": "GUA-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/gua/",
+            "checkedAt": "2026-10-17"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/gua/gua_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     }
   }
