@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "2026-10-17T20:38:59.329Z",
+  "updatedAt": "2026-10-19T08:19:09.909Z",
   "entries": {
     "united-states/adx-florence": {
       "prisonSlug": "adx-florence",
@@ -157,6 +157,25 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/ali/",
       "overrides": {
         "email": "ALI-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/ali/",
+            "checkedAt": "2026-10-19"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/ali/ali_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/allenwood-med-fci": {
