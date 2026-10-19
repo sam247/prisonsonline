@@ -23,7 +23,16 @@ export const SEND_PRISONER_MONEY_URL = "https://www.gov.uk/send-prisoner-money";
 
 export type ContactVisitingRecord = Pick<
   FacilityVerificationRecord,
-  "countrySlug" | "prisonSlug" | "sources" | "fieldSources" | "postalAddress" | "visitBooking" | "prisonerContact"
+  | "countrySlug"
+  | "prisonSlug"
+  | "sources"
+  | "fieldSources"
+  | "postalAddress"
+  | "visitBooking"
+  | "prisonerContact"
+  // Optional keys shared with the US record type (usContactVisiting.ts); no UK values are stored for them.
+  | "visitingHours"
+  | "visitingRulesUrl"
 >;
 
 type Blocks = Pick<FacilityVerificationRecord, "postalAddress" | "visitBooking" | "prisonerContact">;
