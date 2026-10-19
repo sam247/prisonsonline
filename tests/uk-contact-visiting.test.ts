@@ -189,7 +189,10 @@ test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026
   assert.equal(manchester.url, undefined);
   assert.match(manchester.note!, /All other visits are booked by prisoner-led application\./);
 
-  for (const slug of ["hmp-leeds", "hmp-wakefield"]) {
+  // GOV.UK: "If you have any issues regarding your visit, please email Visitbooking.wormwoodscrubs@justice.gov.uk.
+  // Please be advised that this email address is for issues and queries" -> enquiries only, not a booking route.
+  assert.equal(getContactVisiting("uk", "hmp-wormwood-scrubs")!.visitBooking!.email, "Visitbooking.wormwoodscrubs@justice.gov.uk");
+  for (const slug of ["hmp-leeds", "hmp-wakefield", "hmp-wormwood-scrubs"]) {
     const b = getContactVisiting("uk", slug)!.visitBooking!;
     assert.equal(b.emailEnquiriesOnly, true);
     assert.equal(b.methods.includes("email"), false);

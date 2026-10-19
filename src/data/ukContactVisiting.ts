@@ -136,6 +136,8 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       url: GOVUK_PRISON_VISITS_URL,
       phone: "0300 060 6511",
       phoneHours: "Monday to Friday, 9am to 3pm",
+      email: "Visitbooking.wormwoodscrubs@justice.gov.uk",
+      emailEnquiriesOnly: true,
       sourceId: S,
     },
     prisonerContact: {
