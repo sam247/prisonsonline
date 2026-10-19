@@ -13,7 +13,7 @@
  * REVIEW_REQUIRED / NO_SOURCE_VALUE / UNSUPPORTED: recorded, never written.
  * Writes go to the US overlay only, behind the existing VERIFY write gate.
  */
-import type { FacilitySource, PostalAddress, VisitingHours, VisitingRulesLink } from "@/types/facilitySource";
+import type { FacilitySource, PostalAddress, PostalAddressUnit, VisitingHours, VisitingRulesLink } from "@/types/facilitySource";
 import type { OverlayStore } from "./applyChanges";
 import { emptyUsOverlay, overlayKey } from "./applyChanges";
 import type { HttpGet } from "./govukClient";
@@ -218,9 +218,10 @@ export function parseBopPostalAddress(
 
   const notes: string[] = [];
   const unitSpecs = [
-    { type: MAIL_CAMP, label: "Camp", declared: loc.hasCamp, flag: "hasCamp" },
-    { type: MAIL_FSL, label: "FSL", declared: loc.hasFsl, flag: "hasFsl" },
+    { type: MAIL_CAMP, label: "Camp", line: "SATELLITE CAMP", declared: loc.hasCamp, flag: "hasCamp" },
+    { type: MAIL_FSL, label: "FSL", line: "FEDERAL SATELLITE LOW", declared: loc.hasFsl, flag: "hasFsl" },
   ];
+  const units: PostalAddressUnit[] = [];
   for (const spec of unitSpecs) {
     const rows = own.filter((row) => row.addressType === spec.type);
     if (rows.length === 0) continue;
@@ -228,11 +229,19 @@ export function parseBopPostalAddress(
       notes.push(`${spec.label} mail row ignored: facility row has ${spec.flag}=false, so bop.gov's page context is inconsistent.`);
       continue;
     }
-    return {
-      ok: false,
-      classification: "REVIEW_REQUIRED",
-      evidence: `bop.gov publishes a separate ${spec.label} inmate mail address; PostalAddress holds one address, so per-unit mail is not written.`,
-    };
+    if (rows.length > 1) {
+      return { ok: false, classification: "REVIEW_REQUIRED", evidence: `bop.gov lists ${rows.length} ${spec.label} inmate mail addresses; ambiguous.` };
+    }
+    const unitProblem = addressProblem(rows[0]);
+    if (unitProblem) {
+      return { ok: false, classification: "REVIEW_REQUIRED", evidence: `${spec.label} inmate mail address not written: ${unitProblem}.` };
+    }
+    const unit = rows[0];
+    // Lines exactly as the bop.gov page renders the unit block (unit line after the facility type).
+    const unitLines = [loc.nameTitle, loc.faclTypeDescription.toUpperCase(), spec.line, unit.street];
+    if (unit.street2) unitLines.push(unit.street2);
+    unitLines.push(`${unit.city}, ${unit.state}`);
+    units.push({ label: spec.label, lines: unitLines, postcode: unit.zipCode, sourceId });
   }
 
   if (
@@ -253,7 +262,13 @@ export function parseBopPostalAddress(
   lines.push(`${main.city}, ${main.state}`);
   return {
     ok: true,
-    value: { lines, postcode: main.zipCode, recipientFormat: INMATE_MAIL_PLACEHOLDER, sourceId },
+    value: {
+      lines,
+      postcode: main.zipCode,
+      recipientFormat: INMATE_MAIL_PLACEHOLDER,
+      ...(units.length ? { units } : {}),
+      sourceId,
+    },
     evidence: ["Parsed from the bop.gov facility page inmate-mail block (Addresses type 3).", ...notes].join(" "),
   };
 }
