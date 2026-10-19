@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { isHmppsGroupRegion, otherPrisonsInLabel, prisonsInLabel, regionDisplayLabel } from "@/lib/prisons/hmppsGroupLabel";
+import {
+  isHmppsGroupRegion,
+  otherPrisonsInLabel,
+  prisonsInLabel,
+  regionDisplayLabel,
+  ukGeographicRegionDisplayName,
+} from "@/lib/prisons/hmppsGroupLabel";
 import { getPrisonsByRegion } from "@/data/prisons";
 import {
   getRelatedArticlesForPrison,
@@ -209,7 +215,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             <p>
               {isHmppsGroupRegion(prison)
                 ? `${prison.city}, ${prison.country} · ${regionDisplayLabel(prison)}`
-                : `${prison.city}, ${prison.stateOrRegion}, ${prison.country}`}
+                : `${prison.city}, ${ukGeographicRegionDisplayName(prison)}, ${prison.country}`}
             </p>
           </div>
         </div>
