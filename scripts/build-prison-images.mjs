@@ -17,6 +17,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { prisonImageKeyForCell, readCrossCountrySlugs } from "./lib/prison-image-keys.mjs";
+import { serializePrisonImages, stabilizeImageRecord, stripImageTrackingParams } from "./lib/stable-prison-images.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -161,13 +162,7 @@ function commonsPageUrl(fileTitle) {
 
 /** @param {string} url */
 function stripTrackingParams(url) {
-  try {
-    const u = new URL(url);
-    u.search = "";
-    return u.toString();
-  } catch {
-    return url;
-  }
+  return stripImageTrackingParams(url);
 }
 
 function normalizeTitleKey(t) {
@@ -319,6 +314,10 @@ async function main() {
 
   /** @type {Record<string, Record<string, string>>} */
   const out = {};
+  /** @type {Record<string, Record<string, string>>} */
+  const existing = fs.existsSync(OUT_PATH) ? JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) : {};
+
+  rows.sort((a, b) => a.slug.localeCompare(b.slug) || a.fileTitle.localeCompare(b.fileTitle));
 
   const chunkSize = 8;
   for (let i = 0; i < rows.length; i += chunkSize) {
@@ -365,7 +364,7 @@ async function main() {
       const licenceUrl = meta.licence ? meta.licenceUrl : row.licenceUrl;
       if (licenceUrl) rec.licenceUrl = licenceUrl;
       if (row.caption) rec.caption = row.caption;
-      out[row.slug] = rec;
+      out[row.slug] = stabilizeImageRecord(rec, existing[row.slug]);
     }
 
     // Be polite between chunks — reduces 429 risk on local/full rebuilds.
@@ -373,7 +372,7 @@ async function main() {
   }
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
-  fs.writeFileSync(OUT_PATH, `${JSON.stringify(out, null, 2)}\n`, "utf8");
+  fs.writeFileSync(OUT_PATH, serializePrisonImages(out), "utf8");
   console.log(`Wrote ${Object.keys(out).length} entries to ${path.relative(ROOT, OUT_PATH)}`);
 }
 
