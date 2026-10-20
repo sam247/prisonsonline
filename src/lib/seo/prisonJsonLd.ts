@@ -2,6 +2,8 @@ import type { Prison } from "@/types/prison";
 import { getBaseUrl } from "@/lib/site";
 import { getFacilityVerification } from "@/data/facilitySources";
 import { hasPublishableCoordinates } from "@/lib/prisons/coordinates";
+import { citationsForFields } from "@/lib/verification/factProvenance";
+import type { FacilityFactField } from "@/types/facilitySource";
 
 /** Factual WebPage JSON-LD for prison profiles (no ratings or claims). */
 export function prisonProfileWebPageJsonLd(opts: {
@@ -97,6 +99,17 @@ export function prisonProfileJsonLdGraph(opts: { prison: Prison; path: string; d
       latitude: opts.prison.latitude,
       longitude: opts.prison.longitude,
     };
+  }
+
+  const citedFields: FacilityFactField[] = [];
+  if (building.telephone) citedFields.push("phone");
+  if (building.parentOrganization) citedFields.push("operator");
+  if (building.address && verification?.fieldSources.address?.length) citedFields.push("address");
+  const citations = citationsForFields(verification, citedFields);
+  if (citations.length > 0) {
+    building.citation = citations;
+    const dates = [...new Set(citations.map((citation) => citation.datePublished))];
+    if (dates.length === 1) building.dateModified = dates[0];
   }
 
   return {

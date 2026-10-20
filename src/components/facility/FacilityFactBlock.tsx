@@ -1,19 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { Children, useState } from "react";
 import { Check, Copy, ExternalLink, Mail, Phone } from "lucide-react";
 import type { Prison } from "@/types/prison";
 import type { FacilityVerificationRecord } from "@/types/facilitySource";
 import { sendGtagEvent } from "@/lib/analytics/gtag";
 import { Card, CardContent } from "@/components/ui/card";
 import { addressWithoutPostcode, joinAddressAndPostcode } from "@/lib/address";
+import { provenanceForField } from "@/lib/verification/factProvenance";
+import type { FacilityFactField } from "@/types/facilitySource";
+
+function FactProvenanceLine({ verification, field }: { verification?: FacilityVerificationRecord; field: FacilityFactField }) {
+  const provenance = provenanceForField(verification, field);
+  if (!provenance) return null;
+  return (
+    <span className="block text-xs text-muted-foreground mt-1" data-fact-provenance={field}>
+      Source: {provenance.name}. Checked {provenance.checkedAt}.
+    </span>
+  );
+}
 
 function FactRow({ label, children }: { label: string; children?: React.ReactNode }) {
-  if (!children) return null;
+  const items = Children.toArray(children).filter((child) => {
+    if (typeof child === "string") return child.trim().length > 0;
+    return child != null;
+  });
+  if (items.length === 0) return null;
   return (
     <div className="py-3 border-b border-border/50 last:border-b-0">
       <dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">{label}</dt>
-      <dd className="text-base text-foreground leading-relaxed">{children}</dd>
+      <dd className="text-base text-foreground leading-relaxed">{items}</dd>
     </div>
   );
 }
@@ -69,14 +85,19 @@ export function FacilityFactBlock({
                   </button>
                 </div>
               ) : undefined}
+              <FactProvenanceLine verification={verification} field="address" />
             </FactRow>
-            <FactRow label="Postcode">{postcode}</FactRow>
+            <FactRow label="Postcode">
+              {postcode}
+              <FactProvenanceLine verification={verification} field="postcode" />
+            </FactRow>
             <FactRow label="Telephone">
               {phone ? (
                 <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} className="text-accent hover:underline inline-flex items-center gap-2" onClick={() => sendGtagEvent("contact_action", { ...eventBase(prison, pageFamily), action_type: "telephone" })}>
                   <Phone className="h-4 w-4" /> {phone}
                 </a>
               ) : undefined}
+              <FactProvenanceLine verification={verification} field="phone" />
             </FactRow>
             <FactRow label="Email">
               {email ? (
@@ -84,9 +105,16 @@ export function FacilityFactBlock({
                   <Mail className="h-4 w-4" /> {email}
                 </a>
               ) : undefined}
+              <FactProvenanceLine verification={verification} field="email" />
             </FactRow>
-            <FactRow label="Operator">{operator}</FactRow>
-            <FactRow label="Category / type">{category}</FactRow>
+            <FactRow label="Operator">
+              {operator}
+              <FactProvenanceLine verification={verification} field="operator" />
+            </FactRow>
+            <FactRow label="Category / type">
+              {category}
+              <FactProvenanceLine verification={verification} field="category" />
+            </FactRow>
           </dl>
 
           {verification?.sources.length ? (
