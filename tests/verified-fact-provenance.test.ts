@@ -6,8 +6,12 @@ import { ContactVisitingBlock } from "@/components/facility/ContactVisitingBlock
 import { FacilityFactBlock } from "@/components/facility/FacilityFactBlock";
 import { getFacilityVerification } from "@/data/facilitySources";
 import { getPrisonByCountryAndSlug } from "@/data/prisons";
+import { canonicalUrl } from "@/lib/seo/canonical";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import { contactVisitingRows } from "@/lib/seo/prisonContactVisiting";
 import { prisonProfileJsonLdGraph } from "@/lib/seo/prisonJsonLd";
+import { formatPrisonProfileMetaDescription } from "@/lib/seo/prisonProfileMeta";
+import { buildPrisonPageTitle } from "@/lib/seo/prisonTitle";
 import { provenanceForField } from "@/lib/verification/factProvenance";
 
 (globalThis as { React?: typeof React }).React = React;
@@ -40,21 +44,23 @@ test("verified profile facts carry the same source and checked date in the page 
   };
   assert.equal(building.telephone, prison.phone);
   assert.ok(building.citation?.some((item) => item.url === phone.url && item.datePublished === phone.checkedAt && item.name === phone.name));
-  assert.equal(building.dateModified, phone.checkedAt);
+  assert.equal(building.dateModified, "2026-10-17");
 });
 
 test("contact rows show provenance only for verified blocks", () => {
   const wandsworth = getPrisonByCountryAndSlug("uk", "hmp-wandsworth");
   assert.ok(wandsworth);
   const rows = contactVisitingRows(wandsworth, getFacilityVerification("uk", "hmp-wandsworth"));
-  const bookingPhone = rows.find((row) => row.key === "visit-booking-phone");
-  assert.equal(bookingPhone?.provenance?.checkedAt, "2026-10-17");
-  assert.equal(bookingPhone?.provenance?.url, "https://www.gov.uk/guidance/wandsworth-prison");
+  const booking = rows.find((row) => row.key === "booking");
+  assert.equal(booking?.provenance?.checkedAt, "2026-10-17");
+  assert.equal(booking?.provenance?.url, "https://www.gov.uk/guidance/wandsworth-prison");
+  assert.equal(rows.find((row) => row.key === "visit-booking-phone")?.provenance, undefined);
   assert.equal(rows.find((row) => row.key === "send-money")?.provenance, undefined);
   assert.equal(rows.find((row) => row.key === "mailing-address")?.provenance?.checkedAt, "2026-10-17");
 
   const html = renderToStaticMarkup(React.createElement(ContactVisitingBlock, { rows }));
-  assert.match(html, /data-fact-provenance="visit-booking-phone"/);
+  assert.match(html, /data-fact-provenance="booking"/);
+  assert.doesNotMatch(html, /data-fact-provenance="visit-booking-phone"/);
   assert.match(html, /Checked 2026-10-17/);
   const sendStart = html.indexOf('data-row="send-money"');
   const sendMoney = html.slice(sendStart, html.indexOf("data-row=", sendStart + 20));
@@ -73,4 +79,31 @@ test("contact rows show provenance only for verified blocks", () => {
   assert.equal(ashBuilding.citation, undefined);
   assert.equal(ashBuilding.dateModified, undefined);
   assert.equal(ashBuilding.telephone, undefined);
+});
+
+test("visit booking provenance is on the first booking row, and dateModified includes that checked date", () => {
+  const preston = getPrisonByCountryAndSlug("uk", "hmp-preston");
+  assert.ok(preston);
+  const rows = contactVisitingRows(preston, getFacilityVerification("uk", "hmp-preston"));
+  assert.equal(rows.find((row) => row.key === "booking")?.provenance?.checkedAt, "2026-10-17");
+  assert.equal(rows.find((row) => row.key === "visit-booking-phone")?.provenance, undefined);
+  assert.equal(rows.find((row) => row.key === "visit-booking-email")?.provenance, undefined);
+
+  const graph = prisonProfileJsonLdGraph({
+    prison: preston,
+    path: "/prisons/uk/hmp-preston",
+    description: "Facility information",
+  });
+  const building = graph["@graph"][0] as { dateModified?: string };
+  assert.equal(building.dateModified, "2026-10-17");
+
+  const title = buildPrisonPageTitle(preston);
+  const description = formatPrisonProfileMetaDescription(preston);
+  const meta = buildPageMetadata({ title, description, path: "/prisons/uk/hmp-preston" });
+  assert.equal(title, "HMP Preston | Category B Prison");
+  assert.equal(meta.title, "HMP Preston | Category B Prison | Prisons Online");
+  assert.equal(meta.description, "HMP Preston is a Category B local prison for adult men in Preston, Cumbria & Lancashire. Operated by Public Sector Prison. Profile of this establishment.");
+  assert.equal(meta.alternates?.canonical, canonicalUrl("/prisons/uk/hmp-preston"));
+  assert.equal(canonicalUrl("/prisons/uk/hmp-preston"), "https://prisonsonline.com/prisons/uk/hmp-preston");
+  assert.equal(preston.name.trim(), "HMP Preston");
 });

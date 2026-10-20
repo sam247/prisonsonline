@@ -2,7 +2,8 @@ import type { Prison } from "@/types/prison";
 import { getBaseUrl } from "@/lib/site";
 import { getFacilityVerification } from "@/data/facilitySources";
 import { hasPublishableCoordinates } from "@/lib/prisons/coordinates";
-import { citationsForFields } from "@/lib/verification/factProvenance";
+import { contactVisitingRecord } from "@/lib/seo/prisonContactVisiting";
+import { citationsForFields, provenanceForField } from "@/lib/verification/factProvenance";
 import type { FacilityFactField } from "@/types/facilitySource";
 
 /** Factual WebPage JSON-LD for prison profiles (no ratings or claims). */
@@ -106,11 +107,12 @@ export function prisonProfileJsonLdGraph(opts: { prison: Prison; path: string; d
   if (building.parentOrganization) citedFields.push("operator");
   if (building.address && verification?.fieldSources.address?.length) citedFields.push("address");
   const citations = citationsForFields(verification, citedFields);
-  if (citations.length > 0) {
-    building.citation = citations;
-    const dates = Array.from(new Set(citations.map((citation) => citation.datePublished)));
-    if (dates.length === 1) building.dateModified = dates[0];
-  }
+  if (citations.length > 0) building.citation = citations;
+  const checkedDates = citations.map((citation) => citation.datePublished);
+  const bookingChecked = provenanceForField(contactVisitingRecord(opts.prison, verification), "visitBooking")?.checkedAt;
+  if (bookingChecked) checkedDates.push(bookingChecked);
+  const uniqueDates = Array.from(new Set(checkedDates)).sort();
+  if (uniqueDates.length > 0) building.dateModified = uniqueDates[uniqueDates.length - 1];
 
   return {
     "@context": "https://schema.org",

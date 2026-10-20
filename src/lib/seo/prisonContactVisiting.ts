@@ -212,22 +212,22 @@ export function contactVisitingRows(p: Prison, verificationIn?: FacilityVerifica
     rows.push(vb ? withFieldProvenance({ key: "booking", label: "Booking a visit", links: booking }, verification, "visitBooking") : { key: "booking", label: "Booking a visit", links: booking });
     if (vb?.phone && clean(vb.phone)) {
       const tel = clean(vb.phone);
-      rows.push(withFieldProvenance({
+      rows.push({
         key: "visit-booking-phone",
         label: "Visits booking line",
         text: tel,
         tel: tel.replace(/[^+\d]/g, ""),
         note: clean(vb.phoneHours) || undefined,
-      }, verification, "visitBooking"));
+      });
     }
     if (vb?.email && clean(vb.email)) {
-      rows.push(withFieldProvenance({
+      rows.push({
         key: "visit-booking-email",
         label: vb.emailEnquiriesOnly ? "Visits enquiries email" : "Visits booking email",
         text: clean(vb.email),
         mailto: clean(vb.email),
         note: vb.emailEnquiriesOnly ? "Enquiries only, not bookings" : undefined,
-      }, verification, "visitBooking"));
+      });
     }
     if (vb?.note && clean(vb.note)) {
       const last = rows[rows.length - 1];
