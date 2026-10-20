@@ -289,6 +289,17 @@ test("coverage batch 3 carries GOV.UK contact & visiting data (checked 2026-10-1
   const verne = getContactVisiting("uk", "hmp-the-verne")!.visitBooking!;
   assert.deepEqual(verne.methods, ["online"]);
   assert.equal(verne.email, undefined);
+  // GOV.UK republished these on 19 Oct 2026; re-checked 20 Oct 2026.
+  assert.equal(
+    getContactVisiting("uk", "hmp-yoi-hollesley-bay")!.visitBooking!.phoneHours,
+    "Tuesday to Thursday, 9am to midday and 1pm to 4pm",
+  );
+  assert.equal(getContactVisiting("uk", "hmp-warren-hill")!.visitBooking!.phoneHours, "Tuesday to Thursday, 9am to midday");
+  for (const slug of ["hmp-yoi-hollesley-bay", "hmp-warren-hill", "hmp-yoi-new-hall"]) {
+    const src = getContactVisiting("uk", slug)!.sources[0];
+    assert.equal(src.sourceModifiedAt, "2026-10-19");
+    assert.equal(src.checkedAt, "2026-10-20");
+  }
   for (const slug of ["hmp-lancaster-farms", "hmp-bure"]) {
     const b = getContactVisiting("uk", slug)!.visitBooking!;
     assert.equal(b.emailEnquiriesOnly, true);
