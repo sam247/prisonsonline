@@ -98,7 +98,8 @@ function synthesiseNarrative(name, p) {
   const overview =
     info ||
     `${name} is a prison establishment in England and Wales listed in official HMPPS administrative data.`;
-  const history = `Detailed historical narrative for ${name} is not part of the imported dataset. This profile reflects current listing fields (region, function, operator, and cohort) from HMPPS data.`;
+  // No sourced history is published. Leave this blank rather than describing the import.
+  const history = "";
   const cohort = p["Cohort of Prisoners Held"] || "";
   const fn = p["Predominant Function"] || "";
   const gender = p.Gender || "";
