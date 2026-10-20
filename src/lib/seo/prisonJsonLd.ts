@@ -108,7 +108,7 @@ export function prisonProfileJsonLdGraph(opts: { prison: Prison; path: string; d
   const citations = citationsForFields(verification, citedFields);
   if (citations.length > 0) {
     building.citation = citations;
-    const dates = [...new Set(citations.map((citation) => citation.datePublished))];
+    const dates = Array.from(new Set(citations.map((citation) => citation.datePublished)));
     if (dates.length === 1) building.dateModified = dates[0];
   }
 
