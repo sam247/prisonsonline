@@ -15,8 +15,7 @@ import type { FacilitySource, FacilityVerificationRecord } from "@/types/facilit
 
 export const CONTACT_VISITING_SOURCE_ID = "govuk-contact-visiting";
 const GOV = "GOV.UK — HM Prison and Probation Service";
-/** Re-opened against the GOV.UK Content API on 2026-10-20. Field values were unchanged. */
-const CHECKED_AT = "2026-10-20";
+const CHECKED_AT = "2026-10-17";
 
 export const GOVUK_PRISON_VISITS_URL = "https://www.gov.uk/prison-visits";
 export const EMAIL_A_PRISONER_URL = "https://www.emailaprisoner.com/";
@@ -75,7 +74,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prison number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-wandsworth", "wandsworth-prison", "2026-08-12", {
     postalAddress: {
       lines: ["HMP Wandsworth", "PO Box 757", "Heathfield Road", "Wandsworth", "London"],
@@ -95,7 +94,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-belmarsh", "belmarsh-prison", "2025-10-21", {
     visitBooking: {
       methods: ["online", "email", "phone"],
@@ -112,7 +111,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number (or date of birth) on the envelope. You must also write your own name and address on the back of the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-yoi-pentonville", "pentonville-prison", "2026-07-06", {
     visitBooking: {
       methods: ["online", "phone"],
@@ -127,7 +126,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-wormwood-scrubs", "wormwood-scrubs-prison", "2026-07-06", {
     postalAddress: {
       lines: ["HMP Wormwood Scrubs", "PO Box 757", "Du Cane Road", "London"],
@@ -147,7 +146,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-birmingham", "birmingham-prison", "2026-08-26", {
     visitBooking: {
       methods: ["phone", "email"],
@@ -162,7 +161,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the prisoners name and prison number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-manchester", "manchester-prison", "2026-06-02", {
     visitBooking: {
       methods: ["prisoner-led", "phone", "email"],
@@ -178,7 +177,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-leeds", "leeds-prison", "2026-07-01", {
     visitBooking: {
       methods: ["online", "phone"],
@@ -195,7 +194,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-liverpool", "liverpool-prison", "2025-12-02", {
     visitBooking: {
       methods: ["online", "phone"],
@@ -210,7 +209,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prison number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-durham", "durham-prison", "2026-07-31", {
     visitBooking: {
       methods: ["online", "phone"],
@@ -225,7 +224,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-wakefield", "wakefield-prison", "2026-02-04", {
     visitBooking: {
       methods: ["online", "phone"],
@@ -242,7 +241,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   // Coverage batch 1 (GOV.UK checked 2026-10-17), ordered by Bing impressions.
   govContact("hmp-hewell", "hewell-prison", "2026-08-12", {
     visitBooking: {

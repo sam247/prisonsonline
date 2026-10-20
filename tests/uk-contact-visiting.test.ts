@@ -134,6 +134,12 @@ test("HMP Preston carries the GOV.UK booking and contact routes, and no postalAd
   assert.equal(r.sources[0].checkedAt, "2026-10-20");
 });
 
+test("a record outside the 2026-10-20 recheck keeps 2026-10-17", () => {
+  const cardiff = getContactVisiting("uk", "hmp-cardiff");
+  assert.ok(cardiff);
+  assert.equal(cardiff.sources[0].checkedAt, "2026-10-17");
+});
+
 test("contact data is not wired into getFacilityVerification (display is Content Manager's)", () => {
   const base = getFacilityVerification("uk", "hmp-preston");
   assert.ok(base);
@@ -166,6 +172,7 @@ test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026
   for (const slug of slugs) {
     const r = getContactVisiting("uk", slug);
     assert.ok(r, `missing ${slug}`);
+    assert.equal(r.sources[0].checkedAt, "2026-10-20", slug);
     assert.ok(r.visitBooking, `${slug}: visitBooking`);
     assert.equal(r.prisonerContact?.emailAPrisonerUrl, EMAIL_A_PRISONER_URL);
     assert.equal(r.prisonerContact?.sendMoneyUrl, SEND_PRISONER_MONEY_URL);
