@@ -131,7 +131,7 @@ test("HMP Preston carries the GOV.UK booking and contact routes, and no postalAd
   assert.equal(r.prisonerContact?.sendMoneyUrl, "https://www.gov.uk/send-prisoner-money");
   assert.equal(r.prisonerContact?.postInstructions, "Include the person’s name and prison number on the envelope.");
   assert.equal(r.sources[0].url, "https://www.gov.uk/guidance/preston-prison");
-  assert.equal(r.sources[0].checkedAt, "2026-10-17");
+  assert.equal(r.sources[0].checkedAt, "2026-10-20");
 });
 
 test("contact data is not wired into getFacilityVerification (display is Content Manager's)", () => {
@@ -158,7 +158,7 @@ test("withContactVisiting merges blocks and provenance without dropping existing
   assert.equal(withContactVisiting("uk", "hmp-peterborough", noContact), noContact);
 });
 
-test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026-10-20)", () => {
   const slugs = [
     "hmp-preston", "hmp-wandsworth", "hmp-belmarsh", "hmp-yoi-pentonville", "hmp-wormwood-scrubs",
     "hmp-birmingham", "hmp-manchester", "hmp-leeds", "hmp-liverpool", "hmp-durham", "hmp-wakefield",

@@ -15,7 +15,8 @@ import type { FacilitySource, FacilityVerificationRecord } from "@/types/facilit
 
 export const CONTACT_VISITING_SOURCE_ID = "govuk-contact-visiting";
 const GOV = "GOV.UK — HM Prison and Probation Service";
-const CHECKED_AT = "2026-10-17";
+/** Re-opened against the GOV.UK Content API on 2026-10-20. Field values were unchanged. */
+const CHECKED_AT = "2026-10-20";
 
 export const GOVUK_PRISON_VISITS_URL = "https://www.gov.uk/prison-visits";
 export const EMAIL_A_PRISONER_URL = "https://www.emailaprisoner.com/";
