@@ -33,6 +33,8 @@ function govContact(
   guidanceSlug: string,
   sourceModifiedAt: string,
   blocks: Blocks,
+  /** Date this record's GOV.UK page was last re-opened, when later than the batch-wide CHECKED_AT. */
+  checkedAt: string = CHECKED_AT,
 ): ContactVisitingRecord {
   const fieldSources: FacilityVerificationRecord["fieldSources"] = {};
   if (blocks.postalAddress) fieldSources.postalAddress = [CONTACT_VISITING_SOURCE_ID];
@@ -46,7 +48,7 @@ function govContact(
         id: CONTACT_VISITING_SOURCE_ID,
         name: GOV,
         url: `https://www.gov.uk/guidance/${guidanceSlug}`,
-        checkedAt: CHECKED_AT,
+        checkedAt,
         sourceModifiedAt,
       },
     ],
@@ -288,7 +290,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       sourceId: S,
     },
   }),
-  govContact("hmp-berwyn", "berwyn-prison", "2026-09-03", {
+  govContact("hmp-berwyn", "berwyn-prison", "2026-10-19", {
     visitBooking: {
       methods: ["online", "phone"],
       url: GOVUK_PRISON_VISITS_URL,
@@ -302,7 +304,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-ranby", "ranby-prison", "2026-10-14", {
     visitBooking: {
       methods: ["online", "phone"],
@@ -1053,12 +1055,12 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       sourceId: S,
     },
   }),
-  govContact("hmp-yoi-hollesley-bay", "hollesley-bay-prison", "2026-05-29", {
+  govContact("hmp-yoi-hollesley-bay", "hollesley-bay-prison", "2026-10-19", {
     visitBooking: {
       methods: ["online", "phone", "email"],
       url: GOVUK_PRISON_VISITS_URL,
       phone: "0300 790 0658",
-      phoneHours: "Monday to Thursday, 9am to 12pm and 1pm to 4pm",
+      phoneHours: "Tuesday to Thursday, 9am to midday and 1pm to 4pm",
       email: "SocialVisits.HollesleyBay@justice.gov.uk",
       sourceId: S,
     },
@@ -1068,8 +1070,8 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
-  govContact("hmp-yoi-new-hall", "new-hall-prison", "2026-08-11", {
+  }, "2026-10-20"),
+  govContact("hmp-yoi-new-hall", "new-hall-prison", "2026-10-19", {
     visitBooking: {
       methods: ["online", "phone"],
       url: GOVUK_PRISON_VISITS_URL,
@@ -1083,7 +1085,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prison number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-bristol", "bristol-prison", "2026-08-01", {
     visitBooking: {
       methods: ["online", "phone"],
@@ -1279,12 +1281,12 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       sourceId: S,
     },
   }),
-  govContact("hmp-warren-hill", "warren-hill-prison", "2026-05-29", {
+  govContact("hmp-warren-hill", "warren-hill-prison", "2026-10-19", {
     visitBooking: {
       methods: ["online", "phone", "email"],
       url: GOVUK_PRISON_VISITS_URL,
       phone: "0300 790 0657",
-      phoneHours: "Monday to Thursday, 9am to midday",
+      phoneHours: "Tuesday to Thursday, 9am to midday",
       email: "socialvisits.warrenhill@justice.gov.uk",
       sourceId: S,
     },
@@ -1294,7 +1296,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-yoi-east-sutton-park", "east-sutton-park-prison", "2026-07-06", {
     visitBooking: {
       methods: ["online", "phone"],
