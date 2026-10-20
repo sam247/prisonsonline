@@ -234,6 +234,9 @@ test("coverage batch 1 carries GOV.UK contact & visiting data (checked 2026-10-1
   assert.deepEqual(getContactVisiting("uk", "hmp-kirkham")!.visitBooking!.methods, ["online", "prisoner-led"]);
   assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].url, "https://www.gov.uk/guidance/elmley-prison");
   assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].sourceModifiedAt, "2026-07-17");
+  // GOV.UK republished Berwyn on 19 Oct 2026 (values unchanged); re-checked 20 Oct 2026.
+  assert.equal(getContactVisiting("uk", "hmp-berwyn")!.sources[0].sourceModifiedAt, "2026-10-19");
+  assert.equal(getContactVisiting("uk", "hmp-berwyn")!.sources[0].checkedAt, "2026-10-20");
 });
 
 test("coverage batch 2 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
