@@ -33,6 +33,8 @@ function govContact(
   guidanceSlug: string,
   sourceModifiedAt: string,
   blocks: Blocks,
+  /** Date this record's GOV.UK page was last re-opened, when later than the batch-wide CHECKED_AT. */
+  checkedAt: string = CHECKED_AT,
 ): ContactVisitingRecord {
   const fieldSources: FacilityVerificationRecord["fieldSources"] = {};
   if (blocks.postalAddress) fieldSources.postalAddress = [CONTACT_VISITING_SOURCE_ID];
@@ -46,7 +48,7 @@ function govContact(
         id: CONTACT_VISITING_SOURCE_ID,
         name: GOV,
         url: `https://www.gov.uk/guidance/${guidanceSlug}`,
-        checkedAt: CHECKED_AT,
+        checkedAt,
         sourceModifiedAt,
       },
     ],
@@ -288,7 +290,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       sourceId: S,
     },
   }),
-  govContact("hmp-berwyn", "berwyn-prison", "2026-09-03", {
+  govContact("hmp-berwyn", "berwyn-prison", "2026-10-19", {
     visitBooking: {
       methods: ["online", "phone"],
       url: GOVUK_PRISON_VISITS_URL,
@@ -302,7 +304,7 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       postInstructions: "Include the person’s name and prisoner number on the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-ranby", "ranby-prison", "2026-10-14", {
     visitBooking: {
       methods: ["online", "phone"],
