@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "2026-10-17T20:38:59.329Z",
+  "updatedAt": "2026-10-20T10:24:50.340Z",
   "entries": {
     "united-states/adx-florence": {
       "prisonSlug": "adx-florence",
@@ -405,6 +405,908 @@ export const usVerificationOverlay: OverlayFile = {
         },
         "visitingRulesUrl": {
           "url": "https://www.bop.gov/locations/institutions/gua/gua_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/san-antonio-ccm": {
+      "prisonSlug": "san-antonio-ccm",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/ccm/csa",
+      "overrides": {
+        "email": "CSA-CCM-S@bop.gov"
+      }
+    },
+    "us/san-diego-mcc": {
+      "prisonSlug": "san-diego-mcc",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/sdc/",
+      "overrides": {
+        "email": "SDC-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/sdc/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/sdc/sdc_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/sandstone-fci": {
+      "prisonSlug": "sandstone-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/sst/",
+      "overrides": {
+        "email": "SST-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/sst/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Sandstone",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 1000",
+            "SANDSTONE, MN"
+          ],
+          "postcode": "55072",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/sst/sst_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/schuylkill-fci": {
+      "prisonSlug": "schuylkill-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/sch/",
+      "overrides": {
+        "email": "SCH-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/sch/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/sch/sch_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/seagoville-fci": {
+      "prisonSlug": "seagoville-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/sea/",
+      "overrides": {
+        "email": "SEA-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/sea/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/sea/sea_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/seatac-fdc": {
+      "prisonSlug": "seatac-fdc",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/set/",
+      "overrides": {
+        "email": "SET-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/set/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FDC SeaTac",
+            "FEDERAL DETENTION CENTER",
+            "P.O. BOX 13900",
+            "SEATTLE, WA"
+          ],
+          "postcode": "98198",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/set/set_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/seattle-ccm": {
+      "prisonSlug": "seattle-ccm",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/ccm/cse",
+      "overrides": {
+        "email": "CSE-CCM-S@bop.gov"
+      }
+    },
+    "us/sheridan-fci": {
+      "prisonSlug": "sheridan-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/she/",
+      "overrides": {
+        "email": "SHE-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/she/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/she/she_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/springfield-usmcfp": {
+      "prisonSlug": "springfield-usmcfp",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/spg/",
+      "overrides": {
+        "email": "SPG-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/spg/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "MCFP Springfield",
+            "FEDERAL MEDICAL CENTER",
+            "P.O. BOX 4000",
+            "SPRINGFIELD, MO"
+          ],
+          "postcode": "65801",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/spg/spg_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/st-louis-ccm": {
+      "prisonSlug": "st-louis-ccm",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/ccm/cst/",
+      "overrides": {
+        "email": "CST-CCM-S@bop.gov"
+      }
+    },
+    "us/talladega-fci": {
+      "prisonSlug": "talladega-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/tdg/",
+      "overrides": {
+        "email": "TDG-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/tdg/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/tdg/tdg_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/tallahassee-fci": {
+      "prisonSlug": "tallahassee-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/tal/",
+      "overrides": {
+        "email": "TAL-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/tal/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Tallahassee",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 5000",
+            "TALLAHASSEE, FL"
+          ],
+          "postcode": "32314",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/tal/tal_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/terre-haute-fci": {
+      "prisonSlug": "terre-haute-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/tha/",
+      "overrides": {
+        "email": "THA-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/tha/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/tha/tha_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/terre-haute-usp": {
+      "prisonSlug": "terre-haute-usp",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/thp/",
+      "overrides": {
+        "email": "THA-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/thp/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "USP Terre Haute",
+            "U.S. PENITENTIARY",
+            "P.O. BOX 33",
+            "TERRE HAUTE, IN"
+          ],
+          "postcode": "47808",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/thp/thp_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/texarkana-fci": {
+      "prisonSlug": "texarkana-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/tex/",
+      "overrides": {
+        "email": "TEX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/tex/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/tex/tex_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/thomson-fci": {
+      "prisonSlug": "thomson-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/tom/",
+      "overrides": {
+        "email": "TOM-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/tom/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/tom/tom_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/three-rivers-fci": {
+      "prisonSlug": "three-rivers-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/trv/",
+      "overrides": {
+        "email": "TRV-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/trv/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/trv/trv_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/tucson-fci": {
+      "prisonSlug": "tucson-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/tcn/",
+      "overrides": {
+        "email": "TCX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/tcn/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Tucson",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 23811",
+            "TUCSON, AZ"
+          ],
+          "postcode": "85734",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/tcn/tcn_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/tucson-usp": {
+      "prisonSlug": "tucson-usp",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/tcp/",
+      "overrides": {
+        "email": "TCX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/tcp/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/tcp/tcp_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/victorville-med-i-fci": {
+      "prisonSlug": "victorville-med-i-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/vim/",
+      "overrides": {
+        "email": "VIX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/vim/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Victorville Medium I",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 3725",
+            "ADELANTO, CA"
+          ],
+          "postcode": "92301",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/vim/vim_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/victorville-med-ii-fci": {
+      "prisonSlug": "victorville-med-ii-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/vvm/",
+      "overrides": {
+        "email": "VIX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/vvm/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Victorville Medium II",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "PO BOX 3850",
+            "ADELANTO, CA"
+          ],
+          "postcode": "92301",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/vvm/vvm_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/victorville-usp": {
+      "prisonSlug": "victorville-usp",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/vip/",
+      "overrides": {
+        "email": "VIX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/vip/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "USP Victorville",
+            "U.S. PENITENTIARY",
+            "P.O. BOX 3900",
+            "ADELANTO, CA"
+          ],
+          "postcode": "92301",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/waseca-fci": {
+      "prisonSlug": "waseca-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/was/",
+      "overrides": {
+        "email": "WAS-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/was/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Waseca",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 1731",
+            "WASECA, MN"
+          ],
+          "postcode": "56093",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/was/was-visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/williamsburg-fci": {
+      "prisonSlug": "williamsburg-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/wil/",
+      "overrides": {
+        "email": "WIL-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/wil/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/wil/wil_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/yankton-fpc": {
+      "prisonSlug": "yankton-fpc",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/yan/",
+      "overrides": {
+        "email": "YAN-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/yan/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FPC Yankton",
+            "FEDERAL PRISON CAMP",
+            "P.O. BOX 700",
+            "YANKTON, SD"
+          ],
+          "postcode": "57078",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/yan/yan_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/yazoo-city-low-fci": {
+      "prisonSlug": "yazoo-city-low-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/yaz/",
+      "overrides": {
+        "email": "YAZ-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/yaz/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/yaz/yaz_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/yazoo-city-low-ii-fci": {
+      "prisonSlug": "yazoo-city-low-ii-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/yam/",
+      "overrides": {
+        "email": "YAZ-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/yam/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Yazoo City Low II",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 5000",
+            "YAZOO CITY, MS"
+          ],
+          "postcode": "39194",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/yam/yam_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
+      }
+    },
+    "us/yazoo-city-med-fci": {
+      "prisonSlug": "yazoo-city-med-fci",
+      "countrySlug": "us",
+      "appliedAt": "2026-10-20T10:24:50.340Z",
+      "sourceUrl": "https://www.bop.gov/locations/institutions/yap/",
+      "overrides": {
+        "email": "YAZ-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/yap/",
+            "checkedAt": "2026-10-20"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Yazoo City Medium",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 5000",
+            "YAZOO CITY, MS"
+          ],
+          "postcode": "39194",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/yap/yap_visit.pdf",
           "sourceId": "bop-contact-visiting"
         }
       }
