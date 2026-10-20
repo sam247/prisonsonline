@@ -1372,10 +1372,10 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
     prisonerContact: {
       emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
       sendMoneyUrl: SEND_PRISONER_MONEY_URL,
-      postInstructions: "Include the person’s name and prison number on the envelope, under the address. Write your own name and address on the back of the envelope.",
+      postInstructions: "Include the person’s name and prison number on the envelope, under the address. If you do not know their prison number, contact Leicester. Write your own name and address on the back of the envelope.",
       sourceId: S,
     },
-  }),
+  }, "2026-10-20"),
   govContact("hmp-onley", "onley-prison", "2026-09-09", {
     visitBooking: {
       methods: ["online", "phone"],

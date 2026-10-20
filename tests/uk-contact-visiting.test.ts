@@ -338,6 +338,11 @@ test("coverage batch 4 carries GOV.UK contact & visiting data (checked 2026-10-1
     assert.equal(b.phone, undefined);
   }
   assert.deepEqual(getContactVisiting("uk", "hmp-leicester")!.visitBooking!.methods, ["prisoner-led", "online"]);
+  // Verbatim, contiguous GOV.UK Letters text (re-checked 20 Oct 2026; page last updated 26 Sep 2025).
+  assert.equal(
+    getContactVisiting("uk", "hmp-leicester")!.prisonerContact!.postInstructions,
+    "Include the person’s name and prison number on the envelope, under the address. If you do not know their prison number, contact Leicester. Write your own name and address on the back of the envelope.",
+  );
   assert.deepEqual(getContactVisiting("uk", "hmyoi-wetherby")!.visitBooking!.methods, ["phone"]);
   // Cookham Wood names EmailaPrisoner.com without linking it, so no emailAPrisonerUrl is stored.
   assert.equal(getContactVisiting("uk", "hmyoi-cookham-wood")!.prisonerContact!.emailAPrisonerUrl, undefined);
