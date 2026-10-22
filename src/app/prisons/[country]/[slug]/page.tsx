@@ -7,6 +7,7 @@ import { readMoreArticleForUsStateRegion } from "@/lib/programmatic/articles/rea
 import { US_FEDERAL_HUB_EYEBROW, US_FEDERAL_HUB_FOOTNOTE } from "@/lib/programmatic/hubCopy";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { formatPrisonProfileMetaDescription } from "@/lib/seo/prisonProfileMeta";
+import { UkPrisonFaqBreadcrumbJsonLd } from "@/lib/seo/ukPrisonFaqBreadcrumbJsonLd";
 import { buildPrisonPageTitle } from "@/lib/seo/prisonTitle";
 
 type Props = { params: { country: string; slug: string } };
@@ -50,10 +51,15 @@ export default function PrisonOrRegionPage({ params }: Props) {
   const resolved = resolveCountrySecondSegment(country, slug);
   if (resolved.kind === "not_found") notFound();
   if (resolved.kind === "prison") {
-    return resolved.prison.dataProvenance === "official_source" ? (
-      <IntlPrisonProfileView prison={resolved.prison} />
-    ) : (
-      <PrisonProfileView prison={resolved.prison} />
+    return (
+      <>
+        <UkPrisonFaqBreadcrumbJsonLd prison={resolved.prison} page="profile" />
+        {resolved.prison.dataProvenance === "official_source" ? (
+          <IntlPrisonProfileView prison={resolved.prison} />
+        ) : (
+          <PrisonProfileView prison={resolved.prison} />
+        )}
+      </>
     );
   }
   if (country === "us") {
