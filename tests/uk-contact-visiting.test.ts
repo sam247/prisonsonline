@@ -196,3 +196,30 @@ test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026
   }
   assert.match(getContactVisiting("uk", "hmp-belmarsh")!.prisonerContact!.postInstructions!, /or date of birth/);
 });
+
+test("coverage batch 5 leaves prisons with no GOV.UK booking or distinct postal address blank (checked 2026-10-22)", () => {
+  // Content API fetches on 2026-10-22. Each page either only links to the operator site,
+  // states a temporary closure, or repeats the canonical site address and switchboard.
+  const skipped = [
+    "hmp-ashfield",
+    "hmp-dartmoor",
+    "hmp-dovegate",
+    "hmp-forest-bank",
+    "hmp-northumberland",
+    "hmp-oakwood",
+    "hmp-peterborough",
+    "hmp-rye-hill",
+    "hmp-thameside",
+    "hmp-yoi-altcourse",
+    "hmp-yoi-bronzefield",
+    "hmp-yoi-doncaster",
+    "hmp-yoi-parc",
+    "oakhill-secure-training-centre",
+    "hmp-five-wells",
+  ];
+  assert.equal(skipped.length, 15);
+  for (const slug of skipped) {
+    assert.ok(ukPrisonsGenerated.some((p) => p.slug === slug), `unknown slug ${slug}`);
+    assert.equal(getContactVisiting("uk", slug), undefined, slug);
+  }
+});
