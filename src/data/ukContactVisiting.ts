@@ -240,6 +240,14 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       sourceId: S,
     },
   }),
+  // Coverage batch 5 (GOV.UK checked 2026-10-22): no records appended.
+  // The 15 directory prisons outside #87–#90 / #98 / #105 do not publish a visit-booking
+  // route, a justice.gov.uk contact email, a visits booking phone, or a postal address
+  // distinct from the site address. Operator websites are not a GOV.UK source.
+  // Skipped: hmp-ashfield, hmp-dartmoor, hmp-dovegate, hmp-forest-bank, hmp-northumberland,
+  // hmp-oakwood, hmp-peterborough, hmp-rye-hill, hmp-thameside, hmp-yoi-altcourse,
+  // hmp-yoi-bronzefield, hmp-yoi-doncaster, hmp-yoi-parc, oakhill-secure-training-centre,
+  // hmp-five-wells.
 ];
 
 const byKey = new Map(ukContactVisitingRecords.map((r) => [`${r.countrySlug}/${r.prisonSlug}`, r]));
