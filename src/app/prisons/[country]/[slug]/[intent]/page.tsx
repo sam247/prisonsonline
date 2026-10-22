@@ -9,7 +9,6 @@ import {
 } from "@/lib/seo/intentRollout";
 import { formatContactDetailsMetaDescription } from "@/lib/seo/prisonContactMeta";
 import { buildIntentMetaDescription, buildIntentPageTitle } from "@/lib/seo/prisonIntentCopy";
-import { UkPrisonFaqBreadcrumbJsonLd } from "@/lib/seo/ukPrisonFaqBreadcrumbJsonLd";
 
 type Props = { params: { country: string; slug: string; intent: string } };
 
@@ -42,10 +41,5 @@ export default function PrisonIntentPage({ params }: Props) {
   if (!isPrisonIntentSlug(intentParam)) notFound();
   const prison = getPrisonByCountryAndSlug(country, slug);
   if (!prison || !isIntentEnabledForPrison(prison, intentParam)) notFound();
-  return (
-    <>
-      <UkPrisonFaqBreadcrumbJsonLd prison={prison} page={intentParam} />
-      <PrisonIntentView prison={prison} intent={intentParam} />
-    </>
-  );
+  return <PrisonIntentView prison={prison} intent={intentParam} />;
 }
