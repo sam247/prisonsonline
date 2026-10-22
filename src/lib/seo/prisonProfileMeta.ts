@@ -1,36 +1,36 @@
 import type { Prison } from "@/types/prison";
+import { getFacilityVerification } from "@/data/facilitySources";
 import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
+import { contactVisitingRows } from "@/lib/seo/prisonContactVisiting";
 import {
   hasUkHmppsTypeFields,
+  ukCategoryLabel,
+  ukEstablishmentNoun,
   ukPrisonTypeLabel,
   withIndefiniteArticle,
 } from "@/lib/seo/ukPrisonTypeLabel";
 
 /**
  * Profile <meta name="description"> only.
- * JSON-LD keeps formatPrisonMetaDescription so this text cannot move
- * address, phone, or visit intent back onto the profile.
+ * JSON-LD keeps formatPrisonMetaDescription.
+ * The snippet may say that address, visiting or contact details are on the
+ * profile when that page renders them. It never prints a street, postcode or phone.
  */
 
-const PROFILE_INTENT =
-  /\b(address|addresses|phone|phones|telephone|telephones|postcode|postcodes|postal|contact|contacts|visit|visits|visiting|visitor|visitors)\b/i;
+const PLACEHOLDER_VISITING = [/^the import lists\b/i, /\bimport(?:ed)? (?:lists|dataset|listing)\b/i];
 
-const PADS = [
-  "Profile.",
-  "Directory profile.",
-  "Prison profile.",
-  "Directory profile page.",
-  "Prison directory profile.",
-  "Profile of this establishment.",
-  "Directory profile of this establishment.",
-  "Prison directory profile of this establishment.",
-  "Directory profile covering category and operator.",
-  "Prison directory profile covering category and operator.",
-  "Directory profile covering the recorded category and operator.",
-  "Prison directory profile covering the recorded category and operator.",
-  "Prison directory profile covering the recorded category, operator and the town.",
-  "As recorded.",
+const FILLERS = [
+  "From the published record.",
+  "Taken from the published record.",
+  "Published record for this establishment.",
+  "As published for this establishment.",
 ];
+
+export type PrisonProfileOnPageFacts = {
+  address: boolean;
+  visiting: boolean;
+  contact: boolean;
+};
 
 function clean(value: string | undefined | null): string {
   if (!value) return "";
@@ -40,6 +40,16 @@ function clean(value: string | undefined | null): string {
 
 function sentence(value: string): string {
   return value.replace(/\s+/g, " ").trim();
+}
+
+function sentenceCase(value: string): string {
+  return value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
+}
+
+function joinAnd(items: string[]): string {
+  if (items.length <= 1) return items.join("");
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
 }
 
 /** Same display names as the profile heading. */
@@ -104,8 +114,11 @@ function facilityNoun(label: string): string {
 
 function typeLabels(p: Prison): { full: string; short: string; securityOnly: string } {
   if (hasUkHmppsTypeFields(p)) {
-    const label = facilityNoun(ukPrisonTypeLabel(p));
-    return { full: label, short: label, securityOnly: "" };
+    const full = facilityNoun(ukPrisonTypeLabel(p));
+    const noun = facilityNoun(ukEstablishmentNoun(p));
+    const category = ukCategoryLabel(p);
+    const securityOnly = category ? facilityNoun(`${category} prison`) : "";
+    return { full, short: noun === full ? securityOnly : noun, securityOnly };
   }
   const adjective = securityAdjective(p);
   let base = "";
@@ -115,8 +128,9 @@ function typeLabels(p: Prison): { full: string; short: string; securityOnly: str
   } else {
     base = clean(p.type) || "prison";
   }
-  const short = facilityNoun(base);
-  const full = facilityNoun(adjective ? `${adjective} ${base}` : base);
+  const facilityBase = /\b(prison|jail|centre|center|institution|penitentiary|facility|camp|complex|gaol|museum|establishment|fci|usp|fpc|fdc)\b/i.test(base);
+  const short = facilityBase ? facilityNoun(base) : "prison";
+  const full = facilityNoun(adjective ? `${adjective} ${facilityBase ? base : "prison"}` : facilityBase ? base : "prison");
   const securityOnly = adjective ? facilityNoun(`${adjective} prison`) : "";
   return { full, short, securityOnly };
 }
@@ -139,14 +153,96 @@ function leaksRawRegion(p: Prison, text: string): boolean {
   return text.includes(raw);
 }
 
+function leaksContactValue(p: Prison, text: string): boolean {
+  const postcode = clean(p.postcode);
+  const phone = clean(p.phone);
+  if (postcode && text.includes(postcode)) return true;
+  if (phone && text.includes(phone)) return true;
+  const street = clean(p.address);
+  if (street && street.length >= 8 && text.includes(street)) return true;
+  return false;
+}
+
+function hasSpecificVisitingCopy(p: Prison): boolean {
+  const raw = (p.visitingInfo ?? "").trim();
+  if (!raw) return false;
+  return !PLACEHOLDER_VISITING.some((pattern) => pattern.test(raw));
+}
+
+/**
+ * What the rendered profile actually shows. Official-source pages list a street
+ * address when the record has one, and do not render visiting rules or a contact channel.
+ * UK and US profiles show the address and phone in the facility-details copy, and visiting
+ * content only when the contact block or a non-placeholder visiting note is on the page.
+ */
+export function prisonProfileOnPageFacts(p: Prison): PrisonProfileOnPageFacts {
+  if (p.dataProvenance === "official_source") {
+    return { address: Boolean(clean(p.address)), visiting: false, contact: false };
+  }
+  const keys = new Set(contactVisitingRows(p, getFacilityVerification(p.countrySlug, p.slug)).map((row) => row.key));
+  return {
+    address: Boolean(clean(p.address)) || Boolean(clean(p.postcode)) || keys.has("address") || keys.has("mailing-address"),
+    visiting:
+      keys.has("booking") ||
+      keys.has("visiting-hours") ||
+      keys.has("visiting-rules") ||
+      keys.has("visit-booking-phone") ||
+      keys.has("visit-booking-email") ||
+      hasSpecificVisitingCopy(p),
+    contact: Boolean(clean(p.phone)) || keys.has("phone") || keys.has("email"),
+  };
+}
+
+function matchesFacts(text: string, facts: PrisonProfileOnPageFacts): boolean {
+  return (
+    /\baddress\b/i.test(text) === facts.address &&
+    /\bvisiting\b/i.test(text) === facts.visiting &&
+    /\bcontact\b/i.test(text) === facts.contact
+  );
+}
+
+function infoClauses(facts: PrisonProfileOnPageFacts): string[] {
+  const specific: string[] = [];
+  if (facts.address) specific.push("address");
+  if (facts.visiting) specific.push("visiting information");
+  if (facts.contact) specific.push("contact details");
+  if (!specific.length) return [""];
+
+  const briefParts: string[] = [];
+  if (facts.address) briefParts.push("address");
+  if (facts.visiting) briefParts.push("visiting");
+  if (facts.contact) briefParts.push("contact");
+  const spec = joinAnd(specific);
+  const brief = joinAnd(briefParts);
+  const plural = specific.length > 1 || specific[0] === "contact details";
+  const verb = plural ? "are" : "is";
+  return [
+    `${sentenceCase(brief)}.`,
+    `${sentenceCase(brief)} info.`,
+    `${sentenceCase(brief)} details.`,
+    `${sentenceCase(brief)} details are listed.`,
+    `${sentenceCase(brief)} details are on this page.`,
+    `See the ${spec}.`,
+    `See the ${spec} here.`,
+    `See the ${spec} on this page.`,
+    `${sentenceCase(spec)} ${verb} on this page.`,
+    `This page lists the ${spec}.`,
+    `Open this page for the ${spec}.`,
+  ];
+}
+
+function alreadySaid(base: string, pad: string): boolean {
+  const token = pad.replace(/\.$/, "").toLowerCase();
+  return base.toLowerCase().includes(token);
+}
+
 function padToBand(text: string): string {
   let best = sentence(text);
   if (best.length > 160) return best;
   for (let pass = 0; pass < 2 && best.length < 150; pass++) {
     let nextBest = best;
-    for (const pad of PADS) {
-      const token = pad.replace(/\.$/, "").toLowerCase();
-      if (best.toLowerCase().includes(token)) continue;
+    for (const pad of FILLERS) {
+      if (alreadySaid(best, pad)) continue;
       const next = sentence(`${best} ${pad}`);
       if (next.length > 160) continue;
       const nextInBand = next.length >= 150;
@@ -175,36 +271,47 @@ function choose(candidates: string[], score: (value: string) => number[]): strin
 export function formatPrisonProfileMetaDescription(p: Prison): string {
   const name = profileName(p);
   const types = typeLabels(p);
-  const typeOptions = [types.full, types.securityOnly, types.short].filter(Boolean);
+  const typeOptions = [types.full, types.short, types.securityOnly, "prison"].filter(
+    (type, index, all): type is string => Boolean(type) && all.indexOf(type) === index,
+  );
   const city = clean(p.city);
   const region = readableGeographicRegion(p);
   const country = p.dataProvenance === "official_source" ? clean(p.country) : "";
   const operator = clean(p.operator);
+  const facts = prisonProfileOnPageFacts(p);
   const places = [
     placeLine([city, region, country]),
     placeLine([city, region]),
     placeLine([city, country]),
     placeLine([city]),
     placeLine([region, country]),
+    placeLine([region]),
     placeLine([country]),
     "",
   ].filter((place, index, all) => all.indexOf(place) === index);
+  const operators = operator ? ["", `Operated by ${operator}.`] : [""];
+  const clauses = infoClauses(facts);
 
   const cores: string[] = [];
-  for (const type of typeOptions.filter((type, index) => typeOptions.indexOf(type) === index)) {
+  for (const type of typeOptions) {
     for (const place of places) {
-      const lead = place
-        ? `${name} is ${articleFor(type)} in ${place}.`
-        : `${name} is ${articleFor(type)}.`;
-      cores.push(sentence(lead));
-      if (operator) cores.push(sentence(`${lead} Operated by ${operator}.`));
+      const lead = place ? `${name} is ${articleFor(type)} in ${place}.` : `${name} is ${articleFor(type)}.`;
+      for (const operatorSentence of operators) {
+        for (const clause of clauses) {
+          cores.push(sentence([lead, operatorSentence, clause].filter(Boolean).join(" ")));
+        }
+      }
     }
   }
 
+  const category = ukCategoryLabel(p);
+  const adjective = securityAdjective(p);
+  const keepsSecurity = (value: string) =>
+    (!category && !adjective) || Boolean((category && value.includes(category)) || (adjective && value.includes(adjective)));
   const usable = cores
-    .filter((value) => value.length <= 160 && !PROFILE_INTENT.test(value) && !leaksRawRegion(p, value))
+    .filter((value) => value.length <= 160 && matchesFacts(value, facts) && keepsSecurity(value) && !leaksRawRegion(p, value) && !leaksContactValue(p, value))
     .map((value) => padToBand(value))
-    .filter((value) => value.length <= 160 && !PROFILE_INTENT.test(value) && !leaksRawRegion(p, value));
+    .filter((value) => value.length <= 160 && matchesFacts(value, facts) && keepsSecurity(value) && !leaksRawRegion(p, value) && !leaksContactValue(p, value));
 
   if (!usable.length) {
     throw new Error(`No profile meta description for ${p.countrySlug}/${p.slug}`);
@@ -212,11 +319,14 @@ export function formatPrisonProfileMetaDescription(p: Prison): string {
 
   return choose(usable, (value) => {
     const inBand = value.length >= 150 && value.length <= 160 ? 1 : 0;
+    const onPage = /on this page/i.test(value) ? 1 : 0;
     const hasCity = mentionsPlace(value, city) ? 1 : 0;
+    const hasSecurity =
+      !category && !adjective ? 1 : (category && value.includes(category)) || (adjective && value.includes(adjective)) ? 1 : 0;
+    const hasFullType = types.full && value.includes(types.full) ? 1 : 0;
     const hasOperator = operator && value.includes(operator) ? 1 : 0;
     const hasRegion = mentionsPlace(value, region) ? 1 : 0;
     const hasCountry = mentionsPlace(value, country) ? 1 : 0;
-    const hasFullType = types.full && value.includes(types.full) ? 1 : 0;
-    return [inBand, hasCity, hasOperator, hasRegion, hasCountry, hasFullType, value.length];
+    return [inBand, onPage, hasCity, hasSecurity, hasFullType, hasOperator, hasRegion, hasCountry, value.length];
   });
 }
