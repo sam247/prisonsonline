@@ -1,6 +1,6 @@
 import { getBaseUrl, siteName } from "@/lib/site";
 
-/** Public editorial and sourcing policy. Linked from the footer and Organization JSON-LD. */
+/** Public editorial and sourcing policy. Linked from the About page and Organization JSON-LD. */
 export const EDITORIAL_POLICY_PATH = "/editorial-policy";
 
 /**

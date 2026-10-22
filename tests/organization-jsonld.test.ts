@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { articleJsonLd } from "@/lib/seo/articleJsonLd";
 import { EDITORIAL_POLICY_PATH, organizationJsonLd } from "@/lib/seo/organizationJsonLd";
 
 test("site-wide Organization JSON-LD points at the editorial policy and names no person", () => {
@@ -29,10 +30,23 @@ test("root layout emits the Organization JSON-LD script", () => {
   assert.match(layout, /application\/ld\+json/);
 });
 
-test("footer links to the editorial policy", () => {
+test("footer does not link to the editorial policy", () => {
   const footer = readFileSync(new URL("../src/components/layout/Footer.tsx", import.meta.url), "utf8");
-  assert.match(footer, /Editorial policy/);
-  assert.match(footer, new RegExp(`href: EDITORIAL_POLICY_PATH|href: "${EDITORIAL_POLICY_PATH}"`));
+  assert.doesNotMatch(footer, /Editorial policy/);
+  assert.doesNotMatch(footer, /EDITORIAL_POLICY_PATH/);
+});
+
+test("article publisher Organization @id matches the site Organization node", () => {
+  const data = articleJsonLd({
+    headline: "Example",
+    description: "Example article",
+    path: "/articles/example",
+    datePublished: "2026-10-22",
+  });
+  const publisher = data.publisher as { "@id": string; "@type": string };
+  assert.equal(publisher["@type"], "Organization");
+  assert.equal(publisher["@id"], "https://prisonsonline.com/#organization");
+  assert.equal(publisher["@id"], organizationJsonLd()["@id"]);
 });
 
 test("editorial policy page describes GOV.UK, HMPPS, and bop.gov checks with checked dates", () => {

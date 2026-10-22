@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { TrackedInlineLink } from "@/components/analytics/TrackedInlineLink";
-import { EDITORIAL_POLICY_PATH } from "@/lib/seo/organizationJsonLd";
 import { ConsentDialogLink } from "c15t/next";
 
 const footerLinks = [
@@ -27,7 +26,6 @@ const footerLinks = [
     title: "About",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Editorial policy", href: EDITORIAL_POLICY_PATH },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Cookie Policy", href: "/cookies" },
       { label: "Terms", href: "/terms" },
