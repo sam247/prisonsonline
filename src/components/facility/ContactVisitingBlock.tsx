@@ -54,6 +54,11 @@ export function ContactVisitingBlock({ rows }: { rows: ContactRow[] }) {
                     </span>
                   ) : null}
                   {row.note ? <span className="block text-xs text-muted-foreground mt-0.5">{row.note}</span> : null}
+                  {row.provenance ? (
+                    <span className="block text-xs text-muted-foreground mt-1" data-fact-provenance={row.key}>
+                      Source: {row.provenance.name}. Checked {row.provenance.checkedAt}.
+                    </span>
+                  ) : null}
                   {row.links && row.links.length > 0 ? (
                     <ul className="space-y-1">
                       {row.links.map((l) => (

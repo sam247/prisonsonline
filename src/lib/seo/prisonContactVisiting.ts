@@ -1,11 +1,12 @@
 import { getGuide } from "@/data/guides";
-import type { FacilityVerificationRecord } from "@/types/facilitySource";
+import type { FacilityFactField, FacilityVerificationRecord } from "@/types/facilitySource";
 import type { Prison } from "@/types/prison";
 import { joinAddressAndPostcode } from "@/lib/address";
 import { intentHref } from "@/lib/seo/prisonIntentCopy";
 import { isIntentEnabledForPrison } from "@/lib/seo/intentRollout";
 import { withContactVisiting } from "@/data/ukContactVisiting";
 import { withUsContactVisiting } from "@/data/usContactVisiting";
+import { provenanceForField, type FactProvenance } from "@/lib/verification/factProvenance";
 
 /**
  * "Contacting and visiting" block on UK and US (BOP) prison profiles (2026-10-17).
@@ -58,6 +59,8 @@ export type ContactRow = {
   tel?: string;
   mailto?: string;
   links?: ContactLink[];
+  /** Set only when this row's value comes from a verified field source. */
+  provenance?: FactProvenance;
 };
 
 function clean(v?: string | null): string {
@@ -155,12 +158,21 @@ function isHttpsUrl(v?: string): v is string {
   }
 }
 
+function withFieldProvenance(row: ContactRow, record: FacilityVerificationRecord | undefined, field: FacilityFactField): ContactRow {
+  const provenance = provenanceForField(record, field);
+  return provenance ? { ...row, provenance } : row;
+}
+
 function mailingAddressRow(record: FacilityVerificationRecord | undefined, uk: boolean): ContactRow | undefined {
   const pa = verifiedBlock(record, "postalAddress");
   if (!pa) return undefined;
   const lines = [...(pa.recipientFormat ? [clean(pa.recipientFormat)] : []), ...pa.lines.map(clean), clean(pa.postcode)].filter(Boolean);
   if (lines.length === 0) return undefined;
-  return { key: "mailing-address", label: uk ? "Postal address for letters" : "Inmate mail address", lines };
+  return withFieldProvenance(
+    { key: "mailing-address", label: uk ? "Postal address for letters" : "Inmate mail address", lines },
+    record,
+    "postalAddress",
+  );
 }
 
 export function contactVisitingRows(p: Prison, verificationIn?: FacilityVerificationRecord): ContactRow[] {
@@ -171,14 +183,16 @@ export function contactVisitingRows(p: Prison, verificationIn?: FacilityVerifica
   const bopInst = isBopInstitution(p);
 
   const address = displayAddress(p);
-  if (address) rows.push({ key: "address", label: "Address", text: address });
+  if (address) rows.push(withFieldProvenance({ key: "address", label: "Address", text: address }, verification, "address"));
 
   const phone = clean(p.phone);
-  if (phone) rows.push({ key: "phone", label: "Phone", text: phone, tel: phone.replace(/[^+\d]/g, "") });
+  if (phone) {
+    rows.push(withFieldProvenance({ key: "phone", label: "Phone", text: phone, tel: phone.replace(/[^+\d]/g, "") }, verification, "phone"));
+  }
 
   const email = clean(verification?.overrides?.email);
   if (email && verification?.fieldSources?.email?.length) {
-    rows.push({ key: "email", label: "Email", text: email, mailto: email });
+    rows.push(withFieldProvenance({ key: "email", label: "Email", text: email, mailto: email }, verification, "email"));
   }
 
   if (uk) {
@@ -195,7 +209,7 @@ export function contactVisitingRows(p: Prison, verificationIn?: FacilityVerifica
       booking.push({ href: intentHref(p.countrySlug, p.slug, "booking-a-visit"), label: `${p.name} booking a visit`, kind: "internal" });
     }
     booking.push(...guideLink("how-prison-visits-work", "How prison visits work"));
-    rows.push({ key: "booking", label: "Booking a visit", links: booking });
+    rows.push(vb ? withFieldProvenance({ key: "booking", label: "Booking a visit", links: booking }, verification, "visitBooking") : { key: "booking", label: "Booking a visit", links: booking });
     if (vb?.phone && clean(vb.phone)) {
       const tel = clean(vb.phone);
       rows.push({
@@ -228,7 +242,7 @@ export function contactVisitingRows(p: Prison, verificationIn?: FacilityVerifica
     const mailing = mailingAddressRow(verification, true);
     if (mailing) rows.push(mailing);
     const pc = verifiedBlock(verification, "prisonerContact");
-    rows.push({
+    const postRow: ContactRow = {
       key: "post",
       label: "Post and letters",
       ...(pc?.postInstructions && clean(pc.postInstructions) ? { text: clean(pc.postInstructions) } : {}),
@@ -236,7 +250,8 @@ export function contactVisitingRows(p: Prison, verificationIn?: FacilityVerifica
         ...guideLink("how-to-find-a-uk-prison-address", "How to address a letter to a UK prison"),
         ...guideLink("can-you-send-pictures-in-prison-letters", "Can you send pictures in prison letters?"),
       ],
-    });
+    };
+    rows.push(postRow.text ? withFieldProvenance(postRow, verification, "prisonerContact") : postRow);
     rows.push({
       key: "email-a-prisoner",
       label: "Email a prisoner",
@@ -258,16 +273,16 @@ export function contactVisitingRows(p: Prison, verificationIn?: FacilityVerifica
       links: [{ href: OFFICIAL_URLS.bopVisiting, label: "How to visit a federal inmate (bop.gov)", kind: "official" }],
     });
     if (rules && isHttpsUrl(rules.url)) {
-      rows.push({
+      rows.push(withFieldProvenance({
         key: "visiting-rules",
         label: "Visiting rules",
         links: [{ href: rules.url, label: `${p.name} visiting rules (official)`, kind: "official" }],
-      });
+      }, verification, "visitingRulesUrl"));
     }
     const hours = verifiedBlock(verification, "visitingHours");
     const schedule = (hours?.schedule ?? []).map(clean).filter(Boolean);
     if (schedule.length > 0) {
-      rows.push({ key: "visiting-hours", label: "Visiting hours", lines: schedule, note: clean(hours?.note) || undefined });
+      rows.push(withFieldProvenance({ key: "visiting-hours", label: "Visiting hours", lines: schedule, note: clean(hours?.note) || undefined }, verification, "visitingHours"));
     }
     const mailing = mailingAddressRow(verification, false);
     if (mailing) rows.push(mailing);

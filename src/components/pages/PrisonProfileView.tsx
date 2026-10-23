@@ -54,6 +54,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AdSenseUnit } from "@/components/ads/AdSenseUnit";
 import { slotForTemplate } from "@/lib/ads/layoutPolicy";
 import { hasPublishableCoordinates } from "@/lib/prisons/coordinates";
+import { provenanceForField, type FactProvenance } from "@/lib/verification/factProvenance";
 import { MapPin, ChevronRight, BookOpen, FileText } from "lucide-react";
 import type { Prison } from "@/types/prison";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
@@ -110,13 +111,20 @@ function formatPrisonMetaDescription(p: Prison): string {
 
 export { formatPrisonMetaDescription };
 
-function GlanceRow({ label, value }: { label: string; value?: string | null }) {
+function GlanceRow({ label, value, provenance }: { label: string; value?: string | null; provenance?: FactProvenance }) {
   const v = value?.trim();
   if (!v || /^none$/i.test(v)) return null;
   return (
     <div className="grid grid-cols-1 sm:grid-cols-[minmax(9rem,34%)_1fr] gap-x-4 gap-y-0.5 py-2.5 border-b border-border/50 last:border-b-0">
       <dt className="text-xs font-medium text-muted-foreground pt-0.5">{label}</dt>
-      <dd className="text-sm text-foreground leading-snug">{v}</dd>
+      <dd className="text-sm text-foreground leading-snug">
+        {v}
+        {provenance ? (
+          <span className="block text-xs text-muted-foreground mt-1" data-fact-provenance={label}>
+            Source: {provenance.name}. Checked {provenance.checkedAt}.
+          </span>
+        ) : null}
+      </dd>
     </div>
   );
 }
@@ -132,7 +140,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
 
   const hasCoords = hasPublishableCoordinates(prison.latitude, prison.longitude);
   const visitingGuides = getVisitingGuidesForPrison();
-  const contactRows = contactVisitingRows(prison, getFacilityVerification(prison.countrySlug, prison.slug));
+  const verification = getFacilityVerification(prison.countrySlug, prison.slug);
+  const contactRows = contactVisitingRows(prison, verification);
   const prisonTypeBody = buildPrisonTypeBody(prison);
   const thematicHubs = listMatchingCollectionHubsForPrison(prison);
   const operatorHub = ukOperatorHubHref(prison);
@@ -326,8 +335,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               <Card className="border-border/60">
                 <CardContent className="p-5 sm:p-6">
                   <dl>
-                    <GlanceRow label="Security / category" value={prison.securityLevel} />
-                    <GlanceRow label="Operator" value={prison.operator} />
+                    <GlanceRow label="Security / category" value={prison.securityLevel} provenance={provenanceForField(verification, "category")} />
+                    <GlanceRow label="Operator" value={prison.operator} provenance={provenanceForField(verification, "operator")} />
                     <GlanceRow
                       label="Capacity"
                       value={prison.capacity > 0 ? prison.capacity.toLocaleString() : "Not listed"}
