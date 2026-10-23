@@ -60,6 +60,21 @@ export interface PostalAddress {
    * (US BOP inmate mail: "INMATE NAME & REGISTER NUMBER"). Not part of lines.
    */
   recipientFormat?: string;
+  /**
+   * Additional per-unit postal addresses the official source publishes alongside this one
+   * (US BOP complexes: e.g. "Camp" satellite camp, "FSL" federal satellite low). Additive; omitted when none.
+   */
+  units?: PostalAddressUnit[];
+  sourceId: string;
+}
+
+/** One per-unit postal address inside a PostalAddress block. Same lines/postcode/sourceId pattern. */
+export interface PostalAddressUnit {
+  /** Unit label as the official source names it (e.g. "Camp", "FSL"). */
+  label: string;
+  /** Address lines exactly as the official source lists them for this unit, excluding the postcode. */
+  lines: string[];
+  postcode: string;
   sourceId: string;
 }
 
