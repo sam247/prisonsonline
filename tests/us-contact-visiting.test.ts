@@ -49,12 +49,58 @@ test("BOP mail: Atlanta FCI inmate address parses SAFE into PostalAddress (#77 s
   assert.match(out.evidence, /Camp mail row ignored/);
 });
 
-test("BOP mail: a declared per-unit (camp/FSL) address cannot fit one PostalAddress, so REVIEW_REQUIRED", () => {
+test("BOP mail: a declared camp address goes in PostalAddress.units (same sourceId pattern)", () => {
   const raw = json("phyloc_ATL.json");
   (raw.Locations as Array<Record<string, unknown>>)[0].hasCamp = true;
   const out = parseBopPostalAddress(parseBopPhyloc(raw, "ATL")!, "ATL", SID);
-  assert.equal(out.ok, false);
-  if (!out.ok) assert.equal(out.classification, "REVIEW_REQUIRED");
+  assert.equal(out.ok, true);
+  if (!out.ok) return;
+  assert.deepEqual(out.value.units, [
+    {
+      label: "Camp",
+      lines: ["FCI Atlanta", "FEDERAL CORRECTIONAL INSTITUTION", "SATELLITE CAMP", "P.O. BOX 150160", "ATLANTA, GA"],
+      postcode: "30315",
+      sourceId: SID,
+    },
+  ]);
+  assert.deepEqual(out.value.lines, ["FCI Atlanta", "FEDERAL CORRECTIONAL INSTITUTION", "P.O. BOX 150160", "ATLANTA, GA"]);
+});
+
+test("BOP mail: camp + FSL units in bop.gov page order; undeclared units are not guessed", () => {
+  const raw = json("phyloc_ATL.json");
+  const loc = (raw.Locations as Array<Record<string, unknown>>)[0];
+  loc.hasCamp = true;
+  loc.hasFsl = true;
+  const camp = (raw.Addresses as Array<Record<string, unknown>>).find((a) => a.addressType === "6")!;
+  (raw.Addresses as unknown[]).push({ ...camp, addressType: "9", addressTypeName: "Inmate Mail/Parcels - FSL", street: "P.O. BOX 150170", zipCode: "30316" });
+  const out = parseBopPostalAddress(parseBopPhyloc(raw, "ATL")!, "ATL", SID);
+  assert.equal(out.ok, true);
+  if (!out.ok) return;
+  assert.deepEqual(out.value.units?.map((u) => [u.label, u.lines[2], u.lines[3], u.postcode]), [
+    ["Camp", "SATELLITE CAMP", "P.O. BOX 150160", "30315"],
+    ["FSL", "FEDERAL SATELLITE LOW", "P.O. BOX 150170", "30316"],
+  ]);
+  for (const u of out.value.units ?? []) assert.equal(u.lines.some((l) => /\b\d{5}\b/.test(l)), false, "ZIP belongs in postcode");
+  // Real Atlanta feed today: camp row but hasCamp=false -> no units at all.
+  const real = parseBopPostalAddress(parseBopPhyloc(json("phyloc_ATL.json"), "ATL")!, "ATL", SID);
+  assert.equal(real.ok && real.value.units, undefined);
+});
+
+test("BOP mail: duplicated or invalid unit rows make the whole block REVIEW_REQUIRED", () => {
+  const raw = json("phyloc_ATL.json");
+  (raw.Locations as Array<Record<string, unknown>>)[0].hasCamp = true;
+  const camp = (raw.Addresses as Array<Record<string, unknown>>).find((a) => a.addressType === "6")!;
+  const dup = { ...raw, Addresses: [...(raw.Addresses as unknown[]), { ...camp, street: "PO BOX 9" }] };
+  const outDup = parseBopPostalAddress(parseBopPhyloc(dup, "ATL")!, "ATL", SID);
+  assert.equal(outDup.ok, false);
+  if (!outDup.ok) assert.equal(outDup.classification, "REVIEW_REQUIRED");
+  const bad = {
+    ...raw,
+    Addresses: (raw.Addresses as Array<Record<string, unknown>>).map((a) => (a.addressType === "6" ? { ...a, zipCode: "3031" } : a)),
+  };
+  const outBad = parseBopPostalAddress(parseBopPhyloc(bad, "ATL")!, "ATL", SID);
+  assert.equal(outBad.ok, false);
+  if (!outBad.ok) assert.equal(outBad.classification, "REVIEW_REQUIRED");
 });
 
 test("BOP mail: Guaynabo MDC uses BOP state code RQ, so it is REVIEW_REQUIRED, not rewritten", () => {
@@ -417,6 +463,7 @@ test("Content Manager API: getUsContactVisiting / withUsContactVisiting follow #
         continue;
       }
       assert.ok(ids.has(block.sourceId), `${key}.${field}`);
+      if (field === "postalAddress") for (const u of r.postalAddress?.units ?? []) assert.ok(ids.has(u.sourceId), `${key}.unit`);
       for (const id of r.fieldSources[field]!) assert.ok(ids.has(id));
     }
     const base = getFacilityVerification(countrySlug, prisonSlug);

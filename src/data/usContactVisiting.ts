@@ -36,6 +36,7 @@ export function getUsContactVisiting(countrySlug: string, prisonSlug: string): U
     record.fieldSources[field] = cv.fieldSources[field] ?? [block.sourceId];
     for (const id of record.fieldSources[field]!) ids.add(id);
     ids.add(block.sourceId);
+    if (field === "postalAddress") for (const unit of cv.postalAddress?.units ?? []) ids.add(unit.sourceId);
   }
   record.sources = cv.sources.filter((source) => ids.has(source.id));
   return record;
