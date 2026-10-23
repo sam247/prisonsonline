@@ -102,6 +102,8 @@ test("postalAddress is only stored when it differs from the canonical site addre
     const pa = r.postalAddress;
     if (!pa) continue;
     assert.ok(pa.lines.length > 0);
+    // A recipient-format mailing block (US Verifier pattern) is a mailing instruction, not a duplicate site address.
+    if ((pa as { recipientFormat?: unknown }).recipientFormat) continue;
     assert.match(pa.postcode, UK_POSTCODE);
     assert.equal(pa.lines.some((l) => UK_POSTCODE.test(l)), false, "postcode belongs in postcode, not lines");
     const site = ukPrisonsGenerated.find((p) => p.slug === r.prisonSlug)!;
@@ -145,9 +147,11 @@ test("withContactVisiting merges blocks and provenance without dropping existing
   assert.deepEqual(merged.fieldSources.visitBooking, [CONTACT_VISITING_SOURCE_ID]);
   assert.equal(merged.fieldSources.phone, base.fieldSources.phone);
   assert.ok(merged.visitBooking && merged.prisonerContact);
-  assert.equal(withContactVisiting("uk", "hmp-gartree", undefined), undefined);
-  const noContact = getFacilityVerification("uk", "hmp-gartree");
-  assert.equal(withContactVisiting("uk", "hmp-gartree", noContact), noContact);
+  // HMP Peterborough is operator-run: its GOV.UK page only links out, so it carries no GOV.UK contact data.
+  assert.equal(getContactVisiting("uk", "hmp-peterborough"), undefined);
+  assert.equal(withContactVisiting("uk", "hmp-peterborough", undefined), undefined);
+  const noContact = getFacilityVerification("uk", "hmp-peterborough");
+  assert.equal(withContactVisiting("uk", "hmp-peterborough", noContact), noContact);
 });
 
 test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026-10-17)", () => {
@@ -195,4 +199,42 @@ test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026
     assert.equal(b.methods.includes("email"), false);
   }
   assert.match(getContactVisiting("uk", "hmp-belmarsh")!.prisonerContact!.postInstructions!, /or date of birth/);
+});
+
+test("coverage batch 1 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-hewell", "hmp-elmley", "hmp-nottingham", "hmp-berwyn", "hmp-ranby", "hmp-bullingdon", "hmp-coldingley",
+    "hmp-erlestoke", "hmp-garth", "hmp-humber", "hmp-gartree", "hmp-kirkham", "hmp-channings-wood", "hmp-bedford",
+    "hmp-morton-hall", "hmp-yoi-stoke-heath", "hmp-guys-marsh", "hmp-yoi-rochester", "hmp-highpoint",
+    "hmp-long-lartin", "hmp-huntercombe", "hmp-grendon", "hmp-wymott", "hmp-isle-of-wight",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  // Bullingdon's only GOV.UK address is the PO Box already used as its site address, so no postalAddress.
+  assert.equal(ukPrisonsGenerated.find((p) => p.slug === "hmp-bullingdon")!.postcode, "OX25 1PZ");
+  assert.deepEqual(getContactVisiting("uk", "hmp-hewell")!.visitBooking, {
+    methods: ["online", "phone"],
+    url: GOVUK_PRISON_VISITS_URL,
+    phone: "0300 060 6503",
+    phoneHours: "Monday to Friday, 9am to 3pm",
+    email: "Visits.HMPHewell@justice.gov.uk",
+    emailEnquiriesOnly: true,
+    sourceId: CONTACT_VISITING_SOURCE_ID,
+  });
+  const longLartin = getContactVisiting("uk", "hmp-long-lartin")!.visitBooking!;
+  assert.deepEqual(longLartin.methods, ["phone", "email"]);
+  assert.equal(longLartin.url, undefined);
+  assert.deepEqual(getContactVisiting("uk", "hmp-isle-of-wight")!.visitBooking!.methods, ["phone"]);
+  assert.ok(getContactVisiting("uk", "hmp-gartree")!.visitBooking!.methods.includes("prisoner-led"));
+  assert.deepEqual(getContactVisiting("uk", "hmp-kirkham")!.visitBooking!.methods, ["online", "prisoner-led"]);
+  assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].url, "https://www.gov.uk/guidance/elmley-prison");
+  assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].sourceModifiedAt, "2026-07-17");
+  // GOV.UK republished Berwyn on 19 Oct 2026 (values unchanged); re-checked 20 Oct 2026.
+  assert.equal(getContactVisiting("uk", "hmp-berwyn")!.sources[0].sourceModifiedAt, "2026-10-19");
+  assert.equal(getContactVisiting("uk", "hmp-berwyn")!.sources[0].checkedAt, "2026-10-20");
 });
