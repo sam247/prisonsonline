@@ -473,6 +473,52 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    title: "How to Email a Prisoner",
+    slug: "how-to-email-a-prisoner",
+    excerpt:
+      "Email someone in prison in England and Wales through Email a Prisoner (now eMates): what you need, delivery times, replies, photos and costs, plus how US federal TRULINCS messaging works.",
+    icon: "Mail",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for emailing someone in prison — not a photograph of a facility.",
+    },
+    content:
+      "You cannot send an ordinary email to someone in prison. In England and Wales, prisons that offer email use the Email a Prisoner service, which now trades as eMates and is run by Unilink Software Ltd. You open an account on its website, add the person’s name, prisoner number and prison, buy credit and write your message. Prison staff check it before it is printed out or shown on a wing kiosk or in-cell device. US federal prisons work differently: messages go through the Bureau of Prisons’ TRULINCS system, and the person in custody has to add you first. Prisons Online is not connected to either service and cannot send messages or sign you in.\n\n## Where to sign in to Email a Prisoner\n\nHTML:Sign-up and sign-in are on <a href=\"https://www.emailaprisoner.com/\" rel=\"noopener noreferrer\">emailaprisoner.com</a>, which is branded eMates. GOV.UK prison pages link to the same service when they say you can send emails to someone at that prison. If a login page looks unfamiliar, type that address in directly rather than following a search advert or a forum link.\n\n## What you need before you start\n\n- **The person’s full name**, as the prison holds it.\n- **Their prisoner number.** eMates suggests earlier letters, money receipts, a legal representative or the person themselves.\n- **The prison they are in.** eMates does not hold location information, so you have to update the prison yourself if they move.\n- **Photo ID and proof of address.** New accounts go through an identity check using photo ID such as a passport or driving licence, a selfie, and a document showing your name and current address.\n\nHTML:If you do not know which prison someone is in, GOV.UK’s <a href=\"https://www.gov.uk/find-prisoner\">find a prisoner service</a> is the official route. Once you know the prison, the <a href=\"/prisons/uk\">UK prison directory</a> leads to its contact-details page.\n\n## How messages are delivered\n\nDelivery depends on the prison. At paper-based prisons the message is printed and handed out, and eMates asks you to allow 2 business days. At prisons with kiosks or in-cell devices, staff review the message before it appears on screen, again within about 2 business days. “Delivered” in your account means the message reached the prison, not that the person has read it. Some prisons do not hand out correspondence at weekends or on bank holidays.\n\n## Replies, photos and costs\n\nYou can request a reply when you write, if the prison supports it. At paper-based prisons the person gets a pre-paid reply sheet with your message; at kiosk prisons they can reply on screen. Replies are checked by staff and then appear in your eMates inbox, not your normal email. Participating prisons also accept up to 4 photos per message. Printed photos share one A4 sheet and may come out in black and white, and the prison can still decide not to pass a photo on.\n\nThe sender pays; receiving messages is free for the person in prison. When we checked eMates’ published prices on 19 October 2026 they were 42p for the first page (up to 2,500 characters or 50 lines), 37p for each extra page, 26p to request a reply and 32p per photo. Check the current prices on eMates before you buy credit, and only buy what you expect to use.\n\n## What prison staff can see\n\nAssume every message is read. GOV.UK says most letters to and from prison are checked by staff, and eMates messages are reviewed before delivery. Do not use eMates for legal matters: eMates says it must not be used for legally privileged communication, which should go through the prison’s approved legal channels.\n\nHTML:If a prison is not listed on eMates, it does not use the service. You can still write a letter, take phone calls from the person or book a visit. GOV.UK’s <a href=\"https://www.gov.uk/staying-in-touch-with-someone-in-prison\">staying in touch guide</a> covers letters, video calls and phone calls, and our guides to <a href=\"/guides/how-to-find-a-uk-prison-address\">finding a UK prison address</a> and <a href=\"/guides/how-prison-visits-work\">how prison visits work</a> cover the next steps.\n\n## Scotland and Northern Ireland\n\nScotland and Northern Ireland run separate prison services from England and Wales. Check the individual prison’s own page to see which email or messaging service it uses before you open an account.\n\n## US federal prisons: TRULINCS and CorrLinks\n\nHTML:In prisons run by the US Federal Bureau of Prisons, electronic messages go through TRULINCS, and you cannot start the conversation. The person in custody adds you to their contact list, staff approve it, and you then get an automated invitation from CorrLinks asking whether to accept or block their messages. The BOP says the invitation is valid for 10 days, messages are text only with no attachments, each message is limited to 13,000 characters, and everyone must consent to monitoring. Contract facilities do not run TRULINCS. The BOP’s <a href=\"https://www.bop.gov/inmates/trulincs.jsp\">TRULINCS page</a> has troubleshooting steps.\n\nState prisons and county jails each choose their own messaging provider, so check the state Department of Corrections or the jail’s own website rather than assuming the federal process applies.",
+    faqs: [
+      {
+        question: "Can you email a prisoner for free?",
+        answer:
+          "Not in England and Wales. eMates charges the sender for each message, with extra charges for replies and photos, while the person in prison receives messages free. In US federal prisons, the person in custody pays fees to use TRULINCS.",
+      },
+      {
+        question: "Is eMates the same as Email a Prisoner?",
+        answer:
+          "Yes. The service at emailaprisoner.com is now branded eMates and is run by Unilink Software Ltd. GOV.UK prison pages still call it the Email a Prisoner service.",
+      },
+      {
+        question: "How do I find someone’s prisoner number?",
+        answer:
+          "Ask the person, or check earlier letters, money receipts or with their legal representative. If you do not know which prison they are in, use GOV.UK’s find a prisoner service.",
+      },
+      {
+        question: "Can a prisoner email me back?",
+        answer:
+          "Only if their prison supports replies and you pay for a reply when you send your message. The reply arrives in your eMates inbox, not your normal email address.",
+      },
+      {
+        question: "How long does an email to a prisoner take to arrive?",
+        answer:
+          "eMates asks senders to allow up to 2 business days, whether the prison prints messages or shows them on a kiosk or in-cell device. Weekends and bank holidays can add time.",
+      },
+      {
+        question: "How do I email someone in a US federal prison?",
+        answer:
+          "You cannot start contact yourself. The person in custody adds you through TRULINCS, staff approve it, and CorrLinks emails you an invitation to accept. Messages are text only and monitored.",
+      },
+    ],
+  },
 ];
 
 export const getGuide = (slug: string) => guides.find(g => g.slug === slug);

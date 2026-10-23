@@ -186,3 +186,18 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Directory records modified:** 0
 - **Branch:** `bot/content-manager/intent-opener-type-labels-2026-10-12`
 
+
+## 2026-10-19 — INTERVENTION A (PR ready)
+
+- **URL:** `/guides/how-to-email-a-prisoner` (new)
+- **Decision:** CREATE + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England and Wales first (Email a Prisoner / eMates, GOV.UK); Scotland/NI flagged as separate services with no claims; US federal (BOP TRULINCS / CorrLinks) in its own section; state/county left to their own providers.
+- **Why CREATE:** no existing page answers national “email a prisoner” intent. Content inventory only had per-prison contact blocks linking out to emailaprisoner.com. Competitive Bing UK exact-match demand (17 Jul–15 Oct 2026, recorded 17 Oct): “email a prisoner” cluster ~18k impressions (“email a prisoner” 7,972; “emates” 2,175, much of it login intent). Our own Bing email queries are prison-specific (“hmp X email”), which belong to contact-details pages and are not targeted here.
+- **Change:** answer-first guide (~950 words): where to sign in (emailaprisoner.com, now eMates, run by Unilink Software Ltd); what you need (name, prisoner number, prison, ID check); delivery (paper vs kiosk/in-cell, ~2 business days, “Delivered” = reached the prison); replies and photos; prices as published by eMates on 19 Oct 2026 (dated, with “check current prices”); monitoring and no legal correspondence; alternatives via GOV.UK staying-in-touch; US federal TRULINCS/CorrLinks (invitation valid 10 days, text only, 13,000 characters, monitored, no TRULINCS in contract facilities). Six FAQs. Internal links to how-to-find-a-uk-prison-address, how-prison-visits-work, UK directory; inbound from the homepage “Common situations” list and the guides hub (new Mail icon). Guide sitemap count 13 → 14.
+- **Not changed (freeze / anti-churn):** no profile or contact-details titles, meta, H1s or anchors (2026-10-17 freeze on 0e7ff462 intent shift); no edits to anti-churn guides; email-a-prisoner/sending-money intent pages are not enabled in `intentRollout.ts`, so `guideSlugsForIntent` was left alone.
+- **Sources:** GOV.UK prison pages (Email section), gov.uk/staying-in-touch-with-someone-in-prison, gov.uk/find-prisoner, emailaprisoner.com FAQs (general, accounts and charges, image attachments, identity check), bop.gov/inmates/communications.jsp and bop.gov/inmates/trulincs.jsp — all checked 2026-10-19.
+- **GSC baseline (lookup 2026-10-19):** new URL, so 7d/28d/90d clicks 0, impressions 0. Site-wide 28d (2026-09-21→10-19): 0 clicks / 316 impressions. No national “email a prisoner” / “emates” queries in the site’s 90d GSC query export. Measure at 7/28/90 days after the release lands: impressions, clicks, CTR, position for the URL and for queries containing “email a prisoner”, “emates”, “email prisoner”.
+- **Bing baseline:** URL not present. Measure the same query cluster in Bing at 28/90 days.
+- **Hypothesis:** a direct, sourced answer page for the national email-a-prisoner and eMates intent can earn impressions this site currently gets none of, without competing with per-prison contact-details pages.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/email-a-prisoner-guide-2026-10-19`
