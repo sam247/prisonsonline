@@ -621,6 +621,370 @@ export const ukContactVisitingRecords: ContactVisitingRecord[] = [
       sourceId: S,
     },
   }),
+  // Coverage batch 2 (GOV.UK checked 2026-10-17), ordered by Bing impressions.
+  govContact("hmp-wealstun", "wealstun-prison", "2026-06-05", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01937 444 599",
+      phoneHours: "Monday to Thursday, 8:30am to 12:30pm",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-whitemoor", "whitemoor-prison", "2026-02-18", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01354 602 800",
+      phoneHours: "Monday to Friday, 9.30am to 1.30pm",
+      email: "Socialvisits.whitemoor@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-lewes", "lewes-prison", "2025-11-05", {
+    visitBooking: {
+      methods: ["online"],
+      url: GOVUK_PRISON_VISITS_URL,
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-swaleside", "swaleside-prison", "2025-11-14", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "0300 060 6604",
+      phoneHours: "Monday to Friday, 9am to 5pm (excluding Bank Holidays)",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      postInstructions: "Include the Prisoners name and prisoner number on the envelope. You must also write your own name and address on the back of the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-the-mount", "the-mount-prison", "2025-10-30", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "0300 790 0656",
+      phoneHours: "Monday to Friday 10am to midday",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-exeter", "exeter-prison", "2026-08-17", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01392 415 833",
+      phoneHours: "Monday and Tuesday (excl bank holidays), 9am to midday and 1:30pm to 4:30pm",
+      email: "socialvisits.exeter@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prison number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-sudbury", "sudbury-prison", "2026-06-29", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01283 584 018",
+      phoneHours: "Monday to Friday, 9am to 4pm",
+      email: "socialvisitssudbury@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number or date of birth on the envelope. Also add your name and address on the back of the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-hatfield", "hatfield-prison", "2025-10-21", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01405 746 611",
+      phoneHours: "Monday to Friday 8:30am to 11:30am",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the prisoner’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-lindholme", "lindholme-prison", "2026-09-24", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01302 524 980",
+      phoneHours: "Monday, 1:30pm to 4pm; Tuesday, 8:30am to 11am; Wednesday, closed; Thursday, 1:30pm to 4pm; Friday, 8:30am to 11am",
+      email: "socialvisits.lindholme@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-yoi-hindley", "hindley-prison", "2026-10-06", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01942 663 234",
+      phoneHours: "Monday to Friday: 9am to midday and 1pm to 3:30pm",
+      email: "socialvisits.Hindley@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-risley", "risley-prison", "2026-08-26", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01925 733285",
+      phoneHours: "Monday to Thursday, 9am to 3:15pm; Friday at 9am to 2pm",
+      email: "SocialVisitsRisley@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-yoi-isis", "isis-prison", "2026-03-18", {
+    visitBooking: {
+      methods: ["prisoner-led"],
+      note: "Social and family visits can only be booked by the prisoner internally.",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-holme-house", "holme-house-prison", "2026-07-22", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "0300 060 6602",
+      phoneHours: "Monday, Tuesday, Wednesday and Friday: 8:30am to 4:30pm",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-wayland", "wayland-prison", "2025-10-30", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01953 804 152",
+      phoneHours: "Monday to Friday: 9am to 4pm",
+      email: "socialvisits.Wayland@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prison number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-lowdham-grange", "lowdham-grange-prison", "2026-09-09", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "0808 168 8292",
+      phoneHours: "Monday to Friday, 9am to 3pm",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the prisoners’ name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-featherstone", "featherstone-prison", "2026-07-07", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "0300 060 6502",
+      phoneHours: "Monday to Friday, 9am to 3pm",
+      email: "visitsbooking.westmidlands@justice.gov.uk",
+      emailEnquiriesOnly: true,
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-leyhill", "leyhill-prison", "2025-10-30", {
+    visitBooking: {
+      methods: ["online"],
+      url: GOVUK_PRISON_VISITS_URL,
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-yoi-stocken", "stocken-prison", "2026-10-14", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01780 795 156",
+      phoneHours: "Monday to Friday, 9am to 11am",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number or date of birth on the envelope. Also add your name and address on the back of the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-brixton", "brixton-prison", "2025-10-21", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "0208 678 1433",
+      phoneHours: "Monday to Thursday: 1:15pm to 4pm; Friday: 9am to 11:45am",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-north-sea-camp", "north-sea-camp-prison", "2026-10-14", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01205 769368",
+      phoneHours: "Monday to Friday, 9:30am to 11:30am and 2:30pm to 3:30pm; Saturday and Sunday, 2:30pm to 3:30pm",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prison number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-yoi-hull", "hull-prison", "2026-08-11", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01482 282 016",
+      phoneHours: "Monday to Friday, 8am to 12:30pm",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-littlehey", "littlehey-prison", "2026-08-05", {
+    visitBooking: {
+      methods: ["online", "phone", "email"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01480 335 136",
+      phoneHours: "Tuesday to Sunday 9:30am to 4pm",
+      email: "Socialvisits.littlehey@justice.gov.uk",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-whatton", "whatton-prison", "2026-10-08", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "01949 803 200",
+      phoneHours: "Monday to Friday 9am to midday and 1pm to 5pm",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prison number on the envelope.",
+      sourceId: S,
+    },
+  }),
+  govContact("hmp-yoi-brinsford", "brinsford-prison", "2026-07-06", {
+    visitBooking: {
+      methods: ["online", "phone"],
+      url: GOVUK_PRISON_VISITS_URL,
+      phone: "0300 060 6500",
+      phoneHours: "Monday to Friday, 9am to 3pm",
+      sourceId: S,
+    },
+    prisonerContact: {
+      emailAPrisonerUrl: EMAIL_A_PRISONER_URL,
+      sendMoneyUrl: SEND_PRISONER_MONEY_URL,
+      postInstructions: "Include the person’s name and prisoner number on the envelope.",
+      sourceId: S,
+    },
+  }),
 ];
 
 const byKey = new Map(ukContactVisitingRecords.map((r) => [`${r.countrySlug}/${r.prisonSlug}`, r]));
