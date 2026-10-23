@@ -260,8 +260,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       </div>
 
       <div className="container py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
-          <div className="lg:col-span-2 space-y-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 min-w-0">
+          <div className="lg:col-span-2 space-y-10 min-w-0">
             <nav aria-label="Prison directory" className="flex flex-col gap-2 text-sm">
               <Link
                 href={`/prisons/${prison.countrySlug}/${prison.regionSlug}`}
@@ -548,7 +548,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             </section>
           </div>
 
-          <aside className="space-y-6 lg:pt-1">
+          <aside className="space-y-6 lg:pt-1 min-w-0">
             <Card className="border-border/60">
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-3">Explore region</h3>

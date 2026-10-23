@@ -31,15 +31,17 @@ function AdSenseIns({ slot, className, style }: AdSenseUnitProps) {
   }, [marketingAllowed]);
 
   return (
-    <ins
-      ref={insRef}
-      className={`adsbygoogle ${className ?? ""}`.trim()}
-      style={{ display: "block", ...style }}
-      data-ad-client={AD_CLIENT}
-      data-ad-slot={slot}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    />
+    <div className="max-w-full min-w-0 overflow-x-clip" data-ad-slot-frame={slot}>
+      <ins
+        ref={insRef}
+        className={`adsbygoogle ${className ?? ""}`.trim()}
+        style={{ display: "block", width: "100%", maxWidth: "100%", overflow: "hidden", ...style }}
+        data-ad-client={AD_CLIENT}
+        data-ad-slot={slot}
+        data-ad-format="auto"
+        data-full-width-responsive="false"
+      />
+    </div>
   );
 }
 

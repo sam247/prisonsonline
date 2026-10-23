@@ -99,11 +99,21 @@
     @apply border-border;
   }
 
-  /* Guard against sideways scroll from full-width-responsive AdSense units (100vw + scrollbar)
-     and other off-canvas children. `clip` (not `hidden`) keeps position: sticky working. */
+  /* Guard against sideways scroll from AdSense units and the mobile anchor ad.
+     Those units are often 100vw wide, which is wider than the layout viewport by the scrollbar.
+     `clip` (not `hidden`) keeps position: sticky working. */
   html,
   body {
     overflow-x: clip;
+    max-width: 100%;
+  }
+
+  ins.adsbygoogle,
+  ins.adsbygoogle iframe,
+  body > ins.adsbygoogle[data-anchor-status],
+  body > ins.adsbygoogle[data-ad-status] {
+    max-width: 100% !important;
+    box-sizing: border-box;
   }
 
   body {
