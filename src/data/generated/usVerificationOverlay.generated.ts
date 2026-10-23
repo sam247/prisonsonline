@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "2026-10-20T10:24:50.340Z",
+  "updatedAt": "2026-10-22T20:20:08.891Z",
   "entries": {
     "united-states/adx-florence": {
       "prisonSlug": "adx-florence",
@@ -66,6 +66,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/alf/",
       "overrides": {
         "email": "ALX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/alf/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Allenwood Low",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 1000",
+            "WHITE DEER, PA"
+          ],
+          "postcode": "17887",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/alf/alf_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/ashland-fci": {
@@ -75,6 +108,25 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/ash/",
       "overrides": {
         "email": "ASH-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/ash/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/ash/ash_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/atlanta-ccm": {
@@ -102,6 +154,25 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/bas/",
       "overrides": {
         "email": "BAS-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/bas/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/bas/bas_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/beaumont-low-fci": {
@@ -111,6 +182,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/bml/",
       "overrides": {
         "email": "BMX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/bml/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Beaumont Low",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 26020",
+            "BEAUMONT, TX"
+          ],
+          "postcode": "77720",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/bml/bml_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/beaumont-med-fci": {
@@ -120,6 +224,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/bmm/",
       "overrides": {
         "email": "BMX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/bmm/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Beaumont Medium",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 26040",
+            "BEAUMONT, TX"
+          ],
+          "postcode": "77720",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/bmm/bmm_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/alderson-fpc": {
@@ -185,6 +322,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/alm/",
       "overrides": {
         "email": "ALX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/alm/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Allenwood Medium",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 2000",
+            "WHITE DEER, PA"
+          ],
+          "postcode": "17887",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/alm/alm_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/allenwood-usp": {
@@ -278,6 +448,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/atw/",
       "overrides": {
         "email": "ATW-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/atw/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "USP Atwater",
+            "U.S. PENITENTIARY",
+            "P.O. BOX 019001",
+            "ATWATER, CA"
+          ],
+          "postcode": "95301",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/atw/atw_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/beaumont-usp": {
@@ -287,6 +490,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/bmp/",
       "overrides": {
         "email": "BMX-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/bmp/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "USP Beaumont",
+            "U.S. PENITENTIARY",
+            "P. O. BOX 26030",
+            "BEAUMONT, TX"
+          ],
+          "postcode": "77720",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/bmp/bmp_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/beckley-fci": {
@@ -296,6 +532,25 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/bec/",
       "overrides": {
         "email": "BEC-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/bec/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/bec/bec_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/bennettsville-fci": {
@@ -305,6 +560,32 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/ben/",
       "overrides": {
         "email": "BEN-ExecAssistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/ben/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Bennettsville",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 52020",
+            "BENNETTSVILLE, SC"
+          ],
+          "postcode": "29512",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/berlin-fci": {
@@ -314,6 +595,39 @@ export const usVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.bop.gov/locations/institutions/ber/",
       "overrides": {
         "email": "BER-Execassistant-S@bop.gov"
+      },
+      "contactVisiting": {
+        "sources": [
+          {
+            "id": "bop-contact-visiting",
+            "name": "Federal Bureau of Prisons",
+            "url": "https://www.bop.gov/locations/institutions/ber/",
+            "checkedAt": "2026-10-22"
+          }
+        ],
+        "fieldSources": {
+          "postalAddress": [
+            "bop-contact-visiting"
+          ],
+          "visitingRulesUrl": [
+            "bop-contact-visiting"
+          ]
+        },
+        "postalAddress": {
+          "lines": [
+            "FCI Berlin",
+            "FEDERAL CORRECTIONAL INSTITUTION",
+            "P.O. BOX 9000",
+            "BERLIN, NH"
+          ],
+          "postcode": "03570",
+          "recipientFormat": "INMATE NAME & REGISTER NUMBER",
+          "sourceId": "bop-contact-visiting"
+        },
+        "visitingRulesUrl": {
+          "url": "https://www.bop.gov/locations/institutions/ber/ber_visit.pdf",
+          "sourceId": "bop-contact-visiting"
+        }
       }
     },
     "us/brooklyn-mdc": {
