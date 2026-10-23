@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const usVerificationOverlay: OverlayFile = {
   "generatedBy": "us-prison-verifier",
-  "updatedAt": "2026-10-20T10:24:50.340Z",
+  "updatedAt": "2026-10-21T08:23:41.987Z",
   "entries": {
     "united-states/adx-florence": {
       "prisonSlug": "adx-florence",
@@ -164,7 +164,7 @@ export const usVerificationOverlay: OverlayFile = {
             "id": "bop-contact-visiting",
             "name": "Federal Bureau of Prisons",
             "url": "https://www.bop.gov/locations/institutions/ali/",
-            "checkedAt": "2026-10-19"
+            "checkedAt": "2026-10-21"
           }
         ],
         "fieldSources": {
@@ -431,7 +431,7 @@ export const usVerificationOverlay: OverlayFile = {
     "us/big-sandy-usp": {
       "prisonSlug": "big-sandy-usp",
       "countrySlug": "us",
-      "appliedAt": "2026-10-20T10:21:18.152Z",
+      "appliedAt": "2026-10-21T08:23:41.987Z",
       "sourceUrl": "https://www.bop.gov/locations/institutions/bsy/",
       "overrides": {
         "email": "BSY-ExecAssistant-S@bop.gov"
@@ -440,7 +440,7 @@ export const usVerificationOverlay: OverlayFile = {
     "us/big-spring-fci": {
       "prisonSlug": "big-spring-fci",
       "countrySlug": "us",
-      "appliedAt": "2026-10-20T10:21:18.152Z",
+      "appliedAt": "2026-10-21T08:23:41.987Z",
       "sourceUrl": "https://www.bop.gov/locations/institutions/big/",
       "overrides": {
         "email": "BIG-ExecAssistant-S@bop.gov"
@@ -451,7 +451,7 @@ export const usVerificationOverlay: OverlayFile = {
             "id": "bop-contact-visiting",
             "name": "Federal Bureau of Prisons",
             "url": "https://www.bop.gov/locations/institutions/big/",
-            "checkedAt": "2026-10-20"
+            "checkedAt": "2026-10-21"
           }
         ],
         "fieldSources": {
