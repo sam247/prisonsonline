@@ -519,6 +519,52 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    title: "How to Send Money to a Prisoner",
+    slug: "how-to-send-money-to-a-prisoner",
+    excerpt:
+      "Send money to someone in prison in England and Wales with GOV.UK’s free debit card service: what you need, how long it takes, exemptions for posting money, and how US federal deposits work.",
+    icon: "Wallet",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for sending money to someone in prison — not a photograph of a facility.",
+    },
+    content:
+      "In England and Wales, the standard way to send money to someone in prison is GOV.UK’s free Send money to someone in prison service. You pay with a Visa, Mastercard or Maestro debit card, and you need the person’s prisoner number and date of birth. Money usually reaches their prison account in less than 3 working days. Prisons no longer accept bank transfers, cheques, postal orders or cash by post, unless you have been given an exemption. Scotland, Northern Ireland and US prisons use their own systems, covered below.\n\n## Use the official GOV.UK service\n\nHTML:Start at GOV.UK’s <a href=\"https://www.gov.uk/send-prisoner-money\">send money to someone in prison</a> page. The service is free, secure and available in all prisons in England and Wales, and it is built by the Ministry of Justice. You do not need to know which prison the person is in: the prisoner number and date of birth identify their account. Use the GOV.UK link rather than a search advert or a site that looks similar.\n\n## What you need\n\n- **A debit card.** Visa, Mastercard or Maestro. The service’s help pages say credit cards and prepaid debit cards are not accepted.\n- **The person’s prisoner number.** The service cannot give this out by law, so ask the person for it.\n- **Their date of birth**, matching the prison’s record.\n\nIf the person has only just arrived in prison, their details can take one working day to appear, so try again the next day. If the number and date of birth still do not match, the person should ask wing staff to check the details the prison holds and correct them.\n\n## How long it takes and how they find out\n\nMost payments arrive in less than 3 working days, though the service’s help pages say a payment can take up to 5 days. Some prisons give the person an account slip when money arrives; not all do, so they may need to ask a wing officer. The person can see the sender’s name, but not the sender’s personal or banking details.\n\n## If something goes wrong\n\n- **You cannot cancel a payment.** Once it has gone through it is non-refundable.\n- **If the person moves prison**, the money is transferred to the new prison, which can take a few days.\n- **If the person has been released**, they need to contact the prison, which will send a refund.\n\n## If you cannot pay online\n\nHTML:If you cannot use a computer, smartphone or the internet, or you do not have a debit card, you can ask the prison for an exemption that lets you send money by post. Print the request form from the GOV.UK <a href=\"https://send-money-to-prisoner.service.gov.uk/en-gb/help/apply-for-exemption/\">apply for an exemption</a> page and post it, with proof, to the prison’s Business Hub. The proof listed is an account refusal from one of the named UK banks, proof that your bank account does not give you a debit card or cheque book, or, if you live overseas, proof of residence and an account refusal from a bank in your country.\n\nExemptions are only granted in exceptional circumstances, and the governor can withdraw one at any time. Do not post any money until you have your exemption letter. If the only problem is not having a debit card, GOV.UK suggests setting up a basic bank account that comes with one.\n\n## Sending money from abroad\n\nYou can use the same service from outside the UK, but only with a Visa, Mastercard or Maestro debit card.\n\n## Gifts and property are separate\n\nHTML:Money and property follow different rules. Books, clothes and other items are handled through each prison’s own property process, which is described on its GOV.UK page. Our guide to <a href=\"/guides/what-can-you-bring-to-prison\">what you can bring to a prison visit</a> covers what visitors can and cannot carry in.\n\n## Scotland and Northern Ireland\n\nThe GOV.UK service only covers prisons in England and Wales. To send money to someone in a Scottish or Northern Irish prison, contact that prison directly and ask how it accepts money.\n\n## US federal prisons\n\nHTML:Federal Bureau of Prisons facilities accept deposits into a person’s commissary account through MoneyGram, Western Union, or by post through the US Postal Service. For MoneyGram and Western Union you need the person’s eight-digit register number followed immediately by their last name, with no spaces or dashes, as in the BOP’s example 12345678DOE. The BOP says electronic deposits sent between 7am and 9pm Eastern time usually post within 2 to 4 hours, and that you should wait until the person has physically arrived at a BOP facility before sending. Wrong details can mean the money is rejected or paid into someone else’s account and not returned. Check the exact steps on the BOP’s <a href=\"https://www.bop.gov/inmates/communications.jsp\">communications page</a>.\n\nPrivately run contract facilities, state prisons and county jails use their own deposit providers, so check with the facility or the state Department of Corrections instead.",
+    faqs: [
+      {
+        question: "Can I send money to a prisoner by bank transfer?",
+        answer:
+          "Not in England and Wales. Prisons no longer accept bank transfers, cheques, postal orders or cash by post. Use the free GOV.UK debit card service, or ask the prison for an exemption to send money by post if you cannot use it.",
+      },
+      {
+        question: "Does it cost anything to send money to someone in prison?",
+        answer:
+          "No. GOV.UK’s Send money to someone in prison service is free to use for prisons in England and Wales.",
+      },
+      {
+        question: "How long does it take for money to reach a prisoner?",
+        answer:
+          "Usually less than 3 working days, although a payment can take up to 5 days. The person may get an account slip when it arrives, or can ask a wing officer.",
+      },
+      {
+        question: "What details do I need to send money to a prisoner?",
+        answer:
+          "A Visa, Mastercard or Maestro debit card, the person’s prisoner number and their date of birth. You do not need the name of the prison.",
+      },
+      {
+        question: "Can I cancel a payment to a prisoner?",
+        answer:
+          "No. Once a payment has gone through the GOV.UK service it cannot be cancelled or refunded. If the person has been released, they should contact the prison for a refund.",
+      },
+      {
+        question: "How do I send money to someone in a US federal prison?",
+        answer:
+          "Use MoneyGram, Western Union or the US Postal Service, following the steps on the BOP communications page. Electronic deposits need the eight-digit register number followed by the person’s last name.",
+      },
+    ],
+  },
 ];
 
 export const getGuide = (slug: string) => guides.find(g => g.slug === slug);

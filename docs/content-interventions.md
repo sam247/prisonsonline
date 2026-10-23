@@ -201,3 +201,19 @@ PR #1 patch touches `src/data/guides.ts` (+ guide), homepage/footer discovery li
 - **Hypothesis:** a direct, sourced answer page for the national email-a-prisoner and eMates intent can earn impressions this site currently gets none of, without competing with per-prison contact-details pages.
 - **Directory records modified:** 0
 - **Branch:** `bot/content-manager/email-a-prisoner-guide-2026-10-19`
+
+## 2026-10-19 — INTERVENTION B (PR ready, stacked on A)
+
+- **URL:** `/guides/how-to-send-money-to-a-prisoner` (new)
+- **Decision:** CREATE + INTERNAL_LINK (one bounded intervention)
+- **Jurisdiction:** England and Wales first (GOV.UK Send money to someone in prison); Scotland/NI pointed to the prison directly (the GOV.UK service says it is England and Wales only); US federal (BOP MoneyGram / Western Union / USPS) in its own section; contract, state and county facilities left to their own providers.
+- **Why CREATE:** no page answered national send-money intent; per-prison contact blocks only link out to GOV.UK. Competitive Bing UK exact-match demand (17 Jul–15 Oct 2026, recorded 17 Oct): send-money cluster ~5.5k impressions (“send money to a prisoner” 1,681; “pay a prisoner gov uk” 1,053). Independent intent from Intervention A (payments, not messaging).
+- **Change:** answer-first guide (~850 words): official GOV.UK route (free, debit card only, all England and Wales prisons, prison name not needed); what you need (debit card, prisoner number, date of birth; new arrivals take a working day to appear); timing (usually under 3 working days, up to 5) and account slips; cancellations, transfers and releases; exemption to send by post (form, Business Hub, listed proof, exceptional circumstances, governor can withdraw, wait for the letter); paying from abroad; gifts and property handled separately; US federal deposits (register number + last name, 2–4 hour posting window, wait for arrival, wrong-account risk). Six FAQs. Internal link to what-can-you-bring-to-prison (link only, page not edited); inbound from homepage “Common situations” and the guides hub (new Wallet icon). Guide sitemap count 14 → 15.
+- **Stacking:** branched from Intervention A because both PRs touch the guides array, the two icon maps, `commonSituationSlugs` and the guide-count assertion. Merge A first.
+- **Not changed (freeze / anti-churn):** same as Intervention A.
+- **Sources:** gov.uk/send-prisoner-money; send-money-to-prisoner.service.gov.uk help pages (making a payment, a payment I’ve already made, cannot access, apply for exemption); GOV.UK prison pages (Send money and gifts); bop.gov/inmates/communications.jsp — all checked 2026-10-19.
+- **GSC baseline (lookup 2026-10-19):** new URL, so 7d/28d/90d clicks 0, impressions 0. Site-wide 28d: 0 clicks / 316 impressions. No national send-money queries in the site’s 90d GSC export. Measure at 7/28/90 days after release: URL metrics plus queries containing “send money to a prisoner”, “send prisoner money”, “pay a prisoner”.
+- **Bing baseline:** URL not present; same cluster at 28/90 days.
+- **Hypothesis:** a direct, sourced answer for national send-money intent earns impressions the site currently gets none of, without competing with per-prison contact-details pages.
+- **Directory records modified:** 0
+- **Branch:** `bot/content-manager/send-money-guide-2026-10-19`
