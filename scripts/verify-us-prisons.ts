@@ -15,7 +15,17 @@ import { prisons } from "@/data/prisons";
 import { getFacilityVerification } from "@/data/facilitySources";
 import { usVerificationOverlay } from "@/data/generated/usVerificationOverlay.generated";
 import type { PrisonVerificationInput } from "@/lib/verification/types";
-import { selectUsPrisonsDue } from "@/lib/verification/selectPrison";
+import {
+  ensureEntries,
+  loadMergedQueue,
+  queuePaths,
+  recordRun,
+  recordSourceUpdates,
+  saveQueueEverywhere,
+  selectFromQueue,
+  toStateRecord,
+  type SourceUpdates,
+} from "@/lib/verification/queue";
 import { verifyUsPrison, nextUsStateFromResult } from "@/lib/verification/runUsVerification";
 import { defaultUsHttpGet, fetchBopLocations } from "@/lib/verification/bopClient";
 import { productionUsWritesEnabled, type OverlayStore } from "@/lib/verification/applyChanges";
@@ -47,6 +57,9 @@ function parseArgs(argv: string[]) {
     slugs: slugsFlag ? slugsFlag.split(",").map((s) => s.trim()).filter(Boolean) : undefined,
     limit: limitFlag ? Number(limitFlag) : slugsFlag ? 50 : 1,
     outDir: outFlag,
+    queueWorking: argv.find((arg) => arg.startsWith("--queue-working="))?.slice("--queue-working=".length),
+    noQueueUpdate: argv.includes("--no-queue-update"),
+    queueUpdateOnDryRun: argv.includes("--queue-update"),
     help: argv.includes("--help") || argv.includes("-h"),
   };
 }
@@ -98,6 +111,9 @@ Options:
                      Covers phone/postcode/email corrections and, for BOP facilities, the
                      contact/visiting blocks (postalAddress, visitingHours, visitingRulesUrl)
                      parsed from the bop.gov facility page, with sources[] + fieldSources provenance.
+  --queue-working=P  Working-copy queue (default $PRISON_VERIFIER_QUEUE_PATH or /workspace/prison-verifier/queue.json)
+  --no-queue-update  Select from the queue but do not write results back to it
+  --queue-update     Also write back after a dry-run (write-mode runs always write back)
   --out=DIR          Report directory (default data/verification/us/reports)
   --help             Show this help
 
@@ -148,9 +164,16 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
   }
 
   const state = loadState(verificationDir);
-  const selected = selectUsPrisonsDue({
-    prisons: prisons.map(toInput),
-    state: state.prisons,
+  // The queue (data/verification/queue.json merged with the working copy) decides what is due.
+  // It fails closed: with no queue at all this throws rather than falling back to an alphabetical list.
+  const queuePathSet = queuePaths(root, args.queueWorking);
+  const loaded = loadMergedQueue(queuePathSet);
+  const allInputs = prisons.map(toInput);
+  let queue = ensureEntries(loaded.queue, allInputs, now);
+  const selected = selectFromQueue({
+    queue,
+    prisons: allInputs,
+    country: "us",
     now,
     limit: Number.isFinite(args.limit) && args.limit > 0 ? args.limit : 1,
     slugs: args.slugs,
@@ -175,9 +198,21 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
     results.push(result);
     appendAudit(verificationDir, result.audit);
     nextState = upsertPrisonState(nextState, nextUsStateFromResult(result, now));
+    queue = recordRun(queue, {
+      slug: prison.slug,
+      at: result.audit.verifiedAt,
+      status: result.audit.verificationStatus,
+      runStatus: result.audit.runStatus === "failed" ? "failed" : "success",
+      mode: writesEnabled ? "write" : "dry-run",
+      differenceFields: result.audit.differences.filter((d) => d.classification !== "NO_CHANGE").map((d) => d.field),
+      sourceUrl: result.source?.url,
+      error: result.audit.errors[0],
+    });
     await sleep(150);
   }
   saveState(verificationDir, nextState);
+  const queueWritten = !args.noQueueUpdate && (writesEnabled || args.queueUpdateOnDryRun);
+  if (queueWritten) saveQueueEverywhere(queue, queuePathSet);
 
   if (writesEnabled) {
     const moduleSource = resolveUsOverlayModuleWrite({
@@ -239,6 +274,11 @@ If the authority cannot be identified, the result is REVIEW_REQUIRED — never g
 
   process.stdout.write(`${renderCliSummary(report, "US verifier")}\n`);
   process.stdout.write(`Report: ${mdPath}\n`);
+  process.stdout.write(
+    queueWritten
+      ? `Queue updated: ${queuePathSet.repoPath} and ${queuePathSet.workingPath}\n`
+      : "Queue not updated (dry-run, or --no-queue-update). Pass --queue-update to record a dry-run.\n",
+  );
   if (writesEnabled) {
     process.stdout.write(`Overlay written: ${overlayJsonPath}\n`);
   } else {

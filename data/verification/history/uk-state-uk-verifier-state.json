@@ -1,0 +1,36 @@
+{
+  "prisons": {
+    "hmp-ashfield": {
+      "prisonSlug": "hmp-ashfield",
+      "countrySlug": "uk",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-21T08:13:31.182Z",
+      "nextVerificationAt": "2026-11-20T08:13:31.182Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/ashfield-prison"
+    },
+    "hmp-bedford": {
+      "prisonSlug": "hmp-bedford",
+      "countrySlug": "uk",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-21T08:13:31.182Z",
+      "nextVerificationAt": "2026-11-20T08:13:31.182Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/bedford-prison"
+    },
+    "hmp-belmarsh": {
+      "prisonSlug": "hmp-belmarsh",
+      "countrySlug": "uk",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-26T09:14:01.404Z",
+      "nextVerificationAt": "2026-11-25T09:14:01.404Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/belmarsh-prison"
+    },
+    "hmp-berwyn": {
+      "prisonSlug": "hmp-berwyn",
+      "countrySlug": "uk",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-26T09:14:01.404Z",
+      "nextVerificationAt": "2026-11-25T09:14:01.404Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/berwyn-prison"
+    }
+  }
+}
