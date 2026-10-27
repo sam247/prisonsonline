@@ -5,6 +5,7 @@ import {
   prisonsInLabel,
   regionDisplayLabel,
   ukGeographicRegionDisplayName,
+  regionRepeatsCity,
 } from "@/lib/prisons/hmppsGroupLabel";
 import { getPrisonsByRegion } from "@/data/prisons";
 import {
@@ -216,7 +217,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             <p>
               {isHmppsGroupRegion(prison)
                 ? `${prison.city}, ${prison.country} · ${regionDisplayLabel(prison)}`
-                : `${prison.city}, ${ukGeographicRegionDisplayName(prison)}, ${prison.country}`}
+                : regionRepeatsCity(prison, ukGeographicRegionDisplayName(prison))
+                  ? `${prison.city}, ${prison.country}`
+                  : `${prison.city}, ${ukGeographicRegionDisplayName(prison)}, ${prison.country}`}
             </p>
           </div>
         </div>

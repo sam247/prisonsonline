@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { geographicRegion } from "@/lib/prisons/hmppsGroupLabel";
+import { geographicRegion, regionRepeatsCity } from "@/lib/prisons/hmppsGroupLabel";
 import Image from "next/image";
 import { MapPin, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +24,8 @@ function cardMetaLine(prison: Prison): string | null {
 
 export function PrisonCardContent({ prison, variant = "default" }: PrisonCardProps) {
   const meta = cardMetaLine(prison);
+  const rawRegion = geographicRegion(prison);
+  const region = regionRepeatsCity(prison, rawRegion) ? "" : rawRegion;
   const pad = variant === "compact" ? "p-4" : "p-5";
   const visual = resolvePrisonFacilityVisual(prison);
 
@@ -69,7 +71,7 @@ export function PrisonCardContent({ prison, variant = "default" }: PrisonCardPro
           <MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5" />
           <span className="leading-snug">
             {prison.city}
-            {geographicRegion(prison) ? ` · ${geographicRegion(prison)}` : ""}
+            {region ? ` · ${region}` : ""}
             {prison.country ? ` · ${prison.country}` : ""}
           </span>
         </div>
