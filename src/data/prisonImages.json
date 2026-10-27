@@ -805,6 +805,39 @@
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "HM Prison Nottingham seen from Tring Vale."
   },
+  "hmp-swansea": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/HMP_Swansea_-_geograph.org.uk_-_6879655.jpg",
+    "credit": "John Lucas",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Gatehouse and frontage of HMP Swansea",
+    "author": "John Lucas",
+    "title": "HMP Swansea - geograph.org.uk - 6879655",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Swansea_-_geograph.org.uk_-_6879655.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Gatehouse and frontage of HM Prison Swansea."
+  },
+  "hmp-yoi-altcourse": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Admin_block%2C_HMP_Altcourse_1.jpg",
+    "credit": "Rodhullandemu",
+    "licence": "CC BY-SA 4.0",
+    "alt": "Main office block and entrance of HMP Altcourse, Liverpool",
+    "author": "Rodhullandemu",
+    "title": "Admin block, HMP Altcourse 1",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Admin_block,_HMP_Altcourse_1.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Main office block of HMP/YOI Altcourse, Liverpool, seen from the car park."
+  },
+  "chicago-mcc": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/MCC_CHICAGO.jpg",
+    "credit": "Juan Lanzagorta Vallín",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Exterior of the Metropolitan Correctional Center, Chicago",
+    "author": "Juan Lanzagorta Vallín",
+    "title": "MCC CHICAGO",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MCC_CHICAGO.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "Exterior of the Metropolitan Correctional Center, Chicago, in 2014."
+  },
   "hmp-leeds": {
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/HMP_Leeds.jpg",
     "credit": "Richard Thomson",

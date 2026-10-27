@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { isHmppsGroupRegion, otherPrisonsInLabel, prisonsInLabel, regionDisplayLabel } from "@/lib/prisons/hmppsGroupLabel";
+import {
+  isHmppsGroupRegion,
+  otherPrisonsInLabel,
+  prisonsInLabel,
+  regionDisplayLabel,
+  ukGeographicRegionDisplayName,
+} from "@/lib/prisons/hmppsGroupLabel";
 import { getPrisonsByRegion } from "@/data/prisons";
 import {
   getRelatedArticlesForPrison,
@@ -18,6 +24,7 @@ import { usFacilityTypeHubHref, facilityTypeSlugForPrison } from "@/lib/programm
 import { slugUsFacilityTypeExplainer, slugUsStateArticle } from "@/lib/programmatic/articles/slugRules";
 import { getSiteArticle } from "@/data/articles.merge";
 import { prisonProfileJsonLdGraph } from "@/lib/seo/prisonJsonLd";
+import { formatPrisonProfileMetaDescription } from "@/lib/seo/prisonProfileMeta";
 import {
   buildContactBody,
   buildContactHeading,
@@ -154,7 +161,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
     regionLinkPrisons = sameRegionAll.slice(0, 6);
   }
 
-  const metaDesc = formatPrisonMetaDescription(prison);
+  const metaDesc = formatPrisonProfileMetaDescription(prison);
   const profileJsonLd = prisonProfileJsonLdGraph({
     prison,
     path: profilePath,
@@ -209,7 +216,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             <p>
               {isHmppsGroupRegion(prison)
                 ? `${prison.city}, ${prison.country} · ${regionDisplayLabel(prison)}`
-                : `${prison.city}, ${prison.stateOrRegion}, ${prison.country}`}
+                : `${prison.city}, ${ukGeographicRegionDisplayName(prison)}, ${prison.country}`}
             </p>
           </div>
         </div>
@@ -253,8 +260,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       </div>
 
       <div className="container py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
-          <div className="lg:col-span-2 space-y-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 min-w-0">
+          <div className="lg:col-span-2 space-y-10 min-w-0">
             <nav aria-label="Prison directory" className="flex flex-col gap-2 text-sm">
               <Link
                 href={`/prisons/${prison.countrySlug}/${prison.regionSlug}`}
@@ -541,7 +548,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
             </section>
           </div>
 
-          <aside className="space-y-6 lg:pt-1">
+          <aside className="space-y-6 lg:pt-1 min-w-0">
             <Card className="border-border/60">
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-3">Explore region</h3>

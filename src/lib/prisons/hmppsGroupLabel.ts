@@ -68,3 +68,20 @@ export function prisonsInHeading(raw: string | null | undefined): string {
   const g = hmppsGroupReadableName(raw);
   return g ? `${g}: HMPPS prison group` : `Prisons in ${(raw ?? "").trim()}`;
 }
+
+/**
+ * Visitor-facing name for a UK geographic HMPPS region (display only).
+ * Raw values are upper case ("KENT, SURREY & SUSSEX"); this renders
+ * "Kent, Surrey and Sussex". Already mixed-case values (e.g. "HMPPS Wales")
+ * and non-UK regions are returned unchanged. Data is never modified.
+ */
+export function ukGeographicRegionDisplayName(p: PrisonLike): string {
+  const raw = geographicRegion(p);
+  if (p.countrySlug !== "uk" || !raw || raw !== raw.toUpperCase()) return raw;
+  return raw
+    .replace(/\s*,\s*/g, ", ")
+    .replace(/\s*&\s*/g, " and ")
+    .toLowerCase()
+    .replace(/(^|[\s,])([a-z])/g, (_m, pre: string, c: string) => pre + c.toUpperCase())
+    .replace(/\bAnd\b/g, "and");
+}

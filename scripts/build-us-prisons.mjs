@@ -121,15 +121,12 @@ function buildRecord(raw) {
   const name = restorePrisonAcronyms(titleCaseWords(raw.name || raw.slug.replace(/-/g, " ")));
   const city = titleCaseWords(raw.city || "");
 
-  const overview = `${name} is a Federal Bureau of Prisons (${facilityType.toUpperCase()}) facility in ${stateName}, listed in the BOP-derived dataset used in this site build. Security level shown here is a simplified directory label, not a substitute for official BOP classification.`;
-  const history =
-    "Detailed institutional history is not part of the imported BOP listing. Confirm dates, capacity, and regime with the Federal Bureau of Prisons or the facility’s official page.";
-  const prisonLife =
-    "Day-to-day regime and programmes are not included in this dataset. Use official BOP sources for population, programmes, and rules.";
-  const visitingInfo =
-    raw.phone
-      ? `The import lists phone ${raw.phone}. Visiting rules change; confirm hours and requirements on the official BOP facility page before travelling.`
-    : "Visiting information is not in this import. Use the official BOP facility page for current visiting rules.";
+  const overview = `${name} is a Federal Bureau of Prisons (${facilityType.toUpperCase()}) facility in ${stateName}. Security level shown here is a simplified directory label, not a substitute for official BOP classification.`;
+  const history = "";
+  const prisonLife = "";
+  const visitingInfo = raw.phone
+    ? `For visiting information, contact the facility on ${raw.phone} or check the official BOP facility page. Visiting rules change, so confirm hours and requirements before travelling.`
+    : "For visiting information, check the official BOP facility page. Visiting rules change, so confirm hours and requirements before travelling.";
 
   return {
     name,

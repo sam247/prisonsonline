@@ -11,6 +11,7 @@ import { breadcrumbJsonLd } from "@/lib/seo/breadcrumbs";
 import { getBaseUrl } from "@/lib/site";
 import type { Prison } from "@/types/prison";
 import { formatIntlAddress, formatIntlSecurity } from "@/lib/intl/profileCopy";
+import { formatPrisonProfileMetaDescription } from "@/lib/seo/prisonProfileMeta";
 
 /**
  * Profile for official-source international rows (ca, au, nz, ie, za).
@@ -101,6 +102,7 @@ export function IntlPrisonProfileView({ prison }: { prison: Prison }) {
         "@id": `${base}${profilePath}#facility`,
         name: prison.name,
         url: `${base}${profilePath}`,
+        description: formatPrisonProfileMetaDescription(prison),
         address: {
           "@type": "PostalAddress",
           ...(prison.address ? { streetAddress: prison.address } : {}),

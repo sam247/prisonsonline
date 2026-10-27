@@ -30,7 +30,11 @@ test("every block has GOV.UK provenance via sources and fieldSources", () => {
     assert.ok(r.sources.length > 0, `${r.prisonSlug}: no sources`);
     const ids = new Set(r.sources.map((s) => s.id));
     for (const s of r.sources) {
-      assert.match(s.url, /^https:\/\/www\.gov\.uk\/guidance\/[a-z-]+-prison$/, `${r.prisonSlug}: non-GOV.UK source`);
+      assert.match(
+        s.url,
+        /^https:\/\/www\.gov\.uk\/guidance\/[a-z-]+-(prison|yoi|prison-and-young-offender-institution)$/,
+        `${r.prisonSlug}: non-GOV.UK source`,
+      );
       assert.match(s.checkedAt, ISO_DATE);
       if (s.sourceModifiedAt) assert.match(s.sourceModifiedAt, ISO_DATE);
     }
@@ -102,6 +106,8 @@ test("postalAddress is only stored when it differs from the canonical site addre
     const pa = r.postalAddress;
     if (!pa) continue;
     assert.ok(pa.lines.length > 0);
+    // A recipient-format mailing block (US Verifier pattern) is a mailing instruction, not a duplicate site address.
+    if ((pa as { recipientFormat?: unknown }).recipientFormat) continue;
     assert.match(pa.postcode, UK_POSTCODE);
     assert.equal(pa.lines.some((l) => UK_POSTCODE.test(l)), false, "postcode belongs in postcode, not lines");
     const site = ukPrisonsGenerated.find((p) => p.slug === r.prisonSlug)!;
@@ -125,7 +131,13 @@ test("HMP Preston carries the GOV.UK booking and contact routes, and no postalAd
   assert.equal(r.prisonerContact?.sendMoneyUrl, "https://www.gov.uk/send-prisoner-money");
   assert.equal(r.prisonerContact?.postInstructions, "Include the person’s name and prison number on the envelope.");
   assert.equal(r.sources[0].url, "https://www.gov.uk/guidance/preston-prison");
-  assert.equal(r.sources[0].checkedAt, "2026-10-17");
+  assert.equal(r.sources[0].checkedAt, "2026-10-20");
+});
+
+test("a record outside the 2026-10-20 recheck keeps 2026-10-17", () => {
+  const cardiff = getContactVisiting("uk", "hmp-cardiff");
+  assert.ok(cardiff);
+  assert.equal(cardiff.sources[0].checkedAt, "2026-10-17");
 });
 
 test("contact data is not wired into getFacilityVerification (display is Content Manager's)", () => {
@@ -145,12 +157,14 @@ test("withContactVisiting merges blocks and provenance without dropping existing
   assert.deepEqual(merged.fieldSources.visitBooking, [CONTACT_VISITING_SOURCE_ID]);
   assert.equal(merged.fieldSources.phone, base.fieldSources.phone);
   assert.ok(merged.visitBooking && merged.prisonerContact);
-  assert.equal(withContactVisiting("uk", "hmp-gartree", undefined), undefined);
-  const noContact = getFacilityVerification("uk", "hmp-gartree");
-  assert.equal(withContactVisiting("uk", "hmp-gartree", noContact), noContact);
+  // HMP Peterborough is operator-run: its GOV.UK page only links out, so it carries no GOV.UK contact data.
+  assert.equal(getContactVisiting("uk", "hmp-peterborough"), undefined);
+  assert.equal(withContactVisiting("uk", "hmp-peterborough", undefined), undefined);
+  const noContact = getFacilityVerification("uk", "hmp-peterborough");
+  assert.equal(withContactVisiting("uk", "hmp-peterborough", noContact), noContact);
 });
 
-test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026-10-20)", () => {
   const slugs = [
     "hmp-preston", "hmp-wandsworth", "hmp-belmarsh", "hmp-yoi-pentonville", "hmp-wormwood-scrubs",
     "hmp-birmingham", "hmp-manchester", "hmp-leeds", "hmp-liverpool", "hmp-durham", "hmp-wakefield",
@@ -158,6 +172,7 @@ test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026
   for (const slug of slugs) {
     const r = getContactVisiting("uk", slug);
     assert.ok(r, `missing ${slug}`);
+    assert.equal(r.sources[0].checkedAt, "2026-10-20", slug);
     assert.ok(r.visitBooking, `${slug}: visitBooking`);
     assert.equal(r.prisonerContact?.emailAPrisonerUrl, EMAIL_A_PRISONER_URL);
     assert.equal(r.prisonerContact?.sendMoneyUrl, SEND_PRISONER_MONEY_URL);
@@ -189,10 +204,156 @@ test("priority UK prisons carry the GOV.UK contact & visiting data (checked 2026
   assert.equal(manchester.url, undefined);
   assert.match(manchester.note!, /All other visits are booked by prisoner-led application\./);
 
-  for (const slug of ["hmp-leeds", "hmp-wakefield"]) {
+  // GOV.UK: "If you have any issues regarding your visit, please email Visitbooking.wormwoodscrubs@justice.gov.uk.
+  // Please be advised that this email address is for issues and queries" -> enquiries only, not a booking route.
+  assert.equal(getContactVisiting("uk", "hmp-wormwood-scrubs")!.visitBooking!.email, "Visitbooking.wormwoodscrubs@justice.gov.uk");
+  for (const slug of ["hmp-leeds", "hmp-wakefield", "hmp-wormwood-scrubs"]) {
     const b = getContactVisiting("uk", slug)!.visitBooking!;
     assert.equal(b.emailEnquiriesOnly, true);
     assert.equal(b.methods.includes("email"), false);
   }
   assert.match(getContactVisiting("uk", "hmp-belmarsh")!.prisonerContact!.postInstructions!, /or date of birth/);
+});
+
+test("coverage batch 1 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-hewell", "hmp-elmley", "hmp-nottingham", "hmp-berwyn", "hmp-ranby", "hmp-bullingdon", "hmp-coldingley",
+    "hmp-erlestoke", "hmp-garth", "hmp-humber", "hmp-gartree", "hmp-kirkham", "hmp-channings-wood", "hmp-bedford",
+    "hmp-morton-hall", "hmp-yoi-stoke-heath", "hmp-guys-marsh", "hmp-yoi-rochester", "hmp-highpoint",
+    "hmp-long-lartin", "hmp-huntercombe", "hmp-grendon", "hmp-wymott", "hmp-isle-of-wight",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  // Bullingdon's only GOV.UK address is the PO Box already used as its site address, so no postalAddress.
+  assert.equal(ukPrisonsGenerated.find((p) => p.slug === "hmp-bullingdon")!.postcode, "OX25 1PZ");
+  assert.deepEqual(getContactVisiting("uk", "hmp-hewell")!.visitBooking, {
+    methods: ["online", "phone"],
+    url: GOVUK_PRISON_VISITS_URL,
+    phone: "0300 060 6503",
+    phoneHours: "Monday to Friday, 9am to 3pm",
+    email: "Visits.HMPHewell@justice.gov.uk",
+    emailEnquiriesOnly: true,
+    sourceId: CONTACT_VISITING_SOURCE_ID,
+  });
+  const longLartin = getContactVisiting("uk", "hmp-long-lartin")!.visitBooking!;
+  assert.deepEqual(longLartin.methods, ["phone", "email"]);
+  assert.equal(longLartin.url, undefined);
+  assert.deepEqual(getContactVisiting("uk", "hmp-isle-of-wight")!.visitBooking!.methods, ["phone"]);
+  assert.ok(getContactVisiting("uk", "hmp-gartree")!.visitBooking!.methods.includes("prisoner-led"));
+  assert.deepEqual(getContactVisiting("uk", "hmp-kirkham")!.visitBooking!.methods, ["online", "prisoner-led"]);
+  assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].url, "https://www.gov.uk/guidance/elmley-prison");
+  assert.equal(getContactVisiting("uk", "hmp-elmley")!.sources[0].sourceModifiedAt, "2026-07-17");
+  // GOV.UK republished Berwyn on 19 Oct 2026 (values unchanged); re-checked 20 Oct 2026.
+  assert.equal(getContactVisiting("uk", "hmp-berwyn")!.sources[0].sourceModifiedAt, "2026-10-19");
+  assert.equal(getContactVisiting("uk", "hmp-berwyn")!.sources[0].checkedAt, "2026-10-20");
+});
+
+test("coverage batch 2 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-wealstun", "hmp-whitemoor", "hmp-lewes", "hmp-swaleside", "hmp-the-mount", "hmp-exeter", "hmp-sudbury",
+    "hmp-hatfield", "hmp-lindholme", "hmp-yoi-hindley", "hmp-risley", "hmp-yoi-isis", "hmp-holme-house", "hmp-wayland",
+    "hmp-lowdham-grange", "hmp-featherstone", "hmp-leyhill", "hmp-yoi-stocken", "hmp-brixton", "hmp-north-sea-camp",
+    "hmp-yoi-hull", "hmp-littlehey", "hmp-whatton", "hmp-yoi-brinsford",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    // Hindley/Risley list a "Postal address" that is the site address itself, so no separate postalAddress.
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  const isis = getContactVisiting("uk", "hmp-yoi-isis")!.visitBooking!;
+  assert.deepEqual(isis.methods, ["prisoner-led"]);
+  assert.equal(isis.note, "Social and family visits can only be booked by the prisoner internally.");
+  assert.deepEqual(getContactVisiting("uk", "hmp-lewes")!.visitBooking!.methods, ["online"]);
+  const featherstone = getContactVisiting("uk", "hmp-featherstone")!.visitBooking!;
+  assert.equal(featherstone.emailEnquiriesOnly, true);
+  assert.equal(featherstone.methods.includes("email"), false);
+  // Swaleside's page names the send-money service without linking it, so no sendMoneyUrl is stored.
+  assert.equal(getContactVisiting("uk", "hmp-swaleside")!.prisonerContact!.sendMoneyUrl, undefined);
+  assert.equal(getContactVisiting("uk", "hmp-wayland")!.visitBooking!.phone, "01953 804 152");
+});
+
+test("coverage batch 3 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-full-sutton", "hmp-yoi-drake-hall", "hmp-maidstone", "hmp-haverigg", "hmp-yoi-woodhill", "hmp-yoi-hollesley-bay",
+    "hmp-yoi-new-hall", "hmp-bristol", "hmp-yoi-chelmsford", "hmp-yoi-moorland", "hmp-kirklevington-grange",
+    "hmp-frankland", "hmp-yoi-foston-hall", "hmp-norwich", "hmp-swansea", "hmp-lancaster-farms", "hmp-the-verne",
+    "hmp-ford", "hmp-yoi-thorn-cross", "hmp-usk", "hmp-warren-hill", "hmp-yoi-east-sutton-park", "hmp-bure",
+    "hmp-buckley-hall",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  const kirklevington = getContactVisiting("uk", "hmp-kirklevington-grange")!.visitBooking!;
+  assert.deepEqual(kirklevington.methods, ["prisoner-led"]);
+  assert.equal(kirklevington.url, undefined);
+  assert.deepEqual(getContactVisiting("uk", "hmp-yoi-thorn-cross")!.visitBooking!.methods, ["phone"]);
+  // The Verne's visits email is only for step-free access arrangements, so it is not stored as a booking route.
+  const verne = getContactVisiting("uk", "hmp-the-verne")!.visitBooking!;
+  assert.deepEqual(verne.methods, ["online"]);
+  assert.equal(verne.email, undefined);
+  // GOV.UK republished these on 19 Oct 2026; re-checked 20 Oct 2026.
+  assert.equal(
+    getContactVisiting("uk", "hmp-yoi-hollesley-bay")!.visitBooking!.phoneHours,
+    "Tuesday to Thursday, 9am to midday and 1pm to 4pm",
+  );
+  assert.equal(getContactVisiting("uk", "hmp-warren-hill")!.visitBooking!.phoneHours, "Tuesday to Thursday, 9am to midday");
+  for (const slug of ["hmp-yoi-hollesley-bay", "hmp-warren-hill", "hmp-yoi-new-hall"]) {
+    const src = getContactVisiting("uk", slug)!.sources[0];
+    assert.equal(src.sourceModifiedAt, "2026-10-19");
+    assert.equal(src.checkedAt, "2026-10-20");
+  }
+  for (const slug of ["hmp-lancaster-farms", "hmp-bure"]) {
+    const b = getContactVisiting("uk", slug)!.visitBooking!;
+    assert.equal(b.emailEnquiriesOnly, true);
+    assert.equal(b.methods.includes("email"), false);
+  }
+});
+
+test("coverage batch 4 carries GOV.UK contact & visiting data (checked 2026-10-17)", () => {
+  const slugs = [
+    "hmp-cardiff", "hmp-leicester", "hmp-onley", "hmp-send", "hmp-spring-hill", "hmp-stafford", "hmp-yoi-askham-grange",
+    "hmp-yoi-downview", "hmp-yoi-eastwood-park", "hmp-yoi-high-down", "hmp-yoi-lincoln", "hmp-yoi-low-newton",
+    "hmp-yoi-prescoed", "hmp-yoi-standford-hill", "hmp-yoi-styal", "hmp-yoi-swinfen-hall", "hmp-yoi-winchester",
+    "hmyoi-aylesbury", "hmyoi-cookham-wood", "hmyoi-deerbolt", "hmyoi-feltham", "hmyoi-werrington", "hmyoi-wetherby",
+    "hmyoi-portland",
+  ];
+  for (const slug of slugs) {
+    const r = getContactVisiting("uk", slug);
+    assert.ok(r, `missing ${slug}`);
+    assert.ok(r.visitBooking, `${slug}: visitBooking`);
+    assert.ok(r.prisonerContact, `${slug}: prisonerContact`);
+    assert.equal(r.postalAddress, undefined, `${slug}: no separate postal address on GOV.UK`);
+  }
+  assert.equal(
+    getContactVisiting("uk", "hmyoi-portland")!.sources[0].url,
+    "https://www.gov.uk/guidance/portland-prison-and-young-offender-institution",
+  );
+  assert.equal(getContactVisiting("uk", "hmyoi-feltham")!.sources[0].url, "https://www.gov.uk/guidance/feltham-yoi");
+  for (const slug of ["hmp-yoi-prescoed", "hmyoi-feltham"]) {
+    const b = getContactVisiting("uk", slug)!.visitBooking!;
+    assert.deepEqual(b.methods, ["prisoner-led"]);
+    assert.equal(b.url, undefined);
+    assert.equal(b.phone, undefined);
+  }
+  assert.deepEqual(getContactVisiting("uk", "hmp-leicester")!.visitBooking!.methods, ["prisoner-led", "online"]);
+  // Verbatim, contiguous GOV.UK Letters text (re-checked 20 Oct 2026; page last updated 26 Sep 2025).
+  assert.equal(
+    getContactVisiting("uk", "hmp-leicester")!.prisonerContact!.postInstructions,
+    "Include the person’s name and prison number on the envelope, under the address. If you do not know their prison number, contact Leicester. Write your own name and address on the back of the envelope.",
+  );
+  assert.deepEqual(getContactVisiting("uk", "hmyoi-wetherby")!.visitBooking!.methods, ["phone"]);
+  // Cookham Wood names EmailaPrisoner.com without linking it, so no emailAPrisonerUrl is stored.
+  assert.equal(getContactVisiting("uk", "hmyoi-cookham-wood")!.prisonerContact!.emailAPrisonerUrl, undefined);
 });
