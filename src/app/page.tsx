@@ -37,6 +37,8 @@ import {
   Shirt,
   Package,
   HeartHandshake,
+  Mail,
+  Wallet,
 } from "lucide-react";
 
 const ukPool = prisons.filter((p) => p.countrySlug === "uk");
@@ -64,10 +66,14 @@ const iconMap: Record<string, ReactNode> = {
   Shield: <Shield className="h-6 w-6" />,
   FileText: <FileText className="h-6 w-6" />,
   MapPin: <MapPin className="h-6 w-6" />,
+  Mail: <Mail className="h-6 w-6" />,
+  Wallet: <Wallet className="h-6 w-6" />,
 };
 
 const commonSituationSlugs = [
   "how-to-find-a-uk-prison-address",
+  "how-to-email-a-prisoner",
+  "how-to-send-money-to-a-prisoner",
   "how-prison-visits-work",
   "what-happens-going-to-prison",
   "how-prison-sentences-work",

@@ -473,6 +473,98 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    title: "How to Email a Prisoner",
+    slug: "how-to-email-a-prisoner",
+    excerpt:
+      "Email someone in prison in England and Wales through Email a Prisoner (now eMates): what you need, delivery times, replies, photos and costs, plus how US federal TRULINCS messaging works.",
+    icon: "Mail",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for emailing someone in prison — not a photograph of a facility.",
+    },
+    content:
+      "You cannot send an ordinary email to someone in prison. In England and Wales, prisons that offer email use the Email a Prisoner service, which now trades as eMates and is run by Unilink Software Ltd. You open an account on its website, add the person’s name, prisoner number and prison, buy credit and write your message. Prison staff check it before it is printed out or shown on a wing kiosk or in-cell device. US federal prisons work differently: messages go through the Bureau of Prisons’ TRULINCS system, and the person in custody has to add you first. Prisons Online is not connected to either service and cannot send messages or sign you in.\n\n## Where to sign in to Email a Prisoner\n\nHTML:Sign-up and sign-in are on <a href=\"https://www.emailaprisoner.com/\" rel=\"noopener noreferrer\">emailaprisoner.com</a>, which is branded eMates. GOV.UK prison pages link to the same service when they say you can send emails to someone at that prison. If a login page looks unfamiliar, type that address in directly rather than following a search advert or a forum link.\n\n## What you need before you start\n\n- **The person’s full name**, as the prison holds it.\n- **Their prisoner number.** eMates suggests earlier letters, money receipts, a legal representative or the person themselves.\n- **The prison they are in.** eMates does not hold location information, so you have to update the prison yourself if they move.\n- **Photo ID and proof of address.** New accounts go through an identity check using photo ID such as a passport or driving licence, a selfie, and a document showing your name and current address.\n\nHTML:If you do not know which prison someone is in, GOV.UK’s <a href=\"https://www.gov.uk/find-prisoner\">find a prisoner service</a> is the official route. Once you know the prison, the <a href=\"/prisons/uk\">UK prison directory</a> leads to its contact-details page.\n\n## How messages are delivered\n\nDelivery depends on the prison. At paper-based prisons the message is printed and handed out, and eMates asks you to allow 2 business days. At prisons with kiosks or in-cell devices, staff review the message before it appears on screen, again within about 2 business days. “Delivered” in your account means the message reached the prison, not that the person has read it. Some prisons do not hand out correspondence at weekends or on bank holidays.\n\n## Replies, photos and costs\n\nYou can request a reply when you write, if the prison supports it. At paper-based prisons the person gets a pre-paid reply sheet with your message; at kiosk prisons they can reply on screen. Replies are checked by staff and then appear in your eMates inbox, not your normal email. Participating prisons also accept up to 4 photos per message. Printed photos share one A4 sheet and may come out in black and white, and the prison can still decide not to pass a photo on.\n\nThe sender pays; receiving messages is free for the person in prison. When we checked eMates’ published prices on 19 October 2026 they were 42p for the first page (up to 2,500 characters or 50 lines), 37p for each extra page, 26p to request a reply and 32p per photo. Check the current prices on eMates before you buy credit, and only buy what you expect to use.\n\n## What prison staff can see\n\nAssume every message is read. GOV.UK says most letters to and from prison are checked by staff, and eMates messages are reviewed before delivery. Do not use eMates for legal matters: eMates says it must not be used for legally privileged communication, which should go through the prison’s approved legal channels.\n\nHTML:If a prison is not listed on eMates, it does not use the service. You can still write a letter, take phone calls from the person or book a visit. GOV.UK’s <a href=\"https://www.gov.uk/staying-in-touch-with-someone-in-prison\">staying in touch guide</a> covers letters, video calls and phone calls, and our guides to <a href=\"/guides/how-to-find-a-uk-prison-address\">finding a UK prison address</a> and <a href=\"/guides/how-prison-visits-work\">how prison visits work</a> cover the next steps.\n\n## Scotland and Northern Ireland\n\nScotland and Northern Ireland run separate prison services from England and Wales. Check the individual prison’s own page to see which email or messaging service it uses before you open an account.\n\n## US federal prisons: TRULINCS and CorrLinks\n\nHTML:In prisons run by the US Federal Bureau of Prisons, electronic messages go through TRULINCS, and you cannot start the conversation. The person in custody adds you to their contact list, staff approve it, and you then get an automated invitation from CorrLinks asking whether to accept or block their messages. The BOP says the invitation is valid for 10 days, messages are text only with no attachments, each message is limited to 13,000 characters, and everyone must consent to monitoring. Contract facilities do not run TRULINCS. The BOP’s <a href=\"https://www.bop.gov/inmates/trulincs.jsp\">TRULINCS page</a> has troubleshooting steps.\n\nState prisons and county jails each choose their own messaging provider, so check the state Department of Corrections or the jail’s own website rather than assuming the federal process applies.",
+    faqs: [
+      {
+        question: "Can you email a prisoner for free?",
+        answer:
+          "Not in England and Wales. eMates charges the sender for each message, with extra charges for replies and photos, while the person in prison receives messages free. In US federal prisons, the person in custody pays fees to use TRULINCS.",
+      },
+      {
+        question: "Is eMates the same as Email a Prisoner?",
+        answer:
+          "Yes. The service at emailaprisoner.com is now branded eMates and is run by Unilink Software Ltd. GOV.UK prison pages still call it the Email a Prisoner service.",
+      },
+      {
+        question: "How do I find someone’s prisoner number?",
+        answer:
+          "Ask the person, or check earlier letters, money receipts or with their legal representative. If you do not know which prison they are in, use GOV.UK’s find a prisoner service.",
+      },
+      {
+        question: "Can a prisoner email me back?",
+        answer:
+          "Only if their prison supports replies and you pay for a reply when you send your message. The reply arrives in your eMates inbox, not your normal email address.",
+      },
+      {
+        question: "How long does an email to a prisoner take to arrive?",
+        answer:
+          "eMates asks senders to allow up to 2 business days, whether the prison prints messages or shows them on a kiosk or in-cell device. Weekends and bank holidays can add time.",
+      },
+      {
+        question: "How do I email someone in a US federal prison?",
+        answer:
+          "You cannot start contact yourself. The person in custody adds you through TRULINCS, staff approve it, and CorrLinks emails you an invitation to accept. Messages are text only and monitored.",
+      },
+    ],
+  },
+  {
+    title: "How to Send Money to a Prisoner",
+    slug: "how-to-send-money-to-a-prisoner",
+    excerpt:
+      "Send money to someone in prison in England and Wales with GOV.UK’s free debit card service: what you need, how long it takes, exemptions for posting money, and how US federal deposits work.",
+    icon: "Wallet",
+    coverImage: {
+      type: "editorial",
+      src: "/images/guides/guide-general.svg",
+      alt: "Abstract illustration for sending money to someone in prison — not a photograph of a facility.",
+    },
+    content:
+      "In England and Wales, the standard way to send money to someone in prison is GOV.UK’s free Send money to someone in prison service. You pay with a Visa, Mastercard or Maestro debit card, and you need the person’s prisoner number and date of birth. Money usually reaches their prison account in less than 3 working days. Prisons no longer accept bank transfers, cheques, postal orders or cash by post, unless you have been given an exemption. Scotland, Northern Ireland and US prisons use their own systems, covered below.\n\n## Use the official GOV.UK service\n\nHTML:Start at GOV.UK’s <a href=\"https://www.gov.uk/send-prisoner-money\">send money to someone in prison</a> page. The service is free, secure and available in all prisons in England and Wales, and it is built by the Ministry of Justice. You do not need to know which prison the person is in: the prisoner number and date of birth identify their account. Use the GOV.UK link rather than a search advert or a site that looks similar.\n\n## What you need\n\n- **A debit card.** Visa, Mastercard or Maestro. The service’s help pages say credit cards and prepaid debit cards are not accepted.\n- **The person’s prisoner number.** The service cannot give this out by law, so ask the person for it.\n- **Their date of birth**, matching the prison’s record.\n\nIf the person has only just arrived in prison, their details can take one working day to appear, so try again the next day. If the number and date of birth still do not match, the person should ask wing staff to check the details the prison holds and correct them.\n\n## How long it takes and how they find out\n\nMost payments arrive in less than 3 working days, though the service’s help pages say a payment can take up to 5 days. Some prisons give the person an account slip when money arrives; not all do, so they may need to ask a wing officer. The person can see the sender’s name, but not the sender’s personal or banking details.\n\n## If something goes wrong\n\n- **You cannot cancel a payment.** Once it has gone through it is non-refundable.\n- **If the person moves prison**, the money is transferred to the new prison, which can take a few days.\n- **If the person has been released**, they need to contact the prison, which will send a refund.\n\n## If you cannot pay online\n\nHTML:If you cannot use a computer, smartphone or the internet, or you do not have a debit card, you can ask the prison for an exemption that lets you send money by post. Print the request form from the GOV.UK <a href=\"https://send-money-to-prisoner.service.gov.uk/en-gb/help/apply-for-exemption/\">apply for an exemption</a> page and post it, with proof, to the prison’s Business Hub. The proof listed is an account refusal from one of the named UK banks, proof that your bank account does not give you a debit card or cheque book, or, if you live overseas, proof of residence and an account refusal from a bank in your country.\n\nExemptions are only granted in exceptional circumstances, and the governor can withdraw one at any time. Do not post any money until you have your exemption letter. If the only problem is not having a debit card, GOV.UK suggests setting up a basic bank account that comes with one.\n\n## Sending money from abroad\n\nYou can use the same service from outside the UK, but only with a Visa, Mastercard or Maestro debit card.\n\n## Gifts and property are separate\n\nHTML:Money and property follow different rules. Books, clothes and other items are handled through each prison’s own property process, which is described on its GOV.UK page. Our guide to <a href=\"/guides/what-can-you-bring-to-prison\">what you can bring to a prison visit</a> covers what visitors can and cannot carry in.\n\n## Scotland and Northern Ireland\n\nThe GOV.UK service only covers prisons in England and Wales. To send money to someone in a Scottish or Northern Irish prison, contact that prison directly and ask how it accepts money.\n\n## US federal prisons\n\nHTML:Federal Bureau of Prisons facilities accept deposits into a person’s commissary account through MoneyGram, Western Union, or by post through the US Postal Service. For MoneyGram and Western Union you need the person’s eight-digit register number followed immediately by their last name, with no spaces or dashes, as in the BOP’s example 12345678DOE. The BOP says electronic deposits sent between 7am and 9pm Eastern time usually post within 2 to 4 hours, and that you should wait until the person has physically arrived at a BOP facility before sending. Wrong details can mean the money is rejected or paid into someone else’s account and not returned. Check the exact steps on the BOP’s <a href=\"https://www.bop.gov/inmates/communications.jsp\">communications page</a>.\n\nPrivately run contract facilities, state prisons and county jails use their own deposit providers, so check with the facility or the state Department of Corrections instead.",
+    faqs: [
+      {
+        question: "Can I send money to a prisoner by bank transfer?",
+        answer:
+          "Not in England and Wales. Prisons no longer accept bank transfers, cheques, postal orders or cash by post. Use the free GOV.UK debit card service, or ask the prison for an exemption to send money by post if you cannot use it.",
+      },
+      {
+        question: "Does it cost anything to send money to someone in prison?",
+        answer:
+          "No. GOV.UK’s Send money to someone in prison service is free to use for prisons in England and Wales.",
+      },
+      {
+        question: "How long does it take for money to reach a prisoner?",
+        answer:
+          "Usually less than 3 working days, although a payment can take up to 5 days. The person may get an account slip when it arrives, or can ask a wing officer.",
+      },
+      {
+        question: "What details do I need to send money to a prisoner?",
+        answer:
+          "A Visa, Mastercard or Maestro debit card, the person’s prisoner number and their date of birth. You do not need the name of the prison.",
+      },
+      {
+        question: "Can I cancel a payment to a prisoner?",
+        answer:
+          "No. Once a payment has gone through the GOV.UK service it cannot be cancelled or refunded. If the person has been released, they should contact the prison for a refund.",
+      },
+      {
+        question: "How do I send money to someone in a US federal prison?",
+        answer:
+          "Use MoneyGram, Western Union or the US Postal Service, following the steps on the BOP communications page. Electronic deposits need the eight-digit register number followed by the person’s last name.",
+      },
+    ],
+  },
 ];
 
 export const getGuide = (slug: string) => guides.find(g => g.slug === slug);
