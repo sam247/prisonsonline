@@ -227,6 +227,8 @@ function profileName(p: Prison): string {
 }
 
 function securityAdjective(p: Prison): string {
+  // Closed rows: the listed level is unreliable or no longer applies, so the meta text does not state one.
+  if (p.status === "closed") return "";
   const level = clean(p.securityLevel);
   if (!level || /^multi$/i.test(level) || /^category [abcd]$/i.test(level)) return "";
   const mapped: Record<string, string> = {
@@ -384,6 +386,7 @@ function countyFacts(county: string): string[] {
 }
 
 function securityFacts(p: Prison): string[] {
+  if (p.status === "closed") return [];
   const described = clean(p.securityDescription);
   const level = clean(p.securityLevel);
   const usable = described
@@ -445,6 +448,7 @@ function blurbFacts(p: Prison): string[] {
     if (!text) continue;
     const one = text.split(/(?<=[.!?])\s+/)[0] ?? "";
     if (!one || one.length > 110) continue;
+    if (p.status === "closed" && /security/i.test(one)) continue;
     if (PROFILE_INTENT.test(one) || FILLER.test(one) || /\brecorded\b/i.test(one)) continue;
     if (/imported dataset|this site build|directory label|not part of the imported|public sector prison/i.test(one)) continue;
     if (postcode && one.includes(postcode)) continue;
@@ -509,7 +513,7 @@ function composeProfileMetaDescription(p: Prison): string {
     cohortFacts(p),
     countyFacts(county),
     securityFacts(p),
-    capacityFacts(p.capacity),
+    p.status === "closed" ? [] : capacityFacts(p.capacity),
     yearFacts(p.openedYear),
     countryFacts(clean(p.country)),
     operatorTypeFacts(p),

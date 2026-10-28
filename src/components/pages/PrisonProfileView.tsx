@@ -151,6 +151,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
   // Closed facilities (status "closed" only; UK and open rows have no status) get a status banner and lose
   // the blocks that describe current operations. "historic" rows (e.g. Alcatraz) render as before.
   const isClosed = prison.status === "closed";
+  // Optional per-row wording (e.g. "Operations ended"); defaults to "Closed".
+  const statusLabel = prison.statusLabel?.trim() || "Closed";
 
   const profilePath = `/prisons/${prison.countrySlug}/${prison.slug}`;
   const nearbyCourts =
@@ -209,7 +211,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       <header className="bg-primary text-primary-foreground">
         <div className="container py-12">
           <Badge variant="secondary" className="mb-4">
-            {isClosed ? "Closed" : prison.securityLevel}
+            {isClosed ? statusLabel : prison.securityLevel}
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold mb-3">{displayName}</h1>
           {displayName !== prison.name.trim() ? (
@@ -237,7 +239,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               aria-label="Facility status"
               className="rounded-md border border-amber-500/50 bg-amber-50 text-amber-950 p-4 mb-4"
             >
-              <p className="text-sm font-semibold">Facility status: closed</p>
+              <p className="text-sm font-semibold">Facility status: {statusLabel.toLowerCase()}</p>
               {prison.statusNote?.trim() ? (
                 <p className="text-sm leading-relaxed mt-1">{prison.statusNote.trim()}</p>
               ) : null}
