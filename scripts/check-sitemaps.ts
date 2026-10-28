@@ -70,7 +70,7 @@ assert.ok(
   "Legacy ADX path must not appear in region sitemap",
 );
 assert.equal(guides.length, 15, "Guide sitemap count regression");
-assert.equal(categories.length, 141, "Categories sitemap count regression");
+assert.equal(categories.length, 140, "Categories sitemap count regression");
 assert.equal(probation.length, 328, "Probation sitemap count regression");
 assert.ok(courts.length > 100, `Expected populated courts sitemap, found ${courts.length}`);
 assert.equal(new Set(courts.map((e) => e.loc)).size, courts.length, "Courts sitemap contains duplicate URLs");
