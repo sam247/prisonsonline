@@ -15,7 +15,18 @@ import { prisons } from "@/data/prisons";
 import { getFacilityVerification } from "@/data/facilitySources";
 import { ukVerificationOverlay } from "@/data/generated/ukVerificationOverlay.generated";
 import type { PrisonVerificationInput } from "@/lib/verification/types";
-import { selectUkPrisonsDue } from "@/lib/verification/selectPrison";
+import {
+  ensureEntries,
+  loadMergedQueue,
+  queuePaths,
+  recordRun,
+  recordSourceUpdates,
+  saveQueueEverywhere,
+  selectFromQueue,
+  toStateRecord,
+  type SourceUpdates,
+} from "@/lib/verification/queue";
+import { matchCollectionEntry } from "@/lib/verification/discoverSource";
 import { verifyUkPrison, nextStateFromResult } from "@/lib/verification/runVerification";
 import { defaultHttpGet, fetchGovukPrisonsCollection } from "@/lib/verification/govukClient";
 import { productionWritesEnabled, type OverlayStore } from "@/lib/verification/applyChanges";
@@ -46,6 +57,9 @@ function parseArgs(argv: string[]) {
     slugs: slugsFlag ? slugsFlag.split(",").map((s) => s.trim()).filter(Boolean) : undefined,
     limit: limitFlag ? Number(limitFlag) : slugsFlag ? 50 : 1,
     outDir: outFlag,
+    queueWorking: argv.find((arg) => arg.startsWith("--queue-working="))?.slice("--queue-working=".length),
+    noQueueUpdate: argv.includes("--no-queue-update"),
+    queueUpdateOnDryRun: argv.includes("--queue-update"),
     help: argv.includes("--help") || argv.includes("-h"),
   };
 }
@@ -91,6 +105,9 @@ Options:
   --limit=N          How many due UK prisons to check (default 1; use 10 for a batch dry-run)
   --slugs=a,b,c      Explicit UK slugs (ignores due-date selection)
   --write            Apply SAFE_AUTO_CHANGE overlay writes (also requires UK_PRISON_VERIFIER_WRITE=1)
+  --queue-working=P  Working-copy queue (default $PRISON_VERIFIER_QUEUE_PATH or /workspace/prison-verifier/queue.json)
+  --no-queue-update  Select from the queue but do not write results back to it
+  --queue-update     Also write back after a dry-run (write-mode runs always write back)
   --out=DIR          Report directory (default data/verification/reports)
   --help             Show this help
 
@@ -139,12 +156,26 @@ Default mode is dry-run. Dry-run cannot mutate HMPPS JSON, generated prison modu
   }
 
   const state = loadState(verificationDir);
-  const selected = selectUkPrisonsDue({
-    prisons: prisons.map(toInput),
-    state: state.prisons,
+  // The queue (data/verification/queue.json merged with the working copy) decides what is due.
+  // It fails closed: with no queue at all this throws rather than falling back to an alphabetical list.
+  const queuePathSet = queuePaths(root, args.queueWorking);
+  const loaded = loadMergedQueue(queuePathSet);
+  const allInputs = prisons.map(toInput);
+  let queue = ensureEntries(loaded.queue, allInputs, now);
+  const sourceUpdates: SourceUpdates = {};
+  for (const prison of allInputs) {
+    const hit = collection ? matchCollectionEntry(prison, collection) : undefined;
+    if (hit?.publicUpdatedAt) sourceUpdates[prison.slug] = hit.publicUpdatedAt;
+  }
+  queue = recordSourceUpdates(queue, sourceUpdates);
+  const selected = selectFromQueue({
+    queue,
+    prisons: allInputs,
+    country: "uk",
     now,
     limit: Number.isFinite(args.limit) && args.limit > 0 ? args.limit : 1,
     slugs: args.slugs,
+    sourceUpdates,
   });
 
   if (selected.length === 0) {
@@ -166,9 +197,21 @@ Default mode is dry-run. Dry-run cannot mutate HMPPS JSON, generated prison modu
     results.push(result);
     appendAudit(verificationDir, result.audit);
     nextState = upsertPrisonState(nextState, nextStateFromResult(result, now));
+    queue = recordRun(queue, {
+      slug: prison.slug,
+      at: result.audit.verifiedAt,
+      status: result.audit.verificationStatus,
+      runStatus: result.audit.runStatus === "failed" ? "failed" : "success",
+      mode: writesEnabled ? "write" : "dry-run",
+      differenceFields: result.audit.differences.filter((d) => d.classification !== "NO_CHANGE").map((d) => d.field),
+      sourceUrl: result.source?.url,
+      error: result.audit.errors[0],
+    });
     await sleep(150);
   }
   saveState(verificationDir, nextState);
+  const queueWritten = !args.noQueueUpdate && (writesEnabled || args.queueUpdateOnDryRun);
+  if (queueWritten) saveQueueEverywhere(queue, queuePathSet);
 
   if (writesEnabled) {
     const moduleSource = resolveUkOverlayModuleWrite({
@@ -213,6 +256,11 @@ Default mode is dry-run. Dry-run cannot mutate HMPPS JSON, generated prison modu
 
   process.stdout.write(`${renderCliSummary(report)}\n`);
   process.stdout.write(`Report: ${mdPath}\n`);
+  process.stdout.write(
+    queueWritten
+      ? `Queue updated: ${queuePathSet.repoPath} and ${queuePathSet.workingPath}\n`
+      : "Queue not updated (dry-run, or --no-queue-update). Pass --queue-update to record a dry-run.\n",
+  );
   if (writesEnabled) {
     process.stdout.write(`Overlay written: ${overlayJsonPath}\n`);
   } else {

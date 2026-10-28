@@ -152,6 +152,8 @@ export interface GovukCollectionEntry {
   basePath: string;
   webUrl: string;
   withdrawn: boolean;
+  /** GOV.UK public_updated_at (ISO), when the collection API supplies it. */
+  publicUpdatedAt?: string;
 }
 
 export interface GovukContentDocument {
