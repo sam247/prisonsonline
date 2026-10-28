@@ -837,5 +837,38 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:MCC_CHICAGO.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Exterior of the Metropolitan Correctional Center, Chicago, in 2014."
+  },
+  "hmp-brixton": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Wall_of_H.M._Prison_Brixton_%28geograph_2640556%29.jpg",
+    "credit": "David Anstiss",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Victorian cell block of HMP Brixton above its perimeter wall",
+    "author": "David Anstiss",
+    "title": "Wall of H.M. Prison Brixton (geograph 2640556)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wall_of_H.M._Prison_Brixton_(geograph_2640556).jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Perimeter wall and cell block of HM Prison Brixton in 2011."
+  },
+  "hmp-cardiff": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Cardiff_Queen_Street_railway_station_MMB_12_HMP_Cardiff.jpg",
+    "credit": "mattbuck",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Stone cell block of HMP Cardiff behind its security fence",
+    "author": "mattbuck",
+    "title": "Cardiff Queen Street railway station MMB 12 HMP Cardiff",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cardiff_Queen_Street_railway_station_MMB_12_HMP_Cardiff.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "HM Prison Cardiff seen from the platform of Cardiff Queen Street railway station in 2010."
+  },
+  "hmp-isle-of-wight": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/The_entrance_to_HMP_Isle_of_Wight%2C_Parkhurst_-_geograph.org.uk_-_2653329.jpg",
+    "credit": "Ian S",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Entrance road and signage at the Parkhurst site of HMP Isle of Wight",
+    "author": "Ian S",
+    "title": "The entrance to HMP Isle of Wight, Parkhurst - geograph.org.uk - 2653329",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_entrance_to_HMP_Isle_of_Wight,_Parkhurst_-_geograph.org.uk_-_2653329.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "The entrance to HMP Isle of Wight at its Parkhurst site in 2011."
   }
 }
