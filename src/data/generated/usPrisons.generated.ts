@@ -2535,7 +2535,10 @@ export const usPrisonsGenerated: Prison[] = [
       "fax": "925-833-7599",
       "facilityType": "fci",
       "dataProvenance": "bop_import"
-    }
+    },
+    "status": "closed",
+    "statusSource": "https://dublin.ca.gov/DocumentCenter/View/40932/Notification-Letter---FCI-Dublin-120425",
+    "statusNote": "Operations at FCI Dublin ceased (by April 2024, according to a Bureau of Prisons letter) and the facility was vacated by December 2024. The Bureau of Prisons is now proposing permanent deactivation (BOP notification letter, 4 December 2025). It is no longer listed in the BOP locations directory."
   },
   {
     "name": "Duluth FPC",
@@ -7926,7 +7929,10 @@ export const usPrisonsGenerated: Prison[] = [
       "fax": "310-732-5325",
       "facilityType": "fci",
       "dataProvenance": "bop_import"
-    }
+    },
+    "status": "closed",
+    "statusSource": "https://apnews.com/article/bureau-of-prisons-los-angeles-terminal-island-3829cae8a6e07441161f248d8e2428a1",
+    "statusNote": "Operations ended; permanent closure is proposed. The Bureau of Prisons suspended operations in November 2025, as reported by AP from an internal memo to staff. The statement that operations ended in June 2026 and that permanent closure is proposed comes from Los Angeles Councilmember Tim McOsker (20 August 2026), relaying the Bureau of Prisons; it is not a BOP document. It is no longer listed in the BOP locations directory."
   },
   {
     "name": "Terre Haute FCI",

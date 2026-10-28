@@ -148,6 +148,9 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       ? getSiteArticle(slugUsFacilityTypeExplainer(facilityTypeSlugForPrison(prison)))
       : undefined;
   const availableIntents = intentsForPrison(prison);
+  // Closed facilities (status "closed" only; UK and open rows have no status) get a status banner and lose
+  // the blocks that describe current operations. "historic" rows (e.g. Alcatraz) render as before.
+  const isClosed = prison.status === "closed";
 
   const profilePath = `/prisons/${prison.countrySlug}/${prison.slug}`;
   const nearbyCourts =
@@ -206,7 +209,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
       <header className="bg-primary text-primary-foreground">
         <div className="container py-12">
           <Badge variant="secondary" className="mb-4">
-            {prison.securityLevel}
+            {isClosed ? "Closed" : prison.securityLevel}
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold mb-3">{displayName}</h1>
           {displayName !== prison.name.trim() ? (
@@ -227,7 +230,37 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
 
       <div className="border-b bg-muted/40">
         <div className="container py-8 max-w-3xl">
-          <p className="text-base text-foreground/90 leading-relaxed">{leadSummaryText(prison)}</p>
+          {isClosed ? (
+            <aside
+              data-block="closure-status"
+              role="note"
+              aria-label="Facility status"
+              className="rounded-md border border-amber-500/50 bg-amber-50 text-amber-950 p-4 mb-4"
+            >
+              <p className="text-sm font-semibold">Facility status: closed</p>
+              {prison.statusNote?.trim() ? (
+                <p className="text-sm leading-relaxed mt-1">{prison.statusNote.trim()}</p>
+              ) : null}
+              {prison.statusSource && /^https?:\/\//i.test(prison.statusSource) ? (
+                <p className="text-xs mt-2">
+                  <a
+                    href={prison.statusSource}
+                    className="underline"
+                    rel="noopener noreferrer nofollow"
+                    target="_blank"
+                  >
+                    Source for this status
+                  </a>
+                </p>
+              ) : null}
+              <p className="text-xs mt-2">
+                Contact, visiting and capacity details are not shown because the facility is not operating as a
+                current prison.
+              </p>
+            </aside>
+          ) : (
+            <p className="text-base text-foreground/90 leading-relaxed">{leadSummaryText(prison)}</p>
+          )}
           {prison.dataProvenance === "hmpps_import" && (
             <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
               Profile fields are derived from published HMPPS listing data. Narrative sections
@@ -303,7 +336,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             ) : null}
 
-            <ContactVisitingBlock rows={contactRows} />
+            {isClosed ? null : <ContactVisitingBlock rows={contactRows} />}
 
             {facilityVisual.kind === "real" || facilityVisual.kind === "editorial" ? (
             <section aria-labelledby="facility-visual-heading" className="scroll-mt-4">
@@ -329,12 +362,14 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               <Card className="border-border/60">
                 <CardContent className="p-5 sm:p-6">
                   <dl>
-                    <GlanceRow label="Security / category" value={prison.securityLevel} />
+                    {isClosed ? null : <GlanceRow label="Security / category" value={prison.securityLevel} />}
                     <GlanceRow label="Operator" value={prison.operator} />
-                    <GlanceRow
-                      label="Capacity"
-                      value={prison.capacity > 0 ? prison.capacity.toLocaleString() : "Not listed"}
-                    />
+                    {isClosed ? null : (
+                      <GlanceRow
+                        label="Capacity"
+                        value={prison.capacity > 0 ? prison.capacity.toLocaleString() : "Not listed"}
+                      />
+                    )}
                     <GlanceRow
                       label="Opened"
                       value={prison.openedYear > 0 ? String(prison.openedYear) : "Not listed"}
@@ -350,7 +385,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                       value={prison.facilityType ? prison.facilityType.toUpperCase() : undefined}
                     />
                   </dl>
-                  {(showHmppsCapacityNote || showBopImportNote) && (
+                  {!isClosed && (showHmppsCapacityNote || showBopImportNote) && (
                     <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50 leading-relaxed">
                       Capacity and opening year are not listed for this establishment. Check the official operator&apos;s page for current figures.
                     </p>
@@ -359,7 +394,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </Card>
             </section>
 
-            {prisonTypeBody ? (
+            {prisonTypeBody && !isClosed ? (
               <section aria-labelledby="prison-type-heading">
                 <h2 id="prison-type-heading" className="text-xl font-bold mb-4">
                   {buildPrisonTypeHeading(prison.name)}
@@ -368,12 +403,14 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             ) : null}
 
-            <section aria-labelledby="overview-heading">
-              <h2 id="overview-heading" className="text-xl font-bold mb-4">
-                Overview
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">{visitorOverview(prison)}</p>
-            </section>
+            {isClosed ? null : (
+              <section aria-labelledby="overview-heading">
+                <h2 id="overview-heading" className="text-xl font-bold mb-4">
+                  Overview
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">{visitorOverview(prison)}</p>
+              </section>
+            )}
 
             {hasVisitorHistory(prison.history) ? (
               <section aria-labelledby="history-heading">
@@ -393,7 +430,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             )}
 
-            {visitorPrisonLife(prison.prisonLife) ? (
+            {visitorPrisonLife(prison.prisonLife) && !isClosed ? (
               <section aria-labelledby="life-heading">
                 <h2 id="life-heading" className="text-xl font-bold mb-4">
                   Prison Life
@@ -402,6 +439,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             ) : null}
 
+            {isClosed ? null : (
+            <>
             <section aria-labelledby="visiting-heading">
               <h2 id="visiting-heading" className="text-xl font-bold mb-4">
                 {buildHowToVisitHeading(prison.name)}
@@ -422,6 +461,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 — then confirm every rule with the operator for this establishment.
               </p>
             </section>
+            </>
+            )}
 
             {prison.inspectionNotes && (
               <section aria-labelledby="inspection-heading">
@@ -432,6 +473,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </section>
             )}
 
+            {isClosed ? null : (
+            <>
             <section aria-labelledby="contact-heading">
               <h2 id="contact-heading" className="text-xl font-bold mb-4">
                 {buildContactHeading(prison.name)}
@@ -457,6 +500,8 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
                 </p>
               ) : null}
             </section>
+            </>
+            )}
 
             <section aria-labelledby="location-heading">
               <h2 id="location-heading" className="text-xl font-bold mb-4">
@@ -468,7 +513,7 @@ export function PrisonProfileView({ prison }: { prison: Prison }) {
               </div>
             </section>
 
-            {visitingGuides.length > 0 ? (
+            {visitingGuides.length > 0 && !isClosed ? (
               <section aria-labelledby="visiting-guides-heading">
                 <h2 id="visiting-guides-heading" className="text-xl font-bold mb-4">
                   Prison visiting guides
