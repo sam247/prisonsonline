@@ -48,6 +48,18 @@ export function geographicRegion(p: PrisonLike): string {
   return isHmppsGroupRegion(p) ? "" : (p.stateOrRegion ?? "").trim();
 }
 
+/**
+ * True when a non-US region only repeats the city ("London" / "LONDON", "Dublin" / "Co. Dublin"),
+ * so visible location lines can drop it. US states stay ("New York, New York" names two places).
+ * Display only: meta, JSON-LD and copy helpers keep using geographicRegion().
+ */
+export function regionRepeatsCity(p: PrisonLike & { city?: string | null }, region: string): boolean {
+  if (p.countrySlug === "us") return false;
+  const norm = (v: string | null | undefined) => (v ?? "").trim().toLowerCase().replace(/^(co\.?|county)\s+/, "");
+  const r = norm(region);
+  return r !== "" && r === norm(p.city);
+}
+
 /** Readable name for a raw region string when it is an HMPPS group; otherwise null. */
 export function hmppsGroupReadableName(raw: string | null | undefined): string | null {
   const key = (raw ?? "").trim().toUpperCase();
