@@ -1,0 +1,20 @@
+{
+  "prisons": {
+    "alderson-fpc": {
+      "prisonSlug": "alderson-fpc",
+      "countrySlug": "us",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-19T08:19:09.909Z",
+      "nextVerificationAt": "2026-11-18T08:19:09.909Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/ald/"
+    },
+    "aliceville-fci": {
+      "prisonSlug": "aliceville-fci",
+      "countrySlug": "us",
+      "verificationStatus": "REVIEW_REQUIRED",
+      "lastVerifiedAt": "2026-10-19T08:19:09.909Z",
+      "nextVerificationAt": "2026-10-26T08:19:09.909Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/ali/"
+    }
+  }
+}

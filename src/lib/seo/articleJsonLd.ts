@@ -21,6 +21,7 @@ export function articleJsonLd(opts: {
     datePublished: opts.datePublished,
     publisher: {
       "@type": "Organization",
+      "@id": `${base}/#organization`,
       name: "Prisons Online",
       url: base,
       logo: { "@type": "ImageObject", url: `${base}/logo-full.png` },

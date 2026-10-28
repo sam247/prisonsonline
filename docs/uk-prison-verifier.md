@@ -77,3 +77,9 @@ UK_PRISON_COMPLETENESS_WRITE=1 npx tsx scripts/verify-uk-prisons.ts --slugs=... 
 
 If VERIFY fails or the facility/identity is `REVIEW_REQUIRED`, completeness writes are suppressed. Populated fields are never overwritten. See `data/verification/reports/COMPLETENESS_DRY_RUN.md`.
 
+## Queue-driven selection
+
+`scripts/verify-uk-prisons.ts` now picks prisons from `data/verification/queue.json` (merged with the working copy at
+`/workspace/prison-verifier/queue.json`), most overdue first by tier, and writes `lastVerified`, `nextDue` and `status`
+back after a write-mode run. `--slugs=` still overrides selection. See `data/verification/QUEUE-README.md` for the tiers,
+the merge rule and the routine commands, and `npx tsx scripts/queue-status.ts` for overdue counts by tier.

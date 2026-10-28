@@ -1,0 +1,52 @@
+{
+  "prisons": {
+    "alderson-fpc": {
+      "prisonSlug": "alderson-fpc",
+      "countrySlug": "us",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-21T08:23:07.194Z",
+      "nextVerificationAt": "2026-11-20T08:23:07.194Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/ald/"
+    },
+    "aliceville-fci": {
+      "prisonSlug": "aliceville-fci",
+      "countrySlug": "us",
+      "verificationStatus": "REVIEW_REQUIRED",
+      "lastVerifiedAt": "2026-10-21T08:23:07.194Z",
+      "nextVerificationAt": "2026-10-28T08:23:07.194Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/ali/"
+    },
+    "big-sandy-usp": {
+      "prisonSlug": "big-sandy-usp",
+      "countrySlug": "us",
+      "verificationStatus": "CHANGED",
+      "lastVerifiedAt": "2026-10-21T08:23:41.987Z",
+      "nextVerificationAt": "2026-11-20T08:23:41.987Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/bsy/"
+    },
+    "big-spring-fci": {
+      "prisonSlug": "big-spring-fci",
+      "countrySlug": "us",
+      "verificationStatus": "REVIEW_REQUIRED",
+      "lastVerifiedAt": "2026-10-21T08:23:41.987Z",
+      "nextVerificationAt": "2026-10-28T08:23:41.987Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/big/"
+    },
+    "brooklyn-mdc": {
+      "prisonSlug": "brooklyn-mdc",
+      "countrySlug": "us",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-26T09:14:03.159Z",
+      "nextVerificationAt": "2026-11-25T09:14:03.159Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/bro/"
+    },
+    "bryan-fpc": {
+      "prisonSlug": "bryan-fpc",
+      "countrySlug": "us",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-26T09:14:03.159Z",
+      "nextVerificationAt": "2026-11-25T09:14:03.159Z",
+      "lastSourceUrl": "https://www.bop.gov/locations/institutions/bry/"
+    }
+  }
+}

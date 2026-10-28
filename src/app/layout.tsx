@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Providers } from "@/components/providers";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { organizationJsonLd } from "@/lib/seo/organizationJsonLd";
 import { siteName } from "@/lib/site";
 import { ConsentBanner, ConsentDialog, ConsentRoot } from "c15t/next";
 import { resolveConsent } from "c15t/next/server";
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }} />
         <ConsentRoot state={resolveConsent()}>
           <Providers>
             <div className="flex flex-col min-h-screen">

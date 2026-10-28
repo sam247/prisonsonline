@@ -837,5 +837,103 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:MCC_CHICAGO.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "caption": "Exterior of the Metropolitan Correctional Center, Chicago, in 2014."
+  },
+  "hmp-brixton": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Wall_of_H.M._Prison_Brixton_%28geograph_2640556%29.jpg",
+    "credit": "David Anstiss",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Victorian cell block of HMP Brixton above its perimeter wall",
+    "author": "David Anstiss",
+    "title": "Wall of H.M. Prison Brixton (geograph 2640556)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wall_of_H.M._Prison_Brixton_(geograph_2640556).jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Perimeter wall and cell block of HM Prison Brixton in 2011."
+  },
+  "hmp-cardiff": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Cardiff_Queen_Street_railway_station_MMB_12_HMP_Cardiff.jpg",
+    "credit": "mattbuck",
+    "licence": "CC BY-SA 3.0",
+    "alt": "Stone cell block of HMP Cardiff behind its security fence",
+    "author": "mattbuck",
+    "title": "Cardiff Queen Street railway station MMB 12 HMP Cardiff",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cardiff_Queen_Street_railway_station_MMB_12_HMP_Cardiff.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "caption": "HM Prison Cardiff seen from the platform of Cardiff Queen Street railway station in 2010."
+  },
+  "hmp-isle-of-wight": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/The_entrance_to_HMP_Isle_of_Wight%2C_Parkhurst_-_geograph.org.uk_-_2653329.jpg",
+    "credit": "Ian S",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Entrance road and signage at the Parkhurst site of HMP Isle of Wight",
+    "author": "Ian S",
+    "title": "The entrance to HMP Isle of Wight, Parkhurst - geograph.org.uk - 2653329",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_entrance_to_HMP_Isle_of_Wight,_Parkhurst_-_geograph.org.uk_-_2653329.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "The entrance to HMP Isle of Wight at its Parkhurst site in 2011."
+  },
+  "hmp-leeds": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/HMP_Leeds.jpg",
+    "credit": "Richard Thomson",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Gatehouse towers of HMP Leeds (Armley) seen from Gloucester Terrace",
+    "author": "Richard Thomson",
+    "title": "HMP Leeds",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Leeds.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Looking along Gloucester Terrace towards the entrance of HM Prison Leeds."
+  },
+  "hmp-long-lartin": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/HMP_Long_Lartin%2C_aerial_2021_-_geograph.org.uk_-_6951874.jpg",
+    "credit": "Simon Tomson",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Aerial view of the HMP Long Lartin site within its perimeter fence",
+    "author": "Simon Tomson",
+    "title": "HMP Long Lartin, aerial 2021 - geograph.org.uk - 6951874",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMP_Long_Lartin,_aerial_2021_-_geograph.org.uk_-_6951874.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Aerial view of HM Prison Long Lartin in 2021."
+  },
+  "hmp-usk": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Usk_Prison_-_geograph.org.uk_-_1541844.jpg",
+    "credit": "Rick Crowley",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Victorian stone buildings of HMP Usk above the town rooftops",
+    "author": "Rick Crowley",
+    "title": "Usk Prison - geograph.org.uk - 1541844",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Usk_Prison_-_geograph.org.uk_-_1541844.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "HM Prison Usk seen across the rooftops of Usk."
+  },
+  "hmp-norwich": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Norwich_Prison_-_geograph.org.uk_-_34166.jpg",
+    "credit": "Katy Walters",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Red-brick former Britannia Barracks buildings of HMP Norwich seen from St James Hill",
+    "author": "Katy Walters",
+    "title": "Norwich Prison - geograph.org.uk - 34166",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Norwich_Prison_-_geograph.org.uk_-_34166.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Part of HM Prison Norwich, the former Britannia Barracks, seen from St James Hill in 2005."
+  },
+  "hmp-leyhill": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Leyhill_prison_-_geograph.org.uk_-_343694.jpg",
+    "credit": "Roger Cornfoot",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Entrance road and building at HMP Leyhill, an open prison in South Gloucestershire",
+    "author": "Roger Cornfoot",
+    "title": "Leyhill prison - geograph.org.uk - 343694",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leyhill_prison_-_geograph.org.uk_-_343694.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Entrance to HM Prison Leyhill, an open prison, in 2007."
+  },
+  "otisville-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/FCI_Otisville_2026.jpg",
+    "credit": "United States Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Front entrance building of FCI Otisville with OTISVILLE lettering",
+    "author": "United States Federal Bureau of Prisons",
+    "title": "FCI Otisville 2026",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Otisville_2026.jpg",
+    "caption": "Front of the Federal Correctional Institution, Otisville."
   }
 }

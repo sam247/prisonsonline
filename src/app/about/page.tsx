@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
+import { EDITORIAL_POLICY_PATH } from "@/lib/seo/organizationJsonLd";
 import { Globe, BookOpen, Users, Shield } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -72,6 +74,13 @@ export default function AboutPage() {
             <h2 className="text-xl font-bold mb-4">Editorial Standards</h2>
             <p className="text-muted-foreground leading-relaxed">
               All information on Prisons Online is researched from official sources including government prison services, correctional departments, and verified public records. We regularly review and update our content to ensure accuracy. Our tone is neutral and informational — we present facts without editorial bias.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mt-4">
+              The{" "}
+              <Link href={EDITORIAL_POLICY_PATH} className="text-accent hover:underline">
+                editorial and sourcing policy
+              </Link>{" "}
+              describes the GOV.UK and HM Prison and Probation Service checks, the bop.gov checks, and how a source checked date is shown on a profile.
             </p>
           </section>
         </div>

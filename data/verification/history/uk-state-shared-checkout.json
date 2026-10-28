@@ -1,0 +1,52 @@
+{
+  "prisons": {
+    "hmp-durham": {
+      "prisonSlug": "hmp-durham",
+      "countrySlug": "uk",
+      "verificationStatus": "CURRENT",
+      "lastVerifiedAt": "2026-10-17T20:04:41.965Z",
+      "nextVerificationAt": "2026-11-16T20:04:41.965Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/durham-prison"
+    },
+    "hmp-leeds": {
+      "prisonSlug": "hmp-leeds",
+      "countrySlug": "uk",
+      "verificationStatus": "CHANGED",
+      "lastVerifiedAt": "2026-10-17T20:04:55.411Z",
+      "nextVerificationAt": "2026-11-16T20:04:55.411Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/leeds-prison"
+    },
+    "hmp-liverpool": {
+      "prisonSlug": "hmp-liverpool",
+      "countrySlug": "uk",
+      "verificationStatus": "CHANGED",
+      "lastVerifiedAt": "2026-10-17T20:04:55.411Z",
+      "nextVerificationAt": "2026-11-16T20:04:55.411Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/liverpool-prison"
+    },
+    "hmp-manchester": {
+      "prisonSlug": "hmp-manchester",
+      "countrySlug": "uk",
+      "verificationStatus": "REVIEW_REQUIRED",
+      "lastVerifiedAt": "2026-10-17T20:04:41.965Z",
+      "nextVerificationAt": "2026-10-24T20:04:41.965Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/manchester-prison"
+    },
+    "hmp-wakefield": {
+      "prisonSlug": "hmp-wakefield",
+      "countrySlug": "uk",
+      "verificationStatus": "CHANGED",
+      "lastVerifiedAt": "2026-10-17T20:04:55.411Z",
+      "nextVerificationAt": "2026-11-16T20:04:55.411Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/wakefield-prison"
+    },
+    "hmp-wormwood-scrubs": {
+      "prisonSlug": "hmp-wormwood-scrubs",
+      "countrySlug": "uk",
+      "verificationStatus": "REVIEW_REQUIRED",
+      "lastVerifiedAt": "2026-10-17T20:04:41.965Z",
+      "nextVerificationAt": "2026-10-24T20:04:41.965Z",
+      "lastSourceUrl": "https://www.gov.uk/guidance/wormwood-scrubs-prison"
+    }
+  }
+}

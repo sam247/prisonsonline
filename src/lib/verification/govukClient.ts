@@ -94,6 +94,7 @@ export function parseGovukCollection(raw: unknown): GovukCollectionEntry[] {
         basePath,
         webUrl: readString(row.web_url) || toGovUkAbsoluteUrl(basePath),
         withdrawn: Boolean(row.withdrawn),
+        ...(readString(row.public_updated_at) ? { publicUpdatedAt: readString(row.public_updated_at) } : {}),
       } satisfies GovukCollectionEntry;
     })
     .filter((row): row is GovukCollectionEntry => Boolean(row));
