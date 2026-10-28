@@ -221,7 +221,7 @@ function profileName(p: Prison): string {
       : p.slug === "hmp-manchester"
         ? "HMP Manchester (Strangeways)"
         : p.name.trim();
-  if (p.status === "closed") return `Closed: ${base}`;
+  if (p.status === "closed") return `${clean(p.statusLabel) || "Closed"}: ${base}`;
   if (p.status === "historic") return `Historic: ${base}`;
   return base;
 }

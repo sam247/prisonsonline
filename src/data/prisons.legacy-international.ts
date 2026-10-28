@@ -166,6 +166,7 @@ export const legacyInternationalPrisons: Prison[] = [
     dataProvenance: "manual",
     // Keep in step with terminal-island-fci in scripts/lib/us-closure-status.mjs (asserted by tests).
     status: "closed",
+    statusLabel: "Operations ended",
     statusSource:
       "https://apnews.com/article/bureau-of-prisons-los-angeles-terminal-island-3829cae8a6e07441161f248d8e2428a1",
     statusNote:

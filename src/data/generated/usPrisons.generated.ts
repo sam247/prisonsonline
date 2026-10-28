@@ -7932,7 +7932,8 @@ export const usPrisonsGenerated: Prison[] = [
     },
     "status": "closed",
     "statusSource": "https://apnews.com/article/bureau-of-prisons-los-angeles-terminal-island-3829cae8a6e07441161f248d8e2428a1",
-    "statusNote": "Operations ended; permanent closure is proposed. The Bureau of Prisons suspended operations in November 2025, as reported by AP from an internal memo to staff. The statement that operations ended in June 2026 and that permanent closure is proposed comes from Los Angeles Councilmember Tim McOsker (20 August 2026), relaying the Bureau of Prisons; it is not a BOP document. It is no longer listed in the BOP locations directory."
+    "statusNote": "Operations ended; permanent closure is proposed. The Bureau of Prisons suspended operations in November 2025, as reported by AP from an internal memo to staff. The statement that operations ended in June 2026 and that permanent closure is proposed comes from Los Angeles Councilmember Tim McOsker (20 August 2026), relaying the Bureau of Prisons; it is not a BOP document. It is no longer listed in the BOP locations directory.",
+    "statusLabel": "Operations ended"
   },
   {
     "name": "Terre Haute FCI",

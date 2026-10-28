@@ -6,6 +6,8 @@ import { prisons } from "../src/data/prisons";
 import { usPrisonsGenerated } from "../src/data/generated/usPrisons.generated";
 import { AD_POLICY } from "../src/lib/ads/layoutPolicy";
 import { US_CLOSURE_STATUS, applyClosureStatus } from "../scripts/lib/us-closure-status.mjs";
+import { formatPrisonProfileMetaDescription } from "../src/lib/seo/prisonProfileMeta";
+import { buildPrisonPageTitle } from "../src/lib/seo/prisonTitle";
 import type { Prison } from "../src/types/prison";
 
 (globalThis as { React?: typeof React }).React = React;
@@ -42,7 +44,8 @@ const text = (html: string) => html.replace(/<script[\s\S]*?<\/script>/g, "").re
 test("closure map: only the two verified facilities, conservative wording, no invented status values", () => {
   assert.deepEqual(Object.keys(US_CLOSURE_STATUS).sort(), ["dublin-fci", "terminal-island-fci"]);
   for (const [slug, e] of Object.entries(US_CLOSURE_STATUS) as [string, Record<string, string>][]) {
-    assert.deepEqual(Object.keys(e).sort(), ["status", "statusNote", "statusSource"], slug);
+    const keys = slug === "terminal-island-fci" ? ["status", "statusLabel", "statusNote", "statusSource"] : ["status", "statusNote", "statusSource"];
+    assert.deepEqual(Object.keys(e).sort(), keys, slug);
     assert.equal(e.status, "closed", slug);
     assert.match(e.statusSource, /^https:\/\//, slug);
     assert.doesNotMatch(e.statusNote, /permanently closed/i, slug);
@@ -86,6 +89,7 @@ test("the generated US file carries the status from the build-script map (regene
     assert.equal(p.status, e.status);
     assert.equal(p.statusSource, e.statusSource);
     assert.equal(p.statusNote, e.statusNote);
+    assert.equal(p.statusLabel, (e as { statusLabel?: string }).statusLabel);
   }
 });
 
@@ -95,6 +99,7 @@ test("legacy fci-terminal-island carries the same wording as terminal-island-fci
   assert.equal(legacy.status, "closed");
   assert.equal(legacy.statusSource, e.statusSource);
   assert.equal(legacy.statusNote, e.statusNote);
+  assert.equal(legacy.statusLabel, e.statusLabel);
 });
 
 for (const [cc, slug] of [
@@ -162,4 +167,34 @@ test("open US, UK, historic legacy and international profiles are unaffected", a
   assert.ok(intl);
   const intlHtml = await renderIntl(intl);
   assert.ok(!intlHtml.includes(BANNER));
+});
+
+test("applyClosureStatus carries statusLabel only when the entry has one", () => {
+  const ti = applyClosureStatus({ slug: "terminal-island-fci" }) as Record<string, unknown>;
+  assert.equal(ti.statusLabel, "Operations ended");
+  const dublin = applyClosureStatus({ slug: "dublin-fci" }) as Record<string, unknown>;
+  assert.equal("statusLabel" in dublin, false);
+});
+
+test("meta description prefix: Dublin keeps 'Closed:', Terminal Island rows use 'Operations ended:'", () => {
+  const dublin = formatPrisonProfileMetaDescription(find("us", "dublin-fci"));
+  assert.ok(dublin.startsWith("Closed: Dublin FCI"), dublin);
+  for (const [cc, slug] of [["us", "terminal-island-fci"], ["united-states", "fci-terminal-island"]] as const) {
+    const d = formatPrisonProfileMetaDescription(find(cc, slug));
+    assert.ok(d.startsWith("Operations ended: "), d);
+    assert.ok(!/^Closed:/.test(d) && !/permanently closed/i.test(d), d);
+  }
+  // open and historic rows are unchanged
+  assert.ok(!/^(Closed|Operations ended|Historic):/.test(formatPrisonProfileMetaDescription(find("us", "atwater-usp"))));
+  assert.ok(formatPrisonProfileMetaDescription(find("united-states", "alcatraz")).startsWith("Historic: "));
+});
+
+test("page titles and JSON-LD for the three closed rows carry no 'Closed' wording and match the meta description", async () => {
+  for (const [cc, slug] of [["us", "dublin-fci"], ["us", "terminal-island-fci"], ["united-states", "fci-terminal-island"]] as const) {
+    const p = find(cc, slug);
+    assert.ok(!/closed/i.test(buildPrisonPageTitle(p)), buildPrisonPageTitle(p));
+    const html = await renderProfile(p);
+    const ld = html.match(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/)?.[1] ?? "";
+    assert.ok(ld.includes(JSON.stringify(formatPrisonProfileMetaDescription(p)).slice(1, -1)), `${slug}: JSON-LD description matches meta`);
+  }
 });

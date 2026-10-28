@@ -15,6 +15,8 @@ export const US_CLOSURE_STATUS = {
   },
   "terminal-island-fci": {
     status: "closed",
+    // Meta description prefix ("Operations ended: ..."); omitted means the default "Closed".
+    statusLabel: "Operations ended",
     statusSource: "https://apnews.com/article/bureau-of-prisons-los-angeles-terminal-island-3829cae8a6e07441161f248d8e2428a1",
     statusNote:
       "Operations ended; permanent closure is proposed. The Bureau of Prisons suspended operations in November 2025, as reported by AP from an internal memo to staff. The statement that operations ended in June 2026 and that permanent closure is proposed comes from Los Angeles Councilmember Tim McOsker (20 August 2026), relaying the Bureau of Prisons; it is not a BOP document. It is no longer listed in the BOP locations directory.",
@@ -30,5 +32,6 @@ export function applyClosureStatus(record, map = US_CLOSURE_STATUS) {
     status: entry.status,
     statusSource: entry.statusSource,
     statusNote: entry.statusNote,
+    ...(entry.statusLabel ? { statusLabel: entry.statusLabel } : {}),
   };
 }
