@@ -903,5 +903,37 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Usk_Prison_-_geograph.org.uk_-_1541844.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "HM Prison Usk seen across the rooftops of Usk."
+  },
+  "hmp-norwich": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Norwich_Prison_-_geograph.org.uk_-_34166.jpg",
+    "credit": "Katy Walters",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Red-brick former Britannia Barracks buildings of HMP Norwich seen from St James Hill",
+    "author": "Katy Walters",
+    "title": "Norwich Prison - geograph.org.uk - 34166",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Norwich_Prison_-_geograph.org.uk_-_34166.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Part of HM Prison Norwich, the former Britannia Barracks, seen from St James Hill in 2005."
+  },
+  "hmp-leyhill": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Leyhill_prison_-_geograph.org.uk_-_343694.jpg",
+    "credit": "Roger Cornfoot",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Entrance road and building at HMP Leyhill, an open prison in South Gloucestershire",
+    "author": "Roger Cornfoot",
+    "title": "Leyhill prison - geograph.org.uk - 343694",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leyhill_prison_-_geograph.org.uk_-_343694.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Entrance to HM Prison Leyhill, an open prison, in 2007."
+  },
+  "otisville-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/FCI_Otisville_2026.jpg",
+    "credit": "United States Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Front entrance building of FCI Otisville with OTISVILLE lettering",
+    "author": "United States Federal Bureau of Prisons",
+    "title": "FCI Otisville 2026",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Otisville_2026.jpg",
+    "caption": "Front of the Federal Correctional Institution, Otisville."
   }
 }
