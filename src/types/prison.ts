@@ -55,6 +55,8 @@ export interface Prison {
   statusSource?: string;
   /** Qualifier from the official source, e.g. "Temporarily closed". Status stays closed. */
   statusNote?: string;
+  /** Optional short prefix for the meta description when status is "closed" (default "Closed"). */
+  statusLabel?: string;
   /** Official population/role description where the source gives one instead of a facility type. */
   facilityDescription?: string;
   /** Official management area (South Africa DCS). */

@@ -26,8 +26,8 @@ assert.match(indexRoute, /\/sitemaps\/courts\.xml/);
 assert.ok(probation.length > 300, `Expected a populated probation sitemap, found ${probation.length}`);
 assert.equal(new Set(probation.map((entry) => entry.loc)).size, probation.length, "Probation sitemap contains duplicate URLs");
 assert.equal(intents.length, 519, "Intent sitemap should contain 512 base URLs plus seven legal-visit URLs");
-// 272 UK/US profiles + 137 open Canada + 95 open Australia + 18 New Zealand + 13 Ireland + 215 South Africa profiles (closed facilities are excluded).
-assert.equal(prisons.length, 750, "Prison profile sitemap count regression");
+// 272 UK/US profiles - 3 closed US facilities (dublin-fci, terminal-island-fci, fci-terminal-island) + 137 open Canada + 95 open Australia + 18 New Zealand + 13 Ireland + 215 South Africa profiles (closed facilities are excluded).
+assert.equal(prisons.length, 747, "Prison profile sitemap count regression");
 assert.equal(prisons.filter((e) => e.loc.includes("/prisons/ca/")).length, 137, "Canada profile sitemap count (open facilities only)");
 assert.ok(!prisons.some((e) => e.loc.endsWith("/prisons/ca/toronto-jail")), "Closed Canada facilities must not appear in the prison sitemap");
 assert.equal(prisons.filter((e) => e.loc.includes("/prisons/au/")).length, 95, "Australia profile sitemap count (open facilities only)");

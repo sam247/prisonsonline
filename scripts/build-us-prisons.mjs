@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { restorePrisonAcronyms } from "./lib/prison-acronyms.mjs";
+import { applyClosureStatus } from "./lib/us-closure-status.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -184,7 +185,7 @@ for (const r of raw) {
   if (slugs.has(r.slug)) throw new Error(`Duplicate US slug: ${r.slug}`);
   if (reserved.has(r.slug)) throw new Error(`US slug collides with existing prison: ${r.slug}`);
   slugs.add(r.slug);
-  rows.push(buildRecord(r));
+  rows.push(applyClosureStatus(buildRecord(r)));
 }
 
 rows.sort((a, b) => a.name.localeCompare(b.name, "en-US"));

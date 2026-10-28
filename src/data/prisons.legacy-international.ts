@@ -164,6 +164,13 @@ export const legacyInternationalPrisons: Prison[] = [
       "Visits are held on weekends and federal holidays. Visitors must be on the approved visiting list and present valid identification. The facility is accessible via public transportation.",
     institutionalId: "legacy:fci-terminal-island",
     dataProvenance: "manual",
+    // Keep in step with terminal-island-fci in scripts/lib/us-closure-status.mjs (asserted by tests).
+    status: "closed",
+    statusLabel: "Operations ended",
+    statusSource:
+      "https://apnews.com/article/bureau-of-prisons-los-angeles-terminal-island-3829cae8a6e07441161f248d8e2428a1",
+    statusNote:
+      "Operations ended; permanent closure is proposed. The Bureau of Prisons suspended operations in November 2025, as reported by AP from an internal memo to staff. The statement that operations ended in June 2026 and that permanent closure is proposed comes from Los Angeles Councilmember Tim McOsker (20 August 2026), relaying the Bureau of Prisons; it is not a BOP document. It is no longer listed in the BOP locations directory.",
   },
   {
     name: "Folsom State Prison",
