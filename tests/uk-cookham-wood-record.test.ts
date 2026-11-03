@@ -11,8 +11,12 @@ test("Cookham Wood keeps its slug and shows the adult men's prison identity", ()
   assert.equal(cookham!.slug, "hmyoi-cookham-wood");
   assert.equal(cookham!.name, "HMP Cookham Wood");
   assert.equal(cookham!.overview, "Cookham Wood is a men's prison in Rochester, Kent.");
-  assert.equal(cookham!.cohort, "Adult male");
-  assert.equal(cookham!.predominantFunction, undefined);
+  const rochester = ukPrisonsGenerated.find((p) => p.slug === "hmp-yoi-rochester");
+  assert.equal(cookham!.cohort, "Trainer & Resettlement");
+  assert.equal(cookham!.predominantFunction, "Cat C Trainer");
+  assert.equal(cookham!.cohort, rochester!.cohort);
+  assert.equal(cookham!.predominantFunction, rochester!.predominantFunction);
+  assert.equal(cookham!.type, rochester!.type);
   assert.equal(cookham!.prisonSubGroup1, undefined);
   assert.doesNotMatch(JSON.stringify({ ...cookham, sourceRaw: undefined }), /YOUTH CUSTODY|YJB|young offender|Young People|15 to 18/i);
 });
@@ -28,13 +32,14 @@ test("record corrections only touch listed ids", () => {
   assert.equal(applyUkPrisonRecordCorrection("hmp-birmingham", p), p);
 });
 
-test("Cookham Wood region follows HMPPS Workforce Statistics (Kent, Surrey & Sussex), same as HMP/YOI Rochester", () => {
+test("Cookham Wood region follows HMPPS Workforce Statistics (Kent, Surrey & Sussex), same as HMP/YOI Rochester, Category C", () => {
   const rochester = ukPrisonsGenerated.find((p) => p.slug === "hmp-yoi-rochester");
   assert.ok(rochester);
   assert.equal(cookham!.stateOrRegion, "KENT, SURREY & SUSSEX");
   assert.equal(cookham!.regionSlug, "kent-surrey-and-sussex");
   assert.equal(cookham!.regionSlug, rochester!.regionSlug);
-  assert.equal(cookham!.securityLevel, "Multi");
+  assert.equal(cookham!.securityLevel, "Category C");
+  assert.equal(cookham!.securityLevel, rochester!.securityLevel);
 });
 
 test("YJB function hub falls below the hub threshold; no profile links to it (no dead internal links)", () => {

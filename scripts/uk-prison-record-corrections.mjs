@@ -15,17 +15,20 @@ export const UK_PRISON_RECORD_CORRECTIONS = Object.freeze({
       "https://www.gov.uk/government/news/young-offenders-institution-to-be-repurposed",
       "https://www.gov.uk/guidance/cookham-wood-yoi",
       "https://www.gov.uk/government/statistics/hm-prison-probation-service-workforce-quarterly-june-2026/workforce-statistics-guide",
+      "https://www.gov.uk/government/statistics/prison-performance-ratings-2025-to-2026",
     ],
     note:
       "YOI closed May 2024; re-roled as an adult men's prison (MoJ 21 Mar 2024; GOV.UK withdrawal notice of the old YOI page). " +
-      "GOV.UK describes it as 'a men's prison in Rochester, Kent'. No GOV.UK page gives an HMPPS feed function, so Predominant Function is blanked. " +
-      "Cohort 'Adult male' is our descriptive wording from the MoJ release ('adult male prison'), not an HMPPS feed code. " +
+      "GOV.UK describes it as 'a men's prison in Rochester, Kent'. " +
+      "Category C: GOV.UK withdrawal notice of the old YOI page and the Workforce Statistics Guide (June 2026) both say 'repurposed as an adult prison for category C males'. " +
+      "Function/cohort: HMPPS Prison Performance Ratings 2025/26 Supplementary Tables (Table_1) list Cookham Wood as 'Category C Trainer/Resettlement', same as Rochester; " +
+      "so the feed strings Rochester uses are applied (Cohort 'Trainer & Resettlement', Predominant Function 'Cat C Trainer'). " +
       "Region is verified: HMPPS Workforce Statistics Guide (June 2026, Table 1, 'Prisons regional structure') lists Cookham Wood under Kent, Surrey & Sussex, next to Rochester. " +
-      "Security stays 'Multi' (derived); GOV.UK sources say category C males, but no function/category field is set here.",
+      "Security derives to 'Category C' from the function.",
     fields: {
       Information: "Cookham Wood is a men's prison in Rochester, Kent.",
-      "Cohort of Prisoners Held": "Adult male",
-      "Predominant Function": "",
+      "Cohort of Prisoners Held": "Trainer & Resettlement",
+      "Predominant Function": "Cat C Trainer",
       "Prison Sub-Group 1": "",
       "Prison Region": "KENT, SURREY & SUSSEX",
     },
