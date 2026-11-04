@@ -45,7 +45,7 @@ export const ukRegionsGenerated = [
   {
     "slug": "kent-surrey-and-sussex",
     "name": "KENT, SURREY & SUSSEX",
-    "prisonCount": 7
+    "prisonCount": 8
   },
   {
     "slug": "london",
@@ -95,7 +95,7 @@ export const ukRegionsGenerated = [
   {
     "slug": "youth-custody-service",
     "name": "YOUTH CUSTODY SERVICE",
-    "prisonCount": 5
+    "prisonCount": 4
   }
 ] as const;
 
