@@ -28,7 +28,7 @@ const GROUP_RE = /LONG TERM & HIGH SECURITY ESTATE|YOUTH CUSTODY SERVICE|PRIVATE
 
 test("HMPPS groups never leak into visitor-facing location copy", () => {
   const grouped = ukPrisonsGenerated.filter(isHmppsGroupRegion);
-  assert.equal(grouped.length, 41);
+  assert.equal(grouped.length, 40);
   for (const p of grouped) {
     assert.equal(geographicRegion(p), "");
     assert.doesNotMatch(buildLocationBody(p), GROUP_RE, p.slug);

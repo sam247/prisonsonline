@@ -9,6 +9,7 @@ import { applyUkAddressCorrection } from "./uk-address-corrections.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { correctPrisonIdentity } from "./prison-identity-corrections.mjs";
+import { applyUkPrisonRecordCorrection } from "./uk-prison-record-corrections.mjs";
 import { restorePrisonAcronyms } from "./lib/prison-acronyms.mjs";
 import { deriveCityFromAddress } from "./uk-address-city.mjs";
 import { postcodeCoordinateMatches } from "../src/lib/prison-map/postcode-cache.mjs";
@@ -167,10 +168,11 @@ function coordinatesForHmppsPrison(raw, slug, postcode, overlayBySlug) {
 }
 
 function normaliseHmppsPrison(raw, usedSlugs, overlayBySlug) {
-  const p = parseLabelledLines(raw.description);
+  const identity = correctPrisonIdentity(raw);
+  // Sourced overrides for stale feed fields (scripts/uk-prison-record-corrections.mjs); sourceRaw keeps the feed text.
+  const p = applyUkPrisonRecordCorrection(identity.id, parseLabelledLines(raw.description));
   const regionName = correctPrisonRegionLabel((p["Prison Region"] || "Unknown region").trim());
   const regionSlug = slugify(regionName);
-  const identity = correctPrisonIdentity(raw);
   const slug = uniqueSlug(identity.id || identity.name, usedSlugs);
   const addressLine = (p.Address || "").replace(/\s+/g, " ").trim();
   const postcode = extractPostcode(addressLine) || extractPostcode(raw.description);

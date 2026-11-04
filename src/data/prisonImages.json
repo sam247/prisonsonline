@@ -935,5 +935,36 @@
     "title": "FCI Otisville 2026",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Otisville_2026.jpg",
     "caption": "Front of the Federal Correctional Institution, Otisville."
+  },
+  "lompoc-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/FCI_Lompoc_I_2026.jpg",
+    "credit": "United States Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Front entrance and lawns of FCI Lompoc with the flagpole and white single-storey buildings",
+    "author": "United States Federal Bureau of Prisons",
+    "title": "FCI Lompoc I 2026",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Lompoc_I_2026.jpg",
+    "caption": "Front of the Federal Correctional Institution, Lompoc."
+  },
+  "texarkana-fci": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/FCI_Texarkana_2026.jpg",
+    "credit": "United States Federal Bureau of Prisons",
+    "licence": "Public domain",
+    "alt": "Two-storey white administration building of FCI Texarkana with FEDERAL CORRECTIONAL INSTITUTION lettering",
+    "author": "United States Federal Bureau of Prisons",
+    "title": "FCI Texarkana 2026",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FCI_Texarkana_2026.jpg",
+    "caption": "Front of the Federal Correctional Institution, Texarkana."
+  },
+  "hmp-yoi-styal": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Visitors%27_entrance_-_HM_Prison_-_Styal_Cheshire_-_geograph.org.uk_-_2333631.jpg",
+    "credit": "Anthony O'Neil",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Visitors' entrance barrier and red-brick buildings at HMP Styal in Cheshire",
+    "author": "Anthony O'Neil",
+    "title": "Visitors' entrance - HM Prison - Styal Cheshire - geograph.org.uk - 2333631",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Visitors%27_entrance_-_HM_Prison_-_Styal_Cheshire_-_geograph.org.uk_-_2333631.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Visitors' entrance to HM Prison Styal, Cheshire, in 2011."
   }
 }

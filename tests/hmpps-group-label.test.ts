@@ -21,6 +21,6 @@ test("leaves geographic UK regions and US states unchanged", () => {
   assert.equal(regionDisplayLabel({ countrySlug: "us", stateOrRegion: "Texas" }), "Texas");
 });
 
-test("affects exactly 41 UK prison pages", () => {
-  assert.equal(ukPrisonsGenerated.filter((p) => isHmppsGroupRegion(p)).length, 41);
+test("affects exactly 40 UK prison pages", () => {
+  assert.equal(ukPrisonsGenerated.filter((p) => isHmppsGroupRegion(p)).length, 40);
 });

@@ -112,7 +112,10 @@ for (const [cc, slug] of [
     const html = await renderProfile(p);
     const t = text(html);
     assert.ok(html.includes(BANNER));
-    assert.ok(t.includes("Facility status: closed"));
+    const label = (p.statusLabel ?? "Closed").toLowerCase();
+    assert.ok(t.includes(`Facility status: ${label}`), `heading uses ${label}`);
+    assert.ok(html.includes(`>${p.statusLabel ?? "Closed"}</div>`), "header badge uses the label");
+    assert.ok(!/Facility status: closed/.test(t) || !p.statusLabel, "statusLabel rows do not say 'closed' in the heading");
     assert.ok(t.includes(p.statusNote!.trim()), "statusNote rendered");
     assert.ok(html.includes(`href="${p.statusSource}"`), "source link rendered");
     assert.ok(!html.includes(CONTACT_BLOCK));
@@ -132,6 +135,19 @@ test("Terminal Island banner states it rests on a local official, not a BOP docu
   const t = text(await renderProfile(find("us", "terminal-island-fci")));
   assert.match(t, /Operations ended; permanent closure is proposed\./);
   assert.match(t, /Tim McOsker \(20 August 2026\), relaying the Bureau of Prisons; it is not a BOP document/);
+});
+
+test("badge and heading: Terminal Island rows read 'Operations ended', Dublin keeps 'Closed'", async () => {
+  const dublin = await renderProfile(find("us", "dublin-fci"));
+  assert.ok(text(dublin).includes("Facility status: closed"));
+  assert.ok(dublin.includes(">Closed</div>"));
+  for (const [cc, slug] of [["us", "terminal-island-fci"], ["united-states", "fci-terminal-island"]] as const) {
+    const html = await renderProfile(find(cc, slug));
+    assert.ok(text(html).includes("Facility status: operations ended"), slug);
+    assert.ok(html.includes(">Operations ended</div>"), slug);
+    assert.ok(!html.includes(">Closed</div>") || /Related prisons/.test(html), slug);
+    assert.ok(!/permanently closed/i.test(text(html).split("Related prisons")[0]), slug);
+  }
 });
 
 test("Dublin banner says BOP is proposing permanent deactivation", async () => {
@@ -197,4 +213,19 @@ test("page titles and JSON-LD for the three closed rows carry no 'Closed' wordin
     const ld = html.match(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/)?.[1] ?? "";
     assert.ok(ld.includes(JSON.stringify(formatPrisonProfileMetaDescription(p)).slice(1, -1)), `${slug}: JSON-LD description matches meta`);
   }
+});
+
+test("closed rows: meta and JSON-LD descriptions carry no security-level or capacity wording", async () => {
+  for (const [cc, slug] of [["us", "dublin-fci"], ["us", "terminal-island-fci"], ["united-states", "fci-terminal-island"]] as const) {
+    const p = find(cc, slug);
+    const d = formatPrisonProfileMetaDescription(p);
+    assert.ok(!/security|\bcapacity\b|\b(low|medium|high|minimum|maximum)\b/i.test(d), d);
+    assert.ok(d.length >= 150 && d.length <= 160, d);
+    const html = await renderProfile(p);
+    const ld = html.match(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/)?.[1] ?? "";
+    assert.ok(ld.includes(JSON.stringify(d).slice(1, -1)), slug);
+    assert.ok(!/security/i.test(ld.split('"description"')[1]?.slice(0, 200) ?? ""), `${slug} JSON-LD description`);
+  }
+  // open rows still state their security level
+  assert.match(formatPrisonProfileMetaDescription(find("us", "atwater-usp")), /security|Security/);
 });
