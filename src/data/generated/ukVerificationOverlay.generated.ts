@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const ukVerificationOverlay: OverlayFile = {
   "generatedBy": "uk-prison-verifier",
-  "updatedAt": "2026-11-05T14:45:00.000Z",
+  "updatedAt": "2026-11-09T09:30:00.000Z",
   "entries": {
     "uk/hmp-birmingham": {
       "prisonSlug": "hmp-birmingham",
@@ -41,6 +41,25 @@ export const ukVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.gov.uk/guidance/full-sutton-prison",
       "overrides": {
         "address": "HMP Full Sutton, Moor Lane, Full Sutton, York, YO41 1PS"
+      }
+    },
+    "uk/hmp-garth": {
+      "prisonSlug": "hmp-garth",
+      "countrySlug": "uk",
+      "appliedAt": "2026-11-09T09:30:00.000Z",
+      "sourceUrl": "https://www.gov.uk/guidance/garth-prison",
+      "overrides": {
+        "address": "HMP Garth, Ulnes Walton, Leyland, Preston, PR26 8NE",
+        "category": "High Security"
+      }
+    },
+    "uk/hmp-gartree": {
+      "prisonSlug": "hmp-gartree",
+      "countrySlug": "uk",
+      "appliedAt": "2026-11-09T09:30:00.000Z",
+      "sourceUrl": "https://www.gov.uk/guidance/gartree-prison",
+      "overrides": {
+        "category": "High Security"
       }
     },
     "uk/hmp-leeds": {

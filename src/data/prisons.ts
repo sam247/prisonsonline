@@ -19,7 +19,8 @@ const basePrisons: Prison[] = [...ukPrisonsGenerated, ...usPrisonsGenerated, ...
 
 /**
  * UK rows: verified contact overrides (facilitySources + UK verification overlay) replace the
- * HMPPS import phone/address/postcode everywhere, including the phone string embedded in prose.
+ * HMPPS import phone/address/postcode (and sourced category) everywhere, including the phone
+ * string embedded in prose.
  */
 function withVerifiedFacts(p: Prison): Prison {
   if (p.countrySlug !== "uk") return p;

@@ -15,6 +15,7 @@ export type SecurityLevel =
   | "Category B"
   | "Category C"
   | "Category D"
+  | "High Security"
   | "Not specified";
 
 export type PrisonDataProvenance = "hmpps_import" | "manual" | "bop_import" | "official_source";

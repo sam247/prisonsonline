@@ -13,7 +13,7 @@ function uk(slug: string) {
 
 test("Gartree type line is clean and non-redundant", () => {
   const body = buildPrisonTypeBody(uk("hmp-gartree"));
-  assert.equal(body, "HMP Gartree is a Category B training prison for adult men.");
+  assert.equal(body, "HMP Gartree is a training prison for adult men.");
 });
 
 test("UK type labels across function/category combinations", () => {
@@ -65,7 +65,7 @@ test("UK intent openers use clean type labels, not raw HMPPS codes", () => {
     assert.doesNotMatch(opener, / as an Category /i, `${slug} wrong article before Category: ${opener}`);
   }
   const gartree = buildIntentBodyParagraphs(uk("hmp-gartree"), "contact-details")[0] ?? "";
-  assert.match(gartree, /Category B training prison/);
+  assert.match(gartree, /training prison/);
 });
 
 test("non-UK intent openers keep type/security wording without UK category nouns", () => {
