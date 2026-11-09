@@ -33,8 +33,8 @@ export function replacePhoneInText(text: string, oldPhone: string, newPhone: str
  * Apply verified contact overrides (facilitySources records merged with the UK verification
  * overlay) to the prison record itself, so every rendering path — profile contact copy,
  * visiting copy, intent pages and JSON-LD — shows the verified value instead of the stale
- * HMPPS import value. Only contact facts are applied here; `sourceRaw` is left untouched as
- * the audit copy of the upstream row.
+ * HMPPS import value. Contact facts and sourced category are applied here; `sourceRaw` is left
+ * untouched as the audit copy of the upstream row.
  */
 export function applyVerifiedContactFacts(prison: Prison, verification?: FacilityVerificationRecord): Prison {
   const overrides = verification?.overrides;
@@ -61,5 +61,7 @@ export function applyVerifiedContactFacts(prison: Prison, verification?: Facilit
   }
   if (overrides.address?.trim()) next.address = overrides.address.trim();
   if (overrides.postcode?.trim()) next.postcode = overrides.postcode.trim();
+  // Sourced category (GOV.UK wording) replaces HMPPS-derived securityLevel when present.
+  if (overrides.category?.trim()) next.securityLevel = overrides.category.trim() as Prison["securityLevel"];
   return next;
 }

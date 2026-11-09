@@ -4,7 +4,7 @@ import type { OverlayFile } from "@/lib/verification/types";
 
 export const ukVerificationOverlay: OverlayFile = {
   "generatedBy": "uk-prison-verifier",
-  "updatedAt": "2026-10-17T20:04:55.411Z",
+  "updatedAt": "2026-11-09T09:30:00.000Z",
   "entries": {
     "uk/hmp-birmingham": {
       "prisonSlug": "hmp-birmingham",
@@ -22,6 +22,44 @@ export const ukVerificationOverlay: OverlayFile = {
       "sourceUrl": "https://www.gov.uk/guidance/elmley-prison",
       "overrides": {
         "email": "businesshubelmleycorrespondence@justice.gov.uk"
+      }
+    },
+    "uk/hmp-frankland": {
+      "prisonSlug": "hmp-frankland",
+      "countrySlug": "uk",
+      "appliedAt": "2026-11-05T14:45:00.000Z",
+      "sourceUrl": "https://www.gov.uk/guidance/frankland-prison",
+      "overrides": {
+        "phone": "0191 376 5048",
+        "address": "Business Hub, HMP Frankland, Brasside, Durham, DH1 5YD"
+      }
+    },
+    "uk/hmp-full-sutton": {
+      "prisonSlug": "hmp-full-sutton",
+      "countrySlug": "uk",
+      "appliedAt": "2026-11-05T14:45:00.000Z",
+      "sourceUrl": "https://www.gov.uk/guidance/full-sutton-prison",
+      "overrides": {
+        "address": "HMP Full Sutton, Moor Lane, Full Sutton, York, YO41 1PS"
+      }
+    },
+    "uk/hmp-garth": {
+      "prisonSlug": "hmp-garth",
+      "countrySlug": "uk",
+      "appliedAt": "2026-11-09T09:30:00.000Z",
+      "sourceUrl": "https://www.gov.uk/guidance/garth-prison",
+      "overrides": {
+        "address": "HMP Garth, Ulnes Walton, Leyland, Preston, PR26 8NE",
+        "category": "High Security"
+      }
+    },
+    "uk/hmp-gartree": {
+      "prisonSlug": "hmp-gartree",
+      "countrySlug": "uk",
+      "appliedAt": "2026-11-09T09:30:00.000Z",
+      "sourceUrl": "https://www.gov.uk/guidance/gartree-prison",
+      "overrides": {
+        "category": "High Security"
       }
     },
     "uk/hmp-leeds": {
