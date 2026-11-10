@@ -19,9 +19,9 @@ export interface Article {
 
 export const articles: Article[] = [
   {
-    title: "The Problem With ‘Prison Justice’",
+    title: "Russell Brand and the Problem With ‘Prison Justice’",
     slug: "the-problem-with-prison-justice",
-    excerpt: "Prison is meant to punish, restrict liberty and protect the public. “Prison justice” is rarely justice — it is intimidation dressed up as principle.",
+    excerpt: "Informal “prison justice” is prisoner-on-prisoner violence, not justice — as the alleged killing of Ian Huntley shows. Fear also obstructs rehabilitation.",
     category: "Prison Conditions",
     date: "2026-11-10",
     relatedPrisons: ["hmp-frankland", "hmp-wakefield", "hmp-full-sutton", "hmp-whitemoor"],
