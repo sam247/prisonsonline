@@ -19,6 +19,141 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    title: "The Problem With ‘Prison Justice’",
+    slug: "the-problem-with-prison-justice",
+    excerpt: "Prison is meant to punish, restrict liberty and protect the public. “Prison justice” is rarely justice — it is intimidation dressed up as principle.",
+    category: "Prison Conditions",
+    date: "2026-11-10",
+    relatedPrisons: ["hmp-frankland", "hmp-wakefield", "hmp-full-sutton", "hmp-whitemoor"],
+    relatedGuides: ["rights-of-prisoners", "life-inside-prison", "how-prison-sentences-work", "prison-categories-explained"],
+    content: `Russell Brand’s conviction and sentence have produced the predictable chorus of satisfaction. A man once surrounded by fame, money and deference has been found guilty by a jury of serious sexual offences, and a judge has imposed a long prison term. For many people, that is where the story should end: justice has been done, the powerful man has fallen, and whatever happens to him behind bars is no more than he deserves.
+
+That instinct is understandable. But it is also dangerous.
+
+When reports emerge of prisoners chanting abuse at a high-profile sex offender, or when violence against such a prisoner is treated as a dark joke, we should resist the temptation to applaud. Prison is meant to punish, restrict liberty and protect the public. It is not meant to become an arena in which the most intimidating inmates administer their own version of morality. “Prison justice” is rarely justice. More often, it is intimidation dressed up as principle — and it makes prisons less safe, less humane and less capable of doing the one thing society ultimately needs them to do: reduce future harm.
+
+## The seduction of deserved suffering
+
+There is a particular pleasure in seeing a celebrity brought low. Russell Brand built a public identity around provocation, charisma and apparent immunity from consequence. His conviction for rape and three counts of sexual assault, following a four-week trial at Southwark Crown Court, has therefore been received by many as a long-overdue reckoning. He was sentenced to ten years and six months, with the rape offence carrying nine years and additional sentences for the sexual assaults.
+
+It is natural to feel anger towards someone convicted of such crimes. It is natural to want the sentence to have weight. But anger is not a substitute for a coherent theory of punishment.
+
+The question is not whether Brand deserves punishment. Under the law, he has been convicted and sentenced; that question has been answered by a court. The question is what we want prison to achieve after the courtroom doors close.
+
+If our answer is simply “make him suffer,” we should be honest about what that means. It means accepting that people with no democratic mandate, no training, no oversight and often no interest in rehabilitation should be allowed to determine how a prisoner is treated. It means accepting that fear, humiliation and violence are legitimate instruments of punishment. And it means pretending that the person being targeted is always the person we consider most deserving.
+
+That last assumption is where the argument collapses.
+
+## Who administers ‘justice’?
+
+The informal hierarchy of prison places sex offenders — particularly those convicted of offences against women and children — near the bottom. That hierarchy is often presented as a rough moral code: prisoners may have done terrible things, but even they draw a line at sexual offending.
+
+There is sometimes a fragment of truth in that account. Prisoners are not morally blank slates. Many have themselves been victims of violence, exploitation or abuse. Some genuinely despise offences against children and vulnerable people. But the idea that prison violence against sex offenders is a reliable expression of moral seriousness is badly mistaken.
+
+The people most able to enforce that hierarchy are frequently those with the greatest capacity for intimidation. A prisoner’s willingness to threaten, humiliate or assault another person is not evidence of ethical refinement. It is often evidence of the opposite: a habit of using power over weaker people.
+
+If a large, violent prisoner were placed in the same position as a high-profile sex offender, much of the self-righteous bravado would evaporate. The “justice” would look less like principle and more like opportunism. The target would not be chosen because he represented the worst form of human cruelty; he would be chosen because he was isolated, unpopular, frightened and unlikely to be defended.
+
+That is not justice. It is the logic of the playground, the gang and the mob.
+
+## The Huntley problem
+
+HTML:The dangers of celebrating informal punishment become clearer when we look at cases involving <a href="/prisons/uk/collection/high-security">prisoners already serving the most severe sentences</a>. Reports of the killing of Ian Huntley, convicted of the Soham murders, were met by some with celebration. But the alleged killer, Anthony Russell, was himself serving a whole-life sentence for murders that included the rape and killing of a pregnant woman.
+
+What moral achievement is supposed to have occurred when one convicted murderer allegedly kills another? The victim may have committed appalling crimes. That does not transform his killing into justice. It simply demonstrates that violence inside prison is not a moral filter. It is violence.
+
+HTML:This is the central problem with “prison justice”: it confuses the satisfaction of seeing someone suffer with the harder, less emotionally satisfying work of preventing further suffering. A prisoner may deserve a long sentence. He does not thereby surrender his <a href="/guides/rights-of-prisoners">right to be protected</a> from murder, assault, extortion or sexual violence while in the custody of the state.
+
+Once we accept that some prisoners may be beaten, threatened or terrorised because of the nature of their offences, we have accepted a principle with no limiting principle. Who decides which crimes qualify? Who decides whether the punishment fits? Who decides when a rumour is enough? Who decides whether a prisoner has been sufficiently punished?
+
+The answer, in practice, is whoever has the power to enforce their will in a wing, a landing or a cell block.
+
+## Fear does not reform
+
+Defenders of harsh prison culture sometimes argue that fear deters offending. If prison is miserable enough, they say, people will think twice before returning.
+
+There is a grain of truth here. Some people are so appalled by custody that they resolve never to return. But deterrence is a blunt and unreliable instrument. Fear of prison does not reliably change the beliefs, compulsions, addictions, trauma, peer influence or opportunities that lead people to offend in the first place. Not wanting to return to prison and being able to build a life that keeps you out of prison are two very different things.
+
+A person can leave prison terrified and still reoffend. A person can leave prison determined never to return and still find themselves homeless, unemployed, addicted, isolated or surrounded by the same criminal networks. If the only lesson prison teaches is “avoid getting caught,” it has not addressed the reasons the person offended.
+
+HTML:Worse, a regime of constant fear can actively obstruct rehabilitation. <a href="/articles/rehabilitation-reduces-reoffending">Treatment programmes, therapy and offending-behaviour work</a> depend on honesty. A prisoner must be able to acknowledge what he did, examine why he did it and confront attitudes or patterns of behaviour that enabled it. That is difficult under any circumstances. It becomes almost impossible when a prisoner believes that every admission could be used against him, every weakness exploited, and every moment outside his cell an opportunity for humiliation or violence.
+
+Rehabilitation does not require sympathy for the offender. It requires conditions in which truth-telling is safer than denial. If a prisoner is too frightened to engage, the state has not merely failed to protect him; it has reduced its own chance of protecting future victims.
+
+## The corrosive effect on staff authority
+
+When prisoners are left to police one another through intimidation, staff lose authority. This is not a minor managerial problem. It goes to the heart of what a prison is.
+
+A prison should be a place where the state takes responsibility for the people in its custody. Officers should set the boundaries. Rules should be clear. Violence should be challenged. Victims within the prison should be able to seek protection without fearing that doing so will make matters worse.
+
+When informal power fills the vacuum, the most violent prisoners gain influence. Others learn that survival depends on alliances, silence, drugs, gangs or submission. Some prisoners seek protection from extremist groups, which may offer belonging and security at the cost of deeper radicalisation and further violence.
+
+This is how criminal culture becomes entrenched. Prison is supposed to interrupt criminal networks, not provide them with a recruiting ground. It is supposed to give people a chance to step away from the identities and relationships that shaped their offending. Instead, a prison governed by fear can reinforce those identities: the weak are prey, the strong are protected, loyalty matters more than law, and violence is the currency of status.
+
+No society should be comfortable with that.
+
+## Punishment is not permission
+
+There is a crucial distinction that public debate often obscures: punishment and permission are not the same thing.
+
+HTML:Brand’s sentence is punishment. It removes his liberty, imposes a <a href="/guides/how-prison-sentences-work">substantial period of custody</a> and marks the seriousness of his crimes. It is entirely consistent to believe that his offending was grave, that his victims deserved justice, and that he should serve a long sentence — while also believing that he should be kept safe from vigilante violence in prison.
+
+Indeed, the second belief follows from the first. If the state claims the authority to punish, it must also accept responsibility for the conditions of that punishment. A prison sentence is not a licence for other prisoners to become judges, juries and executioners.
+
+This matters especially in high-profile cases. A well-known prisoner may attract more attention, more hostility and more risk. But the principle applies to everyone: the frightened young man on remand, the disabled prisoner unable to defend himself, the former gang member trying to escape old allegiances, the sex offender whose crime has made him universally despised, and the prisoner whose conviction has made him a target.
+
+If protection is reserved only for people we happen to like, it is not protection. It is favouritism.
+
+## The victim-centred case
+
+Some will say that focusing on the safety of offenders insults victims. It does not. Victims deserve a criminal justice system that takes their harm seriously, investigates allegations properly, gives them a voice, and imposes sentences that reflect the gravity of what was done to them.
+
+But victims also deserve a system that reduces the likelihood of future victims.
+
+HTML:A prison that merely brutalises prisoners may provide a momentary sense of retribution. It does not necessarily produce safer communities. If a prisoner leaves <a href="/articles/mental-health-in-prisons">more traumatised</a>, more alienated, more dependent on criminal networks or less able to engage with rehabilitation, the risk to future victims may be higher, not lower.
+
+The most victim-centred approach is therefore not the one that treats prisoners as disposable. It is the one that takes seriously the possibility that people can be held accountable, prevented from harming others and, where possible, changed.
+
+That does not mean every prisoner can or will change. Some people present a continuing risk and may need long-term containment. But even containment should be lawful, supervised and humane. The state does not become more moral by outsourcing cruelty to prisoners.
+
+## What a decent prison looks like
+
+A decent prison does not mean a comfortable prison. It does not mean ignoring offending, minimising harm or treating victims as an afterthought. It means a prison with clear rules, professional staff, meaningful supervision and a culture in which violence is not tolerated.
+
+It means:
+
+- Protecting prisoners at risk of intimidation, including through safe locations, careful allocation and rapid responses to threats.
+- Ensuring that staff, rather than powerful inmates, control the informal order of a wing.
+- Providing education, work, addiction support, mental-health care and offending-behaviour programmes that prisoners can realistically access.
+- Making rehabilitation meaningful, so that a prisoner’s time inside is not simply a countdown to release.
+- Maintaining accountability, so that abuse by staff or prisoners is investigated rather than normalised.
+- Measuring success not only by security and order, but by whether people leave less likely to harm others.
+
+None of this is soft. It is demanding. It requires resources, skilled staff and political willingness to treat prisons as public institutions rather than warehouses for people society prefers not to think about.
+
+## The Brand test
+
+Russell Brand is an easy case for those who want to defend harsh treatment in prison. He is wealthy, famous, widely disliked and convicted of offences that provoke understandable revulsion. It is easy to say that whatever happens to him is deserved.
+
+But the test of a principle is not how it applies to the person we most despise. It is how it applies when the person is unpopular, powerless, frightened or alone.
+
+If we believe that prisoners convicted of sexual offences may be terrorised because of their crimes, we have not created a moral prison culture. We have created a system in which cruelty becomes legitimate whenever the target is sufficiently hated.
+
+If we believe that a prisoner’s safety matters only when he is famous, we have not created a system of justice. We have created a lottery.
+
+And if we believe that fear is rehabilitation, we have confused the desire for suffering with the responsibility to prevent harm.
+
+## A better ambition
+
+The real question is not whether Russell Brand deserves to be comfortable in prison. He does not. The question is whether we want a prison system that produces more violence, more trauma, more criminal identity and more risk — or one that holds people accountable while giving them a credible route out of offending.
+
+HTML:Prison should be a consequence. It should involve the loss of liberty, <a href="/guides/life-inside-prison">restrictions on ordinary life</a> and a serious reckoning with the harm a person has caused. But it should not become a place where the state quietly permits the strong to punish the weak.
+
+“Prison justice” sounds decisive. It sounds moral. It offers the satisfying image of bad people receiving their comeuppance from other bad people. But it is a poor substitute for justice.
+
+Justice requires law, proportion, protection and a belief that human beings can be held responsible without being abandoned to cruelty. If we lose sight of that, we do not make prisons safer. We simply make them crueler — and then wonder why so many people leave them more dangerous than when they arrived.`,
+  },
+  {
     title: "Most Dangerous Prisons in the World",
     slug: "most-dangerous-prisons-world",
     excerpt: "A look at some of the most dangerous and notorious prisons across the globe, from overcrowded facilities to maximum-security lockdowns.",
