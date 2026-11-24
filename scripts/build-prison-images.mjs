@@ -5,8 +5,11 @@
  * (direct image URL + licence / licence URL / author / title from extmetadata), then writes
  * src/data/prisonImages.json.
  *
- * When Commons is reachable, licence, licence URL, author and title come from Commons extmetadata and
- * override the CSV values (the CSV is only a fallback). Rows without a usable Commons file are skipped.
+ * When Commons is reachable, licence, licence URL and title come from Commons extmetadata and
+ * override the CSV values (the CSV is only a fallback). Credit and author stay at the committed
+ * values unless the Commons file itself changes or the sheet credit cell changes versus
+ * data/prison-image-sheet-credits.json. A new file uses the Commons author, then the sheet credit.
+ * Rows without a usable Commons file are skipped.
  *
  * Run: node scripts/build-prison-images.mjs
  *
@@ -17,11 +20,20 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { prisonImageKeyForCell, readCrossCountrySlugs } from "./lib/prison-image-keys.mjs";
+import {
+  normalizeCommonsFileTitle,
+  resolveCommonsFileTitle,
+  serializePrisonImages,
+  serializeSheetCredits,
+  stabilizeImageRecord,
+  stripImageTrackingParams,
+} from "./lib/stable-prison-images.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const CSV_PATH = path.join(ROOT, "data", "prison-images.csv");
 const OUT_PATH = path.join(ROOT, "src", "data", "prisonImages.json");
+const SHEET_CREDIT_PATH = path.join(ROOT, "data", "prison-image-sheet-credits.json");
 
 const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
 const USER_AGENT =
@@ -49,30 +61,6 @@ function preserveExisting(reason) {
   return false;
 }
 
-
-/**
- * Resolves a Commons file page URL or an upload.wikimedia.org URL to a `File:` title.
- * @param {string} rawUrl
- * @returns {string | null}
- */
-function resolveCommonsFileTitle(rawUrl) {
-  try {
-    const u = new URL(String(rawUrl || "").trim());
-    if (!u.hostname.endsWith("wikimedia.org")) return null;
-    if (u.hostname === "upload.wikimedia.org") {
-      // /wikipedia/commons/a/ab/Name.jpg or /wikipedia/commons/thumb/a/ab/Name.jpg/640px-Name.jpg
-      const segs = u.pathname.split("/").filter(Boolean);
-      const thumbIdx = segs.indexOf("thumb");
-      const name = thumbIdx >= 0 ? segs[thumbIdx + 3] : segs[segs.length - 1];
-      return name ? `File:${decodeURIComponent(name).replace(/_/g, " ")}` : null;
-    }
-    const seg = decodeURIComponent(u.pathname.replace(/^\/wiki\//, ""));
-    if (!seg.startsWith("File:")) return null;
-    return seg.replace(/_/g, " ");
-  } catch {
-    return null;
-  }
-}
 
 /**
  * RFC 4180-style CSV parser: quoted fields, "" escapes, commas and newlines inside quotes, CRLF.
@@ -161,20 +149,136 @@ function commonsPageUrl(fileTitle) {
 
 /** @param {string} url */
 function stripTrackingParams(url) {
-  try {
-    const u = new URL(url);
-    u.search = "";
-    return u.toString();
-  } catch {
-    return url;
-  }
+  return stripImageTrackingParams(url);
 }
 
 function normalizeTitleKey(t) {
-  return String(t || "")
-    .replace(/_/g, " ")
-    .trim()
-    .toLowerCase();
+  return normalizeCommonsFileTitle(t);
+}
+
+/**
+ * Last reconciled sheet credit for each slug. Missing file means "no recorded edits".
+ * @param {string} [file]
+ * @returns {Record<string, string>}
+ */
+export function loadSheetCreditBaseline(file = SHEET_CREDIT_PATH) {
+  if (!fs.existsSync(file)) return {};
+  const parsed = JSON.parse(fs.readFileSync(file, "utf8"));
+  return parsed && typeof parsed === "object" ? parsed : {};
+}
+
+/**
+ * Publishable CSV rows in sheet order.
+ * @param {string} [csvPath]
+ * @param {string} [root]
+ */
+export function loadPublishableImageRows(csvPath = CSV_PATH, root = ROOT) {
+  const raw = fs.readFileSync(csvPath, "utf8").replace(/^\uFEFF/, "");
+  const table = parseCsv(raw);
+  if (table.length < 2) return [];
+  const header = table[0].map((h) => h.trim().toLowerCase());
+  const col = (name) => header.indexOf(name);
+  const idx = {
+    slug: col("slug"),
+    wikimedia_page_url: col("wikimedia_page_url"),
+    credit: col("credit"),
+    licence: col("licence") >= 0 ? col("licence") : col("license"),
+    licence_url: col("licence_url") >= 0 ? col("licence_url") : col("license_url"),
+    alt: col("alt"),
+    caption: col("caption"),
+    result_state: col("result_state"),
+  };
+  if (idx.slug < 0 || idx.wikimedia_page_url < 0 || idx.result_state < 0) {
+    throw new Error("CSV must include columns: slug, wikimedia_page_url, result_state");
+  }
+  const cell = (line, i) => (i >= 0 ? String(line[i] ?? "").trim() : "");
+  const crossCountrySlugs = readCrossCountrySlugs(root);
+  /** @type {{ slug: string, fileTitle: string, credit: string, licence: string, licenceUrl: string, alt: string, caption: string }[]} */
+  const rows = [];
+  for (let r = 1; r < table.length; r++) {
+    const line = table[r];
+    const state = cell(line, idx.result_state).toUpperCase();
+    const slug = prisonImageKeyForCell(cell(line, idx.slug), crossCountrySlugs);
+    if (!PUBLISHABLE_STATES.has(state)) continue;
+    const fileTitle = resolveCommonsFileTitle(cell(line, idx.wikimedia_page_url));
+    if (!slug || !fileTitle) {
+      console.warn(`Skipping row ${r + 1}: missing slug (shared slugs need /prisons/<cc>/<slug>) or unsupported wikimedia_page_url`);
+      continue;
+    }
+    rows.push({
+      slug,
+      fileTitle,
+      credit: cell(line, idx.credit),
+      licence: cell(line, idx.licence),
+      licenceUrl: cell(line, idx.licence_url),
+      alt: cell(line, idx.alt),
+      caption: cell(line, idx.caption),
+    });
+  }
+  return rows;
+}
+
+/**
+ * @param {Map<string, { imageUrl: string, sourceUrl: string, licence: string, licenceUrl: string, author: string, title: string }>} info
+ * @param {string} fileTitle
+ */
+export function lookupCommonsMeta(info, fileTitle) {
+  let meta = info.get(fileTitle);
+  if (meta) return meta;
+  for (const [t, m] of info) {
+    if (normalizeTitleKey(t) === normalizeTitleKey(fileTitle)) return m;
+  }
+  return undefined;
+}
+
+/**
+ * Same merge the image build runs after a Commons fetch.
+ * Credit and author stay on the committed record unless the file or the sheet credit changed.
+ * @param {{
+ *   rows: { slug: string, fileTitle: string, credit: string, licence: string, licenceUrl: string, alt: string, caption: string }[],
+ *   commonsInfo: Map<string, { imageUrl: string, sourceUrl: string, licence: string, licenceUrl: string, author: string, title: string }>,
+ *   existing?: Record<string, Record<string, string>>,
+ *   sheetCredits?: Record<string, string>,
+ * }} input
+ */
+export function publishImageRows({ rows, commonsInfo, existing = {}, sheetCredits = {} }) {
+  /** @type {Record<string, Record<string, string>>} */
+  const out = {};
+  const sorted = [...rows].sort((a, b) => a.slug.localeCompare(b.slug) || a.fileTitle.localeCompare(b.fileTitle));
+  for (const row of sorted) {
+    const meta = lookupCommonsMeta(commonsInfo, row.fileTitle);
+    if (!meta) {
+      console.warn(`No Commons file for ${row.slug} (${row.fileTitle}); skipping`);
+      continue;
+    }
+    const author = meta.author || row.credit;
+    const licence = meta.licence || row.licence;
+    if (!licence) {
+      console.warn(`No licence for ${row.slug} (${row.fileTitle}); skipping`);
+      continue;
+    }
+    /** @type {Record<string, string>} */
+    const rec = {
+      imageUrl: meta.imageUrl,
+      credit: author,
+      licence,
+      alt: row.alt || `Photograph of ${row.slug.split("/").pop().replace(/-/g, " ")}`,
+      author,
+      title: meta.title || titleFromFileName(row.fileTitle),
+      sourceUrl: meta.sourceUrl,
+    };
+    const licenceUrl = meta.licence ? meta.licenceUrl : row.licenceUrl;
+    if (licenceUrl) rec.licenceUrl = licenceUrl;
+    if (row.caption) rec.caption = row.caption;
+    const previousSheet = Object.prototype.hasOwnProperty.call(sheetCredits, row.slug)
+      ? sheetCredits[row.slug]
+      : row.credit;
+    out[row.slug] = stabilizeImageRecord(rec, existing[row.slug], {
+      sheetCredit: row.credit,
+      previousSheetCredit: previousSheet,
+    });
+  }
+  return out;
 }
 
 /**
@@ -267,58 +371,26 @@ async function main() {
     return;
   }
 
-  const raw = fs.readFileSync(CSV_PATH, "utf8").replace(/^\uFEFF/, "");
-  const table = parseCsv(raw);
-  if (table.length < 2) {
+  let rows;
+  try {
+    rows = loadPublishableImageRows();
+  } catch (e) {
+    console.error(e);
+    process.exit(1);
+  }
+  if (rows.length === 0) {
     if (preserveExisting("CSV has no data rows")) return;
     console.warn("CSV has no data rows; nothing to build");
     return;
   }
 
-  const header = table[0].map((h) => h.trim().toLowerCase());
-  const col = (name) => header.indexOf(name);
-  const idx = {
-    slug: col("slug"),
-    wikimedia_page_url: col("wikimedia_page_url"),
-    credit: col("credit"),
-    licence: col("licence") >= 0 ? col("licence") : col("license"),
-    licence_url: col("licence_url") >= 0 ? col("licence_url") : col("license_url"),
-    alt: col("alt"),
-    caption: col("caption"),
-    result_state: col("result_state"),
-  };
-  if (idx.slug < 0 || idx.wikimedia_page_url < 0 || idx.result_state < 0) {
-    console.error("CSV must include columns: slug, wikimedia_page_url, result_state");
-    process.exit(1);
-  }
-  const cell = (line, i) => (i >= 0 ? String(line[i] ?? "").trim() : "");
-
-  /** @type {{ slug: string, fileTitle: string, credit: string, licence: string, licenceUrl: string, alt: string, caption: string }[]} */
-  const rows = [];
-  const crossCountrySlugs = readCrossCountrySlugs(ROOT);
-  for (let r = 1; r < table.length; r++) {
-    const line = table[r];
-    const state = cell(line, idx.result_state).toUpperCase();
-    const slug = prisonImageKeyForCell(cell(line, idx.slug), crossCountrySlugs);
-    if (!PUBLISHABLE_STATES.has(state)) continue;
-    const fileTitle = resolveCommonsFileTitle(cell(line, idx.wikimedia_page_url));
-    if (!slug || !fileTitle) {
-      console.warn(`Skipping row ${r + 1}: missing slug (shared slugs need /prisons/<cc>/<slug>) or unsupported wikimedia_page_url`);
-      continue;
-    }
-    rows.push({
-      slug,
-      fileTitle,
-      credit: cell(line, idx.credit),
-      licence: cell(line, idx.licence),
-      licenceUrl: cell(line, idx.licence_url),
-      alt: cell(line, idx.alt),
-      caption: cell(line, idx.caption),
-    });
-  }
-
   /** @type {Record<string, Record<string, string>>} */
   const out = {};
+  /** @type {Record<string, Record<string, string>>} */
+  const existing = fs.existsSync(OUT_PATH) ? JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) : {};
+  const sheetCredits = loadSheetCreditBaseline();
+
+  rows.sort((a, b) => a.slug.localeCompare(b.slug) || a.fileTitle.localeCompare(b.fileTitle));
 
   const chunkSize = 8;
   for (let i = 0; i < rows.length; i += chunkSize) {
@@ -332,53 +404,29 @@ async function main() {
       process.exit(1);
     }
 
-    for (const row of chunk) {
-      let meta = info.get(row.fileTitle);
-      if (!meta) {
-        for (const [t, m] of info) {
-          if (normalizeTitleKey(t) === normalizeTitleKey(row.fileTitle)) {
-            meta = m;
-            break;
-          }
-        }
-      }
-      if (!meta) {
-        console.warn(`No Commons file for ${row.slug} (${row.fileTitle}); skipping`);
-        continue;
-      }
-      const author = meta.author || row.credit;
-      const licence = meta.licence || row.licence;
-      if (!licence) {
-        console.warn(`No licence for ${row.slug} (${row.fileTitle}); skipping`);
-        continue;
-      }
-      /** @type {Record<string, string>} */
-      const rec = {
-        imageUrl: meta.imageUrl,
-        credit: author,
-        licence,
-        alt: row.alt || `Photograph of ${row.slug.split("/").pop().replace(/-/g, " ")}`,
-        author,
-        title: meta.title || titleFromFileName(row.fileTitle),
-        sourceUrl: meta.sourceUrl,
-      };
-      const licenceUrl = meta.licence ? meta.licenceUrl : row.licenceUrl;
-      if (licenceUrl) rec.licenceUrl = licenceUrl;
-      if (row.caption) rec.caption = row.caption;
-      out[row.slug] = rec;
-    }
+    Object.assign(out, publishImageRows({ rows: chunk, commonsInfo: info, existing, sheetCredits }));
 
     // Be polite between chunks — reduces 429 risk on local/full rebuilds.
     if (i + chunkSize < rows.length) await sleep(200);
   }
 
+  /** @type {Record<string, string>} */
+  const reconciledCredits = {};
+  for (const row of rows) {
+    if (out[row.slug]) reconciledCredits[row.slug] = row.credit;
+  }
+
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
-  fs.writeFileSync(OUT_PATH, `${JSON.stringify(out, null, 2)}\n`, "utf8");
+  fs.writeFileSync(OUT_PATH, serializePrisonImages(out), "utf8");
+  fs.writeFileSync(SHEET_CREDIT_PATH, serializeSheetCredits(reconciledCredits), "utf8");
   console.log(`Wrote ${Object.keys(out).length} entries to ${path.relative(ROOT, OUT_PATH)}`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  if (preserveExisting("Unexpected image build failure")) return;
-  process.exit(1);
-});
+const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isDirectRun) {
+  main().catch((e) => {
+    console.error(e);
+    if (preserveExisting("Unexpected image build failure")) return;
+    process.exit(1);
+  });
+}
