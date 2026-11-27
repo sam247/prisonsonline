@@ -966,5 +966,38 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Visitors%27_entrance_-_HM_Prison_-_Styal_Cheshire_-_geograph.org.uk_-_2333631.jpg",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "caption": "Visitors' entrance to HM Prison Styal, Cheshire, in 2011."
+  },
+  "hmp-yoi-winchester": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Entrance_to_HMP_Winchester_-_geograph.org.uk_-_7300583.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "credit": "JThomas",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Entrance gate, barrier and HMP/YOI Winchester sign at the prison in Winchester, Hampshire",
+    "author": "JThomas",
+    "title": "Entrance to HMP Winchester - geograph.org.uk - 7300583",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_HMP_Winchester_-_geograph.org.uk_-_7300583.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Entrance to HMP/YOI Winchester, Hampshire, in 2022."
+  },
+  "hmp-maidstone": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/The_main_gate_to_Maidstone_Prison_-_geograph.org.uk_-_3080722.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "credit": "Marathon",
+    "licence": "CC BY-SA 2.0",
+    "alt": "Arched wooden main gate and stone perimeter wall of HMP Maidstone in Kent",
+    "author": "Marathon",
+    "title": "The main gate to Maidstone Prison - geograph.org.uk - 3080722",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_main_gate_to_Maidstone_Prison_-_geograph.org.uk_-_3080722.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Main gate of HM Prison Maidstone, Kent, in 2012."
+  },
+  "hmp-frankland": {
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/HM_Prison_Frankland_-_geograph.org.uk_-_8016031.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "credit": "Russel Wills",
+    "licence": "CC BY-SA 2.0",
+    "alt": "High concrete perimeter wall and floodlights outside HMP Frankland near Durham",
+    "author": "Russel Wills",
+    "title": "HM Prison Frankland - geograph.org.uk - 8016031",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HM_Prison_Frankland_-_geograph.org.uk_-_8016031.jpg",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "caption": "Perimeter wall of HM Prison Frankland, County Durham, in 2025."
   }
 }
